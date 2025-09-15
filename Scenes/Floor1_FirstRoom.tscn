@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cof1ea5yd8n57"]
+
+[ext_resource type="Texture2D" uid="uid://cmm21tb3jga8n" path="res://Assets/Screenshot 2025-09-14 144049.png" id="1_8a54a"]
+
+[node name="Floor1FirstRoom" type="Node2D"]
+position = Vector2(1006, 605)
+scale = Vector2(-29.4556, -0.304558)
+
+[node name="Floor" type="Area2D" parent="."]
+position = Vector2(0.0339515, -52.5351)
+scale = Vector2(1, 0.605979)
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+texture = ExtResource("1_8a54a")
