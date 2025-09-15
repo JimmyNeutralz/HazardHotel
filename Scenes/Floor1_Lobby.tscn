@@ -21,7 +21,7 @@ position = Vector2(1037, 501)
 [node name="DeathPuddle" parent="BlueOutlet" instance=ExtResource("3_ro3cy")]
 position = Vector2(-4, 119)
 
-[node name="Sprite2D" type="Sprite2D" parent="BlueOutlet"]
+[node name="wire" type="Sprite2D" parent="BlueOutlet"]
 modulate = Color(0.916695, 0.498417, 0.316419, 1)
 position = Vector2(32.6642, 83.0528)
 rotation = -0.752237
