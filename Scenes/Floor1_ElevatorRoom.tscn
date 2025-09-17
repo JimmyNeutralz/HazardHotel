@@ -1,8 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://dgm5sjqkfxstf"]
+[gd_scene load_steps=17 format=3 uid="uid://58713ibyta2k"]
 
-[ext_resource type="Script" uid="uid://mxu5nqmwrc22" path="res://Scenes/floor_1_elevator_room.gd" id="1_lo07i"]
+[ext_resource type="Script" uid="uid://mxu5nqmwrc22" path="res://Scripts/floor_1_elevator_room.gd" id="1_lo07i"]
 [ext_resource type="Texture2D" uid="uid://cmm21tb3jga8n" path="res://Assets/Screenshot 2025-09-14 144049.png" id="1_qmck6"]
-[ext_resource type="Script" uid="uid://cks057hc7fn5q" path="res://Scenes/player.gd" id="2_d365f"]
+[ext_resource type="Script" uid="uid://cks057hc7fn5q" path="res://Scripts/player.gd" id="2_d365f"]
 [ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="2_u6xtr"]
 [ext_resource type="Texture2D" uid="uid://stl1qcrc5shl" path="res://Assets/pngimg.com - ladder_PNG103280.png" id="3_ibhhw"]
 [ext_resource type="Texture2D" uid="uid://dg732cxgdxwd" path="res://Assets/number-9-black-and-white-21504468756nqivmret40.png" id="4_unu7x"]
