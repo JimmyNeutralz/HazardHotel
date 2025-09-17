@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cof1ea5yd8n57"]
+[gd_scene load_steps=10 format=3 uid="uid://cof1ea5yd8n57"]
 
 [ext_resource type="Texture2D" uid="uid://cmm21tb3jga8n" path="res://Assets/Screenshot 2025-09-14 144049.png" id="1_8a54a"]
 [ext_resource type="Texture2D" uid="uid://d17cj1h4hvscu" path="res://Assets/Corner_cobwebs.png" id="2_y0ers"]
+[ext_resource type="Texture2D" uid="uid://bi3pfutfhhbl3" path="res://Assets/5234628.png" id="3_4uky0"]
+[ext_resource type="Texture2D" uid="uid://dbjgn0nxeevbb" path="res://Assets/pngtree-air-vent-isolated-on-white-outflow-png-image_10184745.png" id="4_sjcic"]
+[ext_resource type="Texture2D" uid="uid://cse8mgaxw2i30" path="res://Assets/Number-3-PNG-High-Quality-Image.png" id="5_ey8cr"]
+[ext_resource type="Texture2D" uid="uid://br1ahw2wjjkks" path="res://Assets/pngimg.com - number7_PNG18621.png" id="6_ogv6b"]
+[ext_resource type="Texture2D" uid="uid://6ekllame78h0" path="res://Assets/531178.png" id="7_ogv6b"]
+[ext_resource type="Texture2D" uid="uid://ciuedc8ocss3" path="res://Assets/4059645-200.png" id="8_l3dai"]
+[ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="9_ohbkd"]
 
 [node name="Floor1FirstRoom" type="Node2D"]
 position = Vector2(1006, 605)
@@ -33,3 +40,85 @@ position = Vector2(-1.15428, 1687.69)
 rotation = 4.71239
 scale = Vector2(0.810383, 0.0105722)
 texture = ExtResource("2_y0ers")
+
+[node name="ExtensionCord" type="Sprite2D" parent="."]
+position = Vector2(8.89593, 122.834)
+rotation = 3.14159
+scale = Vector2(0.00910631, 0.581548)
+texture = ExtResource("3_4uky0")
+
+[node name="Fan1" type="Sprite2D" parent="."]
+position = Vector2(23.4844, 1887.98)
+scale = Vector2(0.00583506, 0.905701)
+texture = ExtResource("4_sjcic")
+
+[node name="Fan2" type="Sprite2D" parent="Fan1"]
+position = Vector2(-601.065, -3.8147e-06)
+scale = Vector2(1.09193, 1.00557)
+texture = ExtResource("4_sjcic")
+
+[node name="Blue3Switch" type="ColorRect" parent="."]
+offset_left = 27.9743
+offset_top = 1067.12
+offset_right = 29.9743
+offset_bottom = 1253.12
+color = Color(0.384634, 0.423036, 0.844493, 1)
+
+[node name="3Number" type="Sprite2D" parent="Blue3Switch"]
+position = Vector2(1.08638, 95.2198)
+rotation = 3.14159
+scale = Vector2(0.000641199, 0.0517501)
+texture = ExtResource("5_ey8cr")
+
+[node name="ConnectingLine1" type="ColorRect" parent="."]
+offset_left = 29.0
+offset_top = 1248.0
+offset_right = 30.0
+offset_bottom = 1792.0
+rotation = 0.0198604
+color = Color(0, 0, 0, 1)
+
+[node name="Blue7Switch" type="ColorRect" parent="."]
+offset_left = -4.54922
+offset_top = 804.445
+offset_right = -2.54922
+offset_bottom = 983.445
+color = Color(0.384314, 0.423529, 0.843137, 1)
+
+[node name="7Number" type="Sprite2D" parent="Blue7Switch"]
+position = Vector2(0.984532, 88.653)
+rotation = 3.14159
+scale = Vector2(0.00142774, 0.0922046)
+texture = ExtResource("6_ogv6b")
+
+[node name="ConnectingLine2" type="ColorRect" parent="."]
+offset_left = -6.48433
+offset_top = 39.4013
+offset_right = -4.48433
+offset_bottom = 813.401
+color = Color(0, 0, 0, 1)
+
+[node name="Vacuum" type="Sprite2D" parent="."]
+position = Vector2(-2.8178, 236.408)
+rotation = -3.14159
+scale = Vector2(0.0132431, 1.05736)
+texture = ExtResource("7_ogv6b")
+
+[node name="Wind1" type="Sprite2D" parent="."]
+position = Vector2(21.6937, 1402.03)
+rotation = 4.71239
+scale = Vector2(3.9315, 0.0383324)
+texture = ExtResource("8_l3dai")
+
+[node name="Wind2" type="Sprite2D" parent="Wind1"]
+position = Vector2(201.274, -7.08552)
+scale = Vector2(1.05473, 1.10718)
+texture = ExtResource("8_l3dai")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(29.6718, 380.88)
+rotation = 3.14159
+scale = Vector2(0.0319928, 5.6723)
+texture = ExtResource("9_ohbkd")
