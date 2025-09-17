@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dgm5sjqkfxstf"]
+[gd_scene load_steps=17 format=3 uid="uid://bm62w15mdq0dk"]
 
 [ext_resource type="Script" uid="uid://mxu5nqmwrc22" path="res://Scenes/floor_1_elevator_room.gd" id="1_lo07i"]
 [ext_resource type="Texture2D" uid="uid://cmm21tb3jga8n" path="res://Assets/Screenshot 2025-09-14 144049.png" id="1_qmck6"]
