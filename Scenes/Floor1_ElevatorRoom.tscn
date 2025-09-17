@@ -1,0 +1,181 @@
+[gd_scene load_steps=17 format=3 uid="uid://dgm5sjqkfxstf"]
+
+[ext_resource type="Script" uid="uid://mxu5nqmwrc22" path="res://Scenes/floor_1_elevator_room.gd" id="1_lo07i"]
+[ext_resource type="Texture2D" uid="uid://cmm21tb3jga8n" path="res://Assets/Screenshot 2025-09-14 144049.png" id="1_qmck6"]
+[ext_resource type="Script" uid="uid://cks057hc7fn5q" path="res://Scenes/player.gd" id="2_d365f"]
+[ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="2_u6xtr"]
+[ext_resource type="Texture2D" uid="uid://stl1qcrc5shl" path="res://Assets/pngimg.com - ladder_PNG103280.png" id="3_ibhhw"]
+[ext_resource type="Texture2D" uid="uid://dg732cxgdxwd" path="res://Assets/number-9-black-and-white-21504468756nqivmret40.png" id="4_unu7x"]
+[ext_resource type="Texture2D" uid="uid://brumc7m8nlcq0" path="res://Assets/pngimg.com - number8_PNG18668.png" id="5_77lod"]
+[ext_resource type="Texture2D" uid="uid://cuej6bx3gyq5w" path="res://Assets/White-Ceiling-Lamp-PNG-Clipart.png" id="6_6xfs3"]
+[ext_resource type="Texture2D" uid="uid://2cq8rugdnx2n" path="res://Assets/5731421.png" id="7_6xfs3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6xtr"]
+size = Vector2(92, 580.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ibhhw"]
+size = Vector2(95.5, 581.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d365f"]
+size = Vector2(255, 295)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unu7x"]
+size = Vector2(122.5, 233)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmck6"]
+size = Vector2(37, 376)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xfs3"]
+size = Vector2(60.5, 582)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo07i"]
+size = Vector2(879.5, 590)
+
+[node name="Floor1_ElevatorRoom" type="Node2D"]
+script = ExtResource("1_lo07i")
+
+[node name="Floor" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(872, 614.375)
+scale = Vector2(12.62, 0.204905)
+texture = ExtResource("1_qmck6")
+
+[node name="Wall" type="ColorRect" parent="Floor"]
+offset_right = 1151.0
+offset_bottom = 582.0
+color = Color(0.529412, 0.454902, 0.376471, 1)
+
+[node name="LeftBorder" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBorder"]
+position = Vector2(-47, 288.75)
+shape = SubResource("RectangleShape2D_u6xtr")
+
+[node name="RightBorder" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBorder"]
+position = Vector2(1200.25, 291.25)
+shape = SubResource("RectangleShape2D_ibhhw")
+
+[node name="Purple9Switch" type="ColorRect" parent="."]
+offset_left = 495.0
+offset_top = 305.0
+offset_right = 551.0
+offset_bottom = 361.0
+color = Color(0.79047, 0.000205615, 0.709099, 1)
+
+[node name="9Number" type="Sprite2D" parent="Purple9Switch"]
+position = Vector2(29, 29)
+scale = Vector2(0.198661, 0.198661)
+texture = ExtResource("4_unu7x")
+
+[node name="ConnectingLine2" type="ColorRect" parent="."]
+offset_left = 515.0
+offset_top = -7.0
+offset_right = 529.0
+offset_bottom = 304.0
+color = Color(0, 0, 0, 1)
+
+[node name="Orange8Switch" type="ColorRect" parent="."]
+offset_left = 916.0
+offset_top = 311.0
+offset_right = 966.0
+offset_bottom = 361.0
+color = Color(0.96759, 0.513595, 0.20907, 1)
+
+[node name="8Number" type="Sprite2D" parent="Orange8Switch"]
+position = Vector2(23, 24)
+scale = Vector2(0.0411112, 0.0411112)
+texture = ExtResource("5_77lod")
+
+[node name="ConnectingLine1" type="ColorRect" parent="."]
+offset_left = 931.0
+offset_top = -4.0
+offset_right = 944.0
+offset_bottom = 311.0
+color = Color(0, 0, 0, 1)
+
+[node name="Light1" type="Sprite2D" parent="."]
+position = Vector2(652, 19)
+scale = Vector2(0.0662691, 0.0720108)
+texture = ExtResource("6_6xfs3")
+
+[node name="Light2" type="Sprite2D" parent="."]
+position = Vector2(796, 18)
+scale = Vector2(0.0692935, 0.0692935)
+texture = ExtResource("6_6xfs3")
+
+[node name="Elevator" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Elevator"]
+position = Vector2(208, 379)
+scale = Vector2(0.824219, 0.824219)
+texture = ExtResource("7_6xfs3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Elevator"]
+position = Vector2(206.5, 437.5)
+shape = SubResource("RectangleShape2D_d365f")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_d365f")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(1042, 479)
+scale = Vector2(0.90625, 1.78125)
+texture = ExtResource("2_u6xtr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(1042.75, 478.5)
+shape = SubResource("RectangleShape2D_unu7x")
+
+[node name="Door" type="Area2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Door"]
+offset_left = 1121.0
+offset_top = 211.0
+offset_right = 1154.0
+offset_bottom = 583.0
+color = Color(0.545098, 0.270588, 0.0745098, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(1135.5, 398)
+shape = SubResource("RectangleShape2D_qmck6")
+
+[node name="Grate" type="StaticBody2D" parent="."]
+
+[node name="ElevatorGrate" type="Sprite2D" parent="Grate"]
+position = Vector2(446, 291)
+scale = Vector2(1, 1.176)
+texture = ExtResource("3_ibhhw")
+
+[node name="CollisionShape2DGrate" type="CollisionShape2D" parent="Grate"]
+position = Vector2(440.75, 289)
+shape = SubResource("RectangleShape2D_6xfs3")
+
+[node name="ElevatorSupport1" type="ColorRect" parent="."]
+offset_left = 132.0
+offset_top = -6.0
+offset_right = 154.0
+offset_bottom = 175.0
+color = Color(0, 0, 0, 1)
+
+[node name="ElevatorSupport2" type="ColorRect" parent="."]
+offset_left = 257.0
+offset_top = -8.0
+offset_right = 281.0
+offset_bottom = 176.0
+color = Color(0, 0, 0, 1)
+
+[node name="Dark" type="StaticBody2D" parent="."]
+
+[node name="Darkness" type="ColorRect" parent="Dark"]
+offset_right = 883.0
+offset_bottom = 589.0
+color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2DDark" type="CollisionShape2D" parent="Dark"]
+position = Vector2(442.25, 294)
+shape = SubResource("RectangleShape2D_lo07i")
+
+[connection signal="body_entered" from="Elevator" to="." method="_on_elevator_body_entered"]
