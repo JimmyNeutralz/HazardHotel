@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ciyg5c7q4eydm"]
+[gd_scene load_steps=8 format=3 uid="uid://ciyg5c7q4eydm"]
 
 [ext_resource type="PackedScene" uid="uid://bhwqol84gphvy" path="res://Scenes/PurpleOutlet.tscn" id="1_i8ys2"]
 [ext_resource type="PackedScene" uid="uid://chbp44sv6cv88" path="res://Scenes/Ground.tscn" id="1_ynetk"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ccmg37qsid06o" path="res://Scenes/death_puddle.tscn" id="3_ro3cy"]
 [ext_resource type="PackedScene" uid="uid://cu0y5x0iuloi4" path="res://Scenes/test_player.tscn" id="4_rd8bw"]
 [ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="5_ro3cy"]
+[ext_resource type="PackedScene" uid="uid://b0bhofhoa6rl6" path="res://Scenes/Lamp.tscn" id="7_rd8bw"]
 
 [node name="Main" type="Node"]
 
@@ -13,9 +14,10 @@
 position = Vector2(579, 634)
 
 [node name="GreenOutlet" parent="." instance=ExtResource("1_i8ys2")]
-position = Vector2(-77, 74)
+position = Vector2(-43, -46)
 
 [node name="BlueOutlet" parent="." instance=ExtResource("2_ynetk")]
+z_index = 1
 position = Vector2(1037, 501)
 
 [node name="DeathPuddle" parent="BlueOutlet" instance=ExtResource("3_ro3cy")]
@@ -30,3 +32,6 @@ texture = ExtResource("5_ro3cy")
 
 [node name="TestPlayer" parent="." instance=ExtResource("4_rd8bw")]
 position = Vector2(460, 534)
+
+[node name="Lamp" parent="." instance=ExtResource("7_rd8bw")]
+position = Vector2(-3, 2)
