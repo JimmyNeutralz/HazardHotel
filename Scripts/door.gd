@@ -2,7 +2,9 @@ extends Area2D
 
 
 var isLocked = false
+var playerHasKey = false
 @export var simultaneous_scene = preload("res://Scenes/OutsideTestScene.tscn").instantiate()
+@onready var player = load("res://Scripts/test_player.gd")
 
 func _add_a_scene_manually():
 	get_node("/root/Main").queue_free()
@@ -10,5 +12,8 @@ func _add_a_scene_manually():
 
 
 func _on_body_entered(body: Node2D) -> void:
+	#if (player._has_key() == true):
+		#isLocked = false
+		
 	if (isLocked == false):
 		_add_a_scene_manually()

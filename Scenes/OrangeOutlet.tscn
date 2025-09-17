@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://m3qe0cl2flf3"]
 
-[ext_resource type="Script" uid="uid://bdt6yamsdcahk" path="res://Scripts/orange_outlet.gd" id="1_gjm6f"]
+[ext_resource type="Script" path="res://Scripts/orange_outlet.gd" id="1_gjm6f"]
 [ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="2_7d2yl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j5c55"]

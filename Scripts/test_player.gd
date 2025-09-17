@@ -24,6 +24,9 @@ func _get_key():
 	if (hasKey == false):
 		hasKey = true
 		print("GOT KEY!")
+		
+func _has_key():
+	return hasKey
 	
 
 	
