@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://ciyg5c7q4eydm"]
+[gd_scene load_steps=10 format=3 uid="uid://ciyg5c7q4eydm"]
 
-[ext_resource type="PackedScene" uid="uid://bhwqol84gphvy" path="res://Scenes/PurpleOutlet.tscn" id="1_i8ys2"]
 [ext_resource type="PackedScene" uid="uid://chbp44sv6cv88" path="res://Scenes/Ground.tscn" id="1_ynetk"]
 [ext_resource type="PackedScene" uid="uid://m3qe0cl2flf3" path="res://Scenes/OrangeOutlet.tscn" id="2_ynetk"]
 [ext_resource type="PackedScene" uid="uid://ccmg37qsid06o" path="res://Scenes/death_puddle.tscn" id="3_ro3cy"]
@@ -8,14 +7,13 @@
 [ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="5_ro3cy"]
 [ext_resource type="PackedScene" uid="uid://b0bhofhoa6rl6" path="res://Scenes/Lamp.tscn" id="7_rd8bw"]
 [ext_resource type="PackedScene" uid="uid://dobi4km4r002g" path="res://Scenes/dumbWaiter.tscn" id="8_10t53"]
+[ext_resource type="PackedScene" uid="uid://bwhb2kh2rg1d3" path="res://Scenes/YellowOutlet.tscn" id="8_f0shp"]
+[ext_resource type="PackedScene" uid="uid://bqkha3ibjad3h" path="res://Scenes/lockedDoor.tscn" id="9_f0shp"]
 
 [node name="Main" type="Node"]
 
-[node name="Area2D" parent="." instance=ExtResource("1_ynetk")]
+[node name="Floor" parent="." instance=ExtResource("1_ynetk")]
 position = Vector2(579, 634)
-
-[node name="GreenOutlet" parent="." instance=ExtResource("1_i8ys2")]
-position = Vector2(-46, 47)
 
 [node name="Orange" parent="." instance=ExtResource("2_ynetk")]
 z_index = 1
@@ -25,7 +23,7 @@ position = Vector2(1037, 501)
 position = Vector2(-4, 119)
 
 [node name="wire" type="Sprite2D" parent="Orange"]
-modulate = Color(0.916695, 0.498417, 0.316419, 1)
+modulate = Color(0, 0, 0, 1)
 position = Vector2(32.6642, 83.0528)
 rotation = -0.752237
 scale = Vector2(0.046875, 0.870474)
@@ -37,5 +35,18 @@ position = Vector2(460, 534)
 [node name="Lamp" parent="." instance=ExtResource("7_rd8bw")]
 position = Vector2(-3, 3)
 
-[node name="DumbWaiter" parent="." instance=ExtResource("8_10t53")]
-position = Vector2(52, -1)
+[node name="Yellow" parent="." instance=ExtResource("8_f0shp")]
+position = Vector2(288, 410)
+
+[node name="DumbWaiter" parent="Yellow" instance=ExtResource("8_10t53")]
+position = Vector2(-286, -412)
+
+[node name="wire" type="Sprite2D" parent="Yellow"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(-50, 3)
+scale = Vector2(0.921875, 0.0703125)
+texture = ExtResource("5_ro3cy")
+
+[node name="Door" parent="." instance=ExtResource("9_f0shp")]
+position = Vector2(-1, -28)

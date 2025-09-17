@@ -24,7 +24,8 @@ position = Vector2(567, 507)
 script = ExtResource("6_kiaih")
 
 [node name="Wire" type="Sprite2D" parent="PurpleOutlet"]
-modulate = Color(0.636758, 0.000482655, 0.677731, 1)
+modulate = Color(0, 0, 0, 1)
+z_index = -1
 position = Vector2(83.413, 17.377)
 rotation = -1.28805
 scale = Vector2(0.0711221, 0.909087)

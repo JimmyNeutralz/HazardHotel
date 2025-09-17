@@ -16,3 +16,7 @@ shape = SubResource("RectangleShape2D_oyflw")
 [node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(136, 338)
 texture = ExtResource("1_8re62")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
