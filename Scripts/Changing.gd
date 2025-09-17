@@ -6,11 +6,11 @@ var isConnected = false
 func _process(delta):
 	
 	# Test for custom input actions
-	if (Input.is_action_just_pressed("Connect Green Wire") and !isConnected):
-		$AnimatedSprite2D.modulate = Color(0, 1, 0)
-		print("Green Wire Connected")
+	if (Input.is_action_just_pressed("Connect Orange Wire") and !isConnected):
+		$AnimatedSprite2D.modulate = Color(0, 0, 0)
+		print("Orange Wire Connected")
 		isConnected = true
-	elif (Input.is_action_just_pressed("Disconnect Green Wire") and isConnected):
+	elif (Input.is_action_just_pressed("Disconnect Orange Wire") and isConnected):
 		$AnimatedSprite2D.modulate = Color(1, 1, 1)
-		print("Green Wire Disconnected")
+		print("Orange Wire Disconnected")
 		isConnected = false

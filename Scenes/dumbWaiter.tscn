@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dobi4km4r002g"]
+
+[ext_resource type="Texture2D" uid="uid://bxvhxaduhmvuf" path="res://Assets/Screenshot_2025-09-17_122255-removebg-preview.png" id="1_8re62"]
+[ext_resource type="Script" uid="uid://ca6fatvnplctn" path="res://Scripts/dumb_waiter.gd" id="1_oyflw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oyflw"]
+size = Vector2(200, 556.5)
+
+[node name="DumbWaiter" type="Area2D"]
+script = ExtResource("1_oyflw")
+
+[node name="DumbHitbox" type="CollisionShape2D" parent="."]
+position = Vector2(137, 341)
+shape = SubResource("RectangleShape2D_oyflw")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(136, 338)
+texture = ExtResource("1_8re62")

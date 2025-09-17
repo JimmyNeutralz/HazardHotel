@@ -7,7 +7,7 @@ var isDeadly = false
 func _process(delta):
 	isDeadly = get_parent().isConnected
 	if (!isDeadly):
-		$Sprite2D.modulate = Color(1, 1, 1)
+		$Sprite2D.modulate = Color(0, 0, 1)
 		
 	else:
 		$Sprite2D.modulate = Color(0, 0, 0)

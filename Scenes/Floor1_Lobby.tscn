@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ciyg5c7q4eydm"]
+[gd_scene load_steps=9 format=3 uid="uid://ciyg5c7q4eydm"]
 
 [ext_resource type="PackedScene" uid="uid://bhwqol84gphvy" path="res://Scenes/PurpleOutlet.tscn" id="1_i8ys2"]
 [ext_resource type="PackedScene" uid="uid://chbp44sv6cv88" path="res://Scenes/Ground.tscn" id="1_ynetk"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cu0y5x0iuloi4" path="res://Scenes/test_player.tscn" id="4_rd8bw"]
 [ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="5_ro3cy"]
 [ext_resource type="PackedScene" uid="uid://b0bhofhoa6rl6" path="res://Scenes/Lamp.tscn" id="7_rd8bw"]
+[ext_resource type="PackedScene" uid="uid://dobi4km4r002g" path="res://Scenes/dumbWaiter.tscn" id="8_10t53"]
 
 [node name="Main" type="Node"]
 
@@ -14,16 +15,16 @@
 position = Vector2(579, 634)
 
 [node name="GreenOutlet" parent="." instance=ExtResource("1_i8ys2")]
-position = Vector2(-43, -46)
+position = Vector2(-46, 47)
 
-[node name="BlueOutlet" parent="." instance=ExtResource("2_ynetk")]
+[node name="Orange" parent="." instance=ExtResource("2_ynetk")]
 z_index = 1
 position = Vector2(1037, 501)
 
-[node name="DeathPuddle" parent="BlueOutlet" instance=ExtResource("3_ro3cy")]
+[node name="DeathPuddle" parent="Orange" instance=ExtResource("3_ro3cy")]
 position = Vector2(-4, 119)
 
-[node name="wire" type="Sprite2D" parent="BlueOutlet"]
+[node name="wire" type="Sprite2D" parent="Orange"]
 modulate = Color(0.916695, 0.498417, 0.316419, 1)
 position = Vector2(32.6642, 83.0528)
 rotation = -0.752237
@@ -34,4 +35,7 @@ texture = ExtResource("5_ro3cy")
 position = Vector2(460, 534)
 
 [node name="Lamp" parent="." instance=ExtResource("7_rd8bw")]
-position = Vector2(-3, 2)
+position = Vector2(-3, 3)
+
+[node name="DumbWaiter" parent="." instance=ExtResource("8_10t53")]
+position = Vector2(52, -1)
