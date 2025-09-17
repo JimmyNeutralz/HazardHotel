@@ -14,9 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="9_ohbkd"]
 [ext_resource type="Script" uid="uid://chasgif58pd1r" path="res://Scenes/wind_1.gd" id="10_dxv8s"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxv8s"]
-size = Vector2(1.95399, 1298.53)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jotf"]
 size = Vector2(445.131, 123.992)
 
@@ -28,6 +25,9 @@ size = Vector2(5.26216, 2038.95)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_em0eu"]
 size = Vector2(4.33045, 2088.2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxv8s"]
+size = Vector2(1.95399, 1298.53)
 
 [node name="Floor1FirstRoom" type="Node2D"]
 position = Vector2(1006, 605)
@@ -47,23 +47,6 @@ offset_top = 159.0
 offset_right = 35.0
 offset_bottom = 3442.0
 color = Color(0.527498, 0.45135, 0.37709, 1)
-
-[node name="Door" type="Area2D" parent="."]
-position = Vector2(-3.8147e-06, 0)
-scale = Vector2(1, 1)
-script = ExtResource("2_0cctv")
-
-[node name="ColorRect" type="ColorRect" parent="Door"]
-offset_left = 33.3383
-offset_top = 16.4172
-offset_right = 35.3383
-offset_bottom = 1319.42
-color = Color(0.545098, 0.270588, 0.0745098, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2(33.9758, 665.681)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_dxv8s")
 
 [node name="Cobweb" type="Sprite2D" parent="."]
 position = Vector2(-1.15428, 1687.69)
@@ -178,6 +161,23 @@ position = Vector2(-7.13691, 1063.8)
 scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_em0eu")
 
-[connection signal="area_entered" from="Door" to="Door" method="_on_area_entered"]
-[connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
+[node name="Door" type="Area2D" parent="."]
+position = Vector2(-3.8147e-06, 0)
+scale = Vector2(1, 1)
+collision_layer = 2
+script = ExtResource("2_0cctv")
+
+[node name="ColorRect" type="ColorRect" parent="Door"]
+offset_left = 33.3383
+offset_top = 16.4172
+offset_right = 35.3383
+offset_bottom = 1319.42
+color = Color(0.545098, 0.270588, 0.0745098, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(33.9758, 665.681)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_dxv8s")
+
 [connection signal="body_entered" from="Wind1" to="." method="_on_wind_1_body_entered"]
+[connection signal="body_entered" from="Door" to="Door" method="_on_body_entered"]
