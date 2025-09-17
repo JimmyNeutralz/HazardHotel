@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://dgm5sjqkfxstf"]
+[gd_scene load_steps=17 format=3 uid="uid://dgm5sjqkfxstf"]
 
+[ext_resource type="Script" uid="uid://mxu5nqmwrc22" path="res://Scenes/floor_1_elevator_room.gd" id="1_lo07i"]
 [ext_resource type="Texture2D" uid="uid://cmm21tb3jga8n" path="res://Assets/Screenshot 2025-09-14 144049.png" id="1_qmck6"]
 [ext_resource type="Script" uid="uid://cks057hc7fn5q" path="res://Scenes/player.gd" id="2_d365f"]
 [ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="2_u6xtr"]
@@ -31,6 +32,7 @@ size = Vector2(60.5, 582)
 size = Vector2(879.5, 590)
 
 [node name="Floor1_ElevatorRoom" type="Node2D"]
+script = ExtResource("1_lo07i")
 
 [node name="Floor" type="Area2D" parent="."]
 
@@ -147,7 +149,7 @@ position = Vector2(446, 291)
 scale = Vector2(1, 1.176)
 texture = ExtResource("3_ibhhw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Grate"]
+[node name="CollisionShape2DGrate" type="CollisionShape2D" parent="Grate"]
 position = Vector2(440.75, 289)
 shape = SubResource("RectangleShape2D_6xfs3")
 
@@ -172,6 +174,8 @@ offset_right = 883.0
 offset_bottom = 589.0
 color = Color(0, 0, 0, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dark"]
+[node name="CollisionShape2DDark" type="CollisionShape2D" parent="Dark"]
 position = Vector2(442.25, 294)
 shape = SubResource("RectangleShape2D_lo07i")
+
+[connection signal="body_entered" from="Elevator" to="." method="_on_elevator_body_entered"]
