@@ -130,7 +130,6 @@ texture = ExtResource("8_l3dai")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wind1"]
 position = Vector2(124.027, -8.85678)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1jotf")
 
 [node name="Player" type="CharacterBody2D" parent="."]
@@ -144,26 +143,22 @@ texture = ExtResource("9_ohbkd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(29.6718, 384.163)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_bh35r")
 
 [node name="LeftBorder" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBorder"]
 position = Vector2(36.7842, 1042.46)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_0cctv")
 
 [node name="RightBorder" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightBorder"]
 position = Vector2(-7.13691, 1063.8)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_em0eu")
 
 [node name="Door" type="Area2D" parent="."]
 position = Vector2(-3.8147e-06, 0)
-scale = Vector2(1, 1)
 collision_layer = 2
 script = ExtResource("2_0cctv")
 
@@ -176,7 +171,6 @@ color = Color(0.545098, 0.270588, 0.0745098, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
 position = Vector2(33.9758, 665.681)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_dxv8s")
 
 [connection signal="body_entered" from="Wind1" to="." method="_on_wind_1_body_entered"]
