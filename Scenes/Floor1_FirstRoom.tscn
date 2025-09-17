@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cof1ea5yd8n57"]
+[gd_scene load_steps=14 format=3 uid="uid://cof1ea5yd8n57"]
 
 [ext_resource type="Texture2D" uid="uid://cmm21tb3jga8n" path="res://Assets/Screenshot 2025-09-14 144049.png" id="1_8a54a"]
 [ext_resource type="Texture2D" uid="uid://d17cj1h4hvscu" path="res://Assets/Corner_cobwebs.png" id="2_y0ers"]
@@ -8,7 +8,17 @@
 [ext_resource type="Texture2D" uid="uid://br1ahw2wjjkks" path="res://Assets/pngimg.com - number7_PNG18621.png" id="6_ogv6b"]
 [ext_resource type="Texture2D" uid="uid://6ekllame78h0" path="res://Assets/531178.png" id="7_ogv6b"]
 [ext_resource type="Texture2D" uid="uid://ciuedc8ocss3" path="res://Assets/4059645-200.png" id="8_l3dai"]
+[ext_resource type="Script" uid="uid://dao8tb5op54sq" path="res://Scripts/test_player.gd" id="9_bh35r"]
 [ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="9_ohbkd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bh35r"]
+size = Vector2(4.14182, 728.85)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0cctv"]
+size = Vector2(5.26216, 2038.95)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_em0eu"]
+size = Vector2(4.33045, 2088.2)
 
 [node name="Floor1FirstRoom" type="Node2D"]
 position = Vector2(1006, 605)
@@ -116,9 +126,29 @@ scale = Vector2(1.05473, 1.10718)
 texture = ExtResource("8_l3dai")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("9_bh35r")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(29.6718, 380.88)
 rotation = 3.14159
 scale = Vector2(0.0319928, 5.6723)
 texture = ExtResource("9_ohbkd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(29.6718, 384.163)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_bh35r")
+
+[node name="LeftBorder" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBorder"]
+position = Vector2(36.7842, 1042.46)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0cctv")
+
+[node name="RightBorder" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightBorder"]
+position = Vector2(-7.13691, 1063.8)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_em0eu")
