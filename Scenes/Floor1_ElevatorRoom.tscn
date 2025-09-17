@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dgm5sjqkfxstf"]
+[gd_scene load_steps=16 format=3 uid="uid://dgm5sjqkfxstf"]
 
 [ext_resource type="Texture2D" uid="uid://cmm21tb3jga8n" path="res://Assets/Screenshot 2025-09-14 144049.png" id="1_qmck6"]
+[ext_resource type="Script" uid="uid://cks057hc7fn5q" path="res://Scenes/player.gd" id="2_d365f"]
 [ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="2_u6xtr"]
 [ext_resource type="Texture2D" uid="uid://stl1qcrc5shl" path="res://Assets/pngimg.com - ladder_PNG103280.png" id="3_ibhhw"]
 [ext_resource type="Texture2D" uid="uid://dg732cxgdxwd" path="res://Assets/number-9-black-and-white-21504468756nqivmret40.png" id="4_unu7x"]
@@ -8,23 +9,26 @@
 [ext_resource type="Texture2D" uid="uid://cuej6bx3gyq5w" path="res://Assets/White-Ceiling-Lamp-PNG-Clipart.png" id="6_6xfs3"]
 [ext_resource type="Texture2D" uid="uid://2cq8rugdnx2n" path="res://Assets/5731421.png" id="7_6xfs3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmck6"]
-size = Vector2(37, 376)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6xtr"]
 size = Vector2(92, 580.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ibhhw"]
 size = Vector2(95.5, 581.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_unu7x"]
-size = Vector2(122.5, 233)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d365f"]
 size = Vector2(255, 295)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_unu7x"]
+size = Vector2(122.5, 233)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qmck6"]
+size = Vector2(37, 376)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6xfs3"]
 size = Vector2(60.5, 582)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lo07i"]
+size = Vector2(879.5, 590)
 
 [node name="Floor1_ElevatorRoom" type="Node2D"]
 
@@ -40,19 +44,6 @@ offset_right = 1151.0
 offset_bottom = 582.0
 color = Color(0.529412, 0.454902, 0.376471, 1)
 
-[node name="Door" type="Area2D" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="Door"]
-offset_left = 1121.0
-offset_top = 211.0
-offset_right = 1154.0
-offset_bottom = 583.0
-color = Color(0.545098, 0.270588, 0.0745098, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2(1135.5, 398)
-shape = SubResource("RectangleShape2D_qmck6")
-
 [node name="LeftBorder" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBorder"]
@@ -64,17 +55,6 @@ shape = SubResource("RectangleShape2D_u6xtr")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightBorder"]
 position = Vector2(1200.25, 291.25)
 shape = SubResource("RectangleShape2D_ibhhw")
-
-[node name="Player" type="CharacterBody2D" parent="."]
-
-[node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(1042, 479)
-scale = Vector2(0.90625, 1.78125)
-texture = ExtResource("2_u6xtr")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(1042.75, 478.5)
-shape = SubResource("RectangleShape2D_unu7x")
 
 [node name="Purple9Switch" type="ColorRect" parent="."]
 offset_left = 495.0
@@ -135,7 +115,32 @@ texture = ExtResource("7_6xfs3")
 position = Vector2(206.5, 437.5)
 shape = SubResource("RectangleShape2D_d365f")
 
-[node name="Grate" type="Area2D" parent="."]
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_d365f")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+position = Vector2(1042, 479)
+scale = Vector2(0.90625, 1.78125)
+texture = ExtResource("2_u6xtr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(1042.75, 478.5)
+shape = SubResource("RectangleShape2D_unu7x")
+
+[node name="Door" type="Area2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="Door"]
+offset_left = 1121.0
+offset_top = 211.0
+offset_right = 1154.0
+offset_bottom = 583.0
+color = Color(0.545098, 0.270588, 0.0745098, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
+position = Vector2(1135.5, 398)
+shape = SubResource("RectangleShape2D_qmck6")
+
+[node name="Grate" type="StaticBody2D" parent="."]
 
 [node name="ElevatorGrate" type="Sprite2D" parent="Grate"]
 position = Vector2(446, 291)
@@ -160,8 +165,13 @@ offset_right = 281.0
 offset_bottom = 176.0
 color = Color(0, 0, 0, 1)
 
-[node name="Darkness" type="ColorRect" parent="."]
-visible = false
+[node name="Dark" type="StaticBody2D" parent="."]
+
+[node name="Darkness" type="ColorRect" parent="Dark"]
 offset_right = 883.0
 offset_bottom = 589.0
 color = Color(0, 0, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dark"]
+position = Vector2(442.25, 294)
+shape = SubResource("RectangleShape2D_lo07i")
