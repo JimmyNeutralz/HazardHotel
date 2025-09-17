@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cuk33lroe3m68"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3.66336, 4.27666)
+text = "Test"
