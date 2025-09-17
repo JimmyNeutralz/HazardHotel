@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cof1ea5yd8n57"]
+[gd_scene load_steps=3 format=3 uid="uid://cof1ea5yd8n57"]
 
 [ext_resource type="Texture2D" uid="uid://cmm21tb3jga8n" path="res://Assets/Screenshot 2025-09-14 144049.png" id="1_8a54a"]
+[ext_resource type="Texture2D" uid="uid://d17cj1h4hvscu" path="res://Assets/Corner_cobwebs.png" id="2_y0ers"]
 
 [node name="Floor1FirstRoom" type="Node2D"]
 position = Vector2(1006, 605)
@@ -12,3 +13,23 @@ scale = Vector2(1, 0.605979)
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor"]
 texture = ExtResource("1_8a54a")
+
+[node name="Wall" type="ColorRect" parent="Floor"]
+offset_left = -7.0
+offset_top = 159.0
+offset_right = 35.0
+offset_bottom = 3442.0
+color = Color(0.527498, 0.45135, 0.37709, 1)
+
+[node name="Door" type="ColorRect" parent="."]
+offset_left = 33.3383
+offset_top = 16.4172
+offset_right = 35.3383
+offset_bottom = 1319.42
+color = Color(0.545098, 0.270588, 0.0745098, 1)
+
+[node name="Cobweb" type="Sprite2D" parent="."]
+position = Vector2(-1.15428, 1687.69)
+rotation = 4.71239
+scale = Vector2(0.810383, 0.0105722)
+texture = ExtResource("2_y0ers")
