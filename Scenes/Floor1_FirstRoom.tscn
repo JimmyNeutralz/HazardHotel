@@ -1,8 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://cof1ea5yd8n57"]
+[gd_scene load_steps=19 format=3 uid="uid://b738s385dhsjk"]
 
 [ext_resource type="Texture2D" uid="uid://cmm21tb3jga8n" path="res://Assets/Screenshot 2025-09-14 144049.png" id="1_8a54a"]
-[ext_resource type="Script" uid="uid://b2syhmapay4dj" path="res://Scenes/floor_1_first_room.gd" id="1_em0eu"]
-[ext_resource type="Script" uid="uid://x4c58xwsu4ff" path="res://Scenes/area_2d.gd" id="2_0cctv"]
+[ext_resource type="Script" uid="uid://b2syhmapay4dj" path="res://Scripts/floor_1_first_room.gd" id="1_em0eu"]
+[ext_resource type="Script" uid="uid://x4c58xwsu4ff" path="res://Scripts/area_2d.gd" id="2_0cctv"]
 [ext_resource type="Texture2D" uid="uid://d17cj1h4hvscu" path="res://Assets/Corner_cobwebs.png" id="2_y0ers"]
 [ext_resource type="Texture2D" uid="uid://bi3pfutfhhbl3" path="res://Assets/5234628.png" id="3_4uky0"]
 [ext_resource type="Texture2D" uid="uid://dbjgn0nxeevbb" path="res://Assets/pngtree-air-vent-isolated-on-white-outflow-png-image_10184745.png" id="4_sjcic"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://ciuedc8ocss3" path="res://Assets/4059645-200.png" id="8_l3dai"]
 [ext_resource type="Script" uid="uid://dao8tb5op54sq" path="res://Scripts/test_player.gd" id="9_bh35r"]
 [ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="9_ohbkd"]
-[ext_resource type="Script" uid="uid://chasgif58pd1r" path="res://Scenes/wind_1.gd" id="10_dxv8s"]
+[ext_resource type="Script" uid="uid://chasgif58pd1r" path="res://Scripts/wind_1.gd" id="10_dxv8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jotf"]
 size = Vector2(445.131, 123.992)
@@ -163,14 +163,14 @@ collision_layer = 2
 script = ExtResource("2_0cctv")
 
 [node name="ColorRect" type="ColorRect" parent="Door"]
-offset_left = 33.3383
-offset_top = 16.4172
-offset_right = 35.3383
-offset_bottom = 1319.42
+offset_left = 31.9803
+offset_top = 55.8187
+offset_right = 33.9803
+offset_bottom = 1358.82
 color = Color(0.545098, 0.270588, 0.0745098, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Door"]
-position = Vector2(33.9758, 665.681)
+position = Vector2(33.0667, 692.807)
 shape = SubResource("RectangleShape2D_dxv8s")
 
 [connection signal="body_entered" from="Wind1" to="." method="_on_wind_1_body_entered"]
