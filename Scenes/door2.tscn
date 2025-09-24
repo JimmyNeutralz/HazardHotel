@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb0xrsfi6f64g"]
+
+[ext_resource type="Script" uid="uid://147xwgnchakl" path="res://Scripts/door_2.gd" id="1_8y1u2"]
+[ext_resource type="Texture2D" uid="uid://ccst57cfxvu6h" path="res://Assets/cartoon-door-vector-symbol-icon-design-beautiful-illustration-isolated-white-background-90121851-removebg-preview.png" id="2_4byyg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xgyta"]
+size = Vector2(23, 293)
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_8y1u2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.00001, -1.125)
+scale = Vector2(0.148148, 0.673977)
+texture = ExtResource("2_4byyg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.500011, -0.625031)
+shape = SubResource("RectangleShape2D_xgyta")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

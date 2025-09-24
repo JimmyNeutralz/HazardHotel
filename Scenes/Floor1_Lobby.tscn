@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ciyg5c7q4eydm"]
+[gd_scene load_steps=11 format=3 uid="uid://ciyg5c7q4eydm"]
 
 [ext_resource type="PackedScene" uid="uid://chbp44sv6cv88" path="res://Scenes/Ground.tscn" id="1_ynetk"]
 [ext_resource type="PackedScene" uid="uid://m3qe0cl2flf3" path="res://Scenes/OrangeOutlet.tscn" id="2_ynetk"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dobi4km4r002g" path="res://Scenes/dumbWaiter.tscn" id="8_10t53"]
 [ext_resource type="PackedScene" uid="uid://bwhb2kh2rg1d3" path="res://Scenes/YellowOutlet.tscn" id="8_f0shp"]
 [ext_resource type="PackedScene" uid="uid://bqkha3ibjad3h" path="res://Scenes/lockedDoor.tscn" id="9_f0shp"]
+[ext_resource type="PackedScene" uid="uid://bb0xrsfi6f64g" path="res://Scenes/door2.tscn" id="10_s400t"]
 
 [node name="Main" type="Node"]
 
@@ -50,3 +51,6 @@ texture = ExtResource("5_ro3cy")
 
 [node name="Door" parent="." instance=ExtResource("9_f0shp")]
 position = Vector2(-1, -28)
+
+[node name="Area2D" parent="." instance=ExtResource("10_s400t")]
+position = Vector2(11, 464)
