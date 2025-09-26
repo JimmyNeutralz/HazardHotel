@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8fihlxng3041"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rrk03"]
+albedo_color = Color(0.529125, 0.33142522, 0.20424443, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cihdc"]
+material = SubResource("StandardMaterial3D_rrk03")
+size = Vector3(10, 4, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jw1iv"]
+size = Vector3(10, 1, 2)
+
+[sub_resource type="SphereMesh" id="SphereMesh_rrk03"]
+
+[node name="Demo" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.128108, 1.2163063)
+fov = 97.525665
+
+[node name="BuildingStructure" type="Node3D" parent="."]
+
+[node name="BackWall" type="MeshInstance3D" parent="BuildingStructure"]
+transform = Transform3D(9.70075, 0, 0, 0, 2.86266, 0, 0, 0, -0.18916576, 0, 1.5084517, -1.9237986)
+mesh = SubResource("BoxMesh_cihdc")
+skeleton = NodePath("../..")
+
+[node name="Floor" type="MeshInstance3D" parent="BuildingStructure"]
+transform = Transform3D(-9.6974125, 0, 0, 0, 0.40294456, 0, 0, 0, 1, 0, 0, -0.87200934)
+mesh = SubResource("BoxMesh_jw1iv")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8850386, 0)
+mesh = SubResource("SphereMesh_rrk03")
