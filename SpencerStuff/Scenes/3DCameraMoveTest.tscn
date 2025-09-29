@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c8fihlxng3041"]
+[gd_scene load_steps=8 format=3 uid="uid://c8fihlxng3041"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rrk03"]
 albedo_color = Color(0.529125, 0.33142522, 0.20424443, 1)
@@ -10,7 +10,13 @@ size = Vector3(10, 4, 0.5)
 [sub_resource type="BoxMesh" id="BoxMesh_jw1iv"]
 size = Vector3(10, 1, 2)
 
-[sub_resource type="SphereMesh" id="SphereMesh_rrk03"]
+[sub_resource type="BoxMesh" id="BoxMesh_rrk03"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7xjua"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2al8d"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_47nnb"]
 
 [node name="Demo" type="Node3D"]
 
@@ -29,6 +35,22 @@ skeleton = NodePath("../..")
 transform = Transform3D(-9.6974125, 0, 0, 0, 0.40294456, 0, 0, 0, 1, 0, 0, -0.87200934)
 mesh = SubResource("BoxMesh_jw1iv")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8850386, 0)
-mesh = SubResource("SphereMesh_rrk03")
+[node name="Floor" type="MeshInstance3D" parent="BuildingStructure/Floor"]
+transform = Transform3D(-9.697414, 0, 0, 0, 1.3407724, 0, 0, 0, 1, 0, 12.942283, 0.06686479)
+mesh = SubResource("BoxMesh_jw1iv")
+
+[node name="Wall1" type="MeshInstance3D" parent="BuildingStructure"]
+transform = Transform3D(1.0698568, 0, 0, 0, 9.193348, 0, 0, 0, 1.0698568, -6, 3.61, -1.359)
+mesh = SubResource("BoxMesh_rrk03")
+
+[node name="Wall2" type="MeshInstance3D" parent="BuildingStructure"]
+transform = Transform3D(1.07, 0, 0, 0, 9.19, 0, 0, 0, 1.07, 6, 3.61, -1.359)
+mesh = SubResource("BoxMesh_7xjua")
+
+[node name="Wall3" type="MeshInstance3D" parent="BuildingStructure"]
+transform = Transform3D(9.153043, 0, 0, 0, 9.19, 0, 0, 0, 1.07, 21.394299, 3.61, -1.359)
+mesh = SubResource("BoxMesh_2al8d")
+
+[node name="Wall4" type="MeshInstance3D" parent="BuildingStructure"]
+transform = Transform3D(9.15, 0, 0, 0, 9.19, 0, 0, 0, 1.07, -21.39, 3.61, -1.359)
+mesh = SubResource("BoxMesh_47nnb")
