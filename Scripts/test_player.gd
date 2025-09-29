@@ -7,13 +7,14 @@ var hasKey = false
 func start():
 	hitBox.disabled = false
 	
-func get_input():
-	var input_direction = Input.get_vector("left", "right", "up", "down")
-	velocity = input_direction * speed
 	
-func _physics_process(delta):
-	get_input()
-	move_and_slide()
+#func get_input():
+	#var input_direction = Input.get_vector("left", "right", "up", "down")
+	#velocity = input_direction * speed
+	
+#func _physics_process(delta):
+	#get_input()
+	#move_and_slide()
 		
 		
 func _die():
@@ -28,5 +29,11 @@ func _get_key():
 func _has_key():
 	return hasKey
 	
-
+#Automatic movement that happens when the puddle is deactivated
+func _move_to_right_door(delta):
+	while (position != Vector2(1126,534)):
+		global_position = global_position.move_toward(Vector2(1126,534), speed * delta)
+		#Line of code below found on GDScript.com
+		await get_tree().create_timer(0.001).timeout
+		
 	
