@@ -13,7 +13,12 @@ config_version=5
 config/name="HazardHotel"
 run/main_scene="uid://ciyg5c7q4eydm"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://Assets/icon.svg"
+config/icon="res://PrototypeAssets/icon.svg"
+
+[autoload]
+
+Global="*res://Donovan/Scripts/Data Transfer Test/global.gd"
+MainDataStorageTest="*res://Donovan/Scripts/Data Transfer Test/main_data_storage_test.gd"
 
 [global_group]
 

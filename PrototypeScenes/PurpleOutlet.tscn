@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhwqol84gphvy"]
+
+[ext_resource type="Script" uid="uid://128dd8nd7isu" path="res://PrototypeScripts/Changing.gd" id="1_j5c55"]
+[ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://PrototypeAssets/icon.svg" id="1_l8nsf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j5c55"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l8nsf")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8nsf"]
+size = Vector2(77, 71)
+
+[node name="Test" type="Area2D"]
+script = ExtResource("1_j5c55")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(0.673531, 0.258541, 1, 1)
+position = Vector2(-1.90735e-06, 1)
+scale = Vector2(0.679688, 0.679688)
+sprite_frames = SubResource("SpriteFrames_j5c55")
+animation = &"Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_l8nsf")
