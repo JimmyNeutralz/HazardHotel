@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://shes5jv2b5bp"]
+
+[ext_resource type="PackedScene" uid="uid://bobqoq6y82idb" path="res://Scenes/auto_movement_player.tscn" id="1_02kgd"]
+[ext_resource type="PackedScene" uid="uid://chbp44sv6cv88" path="res://Scenes/Ground.tscn" id="2_w5wry"]
+
+[node name="AutoMovementPart1" type="Node2D"]
+
+[node name="AutoMovementPlayer" parent="." instance=ExtResource("1_02kgd")]
+position = Vector2(304, 508)
+
+[node name="Ground" parent="." instance=ExtResource("2_w5wry")]
+position = Vector2(575, 633)

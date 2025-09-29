@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://kr3hi7mq6sc1"]
+
+[node name="ElectricDoor" type="Node2D"]
