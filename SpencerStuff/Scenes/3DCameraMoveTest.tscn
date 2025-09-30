@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://c8fihlxng3041"]
+[gd_scene load_steps=18 format=3 uid="uid://c8fihlxng3041"]
 
-[ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scenes/right_room_trigger.gd" id="1_47nnb"]
+[ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="1_47nnb"]
 [ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="1_jw1iv"]
 [ext_resource type="Script" uid="uid://datksxm4mfkrp" path="res://SpencerStuff/Scripts/playermove.gd" id="2_7xjua"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="3_2al8d"]
+[ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="3_8fa8w"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rrk03"]
 albedo_color = Color(0.20527115, 0.11598206, 0.05667814, 1)
@@ -28,6 +29,12 @@ size = Vector3(0.05529785, 4.3795776, 1.8497314)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7xjua"]
 size = Vector3(0.08181381, 3.684513, 11.727295)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8fa8w"]
+size = Vector3(0.17199707, 4.121582, 1.894104)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u67i7"]
+size = Vector3(0.10595703, 3.8581543, 1.8320313)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_47nnb"]
 size = Vector3(0.9762726, 1.0133591, 0.0927124)
@@ -127,6 +134,17 @@ script = ExtResource("3_2al8d")
 transform = Transform3D(-4.3711367e-08, 0, 0.99999964, 0, 1, 0, -0.99999964, 0, -4.371139e-08, 1.9459955, 0.09474349, 0.47665644)
 shape = SubResource("BoxShape3D_7xjua")
 
+[node name="MainRoomTrigger" type="Area3D" parent="CameraTriggers"]
+script = ExtResource("3_8fa8w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraTriggers/MainRoomTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.183577, 2.1864014, -0.115875244)
+shape = SubResource("BoxShape3D_8fa8w")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CameraTriggers/MainRoomTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.333379, 2.197402, -0.13183594)
+shape = SubResource("BoxShape3D_u67i7")
+
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2894103)
 script = ExtResource("2_7xjua")
@@ -141,3 +159,4 @@ shape = SubResource("BoxShape3D_47nnb")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="CameraTriggers/MainRoomTrigger" to="CameraTriggers/MainRoomTrigger" method="_on_body_entered"]

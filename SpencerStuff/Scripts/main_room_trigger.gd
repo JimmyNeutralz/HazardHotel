@@ -5,10 +5,10 @@ extends Area3D
 @onready var camera2 = $"../../Cameras/Camera2"
 @onready var camera3 = $"../../Cameras/Camera3"
 
-#Detect player, set proper camera
+#Detect player and set proper camera
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
-		print("Player entered left room")
-		camera1.current = false
-		camera2.current = true
+		print("Player in main room")
+		camera1.current = true
+		camera2.current = false
 		camera3.current = false
