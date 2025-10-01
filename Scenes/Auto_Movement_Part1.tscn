@@ -1,12 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://shes5jv2b5bp"]
+[gd_scene load_steps=5 format=3 uid="uid://shes5jv2b5bp"]
 
 [ext_resource type="PackedScene" uid="uid://bobqoq6y82idb" path="res://Scenes/auto_movement_player.tscn" id="1_02kgd"]
 [ext_resource type="PackedScene" uid="uid://chbp44sv6cv88" path="res://Scenes/Ground.tscn" id="2_w5wry"]
+[ext_resource type="PackedScene" uid="uid://dgnhbxy8v3ks8" path="res://Scenes/switch.tscn" id="3_8yrwt"]
+[ext_resource type="PackedScene" uid="uid://kr3hi7mq6sc1" path="res://Scenes/electric_door.tscn" id="3_w5wry"]
 
 [node name="AutoMovementPart1" type="Node2D"]
 
 [node name="AutoMovementPlayer" parent="." instance=ExtResource("1_02kgd")]
-position = Vector2(304, 508)
+position = Vector2(310.695, 534)
 
 [node name="Ground" parent="." instance=ExtResource("2_w5wry")]
 position = Vector2(575, 633)
+
+[node name="Switch" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("3_8yrwt")]
+position = Vector2(510, 159)
+Player = NodePath("../AutoMovementPlayer")
+
+[node name="ElectricDoor" parent="Switch" instance=ExtResource("3_w5wry")]
+position = Vector2(103, 243)
+
+[connection signal="body_entered" from="Switch/ElectricDoor" to="Switch/ElectricDoor" method="_on_body_entered"]
