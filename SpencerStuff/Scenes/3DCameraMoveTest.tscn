@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="1_47nnb"]
 [ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="1_jw1iv"]
-[ext_resource type="Script" uid="uid://datksxm4mfkrp" path="res://SpencerStuff/Scripts/playermove.gd" id="2_7xjua"]
+[ext_resource type="Script" uid="uid://datksxm4mfkrp" path="res://SpencerStuff/Scripts/player_move.gd" id="2_7xjua"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="3_2al8d"]
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="3_8fa8w"]
 
