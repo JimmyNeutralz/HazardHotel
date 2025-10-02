@@ -21,4 +21,3 @@ func _process(delta):
 	elif (Input.is_action_just_pressed("Close Eletric Door") and isOpened):
 		print("Door closed")
 		isOpened = false
-		Player._move_to_right_door(delta)

@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 400
 @onready var hitBox = $CollisionShape2D
 var hasKey = false
+var moving = false 
 
 func start():
 	hitBox.disabled = false
@@ -32,10 +33,12 @@ func _has_key():
 
 #Automatic movement that happens when the puddle is deactivated
 func _move_to_right_door(delta):
-	while (position != Vector2(1126,534)):
-		#Copilot provided answer upon searching up code to do so
-		global_position = global_position.move_toward(Vector2(1126,534), speed * delta)
-		#Line of code below found on GDScript.com
-		await get_tree().create_timer(0.001).timeout
-		
+	if (!moving):
+		moving = true
+		while (position != Vector2(1126,534)):
+			#Copilot provided answer upon searching up code to do so
+			global_position = global_position.move_toward(Vector2(1126,534), speed * delta)
+			#Line of code below found on GDScript.com
+			await get_tree().create_timer(0.001).timeout
+		moving = false
 	

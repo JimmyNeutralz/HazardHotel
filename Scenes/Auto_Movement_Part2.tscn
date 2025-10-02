@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvpt71r8unhk8"]
+
+[ext_resource type="PackedScene" uid="uid://bh55t3yeka885" path="res://Scenes/3d_player.tscn" id="1_rl6j4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tdjjp"]
+
+[node name="AutoMovementPart2" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.635, 0, 0, 0, 0.06, 0, 0, 0, 1.06, 0, 0, 0)
+mesh = SubResource("BoxMesh_tdjjp")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.93094116, 0.36516926, 0, -0.36516926, 0.93094116, 0, 1.5866497, 2.7937307)
+
+[node name="3dPlayer" parent="." instance=ExtResource("1_rl6j4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7, 0.35, 0)
