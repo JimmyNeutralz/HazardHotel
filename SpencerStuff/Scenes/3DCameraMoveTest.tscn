@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://c8fihlxng3041"]
+[gd_scene load_steps=21 format=3 uid="uid://c8fihlxng3041"]
 
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="1_47nnb"]
 [ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="1_jw1iv"]
+[ext_resource type="Script" uid="uid://boefh36wfuctl" path="res://SpencerStuff/Scripts/camera_move.gd" id="1_u67i7"]
 [ext_resource type="Script" uid="uid://datksxm4mfkrp" path="res://SpencerStuff/Scripts/player_move.gd" id="2_7xjua"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="3_2al8d"]
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="3_8fa8w"]
@@ -49,18 +50,20 @@ size = Vector3(1, 3.7720947, 3.0584717)
 
 [node name="Cameras" type="Node3D" parent="."]
 
-[node name="Camera1" type="Camera3D" parent="Cameras"]
+[node name="Camera" type="Camera3D" parent="Cameras"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 1.8)
 current = true
 fov = 115.0
+script = ExtResource("1_u67i7")
 
-[node name="Camera2" type="Camera3D" parent="Cameras"]
+[node name="MainCamPos" type="Node3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 1.8)
+
+[node name="LeftCamPos" type="Node3D" parent="Cameras"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.7, 1.8)
-fov = 115.0
 
-[node name="Camera3" type="Camera3D" parent="Cameras"]
+[node name="RightCamPos" type="Node3D" parent="Cameras"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.7, 1.8)
-fov = 115.0
 
 [node name="BuildingStructure" type="Node3D" parent="."]
 

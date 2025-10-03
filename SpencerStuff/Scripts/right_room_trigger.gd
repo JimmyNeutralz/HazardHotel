@@ -1,14 +1,11 @@
 extends Area3D
 
-#Node Paths
-@onready var camera1 = $"../../Cameras/Camera1"
-@onready var camera2 = $"../../Cameras/Camera2"
-@onready var camera3 = $"../../Cameras/Camera3"
+#node paths
+@onready var camera = $"../../Cameras/Camera"
+@onready var right_pos = $"../../Cameras/RightCamPos"
 
-#Detect player, set proper camera
+#when player enters doorway, pan to right camera pos
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		print("Player entered right room")
-		camera1.current = false
-		camera2.current = false
-		camera3.current = true
+		camera.pan_to(right_pos.global_position)
