@@ -81,11 +81,11 @@ transform = Transform3D(0.9999998, 0, 0, 0, -0.9999999, 8.742278e-08, 0, -8.7422
 mesh = SubResource("BoxMesh_jw1iv")
 
 [node name="Wall1" type="MeshInstance3D" parent="BuildingStructure"]
-transform = Transform3D(1.0698568, 0, 0, 0, 9.193348, 0, 0, 0, 1.0698568, -6, 4.83, -1.359)
+transform = Transform3D(1.0698568, 0, 0, 0, 9.193348, 0, 0, 0, 4.4604306, -6, 4.83, -1.359)
 mesh = SubResource("BoxMesh_rrk03")
 
 [node name="Wall2" type="MeshInstance3D" parent="BuildingStructure"]
-transform = Transform3D(1.07, 0, 0, 0, 9.19, 0, 0, 0, 1.07, 6, 4.83, -1.359)
+transform = Transform3D(1.07, 0, 0, 0, 9.19, 0, 0, 0, 4.460062, 6, 4.83, -1.359)
 mesh = SubResource("BoxMesh_7xjua")
 
 [node name="Wall3" type="MeshInstance3D" parent="BuildingStructure"]
