@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://cetkipvg514td"]
+
+[ext_resource type="PackedScene" uid="uid://wfw6yjg8j70b" path="res://Assets/3D Models/TESTPinch.fbx" id="1_uma47"]
+[ext_resource type="PackedScene" uid="uid://bh6y0bgfi2ogx" path="res://Assets/3D Models/TESTPinch2.fbx" id="2_wru1q"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="TESTPinch" parent="." instance=ExtResource("1_uma47")]
+transform = Transform3D(14.669813, 0, 0, 0, 14.669813, 0, 0, 0, 14.669813, -0.13023257, 0, 0.30510974)
+
+[node name="TESTPinch2" parent="." instance=ExtResource("2_wru1q")]
+transform = Transform3D(15.19563, 0, 0, 0, 15.19563, 0, 0, 0, 15.19563, -0.20499939, 0, 6.1756787)
