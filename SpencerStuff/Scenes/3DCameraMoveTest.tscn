@@ -1,11 +1,11 @@
 [gd_scene load_steps=21 format=3 uid="uid://c8fihlxng3041"]
 
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="1_47nnb"]
-[ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://Assets/icon.svg" id="1_jw1iv"]
 [ext_resource type="Script" uid="uid://boefh36wfuctl" path="res://SpencerStuff/Scripts/camera_move.gd" id="1_u67i7"]
 [ext_resource type="Script" uid="uid://datksxm4mfkrp" path="res://SpencerStuff/Scripts/player_move.gd" id="2_7xjua"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="3_2al8d"]
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="3_8fa8w"]
+[ext_resource type="Texture2D" uid="uid://bw2bc6oekwjlp" path="res://icon.svg" id="6_u67i7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rrk03"]
 albedo_color = Color(0.20527115, 0.11598206, 0.05667814, 1)
@@ -160,7 +160,7 @@ script = ExtResource("2_7xjua")
 
 [node name="Sprite3D" type="Sprite3D" parent="Player"]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0.87374556, -0.332712)
-texture = ExtResource("1_jw1iv")
+texture = ExtResource("6_u67i7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002708435, 0.86590254, -0.32621175)

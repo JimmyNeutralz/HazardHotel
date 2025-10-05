@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://21e06ht2brvw"]
+
+[ext_resource type="Script" uid="uid://cg6h8myr2k0cn" path="res://Donovan/Scripts/Data Transfer Test/main_data_storage_test.gd" id="1_pfp5d"]
+
+[node name="MainDataStorageTest" type="Node2D"]
+script = ExtResource("1_pfp5d")
