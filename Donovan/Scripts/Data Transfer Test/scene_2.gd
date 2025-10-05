@@ -5,6 +5,7 @@ extends Control
 # functions in the MainDataStorageTest globally loaded object
 var callable = Callable(MainDataStorageTest, "_increasePoints")
 var callable2 = Callable(MainDataStorageTest, "_printScore")
+var callable3 = Callable(MainDataStorageTest, "_toggleRed8")
 
 
 # Prints score when loading into scene
@@ -18,3 +19,7 @@ func _on_button_pressed():
 # Point increasing button
 func _on_button_2_pressed() -> void:
 	callable.call()
+
+
+func _on_button_3_pressed() -> void:
+	callable3.call()

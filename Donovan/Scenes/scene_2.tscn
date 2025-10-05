@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkjqf3vdma563"]
+[gd_scene load_steps=6 format=3 uid="uid://bkjqf3vdma563"]
 
 [ext_resource type="Script" uid="uid://c00ay6v7erav1" path="res://Donovan/Scripts/Data Transfer Test/scene_2.gd" id="1_mpiqn"]
 [ext_resource type="FontFile" path="res://font1.tres" id="2"]
 [ext_resource type="Texture2D" uid="uid://bw2bc6oekwjlp" path="res://icon.svg" id="3"]
+[ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://PrototypeAssets/icon.svg" id="4_mgr61"]
+[ext_resource type="Script" uid="uid://bsmydu7br8h5c" path="res://Donovan/Scripts/Data Transfer Test/RedLight.gd" id="5_8roae"]
 
 [node name="Scene2" type="Control"]
 layout_mode = 3
@@ -51,5 +53,29 @@ theme_override_fonts/font = ExtResource("2")
 text = "Go to Scene1"
 icon = ExtResource("3")
 
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51000005
+anchor_top = 0.5
+anchor_right = 0.51000005
+anchor_bottom = 0.5
+offset_left = 246.47992
+offset_top = -117.0
+offset_right = 286.47992
+offset_bottom = -86.0
+text = "8"
+script = ExtResource("5_8roae")
+
+[node name="Line2D" type="Line2D" parent="Button3"]
+z_index = -1
+points = PackedVector2Array(31, 24, 147, 66)
+default_color = Color(0, 0, 0, 1)
+
+[node name="RedLight" type="Sprite2D" parent="Button3"]
+position = Vector2(199, 119)
+texture = ExtResource("4_mgr61")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
