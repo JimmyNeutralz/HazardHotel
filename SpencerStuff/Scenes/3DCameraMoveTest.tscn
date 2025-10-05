@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://datksxm4mfkrp" path="res://SpencerStuff/Scripts/player_move.gd" id="2_7xjua"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="3_2al8d"]
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="3_8fa8w"]
-[ext_resource type="Texture2D" uid="uid://bw2bc6oekwjlp" path="res://icon.svg" id="6_u67i7"]
+[ext_resource type="Texture2D" uid="uid://bw2bc6oekwjlp" path="res://Assets/icon.svg" id="6_u67i7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rrk03"]
 albedo_color = Color(0.20527115, 0.11598206, 0.05667814, 1)
