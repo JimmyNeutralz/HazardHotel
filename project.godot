@@ -20,6 +20,10 @@ config/icon="res://PrototypeAssets/icon.svg"
 Global="*res://Donovan/Scripts/Data Transfer Test/global.gd"
 MainDataStorageTest="*res://Donovan/Scripts/Data Transfer Test/main_data_storage_test.gd"
 
+[dotnet]
+
+project/assembly_name="HazardHotel"
+
 [global_group]
 
 Player="Player Controlled Characters"
