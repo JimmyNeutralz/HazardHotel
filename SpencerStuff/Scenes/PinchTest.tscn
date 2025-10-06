@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://cetkipvg514td"]
+[gd_scene load_steps=22 format=3 uid="uid://cetkipvg514td"]
 
 [ext_resource type="PackedScene" uid="uid://wfw6yjg8j70b" path="res://Assets/3D Models/TESTPinch.fbx" id="1_cftqu"]
 [ext_resource type="PackedScene" uid="uid://bh6y0bgfi2ogx" path="res://Assets/3D Models/TESTPinch2.fbx" id="2_o0llc"]
@@ -37,6 +37,8 @@ size = Vector3(0.015350342, 1.1323242, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lnt0b"]
 size = Vector3(0.024658203, 1.1094971, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ajl8t"]
 
 [node name="Node3D" type="Node3D"]
 
@@ -150,6 +152,10 @@ texture = ExtResource("9_06vlh")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RightDoor/RightArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6664252, 0.58285403, 6.3722587)
 shape = SubResource("BoxShape3D_lnt0b")
+
+[node name="TestBox" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.470565)
+mesh = SubResource("BoxMesh_ajl8t")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
