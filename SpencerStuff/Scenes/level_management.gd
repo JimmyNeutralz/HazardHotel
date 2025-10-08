@@ -1,15 +1,16 @@
 extends Node3D
 
-# Corrected paths based on your structure
+#Node paths
 @onready var left_key = $LeftWall/LeftKey
 @onready var right_key = $RightWall/RightKey
 @onready var elevator_lock = $Elevator/ElevatorLock
 
+#Key states
 var has_left_key: bool = false
 var has_right_key: bool = false
 
 
-# Called when Player enters the LeftTrigger Area3D
+#Left key area trigger
 func _on_left_trigger_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		if not has_left_key:
@@ -19,7 +20,7 @@ func _on_left_trigger_body_entered(body: Node3D) -> void:
 			_check_keys()
 
 
-# Called when Player enters the RightTrigger Area3D
+#Right key area trigger
 func _on_right_trigger_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		if not has_right_key:
@@ -28,7 +29,7 @@ func _on_right_trigger_body_entered(body: Node3D) -> void:
 			print("Right key obtained")
 			_check_keys()
 
-
+#Check for player having both keys, open elevator
 func _check_keys() -> void:
 	if has_left_key and has_right_key:
 		elevator_lock.visible = false
