@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvpt71r8unhk8"]
+[gd_scene load_steps=6 format=3 uid="uid://dvpt71r8unhk8"]
 
 [ext_resource type="PackedScene" uid="uid://bh55t3yeka885" path="res://Scenes/3d_player.tscn" id="1_rl6j4"]
 [ext_resource type="PackedScene" uid="uid://bby3pv6515v6q" path="res://Scenes/death_puddle_3D.tscn" id="2_3ei81"]
+[ext_resource type="Script" uid="uid://0yrj1d065syg" path="res://Scripts/3d_player_movement.gd" id="2_hm5ww"]
 [ext_resource type="PackedScene" uid="uid://cw22ieusv80tf" path="res://Scenes/puddle_colider.tscn" id="3_a13u5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tdjjp"]
@@ -17,6 +18,8 @@ transform = Transform3D(1, 0, 0, 0, 0.93094116, 0.36516926, 0, -0.36516926, 0.93
 
 [node name="3dPlayer" parent="." instance=ExtResource("1_rl6j4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66, 0.35, 0)
+script = ExtResource("2_hm5ww")
+speed = 2
 
 [node name="DeathPuddle3d" parent="." instance=ExtResource("2_3ei81")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1468921, 0.042937636, 0)

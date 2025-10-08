@@ -1,4 +1,4 @@
-using Godot;
+/*using Godot;
 using System;
 
 
@@ -38,7 +38,7 @@ public partial class Auto_Movement_3D : Node
 			leftKeyPressed = false;
 			rightKeyPressed = false;
 			centerKeyPressed = true;
-			if (player.GlobalPosition.x >= 0) {
+			if (player.global_position.x >= 0) {
 				direction = new Vector3(-stopPoint, 0, 0);
 			}
 			else if (player.global_position.x <= 0) {
@@ -52,4 +52,4 @@ public partial class Auto_Movement_3D : Node
 			// player.GlobalTransform
 		}
 	}
-}
+}*/
