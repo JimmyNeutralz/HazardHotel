@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var speed: float = 2.5  #Movespeed
+@export var speed: float = 3.5  #Movespeed
 
 func _physics_process(delta: float) -> void:
 	
