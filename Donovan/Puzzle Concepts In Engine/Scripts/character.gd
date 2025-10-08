@@ -6,6 +6,8 @@ extends CharacterBody3D
 @export var fall_acceleration = 75
 
 var target_velocity = Vector3.ZERO
+var MyCSharpScript = load("res://Donovan/Puzzle Concepts In Engine/Scripts/character.cs")
+var my_csharp_node = MyCSharpScript.new()
 
 
 func _physics_process(delta):
@@ -24,6 +26,6 @@ func _physics_process(delta):
 	if not is_on_floor(): # If in the air, fall towards the floor. Literally gravity
 		target_velocity.y = target_velocity.y - (fall_acceleration * delta)
 
-	# Moving the Character
+	 #Moving the Character
 	velocity = target_velocity
 	move_and_slide()

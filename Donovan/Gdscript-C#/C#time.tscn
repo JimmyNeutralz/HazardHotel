@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn5kyc0pc6tlq"]
+
+[ext_resource type="Script" uid="uid://bftuok24t7cq6" path="res://Donovan/Gdscript-C#/bigtest.cs" id="1_qfrhf"]
+[ext_resource type="Script" uid="uid://goy2fmaga3ok" path="res://Donovan/Gdscript-C#/loomp.gd" id="2_35aub"]
+
+[node name="C#time" type="Node2D"]
+script = ExtResource("1_qfrhf")
+
+[node name="plink" type="Node" parent="."]
+script = ExtResource("2_35aub")
