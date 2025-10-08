@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxr80dca277iy"]
+
+[ext_resource type="Texture2D" uid="uid://bw2bc6oekwjlp" path="res://icon.svg" id="1_hyyfh"]
+[ext_resource type="Script" uid="uid://jktwfylu5gfv" path="res://Donovan/Puzzle Concepts In Engine/Scripts/character.gd" id="1_yc0s2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l73yv"]
+size = Vector3(0.14550781, 1.2743073, 1.2660522)
+
+[node name="CharacterBody3D" type="CharacterBody3D" groups=["Player"]]
+script = ExtResource("1_yc0s2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." groups=["Player"]]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+shape = SubResource("BoxShape3D_l73yv")
+
+[node name="Sprite3D" type="Sprite3D" parent="." groups=["Player"]]
+transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 0, 0, 0)
+texture = ExtResource("1_hyyfh")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4e18i2aghctk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xaljf"]
+albedo_color = Color(0.3180198, 0.31801978, 0.31801975, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_eeqxh"]
+size = Vector3(1, 2.3483887, 0.30812645)
+
+[node name="ElectricGate" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(0.9819336, 2.3368835, 0.1293335)
+material = SubResource("StandardMaterial3D_xaljf")
+
+[node name="Area3D" type="Area3D" parent="CSGBox3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0018310547, -0.0037870407)
+shape = SubResource("BoxShape3D_eeqxh")

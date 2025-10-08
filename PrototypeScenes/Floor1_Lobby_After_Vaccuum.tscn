@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://ti1cp7hm80v3"]
+
+[ext_resource type="PackedScene" uid="uid://chbp44sv6cv88" path="res://PrototypeScenes/Ground.tscn" id="1_iqxec"]
+[ext_resource type="PackedScene" uid="uid://m3qe0cl2flf3" path="res://PrototypeScenes/OrangeOutlet.tscn" id="2_ywtep"]
+[ext_resource type="PackedScene" uid="uid://ccmg37qsid06o" path="res://PrototypeScenes/death_puddle.tscn" id="3_u7eo8"]
+[ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://PrototypeAssets/icon.svg" id="4_ryh2f"]
+[ext_resource type="PackedScene" uid="uid://cu0y5x0iuloi4" path="res://PrototypeScenes/test_player.tscn" id="5_t8etn"]
+[ext_resource type="PackedScene" uid="uid://b0bhofhoa6rl6" path="res://PrototypeScenes/Lamp.tscn" id="6_y6oia"]
+[ext_resource type="PackedScene" uid="uid://bwhb2kh2rg1d3" path="res://PrototypeScenes/YellowOutlet.tscn" id="7_w006s"]
+[ext_resource type="PackedScene" uid="uid://dobi4km4r002g" path="res://PrototypeScenes/dumbWaiter.tscn" id="8_dt71l"]
+[ext_resource type="PackedScene" uid="uid://bqkha3ibjad3h" path="res://PrototypeScenes/lockedDoor.tscn" id="9_8w3e6"]
+[ext_resource type="PackedScene" uid="uid://bb0xrsfi6f64g" path="res://PrototypeScenes/door2.tscn" id="10_ywtep"]
+
+[node name="Main" type="Node"]
+
+[node name="Floor" parent="." instance=ExtResource("1_iqxec")]
+position = Vector2(579, 634)
+
+[node name="Orange" parent="." instance=ExtResource("2_ywtep")]
+z_index = 1
+position = Vector2(1037, 501)
+
+[node name="DeathPuddle" parent="Orange" instance=ExtResource("3_u7eo8")]
+position = Vector2(-4, 119)
+
+[node name="wire" type="Sprite2D" parent="Orange"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(32.6642, 83.0528)
+rotation = -0.752237
+scale = Vector2(0.046875, 0.870474)
+texture = ExtResource("4_ryh2f")
+
+[node name="TestPlayer" parent="." instance=ExtResource("5_t8etn")]
+position = Vector2(460, 534)
+
+[node name="Lamp" parent="." instance=ExtResource("6_y6oia")]
+position = Vector2(-3, 3)
+
+[node name="Yellow" parent="." instance=ExtResource("7_w006s")]
+position = Vector2(288, 410)
+
+[node name="DumbWaiter" parent="Yellow" instance=ExtResource("8_dt71l")]
+position = Vector2(-286, -412)
+
+[node name="wire" type="Sprite2D" parent="Yellow"]
+modulate = Color(0, 0, 0, 1)
+z_index = -1
+position = Vector2(-50, 3)
+scale = Vector2(0.921875, 0.0703125)
+texture = ExtResource("4_ryh2f")
+
+[node name="Door" parent="." instance=ExtResource("9_8w3e6")]
+position = Vector2(-1, -28)
+
+[node name="Area2D" parent="." instance=ExtResource("10_ywtep")]
+position = Vector2(10, 466)

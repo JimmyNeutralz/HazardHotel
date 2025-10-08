@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4j6qqqal7261"]
+
+[ext_resource type="Texture2D" uid="uid://6ekllame78h0" path="res://PrototypeAssets/531178.png" id="1_qvna0"]
+[ext_resource type="Script" uid="uid://dgy7x7hwjsp8b" path="res://SpencerStuff/Scripts/test_csharp_move.cs" id="1_ubplq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_of5n8"]
+
+[node name="C#testing" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(5.5990477, 0, 0, 0, 1, 0, 0, 0, 3.5499003, 0, 0, 0)
+mesh = SubResource("BoxMesh_of5n8")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9938959, 2.2806432)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8341557, 0)
+light_energy = 10.0
+omni_range = 50.0
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.83115065, 0)
+script = ExtResource("1_ubplq")
+
+[node name="Sprite3D" type="Sprite3D" parent="CharacterBody3D"]
+texture = ExtResource("1_qvna0")
