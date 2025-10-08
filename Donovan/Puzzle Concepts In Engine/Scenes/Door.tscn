@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://rf2xdjc6c1hr"]
+
+[ext_resource type="Script" uid="uid://dgxroycxx8edx" path="res://Donovan/Puzzle Concepts In Engine/Scripts/door.gd" id="1_86d0u"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w0gsj"]
+size = Vector3(0.7675781, 1.4598389, 0.26013184)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nhgln"]
+albedo_color = Color(0.39428967, 0.26184264, 0.059737302, 1)
+
+[node name="Door" type="Area3D"]
+script = ExtResource("1_86d0u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001953125, 0.00079345703, -0.0018920898)
+shape = SubResource("BoxShape3D_w0gsj")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+size = Vector3(0.7633209, 1.4616089, 0.10620117)
+material = SubResource("StandardMaterial3D_nhgln")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

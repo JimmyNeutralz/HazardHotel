@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cak6e4btehy55"]
+
+[ext_resource type="Script" uid="uid://c7m6stfokhbis" path="res://Donovan/C#-Gdscript/testingtime.gd" id="1_0vhj2"]
+[ext_resource type="Script" uid="uid://yd3nk2puhfja" path="res://Donovan/C#-Gdscript/testButton.cs" id="2_o7jlu"]
+
+[node name="Scene1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0vhj2")
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource("2_o7jlu")
