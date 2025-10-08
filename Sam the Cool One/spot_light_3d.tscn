@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckby4yr7a2ax7"]
+
+[ext_resource type="Script" uid="uid://dfehovmejrt21" path="res://Sam the Cool One/DetectLitObjects.gd" id="1_7jbtq"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cguwc"]
+
+[node name="SpotLight3D" type="SpotLight3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+light_energy = 0.5
+shadow_enabled = true
+spot_range = 4.0
+spot_attenuation = 19.76
+spot_angle = 30.0
+spot_angle_attenuation = 1e-05
+script = ExtResource("1_7jbtq")
+
+[node name="Detection Area" type="Area3D" parent="."]
+
+[node name="Detection Shape" type="CollisionShape3D" parent="Detection Area"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_cguwc")
+debug_color = Color(0.9206625, 0.20030564, 0.4944564, 0.41960785)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+
+[connection signal="body_entered" from="Detection Area" to="Detection Area" method="_on_body_entered"]
+[connection signal="body_exited" from="Detection Area" to="." method="_on_detection_area_body_exited"]
