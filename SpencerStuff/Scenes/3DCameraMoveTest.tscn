@@ -1,0 +1,185 @@
+[gd_scene load_steps=21 format=3 uid="uid://c8fihlxng3041"]
+
+[ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="1_47nnb"]
+[ext_resource type="Script" uid="uid://boefh36wfuctl" path="res://SpencerStuff/Scripts/camera_move.gd" id="1_u67i7"]
+[ext_resource type="Script" uid="uid://datksxm4mfkrp" path="res://SpencerStuff/Scripts/player_move.gd" id="2_7xjua"]
+[ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="3_2al8d"]
+[ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="3_8fa8w"]
+[ext_resource type="Texture2D" uid="uid://bw2bc6oekwjlp" path="res://Assets/icon.svg" id="6_u67i7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rrk03"]
+albedo_color = Color(0.20527115, 0.11598206, 0.05667814, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cihdc"]
+material = SubResource("StandardMaterial3D_rrk03")
+size = Vector3(10, 4, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jw1iv"]
+size = Vector3(10, 1, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_rrk03"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7xjua"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2al8d"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_47nnb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2al8d"]
+size = Vector3(0.05529785, 4.3795776, 1.8497314)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7xjua"]
+size = Vector3(0.08181381, 3.684513, 11.727295)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8fa8w"]
+size = Vector3(0.17199707, 4.121582, 1.894104)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u67i7"]
+size = Vector3(0.10595703, 3.8581543, 1.8320313)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_47nnb"]
+size = Vector3(0.9762726, 1.0133591, 0.0927124)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_phmoa"]
+size = Vector3(1, 3.6931152, 2.744629)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dw6oc"]
+size = Vector3(1, 3.7720947, 3.0584717)
+
+[node name="Demo" type="Node3D"]
+
+[node name="Cameras" type="Node3D" parent="."]
+
+[node name="Camera" type="Camera3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 1.8)
+current = true
+fov = 115.0
+script = ExtResource("1_u67i7")
+
+[node name="MainCamPos" type="Node3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 1.8)
+
+[node name="LeftCamPos" type="Node3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 1.7, 1.8)
+
+[node name="RightCamPos" type="Node3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 1.7, 1.8)
+
+[node name="BuildingStructure" type="Node3D" parent="."]
+
+[node name="BackWall" type="MeshInstance3D" parent="BuildingStructure"]
+transform = Transform3D(-3.9045997, 2.5029135e-07, 0, 3.4135095e-07, 2.8629992, 0, 0, 0, -0.189, 0, 1.5084517, -1.9718783)
+mesh = SubResource("BoxMesh_cihdc")
+skeleton = NodePath("../..")
+
+[node name="Floor" type="MeshInstance3D" parent="BuildingStructure"]
+transform = Transform3D(-16.884884, 0, 0, 0, 0.7015966, 0, 0, 0, 1.7411741, 0, 0, -0.87200934)
+mesh = SubResource("BoxMesh_jw1iv")
+
+[node name="Floor" type="MeshInstance3D" parent="BuildingStructure/Floor"]
+transform = Transform3D(0.9999998, 0, 0, 0, -0.9999999, 8.742278e-08, 0, -8.742278e-08, -0.9999999, 0, 6.0734515, 0.06686479)
+mesh = SubResource("BoxMesh_jw1iv")
+
+[node name="Wall1" type="MeshInstance3D" parent="BuildingStructure"]
+transform = Transform3D(1.0698568, 0, 0, 0, 9.193348, 0, 0, 0, 4.4604306, -6, 4.83, -1.359)
+mesh = SubResource("BoxMesh_rrk03")
+
+[node name="Wall2" type="MeshInstance3D" parent="BuildingStructure"]
+transform = Transform3D(1.07, 0, 0, 0, 9.19, 0, 0, 0, 4.460062, 6, 4.83, -1.359)
+mesh = SubResource("BoxMesh_7xjua")
+
+[node name="Wall3" type="MeshInstance3D" parent="BuildingStructure"]
+transform = Transform3D(9.153, 0, 0, 0, 3.9992123, 0, 0, 0, 4.446608, 21.394, 2.033, -1.359)
+mesh = SubResource("BoxMesh_2al8d")
+
+[node name="Wall4" type="MeshInstance3D" parent="BuildingStructure"]
+transform = Transform3D(9.15, 0, 0, 0, 4.0856676, 0, 0, 0, 4.3829055, -21.39, 2.031, -1.36)
+mesh = SubResource("BoxMesh_47nnb")
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="Light1" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2, 2.4, 0)
+light_energy = 5.0
+
+[node name="Light2" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 2.4, 0)
+light_energy = 5.0
+
+[node name="Light3" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.8, 2.4, 0)
+light_energy = 5.0
+
+[node name="Light4" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.8, 2.4, 0)
+light_energy = 5.0
+
+[node name="Light5" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 2.4, 0)
+light_energy = 5.0
+
+[node name="Light6" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.8, 2.4, 0)
+light_energy = 5.0
+
+[node name="CameraTriggers" type="Node3D" parent="."]
+
+[node name="RightRoomTrigger" type="Area3D" parent="CameraTriggers"]
+collision_layer = 255
+collision_mask = 255
+script = ExtResource("1_47nnb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraTriggers/RightRoomTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5475345, 2.244957, -0.04046631)
+shape = SubResource("BoxShape3D_2al8d")
+
+[node name="LeftRoomTrigger" type="Area3D" parent="CameraTriggers"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -5.937, 2.048, -0.084)
+collision_layer = 255
+collision_mask = 255
+script = ExtResource("3_2al8d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraTriggers/LeftRoomTrigger"]
+transform = Transform3D(-4.3711367e-08, 0, 0.99999964, 0, 1, 0, -0.99999964, 0, -4.371139e-08, 1.9459955, 0.09474349, 0.47665644)
+shape = SubResource("BoxShape3D_7xjua")
+
+[node name="MainRoomTrigger" type="Area3D" parent="CameraTriggers"]
+script = ExtResource("3_8fa8w")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraTriggers/MainRoomTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.183577, 2.1864014, -0.115875244)
+shape = SubResource("BoxShape3D_8fa8w")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="CameraTriggers/MainRoomTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.333379, 2.197402, -0.13183594)
+shape = SubResource("BoxShape3D_u67i7")
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.2894103)
+script = ExtResource("2_7xjua")
+
+[node name="Sprite3D" type="Sprite3D" parent="Player"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0.87374556, -0.332712)
+texture = ExtResource("6_u67i7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002708435, 0.86590254, -0.32621175)
+shape = SubResource("BoxShape3D_47nnb")
+
+[node name="Borders" type="Node3D" parent="."]
+
+[node name="LeftBorder" type="StaticBody3D" parent="Borders"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Borders/LeftBorder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.2482, 2.023201, -0.57006836)
+shape = SubResource("BoxShape3D_phmoa")
+
+[node name="RightBorder" type="StaticBody3D" parent="Borders"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Borders/RightBorder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.274698, 2.1263533, -0.53082275)
+shape = SubResource("BoxShape3D_dw6oc")
+
+[connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="CameraTriggers/MainRoomTrigger" to="CameraTriggers/MainRoomTrigger" method="_on_body_entered"]
