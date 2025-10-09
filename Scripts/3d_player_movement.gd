@@ -13,6 +13,7 @@ var stopPoint = 2.66
 var leftKeyPressed = false
 var rightKeyPressed = false
 var centerKeyPressed = false
+var preventMoving = false
 
 func _process(delta):
 	#If the A key is pressed, set desination to 1.7 to the left
@@ -21,9 +22,10 @@ func _process(delta):
 		leftKeyPressed = true
 		rightKeyPressed = false
 		centerKeyPressed = false
+		preventMoving = false
 		direction = Vector3(-stopPoint, 0, 0)
 	#If the D key is pressed, set desination to 1.7 to the right
-	elif(Input.is_action_just_pressed("Right 3D Spot") and !rightKeyPressed):
+	elif(Input.is_action_just_pressed("Right 3D Spot") and !rightKeyPressed and !preventMoving):
 		#print("If met")
 		rightKeyPressed = true
 		leftKeyPressed = false
@@ -35,6 +37,7 @@ func _process(delta):
 		centerKeyPressed = true
 		leftKeyPressed = false
 		rightKeyPressed = false
+		preventMoving = false
 		#direction = Vector3(-global_position.x, 0, 0)
 		
 		#Sets direction appropreately so that the speed to the center is consistent with left and right travel
@@ -65,9 +68,12 @@ func _process(delta):
 		#location = Vector3(1.7,0.35,0)
 		
 	
-func stop_moving():
-	leftKeyPressed = false
-	rightKeyPressed = false
-	centerKeyPressed = false
-	
-	print("That was a close one!")
+func stop_moving(electrified):
+	if (electrified):
+		leftKeyPressed = false
+		rightKeyPressed = false
+		centerKeyPressed = false
+		print("That was a close one!")
+		preventMoving = true
+	else:
+		preventMoving = false

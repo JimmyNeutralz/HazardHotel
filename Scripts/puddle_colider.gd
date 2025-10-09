@@ -10,12 +10,11 @@ var electrified = true
 func _process(delta):
 	if (Input.is_action_just_pressed("Disable 3D Puddle Electricity")):
 		electrified = false
+		player.stop_moving(electrified)
 	elif (Input.is_action_just_pressed("Enable 3D Puddle Electricity")):
 		electrified = true
 		
 
 func _on_body_entered(body: Node3D) -> void:
 	print("Func reached")
-	if (electrified):
-		print("If reached")
-		player.stop_moving()
+	player.stop_moving(electrified)
