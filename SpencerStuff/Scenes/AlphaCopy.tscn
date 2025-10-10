@@ -1,17 +1,21 @@
-[gd_scene load_steps=24 format=3 uid="uid://btns8idyn4wf2"]
+[gd_scene load_steps=34 format=3 uid="uid://btns8idyn4wf2"]
 
 [ext_resource type="Script" uid="uid://cho7xqaqgg2ro" path="res://SpencerStuff/Scenes/level_management.gd" id="1_8m2y4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_3rf5q"]
 [ext_resource type="Script" uid="uid://cb4xuh6705m0d" path="res://SpencerStuff/Scripts/player_move_pinch.gd" id="3_f063y"]
-[ext_resource type="Texture2D" uid="uid://bw2bc6oekwjlp" path="res://Assets/icon.svg" id="4_0kak2"]
+[ext_resource type="Texture2D" uid="uid://dti6vh1iw17rq" path="res://Assets/HH_Art_NewGuySprite_V1_.png" id="4_8m2y4"]
 [ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="5_idyij"]
+[ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="6_3rf5q"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="6_ffsuc"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="7_3sj2a"]
+[ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="7_f063y"]
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="8_vp5db"]
 [ext_resource type="Script" uid="uid://bg4bius86njfo" path="res://SpencerStuff/Scripts/left_door.gd" id="9_ddpym"]
 [ext_resource type="Texture2D" uid="uid://bekut30xmeumk" path="res://Assets/Lock.png" id="10_l78sk"]
 [ext_resource type="Script" uid="uid://bn5vexagvnj6c" path="res://SpencerStuff/Scripts/right_door.gd" id="11_2aswb"]
 [ext_resource type="Texture2D" uid="uid://bjgv41ufsr321" path="res://Assets/key.png" id="12_kuw7c"]
+[ext_resource type="PackedScene" uid="uid://clhua17db53gv" path="res://Assets/3D Models/HH_Art_Puddle_v1.fbx" id="15_0kak2"]
+[ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="16_idyij"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5fj6f"]
 size = Vector3(1.2994995, 1.2765503, 0.11035156)
@@ -46,6 +50,23 @@ size = Vector3(1, 3.166504, 2.3077393)
 [sub_resource type="BoxShape3D" id="BoxShape3D_h7tgk"]
 size = Vector3(1, 3.1601563, 2.31604)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_f063y"]
+size = Vector3(2.0975342, 0.8051758, 0.8741455)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0kak2"]
+size = Vector3(2.2730713, 0.62597656, 1.4420166)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0kak2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_idyij"]
+size = Vector3(0.16955566, 3.5111084, 2.2953491)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idyij"]
+albedo_color = Color(0.9030753, 0, 0.07757329, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ffsuc"]
+material = SubResource("StandardMaterial3D_idyij")
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_8m2y4")
 
@@ -56,9 +77,9 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.01, 0.623, -0.544)
 script = ExtResource("3_f063y")
 
 [node name="Sprite3D" type="Sprite3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0507035)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.15889424, 1.0507035)
 shaded = true
-texture = ExtResource("4_0kak2")
+texture = ExtResource("4_8m2y4")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.008636475, 0.0017394423, 1.0423431)
@@ -85,13 +106,22 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 1.44, 2.985)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 1.5, 0.175)
 
 [node name="LeftRoomLight" type="OmniLight3D" parent="Lights"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 1.5, 0.175)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1.5, 0.175)
 
 [node name="RightRoomLight" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 1.5, 0.175)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9708586, 2.2142832)
+
+[node name="LeftBulb" parent="Lights" instance=ExtResource("6_3rf5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2.38, 0.175)
+
+[node name="MiddleBulb" parent="Lights" instance=ExtResource("6_3rf5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 2.38, 0.175)
+
+[node name="RightBulb" parent="Lights" instance=ExtResource("6_3rf5q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 2.38, 0.175)
 
 [node name="Borders" type="Node3D" parent="."]
 
@@ -189,6 +219,60 @@ texture = ExtResource("12_kuw7c")
 [node name="ElevatorLock" type="Sprite3D" parent="Elevator"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.01, 1.4756831, -0.9583911)
 texture = ExtResource("10_l78sk")
+
+[node name="Generator" type="Node3D" parent="."]
+
+[node name="GeneratorModel" parent="Generator" instance=ExtResource("7_f063y")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -6.1056037, 0, -0.16973802)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Generator/GeneratorModel"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Generator/GeneratorModel/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5487671, 0.4333496, 0.0010375977)
+shape = SubResource("BoxShape3D_f063y")
+
+[node name="Puddle" type="Node3D" parent="."]
+
+[node name="HH_Art_Puddle_v1" parent="Puddle" instance=ExtResource("15_0kak2")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.28949, 0.091492236, 0.22333205)
+
+[node name="PuddleTrigger" type="Area3D" parent="Puddle/HH_Art_Puddle_v1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puddle/HH_Art_Puddle_v1/PuddleTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03875731, -0.18701172, 0.22735596)
+shape = SubResource("BoxShape3D_0kak2")
+
+[node name="FuseBox" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FuseBox"]
+transform = Transform3D(0.07773701, 0, 0.10943962, 0, 1.0340936, 0, -0.022290729, 0, 0.38166133, 6.7573504, 1.1621119, 0.13876653)
+mesh = SubResource("BoxMesh_0kak2")
+
+[node name="Gate" type="Node3D" parent="."]
+
+[node name="Sprite3D" type="Sprite3D" parent="Gate"]
+transform = Transform3D(0.017574126, 0, 0, 0, 0.31978706, 0, 0, 0, 0.1, -4.473, 1.457, 0.3)
+texture = ExtResource("16_idyij")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Gate"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gate/StaticBody3D"]
+transform = Transform3D(0.9280161, 0, 0, 0, 1, 0, 0, 0, 1, -4.468575, 1.2555542, 0.20376587)
+shape = SubResource("BoxShape3D_idyij")
+
+[node name="Indicators" type="Node3D" parent="."]
+
+[node name="GeneratorIndicator" type="MeshInstance3D" parent="Indicators"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, -6.0208406, 1.5952797, 0)
+mesh = SubResource("BoxMesh_ffsuc")
+
+[node name="PuddleIndicator" type="MeshInstance3D" parent="Indicators"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, 5.5828667, 0.57664955, 0)
+mesh = SubResource("BoxMesh_ffsuc")
+
+[node name="FuseboxIndicator" type="MeshInstance3D" parent="Indicators"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, 6.5144296, 1.9006244, 0)
+mesh = SubResource("BoxMesh_ffsuc")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
