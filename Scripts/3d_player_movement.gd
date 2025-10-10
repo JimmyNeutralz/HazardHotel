@@ -13,6 +13,7 @@ var stopPoint = 2.66
 var leftKeyPressed = false
 var rightKeyPressed = false
 var centerKeyPressed = false
+#Bool made to prevent the player from walking into a visible hazard
 var preventMoving = false
 
 func _process(delta):
@@ -24,7 +25,7 @@ func _process(delta):
 		centerKeyPressed = false
 		preventMoving = false
 		direction = Vector3(-stopPoint, 0, 0)
-	#If the D key is pressed, set desination to 1.7 to the right
+	#If the D key is pressed and no hazard is ahead, set desination to 1.7 to the right
 	elif(Input.is_action_just_pressed("Right 3D Spot") and !rightKeyPressed and !preventMoving):
 		#print("If met")
 		rightKeyPressed = true
@@ -68,6 +69,7 @@ func _process(delta):
 		#location = Vector3(1.7,0.35,0)
 		
 	
+#Function that prevents moving past a visibly electrified death puddle.
 func stop_moving(electrified):
 	if (electrified):
 		leftKeyPressed = false
