@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://s76j1wbt0n55"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1ak4d"]
+size = Vector3(1.9147644, 2.0825806, 2.1210938)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18hls"]
+albedo_color = Color(0.31061712, 0.31061712, 0.3106171, 1)
+
+[node name="ElevatorDoor" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8365591, -0.011475116, 0.0060127974)
+shape = SubResource("BoxShape3D_1ak4d")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Area3D"]
+size = Vector3(0.2130127, 2.1054077, 2.1272888)
+material = SubResource("StandardMaterial3D_18hls")

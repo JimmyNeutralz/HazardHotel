@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbnvd0te8u1dg"]
-
-[ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="1_7ipfh"]
-
-[node name="Node3D" type="Node3D"]
-
-[node name="HH_Art_Pinch_V2" parent="." instance=ExtResource("1_7ipfh")]

@@ -1,6 +1,6 @@
 [gd_resource type="FontFile" load_steps=2 format=2]
 
-[ext_resource path="res://Roboto-Medium.ttf" type="FontFile" id=1]
+[ext_resource type="FontFile" uid="uid://gdj14lgr8kk8" path="res://Assets/Roboto-Medium.ttf" id="1"]
 
 [resource]
 

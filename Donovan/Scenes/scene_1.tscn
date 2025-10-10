@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://duqmebmpxte4d"]
+[gd_scene load_steps=5 format=3 uid="uid://duqmebmpxte4d"]
 
 [ext_resource type="Script" uid="uid://ptyiapuhuy54" path="res://Donovan/Scripts/Data Transfer Test/scene_1.gd" id="1_dv4bm"]
 [ext_resource type="Script" uid="uid://w6vblhsemah" path="res://Donovan/Scenes/button_2.gd" id="2_3k3pm"]
+[ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://PrototypeAssets/icon.svg" id="3_2fts7"]
+[ext_resource type="Script" uid="uid://bsmydu7br8h5c" path="res://Donovan/Scripts/Data Transfer Test/RedLight.gd" id="4_kvb3d"]
 
 [node name="Scene1" type="Control"]
 layout_mode = 3
@@ -13,9 +15,11 @@ grow_vertical = 2
 script = ExtResource("1_dv4bm")
 
 [node name="Title" type="Label" parent="."]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 65.0
+offset_bottom = 46.0
+grow_horizontal = 2
 text = "Scene1"
 horizontal_alignment = 1
 
@@ -47,5 +51,29 @@ grow_vertical = 2
 text = "Go to Scene2"
 script = ExtResource("2_3k3pm")
 
+[node name="Button3" type="Button" parent="."]
+z_index = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.51000005
+anchor_top = 0.5
+anchor_right = 0.51000005
+anchor_bottom = 0.5
+offset_left = 246.47992
+offset_top = -117.0
+offset_right = 286.47992
+offset_bottom = -86.0
+text = "8"
+script = ExtResource("4_kvb3d")
+
+[node name="Line2D" type="Line2D" parent="Button3"]
+points = PackedVector2Array(31, 24, 147, 66)
+default_color = Color(0, 0, 0, 1)
+
+[node name="RedLight" type="Sprite2D" parent="Button3"]
+position = Vector2(199, 119)
+texture = ExtResource("3_2fts7")
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
