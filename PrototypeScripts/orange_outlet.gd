@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var Player: CharacterBody2D
 var isConnected = true
 
 
@@ -14,3 +15,4 @@ func _process(delta):
 		#$AnimatedSprite2D.modulate = Color(1, 1, 1)
 		print("Orange Wire Disconnected")
 		isConnected = false
+		Player._move_to_right_door(delta)
