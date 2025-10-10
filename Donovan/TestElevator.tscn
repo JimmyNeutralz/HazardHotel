@@ -1,6 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://c6wmb3itji1uu"]
 
-[ext_resource type="Script" uid="uid://cho7xqaqgg2ro" path="res://SpencerStuff/Scenes/level_management.gd" id="1_gs3ye"]
+[ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scenes/level_management.gd" id="1_gs3ye"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_pmh7y"]
 [ext_resource type="Script" uid="uid://cb4xuh6705m0d" path="res://SpencerStuff/Scripts/player_move_pinch.gd" id="3_ga184"]
 [ext_resource type="Texture2D" uid="uid://bw2bc6oekwjlp" path="res://Assets/icon.svg" id="4_lc8nh"]

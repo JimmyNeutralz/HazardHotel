@@ -17,7 +17,7 @@ public partial class ArduinOhNo : Node2D
 		text2 = GetNode<RichTextLabel>("RichTextLabel2");
 		
 		serialPort = new SerialPort();
-		serialPort.PortName = "COM4";
+		serialPort.PortName = "COM5";
 		serialPort.BaudRate = 9600;
 		serialPort.Open();
 		

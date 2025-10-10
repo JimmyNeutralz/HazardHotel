@@ -1,6 +1,6 @@
-[gd_scene load_steps=38 format=3 uid="uid://crwf23b4qh5o0"]
+[gd_scene load_steps=39 format=3 uid="uid://blmi78r1a1rsm"]
 
-[ext_resource type="Script" uid="uid://cho7xqaqgg2ro" path="res://SpencerStuff/Scripts/level_management.gd" id="1_12o2k"]
+[ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scenes/level_management.gd" id="1_12o2k"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_v6jlp"]
 [ext_resource type="Script" uid="uid://cb4xuh6705m0d" path="res://SpencerStuff/Scripts/player_move_pinch.gd" id="3_w84qg"]
 [ext_resource type="Texture2D" uid="uid://dti6vh1iw17rq" path="res://Assets/HH_Art_NewGuySprite_V1_.png" id="4_5a51q"]
@@ -13,12 +13,12 @@
 [ext_resource type="Texture2D" uid="uid://bekut30xmeumk" path="res://Assets/Lock.png" id="11_iullc"]
 [ext_resource type="Script" uid="uid://bn5vexagvnj6c" path="res://SpencerStuff/Scripts/right_door.gd" id="12_30x7b"]
 [ext_resource type="Texture2D" uid="uid://bjgv41ufsr321" path="res://Assets/key.png" id="13_ruovt"]
-[ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="14_dhkwc"]
+[ext_resource type="Script" path="res://SpencerStuff/Scripts/generator.gd" id="14_dhkwc"]
 [ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="15_xn041"]
-[ext_resource type="Script" uid="uid://cqxfonrb48820" path="res://SpencerStuff/Scripts/puddle.gd" id="16_u27xs"]
+[ext_resource type="Script" path="res://SpencerStuff/Scripts/puddle.gd" id="16_u27xs"]
 [ext_resource type="PackedScene" uid="uid://clhua17db53gv" path="res://Assets/3D Models/HH_Art_Puddle_v1.fbx" id="17_d6j3g"]
-[ext_resource type="Script" uid="uid://ct1s4dt2hpjix" path="res://SpencerStuff/Scripts/fusebox.gd" id="18_cwfhy"]
-[ext_resource type="Script" uid="uid://d26s1jhjd3mxd" path="res://SpencerStuff/Scripts/gate.gd" id="19_ridtb"]
+[ext_resource type="Script" path="res://SpencerStuff/Scripts/fusebox.gd" id="18_cwfhy"]
+[ext_resource type="Script" path="res://SpencerStuff/Scripts/gate.gd" id="19_ridtb"]
 [ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="20_c7241"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5fj6f"]
@@ -70,6 +70,9 @@ albedo_color = Color(0.9030753, 0, 0.07757329, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ffsuc"]
 material = SubResource("StandardMaterial3D_idyij")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k700v"]
+size = Vector3(1.947876, 2.046997, 1.7373047)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_12o2k")
@@ -288,8 +291,17 @@ mesh = SubResource("BoxMesh_ffsuc")
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, 6.5144296, 1.9006244, 0)
 mesh = SubResource("BoxMesh_ffsuc")
 
+[node name="ElevatorDoor" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="ElevatorDoor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ElevatorDoor/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00030517578, 1.1346064, -0.43408203)
+shape = SubResource("BoxShape3D_k700v")
+
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/MainRoomTrigger" to="CameraTriggers/MainRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="LeftWall/LeftTrigger" to="." method="_on_left_trigger_body_entered"]
 [connection signal="body_entered" from="RightWall/RightTrigger" to="." method="_on_right_trigger_body_entered"]
+[connection signal="body_entered" from="ElevatorDoor/Area3D" to="." method="_on_area_3d_body_entered"]
