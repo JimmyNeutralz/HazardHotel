@@ -1,36 +1,31 @@
 extends Node3D
 
-#Node paths
-@onready var left_key = $LeftWall/LeftKey
-@onready var right_key = $RightWall/RightKey
+#node paths
 @onready var elevator_lock = $Elevator/ElevatorLock
+#generator indicator = condition for floor completed
+@onready var generator_indicator = $Indicators/GeneratorIndicator  
 
-#Key states
-var has_left_key: bool = false
-var has_right_key: bool = false
+var floor_completed = false
 
+func _process(delta):
+	if not floor_completed and is_generator_on():
+		unlock_elevator()
 
-#Left key area trigger
-func _on_left_trigger_body_entered(body: Node3D) -> void:
-	if body.name == "Player":
-		if not has_left_key:
-			has_left_key = true
-			left_key.visible = false
-			print("Left key obtained")
-			_check_keys()
+func is_generator_on() -> bool:
+	if generator_indicator == null:
+		return false
+	
+	var mat = generator_indicator.get_active_material(0)
+	if mat == null:
+		return false
 
+	#check if the indicator color is green (generator activated)
+	return mat.albedo_color == Color.GREEN
 
-#Right key area trigger
-func _on_right_trigger_body_entered(body: Node3D) -> void:
-	if body.name == "Player":
-		if not has_right_key:
-			has_right_key = true
-			right_key.visible = false
-			print("Right key obtained")
-			_check_keys()
+func unlock_elevator():
+	floor_completed = true
 
-#Check for player having both keys, open elevator
-func _check_keys() -> void:
-	if has_left_key and has_right_key:
+	if elevator_lock:
 		elevator_lock.visible = false
-		print("Elevator unlocked. Floor completed!")
+
+	print("Elevator Unlocked. Floor Completed!")
