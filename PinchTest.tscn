@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://cetkipvg514td"]
+[gd_scene load_steps=3 format=3 uid="uid://b3s8vij4wlq3c"]
 
 [ext_resource type="PackedScene" uid="uid://wfw6yjg8j70b" path="res://Assets/3D Models/TESTPinch.fbx" id="1_uma47"]
 [ext_resource type="PackedScene" uid="uid://bh6y0bgfi2ogx" path="res://Assets/3D Models/TESTPinch2.fbx" id="2_wru1q"]
