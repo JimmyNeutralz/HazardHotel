@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dvpt71r8unhk8"]
 
-[ext_resource type="PackedScene" uid="uid://bh55t3yeka885" path="res://Scenes/3d_player.tscn" id="1_rl6j4"]
-[ext_resource type="PackedScene" uid="uid://bby3pv6515v6q" path="res://Scenes/death_puddle_3D.tscn" id="2_3ei81"]
-[ext_resource type="PackedScene" uid="uid://cw22ieusv80tf" path="res://Scenes/puddle_colider.tscn" id="3_a13u5"]
+[ext_resource type="PackedScene" uid="uid://bh55t3yeka885" path="res://PrototypeScenes/3d_player.tscn" id="1_why2p"]
+[ext_resource type="PackedScene" uid="uid://bby3pv6515v6q" path="res://PrototypeScenes/death_puddle_3D.tscn" id="2_20pj2"]
+[ext_resource type="PackedScene" uid="uid://cw22ieusv80tf" path="res://PrototypeScenes/puddle_colider.tscn" id="3_l501f"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tdjjp"]
 
@@ -15,13 +15,13 @@ mesh = SubResource("BoxMesh_tdjjp")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.93094116, 0.36516926, 0, -0.36516926, 0.93094116, 0, 1.5866497, 2.7937307)
 
-[node name="3dPlayer" parent="." instance=ExtResource("1_rl6j4")]
+[node name="3dPlayer" parent="." instance=ExtResource("1_why2p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66, 0.35, 0)
 
-[node name="DeathPuddle3d" parent="." instance=ExtResource("2_3ei81")]
+[node name="DeathPuddle3d" parent="." instance=ExtResource("2_20pj2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1468921, 0.042937636, 0)
 
-[node name="PuddleColider" parent="." instance=ExtResource("3_a13u5")]
+[node name="PuddleColider" parent="." instance=ExtResource("3_l501f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6812278, 0.49048313, 0.0128132105)
 disable_mode = 2
 
