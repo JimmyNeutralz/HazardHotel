@@ -34,3 +34,10 @@ func _check_keys() -> void:
 	if has_left_key and has_right_key:
 		elevator_lock.visible = false
 		print("Elevator unlocked. Floor completed!")
+
+
+#Check for player in front of elevator and both keys found, transition
+#to next level
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if !elevator_lock.visible:
+		Global.goto_scene("res://Donovan/TestElevator2.tscn")
