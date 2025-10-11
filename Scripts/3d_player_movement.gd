@@ -68,7 +68,9 @@ func _process(delta):
 		#move right
 		#location = Vector3(1.7,0.35,0)
 		
-	
+func die():
+	queue_free()
+	print ("YOU DIED!")
 #Function that prevents moving past a visibly electrified death puddle.
 func stop_moving(electrified):
 	if (electrified):
@@ -79,3 +81,11 @@ func stop_moving(electrified):
 		preventMoving = true
 	else:
 		preventMoving = false
+
+
+func _on_death_puddle_3d_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
+
+
+func _on_death_puddle_3d_body_exited(body: Node3D) -> void:
+	pass # Replace with function body.
