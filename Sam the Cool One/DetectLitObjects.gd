@@ -27,16 +27,23 @@ func toDegrees(angle):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _process(delta: float) -> void:
-	multiplier += 1
-	spot_angle = 40+(sin(toRadians(multiplier))*20)
-	spot_attenuation = 3+(sin(toRadians(multiplier*1.2)))*1
-	light_color = Color(1.0, 0.5+sin(toRadians(multiplier*1.5))*0.5, 0.5+sin(toRadians(multiplier*1.5))*0.5, 1.0)
+	if Input.is_action_just_pressed("ui_accept"): 
+		set_meta("fixed", !get_meta("fixed"))
+	if Input.is_action_just_pressed("ui_focus_next"): 
+		visible = !visible
+	if(visible != true):
+		return
+	if get_meta("fixed") == false:
+		multiplier += 1
+		spot_angle = 40+(sin(toRadians(multiplier))*20)
+		spot_attenuation = 3+(sin(toRadians(multiplier*1.2)))*1
+		light_color = Color(1.0, 0.5+sin(toRadians(multiplier*1.5))*0.5, 0.5+sin(toRadians(multiplier*1.5))*0.5, 1.0)
 	#if(spot_angle > 35 or spot_angle<10):
 		#multiplier = 1/multiplier
 		#spot_angle = spot_angle*multiplier
 	shape.radius = (tan(toRadians(spot_angle/2)))*spot_range
 	shape.height = spot_range
-	detectshape.position = Vector3(detectshape.position.x,position.z,position.y-shape.height)
+	detectshape.global_position = Vector3(detectshape.global_position.x,global_position.y-(shape.height/2),global_position.z)
 	detectshape.set_shape(shape)
 	arr = detectarea.get_overlapping_bodies()
 	for i in range(len(arr)):

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu4ntdfl56x34"]
+
+[ext_resource type="PackedScene" uid="uid://ckby4yr7a2ax7" path="res://Sam the Cool One/spot_light_3d.tscn" id="1_r4n5b"]
+
+[node name="TestingScene" type="Node3D"]
+
+[node name="SpotLight3D" parent="." instance=ExtResource("1_r4n5b")]
+metadata/fixed = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1.9000001, 0, 0, 0, 0.099999964, 0, 0, 0, 3.5, 0, -1.3191344, 0)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(1.9000001, 0, 0, 0, -4.3711372e-09, -3.5, 0, 0.09999996, -1.5298984e-07, 0, -1.3191344, -0.67446065)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.0553279, 2.7486858)

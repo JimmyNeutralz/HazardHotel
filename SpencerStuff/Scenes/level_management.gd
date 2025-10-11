@@ -4,6 +4,7 @@ extends Node3D
 @onready var left_key = $LeftWall/LeftKey
 @onready var right_key = $RightWall/RightKey
 @onready var elevator_lock = $Elevator/ElevatorLock
+@onready var generator = $Generator
 
 #Key states
 var has_left_key: bool = false
@@ -34,3 +35,10 @@ func _check_keys() -> void:
 	if has_left_key and has_right_key:
 		elevator_lock.visible = false
 		print("Elevator unlocked. Floor completed!")
+
+
+#Check for player in front of elevator and both keys found, transition
+#to next level
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if generator.activated:
+		Global.goto_scene("res://Alpha Build/Scenes/TestElevator2.tscn")

@@ -1,0 +1,197 @@
+[gd_scene load_steps=24 format=3 uid="uid://dovrjbwnnjblg"]
+
+[ext_resource type="Script" uid="uid://cho7xqaqgg2ro" path="res://SpencerStuff/Scripts/level_management.gd" id="1_n2mmy"]
+[ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_0hse2"]
+[ext_resource type="Script" uid="uid://cb4xuh6705m0d" path="res://SpencerStuff/Scripts/player_move_pinch.gd" id="3_b81qg"]
+[ext_resource type="Texture2D" uid="uid://bw2bc6oekwjlp" path="res://Assets/icon.svg" id="4_0wu57"]
+[ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="5_fytpl"]
+[ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="6_wi6la"]
+[ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="7_n4omu"]
+[ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="8_f4qmb"]
+[ext_resource type="Script" uid="uid://bg4bius86njfo" path="res://SpencerStuff/Scripts/left_door.gd" id="9_utfv0"]
+[ext_resource type="Texture2D" uid="uid://bekut30xmeumk" path="res://Assets/Lock.png" id="10_3aa5b"]
+[ext_resource type="Script" uid="uid://bn5vexagvnj6c" path="res://SpencerStuff/Scripts/right_door.gd" id="11_r6o8w"]
+[ext_resource type="Texture2D" uid="uid://bjgv41ufsr321" path="res://Assets/key.png" id="12_4jjfo"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5fj6f"]
+size = Vector3(1.2994995, 1.2765503, 0.11035156)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
+size = Vector3(1, 2.736206, 2.347168)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t3whr"]
+size = Vector3(0.6641846, 2.7755127, 2.3065186)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a7eha"]
+size = Vector3(0.04345703, 2.144104, 1.104126)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sgubx"]
+size = Vector3(0.041137695, 2.2403564, 1.029419)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x1e6v"]
+size = Vector3(0.031463623, 2.2488403, 1.3247375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ac5tv"]
+size = Vector3(0.019165039, 2.2601929, 1.1436157)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_66v05"]
+size = Vector3(0.015350342, 1.9898682, 1.2463379)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w5m3f"]
+size = Vector3(0.024658203, 2.2550354, 1.1798096)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u7gkx"]
+size = Vector3(1, 3.166504, 2.3077393)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h7tgk"]
+size = Vector3(1, 3.1601563, 2.31604)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_n2mmy")
+
+[node name="HH_Art_Pinch_V2" parent="." instance=ExtResource("2_0hse2")]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.01, 0.623, -0.544)
+script = ExtResource("3_b81qg")
+
+[node name="Sprite3D" type="Sprite3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0507035)
+shaded = true
+texture = ExtResource("4_0wu57")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.008636475, 0.0017394423, 1.0423431)
+shape = SubResource("BoxShape3D_5fj6f")
+
+[node name="Cameras" type="Node3D" parent="."]
+
+[node name="Camera" type="Camera3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0150594935, 1.4396391, 2.9852402)
+script = ExtResource("5_fytpl")
+
+[node name="MainCamPos" type="Node3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 1.44, 2.985)
+
+[node name="LeftCamPos" type="Node3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8092403, 1.44, 2.985)
+
+[node name="RightCamPos" type="Node3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 1.44, 2.985)
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="MiddleRoomLight" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 1.5, 0.175)
+
+[node name="LeftRoomLight" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 1.5, 0.175)
+
+[node name="RightRoomLight" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 1.5, 0.175)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9708586, 2.2142832)
+
+[node name="Borders" type="Node3D" parent="."]
+
+[node name="LeftBorder" type="StaticBody3D" parent="Borders"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Borders/LeftBorder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9765244, 1.4651122, 0.20881987)
+shape = SubResource("BoxShape3D_3nyfu")
+
+[node name="RightBorder" type="StaticBody3D" parent="Borders"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Borders/RightBorder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.7974815, 1.4510868, 0.21695828)
+shape = SubResource("BoxShape3D_t3whr")
+
+[node name="CameraTriggers" type="Node3D" parent="."]
+
+[node name="RightRoomTrigger" type="Area3D" parent="CameraTriggers"]
+script = ExtResource("6_wi6la")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraTriggers/RightRoomTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.55, 1.09, 0.157)
+shape = SubResource("BoxShape3D_a7eha")
+
+[node name="LeftRoomTrigger" type="Area3D" parent="CameraTriggers"]
+script = ExtResource("7_n4omu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraTriggers/LeftRoomTrigger"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -2.49, 1.09, 0.157)
+shape = SubResource("BoxShape3D_sgubx")
+
+[node name="MainRoomTrigger" type="Area3D" parent="CameraTriggers"]
+script = ExtResource("8_f4qmb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraTriggers/MainRoomTrigger"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -2.338675, 1.1417187, 0.05721879)
+shape = SubResource("BoxShape3D_x1e6v")
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="CameraTriggers/MainRoomTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2478268, 1.0860459, 0.087834835)
+shape = SubResource("BoxShape3D_ac5tv")
+
+[node name="LeftDoor" type="Node3D" parent="."]
+script = ExtResource("9_utfv0")
+
+[node name="LeftLock" type="Sprite3D" parent="LeftDoor"]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -1.8257291, 1.535344, -0.34809792)
+texture = ExtResource("10_3aa5b")
+
+[node name="LeftArea" type="StaticBody3D" parent="LeftDoor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftDoor/LeftArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9318761, 1.01702, 0.09989405)
+shape = SubResource("BoxShape3D_66v05")
+
+[node name="RightDoor" type="Node3D" parent="."]
+script = ExtResource("11_r6o8w")
+
+[node name="RightLock" type="Sprite3D" parent="RightDoor"]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 1.83, 1.53, -0.34)
+texture = ExtResource("10_3aa5b")
+
+[node name="RightArea" type="StaticBody3D" parent="RightDoor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightDoor/RightArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.922808, 1.1224811, 0.11894977)
+shape = SubResource("BoxShape3D_w5m3f")
+
+[node name="LeftWall" type="Node3D" parent="."]
+
+[node name="LeftTrigger" type="Area3D" parent="LeftWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftWall/LeftTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.939008, 1.353595, 0.1416626)
+shape = SubResource("BoxShape3D_u7gkx")
+
+[node name="LeftKey" type="Sprite3D" parent="LeftWall"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -6.2582235, 1.2551144, 0)
+texture = ExtResource("12_4jjfo")
+
+[node name="RightWall" type="Node3D" parent="."]
+
+[node name="RightTrigger" type="Area3D" parent="RightWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall/RightTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.9306307, 1.3515258, 0.1765747)
+shape = SubResource("BoxShape3D_h7tgk")
+
+[node name="RightKey" type="Sprite3D" parent="RightWall"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 6.26, 1.25, 0)
+texture = ExtResource("12_4jjfo")
+
+[node name="Elevator" type="Node3D" parent="."]
+
+[node name="ElevatorLock" type="Sprite3D" parent="Elevator"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.01, 1.4756831, -0.9583911)
+texture = ExtResource("10_3aa5b")
+
+[connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="CameraTriggers/MainRoomTrigger" to="CameraTriggers/MainRoomTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="LeftWall/LeftTrigger" to="." method="_on_left_trigger_body_entered"]
+[connection signal="body_entered" from="RightWall/RightTrigger" to="." method="_on_right_trigger_body_entered"]
