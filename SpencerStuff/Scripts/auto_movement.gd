@@ -1,0 +1,99 @@
+#Spencer automove based off Thomas automove
+
+extends CharacterBody3D
+
+#Set speed and remember to set node path for room detectors in inspector
+@export var speed: float = 3.5
+@export var room_detectors_path: NodePath
+
+#Declarations
+var room_detectors: Node
+var current_room: Node = null
+var target_position: Vector3
+var is_moving = false
+var rooms = []
+var room_order = []
+
+func _ready():
+	room_detectors = get_node(room_detectors_path)
+	
+	#Store references to each room in order (Left, Main, Right)
+	room_order = [
+		room_detectors.get_node("LeftRoom"),
+		room_detectors.get_node("MainRoom"),
+		room_detectors.get_node("RightRoom")
+	]
+	
+	rooms = room_order
+	target_position = global_position
+
+#Use Thomas' structure
+func _physics_process(delta):
+	if is_moving:
+		var direction = target_position - global_position
+		if direction.length() < 0.05:
+			is_moving = false
+			velocity = Vector3.ZERO
+		else:
+			velocity = direction.normalized() * speed
+		move_and_slide()
+	else:
+		velocity = Vector3.ZERO
+		move_and_slide()
+
+	#Input controls
+	if Input.is_action_just_pressed("Center 3D Spot"): #"S"
+		move_to_room_center()
+	elif Input.is_action_just_pressed("Left 3D Spot"): #"A"
+		move_to_adjacent_room(-1)
+	elif Input.is_action_just_pressed("Right 3D Spot"): #"D"
+		move_to_adjacent_room(1)
+
+#Move to center of room 
+func move_to_room_center():
+	var room = get_current_room()
+	if room:
+		var center = room.get_node(room.name + "Center")
+		target_position = Vector3(center.global_position.x, global_position.y, global_position.z)
+		is_moving = true
+
+#For moving between rooms
+func move_to_adjacent_room(direction: int):
+	var current = get_current_room()
+	if current == null:
+		return
+	
+	var index = room_order.find(current)
+	var next_index = index + direction
+	
+	if next_index < 0:
+		#Already at leftmost room
+		var left_room = room_order[0]
+		var center = left_room.get_node(left_room.name + "Center")
+		target_position = Vector3(center.global_position.x - 3.0, global_position.y, global_position.z)
+	elif next_index >= room_order.size():
+		#Already at rightmost room
+		var right_room = room_order[-1]
+		var center = right_room.get_node(right_room.name + "Center")
+		target_position = Vector3(center.global_position.x + 3.0, global_position.y, global_position.z)
+	else:
+		#Move to next room’s center
+		var next_room = room_order[next_index]
+		var center = next_room.get_node(next_room.name + "Center")
+		target_position = Vector3(center.global_position.x, global_position.y, global_position.z)
+	
+	is_moving = true
+
+#For figuring out which rooms player is currently in using distance to nodes
+func get_current_room():
+	var closest_room = null
+	var closest_dist = INF
+	
+	for room in rooms:
+		var center = room.get_node(room.name + "Center")
+		var dist = global_position.distance_to(center.global_position)
+		if dist < closest_dist:
+			closest_dist = dist
+			closest_room = room
+	
+	return closest_room
