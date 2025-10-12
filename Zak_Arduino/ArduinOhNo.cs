@@ -3,7 +3,7 @@ using System;
 using System.IO.Ports;
 using System.Collections.Generic;
 
-public partial class ArduinOhNo : Node2D
+public partial class ArduinOhNo : Node
 {
 	SerialPort serialPort;
 	RichTextLabel text;
@@ -61,14 +61,6 @@ public partial class ArduinOhNo : Node2D
 				text2.Text = "7";
 			}
 		}
-	}
-	
-	public string QuoteCharacters(string input) {
-		List<string> quotedChars = new List<string>();
-		foreach (char c in input) {
-			quotedChars.Add($"'{c}'");
-		}
-		return string.Join("", quotedChars);
 	}
 
 }

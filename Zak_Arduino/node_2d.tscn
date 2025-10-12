@@ -1,19 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://cii1vqmui6y7"]
+[gd_scene load_steps=3 format=3 uid="uid://cii1vqmui6y7"]
 
 [ext_resource type="Script" uid="uid://2k3m4cout4fs" path="res://Zak_Arduino/ArduinOhNo.cs" id="1_besiw"]
+[ext_resource type="Script" uid="uid://c7m6stfokhbis" path="res://Donovan/C#-Gdscript/testingtime.gd" id="1_h4fym"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_h4fym")
+
+[node name="Node" type="Node" parent="."]
 script = ExtResource("1_besiw")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-offset_right = 1151.0
-offset_bottom = 275.0
-theme_override_font_sizes/normal_font_size = 60
-text = "..."
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="RichTextLabel2" type="RichTextLabel" parent="Node"]
 offset_top = 290.0
 offset_right = 1151.0
 offset_bottom = 535.0
+theme_override_font_sizes/normal_font_size = 60
+text = "..."
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Node"]
+offset_right = 1151.0
+offset_bottom = 275.0
 theme_override_font_sizes/normal_font_size = 60
 text = "..."

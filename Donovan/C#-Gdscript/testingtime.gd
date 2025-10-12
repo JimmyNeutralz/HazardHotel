@@ -1,8 +1,8 @@
-extends Control
+extends Node2D
 
 @onready var MyCSharpScript = $Node
 
 
 func _physics_process(_delta: float) -> void:
-	print(MyCSharpScript.IsPressed)
+	print("|" + MyCSharpScript.serialMessage + "|")
 	pass
