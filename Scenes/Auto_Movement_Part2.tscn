@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcdhu0ocn0j5h"]
+[gd_scene load_steps=7 format=3 uid="uid://bcdhu0ocn0j5h"]
 
 [ext_resource type="PackedScene" uid="uid://bfryf0tii3xp2" path="res://Scenes/3d_player.tscn" id="1_rl6j4"]
 [ext_resource type="PackedScene" uid="uid://dqpfg760d0aaw" path="res://Scenes/death_puddle_3D.tscn" id="2_3ei81"]
 [ext_resource type="PackedScene" uid="uid://b1ij07vysqwm1" path="res://Scenes/puddle_colider.tscn" id="3_a13u5"]
+[ext_resource type="PackedScene" uid="uid://dnjh8y0o0ghic" path="res://ThomasFolder/Scenes/3dElectricDoor.tscn" id="4_hm5ww"]
+[ext_resource type="Script" uid="uid://b6cyyven6wib1" path="res://ThomasFolder/Scripts/electric_door_colider.gd" id="5_x2ll3"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tdjjp"]
 
@@ -22,12 +24,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66, 0.35, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8180761, 0.042937636, 0)
 
 [node name="PuddleColider" parent="." instance=ExtResource("3_a13u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.217535, 0.49048313, 0.0128132105)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0411174, 0.49048313, 0.0128132105)
 disable_mode = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9038153, 0)
 
+[node name="3dElectricDoor" parent="." instance=ExtResource("4_hm5ww")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3509855, 1.29, 0)
+script = ExtResource("5_x2ll3")
+
 [connection signal="body_entered" from="DeathPuddle3d" to="3dPlayer" method="_on_death_puddle_3d_body_entered"]
 [connection signal="body_exited" from="DeathPuddle3d" to="3dPlayer" method="_on_death_puddle_3d_body_exited"]
 [connection signal="body_entered" from="PuddleColider" to="PuddleColider" method="_on_body_entered"]
+[connection signal="body_entered" from="3dElectricDoor" to="3dPlayer" method="_on_3d_electric_door_body_entered"]

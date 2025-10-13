@@ -3,6 +3,7 @@ extends CharacterBody3D
 @onready var hitBox = $CollisionShape3D
 @onready var player = $"../3dPlayer"
 @onready var puddle = $"../DeathPuddle3d"
+@onready var door = $"../3dElectricDoor"
 var location: Vector3
 
 #The destination determined by what key the player selects
@@ -17,31 +18,38 @@ var centerKeyPressed = false
 #Bool made to prevent the player from walking into a visible hazard
 var preventMoving = false
 
+var preventLeftMovement = false
+var preventRightMovement = false
+
+#Bool value to determine if the player is standing in the electrified puddle
 var inDanger = false
 
 func _process(delta):
 	#If the A key is pressed, set desination to 1.7 to the left
-	if(Input.is_action_just_pressed("Left 3D Spot") and !leftKeyPressed):
+	if(Input.is_action_just_pressed("Left 3D Spot") and !leftKeyPressed and !preventLeftMovement):
 		#print("If met")
 		leftKeyPressed = true
 		rightKeyPressed = false
 		centerKeyPressed = false
 		preventMoving = false
+		preventRightMovement = false
 		direction = Vector3(-stopPoint, 0, 0)
 	#If the D key is pressed and no hazard is ahead, set desination to 1.7 to the right
-	elif(Input.is_action_just_pressed("Right 3D Spot") and !rightKeyPressed and !preventMoving):
+	elif(Input.is_action_just_pressed("Right 3D Spot") and !rightKeyPressed and !preventMoving and !preventRightMovement):
 		#print("If met")
 		rightKeyPressed = true
 		leftKeyPressed = false
 		centerKeyPressed = false
+		preventLeftMovement = false
 		direction = Vector3(stopPoint, 0, 0)
 	#If the S key is pressed, set desination to 1.7 to the right
-	elif(Input.is_action_just_pressed("Center 3D Spot") and !centerKeyPressed):
+	elif(Input.is_action_just_pressed("Center 3D Spot") and !centerKeyPressed and !preventRightMovement):
 		#print("If met")
 		centerKeyPressed = true
 		leftKeyPressed = false
 		rightKeyPressed = false
 		preventMoving = false
+		preventLeftMovement = false
 		#direction = Vector3(-global_position.x, 0, 0)
 		
 		#Sets direction appropreately so that the speed to the center is consistent with left and right travel
@@ -71,6 +79,7 @@ func _process(delta):
 		#move right
 		#location = Vector3(1.7,0.35,0)
 		
+#If this function is triggered, the player dies
 func death():
 	queue_free()
 	print ("YOU DIED!")
@@ -85,11 +94,31 @@ func stop_moving(electrified):
 	else:
 		preventMoving = false
 
+func blocked_path(position, pathBlocked):
+	if (!pathBlocked):
+		leftKeyPressed = false
+		rightKeyPressed = false
+		centerKeyPressed = false
+		
+		if (global_position.x < position.x):
+			preventRightMovement = true
+			preventLeftMovement = false
+		elif (global_position.y > position.y):
+			preventLeftMovement = true
+			preventRightMovement = false
+	else:
+		preventLeftMovement = false
+		preventRightMovement = false
 
+#Sets inDanger to true and checks to see if the player should die upon stepping into the puddle
 func _on_death_puddle_3d_body_entered(body: Node3D) -> void:
 	inDanger = true
 	puddle.determine_status(inDanger)
 	
-
+#Sets inDanger to false if the player steps out of the puddle
 func _on_death_puddle_3d_body_exited(body: Node3D) -> void:
 	inDanger = false
+
+
+func _on_3d_electric_door_body_entered(body: Node3D) -> void:
+	door.determine_result()

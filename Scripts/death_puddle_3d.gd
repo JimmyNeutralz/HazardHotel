@@ -2,7 +2,7 @@ extends Area3D
 @onready var player = $"../3dPlayer"
 @onready var collideshape = get_node("CollisionShape3D")
 
-#Var to determine if the puddle is deadly or not
+#Bool to determine if the puddle is deadly or not
 var unsafe = true
 
 #Changes the unsafe var whenever the puddle is deactivated or reactivated
