@@ -22,8 +22,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66, 0.35, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8180761, 0.042937636, 0)
 
 [node name="PuddleColider" parent="." instance=ExtResource("3_a13u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.7388515, 0.49048313, 0.0128132105)
-visible = false
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.217535, 0.49048313, 0.0128132105)
 disable_mode = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]

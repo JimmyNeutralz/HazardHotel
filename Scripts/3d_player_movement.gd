@@ -2,6 +2,7 @@ extends CharacterBody3D
 @export var speed = 2
 @onready var hitBox = $CollisionShape3D
 @onready var player = $"../3dPlayer"
+@onready var puddle = $"../DeathPuddle3d"
 var location: Vector3
 
 #The destination determined by what key the player selects
@@ -15,6 +16,8 @@ var rightKeyPressed = false
 var centerKeyPressed = false
 #Bool made to prevent the player from walking into a visible hazard
 var preventMoving = false
+
+var inDanger = false
 
 func _process(delta):
 	#If the A key is pressed, set desination to 1.7 to the left
@@ -68,7 +71,7 @@ func _process(delta):
 		#move right
 		#location = Vector3(1.7,0.35,0)
 		
-func die():
+func death():
 	queue_free()
 	print ("YOU DIED!")
 #Function that prevents moving past a visibly electrified death puddle.
@@ -84,8 +87,9 @@ func stop_moving(electrified):
 
 
 func _on_death_puddle_3d_body_entered(body: Node3D) -> void:
-	pass # Replace with function body.
-
+	inDanger = true
+	puddle.determine_status(inDanger)
+	
 
 func _on_death_puddle_3d_body_exited(body: Node3D) -> void:
-	pass # Replace with function body.
+	inDanger = false

@@ -17,7 +17,7 @@ func _process(delta):
 	elif (Input.is_action_just_pressed("Enable 3D Puddle Electricity")):
 		electrified = true
 		puddle.change_puddle_status(electrified)
-		puddle.determine_status()
+		puddle.determine_status(player.inDanger)
 		
 
 #Reacts upon the player hitting the separate colider to determine if they can walk past or not
