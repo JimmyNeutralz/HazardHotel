@@ -1,13 +1,15 @@
 extends Node3D
 
 #node paths
-@onready var sprite = $Sprite3D
+@onready var sprite = $Metal
+@onready var sprite2 = $Electric
 @onready var collision = $StaticBody3D/CollisionShape3D
 
 #needs path of fusebox indicator to check color
 @export var fusebox_indicator_path : NodePath  
 var fusebox_indicator : MeshInstance3D = null
 
+var electrified = true;
 var raised = false
 
 func _ready():

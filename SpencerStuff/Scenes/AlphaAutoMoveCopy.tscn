@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://ds3e02mwx5v1i"]
+[gd_scene load_steps=44 format=3 uid="uid://ds3e02mwx5v1i"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_hp8h4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_65vvi"]
@@ -20,6 +20,7 @@
 [ext_resource type="Script" uid="uid://ct1s4dt2hpjix" path="res://SpencerStuff/Scripts/fusebox.gd" id="18_1d7ht"]
 [ext_resource type="Script" uid="uid://d26s1jhjd3mxd" path="res://SpencerStuff/Scripts/gate.gd" id="19_or1os"]
 [ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="20_4rm4j"]
+[ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="21_vher1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5fj6f"]
 size = Vector3(1.2994995, 1.2765503, 0.11035156)
@@ -65,6 +66,9 @@ size = Vector3(2.2730713, 0.62597656, 1.4420166)
 [sub_resource type="BoxShape3D" id="BoxShape3D_idyij"]
 size = Vector3(0.16955566, 3.5111084, 2.2953491)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_vher1"]
+size = Vector3(0.16568756, 2.8619385, 2.3187866)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idyij"]
 albedo_color = Color(0.9030753, 0, 0.07757329, 1)
 
@@ -87,6 +91,7 @@ size = Vector3(3.1115723, 2.7891998, 2.2052002)
 script = ExtResource("1_hp8h4")
 
 [node name="HH_Art_Pinch_V2" parent="." instance=ExtResource("2_65vvi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007326126, 0.0070431232, -0.0001385212)
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.01, 0.623, -0.544)
@@ -277,15 +282,25 @@ mesh = SubResource("BoxMesh_0kak2")
 script = ExtResource("19_or1os")
 fusebox_indicator_path = NodePath("../Indicators/FuseboxIndicator")
 
-[node name="Sprite3D" type="Sprite3D" parent="Gate"]
+[node name="Metal" type="Sprite3D" parent="Gate"]
 transform = Transform3D(0.017574126, 0, 0, 0, 0.31978706, 0, 0, 0, 0.1, -4.473, 1.457, 0.3)
 texture = ExtResource("20_4rm4j")
+
+[node name="Electric" type="Sprite3D" parent="Gate"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.473, 1.4310222, 0.384692)
+texture = ExtResource("21_vher1")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Gate"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Gate/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.468575, 1.2555542, 0.20376587)
 shape = SubResource("BoxShape3D_idyij")
+
+[node name="GateTrigger" type="Area3D" parent="Gate"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gate/GateTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.461342, 1.4451294, 0.19985962)
+shape = SubResource("BoxShape3D_vher1")
 
 [node name="Indicators" type="Node3D" parent="."]
 
@@ -299,6 +314,10 @@ mesh = SubResource("BoxMesh_ffsuc")
 
 [node name="FuseboxIndicator" type="MeshInstance3D" parent="Indicators"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, 6.5144296, 1.9006244, 0)
+mesh = SubResource("BoxMesh_ffsuc")
+
+[node name="GateIndicator" type="MeshInstance3D" parent="Indicators"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, -3.8103771, 1.6853055, 0)
 mesh = SubResource("BoxMesh_ffsuc")
 
 [node name="ElevatorDoor" type="Node3D" parent="."]
@@ -327,7 +346,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.925584, 1.4312717, 0.20367
 shape = SubResource("BoxShape3D_gpw56")
 
 [node name="LeftRoomCenter" type="Node3D" parent="RoomDetectors/LeftRoom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0.62, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8, 0.62, 0)
 
 [node name="RightRoom" type="Area3D" parent="RoomDetectors"]
 

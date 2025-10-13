@@ -44,7 +44,8 @@ func can_activate() -> bool:
 func activate():
 	activated = true
 	update_indicator_color()
-	print("Fusebox activated!")
+	print("Fusebox turned off!")
+	print("Electric gate deactivated!")
 
 #make sure all indicator colors dont change
 func make_indicator_material_unique():
@@ -62,6 +63,9 @@ func update_indicator_color():
 		indicator.set_surface_override_material(0, mat)
 
 	if activated:
-		mat.albedo_color = Color.GREEN    #activated
+		mat.albedo_color = Color.RED    #activated
 	else:
-		mat.albedo_color = Color.RED  #inactive
+		mat.albedo_color = Color.GREEN  #inactive
+		
+	#Switched the color logic bc the fusebox should start on to initially power the electric gate, then 
+	# be turned off by player so they can safely raise gate
