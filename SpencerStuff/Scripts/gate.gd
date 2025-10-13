@@ -1,16 +1,20 @@
 extends Node3D
 
-#node paths
+#Node paths
 @onready var sprite = $Metal
-@onready var sprite2 = $Electric
+@onready var electric_sprite = $Electric
 @onready var collision = $StaticBody3D/CollisionShape3D
+@onready var gate_trigger = $GateTrigger
+@onready var indicator = $"../Indicators/GateIndicator"  #Indicator
 
-#needs path of fusebox indicator to check color
+#Fusebox reference
 @export var fusebox_indicator_path : NodePath  
 var fusebox_indicator : MeshInstance3D = null
 
-var electrified = true;
+#State
+var electrified = true
 var raised = false
+var player_dead = false
 
 func _ready():
 	if fusebox_indicator_path != null:
@@ -18,35 +22,88 @@ func _ready():
 	else:
 		push_error("FuseboxIndicator path not set for Gate!")
 
+	#Connect trigger
+	if gate_trigger.has_signal("body_entered"):
+		gate_trigger.body_entered.connect(_on_gate_trigger_body_entered)
+
+	make_indicator_material_unique()
+	update_electric_state()
+
 func _process(delta):
+	#Continuously check for fusebox state updates - not efficient, probably change in future
+	update_electric_state()
+
+	#Handle gate raising input
 	if Input.is_action_just_pressed("raise_gate") and not raised:
 		if can_raise():
 			raise_gate()
 		else:
-			print("Cannot raise gate yet!")
+			print("Cannot raise gate yet — still electrified!")
 
-func can_raise() -> bool:
+func update_electric_state():
 	if fusebox_indicator == null:
-		return false
+		return
 
 	var mat = fusebox_indicator.get_active_material(0)
 	if mat == null:
-		return false
+		return
 
-	#check if the fusebox indicator is green (fusebox active)
+	#RED = safe (fusebox off), GREEN = powered
 	if mat.albedo_color == Color.GREEN:
-		return true
-	return false
+		electrified = true
+	else:
+		electrified = false
+
+	electric_sprite.visible = electrified
+	gate_trigger.monitoring = electrified
+	update_indicator_color() 
+
+func can_raise() -> bool:
+	return not electrified  #Only raise gate when safe
 
 func raise_gate():
 	raised = true
-
-	#hide visual
 	if sprite:
 		sprite.visible = false
-
-	#disable collision
 	if collision:
 		collision.disabled = true
-
 	print("Gate raised!")
+
+func _on_gate_trigger_body_entered(body):
+	if not electrified or player_dead:
+		return
+
+	if body.name == "Player":
+		kill_player(body)
+	else:
+		print("An object touched the electrified gate: ", body.name)
+
+func kill_player(player):
+	player_dead = true
+	print("Player electrocuted by gate!")
+	player.queue_free()
+
+#Handle indicators being weird
+func make_indicator_material_unique():
+	if indicator == null:
+		return
+	var mat = indicator.get_active_material(0)
+	if mat:
+		var unique_mat = mat.duplicate()
+		indicator.set_surface_override_material(0, unique_mat)
+	else:
+		indicator.set_surface_override_material(0, StandardMaterial3D.new())
+
+func update_indicator_color():
+	if indicator == null:
+		return
+
+	var mat = indicator.get_active_material(0)
+	if mat == null:
+		mat = StandardMaterial3D.new()
+		indicator.set_surface_override_material(0, mat)
+
+	if electrified:
+		mat.albedo_color = Color.GREEN  #Powered on / dangerous
+	else:
+		mat.albedo_color = Color.RED    #Safe / deactivated

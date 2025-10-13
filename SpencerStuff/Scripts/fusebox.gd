@@ -44,8 +44,8 @@ func can_activate() -> bool:
 func activate():
 	activated = true
 	update_indicator_color()
-	print("Fusebox turned off!")
-	print("Electric gate deactivated!")
+	#print("Fusebox turned off!")
+	print("Electric gate deactivated through fusebox!")
 
 #make sure all indicator colors dont change
 func make_indicator_material_unique():
