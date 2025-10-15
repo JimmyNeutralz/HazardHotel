@@ -4,6 +4,8 @@ extends CharacterBody3D
 @onready var player = $"../3dPlayer"
 @onready var puddle = $"../DeathPuddle3d"
 @onready var door = $"../3dElectricDoor"
+@export var elevator: Area3D
+
 var location: Vector3
 
 #The destination determined by what key the player selects
@@ -81,8 +83,12 @@ func _process(delta):
 		
 #If this function is triggered, the player dies
 func death():
-	queue_free()
+	global_position.x = elevator.global_position.x
+	leftKeyPressed = false
+	rightKeyPressed = false
+	centerKeyPressed = false
 	print ("YOU DIED!")
+
 #Function that prevents moving past a visibly electrified death puddle.
 func stop_moving(electrified):
 	if (electrified):

@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcdhu0ocn0j5h"]
+[gd_scene load_steps=8 format=3 uid="uid://bcdhu0ocn0j5h"]
 
 [ext_resource type="PackedScene" uid="uid://bfryf0tii3xp2" path="res://Scenes/3d_player.tscn" id="1_rl6j4"]
 [ext_resource type="PackedScene" uid="uid://dqpfg760d0aaw" path="res://Scenes/death_puddle_3D.tscn" id="2_3ei81"]
 [ext_resource type="PackedScene" uid="uid://b1ij07vysqwm1" path="res://Scenes/puddle_colider.tscn" id="3_a13u5"]
 [ext_resource type="PackedScene" uid="uid://dnjh8y0o0ghic" path="res://ThomasFolder/Scenes/3dElectricDoor.tscn" id="4_hm5ww"]
 [ext_resource type="Script" uid="uid://b6cyyven6wib1" path="res://ThomasFolder/Scripts/electric_door_colider.gd" id="5_x2ll3"]
+[ext_resource type="PackedScene" uid="uid://doedso0a6llnl" path="res://ThomasFolder/Scenes/Elevator.tscn" id="6_cx4jh"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_tdjjp"]
 
@@ -17,8 +18,9 @@ mesh = SubResource("BoxMesh_tdjjp")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.93094116, 0.36516926, 0, -0.36516926, 0.93094116, 0, 1.5866497, 2.7937307)
 
-[node name="3dPlayer" parent="." instance=ExtResource("1_rl6j4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
+[node name="3dPlayer" parent="." node_paths=PackedStringArray("elevator") instance=ExtResource("1_rl6j4")]
+transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, 0, 0.4747617, 0)
+elevator = NodePath("../Elevator")
 
 [node name="DeathPuddle3d" parent="." instance=ExtResource("2_3ei81")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8180761, 0.042937636, 0)
@@ -33,6 +35,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9038153, 0)
 [node name="3dElectricDoor" parent="." instance=ExtResource("4_hm5ww")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7598993, 1.29, 0)
 script = ExtResource("5_x2ll3")
+
+[node name="Elevator" parent="." instance=ExtResource("6_cx4jh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5270358, -0.4984646)
 
 [connection signal="body_entered" from="DeathPuddle3d" to="3dPlayer" method="_on_death_puddle_3d_body_entered"]
 [connection signal="body_exited" from="DeathPuddle3d" to="3dPlayer" method="_on_death_puddle_3d_body_exited"]
