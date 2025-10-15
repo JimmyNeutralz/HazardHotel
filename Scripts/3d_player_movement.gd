@@ -110,6 +110,12 @@ func blocked_path(position, pathBlocked):
 		preventLeftMovement = false
 		preventRightMovement = false
 
+func moveLeft():
+	leftKeyPressed = true
+	rightKeyPressed = false
+	centerKeyPressed = false
+	direction = Vector3(-stopPoint, 0, 0)
+
 #Sets inDanger to true and checks to see if the player should die upon stepping into the puddle
 func _on_death_puddle_3d_body_entered(body: Node3D) -> void:
 	inDanger = true

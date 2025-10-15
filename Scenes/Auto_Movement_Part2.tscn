@@ -18,7 +18,7 @@ mesh = SubResource("BoxMesh_tdjjp")
 transform = Transform3D(1, 0, 0, 0, 0.93094116, 0.36516926, 0, -0.36516926, 0.93094116, 0, 1.5866497, 2.7937307)
 
 [node name="3dPlayer" parent="." instance=ExtResource("1_rl6j4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66, 0.35, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0)
 
 [node name="DeathPuddle3d" parent="." instance=ExtResource("2_3ei81")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8180761, 0.042937636, 0)
@@ -31,7 +31,7 @@ disable_mode = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9038153, 0)
 
 [node name="3dElectricDoor" parent="." instance=ExtResource("4_hm5ww")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3509855, 1.29, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7598993, 1.29, 0)
 script = ExtResource("5_x2ll3")
 
 [connection signal="body_entered" from="DeathPuddle3d" to="3dPlayer" method="_on_death_puddle_3d_body_entered"]
