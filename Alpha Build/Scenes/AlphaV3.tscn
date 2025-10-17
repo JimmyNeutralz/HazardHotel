@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cctusbkup6ti0"]
+[gd_scene load_steps=49 format=3 uid="uid://cctusbkup6ti0"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_503n5"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_cvsqa"]
@@ -11,17 +11,21 @@
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="9_aabbk"]
 [ext_resource type="Script" uid="uid://bg4bius86njfo" path="res://SpencerStuff/Scripts/left_door.gd" id="10_c75nj"]
 [ext_resource type="Texture2D" uid="uid://bekut30xmeumk" path="res://Assets/Lock.png" id="11_kn7ur"]
+[ext_resource type="PackedScene" uid="uid://07r1c3ba45w3" path="res://Assets/3D Models/HH_Art_DoorOpenLeftAnim_V1.fbx" id="12_iyby6"]
 [ext_resource type="Script" uid="uid://bn5vexagvnj6c" path="res://SpencerStuff/Scripts/right_door.gd" id="12_lkc36"]
+[ext_resource type="PackedScene" uid="uid://dqdrihkiouy1o" path="res://Assets/3D Models/HH_Art_locks_openAnim_V1.fbx" id="13_djbil"]
 [ext_resource type="Texture2D" uid="uid://bjgv41ufsr321" path="res://Assets/key.png" id="13_p56hy"]
 [ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="14_2edhb"]
 [ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="15_s2136"]
+[ext_resource type="PackedScene" uid="uid://lgf83rme0ewf" path="res://Assets/3D Models/HH_Art_DoorOpenRightAnim_v1.fbx" id="15_siysh"]
 [ext_resource type="Script" uid="uid://cqxfonrb48820" path="res://SpencerStuff/Scripts/puddle.gd" id="16_avxru"]
 [ext_resource type="PackedScene" uid="uid://clhua17db53gv" path="res://Assets/3D Models/HH_Art_Puddle_v1.fbx" id="17_2ve42"]
 [ext_resource type="Script" uid="uid://ct1s4dt2hpjix" path="res://SpencerStuff/Scripts/fusebox.gd" id="18_bl58g"]
-[ext_resource type="PackedScene" uid="uid://bh55p0qb7mbwq" path="res://Assets/3D Models/HH_Art_FuseBoxAni_V1.fbx" id="19_36pho"]
+[ext_resource type="PackedScene" uid="uid://dllmxns1qx246" path="res://Scenes/FuseboxClose.tscn" id="19_cvsqa"]
 [ext_resource type="Script" uid="uid://d26s1jhjd3mxd" path="res://SpencerStuff/Scripts/gate.gd" id="20_m6yia"]
 [ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="21_7r02b"]
 [ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="22_rp44j"]
+[ext_resource type="PackedScene" uid="uid://cjpyo5axkiie8" path="res://Scenes/GateClosed.tscn" id="23_02fbk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5fj6f"]
 size = Vector3(1.2994995, 1.2765503, 0.11035156)
@@ -194,7 +198,7 @@ shape = SubResource("BoxShape3D_ac5tv")
 script = ExtResource("10_c75nj")
 
 [node name="LeftLock" type="Sprite3D" parent="LeftDoor"]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -1.8257291, 1.535344, -0.34809792)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -1.5900272, 1.535344, -0.34809792)
 texture = ExtResource("11_kn7ur")
 
 [node name="LeftArea" type="StaticBody3D" parent="LeftDoor"]
@@ -203,11 +207,17 @@ texture = ExtResource("11_kn7ur")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9318761, 1.01702, 0.09989405)
 shape = SubResource("BoxShape3D_66v05")
 
+[node name="HH_Art_DoorOpenLeftAnim_V1" parent="LeftDoor" instance=ExtResource("12_iyby6")]
+transform = Transform3D(0.9998477, 0, 0.017452406, 0, 1, 0, -0.017452406, 0, 0.9998477, -2.4652753, 0, 0)
+
+[node name="HH_Art_locks_openAnim_V1" parent="LeftDoor" instance=ExtResource("13_djbil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.474749, 0, 0)
+
 [node name="RightDoor" type="Node3D" parent="."]
 script = ExtResource("12_lkc36")
 
 [node name="RightLock" type="Sprite3D" parent="RightDoor"]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 1.83, 1.53, -0.34)
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 1.596527, 1.53, -0.34)
 texture = ExtResource("11_kn7ur")
 
 [node name="RightArea" type="StaticBody3D" parent="RightDoor"]
@@ -215,6 +225,12 @@ texture = ExtResource("11_kn7ur")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RightDoor/RightArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.922808, 1.1224811, 0.11894977)
 shape = SubResource("BoxShape3D_w5m3f")
+
+[node name="HH_Art_DoorOpenRightAnim_v1" parent="RightDoor" instance=ExtResource("15_siysh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4721048, 0, 0)
+
+[node name="HH_Art_locks_openAnim_V1" parent="RightDoor" instance=ExtResource("13_djbil")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5073116, 0, 0)
 
 [node name="LeftWall" type="Node3D" parent="."]
 
@@ -283,8 +299,8 @@ transform = Transform3D(0.07773701, 0, 0.10943962, 0, 1.0340936, 0, -0.022290729
 visible = false
 mesh = SubResource("BoxMesh_0kak2")
 
-[node name="HH_Art_FuseBoxAni_V1" parent="FuseBox" instance=ExtResource("19_36pho")]
-transform = Transform3D(0.9563047, 0, 0.29237166, 0, 1, 0, -0.29237166, 0, 0.9563047, 1.4300542, 0.31273413, -17.154177)
+[node name="HH_Art_FuseBoxAni_V2" parent="FuseBox" instance=ExtResource("19_cvsqa")]
+transform = Transform3D(0.9563048, 0, 0.2923717, 0, 1, 0, -0.2923717, 0, 0.9563048, 1.3900285, 0.31998253, -17.256184)
 
 [node name="Gate" type="Node3D" parent="."]
 script = ExtResource("20_m6yia")
@@ -292,23 +308,27 @@ fusebox_indicator_path = NodePath("../Indicators/FuseboxIndicator")
 
 [node name="Metal" type="Sprite3D" parent="Gate"]
 transform = Transform3D(0.017574126, 0, 0, 0, 0.31978706, 0, 0, 0, 0.1, -4.473, 1.457, 0.3)
+visible = false
 texture = ExtResource("21_7r02b")
 
 [node name="Electric" type="Sprite3D" parent="Gate"]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.473, 1.4310222, 0.384692)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -4.5703135, 1.4310222, 0.384692)
 texture = ExtResource("22_rp44j")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Gate"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Gate/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.468575, 1.2555542, 0.20376587)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.630808, 1.2555542, 0.20376587)
 shape = SubResource("BoxShape3D_idyij")
 
 [node name="GateTrigger" type="Area3D" parent="Gate"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Gate/GateTrigger"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.461342, 1.4451294, 0.19985962)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6097198, 1.4451294, 0.19985962)
 shape = SubResource("BoxShape3D_vher1")
+
+[node name="HH_Art_GateAni_V2" parent="Gate" instance=ExtResource("23_02fbk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6319113, 0, 0)
 
 [node name="Indicators" type="Node3D" parent="."]
 
@@ -325,7 +345,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, 6.5144296, 1.9006244, 
 mesh = SubResource("BoxMesh_ffsuc")
 
 [node name="GateIndicator" type="MeshInstance3D" parent="Indicators"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, -3.8103771, 1.6853055, 0)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, -4.104617, 1.6853055, 0)
 mesh = SubResource("BoxMesh_ffsuc")
 
 [node name="ElevatorDoor" type="Node3D" parent="."]
@@ -354,7 +374,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.925584, 1.4312717, 0.20367
 shape = SubResource("BoxShape3D_gpw56")
 
 [node name="LeftRoomCenter" type="Node3D" parent="RoomDetectors/LeftRoom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8, 0.62, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9772751, 0.62, 0)
 
 [node name="RightRoom" type="Area3D" parent="RoomDetectors"]
 
