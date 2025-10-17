@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://ds3e02mwx5v1i"]
+[gd_scene load_steps=45 format=3 uid="uid://ds3e02mwx5v1i"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_hp8h4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_65vvi"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://cqxfonrb48820" path="res://SpencerStuff/Scripts/puddle.gd" id="16_vhof8"]
 [ext_resource type="PackedScene" uid="uid://clhua17db53gv" path="res://Assets/3D Models/HH_Art_Puddle_v1.fbx" id="17_j6cut"]
 [ext_resource type="Script" uid="uid://ct1s4dt2hpjix" path="res://SpencerStuff/Scripts/fusebox.gd" id="18_1d7ht"]
+[ext_resource type="PackedScene" uid="uid://bh55p0qb7mbwq" path="res://Assets/3D Models/HH_Art_FuseBoxAni_V1.fbx" id="19_4wl8n"]
 [ext_resource type="Script" uid="uid://d26s1jhjd3mxd" path="res://SpencerStuff/Scripts/gate.gd" id="19_or1os"]
 [ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="20_4rm4j"]
 [ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="21_vher1"]
@@ -107,9 +108,12 @@ texture = ExtResource("4_calle")
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.008636475, 0.0017394423, 1.0423431)
 shape = SubResource("BoxShape3D_5fj6f")
 
+[node name="PlayerSpawnPosition" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 0.62, -0.54)
+
 [node name="Cameras" type="Node3D" parent="."]
 
-[node name="Camera" type="Camera3D" parent="Cameras"]
+[node name="Camera" type="Camera3D" parent="Cameras" groups=["MainCamera"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0150594935, 1.4396391, 2.9852402)
 script = ExtResource("5_h0fs4")
 
@@ -276,7 +280,11 @@ puddle_node_path = NodePath("../Puddle")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FuseBox"]
 transform = Transform3D(0.07773701, 0, 0.10943962, 0, 1.0340936, 0, -0.022290729, 0, 0.38166133, 6.7573504, 1.1621119, 0.13876653)
+visible = false
 mesh = SubResource("BoxMesh_0kak2")
+
+[node name="HH_Art_FuseBoxAni_V1" parent="FuseBox" instance=ExtResource("19_4wl8n")]
+transform = Transform3D(0.9563047, 0, 0.29237166, 0, 1, 0, -0.29237166, 0, 0.9563047, 1.4300542, 0.31273413, -17.154177)
 
 [node name="Gate" type="Node3D" parent="."]
 script = ExtResource("19_or1os")

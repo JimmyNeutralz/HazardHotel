@@ -70,7 +70,7 @@ func raise_gate():
 	print("Gate raised!")
 
 func _on_gate_trigger_body_entered(body):
-	if not electrified or player_dead:
+	if not electrified:
 		return
 
 	if body.name == "Player":
@@ -79,9 +79,8 @@ func _on_gate_trigger_body_entered(body):
 		print("An object touched the electrified gate: ", body.name)
 
 func kill_player(player):
-	player_dead = true
 	print("Player electrocuted by gate!")
-	player.queue_free()
+	player.kill_player()
 
 #Handle indicators being weird
 func make_indicator_material_unique():

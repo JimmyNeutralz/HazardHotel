@@ -14,6 +14,12 @@ var is_moving = false
 var rooms = []
 var room_order = []
 
+#For respawning
+@export var spawn_node_path: NodePath = ^"/root/Player/PlayerSpawnPosition"
+var is_dead = false
+const RESPAWN_DELAY = 2.0
+var spawn_transform: Transform3D
+
 func _ready():
 	room_detectors = get_node(room_detectors_path)
 	
@@ -26,9 +32,20 @@ func _ready():
 	
 	rooms = room_order
 	target_position = global_position
+	
+	# Get the hardcoded spawn position node
+	if has_node(spawn_node_path):
+		var spawn_node = get_node(spawn_node_path)
+		spawn_transform = spawn_node.global_transform
+	else:
+		push_error("PlayerSpawnPosition node not found at: " + str(spawn_node_path))
+		spawn_transform = global_transform # fallback to current pos
 
 #Use Thomas' structure
 func _physics_process(delta):
+	if is_dead:
+		return
+	
 	if is_moving:
 		var direction = target_position - global_position
 		if direction.length() < 0.05:
@@ -97,3 +114,41 @@ func get_current_room():
 			closest_room = room
 	
 	return closest_room
+
+
+#New function for handling player death
+func kill_player():
+	if is_dead:
+		return
+	is_dead = true
+	print("Player died!")
+
+	#Temporarily disable player
+	set_process(false)
+	set_physics_process(false)
+	visible = false
+	is_moving = false
+	velocity = Vector3.ZERO
+
+	#Wait before respawning
+	await get_tree().create_timer(RESPAWN_DELAY).timeout
+	respawn_player()
+
+#Respawn
+func respawn_player():
+	#Move to PlayerSpawnPosition node’s location
+	global_transform = spawn_transform
+	velocity = Vector3.ZERO
+	is_moving = false
+	is_dead = false
+	visible = true
+	set_process(true)
+	set_physics_process(true)
+	print("Respawned!")
+
+	#ResetCamera
+	var camera = get_tree().get_first_node_in_group("MainCamera")
+	if camera and camera.has_method("ResetCamera"):
+		camera.ResetCamera()
+	else:
+		print("MainCamera not found or missing ResetCamera() function.")
