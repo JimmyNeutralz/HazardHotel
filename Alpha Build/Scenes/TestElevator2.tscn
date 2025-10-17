@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scenes/level_management.gd" id="1_4jdqq"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_20p6n"]
 [ext_resource type="Script" uid="uid://cb4xuh6705m0d" path="res://SpencerStuff/Scripts/player_move_pinch.gd" id="3_01ivf"]
-[ext_resource type="Texture2D" uid="uid://bw2bc6oekwjlp" path="res://Assets/icon.svg" id="4_0lxvw"]
+[ext_resource type="Texture2D" uid="uid://dti6vh1iw17rq" path="res://Assets/HH_Art_NewGuySprite_V1_.png" id="4_dxu1u"]
 [ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="5_f5hp3"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="6_vg4p8"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="7_eokko"]
@@ -58,15 +58,16 @@ size = Vector3(2.0975342, 0.8051758, 0.8741455)
 script = ExtResource("1_4jdqq")
 
 [node name="HH_Art_Pinch_V2" parent="." instance=ExtResource("2_20p6n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008184433, -0.008106232, 7.414818e-05)
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.01, 0.623, -0.544)
 script = ExtResource("3_01ivf")
 
 [node name="Sprite3D" type="Sprite3D" parent="Player"]
-transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 0, 2.1965525, 1.0507035)
+transform = Transform3D(-0.3, 4.5298744e-08, 0, -4.5298744e-08, -0.3, 0, 0, 0, 0.3, 0.0027491245, 2.0440886, 1.0627084)
 shaded = true
-texture = ExtResource("4_0lxvw")
+texture = ExtResource("4_dxu1u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.008636475, 0.0017394423, 1.0423431)
