@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://bbli5804nwopn"]
 
-[ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scenes/level_management.gd" id="1_4jdqq"]
+[ext_resource type="Script" uid="uid://cho7xqaqgg2ro" path="res://SpencerStuff/Scripts/level_management.gd" id="1_4jdqq"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_20p6n"]
 [ext_resource type="Script" uid="uid://cb4xuh6705m0d" path="res://SpencerStuff/Scripts/player_move_pinch.gd" id="3_01ivf"]
 [ext_resource type="Texture2D" uid="uid://dti6vh1iw17rq" path="res://Assets/HH_Art_NewGuySprite_V1_.png" id="4_dxu1u"]
@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bekut30xmeumk" path="res://Assets/Lock.png" id="10_7brss"]
 [ext_resource type="Script" uid="uid://bn5vexagvnj6c" path="res://SpencerStuff/Scripts/right_door.gd" id="11_apuxt"]
 [ext_resource type="Texture2D" uid="uid://bjgv41ufsr321" path="res://Assets/key.png" id="12_js3mt"]
-[ext_resource type="Script" path="res://SpencerStuff/Scripts/generator.gd" id="13_dxu1u"]
+[ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="13_dxu1u"]
 [ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="14_xu6l6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5fj6f"]

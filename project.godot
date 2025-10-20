@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="HazardHotel"
-run/main_scene="uid://ciyg5c7q4eydm"
+run/main_scene="uid://be7wtebqoq4lk"
 config/features=PackedStringArray("4.5", "C#", "GL Compatibility")
 config/icon="res://PrototypeAssets/icon.svg"
 
