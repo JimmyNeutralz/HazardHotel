@@ -6,8 +6,9 @@ extends CharacterBody3D
 @onready var player = $"../3dPlayer"
 @onready var puddle = $"../DeathPuddle3d"
 @onready var door = $"../3dElectricDoor"
-#@onready var text = $"../../RichTextLabel"
-@export var text: RichTextLabel
+@onready var fuseBoxUi = $"../Camera3D/FuseBoxUi"
+@onready var text = $"../Camera3D/RichTextLabel"
+#@export var text: RichTextLabel
 @export var elevator: Area3D
 
 var location: Vector3
@@ -153,6 +154,7 @@ func move_to_fuse_box(location):
 			rightKeyPressed = true
 			$Sprite3D.flip_h = false
 
+#Code to set all movement functions to false
 func reached_destination():
 	leftKeyPressed = false
 	rightKeyPressed = false
@@ -178,3 +180,4 @@ func _on_fuse_box_body_entered(body: Node3D) -> void:
 	if (moving):
 		moving = false
 		player.reached_destination()
+		fuseBoxUi.toggle_visibility(true)
