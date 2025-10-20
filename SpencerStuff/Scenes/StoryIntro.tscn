@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://8pbj7be3vo5"]
+
+[ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="1_c8rg3"]
+[ext_resource type="Script" uid="uid://gqeyngc7c0vo" path="res://SpencerStuff/Scripts/story_intro.gd" id="1_fopke"]
+
+[node name="StoryIntro" type="CanvasLayer"]
+script = ExtResource("1_fopke")
+
+[node name="Brown" type="Sprite2D" parent="."]
+position = Vector2(634, 267.75)
+scale = Vector2(2.2119565, 0.8900096)
+texture = ExtResource("1_c8rg3")
+
+[node name="IntroLabel" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
