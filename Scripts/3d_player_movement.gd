@@ -4,6 +4,9 @@ extends CharacterBody3D
 @onready var player = $"../3dPlayer"
 @onready var puddle = $"../DeathPuddle3d"
 @onready var door = $"../3dElectricDoor"
+#@onready var text = $"../../RichTextLabel"
+
+@export var text: RichTextLabel
 @export var elevator: Area3D
 
 var location: Vector3
@@ -11,6 +14,7 @@ var location: Vector3
 #The destination determined by what key the player selects
 var direction: Vector3
 
+#Variable used to determine where the user should stop for the auto movement to the left and right
 var stopPoint = 2.66
 
 #Bool values used to prevent movement beyond the destination or to keep the player moving
@@ -36,6 +40,7 @@ func _process(delta):
 		preventMoving = false
 		preventRightMovement = false
 		direction = Vector3(-stopPoint, 0, 0)
+		$Sprite3D.flip_h = true
 	#If the D key is pressed and no hazard is ahead, set desination to 1.7 to the right
 	elif(Input.is_action_just_pressed("Right 3D Spot") and !rightKeyPressed and !preventMoving and !preventRightMovement):
 		#print("If met")
@@ -44,6 +49,7 @@ func _process(delta):
 		centerKeyPressed = false
 		preventLeftMovement = false
 		direction = Vector3(stopPoint, 0, 0)
+		$Sprite3D.flip_h = false
 	#If the S key is pressed, set desination to 1.7 to the right
 	elif(Input.is_action_just_pressed("Center 3D Spot") and !centerKeyPressed and !preventRightMovement):
 		#print("If met")
@@ -57,9 +63,11 @@ func _process(delta):
 		#Sets direction appropreately so that the speed to the center is consistent with left and right travel
 		if (global_position.x >= 0):
 			direction = Vector3(-stopPoint, 0, 0)
+			$Sprite3D.flip_h = true
 			#print(direction)
 		elif (global_position.x <= 0):
 			direction = Vector3(stopPoint, 0, 0)
+			$Sprite3D.flip_h = false
 			#print(direction)
 	
 	#Stops the player moving if they reach either side or the center by setting the appropreate bool value to false
@@ -83,15 +91,26 @@ func _process(delta):
 		
 #If this function is triggered, the player dies
 func death():
-	global_position.x = elevator.global_position.x
+	#Disables movement
+	preventLeftMovement = true
+	preventRightMovement = true
 	leftKeyPressed = false
 	rightKeyPressed = false
 	centerKeyPressed = false
 	print ("YOU DIED!")
+	
+	#Line of code found at GDScript.com underneath solutions
+	await get_tree().create_timer(2.0).timeout
+	
+	#Sets the player back to the elevator entrance after respawning
+	global_position.x = elevator.global_position.x
+	preventLeftMovement = false
+	preventRightMovement = false
 
 #Function that prevents moving past a visibly electrified death puddle.
 func stop_moving(electrified):
 	if (electrified):
+		text.avoided_puddle()
 		leftKeyPressed = false
 		rightKeyPressed = false
 		centerKeyPressed = false
@@ -99,13 +118,14 @@ func stop_moving(electrified):
 		preventMoving = true
 	else:
 		preventMoving = false
-
+#Function that prevents the player from moving a certain direction 
+# depending on what's blocking a given direction
 func blocked_path(position, pathBlocked):
 	if (!pathBlocked):
 		leftKeyPressed = false
 		rightKeyPressed = false
 		centerKeyPressed = false
-		
+		#Disables certain movement directions depending on where the character is standing
 		if (global_position.x < position.x):
 			preventRightMovement = true
 			preventLeftMovement = false
@@ -115,12 +135,13 @@ func blocked_path(position, pathBlocked):
 	else:
 		preventLeftMovement = false
 		preventRightMovement = false
-
+#Function to automatically move left upon unlocking the electric gate
 func moveLeft():
 	leftKeyPressed = true
 	rightKeyPressed = false
 	centerKeyPressed = false
 	direction = Vector3(-stopPoint, 0, 0)
+	$Sprite3D.flip_h = true
 
 #Sets inDanger to true and checks to see if the player should die upon stepping into the puddle
 func _on_death_puddle_3d_body_entered(body: Node3D) -> void:
@@ -131,6 +152,7 @@ func _on_death_puddle_3d_body_entered(body: Node3D) -> void:
 func _on_death_puddle_3d_body_exited(body: Node3D) -> void:
 	inDanger = false
 
-
+#Checks if the door is unlocked along if the door is safe to determine final result
 func _on_3d_electric_door_body_entered(body: Node3D) -> void:
-	door.determine_result()
+	if(!door.opened):
+		door.determine_result()

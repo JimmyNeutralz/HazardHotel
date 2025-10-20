@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bcdhu0ocn0j5h"]
+[gd_scene load_steps=9 format=3 uid="uid://bcdhu0ocn0j5h"]
 
 [ext_resource type="PackedScene" uid="uid://bfryf0tii3xp2" path="res://Scenes/3d_player.tscn" id="1_rl6j4"]
+[ext_resource type="Script" uid="uid://d0so3nntww1b6" path="res://Scenes/text_change.gd" id="1_u6lgi"]
 [ext_resource type="PackedScene" uid="uid://dqpfg760d0aaw" path="res://Scenes/death_puddle_3D.tscn" id="2_3ei81"]
 [ext_resource type="PackedScene" uid="uid://b1ij07vysqwm1" path="res://Scenes/puddle_colider.tscn" id="3_a13u5"]
 [ext_resource type="PackedScene" uid="uid://dnjh8y0o0ghic" path="res://ThomasFolder/Scenes/3dElectricDoor.tscn" id="4_hm5ww"]
@@ -18,23 +19,36 @@ mesh = SubResource("BoxMesh_tdjjp")
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.93094116, 0.36516926, 0, -0.36516926, 0.93094116, 0, 1.5866497, 2.7937307)
 
-[node name="3dPlayer" parent="." node_paths=PackedStringArray("elevator") instance=ExtResource("1_rl6j4")]
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera3D"]
+offset_left = 74.0
+offset_top = 565.0
+offset_right = 1074.0
+offset_bottom = 605.0
+text = "
+"
+tab_size = 24
+horizontal_alignment = 1
+script = ExtResource("1_u6lgi")
+
+[node name="3dPlayer" parent="." node_paths=PackedStringArray("text", "elevator") instance=ExtResource("1_rl6j4")]
 transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, 0, 0.4747617, 0)
+text = NodePath("../Camera3D/RichTextLabel")
 elevator = NodePath("../Elevator")
 
 [node name="DeathPuddle3d" parent="." instance=ExtResource("2_3ei81")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8180761, 0.042937636, 0)
 
 [node name="PuddleColider" parent="." instance=ExtResource("3_a13u5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.0411174, 0.49048313, 0.0128132105)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2611973, 0.49048313, 0.0128132105)
 disable_mode = 2
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9038153, 0)
 
-[node name="3dElectricDoor" parent="." instance=ExtResource("4_hm5ww")]
+[node name="3dElectricDoor" parent="." node_paths=PackedStringArray("text") instance=ExtResource("4_hm5ww")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7598993, 1.29, 0)
 script = ExtResource("5_x2ll3")
+text = NodePath("../Camera3D/RichTextLabel")
 
 [node name="Elevator" parent="." instance=ExtResource("6_cx4jh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5270358, -0.4984646)
