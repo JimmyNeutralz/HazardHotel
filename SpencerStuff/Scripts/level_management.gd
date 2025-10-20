@@ -6,6 +6,8 @@ extends Node3D
 @onready var elevator_lock = $Elevator/ElevatorLock
 @onready var generator = $Generator
 
+@export var next_scene_path := "res://Alpha Build/Scenes/TestElevator2.tscn"
+
 #Key states
 var has_left_key: bool = false
 var has_right_key: bool = false
@@ -41,4 +43,4 @@ func _check_keys() -> void:
 #to next level
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if generator.activated:
-		Global.goto_scene("res://Alpha Build/Scenes/TestElevator2.tscn")
+		get_tree().change_scene_to_file(next_scene_path)
