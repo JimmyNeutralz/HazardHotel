@@ -6,7 +6,7 @@ extends Node3D
 @onready var elevator_lock = $Elevator/ElevatorLock
 @onready var generator = $Generator
 
-@export var next_scene_path := "res://Alpha Build/Scenes/TestElevator2.tscn"
+@export var next_scene_path := "res://SpencerStuff/Scenes/EndScene.tscn"
 
 #Key states
 var has_left_key: bool = false

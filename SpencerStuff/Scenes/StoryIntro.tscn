@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://8pbj7be3vo5"]
+[gd_scene load_steps=5 format=3 uid="uid://8pbj7be3vo5"]
 
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="1_c8rg3"]
 [ext_resource type="Script" uid="uid://gqeyngc7c0vo" path="res://SpencerStuff/Scripts/story_intro.gd" id="1_fopke"]
+[ext_resource type="Texture2D" uid="uid://c5q2un4hths5l" path="res://Assets/HH_Art_WitchSprite_V1.png" id="3_cu2kn"]
+[ext_resource type="Texture2D" uid="uid://6qeoy0yi87lv" path="res://Assets/HH_Art_ZombieSprite_V1.png" id="4_81u2b"]
 
 [node name="StoryIntro" type="CanvasLayer"]
 script = ExtResource("1_fopke")
@@ -22,3 +24,13 @@ theme_override_font_sizes/font_size = 24
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[node name="HhArtWitchSpriteV1" type="Sprite2D" parent="."]
+position = Vector2(81, 351)
+scale = Vector2(0.4942857, 0.4942857)
+texture = ExtResource("3_cu2kn")
+
+[node name="HhArtZombieSpriteV1" type="Sprite2D" parent="."]
+position = Vector2(1058, 356)
+scale = Vector2(-0.5284105, 0.5284105)
+texture = ExtResource("4_81u2b")

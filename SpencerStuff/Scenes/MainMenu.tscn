@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://be7wtebqoq4lk"]
+[gd_scene load_steps=6 format=3 uid="uid://be7wtebqoq4lk"]
 
 [ext_resource type="Texture2D" uid="uid://bo7s6c50xo650" path="res://Assets/HH_Art_Logo_V2_.png" id="1_k1cdu"]
 [ext_resource type="Script" uid="uid://cgx56qcx2qoqy" path="res://SpencerStuff/Scripts/menu_control.gd" id="1_tjmdi"]
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="2_g2l0o"]
+[ext_resource type="Texture2D" uid="uid://b8ilvj3lu8127" path="res://Assets/HH_Art_SkeletonSprite_V1.png" id="4_bxg5q"]
+[ext_resource type="Texture2D" uid="uid://bv8hukwp3yja2" path="res://Assets/HH_Art_WerewolfSprite_V1.png" id="5_s17u1"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -46,5 +48,15 @@ offset_right = 671.0
 offset_bottom = 530.0
 theme_override_font_sizes/font_size = 30
 text = "Settings"
+
+[node name="HhArtSkeletonSpriteV1" type="Sprite2D" parent="."]
+position = Vector2(257, 469.99997)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_bxg5q")
+
+[node name="HhArtWerewolfSpriteV1" type="Sprite2D" parent="."]
+position = Vector2(901, 467.00003)
+scale = Vector2(-0.43788034, 0.43788034)
+texture = ExtResource("5_s17u1")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

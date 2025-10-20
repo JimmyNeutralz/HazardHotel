@@ -1,0 +1,83 @@
+[gd_scene load_steps=12 format=3 uid="uid://bslonsecovevp"]
+
+[ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="1_ynw6k"]
+[ext_resource type="Texture2D" uid="uid://bo7s6c50xo650" path="res://Assets/HH_Art_Logo_V2_.png" id="2_jgqas"]
+[ext_resource type="Texture2D" uid="uid://dti6vh1iw17rq" path="res://Assets/HH_Art_NewGuySprite_V1_.png" id="3_m3h5d"]
+[ext_resource type="Texture2D" uid="uid://cpxgfb2rbpwix" path="res://Assets/speech-bubble-png-11.png" id="4_ornqc"]
+[ext_resource type="Texture2D" uid="uid://cxdu2hcoa4ln8" path="res://Assets/HH_Art_BuildingOwnerSprite_V1.png" id="5_m3h5d"]
+[ext_resource type="Texture2D" uid="uid://beuf1yv42ajuq" path="res://Assets/HH_Art_SwagulaSprite_V1.png" id="6_ornqc"]
+[ext_resource type="Texture2D" uid="uid://bcvq8vvdb5ps8" path="res://Assets/HH_Art_CyclopSprite_V1.png" id="7_k4yab"]
+[ext_resource type="Texture2D" uid="uid://c6h6s44suqx16" path="res://Assets/HH_Art_GhostSprite_V1.png" id="8_nqewr"]
+[ext_resource type="Texture2D" uid="uid://ulrivhuh5k0h" path="res://Assets/HH_Art_GoblinSprite_V1.png" id="9_u1dyk"]
+[ext_resource type="Texture2D" uid="uid://bcperlnt1ab0f" path="res://Assets/HH_Art_HandGuySprite_v1.png" id="10_rtv5k"]
+[ext_resource type="Texture2D" uid="uid://k5km3031kocw" path="res://Assets/HH_Art_HandymanSprite_V1.png" id="11_wa78v"]
+
+[node name="EndScene" type="CanvasLayer"]
+
+[node name="Brown" type="Sprite2D" parent="."]
+position = Vector2(573.5, 326.49994)
+scale = Vector2(1.5991848, 0.64841485)
+texture = ExtResource("1_ynw6k")
+
+[node name="HhArtLogoV2" type="Sprite2D" parent="."]
+position = Vector2(359.00003, 151.99997)
+rotation = -0.27737164
+scale = Vector2(0.22353639, 0.2465)
+texture = ExtResource("2_jgqas")
+
+[node name="HhArtNewGuySpriteV1" type="Sprite2D" parent="."]
+position = Vector2(1046, 474)
+scale = Vector2(-0.5, 0.5)
+texture = ExtResource("3_m3h5d")
+
+[node name="SpeechBubblePng11" type="Sprite2D" parent="."]
+position = Vector2(826, 279)
+scale = Vector2(0.3204593, 0.16844992)
+texture = ExtResource("4_ornqc")
+
+[node name="HhArtBuildingOwnerSpriteV1" type="Sprite2D" parent="."]
+position = Vector2(149, 497)
+rotation = -0.2460124
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_m3h5d")
+
+[node name="TextLabel" type="Label" parent="."]
+offset_left = 690.0
+offset_top = 236.0
+offset_right = 964.0
+offset_bottom = 278.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Thanks for Playing!"
+
+[node name="HhArtSwagulaSpriteV1" type="Sprite2D" parent="."]
+position = Vector2(473, 495)
+rotation = -9.941617e-05
+scale = Vector2(0.64857143, 0.64857143)
+texture = ExtResource("6_ornqc")
+
+[node name="HhArtCyclopSpriteV1" type="Sprite2D" parent="."]
+position = Vector2(1018, 118.000015)
+rotation = 0.52896285
+scale = Vector2(0.42500004, 0.42500004)
+texture = ExtResource("7_k4yab")
+
+[node name="HhArtGhostSpriteV1" type="Sprite2D" parent="."]
+position = Vector2(135, 107.00002)
+scale = Vector2(0.37642854, 0.37642854)
+texture = ExtResource("8_nqewr")
+
+[node name="HhArtGoblinSpriteV1" type="Sprite2D" parent="."]
+position = Vector2(773, 127.00001)
+scale = Vector2(0.3599999, 0.3599999)
+texture = ExtResource("9_u1dyk")
+
+[node name="HhArtHandGuySpriteV1" type="Sprite2D" parent="."]
+position = Vector2(313, 328)
+scale = Vector2(0.29285717, 0.29285717)
+texture = ExtResource("10_rtv5k")
+
+[node name="HhArtHandymanSpriteV1" type="Sprite2D" parent="."]
+position = Vector2(758, 489)
+scale = Vector2(0.51071423, 0.51071423)
+texture = ExtResource("11_wa78v")
