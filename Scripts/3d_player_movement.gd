@@ -1,11 +1,12 @@
 extends CharacterBody3D
 @export var speed = 2
+
+#Variables containing objects to access functions into other scripts
 @onready var hitBox = $CollisionShape3D
 @onready var player = $"../3dPlayer"
 @onready var puddle = $"../DeathPuddle3d"
 @onready var door = $"../3dElectricDoor"
 #@onready var text = $"../../RichTextLabel"
-
 @export var text: RichTextLabel
 @export var elevator: Area3D
 
@@ -21,6 +22,7 @@ var stopPoint = 2.66
 var leftKeyPressed = false
 var rightKeyPressed = false
 var centerKeyPressed = false
+var moving = false
 #Bool made to prevent the player from walking into a visible hazard
 var preventMoving = false
 
@@ -94,9 +96,7 @@ func death():
 	#Disables movement
 	preventLeftMovement = true
 	preventRightMovement = true
-	leftKeyPressed = false
-	rightKeyPressed = false
-	centerKeyPressed = false
+	reached_destination()
 	print ("YOU DIED!")
 	
 	#Line of code found at GDScript.com underneath solutions
@@ -111,9 +111,7 @@ func death():
 func stop_moving(electrified):
 	if (electrified):
 		text.avoided_puddle()
-		leftKeyPressed = false
-		rightKeyPressed = false
-		centerKeyPressed = false
+		reached_destination()
 		print("That was a close one!")
 		preventMoving = true
 	else:
@@ -122,9 +120,7 @@ func stop_moving(electrified):
 # depending on what's blocking a given direction
 func blocked_path(position, pathBlocked):
 	if (!pathBlocked):
-		leftKeyPressed = false
-		rightKeyPressed = false
-		centerKeyPressed = false
+		reached_destination()
 		#Disables certain movement directions depending on where the character is standing
 		if (global_position.x < position.x):
 			preventRightMovement = true
@@ -142,6 +138,25 @@ func moveLeft():
 	centerKeyPressed = false
 	direction = Vector3(-stopPoint, 0, 0)
 	$Sprite3D.flip_h = true
+	
+#Function that moves new guy to the fuse box
+func move_to_fuse_box(location):
+	leftKeyPressed = false
+	rightKeyPressed = false
+	centerKeyPressed = true
+	
+	if (global_position.x >= 0):
+			direction = Vector3(-stopPoint, 0, 0)
+			$Sprite3D.flip_h = true
+			#print(direction)
+	elif (global_position.x <= 0):
+			direction = Vector3(stopPoint, 0, 0)
+			$Sprite3D.flip_h = false
+
+func reached_destination():
+	leftKeyPressed = false
+	rightKeyPressed = false
+	centerKeyPressed = false
 
 #Sets inDanger to true and checks to see if the player should die upon stepping into the puddle
 func _on_death_puddle_3d_body_entered(body: Node3D) -> void:

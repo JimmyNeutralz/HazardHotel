@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bcdhu0ocn0j5h"]
+[gd_scene load_steps=10 format=3 uid="uid://bcdhu0ocn0j5h"]
 
 [ext_resource type="PackedScene" uid="uid://bfryf0tii3xp2" path="res://Scenes/3d_player.tscn" id="1_rl6j4"]
 [ext_resource type="Script" uid="uid://d0so3nntww1b6" path="res://Scenes/text_change.gd" id="1_u6lgi"]
 [ext_resource type="PackedScene" uid="uid://dqpfg760d0aaw" path="res://Scenes/death_puddle_3D.tscn" id="2_3ei81"]
+[ext_resource type="PackedScene" uid="uid://cveeyy8a70ee8" path="res://ThomasFolder/Scenes/fuse_box.tscn" id="2_c4cv2"]
 [ext_resource type="PackedScene" uid="uid://b1ij07vysqwm1" path="res://Scenes/puddle_colider.tscn" id="3_a13u5"]
 [ext_resource type="PackedScene" uid="uid://dnjh8y0o0ghic" path="res://ThomasFolder/Scenes/3dElectricDoor.tscn" id="4_hm5ww"]
 [ext_resource type="Script" uid="uid://b6cyyven6wib1" path="res://ThomasFolder/Scripts/electric_door_colider.gd" id="5_x2ll3"]
@@ -15,6 +16,9 @@
 [node name="Floor" type="MeshInstance3D" parent="."]
 transform = Transform3D(6.635, 0, 0, 0, 0.06, 0, 0, 0, 1.06, 0, 0, 0)
 mesh = SubResource("BoxMesh_tdjjp")
+
+[node name="FuseBox" parent="." instance=ExtResource("2_c4cv2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7480355, 0.017672658, -0.48415732)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.93094116, 0.36516926, 0, -0.36516926, 0.93094116, 0, 1.5866497, 2.7937307)
@@ -53,6 +57,7 @@ text = NodePath("../Camera3D/RichTextLabel")
 [node name="Elevator" parent="." instance=ExtResource("6_cx4jh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5270358, -0.4984646)
 
+[connection signal="area_entered" from="FuseBox" to="FuseBox" method="_on_area_entered"]
 [connection signal="body_entered" from="DeathPuddle3d" to="3dPlayer" method="_on_death_puddle_3d_body_entered"]
 [connection signal="body_exited" from="DeathPuddle3d" to="3dPlayer" method="_on_death_puddle_3d_body_exited"]
 [connection signal="body_entered" from="PuddleColider" to="PuddleColider" method="_on_body_entered"]
