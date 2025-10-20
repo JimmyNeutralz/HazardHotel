@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_hp8h4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_65vvi"]
 [ext_resource type="Script" uid="uid://cdcf2xh2ahv2s" path="res://SpencerStuff/Scripts/auto_movement.gd" id="3_k0vax"]
-[ext_resource type="Texture2D" uid="uid://dti6vh1iw17rq" path="res://Assets/HH_Art_NewGuySprite_V1_.png" id="4_calle"]
+[ext_resource type="Texture2D" uid="uid://b8vx7fxb5dgvh" path="res://Assets/HH_Art_NewGuySprite_V2.png" id="4_8kvwi"]
 [ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="5_h0fs4"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="6_im5b3"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="7_ujorc"]
@@ -104,9 +104,9 @@ script = ExtResource("3_k0vax")
 room_detectors_path = NodePath("../RoomDetectors")
 
 [node name="Sprite3D" type="Sprite3D" parent="Player"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.15889424, 1.0507035)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.2178232, 1.0507035)
 shaded = true
-texture = ExtResource("4_calle")
+texture = ExtResource("4_8kvwi")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.008636475, 0.0017394423, 1.0423431)

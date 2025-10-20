@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="1_ynw6k"]
 [ext_resource type="Texture2D" uid="uid://bo7s6c50xo650" path="res://Assets/HH_Art_Logo_V2_.png" id="2_jgqas"]
-[ext_resource type="Texture2D" uid="uid://dti6vh1iw17rq" path="res://Assets/HH_Art_NewGuySprite_V1_.png" id="3_m3h5d"]
 [ext_resource type="Texture2D" uid="uid://cpxgfb2rbpwix" path="res://Assets/speech-bubble-png-11.png" id="4_ornqc"]
 [ext_resource type="Texture2D" uid="uid://cxdu2hcoa4ln8" path="res://Assets/HH_Art_BuildingOwnerSprite_V1.png" id="5_m3h5d"]
 [ext_resource type="Texture2D" uid="uid://beuf1yv42ajuq" path="res://Assets/HH_Art_SwagulaSprite_V1.png" id="6_ornqc"]
@@ -10,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://c6h6s44suqx16" path="res://Assets/HH_Art_GhostSprite_V1.png" id="8_nqewr"]
 [ext_resource type="Texture2D" uid="uid://ulrivhuh5k0h" path="res://Assets/HH_Art_GoblinSprite_V1.png" id="9_u1dyk"]
 [ext_resource type="Texture2D" uid="uid://bcperlnt1ab0f" path="res://Assets/HH_Art_HandGuySprite_v1.png" id="10_rtv5k"]
+[ext_resource type="Texture2D" uid="uid://b8vx7fxb5dgvh" path="res://Assets/HH_Art_NewGuySprite_V2.png" id="11_lektt"]
 [ext_resource type="Texture2D" uid="uid://k5km3031kocw" path="res://Assets/HH_Art_HandymanSprite_V1.png" id="11_wa78v"]
 
 [node name="EndScene" type="CanvasLayer"]
@@ -24,11 +24,6 @@ position = Vector2(359.00003, 151.99997)
 rotation = -0.27737164
 scale = Vector2(0.22353639, 0.2465)
 texture = ExtResource("2_jgqas")
-
-[node name="HhArtNewGuySpriteV1" type="Sprite2D" parent="."]
-position = Vector2(1046, 474)
-scale = Vector2(-0.5, 0.5)
-texture = ExtResource("3_m3h5d")
 
 [node name="SpeechBubblePng11" type="Sprite2D" parent="."]
 position = Vector2(826, 279)
@@ -81,3 +76,8 @@ texture = ExtResource("10_rtv5k")
 position = Vector2(758, 489)
 scale = Vector2(0.51071423, 0.51071423)
 texture = ExtResource("11_wa78v")
+
+[node name="HhArtNewGuySpriteV2" type="Sprite2D" parent="."]
+position = Vector2(1007, 464)
+scale = Vector2(0.5914285, 0.5585714)
+texture = ExtResource("11_lektt")
