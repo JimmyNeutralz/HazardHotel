@@ -8,7 +8,8 @@ func _process(delta: float) -> void:
 		moving = true
 
 
-func _on_area_entered(area: CharacterBody3D) -> void:
-	if (moving):
-		moving = false
-		player.reached_destination()
+#func _on_area_entered(area: CharacterBody3D) -> void:
+	#print("Colided!")
+	#if (moving):
+		#moving = false
+		#player.reached_destination()

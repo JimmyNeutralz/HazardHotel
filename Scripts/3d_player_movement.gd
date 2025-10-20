@@ -141,16 +141,16 @@ func moveLeft():
 	
 #Function that moves new guy to the fuse box
 func move_to_fuse_box(location):
-	leftKeyPressed = false
-	rightKeyPressed = false
-	centerKeyPressed = true
-	
-	if (global_position.x >= 0):
+	centerKeyPressed = false
+	moving = true
+	if (global_position.x >= location):
 			direction = Vector3(-stopPoint, 0, 0)
 			$Sprite3D.flip_h = true
+			leftKeyPressed = true
 			#print(direction)
-	elif (global_position.x <= 0):
+	elif (global_position.x <= location):
 			direction = Vector3(stopPoint, 0, 0)
+			rightKeyPressed = true
 			$Sprite3D.flip_h = false
 
 func reached_destination():
@@ -171,3 +171,10 @@ func _on_death_puddle_3d_body_exited(body: Node3D) -> void:
 func _on_3d_electric_door_body_entered(body: Node3D) -> void:
 	if(!door.opened):
 		door.determine_result()
+
+
+
+func _on_fuse_box_body_entered(body: Node3D) -> void:
+	if (moving):
+		moving = false
+		player.reached_destination()
