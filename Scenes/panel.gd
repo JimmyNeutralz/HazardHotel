@@ -7,15 +7,15 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if (interactingWith):
-		print("Func true")
-		if (Input.is_action_just_pressed("Connect First Fuse 1 Chain") or Input.is_action_just_pressed("Connect Second Fuse 1 Chain")):
+		#print("Func true")
+		if (Input.is_action_just_pressed("Connect First Fuse 1 Chain") or Input.is_action_just_pressed("Connect Second Fuse 1 Chain") or Input.is_action_just_pressed("Connect Third Fuse 1 Chain") or Input.is_action_just_pressed("Connect Fourth Fuse 1 Chain")):
 			keysHeldDown = keysHeldDown + 1
 			print(keysHeldDown)
 		
-		if (Input.is_action_just_released("Connect First Fuse 1 Chain") or Input.is_action_just_released("Connect Second Fuse 1 Chain")):
+		if (Input.is_action_just_released("Connect First Fuse 1 Chain") or Input.is_action_just_released("Connect Second Fuse 1 Chain") or Input.is_action_just_released("Connect Third Fuse 1 Chain") or Input.is_action_just_released("Connect Fourth Fuse 1 Chain")):
 			keysHeldDown = keysHeldDown - 1
 		
-		if (keysHeldDown >= 2):
+		if (keysHeldDown >= 4):
 			visible = false
 			interactingWith = false
 
