@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://dkmjm0qf2uk8o"]
+
+[ext_resource type="VideoStream" uid="uid://jfxwxoj7l531" path="res://Donovan/EpicStatic.ogv" id="1_3g0qu"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -189.0
+offset_top = -139.0
+offset_right = 2455.0
+offset_bottom = 1399.0
+stream = ExtResource("1_3g0qu")
+autoplay = true
+loop = true

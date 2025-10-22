@@ -5,12 +5,16 @@ extends Node3D
 @onready var right_key = $RightWall/RightKey
 @onready var elevator_lock = $Elevator/ElevatorLock
 @onready var generator = $Generator
+@onready var fade_in_static = $Cameras/Camera/FadeInView
 
-@export var next_scene_path := "res://Alpha Build/Scenes/TestElevator2.tscn"
+@export var next_scene_path := "res://Donovan/MODIFIEDAlphaV4.tscn"
 
 #Key states
 var has_left_key: bool = false
 var has_right_key: bool = false
+
+func _ready():
+	fade_in_static._fade_static_out()
 
 
 #Left key area trigger
@@ -43,4 +47,6 @@ func _check_keys() -> void:
 #to next level
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if generator.activated:
-		get_tree().change_scene_to_file(next_scene_path)
+		fade_in_static._exit_scene(next_scene_path)
+		#fade_in_static._fade_static_in()
+		#get_tree().change_scene_to_file(next_scene_path)
