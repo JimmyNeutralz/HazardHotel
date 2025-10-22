@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bslonsecovevp"]
+[gd_scene load_steps=13 format=3 uid="uid://bslonsecovevp"]
 
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="1_ynw6k"]
 [ext_resource type="Texture2D" uid="uid://bo7s6c50xo650" path="res://Assets/HH_Art_Logo_V2_.png" id="2_jgqas"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bcperlnt1ab0f" path="res://Assets/HH_Art_HandGuySprite_v1.png" id="10_rtv5k"]
 [ext_resource type="Texture2D" uid="uid://b8vx7fxb5dgvh" path="res://Assets/HH_Art_NewGuySprite_V2.png" id="11_lektt"]
 [ext_resource type="Texture2D" uid="uid://k5km3031kocw" path="res://Assets/HH_Art_HandymanSprite_V1.png" id="11_wa78v"]
+[ext_resource type="Texture2D" uid="uid://cxlvo1vndyp7n" path="res://Assets/HH_Art_Logo_V4_.png" id="12_lektt"]
 
 [node name="EndScene" type="CanvasLayer"]
 
@@ -20,6 +21,7 @@ scale = Vector2(1.5991848, 0.64841485)
 texture = ExtResource("1_ynw6k")
 
 [node name="HhArtLogoV2" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(359.00003, 151.99997)
 rotation = -0.27737164
 scale = Vector2(0.22353639, 0.2465)
@@ -46,7 +48,7 @@ theme_override_font_sizes/font_size = 30
 text = "Thanks for Playing!"
 
 [node name="HhArtSwagulaSpriteV1" type="Sprite2D" parent="."]
-position = Vector2(473, 495)
+position = Vector2(410.00003, 494)
 rotation = -9.941617e-05
 scale = Vector2(0.64857143, 0.64857143)
 texture = ExtResource("6_ornqc")
@@ -58,7 +60,7 @@ scale = Vector2(0.42500004, 0.42500004)
 texture = ExtResource("7_k4yab")
 
 [node name="HhArtGhostSpriteV1" type="Sprite2D" parent="."]
-position = Vector2(135, 107.00002)
+position = Vector2(106.000015, 215)
 scale = Vector2(0.37642854, 0.37642854)
 texture = ExtResource("8_nqewr")
 
@@ -68,7 +70,8 @@ scale = Vector2(0.3599999, 0.3599999)
 texture = ExtResource("9_u1dyk")
 
 [node name="HhArtHandGuySpriteV1" type="Sprite2D" parent="."]
-position = Vector2(313, 328)
+position = Vector2(584.00006, 302.00003)
+rotation = 2.870925
 scale = Vector2(0.29285717, 0.29285717)
 texture = ExtResource("10_rtv5k")
 
@@ -79,5 +82,10 @@ texture = ExtResource("11_wa78v")
 
 [node name="HhArtNewGuySpriteV2" type="Sprite2D" parent="."]
 position = Vector2(1007, 464)
-scale = Vector2(0.5914285, 0.5585714)
+scale = Vector2(0.591, 0.559)
 texture = ExtResource("11_lektt")
+
+[node name="HhArtLogoV4" type="Sprite2D" parent="."]
+position = Vector2(401.00003, 169)
+scale = Vector2(0.2183333, 0.21833332)
+texture = ExtResource("12_lektt")
