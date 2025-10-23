@@ -34,3 +34,11 @@ texture = ExtResource("3_cu2kn")
 position = Vector2(1058, 356)
 scale = Vector2(-0.5284105, 0.5284105)
 texture = ExtResource("4_81u2b")
+
+[node name="SkipButton" type="Button" parent="."]
+offset_left = 504.0
+offset_top = 475.0
+offset_right = 664.0
+offset_bottom = 535.0
+theme_override_font_sizes/font_size = 30
+text = "Skip"
