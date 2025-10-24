@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cq6dinw2go1su"]
+
+[ext_resource type="Texture2D" uid="uid://cbtpge8fw3rgk" path="res://ThomasFolder/Sprites/Budget_Dino_Grabber.png" id="1_atjh1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_c8ej5"]
+
+[node name="Grabber" type="Area3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_atjh1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.775, 0, 0, 0, 1.775, 0, 0, 0, 1.775, 0, 0, 0)
+shape = SubResource("BoxShape3D_c8ej5")

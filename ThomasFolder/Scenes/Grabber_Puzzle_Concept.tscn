@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfww28cwaxmlv"]
+
+[ext_resource type="PackedScene" uid="uid://doedso0a6llnl" path="res://ThomasFolder/Scenes/Elevator.tscn" id="1_fq3xq"]
+[ext_resource type="PackedScene" uid="uid://ci14a0bc5q632" path="res://ThomasFolder/Scenes/fuse_box_ui.tscn" id="2_0uyce"]
+[ext_resource type="Script" uid="uid://d0so3nntww1b6" path="res://Scenes/text_change.gd" id="3_6us3t"]
+[ext_resource type="PackedScene" uid="uid://bfryf0tii3xp2" path="res://Scenes/3d_player.tscn" id="4_kccbw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o2fov"]
+
+[node name="GrabberPuzzleConcept" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.635, 0, 0, 0, 0.06, 0, 0, 0, 1.06, 0, 0, 0)
+mesh = SubResource("BoxMesh_o2fov")
+
+[node name="Elevator" parent="." instance=ExtResource("1_fq3xq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5321288, 0.5231741, -0.44124675)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9309411, 0.3651693, 0, -0.36516926, 0.9309411, 0, 1.587, 2.794)
+
+[node name="FuseBoxUi" parent="Camera3D" node_paths=PackedStringArray("player") instance=ExtResource("2_0uyce")]
+player = NodePath("")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Camera3D"]
+offset_left = 74.0
+offset_top = 565.0
+offset_right = 1074.0
+offset_bottom = 605.0
+text = "
+"
+tab_size = 24
+horizontal_alignment = 1
+script = ExtResource("3_6us3t")
+
+[node name="3dPlayer" parent="." node_paths=PackedStringArray("elevator") instance=ExtResource("4_kccbw")]
+transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, -2.532, 0.475, 0)
+elevator = NodePath("")
