@@ -1,12 +1,13 @@
 extends Area2D
 var interactingWith = false
+var complete = false
 var keysHeldDown = 0
 
 func _ready() -> void:
 	visible = false
 
 func _process(delta: float) -> void:
-	if (interactingWith):
+	if (interactingWith and !complete):
 		#print("Func true")
 		if (Input.is_action_just_pressed("Connect First Fuse 1 Chain") or Input.is_action_just_pressed("Connect Second Fuse 1 Chain") or Input.is_action_just_pressed("Connect Third Fuse 1 Chain") or Input.is_action_just_pressed("Connect Fourth Fuse 1 Chain")):
 			keysHeldDown = keysHeldDown + 1
@@ -18,6 +19,7 @@ func _process(delta: float) -> void:
 		if (keysHeldDown >= 4):
 			visible = false
 			interactingWith = false
+			complete = true
 
 func toggle_visibility(val):
 	#print("Works!")

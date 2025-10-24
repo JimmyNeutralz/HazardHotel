@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bj5ns3chr008o"]
+
+[ext_resource type="Texture2D" uid="uid://bbowierxqp3cy" path="res://ThomasFolder/Scenes/Fuse.png" id="1_g0u7j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tjdku"]
+
+[node name="Fuse" type="Area3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+texture = ExtResource("1_g0u7j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.235, 0, 0, 0, 0.235, 0, 0, 0, 0.235, 0, 0, 0)
+shape = SubResource("BoxShape3D_tjdku")

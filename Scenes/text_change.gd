@@ -26,3 +26,8 @@ func puddle_death():
 	set_text("Wasn't that puddle safe just a second ago?")
 	await get_tree().create_timer(1.5).timeout
 	set_text("")
+
+func completed_fusebox():
+	set_text("This fusebox is already completed. No need to complete it again.")
+	await get_tree().create_timer(1.5).timeout
+	set_text("")

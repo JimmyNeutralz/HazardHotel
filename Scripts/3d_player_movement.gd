@@ -34,64 +34,65 @@ var preventRightMovement = false
 var inDanger = false
 
 func _process(delta):
-	#If the A key is pressed, set desination to 1.7 to the left
-	if(Input.is_action_just_pressed("Left 3D Spot") and !leftKeyPressed and !preventLeftMovement):
-		#print("If met")
-		leftKeyPressed = true
-		rightKeyPressed = false
-		centerKeyPressed = false
-		preventMoving = false
-		preventRightMovement = false
-		direction = Vector3(-stopPoint, 0, 0)
-		$Sprite3D.flip_h = true
-	#If the D key is pressed and no hazard is ahead, set desination to 1.7 to the right
-	elif(Input.is_action_just_pressed("Right 3D Spot") and !rightKeyPressed and !preventMoving and !preventRightMovement):
-		#print("If met")
-		rightKeyPressed = true
-		leftKeyPressed = false
-		centerKeyPressed = false
-		preventLeftMovement = false
-		direction = Vector3(stopPoint, 0, 0)
-		$Sprite3D.flip_h = false
-	#If the S key is pressed, set desination to 1.7 to the right
-	elif(Input.is_action_just_pressed("Center 3D Spot") and !centerKeyPressed and !preventRightMovement):
-		#print("If met")
-		centerKeyPressed = true
-		leftKeyPressed = false
-		rightKeyPressed = false
-		preventMoving = false
-		preventLeftMovement = false
-		#direction = Vector3(-global_position.x, 0, 0)
-		
-		#Sets direction appropreately so that the speed to the center is consistent with left and right travel
-		if (global_position.x >= 0):
+	if (!fuseBoxUi.interactingWith):
+		#If the A key is pressed, set desination to 1.7 to the left
+		if(Input.is_action_just_pressed("Left 3D Spot") and !leftKeyPressed and !preventLeftMovement):
+			#print("If met")
+			leftKeyPressed = true
+			rightKeyPressed = false
+			centerKeyPressed = false
+			preventMoving = false
+			preventRightMovement = false
 			direction = Vector3(-stopPoint, 0, 0)
 			$Sprite3D.flip_h = true
-			#print(direction)
-		elif (global_position.x <= 0):
+		#If the D key is pressed and no hazard is ahead, set desination to 1.7 to the right
+		elif(Input.is_action_just_pressed("Right 3D Spot") and !rightKeyPressed and !preventMoving and !preventRightMovement):
+			#print("If met")
+			rightKeyPressed = true
+			leftKeyPressed = false
+			centerKeyPressed = false
+			preventLeftMovement = false
 			direction = Vector3(stopPoint, 0, 0)
 			$Sprite3D.flip_h = false
-			#print(direction)
-	
-	#Stops the player moving if they reach either side or the center by setting the appropreate bool value to false
-	if (global_position.x < -stopPoint):
-		leftKeyPressed = false
-	elif (global_position.x > stopPoint):
-		rightKeyPressed = false
-	elif (global_position.x > -0.01 and global_position.x < 0.01 and centerKeyPressed):
-		centerKeyPressed = false
-	#If any of the bool values that determine movement are true, gradually move to the destination by updating global position
-	if (leftKeyPressed or rightKeyPressed or centerKeyPressed):
-		#print("If met")
-		global_position += direction * delta * speed
-	#if (Input.is_action_just_pressed("Left 3D Spot") and position != Vector3(-1.7,0.35,0)):
-		#move left
-		#location = Vector3(-1.7,0.35,0)
+		#If the S key is pressed, set desination to 1.7 to the right
+		elif(Input.is_action_just_pressed("Center 3D Spot") and !centerKeyPressed and !preventRightMovement):
+			#print("If met")
+			centerKeyPressed = true
+			leftKeyPressed = false
+			rightKeyPressed = false
+			preventMoving = false
+			preventLeftMovement = false
+			#direction = Vector3(-global_position.x, 0, 0)
+			
+			#Sets direction appropreately so that the speed to the center is consistent with left and right travel
+			if (global_position.x >= 0):
+				direction = Vector3(-stopPoint, 0, 0)
+				$Sprite3D.flip_h = true
+				#print(direction)
+			elif (global_position.x <= 0):
+				direction = Vector3(stopPoint, 0, 0)
+				$Sprite3D.flip_h = false
+				#print(direction)
 		
-	#elif (Input.is_action_just_pressed("Right 3D Spot") and position != Vector3(1.7,0.35,0)):
-		#move right
-		#location = Vector3(1.7,0.35,0)
-		
+		#Stops the player moving if they reach either side or the center by setting the appropreate bool value to false
+		if (global_position.x < -stopPoint):
+			leftKeyPressed = false
+		elif (global_position.x > stopPoint):
+			rightKeyPressed = false
+		elif (global_position.x > -0.01 and global_position.x < 0.01 and centerKeyPressed):
+			centerKeyPressed = false
+		#If any of the bool values that determine movement are true, gradually move to the destination by updating global position
+		if (leftKeyPressed or rightKeyPressed or centerKeyPressed):
+			#print("If met")
+			global_position += direction * delta * speed
+		#if (Input.is_action_just_pressed("Left 3D Spot") and position != Vector3(-1.7,0.35,0)):
+			#move left
+			#location = Vector3(-1.7,0.35,0)
+			
+		#elif (Input.is_action_just_pressed("Right 3D Spot") and position != Vector3(1.7,0.35,0)):
+			#move right
+			#location = Vector3(1.7,0.35,0)
+			
 #If this function is triggered, the player dies
 func death():
 	#Disables movement
@@ -143,15 +144,21 @@ func moveLeft():
 #Function that moves new guy to the fuse box
 func move_to_fuse_box(location):
 	centerKeyPressed = false
+	preventMoving = false
+	preventLeftMovement = false
+	preventRightMovement = false
+	
 	moving = true
 	if (global_position.x >= location):
 			direction = Vector3(-stopPoint, 0, 0)
 			$Sprite3D.flip_h = true
 			leftKeyPressed = true
+			rightKeyPressed = false
 			#print(direction)
 	elif (global_position.x <= location):
 			direction = Vector3(stopPoint, 0, 0)
 			rightKeyPressed = true
+			leftKeyPressed = false
 			$Sprite3D.flip_h = false
 
 #Code to set all movement functions to false
@@ -174,10 +181,14 @@ func _on_3d_electric_door_body_entered(body: Node3D) -> void:
 	if(!door.opened):
 		door.determine_result()
 
-
-
+#Function that opens up the UI used to complete the fuse box
 func _on_fuse_box_body_entered(body: Node3D) -> void:
-	if (moving):
+	if (moving and !fuseBoxUi.complete):
 		moving = false
 		player.reached_destination()
 		fuseBoxUi.toggle_visibility(true)
+	elif(moving and fuseBoxUi.complete):
+		moving = false
+		player.reached_destination()
+		text.completed_fusebox()
+		
