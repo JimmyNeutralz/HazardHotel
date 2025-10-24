@@ -31,3 +31,13 @@ func completed_fusebox():
 	set_text("This fusebox is already completed. No need to complete it again.")
 	await get_tree().create_timer(1.5).timeout
 	set_text("")
+
+func missing_fuses():
+	set_text("Don't have any fuses I can use with this fuse box.")
+	await get_tree().create_timer(1.5).timeout
+	set_text("")
+	
+func got_fuse():
+	set_text("Not sure why these are here, but at least I can use these with the fuse box.")
+	await get_tree().create_timer(1.5).timeout
+	set_text("")

@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbowierxqp3cy"
-path.s3tc="res://.godot/imported/Fuse.png-6c3b714a7d729c065d4daffdd2165a57.s3tc.ctex"
+uid="uid://cj6hdu5urw5rs"
+path.s3tc="res://.godot/imported/HH_Art_NewGuySprite_V2.png-39d6f7b160ffe12779d7396bb03aefcd.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://ThomasFolder/Scenes/Fuse.png"
-dest_files=["res://.godot/imported/Fuse.png-6c3b714a7d729c065d4daffdd2165a57.s3tc.ctex"]
+source_file="res://ThomasFolder/Sprites/HH_Art_NewGuySprite_V2.png"
+dest_files=["res://.godot/imported/HH_Art_NewGuySprite_V2.png-39d6f7b160ffe12779d7396bb03aefcd.s3tc.ctex"]
 
 [params]
 

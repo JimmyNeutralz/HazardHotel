@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ci14a0bc5q632"]
 
 [ext_resource type="Script" uid="uid://ex7gh5qe3x4o" path="res://Scenes/panel.gd" id="1_edoyu"]
-[ext_resource type="Texture2D" uid="uid://b75p4i71s3no2" path="res://ThomasFolder/Basic Fuse Box.png" id="2_3yws5"]
+[ext_resource type="Texture2D" uid="uid://b75p4i71s3no2" path="res://ThomasFolder/Sprites/Basic Fuse Box.png" id="2_3yws5"]
 
 [node name="FuseBoxUi" type="Area2D"]
 script = ExtResource("1_edoyu")

@@ -183,12 +183,26 @@ func _on_3d_electric_door_body_entered(body: Node3D) -> void:
 
 #Function that opens up the UI used to complete the fuse box
 func _on_fuse_box_body_entered(body: Node3D) -> void:
-	if (moving and !fuseBoxUi.complete):
+	if (moving and !fuseBoxUi.complete and (fuseBoxUi.fusesGathered >= 1)):
 		moving = false
 		player.reached_destination()
 		fuseBoxUi.toggle_visibility(true)
+		in_menu()
 	elif(moving and fuseBoxUi.complete):
 		moving = false
 		player.reached_destination()
 		text.completed_fusebox()
-		
+	elif (moving and fuseBoxUi.fusesGathered < 1):
+		moving = false
+		player.reached_destination()
+		text.missing_fuses()
+
+func in_menu():
+	preventMoving = true
+	preventLeftMovement = true
+	preventRightMovement = true
+	
+func out_of_menu():
+	preventMoving = false
+	preventLeftMovement = false
+	preventRightMovement = false

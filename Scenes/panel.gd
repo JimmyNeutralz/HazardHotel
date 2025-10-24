@@ -1,7 +1,12 @@
 extends Area2D
+@export var player: CharacterBody3D
+
 var interactingWith = false
 var complete = false
 var keysHeldDown = 0
+
+var fusesGathered = 0
+
 
 func _ready() -> void:
 	visible = false
@@ -20,9 +25,13 @@ func _process(delta: float) -> void:
 			visible = false
 			interactingWith = false
 			complete = true
+			player.out_of_menu()
 
 func toggle_visibility(val):
 	#print("Works!")
 	visible = val
 	if (val):
 		interactingWith = true
+		
+func getFuse():
+	fusesGathered += 1
