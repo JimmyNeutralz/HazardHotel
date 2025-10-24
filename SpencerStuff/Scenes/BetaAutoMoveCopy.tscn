@@ -108,7 +108,7 @@ transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.01, 0.623, -0.544)
 script = ExtResource("3_27hkx")
 room_detectors_path = NodePath("../RoomDetectors")
 
-[node name="Sprite3D" type="Sprite3D" parent="Player"]
+[node name="PlayerSprite" type="Sprite3D" parent="Player"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.2178232, 1.0507035)
 shaded = true
 texture = ExtResource("4_pmcw7")
@@ -410,7 +410,7 @@ scale = Vector2(0.35, 0.2708934)
 texture = ExtResource("30_toapv")
 
 [node name="ResumeButton" type="Button" parent="PauseMenu"]
-anchors_preset = -1
+anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0

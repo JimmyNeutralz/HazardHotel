@@ -6,6 +6,9 @@ extends CharacterBody3D
 @export var speed: float = 3.5
 @export var room_detectors_path: NodePath
 
+#Player sprite
+@onready var player_sprite = $PlayerSprite
+
 #Declarations
 var room_detectors: Node
 var current_room: Node = null
@@ -21,6 +24,9 @@ const RESPAWN_DELAY = 2.0
 var spawn_transform: Transform3D
 
 func _ready():
+	#Sprite starts facing to the left (default state)
+	player_sprite.scale.x = 0.3; #Add a negative sign in front to flip sprite to face the right
+	
 	room_detectors = get_node(room_detectors_path)
 	
 	#Store references to each room in order (Left, Main, Right)
@@ -60,10 +66,14 @@ func _physics_process(delta):
 
 	#Input controls
 	if Input.is_action_just_pressed("Center 3D Spot"): #"S"
+		#TODO: Figure out if player should be facing right or left when moving to center of room
+		
 		move_to_room_center()
 	elif Input.is_action_just_pressed("Left 3D Spot"): #"A"
+		player_sprite.scale.x = 0.3; #Face left
 		move_to_adjacent_room(-1)
 	elif Input.is_action_just_pressed("Right 3D Spot"): #"D"
+		player_sprite.scale.x = -0.3; #Face right
 		move_to_adjacent_room(1)
 
 #Move to center of room 
