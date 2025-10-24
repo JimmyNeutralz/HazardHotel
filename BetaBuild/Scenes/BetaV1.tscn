@@ -1,0 +1,440 @@
+[gd_scene load_steps=53 format=3 uid="uid://crtvvdlonk03r"]
+
+[ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_yatf1"]
+[ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_k8f3g"]
+[ext_resource type="Script" uid="uid://cdcf2xh2ahv2s" path="res://SpencerStuff/Scripts/auto_movement.gd" id="3_o06sq"]
+[ext_resource type="Texture2D" uid="uid://b8vx7fxb5dgvh" path="res://Assets/HH_Art_NewGuySprite_V2.png" id="4_u04s3"]
+[ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="5_dgrxr"]
+[ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="6_0v8k1"]
+[ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="7_6uvib"]
+[ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="8_ea18x"]
+[ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="9_br10n"]
+[ext_resource type="Script" uid="uid://bg4bius86njfo" path="res://SpencerStuff/Scripts/left_door.gd" id="10_a51jr"]
+[ext_resource type="Texture2D" uid="uid://bekut30xmeumk" path="res://Assets/Lock.png" id="11_w5dwq"]
+[ext_resource type="PackedScene" uid="uid://07r1c3ba45w3" path="res://Assets/3D Models/HH_Art_DoorOpenLeftAnim_V1.fbx" id="12_2k54b"]
+[ext_resource type="PackedScene" uid="uid://dqdrihkiouy1o" path="res://Assets/3D Models/HH_Art_locks_openAnim_V1.fbx" id="13_gtqjt"]
+[ext_resource type="Script" uid="uid://bn5vexagvnj6c" path="res://SpencerStuff/Scripts/right_door.gd" id="14_a6si4"]
+[ext_resource type="PackedScene" uid="uid://lgf83rme0ewf" path="res://Assets/3D Models/HH_Art_DoorOpenRightAnim_v1.fbx" id="15_i6ubw"]
+[ext_resource type="Texture2D" uid="uid://bjgv41ufsr321" path="res://Assets/key.png" id="16_7bpt7"]
+[ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="17_xcbul"]
+[ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="18_hp8hd"]
+[ext_resource type="Script" uid="uid://cqxfonrb48820" path="res://SpencerStuff/Scripts/puddle.gd" id="19_eyeoa"]
+[ext_resource type="PackedScene" uid="uid://clhua17db53gv" path="res://Assets/3D Models/HH_Art_Puddle_v1.fbx" id="20_vub05"]
+[ext_resource type="Script" uid="uid://ct1s4dt2hpjix" path="res://SpencerStuff/Scripts/fusebox.gd" id="21_m11yr"]
+[ext_resource type="PackedScene" uid="uid://dllmxns1qx246" path="res://Scenes/FuseboxClose.tscn" id="22_mii6o"]
+[ext_resource type="Script" uid="uid://d26s1jhjd3mxd" path="res://SpencerStuff/Scripts/gate.gd" id="23_x2h4w"]
+[ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="24_fx2jr"]
+[ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="25_kmqwy"]
+[ext_resource type="PackedScene" uid="uid://cjpyo5axkiie8" path="res://Scenes/GateClosed.tscn" id="26_d0xtk"]
+[ext_resource type="PackedScene" uid="uid://dls6ajp0nybf4" path="res://Assets/3D Models/HH_Art_PinchModularLeft_V2.fbx" id="27_k06vj"]
+[ext_resource type="PackedScene" uid="uid://b8fbh4foswd7e" path="res://Assets/3D Models/HH_Art_PinchModularMiddle_V2.fbx" id="28_vytwa"]
+[ext_resource type="PackedScene" uid="uid://bojy7at4teudg" path="res://Assets/3D Models/HH_Art_PinchModularRight_V2.fbx" id="29_2rltv"]
+[ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="30_e1l67"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5fj6f"]
+size = Vector3(1.2994995, 1.2765503, 0.11035156)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
+size = Vector3(1, 2.736206, 2.517212)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_t3whr"]
+size = Vector3(0.6641846, 2.7762604, 2.8076324)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a7eha"]
+size = Vector3(0.04345703, 2.144104, 1.104126)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sgubx"]
+size = Vector3(0.041137695, 2.2403564, 1.029419)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x1e6v"]
+size = Vector3(0.031463623, 2.2488403, 1.3247375)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ac5tv"]
+size = Vector3(0.019165039, 2.2601929, 1.1436157)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_66v05"]
+size = Vector3(0.015350342, 1.9898682, 1.2463379)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_w5m3f"]
+size = Vector3(0.024658203, 2.2550354, 1.1798096)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u7gkx"]
+size = Vector3(1, 3.166504, 2.3077393)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h7tgk"]
+size = Vector3(1, 3.1601563, 2.31604)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f063y"]
+size = Vector3(2.0975342, 0.8051758, 0.8741455)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0kak2"]
+size = Vector3(2.2730713, 0.62597656, 1.4420166)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0kak2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_idyij"]
+size = Vector3(0.16955566, 3.5111084, 2.2953491)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vher1"]
+size = Vector3(0.16568756, 2.8619385, 2.3187866)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idyij"]
+albedo_color = Color(0.9030753, 0, 0.07757329, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ffsuc"]
+material = SubResource("StandardMaterial3D_idyij")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k700v"]
+size = Vector3(0.9015198, 2.046997, 1.7373047)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fqss4"]
+size = Vector3(4.226074, 2.7891846, 2.2185059)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gpw56"]
+size = Vector3(4.246231, 2.7391052, 2.2364502)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tnwif"]
+size = Vector3(4.272888, 2.7320023, 2.4972534)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_yatf1")
+
+[node name="HH_Art_Pinch_V2" parent="." instance=ExtResource("2_k8f3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007326126, 0.0070431232, -0.0001385212)
+visible = false
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.01, 0.623, -0.544)
+script = ExtResource("3_o06sq")
+room_detectors_path = NodePath("../RoomDetectors")
+
+[node name="Sprite3D" type="Sprite3D" parent="Player"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.2178232, 1.0507035)
+shaded = true
+texture = ExtResource("4_u04s3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.008636475, 0.0017394423, 1.0423431)
+shape = SubResource("BoxShape3D_5fj6f")
+
+[node name="PlayerSpawnPosition" type="Node3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 0.62, -0.54)
+
+[node name="Cameras" type="Node3D" parent="."]
+
+[node name="Camera" type="Camera3D" parent="Cameras" groups=["MainCamera"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0150594935, 1.4396391, 2.9852402)
+script = ExtResource("5_dgrxr")
+
+[node name="MainCamPos" type="Node3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 1.44, 2.985)
+
+[node name="LeftCamPos" type="Node3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1, 1.44, 2.985)
+
+[node name="RightCamPos" type="Node3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 1.44, 2.985)
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="MiddleRoomLight" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 1.5, 0.175)
+
+[node name="LeftRoomLight" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 1.5, 0.175)
+
+[node name="RightRoomLight" type="OmniLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 1.5, 0.175)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9708586, 2.2142832)
+
+[node name="LeftBulb" parent="Lights" instance=ExtResource("6_0v8k1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 2.38, 0.175)
+
+[node name="MiddleBulb" parent="Lights" instance=ExtResource("6_0v8k1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 2.38, 0.175)
+
+[node name="RightBulb" parent="Lights" instance=ExtResource("6_0v8k1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 2.38, 0.175)
+
+[node name="Borders" type="Node3D" parent="."]
+
+[node name="LeftBorder" type="StaticBody3D" parent="Borders"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Borders/LeftBorder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.926605, 1.4651122, 0.29384184)
+shape = SubResource("BoxShape3D_3nyfu")
+
+[node name="RightBorder" type="StaticBody3D" parent="Borders"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Borders/RightBorder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.867888, 1.4507129, 0.5398276)
+shape = SubResource("BoxShape3D_t3whr")
+
+[node name="CameraTriggers" type="Node3D" parent="."]
+
+[node name="RightRoomTrigger" type="Area3D" parent="CameraTriggers"]
+script = ExtResource("7_6uvib")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraTriggers/RightRoomTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3277304, 1.09, 0.157)
+shape = SubResource("BoxShape3D_a7eha")
+
+[node name="LeftRoomTrigger" type="Area3D" parent="CameraTriggers"]
+script = ExtResource("8_ea18x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraTriggers/LeftRoomTrigger"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -3.313292, 1.09, 0.157)
+shape = SubResource("BoxShape3D_sgubx")
+
+[node name="MainRoomTrigger" type="Area3D" parent="CameraTriggers"]
+script = ExtResource("9_br10n")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CameraTriggers/MainRoomTrigger"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -3.1126447, 1.1417187, 0.05721879)
+shape = SubResource("BoxShape3D_x1e6v")
+
+[node name="CollisionShape3D22" type="CollisionShape3D" parent="CameraTriggers/MainRoomTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9837947, 1.0860459, 0.087834835)
+shape = SubResource("BoxShape3D_ac5tv")
+
+[node name="LeftDoor" type="Node3D" parent="."]
+script = ExtResource("10_a51jr")
+
+[node name="LeftLock" type="Sprite3D" parent="LeftDoor"]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -2.0752883, 1.535344, -0.34809792)
+texture = ExtResource("11_w5dwq")
+
+[node name="LeftArea" type="StaticBody3D" parent="LeftDoor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftDoor/LeftArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.365698, 1.01702, 0.09989405)
+shape = SubResource("BoxShape3D_66v05")
+
+[node name="HH_Art_DoorOpenLeftAnim_V1" parent="LeftDoor" instance=ExtResource("12_2k54b")]
+transform = Transform3D(0.99939084, 0, -0.034899496, 0, 1, 0, 0.034899496, 0, 0.99939084, -3.14268, 0, 0.10658157)
+
+[node name="HH_Art_locks_openAnim_V1" parent="LeftDoor" instance=ExtResource("13_gtqjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1599083, 0, 0.13976127)
+
+[node name="RightDoor" type="Node3D" parent="."]
+script = ExtResource("14_a6si4")
+
+[node name="RightLock" type="Sprite3D" parent="RightDoor"]
+transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 2.0785112, 1.53, -0.34)
+texture = ExtResource("11_w5dwq")
+
+[node name="RightArea" type="StaticBody3D" parent="RightDoor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightDoor/RightArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5437398, 1.1224811, 0.11894977)
+shape = SubResource("BoxShape3D_w5m3f")
+
+[node name="HH_Art_DoorOpenRightAnim_v1" parent="RightDoor" instance=ExtResource("15_i6ubw")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 3.149738, 0, 0.10374862)
+
+[node name="HH_Art_locks_openAnim_V1" parent="RightDoor" instance=ExtResource("13_gtqjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1367648, 0, 0.12651175)
+
+[node name="LeftWall" type="Node3D" parent="."]
+
+[node name="LeftTrigger" type="Area3D" parent="LeftWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="LeftWall/LeftTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.792616, 1.353595, 0.1416626)
+shape = SubResource("BoxShape3D_u7gkx")
+
+[node name="LeftKey" type="Sprite3D" parent="LeftWall"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -6.2582235, 4.001706, 0)
+visible = false
+texture = ExtResource("16_7bpt7")
+
+[node name="RightWall" type="Node3D" parent="."]
+
+[node name="RightTrigger" type="Area3D" parent="RightWall"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RightWall/RightTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.128209, 1.3515258, 0.1765747)
+shape = SubResource("BoxShape3D_h7tgk")
+
+[node name="RightKey" type="Sprite3D" parent="RightWall"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 6.26, 3.4326613, 0)
+visible = false
+texture = ExtResource("16_7bpt7")
+
+[node name="Elevator" type="Node3D" parent="."]
+
+[node name="ElevatorLock" type="Sprite3D" parent="Elevator"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.01, 1.4756831, -0.9583911)
+texture = ExtResource("11_w5dwq")
+
+[node name="Generator" type="Node3D" parent="."]
+script = ExtResource("17_xcbul")
+gate_node_path = NodePath("../Gate")
+
+[node name="GeneratorModel" parent="Generator" instance=ExtResource("18_hp8hd")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9929323, 0, -0.16973802)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Generator/GeneratorModel"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Generator/GeneratorModel/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5487671, 0.4333496, 0.0010375977)
+shape = SubResource("BoxShape3D_f063y")
+
+[node name="Puddle" type="Node3D" parent="."]
+script = ExtResource("19_eyeoa")
+
+[node name="HH_Art_Puddle_v1" parent="Puddle" instance=ExtResource("20_vub05")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.328267, 0.091492236, 0.22333205)
+
+[node name="PuddleTrigger" type="Area3D" parent="Puddle"]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.28949, 0.091492236, 0.22333205)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Puddle/PuddleTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038757205, -0.18701172, 2.0847106)
+shape = SubResource("BoxShape3D_0kak2")
+
+[node name="FuseBox" type="Node3D" parent="."]
+script = ExtResource("21_m11yr")
+puddle_node_path = NodePath("../Puddle")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FuseBox"]
+transform = Transform3D(0.07773701, 0, 0.10943962, 0, 1.0340936, 0, -0.022290729, 0, 0.38166133, 6.7573504, 1.1621119, 0.13876653)
+visible = false
+mesh = SubResource("BoxMesh_0kak2")
+
+[node name="HH_Art_FuseBoxAni_V2" parent="FuseBox" instance=ExtResource("22_mii6o")]
+transform = Transform3D(0.9563048, 0, 0.2923717, 0, 1, 0, -0.2923717, 0, 0.9563048, 3.4390302, 0.31998253, -17.256184)
+
+[node name="Gate" type="Node3D" parent="."]
+script = ExtResource("23_x2h4w")
+fusebox_indicator_path = NodePath("../Indicators/FuseboxIndicator")
+
+[node name="Metal" type="Sprite3D" parent="Gate"]
+transform = Transform3D(0.017574126, 0, 0, 0, 0.31978706, 0, 0, 0, 0.1, -4.473, 1.457, 0.3)
+visible = false
+texture = ExtResource("24_fx2jr")
+
+[node name="Electric" type="Sprite3D" parent="Gate"]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.2616296, 1.4310222, 0.384692)
+texture = ExtResource("25_kmqwy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Gate"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gate/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2844405, 1.2555542, 0.20376587)
+shape = SubResource("BoxShape3D_idyij")
+
+[node name="GateTrigger" type="Area3D" parent="Gate"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Gate/GateTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.259312, 1.4451294, 0.19985962)
+shape = SubResource("BoxShape3D_vher1")
+
+[node name="HH_Art_GateAni_V2" parent="Gate" instance=ExtResource("26_d0xtk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9061117, 0, 0)
+
+[node name="Indicators" type="Node3D" parent="."]
+
+[node name="GeneratorIndicator" type="MeshInstance3D" parent="Indicators"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, -7.2982774, 1.5952797, 0)
+mesh = SubResource("BoxMesh_ffsuc")
+
+[node name="PuddleIndicator" type="MeshInstance3D" parent="Indicators"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, 7.6006374, 0.57664955, 0)
+mesh = SubResource("BoxMesh_ffsuc")
+
+[node name="FuseboxIndicator" type="MeshInstance3D" parent="Indicators"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, 8.275881, 1.9006244, 0)
+mesh = SubResource("BoxMesh_ffsuc")
+
+[node name="GateIndicator" type="MeshInstance3D" parent="Indicators"]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, -5.657252, 1.6853055, 0)
+mesh = SubResource("BoxMesh_ffsuc")
+
+[node name="ElevatorDoor" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="ElevatorDoor"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ElevatorDoor/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026626587, 1.1346064, -0.43408203)
+shape = SubResource("BoxShape3D_k700v")
+
+[node name="RoomDetectors" type="Node3D" parent="."]
+
+[node name="MainRoom" type="Area3D" parent="RoomDetectors"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomDetectors/MainRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0056152344, 1.412344, 0.19763184)
+shape = SubResource("BoxShape3D_fqss4")
+
+[node name="MainRoomCenter" type="Node3D" parent="RoomDetectors/MainRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62, 0)
+
+[node name="LeftRoom" type="Area3D" parent="RoomDetectors"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomDetectors/LeftRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2779927, 1.4492618, 0.20367432)
+shape = SubResource("BoxShape3D_gpw56")
+
+[node name="LeftRoomCenter" type="Node3D" parent="RoomDetectors/LeftRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 0.62, 0)
+
+[node name="RightRoom" type="Area3D" parent="RoomDetectors"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomDetectors/RightRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.309729, 1.470397, 0.25165725)
+shape = SubResource("BoxShape3D_tnwif")
+
+[node name="RightRoomCenter" type="Node3D" parent="RoomDetectors/RightRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 0.62, 0)
+
+[node name="FloorModules" type="Node3D" parent="."]
+
+[node name="HH_Art_PinchModularLeft_V2" parent="FloorModules" instance=ExtResource("27_k06vj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 11.8)
+
+[node name="HH_Art_PinchModularMiddle_V2" parent="FloorModules" instance=ExtResource("28_vytwa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.8)
+
+[node name="HH_Art_PinchModularRight_V2" parent="FloorModules" instance=ExtResource("29_2rltv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 11.8)
+
+[node name="PauseMenu" type="Node3D" parent="."]
+process_mode = 3
+
+[node name="PauseBackground" type="Sprite2D" parent="PauseMenu"]
+position = Vector2(587, 320)
+scale = Vector2(0.35, 0.2708934)
+texture = ExtResource("30_e1l67")
+
+[node name="ResumeButton" type="Button" parent="PauseMenu"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 500.0
+offset_top = -402.0
+offset_right = -472.0
+offset_bottom = -333.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Resume"
+
+[node name="QuitButton" type="Button" parent="PauseMenu"]
+offset_left = 500.0
+offset_top = 340.0
+offset_right = 680.0
+offset_bottom = 409.0
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+
+[connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="CameraTriggers/MainRoomTrigger" to="CameraTriggers/MainRoomTrigger" method="_on_body_entered"]
+[connection signal="body_entered" from="LeftWall/LeftTrigger" to="." method="_on_left_trigger_body_entered"]
+[connection signal="body_entered" from="RightWall/RightTrigger" to="." method="_on_right_trigger_body_entered"]
+[connection signal="body_entered" from="Gate/GateTrigger" to="Gate" method="_on_gate_trigger_body_entered"]
+[connection signal="body_entered" from="ElevatorDoor/Area3D" to="." method="_on_area_3d_body_entered"]

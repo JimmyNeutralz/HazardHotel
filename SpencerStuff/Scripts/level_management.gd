@@ -1,31 +1,84 @@
 extends Node3D
 
-#node paths
+#Node paths
+@onready var left_key = $LeftWall/LeftKey
+@onready var right_key = $RightWall/RightKey
 @onready var elevator_lock = $Elevator/ElevatorLock
-#generator indicator = condition for floor completed
-@onready var generator_indicator = $Indicators/GeneratorIndicator  
+@onready var generator = $Generator
 
-var floor_completed = false
+#Pause menu stuff
+@onready var pause_menu_background = $PauseMenu/PauseBackground
+@onready var resume_button = $PauseMenu/ResumeButton
+@onready var quit_button = $PauseMenu/QuitButton
 
-func _process(delta):
-	if not floor_completed and is_generator_on():
-		unlock_elevator()
+#scenes
+@export var next_scene_path := "res://SpencerStuff/Scenes/EndScene.tscn"
+@export var main_menu_scene := "res://SpencerStuff/Scenes/MainMenu.tscn"
 
-func is_generator_on() -> bool:
-	if generator_indicator == null:
-		return false
-	
-	var mat = generator_indicator.get_active_material(0)
-	if mat == null:
-		return false
+#Key states
+var has_left_key: bool = false
+var has_right_key: bool = false
 
-	#check if the indicator color is green (generator activated)
-	return mat.albedo_color == Color.GREEN
+#Key triggers
+func _on_left_trigger_body_entered(body: Node3D) -> void:
+	if body.name == "Player" and not has_left_key:
+		has_left_key = true
+		left_key.visible = false
+		print("Left key obtained")
+		_check_keys()
 
-func unlock_elevator():
-	floor_completed = true
+func _on_right_trigger_body_entered(body: Node3D) -> void:
+	if body.name == "Player" and not has_right_key:
+		has_right_key = true
+		right_key.visible = false
+		print("Right key obtained")
+		_check_keys()
 
-	if elevator_lock:
+func _check_keys() -> void:
+	if has_left_key and has_right_key:
 		elevator_lock.visible = false
+		print("Elevator unlocked. Floor completed!")
 
-	print("Elevator Unlocked. Floor Completed!")
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if generator.activated:
+		get_tree().change_scene_to_file(next_scene_path)
+
+#Pause menu stuff
+func _ready():
+	#Start hidden
+	_set_pause_menu_visible(false)
+	
+	#Connect buttons
+	resume_button.pressed.connect(_on_resume_pressed)
+	quit_button.pressed.connect(_on_quit_pressed)
+
+func _input(event):
+	if event.is_action_pressed("pause"):
+		if get_tree().paused:
+			_resume_game()
+		else:
+			_pause_game()
+
+#Pause/Resume Helper
+func _pause_game():
+	_set_pause_menu_visible(true)
+	get_tree().paused = true  #Pause everything in the scene tree (freeze scene)
+	print("Game Paused")
+
+func _resume_game():
+	_set_pause_menu_visible(false)
+	get_tree().paused = false  #Resume the scene tree (unfreeze)
+	print("Game Resumed")
+
+func _set_pause_menu_visible(visible: bool) -> void:
+	pause_menu_background.visible = visible
+	resume_button.visible = visible
+	quit_button.visible = visible
+
+#Button calls
+func _on_resume_pressed():
+	_resume_game()
+
+func _on_quit_pressed():
+	get_tree().paused = false  #Unpause before leaving so user can interact with main menu
+	get_tree().change_scene_to_file(main_menu_scene)

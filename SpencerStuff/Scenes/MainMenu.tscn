@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://be7wtebqoq4lk"]
+
+[ext_resource type="Texture2D" uid="uid://bo7s6c50xo650" path="res://Assets/HH_Art_Logo_V2_.png" id="1_k1cdu"]
+[ext_resource type="Script" uid="uid://cgx56qcx2qoqy" path="res://SpencerStuff/Scripts/menu_control.gd" id="1_tjmdi"]
+[ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="2_g2l0o"]
+[ext_resource type="Texture2D" uid="uid://b8ilvj3lu8127" path="res://Assets/HH_Art_SkeletonSprite_V1.png" id="4_bxg5q"]
+[ext_resource type="Texture2D" uid="uid://bv8hukwp3yja2" path="res://Assets/HH_Art_WerewolfSprite_V1.png" id="5_s17u1"]
+[ext_resource type="Texture2D" uid="uid://cxlvo1vndyp7n" path="res://Assets/HH_Art_Logo_V4_.png" id="6_7y57k"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_tjmdi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Title" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(581, 195)
+scale = Vector2(0.244, 0.244)
+texture = ExtResource("1_k1cdu")
+
+[node name="Brown" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(580, 325.75)
+scale = Vector2(1.6440217, 0.6863593)
+texture = ExtResource("2_g2l0o")
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 368.0
+offset_right = 674.0
+offset_bottom = 437.0
+theme_override_font_sizes/font_size = 30
+text = "Start"
+
+[node name="SettingsButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 494.0
+offset_top = 463.0
+offset_right = 674.0
+offset_bottom = 532.0
+theme_override_font_sizes/font_size = 30
+text = "Settings"
+
+[node name="HhArtSkeletonSpriteV1" type="Sprite2D" parent="."]
+position = Vector2(257, 469.99997)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_bxg5q")
+
+[node name="HhArtWerewolfSpriteV1" type="Sprite2D" parent="."]
+position = Vector2(901, 467.00003)
+scale = Vector2(-0.43788034, 0.43788034)
+texture = ExtResource("5_s17u1")
+
+[node name="HhArtLogoV4" type="Sprite2D" parent="."]
+position = Vector2(571, 181)
+scale = Vector2(0.23349999, 0.22616667)
+texture = ExtResource("6_7y57k")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
