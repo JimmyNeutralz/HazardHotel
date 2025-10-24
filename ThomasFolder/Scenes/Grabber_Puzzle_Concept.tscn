@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bfww28cwaxmlv"]
+[gd_scene load_steps=8 format=3 uid="uid://bfww28cwaxmlv"]
 
 [ext_resource type="PackedScene" uid="uid://doedso0a6llnl" path="res://ThomasFolder/Scenes/Elevator.tscn" id="1_fq3xq"]
 [ext_resource type="PackedScene" uid="uid://ci14a0bc5q632" path="res://ThomasFolder/Scenes/fuse_box_ui.tscn" id="2_0uyce"]
-[ext_resource type="Script" uid="uid://d0so3nntww1b6" path="res://Scenes/text_change.gd" id="3_6us3t"]
-[ext_resource type="PackedScene" uid="uid://bfryf0tii3xp2" path="res://Scenes/3d_player.tscn" id="4_kccbw"]
+[ext_resource type="Script" uid="uid://d0so3nntww1b6" path="res://ThomasFolder/Scripts/text_change.gd" id="3_6us3t"]
+[ext_resource type="PackedScene" uid="uid://bfryf0tii3xp2" path="res://ThomasFolder/Scenes/3d_player.tscn" id="4_kccbw"]
 [ext_resource type="PackedScene" uid="uid://cq6dinw2go1su" path="res://ThomasFolder/Scenes/grabber.tscn" id="5_0uyce"]
+[ext_resource type="PackedScene" uid="uid://bj5ns3chr008o" path="res://ThomasFolder/Scenes/fuse.tscn" id="6_6us3t"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_o2fov"]
 
@@ -37,4 +38,7 @@ script = ExtResource("3_6us3t")
 transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, -2.532, 0.475, 0)
 
 [node name="Grabber" parent="." instance=ExtResource("5_0uyce")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17422974, -1.1920929e-07, -0.14235198)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006885767, 0.46699166, -0.14235198)
+
+[node name="Fuse" parent="." instance=ExtResource("6_6us3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.129, 1.565788, 0)
