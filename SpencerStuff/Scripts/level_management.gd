@@ -47,6 +47,7 @@ func _check_keys() -> void:
 #to next level
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if generator.activated:
+		#Global.fade_to_level_2()
 		fade_in_static._exit_scene(next_scene_path)
 		#fade_in_static._fade_static_in()
 		#get_tree().change_scene_to_file(next_scene_path)
