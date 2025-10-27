@@ -39,15 +39,14 @@ func _ready():
 	rooms = room_order
 	target_position = global_position
 	
-	# Get the hardcoded spawn position node
+	#Get the hardcoded spawn position node
 	if has_node(spawn_node_path):
 		var spawn_node = get_node(spawn_node_path)
 		spawn_transform = spawn_node.global_transform
 	else:
 		push_error("PlayerSpawnPosition node not found at: " + str(spawn_node_path))
-		spawn_transform = global_transform # fallback to current pos
+		spawn_transform = global_transform #fallback to current pos
 
-#Use Thomas' structure
 func _physics_process(delta):
 	if is_dead:
 		return
@@ -59,6 +58,9 @@ func _physics_process(delta):
 			velocity = Vector3.ZERO
 		else:
 			velocity = direction.normalized() * speed
+			#Update facing based on movement direction
+			if abs(direction.x) > 0.1:  #Only update if significant horizontal movement
+				update_sprite_facing(sign(direction.x))
 		move_and_slide()
 	else:
 		velocity = Vector3.ZERO
@@ -66,14 +68,10 @@ func _physics_process(delta):
 
 	#Input controls
 	if Input.is_action_just_pressed("Center 3D Spot"): #"S"
-		#TODO: Figure out if player should be facing right or left when moving to center of room
-			#nvm handled it in a different function
 		move_to_room_center()
 	elif Input.is_action_just_pressed("Left 3D Spot"): #"A"
-		player_sprite.scale.x = 0.3; #Face left
 		move_to_adjacent_room(-1)
 	elif Input.is_action_just_pressed("Right 3D Spot"): #"D"
-		player_sprite.scale.x = -0.3; #Face right
 		move_to_adjacent_room(1)
 
 #Move to center of room 
@@ -86,13 +84,20 @@ func move_to_room_center():
 		
 		#Determine facing direction based on movement
 		var move_direction = sign(target_position.x - global_position.x)
-		update_sprite_facing(move_direction)
+		if move_direction != 0:  #Only update if we're actually moving
+			update_sprite_facing(move_direction)
 
 #For moving between rooms
 func move_to_adjacent_room(direction: int):
 	var current = get_current_room()
 	if current == null:
 		return
+	
+	#Set facing direction immediately based on input
+	if direction > 0:
+		player_sprite.scale.x = -0.3  #Face right
+	else:
+		player_sprite.scale.x = 0.3   #Face left
 	
 	var index = room_order.find(current)
 	var next_index = index + direction
@@ -108,12 +113,22 @@ func move_to_adjacent_room(direction: int):
 		var center = right_room.get_node(right_room.name + "Center")
 		target_position = Vector3(center.global_position.x + 3.0, global_position.y, global_position.z)
 	else:
-		#Move to next room’s center
+		#Move to next room's center
 		var next_room = room_order[next_index]
 		var center = next_room.get_node(next_room.name + "Center")
 		target_position = Vector3(center.global_position.x, global_position.y, global_position.z)
 	
 	is_moving = true
+
+#Update sprite facing direction
+func update_sprite_facing(direction):
+	if direction > 0:
+		#Moving right - face right
+		player_sprite.scale.x = -0.3
+	elif direction < 0:
+		#Moving left - face left
+		player_sprite.scale.x = 0.3
+	#If direction is 0 (already at target), stay facing current direction
 
 #For figuring out which rooms player is currently in using distance to nodes
 func get_current_room():
@@ -128,7 +143,6 @@ func get_current_room():
 			closest_room = room
 	
 	return closest_room
-
 
 #New function for handling player death
 func kill_player():
@@ -150,7 +164,7 @@ func kill_player():
 
 #Respawn
 func respawn_player():
-	#Move to PlayerSpawnPosition node’s location
+	#Move to PlayerSpawnPosition node's location
 	global_transform = spawn_transform
 	velocity = Vector3.ZERO
 	is_moving = false
@@ -166,14 +180,3 @@ func respawn_player():
 		camera.ResetCamera()
 	else:
 		print("MainCamera not found or missing ResetCamera() function.")
-		
-
-#Update which way sprite is facing
-func update_sprite_facing(direction):
-	if direction > 0:
-		#Moving right - face right
-		player_sprite.scale.x = -0.3
-	elif direction < 0:
-		#Moving left - face left
-		player_sprite.scale.x = 0.3
-	#If direction is 0 (already at target), stay facing the same way
