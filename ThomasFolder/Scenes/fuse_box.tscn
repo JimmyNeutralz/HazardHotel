@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://cveeyy8a70ee8"]
+
+[ext_resource type="Script" uid="uid://fg1s4a8fc3yc" path="res://ThomasFolder/Scripts/fuse_box.gd" id="1_fisju"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_boyfq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fisju"]
+albedo_color = Color(0.7310506, 0, 0.08597409, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n2o1e"]
+
+[node name="FuseBox" type="Area3D"]
+script = ExtResource("1_fisju")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.46, 0, 0, 0, 0.493, 0, 0, 0, 0.083, 0, 0.915, 0)
+mesh = SubResource("BoxMesh_boyfq")
+surface_material_override/0 = SubResource("StandardMaterial3D_fisju")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.725, 0, 0, 0, 0.725, 0, 0, 0, 0.725, 0, 0.7277256, 0.5013752)
+shape = SubResource("BoxShape3D_n2o1e")
