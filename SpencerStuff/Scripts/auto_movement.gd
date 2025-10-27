@@ -6,7 +6,7 @@ extends CharacterBody3D
 @export var speed: float = 3.5
 @export var room_detectors_path: NodePath
 
-#Player sprite
+#Player sprite 
 @onready var player_sprite = $PlayerSprite
 
 #Declarations
@@ -16,6 +16,8 @@ var target_position: Vector3
 var is_moving = false
 var rooms = []
 var room_order = []
+var stuck_timer: float = 0.0
+const STUCK_TIME_THRESHOLD: float = 0.1  #If stuck for this long, stop moving - fine tune 
 
 #For respawning
 @export var spawn_node_path: NodePath = ^"/root/Player/PlayerSpawnPosition"
@@ -25,11 +27,17 @@ var spawn_transform: Transform3D
 
 func _ready():
 	#Sprite starts facing to the left (default state)
-	player_sprite.scale.x = 0.3; #Add a negative sign in front to flip sprite to face the right
+	player_sprite.scale.x = 0.3 #Add a negative sign in front to flip sprite to face the right
+	
+	# Make sure the idle animation plays by default
+	if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
+		player_sprite.play("Idle")
+	else:
+		push_warning("PlayerSprite missing 'Idle' animation or SpriteFrames resource")
 	
 	room_detectors = get_node(room_detectors_path)
 	
-	#Store references to each room in order (Left, Main, Right)
+	#Store references to each room 
 	room_order = [
 		room_detectors.get_node("LeftRoom"),
 		room_detectors.get_node("MainRoom"),
@@ -45,7 +53,7 @@ func _ready():
 		spawn_transform = spawn_node.global_transform
 	else:
 		push_error("PlayerSpawnPosition node not found at: " + str(spawn_node_path))
-		spawn_transform = global_transform #fallback to current pos
+		spawn_transform = global_transform #Fallback to current pos
 
 func _physics_process(delta):
 	if is_dead:
@@ -53,18 +61,49 @@ func _physics_process(delta):
 	
 	if is_moving:
 		var direction = target_position - global_position
+		var previous_position = global_position
+		
 		if direction.length() < 0.05:
+			#Reached target normally
 			is_moving = false
 			velocity = Vector3.ZERO
+			stuck_timer = 0.0
+			#Switch to idle animation when stopping
+			if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
+				player_sprite.play("Idle")
 		else:
 			velocity = direction.normalized() * speed
+			move_and_slide()
+			
+			#Check if "stuck" (not moving but should be)
+			if global_position.distance_to(previous_position) < 0.01:
+				stuck_timer += delta
+				if stuck_timer >= STUCK_TIME_THRESHOLD:
+					#Stuck on an obstacle, stop moving
+					is_moving = false
+					velocity = Vector3.ZERO
+					stuck_timer = 0.0
+					if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
+						player_sprite.play("Idle")
+					print("Player collided with obstacle, stopping movement")
+			else:
+				#Moving normally, reset stuck timer
+				stuck_timer = 0.0
+				
 			#Update facing based on movement direction
 			if abs(direction.x) > 0.1:  #Only update if significant horizontal movement
 				update_sprite_facing(sign(direction.x))
-		move_and_slide()
+			#Play walk animation when moving
+			if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Walk"):
+				if player_sprite.animation != "Walk":
+					player_sprite.play("Walk")
 	else:
 		velocity = Vector3.ZERO
 		move_and_slide()
+		#Ensure idle animation when not moving
+		if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
+			if player_sprite.animation != "Idle" and not is_moving:
+				player_sprite.play("Idle")
 
 	#Input controls
 	if Input.is_action_just_pressed("Center 3D Spot"): #"S"
@@ -81,11 +120,16 @@ func move_to_room_center():
 		var center = room.get_node(room.name + "Center")
 		target_position = Vector3(center.global_position.x, global_position.y, global_position.z)
 		is_moving = true
+		stuck_timer = 0.0  #Reset stuck timer when starting new movement
 		
 		#Determine facing direction based on movement
 		var move_direction = sign(target_position.x - global_position.x)
 		if move_direction != 0:  #Only update if we're actually moving
 			update_sprite_facing(move_direction)
+		
+		#Start walk animation
+		if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Walk"):
+			player_sprite.play("Walk")
 
 #For moving between rooms
 func move_to_adjacent_room(direction: int):
@@ -119,6 +163,10 @@ func move_to_adjacent_room(direction: int):
 		target_position = Vector3(center.global_position.x, global_position.y, global_position.z)
 	
 	is_moving = true
+	stuck_timer = 0.0  #Reset stuck timer when starting new movement
+	#Start walk animation
+	if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Walk"):
+		player_sprite.play("Walk")
 
 #Update sprite facing direction
 func update_sprite_facing(direction):
@@ -128,7 +176,7 @@ func update_sprite_facing(direction):
 	elif direction < 0:
 		#Moving left - face left
 		player_sprite.scale.x = 0.3
-	#If direction is 0 (already at target), stay facing current direction
+	#If direction is 0 (already at target), keep facing the same way
 
 #For figuring out which rooms player is currently in using distance to nodes
 func get_current_room():
@@ -157,6 +205,9 @@ func kill_player():
 	visible = false
 	is_moving = false
 	velocity = Vector3.ZERO
+	stuck_timer = 0.0
+	#Stop any animations
+	player_sprite.stop()
 
 	#Wait before respawning
 	await get_tree().create_timer(RESPAWN_DELAY).timeout
@@ -172,6 +223,10 @@ func respawn_player():
 	visible = true
 	set_process(true)
 	set_physics_process(true)
+	
+	#Reset to idle animation on respawn
+	if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
+		player_sprite.play("Idle")
 	print("Respawned!")
 
 	#ResetCamera
