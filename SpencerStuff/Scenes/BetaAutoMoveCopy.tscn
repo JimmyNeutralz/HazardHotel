@@ -196,10 +196,10 @@ script = ExtResource("3_27hkx")
 room_detectors_path = NodePath("../RoomDetectors")
 
 [node name="PlayerSprite" type="AnimatedSprite3D" parent="Player"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.2878576, 1.0507035)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.28559738, 1.0507035)
 shaded = true
 sprite_frames = SubResource("SpriteFrames_ml83m")
-animation = &"Walk"
+animation = &"Idle"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.008636475, 0.0017394423, 1.0423431)
