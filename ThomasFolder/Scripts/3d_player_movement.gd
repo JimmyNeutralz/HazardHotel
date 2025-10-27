@@ -70,4 +70,3 @@ func stop_moving():
 	rightKeyPressed = false
 	centerKeyPressed = false
 	
-	print("That was a close one!")

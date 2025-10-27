@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cq6dinw2go1su"]
+[gd_scene load_steps=4 format=3 uid="uid://cq6dinw2go1su"]
 
+[ext_resource type="Script" uid="uid://l3xoqpx0aje0" path="res://ThomasFolder/Scripts/get_grabber.gd" id="1_2g4r3"]
 [ext_resource type="Texture2D" uid="uid://cbtpge8fw3rgk" path="res://ThomasFolder/Sprites/Budget_Dino_Grabber.png" id="1_atjh1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_c8ej5"]
 
 [node name="Grabber" type="Area3D"]
+script = ExtResource("1_2g4r3")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform3D(0.49, 0, 0, 0, 0.49, 0, 0, 0, 0.49, 0, 0, 0)
