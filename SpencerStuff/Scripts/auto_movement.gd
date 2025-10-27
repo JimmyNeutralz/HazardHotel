@@ -6,6 +6,9 @@ extends CharacterBody3D
 @export var speed: float = 3.5
 @export var room_detectors_path: NodePath
 
+#Generator reference for determining if level is complete
+@onready var generator = $"../Generator"
+
 #Player sprite 
 @onready var player_sprite = $PlayerSprite
 
