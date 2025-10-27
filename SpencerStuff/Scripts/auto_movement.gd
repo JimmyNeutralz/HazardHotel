@@ -15,7 +15,7 @@ var rooms = []
 var room_order = []
 
 #For respawning
-@export var spawn_node_path: NodePath = ^"/root/Player/PlayerSpawnPosition"
+@export var spawn_node_path = "Player/PlayerSpawnPosition"
 var is_dead = false
 const RESPAWN_DELAY = 2.0
 var spawn_transform: Transform3D
@@ -114,7 +114,6 @@ func get_current_room():
 			closest_room = room
 	
 	return closest_room
-
 
 #New function for handling player death
 func kill_player():

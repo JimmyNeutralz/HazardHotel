@@ -97,7 +97,7 @@ size = Vector3(4.246231, 2.7391052, 2.2364502)
 [sub_resource type="BoxShape3D" id="BoxShape3D_tnwif"]
 size = Vector3(4.272888, 2.7320023, 2.4972534)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 script = ExtResource("1_yatf1")
 
 [node name="HH_Art_Pinch_V2" parent="." instance=ExtResource("2_k8f3g")]

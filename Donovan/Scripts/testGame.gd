@@ -60,4 +60,3 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	
 #func _lerp_to_player(body: Node3D) -> void:
 	#transCam.position = transCam.position.lerp(charCam.position, time)
-	

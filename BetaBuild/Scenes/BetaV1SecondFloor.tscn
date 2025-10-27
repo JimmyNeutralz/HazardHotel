@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://cxw7obx5iod3d"]
+[gd_scene load_steps=54 format=3 uid="uid://ck0k8p2k8gfbx"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_yrt2u"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_6qa7b"]

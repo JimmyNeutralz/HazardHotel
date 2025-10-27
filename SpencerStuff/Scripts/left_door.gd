@@ -36,11 +36,16 @@ func unlock_door() -> void:
 	if lock_anim and lock_anim.has_animation("Take 001"):
 		lock_anim.play("Take 001")
 		await get_tree().create_timer(2.0).timeout
+		
+	#Move player over to door
+	
+	
+	#Play interact animation to simulate them opening door (IN CONJUNCTION WITH NEXT METHOD)
+	
 
 	#Play door animation
 	if door_anim and door_anim.has_animation("Take 001"):
 		door_anim.play("Take 001")
-
 	print("Left door unlocked!")
 
 #Recursive search for AnimationPlayer
