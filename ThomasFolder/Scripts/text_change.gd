@@ -44,7 +44,7 @@ func got_fuse():
 
 func got_shelf_fuse():
 	set_text("I'm not paid enough to question why the dino grabber was in the safe, but I got another fuse.")
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.75).timeout
 	set_text("")
 
 func got_dino_grabber():
