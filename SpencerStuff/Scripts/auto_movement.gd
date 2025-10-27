@@ -67,7 +67,7 @@ func _physics_process(delta):
 	#Input controls
 	if Input.is_action_just_pressed("Center 3D Spot"): #"S"
 		#TODO: Figure out if player should be facing right or left when moving to center of room
-		
+			#nvm handled it in a different function
 		move_to_room_center()
 	elif Input.is_action_just_pressed("Left 3D Spot"): #"A"
 		player_sprite.scale.x = 0.3; #Face left
@@ -83,6 +83,10 @@ func move_to_room_center():
 		var center = room.get_node(room.name + "Center")
 		target_position = Vector3(center.global_position.x, global_position.y, global_position.z)
 		is_moving = true
+		
+		#Determine facing direction based on movement
+		var move_direction = sign(target_position.x - global_position.x)
+		update_sprite_facing(move_direction)
 
 #For moving between rooms
 func move_to_adjacent_room(direction: int):
@@ -162,3 +166,14 @@ func respawn_player():
 		camera.ResetCamera()
 	else:
 		print("MainCamera not found or missing ResetCamera() function.")
+		
+
+#Update which way sprite is facing
+func update_sprite_facing(direction):
+	if direction > 0:
+		#Moving right - face right
+		player_sprite.scale.x = -0.3
+	elif direction < 0:
+		#Moving left - face left
+		player_sprite.scale.x = 0.3
+	#If direction is 0 (already at target), stay facing the same way
