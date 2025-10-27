@@ -142,7 +142,7 @@ func moveLeft():
 	$Sprite3D.flip_h = true
 	
 #Function that moves new guy to the fuse box
-func move_to_fuse_box(location):
+func move_to(location):
 	centerKeyPressed = false
 	preventMoving = false
 	preventLeftMovement = false
@@ -197,11 +197,13 @@ func _on_fuse_box_body_entered(body: Node3D) -> void:
 		player.reached_destination()
 		text.missing_fuses()
 
+#Prevents movement while the player in the fuse menu
 func in_menu():
 	preventMoving = true
 	preventLeftMovement = true
 	preventRightMovement = true
-	
+
+#Reneables movement after the user successfully completes the fuse puzzle
 func out_of_menu():
 	preventMoving = false
 	preventLeftMovement = false

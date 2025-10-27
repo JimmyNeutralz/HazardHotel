@@ -4,7 +4,7 @@ var moving = false
 
 func _process(delta: float) -> void:
 	if (Input.is_action_just_pressed("Open Fuse Box")):
-		player.move_to_fuse_box(global_position.x)
+		player.move_to(global_position.x)
 		moving = true
 
 
