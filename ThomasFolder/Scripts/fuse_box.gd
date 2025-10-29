@@ -18,12 +18,12 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node3D) -> void:
-	if (moving and !fuseBoxUi.complete and (fuseBoxUi.fusesGathered >= 1)):
+	if (moving and fuseBoxUi.amountComplete <= 2 and (fuseBoxUi.fusesGathered >= 1)):
 		moving = false
 		player.reached_destination()
 		fuseBoxUi.toggle_visibility(true)
 		player.in_menu()
-	elif(moving and fuseBoxUi.complete):
+	elif(moving and fuseBoxUi.amountComplete >= 2):
 		moving = false
 		player.reached_destination()
 		text.completed_fusebox()

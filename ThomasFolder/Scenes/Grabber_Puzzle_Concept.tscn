@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bfww28cwaxmlv"]
+[gd_scene load_steps=14 format=3 uid="uid://bfww28cwaxmlv"]
 
 [ext_resource type="PackedScene" uid="uid://doedso0a6llnl" path="res://ThomasFolder/Scenes/Elevator.tscn" id="1_fq3xq"]
 [ext_resource type="PackedScene" uid="uid://ci14a0bc5q632" path="res://ThomasFolder/Scenes/fuse_box_ui.tscn" id="2_0uyce"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cveeyy8a70ee8" path="res://ThomasFolder/Scenes/fuse_box.tscn" id="8_o2fov"]
 [ext_resource type="PackedScene" uid="uid://dqpfg760d0aaw" path="res://ThomasFolder/Scenes/death_puddle_3D.tscn" id="9_f1hyl"]
 [ext_resource type="PackedScene" uid="uid://b1ij07vysqwm1" path="res://ThomasFolder/Scenes/puddle_colider.tscn" id="10_5yabn"]
+[ext_resource type="PackedScene" uid="uid://bj5ns3chr008o" path="res://ThomasFolder/Scenes/fuse.tscn" id="11_5yabn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_o2fov"]
 
@@ -22,7 +23,7 @@ transform = Transform3D(6.635, 0, 0, 0, 0.06, 0, 0, 0, 1.06, 0, 0, 0)
 mesh = SubResource("BoxMesh_o2fov")
 
 [node name="Elevator" parent="." instance=ExtResource("1_fq3xq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.66, 0.523, -0.5566807)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42856193, 0.523, -0.5566807)
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9309411, 0.3651693, 0, -0.36516926, 0.9309411, 0, 1.587, 2.794)
@@ -43,20 +44,20 @@ horizontal_alignment = 1
 script = ExtResource("3_6us3t")
 
 [node name="3dPlayer" parent="." instance=ExtResource("4_kccbw")]
-transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, -2.66, 0.475, 0)
+transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, -0.429, 0.475, 0)
 
 [node name="Safe" parent="." instance=ExtResource("6_kccbw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46071562, 0.31764343, -0.8716128)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8162844, 0.31764343, -0.8716128)
 
 [node name="ShelfFuse" parent="." instance=ExtResource("6_6us3t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6655474, 0.14008969, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44171095, 0.14008969, 0)
 script = ExtResource("7_kccbw")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3253052, 0)
 
 [node name="Shelf" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.765, 0, 0, 0, 0.025, 0, 0, 0, 0.29, 2.6655474, 1.4708691, 0)
+transform = Transform3D(0.765, 0, 0, 0, 0.025, 0, 0, 0, 0.29, -0.44171095, 1.4708691, 0)
 mesh = SubResource("BoxMesh_6us3t")
 skeleton = NodePath("../ShelfFuse")
 
@@ -68,6 +69,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.085, 0.05293119, 0)
 
 [node name="PuddleColider" parent="." instance=ExtResource("10_5yabn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.085, -0.01723066, -0.067)
+
+[node name="Fuse" parent="." instance=ExtResource("11_5yabn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.697, 0.17188287, 0)
 
 [connection signal="body_entered" from="Safe" to="Safe" method="_on_body_entered"]
 [connection signal="body_entered" from="FuseBox" to="FuseBox" method="_on_body_entered"]

@@ -5,6 +5,7 @@ extends Area3D
 @onready var puddle = $"../DeathPuddle3d"
 @onready var shelfFuse = $"../ShelfFuse"
 @onready var safe = $"../Safe"
+@onready var text = $"../Camera3D/RichTextLabel"
 
 var electrified = true
 
@@ -30,3 +31,5 @@ func _process(delta):
 func _on_body_entered(body: Node3D) -> void:
 	print("Func reached")
 	player.blocked_path(global_position, electrified)
+	if (electrified):
+		text.avoided_puddle()
