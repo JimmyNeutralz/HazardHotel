@@ -22,7 +22,7 @@ func _process(delta):
 	elif (Input.is_action_just_pressed("Enable 3D Puddle Electricity")):
 		electrified = true
 		puddle.change_puddle_status(electrified)
-		puddle.determine_status(player.inDanger)
+		puddle.determine_status()
 		shelfFuse.pathBlocked = true
 		
 

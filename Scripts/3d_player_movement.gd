@@ -9,7 +9,7 @@ extends CharacterBody3D
 @onready var fuseBoxUi = $"../Camera3D/FuseBoxUi"
 @onready var text = $"../Camera3D/RichTextLabel"
 #@export var text: RichTextLabel
-@export var elevator: Area3D
+@onready var elevator = $"../Elevator"
 
 var location: Vector3
 
@@ -180,14 +180,6 @@ func reached_destination():
 	
 	destinationBlocked = false
 
-#Sets inDanger to true and checks to see if the player should die upon stepping into the puddle
-func _on_death_puddle_3d_body_entered(body: Node3D) -> void:
-	inDanger = true
-	puddle.determine_status(inDanger)
-	
-#Sets inDanger to false if the player steps out of the puddle
-func _on_death_puddle_3d_body_exited(body: Node3D) -> void:
-	inDanger = false
 
 #Checks if the door is unlocked along if the door is safe to determine final result
 func _on_3d_electric_door_body_entered(body: Node3D) -> void:

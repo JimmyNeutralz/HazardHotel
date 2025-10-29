@@ -71,4 +71,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.085, -0.01723066, -0.067)
 
 [connection signal="body_entered" from="Safe" to="Safe" method="_on_body_entered"]
 [connection signal="body_entered" from="FuseBox" to="FuseBox" method="_on_body_entered"]
+[connection signal="body_entered" from="DeathPuddle3d" to="DeathPuddle3d" method="_on_body_entered"]
+[connection signal="body_exited" from="DeathPuddle3d" to="DeathPuddle3d" method="_on_body_exited"]
 [connection signal="body_entered" from="PuddleColider" to="PuddleColider" method="_on_body_entered"]
