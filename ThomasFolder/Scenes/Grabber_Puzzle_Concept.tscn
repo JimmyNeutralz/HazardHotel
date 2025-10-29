@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfww28cwaxmlv"]
+[gd_scene load_steps=13 format=3 uid="uid://bfww28cwaxmlv"]
 
 [ext_resource type="PackedScene" uid="uid://doedso0a6llnl" path="res://ThomasFolder/Scenes/Elevator.tscn" id="1_fq3xq"]
 [ext_resource type="PackedScene" uid="uid://ci14a0bc5q632" path="res://ThomasFolder/Scenes/fuse_box_ui.tscn" id="2_0uyce"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://re5neah0xfv" path="res://ThomasFolder/Scenes/safe.tscn" id="6_kccbw"]
 [ext_resource type="Script" uid="uid://dfi85aiqly434" path="res://ThomasFolder/Scripts/collect_shelf_fuse.gd" id="7_kccbw"]
 [ext_resource type="PackedScene" uid="uid://cveeyy8a70ee8" path="res://ThomasFolder/Scenes/fuse_box.tscn" id="8_o2fov"]
+[ext_resource type="PackedScene" uid="uid://dqpfg760d0aaw" path="res://ThomasFolder/Scenes/death_puddle_3D.tscn" id="9_f1hyl"]
+[ext_resource type="PackedScene" uid="uid://b1ij07vysqwm1" path="res://ThomasFolder/Scenes/puddle_colider.tscn" id="10_5yabn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_o2fov"]
 
@@ -46,20 +48,27 @@ transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, -2.66, 0.475, 0)
 [node name="Safe" parent="." instance=ExtResource("6_kccbw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46071562, 0.31764343, -0.8716128)
 
-[node name="Shelf_Fuse" parent="." instance=ExtResource("6_6us3t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9379039, 0.14008969, 0)
+[node name="ShelfFuse" parent="." instance=ExtResource("6_6us3t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6655474, 0.14008969, 0)
 script = ExtResource("7_kccbw")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3253052, 0)
 
 [node name="Shelf" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.765, 0, 0, 0, 0.025, 0, 0, 0, 0.29, 1.9379039, 1.4708691, 0)
+transform = Transform3D(0.765, 0, 0, 0, 0.025, 0, 0, 0, 0.29, 2.6655474, 1.4708691, 0)
 mesh = SubResource("BoxMesh_6us3t")
-skeleton = NodePath("../Shelf_Fuse")
+skeleton = NodePath("../ShelfFuse")
 
 [node name="FuseBox" parent="." instance=ExtResource("8_o2fov")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5986319, 0.03740287, -0.48518768)
 
+[node name="DeathPuddle3d" parent="." instance=ExtResource("9_f1hyl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.085, 0.05293119, 0)
+
+[node name="PuddleColider" parent="." instance=ExtResource("10_5yabn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.085, -0.01723066, -0.067)
+
 [connection signal="body_entered" from="Safe" to="Safe" method="_on_body_entered"]
 [connection signal="body_entered" from="FuseBox" to="FuseBox" method="_on_body_entered"]
+[connection signal="body_entered" from="PuddleColider" to="PuddleColider" method="_on_body_entered"]

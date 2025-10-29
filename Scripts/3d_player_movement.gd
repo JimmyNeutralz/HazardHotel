@@ -33,6 +33,9 @@ var preventRightMovement = false
 #Bool value to determine if the player is standing in the electrified puddle
 var inDanger = false
 
+var destinationBlocked = false
+var lastLocation
+
 func _process(delta):
 	if (!fuseBoxUi.interactingWith):
 		#If the A key is pressed, set desination to 1.7 to the left
@@ -121,8 +124,12 @@ func stop_moving(electrified):
 #Function that prevents the player from moving a certain direction 
 # depending on what's blocking a given direction
 func blocked_path(position, pathBlocked):
-	if (!pathBlocked):
-		reached_destination()
+	if (pathBlocked):
+		#Separate bool statements from reached_destination since 
+		leftKeyPressed = false
+		rightKeyPressed = false
+		centerKeyPressed = false
+		moving = false
 		#Disables certain movement directions depending on where the character is standing
 		if (global_position.x < position.x):
 			preventRightMovement = true
@@ -141,7 +148,7 @@ func moveLeft():
 	direction = Vector3(-stopPoint, 0, 0)
 	$Sprite3D.flip_h = true
 	
-#Function that moves new guy to the fuse box
+#Function that moves new guy to a given location
 func move_to(location):
 	centerKeyPressed = false
 	preventMoving = false
@@ -149,6 +156,9 @@ func move_to(location):
 	preventRightMovement = false
 	
 	moving = true
+	destinationBlocked = false
+	
+	lastLocation = location
 	if (global_position.x >= location):
 			direction = Vector3(-stopPoint, 0, 0)
 			$Sprite3D.flip_h = true
@@ -161,11 +171,14 @@ func move_to(location):
 			leftKeyPressed = false
 			$Sprite3D.flip_h = false
 
-#Code to set all movement functions to false
+#Code to set all movement functions to false upon arriving at a specific spot
 func reached_destination():
 	leftKeyPressed = false
 	rightKeyPressed = false
 	centerKeyPressed = false
+	moving = false
+	
+	destinationBlocked = false
 
 #Sets inDanger to true and checks to see if the player should die upon stepping into the puddle
 func _on_death_puddle_3d_body_entered(body: Node3D) -> void:
@@ -208,3 +221,6 @@ func out_of_menu():
 	preventMoving = false
 	preventLeftMovement = false
 	preventRightMovement = false
+
+func move_to_blocked_location():
+	move_to(lastLocation)
