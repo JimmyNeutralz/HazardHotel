@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b8vx7fxb5dgvh" path="res://Assets/HH_Art_NewGuySprite_V2.png" id="11_lektt"]
 [ext_resource type="Texture2D" uid="uid://k5km3031kocw" path="res://Assets/HH_Art_HandymanSprite_V1.png" id="11_wa78v"]
 [ext_resource type="Texture2D" uid="uid://cxlvo1vndyp7n" path="res://Assets/HH_Art_Logo_V4_.png" id="12_lektt"]
-[ext_resource type="Script" uid="uid://dhy7mihkkyera" path="res://SpencerStuff/Scripts/TestEndPlayerScript.gd" id="13_0f0cy"]
+[ext_resource type="Script" uid="uid://cdcf2xh2ahv2s" path="res://SpencerStuff/Scripts/auto_movement.gd" id="13_0f0cy"]
 [ext_resource type="Texture2D" uid="uid://dju6sdtrap1fy" path="res://Assets/HH_Art_NewGuyWalkAnimSpriteSheet_V1.png" id="13_ls7mm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0f0cy"]

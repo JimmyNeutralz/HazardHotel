@@ -10,7 +10,8 @@ extends CharacterBody3D
 @onready var generator = $"../Generator"
 
 #Player sprite 
-@onready var player_sprite = $PlayerSprite
+#@onready var player_sprite = $PlayerSprite
+var player_sprite
 
 #Declarations
 var room_detectors: Node
@@ -29,8 +30,10 @@ const RESPAWN_DELAY = 2.0
 var spawn_transform: Transform3D
 
 func _ready():
+	
+	player_sprite = $PlayerSprite
 	#Sprite starts facing to the left (default state)
-	player_sprite.scale.x = 0.3 #Add a negative sign in front to flip sprite to face the right
+	#player_sprite.scale.x = 0.3 #Add a negative sign in front to flip sprite to face the right
 	
 	# Make sure the idle animation plays by default
 	if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):

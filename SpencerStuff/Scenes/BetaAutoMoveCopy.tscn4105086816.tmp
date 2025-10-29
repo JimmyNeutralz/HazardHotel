@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=67 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_12wq7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b8vx7fxb5dgvh" path="res://Assets/HH_Art_NewGuySprite_V2.png" id="4_pmcw7"]
 [ext_resource type="Texture2D" uid="uid://dju6sdtrap1fy" path="res://Assets/HH_Art_NewGuyWalkAnimSpriteSheet_V1.png" id="5_d7lxd"]
 [ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="5_toapv"]
+[ext_resource type="PackedScene" uid="uid://eh8ouwutfdy4" path="res://Assets/3D Models/HH_Art_ClothChair_V1.fbx" id="6_6tdpc"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="6_d7lxd"]
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="7_6tdpc"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="7_oymrl"]
@@ -32,8 +33,6 @@
 [ext_resource type="PackedScene" uid="uid://b8fbh4foswd7e" path="res://Assets/3D Models/HH_Art_PinchModularMiddle_V2.fbx" id="28_toapv"]
 [ext_resource type="PackedScene" uid="uid://bojy7at4teudg" path="res://Assets/3D Models/HH_Art_PinchModularRight_V2.fbx" id="29_d7lxd"]
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="30_toapv"]
-[ext_resource type="PackedScene" uid="uid://dvl5ijrr8hfd0" path="res://Assets/3D Models/HH_Art_ClothChair_V2.fbx" id="33_6tdpc"]
-[ext_resource type="PackedScene" uid="uid://416n0yob35jg" path="res://Assets/3D Models/HH_Art_Shelf_V1.fbx" id="34_vp3xm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oymrl"]
 atlas = ExtResource("5_d7lxd")
@@ -526,14 +525,8 @@ text = "Quit"
 
 [node name="SceneBackgroundObjects" type="Node3D" parent="."]
 
-[node name="HH_Art_ClothChair_V2" parent="SceneBackgroundObjects" instance=ExtResource("33_6tdpc")]
-transform = Transform3D(0.9843836, 0, 0.17603682, 0, 1, 0, -0.17603682, 0, 0.9843836, 7.3345337, -0.019790351, 10.529249)
-
-[node name="HH_Art_ClothChair_V3" parent="SceneBackgroundObjects" instance=ExtResource("33_6tdpc")]
-transform = Transform3D(0.93178, 0, -0.36302355, 0, 1, 0, 0.36302355, 0, 0.93178, 2.6344547, 0, 9.918955)
-
-[node name="HH_Art_Shelf_V1" parent="SceneBackgroundObjects" instance=ExtResource("34_vp3xm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.182118, 0, 11.840912)
+[node name="HH_Art_ClothChair_V1" parent="SceneBackgroundObjects" instance=ExtResource("6_6tdpc")]
+transform = Transform3D(38.542156, 0, 23.227184, 0, 44.999996, 0, -23.227184, 0, 38.542156, 5.4700546, 0.053077936, -0.36033726)
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
