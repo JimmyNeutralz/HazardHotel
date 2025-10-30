@@ -50,14 +50,14 @@ transform = Transform3D(0.29, 0, 0, 0, 0.29, 0, 0, 0, 0.29, -0.429, 0.475, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.8162844, 0.31764343, -0.8716128)
 
 [node name="ShelfFuse" parent="." instance=ExtResource("6_6us3t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44171095, 0.14008969, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.429, 0.14, 0)
 script = ExtResource("7_kccbw")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3253052, 0)
 
 [node name="Shelf" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.765, 0, 0, 0, 0.025, 0, 0, 0, 0.29, -0.44171095, 1.4708691, 0)
+transform = Transform3D(0.765, 0, 0, 0, 0.025, 0, 0, 0, 0.29, -0.429, 1.471, 0)
 mesh = SubResource("BoxMesh_6us3t")
 skeleton = NodePath("../ShelfFuse")
 
