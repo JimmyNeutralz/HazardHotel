@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ci14a0bc5q632" path="res://ThomasFolder/Scenes/fuse_box_ui.tscn" id="2_5kpk4"]
 [ext_resource type="Script" uid="uid://d0so3nntww1b6" path="res://ThomasFolder/Scripts/text_change.gd" id="3_lb3do"]
 [ext_resource type="PackedScene" uid="uid://bfryf0tii3xp2" path="res://ThomasFolder/Scenes/3d_player.tscn" id="4_2ha0q"]
-[ext_resource type="PackedScene" uid="uid://dqpfg760d0aaw" path="res://Scenes/death_puddle_3D.tscn" id="5_26gtv"]
+[ext_resource type="PackedScene" uid="uid://dqpfg760d0aaw" path="res://ThomasFolder/Scenes/death_puddle_3D.tscn" id="5_26gtv"]
 [ext_resource type="PackedScene" uid="uid://b1ij07vysqwm1" path="res://ThomasFolder/Scenes/puddle_colider.tscn" id="6_gnb76"]
 [ext_resource type="PackedScene" uid="uid://dnjh8y0o0ghic" path="res://ThomasFolder/Scenes/3dElectricDoor.tscn" id="7_7r3ho"]
 [ext_resource type="Script" uid="uid://b6cyyven6wib1" path="res://ThomasFolder/Scripts/electric_door_colider.gd" id="8_8ky7w"]
