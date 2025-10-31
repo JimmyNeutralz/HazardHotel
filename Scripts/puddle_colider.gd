@@ -17,9 +17,12 @@ func _process(delta):
 		electrified = false
 		player.stop_moving(electrified)
 		puddle.change_puddle_status(electrified)
-		shelfFuse.pathBlocked = false
-		if(!player.destinationBlocked and safe.emptied):
+		print(player.destinationBlocked)
+		print(safe.emptied)
+		if(!player.destinationBlocked and !safe.emptied):
+			print("Conditional Met")
 			player.move_to_blocked_location()
+		shelfFuse.pathBlocked = false
 	elif (Input.is_action_just_pressed("Enable 3D Puddle Electricity")):
 		electrified = true
 		puddle.change_puddle_status(electrified)

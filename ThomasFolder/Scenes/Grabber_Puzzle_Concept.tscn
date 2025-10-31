@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfww28cwaxmlv"]
+[gd_scene load_steps=15 format=3 uid="uid://bfww28cwaxmlv"]
 
 [ext_resource type="PackedScene" uid="uid://doedso0a6llnl" path="res://ThomasFolder/Scenes/Elevator.tscn" id="1_fq3xq"]
 [ext_resource type="PackedScene" uid="uid://ci14a0bc5q632" path="res://ThomasFolder/Scenes/fuse_box_ui.tscn" id="2_0uyce"]
+[ext_resource type="Script" uid="uid://cql8aqyq1laed" path="res://ThomasFolder/Scenes/elevator.gd" id="2_bqhuk"]
 [ext_resource type="Script" uid="uid://d0so3nntww1b6" path="res://ThomasFolder/Scripts/text_change.gd" id="3_6us3t"]
 [ext_resource type="PackedScene" uid="uid://bfryf0tii3xp2" path="res://ThomasFolder/Scenes/3d_player.tscn" id="4_kccbw"]
 [ext_resource type="PackedScene" uid="uid://cj4i7ofhnqnwd" path="res://ThomasFolder/Scenes/shelf_fuse.tscn" id="6_6us3t"]
@@ -24,6 +25,7 @@ mesh = SubResource("BoxMesh_o2fov")
 
 [node name="Elevator" parent="." instance=ExtResource("1_fq3xq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42856193, 0.523, -0.5566807)
+script = ExtResource("2_bqhuk")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.9309411, 0.3651693, 0, -0.36516926, 0.9309411, 0, 1.587, 2.794)
@@ -73,6 +75,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.085, -0.01723066, -0.067)
 [node name="Fuse" parent="." instance=ExtResource("11_5yabn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.697, 0.17188287, 0)
 
+[connection signal="body_entered" from="Elevator" to="Elevator" method="_on_body_entered"]
 [connection signal="body_entered" from="Safe" to="Safe" method="_on_body_entered"]
 [connection signal="body_entered" from="FuseBox" to="FuseBox" method="_on_body_entered"]
 [connection signal="body_entered" from="DeathPuddle3d" to="DeathPuddle3d" method="_on_body_entered"]
