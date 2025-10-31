@@ -56,10 +56,24 @@ func _check_keys() -> void:
 #to next level
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if generator.activated:
-		#Global.fade_to_level_2()
-		fade_in_static._exit_scene("res://BetaBuild/Scenes/BetaV1SecondFloor.tscn")
-		#fade_in_static._fade_static_in()
-		#get_tree().change_scene_to_file(next_scene_path)
+		var player = $Player
+		if player:
+			#Fully stop movement
+			player.is_moving = false
+			player.velocity = Vector3.ZERO
+
+			#Stop movement logic
+			player.set_process(false)
+			player.set_physics_process(false)
+
+			#Force idle animation
+			if player.player_sprite \
+			and player.player_sprite.sprite_frames \
+			and player.player_sprite.sprite_frames.has_animation("Idle"):
+				player.player_sprite.play("Idle")
+
+		fade_in_static._exit_scene("res://SpencerStuff/Scenes/EndScene.tscn")
+
 		
 func _input(event):
 

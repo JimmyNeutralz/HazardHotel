@@ -36,7 +36,7 @@ func _ready():
 	#player_sprite.scale.x = 0.3 #Add a negative sign in front to flip sprite to face the right
 	
 	# Make sure the idle animation plays by default
-	if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
+	if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
 		player_sprite.play("Idle")
 	else:
 		push_warning("PlayerSprite missing 'Idle' animation or SpriteFrames resource")
@@ -75,7 +75,7 @@ func _physics_process(delta):
 			velocity = Vector3.ZERO
 			stuck_timer = 0.0
 			#Switch to idle animation when stopping
-			if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
+			if player_sprite and player_sprite.sprite_frames and player_sprite.sprite_frames.has_animation("Idle"):
 				player_sprite.play("Idle")
 		else:
 			velocity = direction.normalized() * speed
@@ -89,7 +89,7 @@ func _physics_process(delta):
 					is_moving = false
 					velocity = Vector3.ZERO
 					stuck_timer = 0.0
-					if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
+					if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
 						player_sprite.play("Idle")
 					print("Player collided with obstacle, stopping movement")
 			else:
@@ -100,14 +100,14 @@ func _physics_process(delta):
 			if abs(direction.x) > 0.1:  #Only update if significant horizontal movement
 				update_sprite_facing(sign(direction.x))
 			#Play walk animation when moving
-			if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Walk"):
+			if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Walk"):
 				if player_sprite.animation != "Walk":
 					player_sprite.play("Walk")
 	else:
 		velocity = Vector3.ZERO
 		move_and_slide()
 		#Ensure idle animation when not moving
-		if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
+		if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
 			if player_sprite.animation != "Idle" and not is_moving:
 				player_sprite.play("Idle")
 
@@ -134,7 +134,7 @@ func move_to_room_center():
 			update_sprite_facing(move_direction)
 		
 		#Start walk animation
-		if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Walk"):
+		if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Walk"):
 			player_sprite.play("Walk")
 
 #For moving between rooms
@@ -171,7 +171,7 @@ func move_to_adjacent_room(direction: int):
 	is_moving = true
 	stuck_timer = 0.0  #Reset stuck timer when starting new movement
 	#Start walk animation
-	if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Walk"):
+	if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Walk"):
 		player_sprite.play("Walk")
 
 #Update sprite facing direction
@@ -231,7 +231,7 @@ func respawn_player():
 	set_physics_process(true)
 	
 	#Reset to idle animation on respawn
-	if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
+	if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
 		player_sprite.play("Idle")
 	print("Respawned!")
 

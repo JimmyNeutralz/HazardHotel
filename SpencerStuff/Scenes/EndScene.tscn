@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://bslonsecovevp"]
+[gd_scene load_steps=13 format=3 uid="uid://bslonsecovevp"]
 
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="1_ynw6k"]
 [ext_resource type="Texture2D" uid="uid://bo7s6c50xo650" path="res://Assets/HH_Art_Logo_V2_.png" id="2_jgqas"]
@@ -12,94 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://b8vx7fxb5dgvh" path="res://Assets/HH_Art_NewGuySprite_V2.png" id="11_lektt"]
 [ext_resource type="Texture2D" uid="uid://k5km3031kocw" path="res://Assets/HH_Art_HandymanSprite_V1.png" id="11_wa78v"]
 [ext_resource type="Texture2D" uid="uid://cxlvo1vndyp7n" path="res://Assets/HH_Art_Logo_V4_.png" id="12_lektt"]
-[ext_resource type="Script" uid="uid://cdcf2xh2ahv2s" path="res://SpencerStuff/Scripts/auto_movement.gd" id="13_0f0cy"]
-[ext_resource type="Texture2D" uid="uid://dju6sdtrap1fy" path="res://Assets/HH_Art_NewGuyWalkAnimSpriteSheet_V1.png" id="13_ls7mm"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0f0cy"]
-atlas = ExtResource("13_ls7mm")
-region = Rect2(0, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aw6sn"]
-atlas = ExtResource("13_ls7mm")
-region = Rect2(700, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g5y5w"]
-atlas = ExtResource("13_ls7mm")
-region = Rect2(1400, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0f2n7"]
-atlas = ExtResource("13_ls7mm")
-region = Rect2(2100, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2nkhp"]
-atlas = ExtResource("13_ls7mm")
-region = Rect2(2800, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_golk8"]
-atlas = ExtResource("13_ls7mm")
-region = Rect2(3500, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_al70b"]
-atlas = ExtResource("13_ls7mm")
-region = Rect2(4200, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x365h"]
-atlas = ExtResource("13_ls7mm")
-region = Rect2(4900, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hpa8k"]
-atlas = ExtResource("13_ls7mm")
-region = Rect2(5600, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8e28j"]
-atlas = ExtResource("13_ls7mm")
-region = Rect2(6300, 0, 700, 700)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_if757"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("11_lektt")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0f0cy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aw6sn")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g5y5w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0f2n7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2nkhp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_golk8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_al70b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_x365h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hpa8k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8e28j")
-}],
-"loop": true,
-"name": &"Walk",
-"speed": 10.0
-}]
 
 [node name="EndScene" type="CanvasLayer"]
 
@@ -177,10 +89,3 @@ texture = ExtResource("11_lektt")
 position = Vector2(401.00003, 169)
 scale = Vector2(0.2183333, 0.21833332)
 texture = ExtResource("12_lektt")
-
-[node name="Player" type="CharacterBody3D" parent="."]
-script = ExtResource("13_0f0cy")
-
-[node name="PlayerSprite" type="AnimatedSprite3D" parent="Player"]
-sprite_frames = SubResource("SpriteFrames_if757")
-animation = &"Walk"
