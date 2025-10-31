@@ -14,6 +14,9 @@ extends Node3D
 @export var next_scene_path := "res://Donovan/MODIFIEDAlphaV4.tscn"
 @export var main_menu_scene = "res://SpencerStuff/Scenes/MainMenu.tscn"
 
+#For animation
+var anim_player: AnimationPlayer = null
+
 #Key states
 var has_left_key: bool = false
 var has_right_key: bool = false
@@ -24,6 +27,16 @@ func _ready():
 	if(!fade_in_static):
 		fade_in_static = $Cameras/Camera/FadeInView
 	fade_in_static._fade_static_out()
+	
+	#Find AnimationPlayer anywhere in this node's hierarchy
+	anim_player = find_animation_player(self)
+	if anim_player:
+		print("Found Elevator AnimationPlayer with animations:", anim_player.get_animation_list())
+		# Optional: force closed pose at start (frame 0)
+		if anim_player.has_animation("Take 001"):
+			anim_player.seek(0.0, true)
+	else:
+		push_error("No AnimationPlayer found in gate!")
 
 
 #Left key area trigger
@@ -56,6 +69,14 @@ func _check_keys() -> void:
 #to next level
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if generator.activated:
+		
+		#Play animation if available
+		if anim_player:
+			if anim_player.has_animation("Take 001"):
+				anim_player.play("Take 001")
+			else:
+				print("No animation 'Take 001' found for gate!")
+		
 		var player = $Player
 		if player:
 			#Fully stop movement
@@ -74,6 +95,16 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 		fade_in_static._exit_scene("res://SpencerStuff/Scenes/EndScene.tscn")
 
+
+#Recursive search for AnimationPlayer
+func find_animation_player(node: Node) -> AnimationPlayer:
+	if node is AnimationPlayer:
+		return node
+	for child in node.get_children():
+		var found = find_animation_player(child)
+		if found:
+			return found
+	return null
 		
 func _input(event):
 

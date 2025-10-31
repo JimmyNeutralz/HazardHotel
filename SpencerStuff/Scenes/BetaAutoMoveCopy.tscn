@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=71 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_12wq7"]
@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://dls6ajp0nybf4" path="res://Assets/3D Models/HH_Art_PinchModularLeft_V2.fbx" id="27_pmcw7"]
 [ext_resource type="PackedScene" uid="uid://b8fbh4foswd7e" path="res://Assets/3D Models/HH_Art_PinchModularMiddle_V2.fbx" id="28_toapv"]
 [ext_resource type="PackedScene" uid="uid://bojy7at4teudg" path="res://Assets/3D Models/HH_Art_PinchModularRight_V2.fbx" id="29_d7lxd"]
+[ext_resource type="PackedScene" uid="uid://bs8e8vvxjvhhv" path="res://Assets/3D Models/HH_Art_ElevatorGate_V1.fbx" id="29_pokab"]
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="30_toapv"]
 [ext_resource type="PackedScene" uid="uid://dvl5ijrr8hfd0" path="res://Assets/3D Models/HH_Art_ClothChair_V2.fbx" id="33_6tdpc"]
 [ext_resource type="PackedScene" uid="uid://416n0yob35jg" path="res://Assets/3D Models/HH_Art_Shelf_V1.fbx" id="34_vp3xm"]
@@ -153,6 +154,12 @@ size = Vector3(1, 3.166504, 2.3077393)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h7tgk"]
 size = Vector3(1, 3.1601563, 2.31604)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vp3xm"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_pokab"]
+material = SubResource("StandardMaterial3D_vp3xm")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f063y"]
 size = Vector3(2.0975342, 0.8051758, 0.8741455)
@@ -362,6 +369,10 @@ texture = ExtResource("16_4wqvp")
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.01, 1.4756831, -0.9583911)
 texture = ExtResource("11_u72or")
 
+[node name="BlackBackground" type="MeshInstance3D" parent="Elevator"]
+transform = Transform3D(2.369905, 0, 0, 0, 2.6717234, 0, 0, 0, 0.16142267, 0, 1.3805507, -1.1959493)
+mesh = SubResource("BoxMesh_pokab")
+
 [node name="Generator" type="Node3D" parent="."]
 script = ExtResource("17_ml83m")
 gate_node_path = NodePath("../Gate")
@@ -453,6 +464,9 @@ mesh = SubResource("BoxMesh_ffsuc")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ElevatorDoor/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020044327, 1.1346064, -0.43408203)
 shape = SubResource("BoxShape3D_k700v")
+
+[node name="HH_Art_ElevatorGate_V1" parent="ElevatorDoor" instance=ExtResource("29_pokab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0136499405)
 
 [node name="RoomDetectors" type="Node3D" parent="."]
 

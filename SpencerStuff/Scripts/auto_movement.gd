@@ -64,7 +64,7 @@ func _ready():
 func _physics_process(delta):
 	if is_dead:
 		return
-	
+		
 	if is_moving:
 		var direction = target_position - global_position
 		var previous_position = global_position
