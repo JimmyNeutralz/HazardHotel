@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://doedso0a6llnl" path="res://ThomasFolder/Scenes/Elevator.tscn" id="1_fq3xq"]
 [ext_resource type="PackedScene" uid="uid://ci14a0bc5q632" path="res://ThomasFolder/Scenes/fuse_box_ui.tscn" id="2_0uyce"]
-[ext_resource type="Script" uid="uid://cql8aqyq1laed" path="res://ThomasFolder/Scenes/elevator.gd" id="2_bqhuk"]
+[ext_resource type="Script" uid="uid://cql8aqyq1laed" path="res://ThomasFolder/Scripts/elevator.gd" id="2_bqhuk"]
 [ext_resource type="Script" uid="uid://d0so3nntww1b6" path="res://ThomasFolder/Scripts/text_change.gd" id="3_6us3t"]
 [ext_resource type="PackedScene" uid="uid://bfryf0tii3xp2" path="res://ThomasFolder/Scenes/3d_player.tscn" id="4_kccbw"]
 [ext_resource type="PackedScene" uid="uid://cj4i7ofhnqnwd" path="res://ThomasFolder/Scenes/shelf_fuse.tscn" id="6_6us3t"]
