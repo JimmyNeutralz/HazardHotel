@@ -36,6 +36,9 @@ func unlock_door() -> void:
 		print("No animation found for Right Door!")
 
 	print("Right door unlocked!")
+	
+	#Play audio
+	$RightDoorAudio.play()
 
 #Recursive search for AnimationPlayer
 func find_animation_player(node: Node) -> AnimationPlayer:

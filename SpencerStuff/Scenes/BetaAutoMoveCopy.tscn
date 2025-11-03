@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=74 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_12wq7"]
@@ -18,8 +18,10 @@
 [ext_resource type="Script" uid="uid://bn5vexagvnj6c" path="res://SpencerStuff/Scripts/right_door.gd" id="14_t4vl1"]
 [ext_resource type="PackedScene" uid="uid://lgf83rme0ewf" path="res://Assets/3D Models/HH_Art_DoorOpenRightAnim_v1.fbx" id="15_bpvk3"]
 [ext_resource type="Texture2D" uid="uid://bjgv41ufsr321" path="res://Assets/key.png" id="16_4wqvp"]
+[ext_resource type="AudioStream" uid="uid://boghesc1nkhot" path="res://Assets/Audio/Wooden door creak 1.wav" id="16_um0bm"]
 [ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="17_ml83m"]
 [ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="18_83nm1"]
+[ext_resource type="AudioStream" uid="uid://c8v5bc6sw71sl" path="res://Assets/Audio/Wooden door creak 2.wav" id="19_t4vl1"]
 [ext_resource type="Script" uid="uid://cqxfonrb48820" path="res://SpencerStuff/Scripts/puddle.gd" id="19_twwqf"]
 [ext_resource type="PackedScene" uid="uid://clhua17db53gv" path="res://Assets/3D Models/HH_Art_Puddle_v1.fbx" id="20_e18q8"]
 [ext_resource type="Script" uid="uid://ct1s4dt2hpjix" path="res://SpencerStuff/Scripts/fusebox.gd" id="21_iumpq"]
@@ -319,6 +321,9 @@ transform = Transform3D(0.99939084, 0, -0.034899496, 0, 1, 0, 0.034899496, 0, 0.
 [node name="HH_Art_locks_openAnim_V1" parent="LeftDoor" instance=ExtResource("13_um0bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1599083, 0, 0.13976127)
 
+[node name="LeftDoorAudio" type="AudioStreamPlayer3D" parent="LeftDoor"]
+stream = ExtResource("16_um0bm")
+
 [node name="RightDoor" type="Node3D" parent="."]
 script = ExtResource("14_t4vl1")
 
@@ -337,6 +342,9 @@ transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 3.149738, 0
 
 [node name="HH_Art_locks_openAnim_V1" parent="RightDoor" instance=ExtResource("13_um0bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1367648, 0, 0.12651175)
+
+[node name="RightDoorAudio" type="AudioStreamPlayer3D" parent="RightDoor"]
+stream = ExtResource("19_t4vl1")
 
 [node name="LeftWall" type="Node3D" parent="."]
 

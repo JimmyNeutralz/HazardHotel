@@ -40,8 +40,11 @@ func unlock_door() -> void:
 	#Play door animation
 	if door_anim and door_anim.has_animation("Take 001"):
 		door_anim.play("Take 001")
-
+	
 	print("Left door unlocked!")
+	
+	#Play audio
+	$LeftDoorAudio.play()
 
 #Recursive search for AnimationPlayer
 func find_animation_player(node: Node) -> AnimationPlayer:
