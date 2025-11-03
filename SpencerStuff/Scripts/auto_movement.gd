@@ -26,7 +26,7 @@ const STUCK_TIME_THRESHOLD: float = 0.1  #If stuck for this long, stop moving - 
 #For respawning
 @export var spawn_node_path: NodePath = ^"/root/Player/PlayerSpawnPosition"
 var is_dead = false
-const RESPAWN_DELAY = 2.0
+const RESPAWN_DELAY = 3.75
 var spawn_transform: Transform3D
 
 func _ready():

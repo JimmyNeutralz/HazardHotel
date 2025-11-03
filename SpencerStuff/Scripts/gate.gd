@@ -96,10 +96,12 @@ func raise_gate():
 	if collision:
 		collision.disabled = true
 	print("Gate raised!")
+	$GateAudio.play()
 
 
 func kill_player(player):
 	print("Player electrocuted by gate!")
+	$GateKillAudio.play()
 	player.kill_player()
 
 #Handle indicators being weird

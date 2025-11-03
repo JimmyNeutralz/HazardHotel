@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=78 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_12wq7"]
@@ -27,16 +27,20 @@
 [ext_resource type="Script" uid="uid://ct1s4dt2hpjix" path="res://SpencerStuff/Scripts/fusebox.gd" id="21_iumpq"]
 [ext_resource type="PackedScene" uid="uid://dllmxns1qx246" path="res://Scenes/FuseboxClose.tscn" id="22_0jwwo"]
 [ext_resource type="Script" uid="uid://d26s1jhjd3mxd" path="res://SpencerStuff/Scripts/gate.gd" id="23_4qti0"]
+[ext_resource type="AudioStream" uid="uid://bt827ljr2p2uk" path="res://Assets/Audio/Switch.wav" id="23_4wqvp"]
 [ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="24_gpvrk"]
+[ext_resource type="AudioStream" uid="uid://cnudkj83doi6x" path="res://Assets/Audio/Electricution Death.wav" id="25_bpvk3"]
 [ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="25_luouv"]
 [ext_resource type="PackedScene" uid="uid://cjpyo5axkiie8" path="res://Scenes/GateClosed.tscn" id="26_5ono6"]
 [ext_resource type="PackedScene" uid="uid://dls6ajp0nybf4" path="res://Assets/3D Models/HH_Art_PinchModularLeft_V2.fbx" id="27_pmcw7"]
+[ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="27_t4vl1"]
 [ext_resource type="PackedScene" uid="uid://b8fbh4foswd7e" path="res://Assets/3D Models/HH_Art_PinchModularMiddle_V2.fbx" id="28_toapv"]
 [ext_resource type="PackedScene" uid="uid://bojy7at4teudg" path="res://Assets/3D Models/HH_Art_PinchModularRight_V2.fbx" id="29_d7lxd"]
 [ext_resource type="PackedScene" uid="uid://yvv4teqlemm5" path="res://SpencerStuff/Scenes/hh_art_elevator_gate_v_1.tscn" id="29_pokab"]
 [ext_resource type="Script" uid="uid://7epq051kcf4g" path="res://SpencerStuff/Scripts/elevator_door.gd" id="29_u72or"]
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="30_toapv"]
 [ext_resource type="PackedScene" uid="uid://dvl5ijrr8hfd0" path="res://Assets/3D Models/HH_Art_ClothChair_V2.fbx" id="33_6tdpc"]
+[ext_resource type="AudioStream" uid="uid://cr8mcfem7l0to" path="res://Assets/Audio/Wooden door creak 3.wav" id="34_ml83m"]
 [ext_resource type="PackedScene" uid="uid://416n0yob35jg" path="res://Assets/3D Models/HH_Art_Shelf_V1.fbx" id="34_vp3xm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oymrl"]
@@ -396,6 +400,10 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5487671, 0.4333496, 0.0010375977)
 shape = SubResource("BoxShape3D_f063y")
 
+[node name="GeneratorAudio" type="AudioStreamPlayer3D" parent="Generator"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9929323, 0, -0.16973802)
+stream = ExtResource("23_4wqvp")
+
 [node name="Puddle" type="Node3D" parent="."]
 script = ExtResource("19_twwqf")
 
@@ -409,6 +417,9 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 6.28
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038757205, -0.18701172, 2.0847106)
 shape = SubResource("BoxShape3D_0kak2")
 
+[node name="PuddleAudio" type="AudioStreamPlayer3D" parent="Puddle"]
+stream = ExtResource("25_bpvk3")
+
 [node name="FuseBox" type="Node3D" parent="."]
 script = ExtResource("21_iumpq")
 puddle_node_path = NodePath("../Puddle")
@@ -420,6 +431,9 @@ mesh = SubResource("BoxMesh_0kak2")
 
 [node name="HH_Art_FuseBoxAni_V2" parent="FuseBox" instance=ExtResource("22_0jwwo")]
 transform = Transform3D(0.9563048, 0, 0.2923717, 0, 1, 0, -0.2923717, 0, 0.9563048, 3.4390302, 0.31998253, -17.256184)
+
+[node name="FuseboxAudio" type="AudioStreamPlayer3D" parent="FuseBox"]
+stream = ExtResource("27_t4vl1")
 
 [node name="Gate" type="Node3D" parent="."]
 script = ExtResource("23_4qti0")
@@ -448,6 +462,12 @@ shape = SubResource("BoxShape3D_vher1")
 
 [node name="HH_Art_GateAni_V2" parent="Gate" instance=ExtResource("26_5ono6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9061117, 0, 0)
+
+[node name="GateAudio" type="AudioStreamPlayer3D" parent="Gate"]
+stream = ExtResource("34_ml83m")
+
+[node name="GateKillAudio" type="AudioStreamPlayer3D" parent="Gate"]
+stream = ExtResource("25_bpvk3")
 
 [node name="Indicators" type="Node3D" parent="."]
 
