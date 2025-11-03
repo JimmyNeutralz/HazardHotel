@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=84 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_12wq7"]
@@ -6,12 +6,18 @@
 [ext_resource type="Texture2D" uid="uid://b8vx7fxb5dgvh" path="res://Assets/HH_Art_NewGuySprite_V2.png" id="4_pmcw7"]
 [ext_resource type="Texture2D" uid="uid://dju6sdtrap1fy" path="res://Assets/HH_Art_NewGuyWalkAnimSpriteSheet_V1.png" id="5_d7lxd"]
 [ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="5_toapv"]
+[ext_resource type="AudioStream" uid="uid://m0ec6h28dj7q" path="res://Assets/Audio/Heavy Footsteps 1.wav" id="6_4qti0"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="6_d7lxd"]
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="7_6tdpc"]
+[ext_resource type="AudioStream" uid="uid://dng3gwxycsiaa" path="res://Assets/Audio/Heavy Footsteps 2.wav" id="7_gpvrk"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="7_oymrl"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="8_6tdpc"]
+[ext_resource type="AudioStream" uid="uid://o0muujmnhwuh" path="res://Assets/Audio/Heavy Footsteps 3.wav" id="8_luouv"]
+[ext_resource type="AudioStream" uid="uid://c2aek62urxvgj" path="res://Assets/Audio/Heavy Footsteps 4.wav" id="9_5ono6"]
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="9_vp3xm"]
+[ext_resource type="AudioStream" uid="uid://00yxdkue0xhd" path="res://Assets/Audio/Heavy Footsteps 5.wav" id="10_d23ut"]
 [ext_resource type="Script" uid="uid://bg4bius86njfo" path="res://SpencerStuff/Scripts/left_door.gd" id="10_pokab"]
+[ext_resource type="AudioStream" uid="uid://16paor1ni7n6" path="res://Assets/Audio/Heavy Footsteps 6.wav" id="11_tj4bt"]
 [ext_resource type="Texture2D" uid="uid://bekut30xmeumk" path="res://Assets/Lock.png" id="11_u72or"]
 [ext_resource type="PackedScene" uid="uid://07r1c3ba45w3" path="res://Assets/3D Models/HH_Art_DoorOpenLeftAnim_V1.fbx" id="12_khs31"]
 [ext_resource type="PackedScene" uid="uid://dqdrihkiouy1o" path="res://Assets/3D Models/HH_Art_locks_openAnim_V1.fbx" id="13_um0bm"]
@@ -225,6 +231,24 @@ shape = SubResource("BoxShape3D_5fj6f")
 
 [node name="PlayerSpawnPosition" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 0.62, -0.54)
+
+[node name="FootstepAudio1" type="AudioStreamPlayer3D" parent="Player"]
+stream = ExtResource("6_4qti0")
+
+[node name="FootstepAudio2" type="AudioStreamPlayer3D" parent="Player"]
+stream = ExtResource("7_gpvrk")
+
+[node name="FootstepAudio3" type="AudioStreamPlayer3D" parent="Player"]
+stream = ExtResource("8_luouv")
+
+[node name="FootstepAudio4" type="AudioStreamPlayer3D" parent="Player"]
+stream = ExtResource("9_5ono6")
+
+[node name="FootstepAudio5" type="AudioStreamPlayer3D" parent="Player"]
+stream = ExtResource("10_d23ut")
+
+[node name="FootstepAudio6" type="AudioStreamPlayer3D" parent="Player"]
+stream = ExtResource("11_tj4bt")
 
 [node name="Cameras" type="Node3D" parent="."]
 
