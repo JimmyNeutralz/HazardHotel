@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=72 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_12wq7"]
@@ -31,7 +31,8 @@
 [ext_resource type="PackedScene" uid="uid://dls6ajp0nybf4" path="res://Assets/3D Models/HH_Art_PinchModularLeft_V2.fbx" id="27_pmcw7"]
 [ext_resource type="PackedScene" uid="uid://b8fbh4foswd7e" path="res://Assets/3D Models/HH_Art_PinchModularMiddle_V2.fbx" id="28_toapv"]
 [ext_resource type="PackedScene" uid="uid://bojy7at4teudg" path="res://Assets/3D Models/HH_Art_PinchModularRight_V2.fbx" id="29_d7lxd"]
-[ext_resource type="PackedScene" uid="uid://bs8e8vvxjvhhv" path="res://Assets/3D Models/HH_Art_ElevatorGate_V1.fbx" id="29_pokab"]
+[ext_resource type="PackedScene" uid="uid://yvv4teqlemm5" path="res://SpencerStuff/Scenes/hh_art_elevator_gate_v_1.tscn" id="29_pokab"]
+[ext_resource type="Script" uid="uid://7epq051kcf4g" path="res://SpencerStuff/Scripts/elevator_door.gd" id="29_u72or"]
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="30_toapv"]
 [ext_resource type="PackedScene" uid="uid://dvl5ijrr8hfd0" path="res://Assets/3D Models/HH_Art_ClothChair_V2.fbx" id="33_6tdpc"]
 [ext_resource type="PackedScene" uid="uid://416n0yob35jg" path="res://Assets/3D Models/HH_Art_Shelf_V1.fbx" id="34_vp3xm"]
@@ -458,6 +459,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, -5.657252, 1.6853055, 
 mesh = SubResource("BoxMesh_ffsuc")
 
 [node name="ElevatorDoor" type="Node3D" parent="."]
+script = ExtResource("29_u72or")
 
 [node name="Area3D" type="Area3D" parent="ElevatorDoor"]
 
@@ -466,7 +468,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020044327, 1.1346064, -0.43
 shape = SubResource("BoxShape3D_k700v")
 
 [node name="HH_Art_ElevatorGate_V1" parent="ElevatorDoor" instance=ExtResource("29_pokab")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0136499405)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05041635)
 
 [node name="RoomDetectors" type="Node3D" parent="."]
 
@@ -512,11 +514,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 11.8)
 process_mode = 3
 
 [node name="PauseBackground" type="Sprite2D" parent="PauseMenu"]
+process_mode = 3
 position = Vector2(587, 320)
 scale = Vector2(0.35, 0.2708934)
 texture = ExtResource("30_toapv")
 
 [node name="ResumeButton" type="Button" parent="PauseMenu"]
+process_mode = 3
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -531,6 +535,7 @@ theme_override_font_sizes/font_size = 30
 text = "Resume"
 
 [node name="QuitButton" type="Button" parent="PauseMenu"]
+process_mode = 3
 offset_left = 500.0
 offset_top = 340.0
 offset_right = 680.0
@@ -556,3 +561,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.182118, 0, 11.840912)
 [connection signal="body_entered" from="RightWall/RightTrigger" to="." method="_on_right_trigger_body_entered"]
 [connection signal="body_entered" from="Gate/GateTrigger" to="Gate" method="_on_gate_trigger_body_entered"]
 [connection signal="body_entered" from="ElevatorDoor/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="pressed" from="PauseMenu/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]
