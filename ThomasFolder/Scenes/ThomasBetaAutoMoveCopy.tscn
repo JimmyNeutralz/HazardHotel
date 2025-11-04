@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="19_yjdm6"]
 [ext_resource type="Script" uid="uid://cqxfonrb48820" path="res://SpencerStuff/Scripts/puddle.gd" id="20_3n3fg"]
 [ext_resource type="PackedScene" uid="uid://clhua17db53gv" path="res://Assets/3D Models/HH_Art_Puddle_v1.fbx" id="21_7uwki"]
-[ext_resource type="Script" uid="uid://ct1s4dt2hpjix" path="res://SpencerStuff/Scripts/fusebox.gd" id="22_mgcj1"]
+[ext_resource type="Script" uid="uid://bi8qac8toel0n" path="res://ThomasFolder/Scripts/fusebox_thomas.gd" id="22_kwtjr"]
 [ext_resource type="PackedScene" path="res://Scenes/FuseboxClose.tscn" id="23_okwcj"]
 [ext_resource type="Script" uid="uid://d26s1jhjd3mxd" path="res://SpencerStuff/Scripts/gate.gd" id="24_p2u62"]
 [ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="25_cl7g5"]
@@ -302,7 +302,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038757205, -0.18701172, 2.0
 shape = SubResource("BoxShape3D_0kak2")
 
 [node name="FuseBox" type="Node3D" parent="."]
-script = ExtResource("22_mgcj1")
+script = ExtResource("22_kwtjr")
 puddle_node_path = NodePath("../Puddle")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FuseBox"]
@@ -312,6 +312,9 @@ mesh = SubResource("BoxMesh_0kak2")
 
 [node name="HH_Art_FuseBoxAni_V2" parent="FuseBox" instance=ExtResource("23_okwcj")]
 transform = Transform3D(0.9563048, 0, 0.2923717, 0, 1, 0, -0.2923717, 0, 0.9563048, 3.4390302, 0.31998253, -17.256184)
+
+[node name="Marker3D" type="Marker3D" parent="FuseBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.634415, 1.0995649, 0)
 
 [node name="Gate" type="Node3D" parent="."]
 script = ExtResource("24_p2u62")

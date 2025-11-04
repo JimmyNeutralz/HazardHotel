@@ -152,3 +152,7 @@ func respawn_player():
 		camera.ResetCamera()
 	else:
 		print("MainCamera not found or missing ResetCamera() function.")
+
+func move_to_specific_location(location: int):
+	target_position = Vector3(location, global_position.y, global_position.z)
+	is_moving = true

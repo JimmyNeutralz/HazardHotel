@@ -3,6 +3,11 @@ extends Node3D
 #NodePath
 @onready var indicator = $"../Indicators/FuseboxIndicator"
 
+#Path to player node
+@onready var player = $"../Player"
+
+@onready var fuse_marker = $"../FuseBox/Marker3D"
+
 #Path to puddle node
 @export var puddle_node_path : NodePath
 var puddle : Node = null
@@ -40,6 +45,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("activate_fusebox") and not activated:
 		if can_activate():
 			activate()
+			player.move_to_specific_location(fuse_marker.global_position.x)
 		else:
 			print("Cannot activate fusebox yet!")
 

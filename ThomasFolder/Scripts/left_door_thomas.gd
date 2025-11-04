@@ -32,7 +32,7 @@ func _process(_delta: float) -> void:
 			player.move_to_adjacent_room(-1)
 		elif (player.global_position.x < -2.366):
 			player.move_to_adjacent_room(2)
-			await get_tree().create_timer(1.0).timeout
+			await get_tree().create_timer(1.5).timeout
 			player.move_to_room_center()
 
 func unlock_door() -> void:
