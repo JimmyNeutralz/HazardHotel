@@ -64,6 +64,11 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		#Freeze JUST player movement (not the world)
 		var player = $Player
 		if player:
+			
+			#Stop footstep sound from continuing when player stops for elevator to open
+			if player.has_method("stop_footsteps"):
+				player.stop_footsteps()
+			
 			player.is_moving = false
 			player.velocity = Vector3.ZERO
 			player.set_process(false)

@@ -29,6 +29,11 @@ var is_dead = false
 const RESPAWN_DELAY = 3.75
 var spawn_transform: Transform3D
 
+#Footstep audio
+var footstep_players: Array = []
+var current_footstep_index = 0
+var footsteps_playing = false
+
 func _ready():
 	
 	player_sprite = $PlayerSprite
@@ -38,6 +43,8 @@ func _ready():
 	# Make sure the idle animation plays by default
 	if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
 		player_sprite.play("Idle")
+		stop_footsteps()
+
 	else:
 		push_warning("PlayerSprite missing 'Idle' animation or SpriteFrames resource")
 	
@@ -60,6 +67,17 @@ func _ready():
 	else:
 		push_error("PlayerSpawnPosition node not found at: " + str(spawn_node_path))
 		spawn_transform = global_transform #Fallback to current pos
+		
+		
+	#Collect all footstep audio players
+	for child in get_children():
+		if child is AudioStreamPlayer3D and child.name.begins_with("FootstepAudio"):
+			footstep_players.append(child)
+
+	#Connect finished signals (to play next footstep)
+	for p in footstep_players:
+		p.finished.connect(_on_footstep_finished)
+
 
 func _physics_process(delta):
 	if is_dead:
@@ -77,6 +95,8 @@ func _physics_process(delta):
 			#Switch to idle animation when stopping
 			if player_sprite and player_sprite.sprite_frames and player_sprite.sprite_frames.has_animation("Idle"):
 				player_sprite.play("Idle")
+				stop_footsteps()
+
 		else:
 			velocity = direction.normalized() * speed
 			move_and_slide()
@@ -91,6 +111,8 @@ func _physics_process(delta):
 					stuck_timer = 0.0
 					if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
 						player_sprite.play("Idle")
+						stop_footsteps()
+
 					print("Player collided with obstacle, stopping movement")
 			else:
 				#Moving normally, reset stuck timer
@@ -103,6 +125,8 @@ func _physics_process(delta):
 			if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Walk"):
 				if player_sprite.animation != "Walk":
 					player_sprite.play("Walk")
+					start_footsteps()
+
 	else:
 		velocity = Vector3.ZERO
 		move_and_slide()
@@ -110,6 +134,8 @@ func _physics_process(delta):
 		if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
 			if player_sprite.animation != "Idle" and not is_moving:
 				player_sprite.play("Idle")
+				stop_footsteps()
+
 
 	#Input controls
 	if Input.is_action_just_pressed("Center 3D Spot"): #"S"
@@ -136,6 +162,8 @@ func move_to_room_center():
 		#Start walk animation
 		if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Walk"):
 			player_sprite.play("Walk")
+			start_footsteps()
+
 
 #For moving between rooms
 func move_to_adjacent_room(direction: int):
@@ -173,6 +201,8 @@ func move_to_adjacent_room(direction: int):
 	#Start walk animation
 	if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Walk"):
 		player_sprite.play("Walk")
+		start_footsteps()
+
 
 #Update sprite facing direction
 func update_sprite_facing(direction):
@@ -233,6 +263,8 @@ func respawn_player():
 	#Reset to idle animation on respawn
 	if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
 		player_sprite.play("Idle")
+		stop_footsteps()
+
 	print("Respawned!")
 
 	#ResetCamera
@@ -241,3 +273,22 @@ func respawn_player():
 		camera.ResetCamera()
 	else:
 		print("MainCamera not found or missing ResetCamera() function.")
+		
+#Footstep helper functions
+func start_footsteps():
+	if footsteps_playing or footstep_players.is_empty():
+		return
+	footsteps_playing = true
+	current_footstep_index = 0
+	footstep_players[current_footstep_index].play()
+
+func stop_footsteps():
+	footsteps_playing = false
+	for p in footstep_players:
+		p.stop()
+
+func _on_footstep_finished():
+	if not footsteps_playing:
+		return
+	current_footstep_index = (current_footstep_index + 1) % footstep_players.size()
+	footstep_players[current_footstep_index].play()
