@@ -21,21 +21,58 @@ func _ready() -> void:
 
 #Unlock
 func _process(_delta: float) -> void:
-	if locked and Input.is_action_just_pressed("unlock_right"):
+	if Input.is_action_just_pressed("unlock_right"):
 		unlock_door()
+	elif Input.is_action_just_pressed("reverse_unlock_right"):
+		reverse_unlock_door()
 
 func unlock_door() -> void:
 	locked = false
 	lock_visual.visible = false
-	blocker.queue_free()  #Removes the StaticBody so player can walk through
+	blocker.set_collision_layer_value(1, false)  #Removes the StaticBody so player can walk through
 
+	#Move player to door
+	
+	
+	#Play interact animation to simulate them opening door (IN CONJUNCTION WITH NEXT METHOD)
+	
+	
 	#Play door animation
 	if anim_player and anim_player.has_animation("Take 001"):
 		anim_player.play("Take 001")
+		print("Right door open!")
 	else:
 		print("No animation found for Right Door!")
+		
+	#Play door close animation after some time
+	if anim_player and anim_player.has_animation("Take 001"):
+		await get_tree().create_timer(3.0).timeout
+		anim_player.play_backwards("Take 001")
+		print("Right door closed!")
+		
+func reverse_unlock_door():
+	locked = false
+	lock_visual.visible = false
+	blocker.set_collision_layer_value(1, false)  #Removes the StaticBody so player can walk through
 
-	print("Right door unlocked!")
+	#Move player to door
+	
+	
+	#Play interact animation to simulate them opening door (IN CONJUNCTION WITH NEXT METHOD)
+	
+	
+	#Play door animation
+	if anim_player and anim_player.has_animation("Take 001"):
+		anim_player.play("Take 001")
+		print("Right door open!")
+	else:
+		print("No animation found for Right Door!")
+		
+	#Play door close animation after some time
+	if anim_player and anim_player.has_animation("Take 001"):
+		await get_tree().create_timer(3.0).timeout
+		anim_player.play_backwards("Take 001")
+		print("Right door closed!")
 
 #Recursive search for AnimationPlayer
 func find_animation_player(node: Node) -> AnimationPlayer:

@@ -1,8 +1,10 @@
 extends Node
 @onready var trueTVFuzz = "res://Donovan/staticVideo.tscn"
 
-var current_scene = null
 
+var current_scene = null
+var leftDoor
+var rightDoor
 
 #Finds the root of current scene
 func _ready():

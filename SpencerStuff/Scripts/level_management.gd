@@ -8,13 +8,16 @@ extends Node3D
 @onready var fade_in_static:Node3D = $Cameras/Camera/FadeInView
 
 
+
 @onready var pause_menu_background = $PauseMenu/PauseBackground
 @onready var resume_button = $PauseMenu/ResumeButton
 @onready var quit_button = $PauseMenu/QuitButton
 
+
 #Scenes to transition to
-@export var next_scene_path := "res://Donovan/MODIFIEDAlphaV4.tscn"
+@export var next_scene_path := "res://SpencerStuff/Scenes/EndScene.tscn"
 @export var main_menu_scene = "res://SpencerStuff/Scenes/MainMenu.tscn"
+
 
 #Key states
 var has_left_key: bool = false
@@ -58,7 +61,7 @@ func _check_keys() -> void:
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if generator.activated:
 		#Global.fade_to_level_2()
-		fade_in_static._exit_scene("res://BetaBuild/Scenes/BetaV1SecondFloor.tscn")
+		fade_in_static._exit_scene(next_scene_path)
 		#fade_in_static._fade_static_in()
 		#get_tree().change_scene_to_file(next_scene_path)
 		

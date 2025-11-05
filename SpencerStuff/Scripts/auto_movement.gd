@@ -1,10 +1,17 @@
 #Spencer automove based off Thomas automove
-
 extends CharacterBody3D
 
 #Set speed and remember to set node path for room detectors in inspector
 @export var speed: float = 3.5
 @export var room_detectors_path: NodePath
+var player_sprite
+
+
+#Store door locations
+var leftDoorLoc1
+var leftDoorLoc2
+var rightDoorLoc1
+var rightDoorLoc2
 
 #Declarations
 var room_detectors: Node
@@ -20,8 +27,22 @@ var is_dead = false
 const RESPAWN_DELAY = 2.0
 var spawn_transform: Transform3D
 
+
 func _ready():
+	leftDoorLoc1 = get_node("../LeftDoor/Location1")
+	leftDoorLoc2 = get_node("../LeftDoor/Location2")
+	rightDoorLoc1 = get_node("../RightDoor/Location1")
+	rightDoorLoc2 = get_node("../RightDoor/Location2")
 	room_detectors = get_node(room_detectors_path)
+	player_sprite = $PlayerSprite
+	
+	player_sprite.scale.x = 0.3
+	
+	if player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
+		player_sprite.play("Idle")
+	else:
+		push_warning("Playersprite missing thing")
+	
 	
 	#Store references to each room in order (Left, Main, Right)
 	room_order = [
@@ -65,6 +86,18 @@ func _physics_process(delta):
 		move_to_adjacent_room(-1)
 	elif Input.is_action_just_pressed("Right 3D Spot"): #"D"
 		move_to_adjacent_room(1)
+		
+		
+	elif Input.is_action_just_pressed("unlock_left"):
+		move_through_left_door(leftDoorLoc1, 1)
+	elif Input.is_action_just_pressed("unlock_right"):
+		move_through_right_door(rightDoorLoc1, 1)
+		
+	
+	elif Input.is_action_just_pressed("reverse_unlock_left"):
+		move_through_left_door(leftDoorLoc2, -1)
+	elif Input.is_action_just_pressed("reverse_unlock_right"):
+		move_through_right_door(rightDoorLoc2, -1)
 
 #Move to center of room 
 func move_to_room_center():
@@ -100,6 +133,34 @@ func move_to_adjacent_room(direction: int):
 		target_position = Vector3(center.global_position.x, global_position.y, global_position.z)
 	
 	is_moving = true
+	
+func move_to_object(object):
+	target_position.x = object.global_position.x
+	
+	is_moving = true
+	
+func move_through_left_door(object, side):
+	
+	if (side == 1):
+		move_to_object(object)
+		await get_tree().create_timer(1.5).timeout
+		move_to_object(leftDoorLoc2)
+		
+	if (side == -1):
+		move_to_object(object)
+		await get_tree().create_timer(1.5).timeout
+		move_to_object(leftDoorLoc1)
+	
+func move_through_right_door(object, side):
+	if (side == 1):
+		move_to_object(object)
+		await get_tree().create_timer(1.5).timeout
+		move_to_object(rightDoorLoc2)
+		
+	if (side == -1):
+		move_to_object(object)
+		await get_tree().create_timer(1.5).timeout
+		move_to_object(rightDoorLoc1)
 
 #For figuring out which rooms player is currently in using distance to nodes
 func get_current_room():
