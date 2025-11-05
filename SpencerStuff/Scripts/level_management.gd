@@ -14,6 +14,8 @@ extends Node3D
 @export var next_scene_path := "res://Donovan/MODIFIEDAlphaV4.tscn"
 @export var main_menu_scene = "res://SpencerStuff/Scenes/MainMenu.tscn"
 
+@onready var button_audio_player: AudioStreamPlayer2D = $PauseMenu/ButtonAudioPlayer
+
 #Key states
 var has_left_key: bool = false
 var has_right_key: bool = false
@@ -27,6 +29,8 @@ func _ready():
 	if (!fade_in_static):
 		fade_in_static = $Cameras/Camera/FadeInView
 	fade_in_static._fade_static_out()
+	
+	
 
 
 #Left key trigger
@@ -110,9 +114,19 @@ func _set_pause_menu_visible(visible: bool) -> void:
 
 
 func _on_resume_button_pressed() -> void:
+
+	if button_audio_player:
+		button_audio_player.play()
+		
+	await get_tree().create_timer(0.1).timeout
 	_resume_game()
 
 
 func _on_quit_button_pressed() -> void:
+	if button_audio_player:
+		button_audio_player.play()
+		
+	await get_tree().create_timer(0.1).timeout
+	
 	get_tree().paused = false
 	get_tree().change_scene_to_file(main_menu_scene)

@@ -596,6 +596,9 @@ offset_bottom = 409.0
 theme_override_font_sizes/font_size = 30
 text = "Quit"
 
+[node name="ButtonAudioPlayer" type="AudioStreamPlayer2D" parent="PauseMenu"]
+stream = ExtResource("27_t4vl1")
+
 [node name="SceneBackgroundObjects" type="Node3D" parent="."]
 
 [node name="HH_Art_ClothChair_V2" parent="SceneBackgroundObjects" instance=ExtResource("33_6tdpc")]

@@ -3,6 +3,8 @@ extends CanvasLayer
 @export var next_scene_path := "res://SpencerStuff/Scenes/BetaAutoMoveCopy.tscn"
 @onready var label: Label = $IntroLabel
 
+@onready var button_audio_player: AudioStreamPlayer2D = $ButtonAudioPlayer
+
 var full_text := """In Hazard Hotel, you solo play as a hired electrician at an infamous
 monster-infested hotel. You've sent in your own new hire to navigate
 through the building, while you stay behind with your trusty node box to
@@ -36,4 +38,11 @@ func type_text() -> void:
 func _on_skip_pressed() -> void:
 	skip_pressed = true
 	label.visible_characters = full_text.length()  #Instantly reveal everything (WIP)
+	
+	if button_audio_player:
+		button_audio_player.play()
+		
+	#So that you still hear button "click" sound before scene switches
+	await get_tree().create_timer(0.1).timeout
+	
 	get_tree().change_scene_to_file(next_scene_path)
