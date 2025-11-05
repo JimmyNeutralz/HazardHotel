@@ -34,6 +34,7 @@ func _on_body_entered(body):
 
 func kill_player(player):
 	print("Player killed by puddle!")
+	$PuddleAudio.play()
 	player.kill_player()  #Call player death function
 
 #Indicator Helpers

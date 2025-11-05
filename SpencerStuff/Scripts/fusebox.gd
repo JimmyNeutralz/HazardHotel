@@ -61,6 +61,7 @@ func can_activate() -> bool:
 func activate():
 	activated = true
 	update_indicator_color()
+	$FuseboxAudio.play()
 	print("Electric gate deactivated through fusebox!")
 
 	#Play animation if available
