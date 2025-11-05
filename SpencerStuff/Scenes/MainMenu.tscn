@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://be7wtebqoq4lk"]
+[gd_scene load_steps=9 format=3 uid="uid://be7wtebqoq4lk"]
 
 [ext_resource type="Texture2D" uid="uid://bo7s6c50xo650" path="res://Assets/HH_Art_Logo_V2_.png" id="1_k1cdu"]
 [ext_resource type="Script" uid="uid://cgx56qcx2qoqy" path="res://SpencerStuff/Scripts/menu_control.gd" id="1_tjmdi"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://b8ilvj3lu8127" path="res://Assets/HH_Art_SkeletonSprite_V1.png" id="4_bxg5q"]
 [ext_resource type="Texture2D" uid="uid://bv8hukwp3yja2" path="res://Assets/HH_Art_WerewolfSprite_V1.png" id="5_s17u1"]
 [ext_resource type="Texture2D" uid="uid://cxlvo1vndyp7n" path="res://Assets/HH_Art_Logo_V4_.png" id="6_7y57k"]
+[ext_resource type="AudioStream" uid="uid://qd3nljtlduy4" path="res://Assets/Audio/hh_titleScreenDraft.mp3" id="7_saxe7"]
+[ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="8_a6xwe"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -65,5 +67,11 @@ texture = ExtResource("5_s17u1")
 position = Vector2(571, 181)
 scale = Vector2(0.23349999, 0.22616667)
 texture = ExtResource("6_7y57k")
+
+[node name="MenuMusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_saxe7")
+
+[node name="ButtonAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_a6xwe")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

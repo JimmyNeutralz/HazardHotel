@@ -1,43 +1,40 @@
 extends Node3D
 
-#Node paths
-@onready var lock_visual = $RightLock
-@onready var blocker = $RightArea
+@export var lock_node_path: NodePath
+@onready var lock_script = get_node(lock_node_path)
 
 var locked: bool = true
-var anim_player: AnimationPlayer = null
+var door_anim: AnimationPlayer
 
-func _ready() -> void:
-	lock_visual.visible = locked
-	blocker.visible = locked  #For seeing in-editor
+@onready var blocker = $Door/RightArea
 
-	#Find AnimationPlayer recursively
-	anim_player = find_animation_player(self)
-	if anim_player:
-		if anim_player.has_animation("Take 001"):
-			anim_player.seek(0.0, true)  # Start at initial closed pose
-	else:
-		push_error("No AnimationPlayer found on Right Door!")
+func _ready():
+	#Find door animation player under tree
+	door_anim = find_animation_player(self)
+	if door_anim and door_anim.has_animation("Take 001"):
+		door_anim.seek(0.0, true)
 
-#Unlock
-func _process(_delta: float) -> void:
-	if locked and Input.is_action_just_pressed("unlock_right"):
+func _process(_delta):
+	if locked and Input.is_action_just_pressed("unlock_left") and name == "LeftDoor":
+		unlock_door()
+	if locked and Input.is_action_just_pressed("unlock_right") and name == "RightDoor":
 		unlock_door()
 
-func unlock_door() -> void:
+func unlock_door():
 	locked = false
-	lock_visual.visible = false
-	blocker.queue_free()  #Removes the StaticBody so player can walk through
+	
+	#Play lock animation first
+	if lock_script:
+		await lock_script.play_lock_animation()
 
-	#Play door animation
-	if anim_player and anim_player.has_animation("Take 001"):
-		anim_player.play("Take 001")
-	else:
-		print("No animation found for Right Door!")
+	#Then play door
+	if door_anim and door_anim.has_animation("Take 001"):
+		door_anim.play("Take 001")
 
-	print("Right door unlocked!")
+	print(name + " unlocked!")
+	$Door/RightDoorAudio.play()
+	blocker.queue_free()
 
-#Recursive search for AnimationPlayer
 func find_animation_player(node: Node) -> AnimationPlayer:
 	if node is AnimationPlayer:
 		return node
