@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=84 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_12wq7"]
@@ -18,7 +18,6 @@
 [ext_resource type="AudioStream" uid="uid://00yxdkue0xhd" path="res://Assets/Audio/Heavy Footsteps 5.wav" id="10_d23ut"]
 [ext_resource type="Script" uid="uid://bg4bius86njfo" path="res://SpencerStuff/Scripts/left_door.gd" id="10_pokab"]
 [ext_resource type="AudioStream" uid="uid://16paor1ni7n6" path="res://Assets/Audio/Heavy Footsteps 6.wav" id="11_tj4bt"]
-[ext_resource type="Texture2D" uid="uid://bekut30xmeumk" path="res://Assets/Lock.png" id="11_u72or"]
 [ext_resource type="PackedScene" uid="uid://07r1c3ba45w3" path="res://Assets/3D Models/HH_Art_DoorOpenLeftAnim_V1.fbx" id="12_khs31"]
 [ext_resource type="PackedScene" uid="uid://dqdrihkiouy1o" path="res://Assets/3D Models/HH_Art_locks_openAnim_V1.fbx" id="13_um0bm"]
 [ext_resource type="Script" uid="uid://bn5vexagvnj6c" path="res://SpencerStuff/Scripts/right_door.gd" id="14_t4vl1"]
@@ -353,10 +352,6 @@ stream = ExtResource("16_um0bm")
 [node name="Lock" type="Node3D" parent="LeftDoor"]
 script = ExtResource("26_gpvrk")
 
-[node name="LeftLock" type="Sprite3D" parent="LeftDoor/Lock"]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -2.0752883, 1.535344, -0.34809792)
-texture = ExtResource("11_u72or")
-
 [node name="HH_Art_locks_openAnim_V1" parent="LeftDoor/Lock" instance=ExtResource("13_um0bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.1599083, 0, 0.13976127)
 
@@ -380,10 +375,6 @@ stream = ExtResource("19_t4vl1")
 
 [node name="Lock" type="Node3D" parent="RightDoor"]
 script = ExtResource("26_gpvrk")
-
-[node name="RightLock" type="Sprite3D" parent="RightDoor/Lock"]
-transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 2.0785112, 1.53, -0.34)
-texture = ExtResource("11_u72or")
 
 [node name="HH_Art_locks_openAnim_V1" parent="RightDoor/Lock" instance=ExtResource("13_um0bm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1367648, 0, 0.12651175)
@@ -416,10 +407,6 @@ visible = false
 texture = ExtResource("16_4wqvp")
 
 [node name="Elevator" type="Node3D" parent="."]
-
-[node name="ElevatorLock" type="Sprite3D" parent="Elevator"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.01, 1.4756831, -0.9583911)
-texture = ExtResource("11_u72or")
 
 [node name="BlackBackground" type="MeshInstance3D" parent="Elevator"]
 transform = Transform3D(2.369905, 0, 0, 0, 2.6717234, 0, 0, 0, 0.16142267, 0, 1.3805507, -1.1959493)

@@ -35,7 +35,6 @@ func can_activate() -> bool:
 
 func activate_generator():
 	activated = true
-	elevator_lock.visible = false;
 	$GeneratorAudio.play()
 	print("Generator activated!")
 

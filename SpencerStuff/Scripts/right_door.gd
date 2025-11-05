@@ -6,7 +6,6 @@ extends Node3D
 var locked: bool = true
 var door_anim: AnimationPlayer
 
-@onready var lock_visual = $Lock/RightLock 
 @onready var blocker = $Door/RightArea
 
 func _ready():
@@ -34,7 +33,6 @@ func unlock_door():
 
 	print(name + " unlocked!")
 	$Door/RightDoorAudio.play()
-	lock_visual.visible = false
 	blocker.queue_free()
 
 func find_animation_player(node: Node) -> AnimationPlayer:

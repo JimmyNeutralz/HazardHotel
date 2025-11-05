@@ -3,7 +3,6 @@ extends Node3D
 #Node paths
 @onready var left_key = $LeftWall/LeftKey
 @onready var right_key = $RightWall/RightKey
-@onready var elevator_lock = $Elevator/ElevatorLock
 @onready var generator = $Generator
 @onready var fade_in_static:Node3D = $Cameras/Camera/FadeInView
 
@@ -52,7 +51,6 @@ func _on_right_trigger_body_entered(body: Node3D) -> void:
 #Unlock elevator when both keys acquired
 func _check_keys() -> void:
 	if has_left_key and has_right_key:
-		elevator_lock.visible = false
 		print("Elevator unlocked!")
 
 #Player enters elevator trigger area
