@@ -288,6 +288,8 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5487671, 0.4333496, 0.0010375977)
 shape = SubResource("BoxShape3D_f063y")
 
+[node name="ElevatorMarker" type="Marker3D" parent="Generator"]
+
 [node name="Puddle" type="Node3D" parent="."]
 script = ExtResource("20_3n3fg")
 
@@ -343,6 +345,9 @@ shape = SubResource("BoxShape3D_vher1")
 
 [node name="HH_Art_GateAni_V2" parent="Gate" instance=ExtResource("27_1og02")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9061117, 0, 0)
+
+[node name="GeneratorMarker" type="Marker3D" parent="Gate"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.464317, 0, 0)
 
 [node name="Indicators" type="Node3D" parent="."]
 

@@ -6,6 +6,10 @@ extends Node3D
 @onready var collision = $StaticBody3D/CollisionShape3D
 @onready var gate_trigger = $GateTrigger
 @onready var indicator = $"../Indicators/GateIndicator"  #Indicator
+@onready var generator_marker = $"../Gate/GeneratorMarker"
+
+#Path to player node
+@onready var player = $"../Player"
 
 #Fusebox reference
 @export var fusebox_indicator_path : NodePath  
@@ -54,6 +58,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("raise_gate") and not raised:
 		if can_raise():
 			raise_gate()
+			player.move_to_specific_location(generator_marker.global_position.x)
 		else:
 			print("Cannot raise gate yet — still electrified!")
 
