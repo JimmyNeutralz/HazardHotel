@@ -23,7 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://clhua17db53gv" path="res://Assets/3D Models/HH_Art_Puddle_v1.fbx" id="21_7uwki"]
 [ext_resource type="Script" uid="uid://bi8qac8toel0n" path="res://ThomasFolder/Scripts/fusebox_thomas.gd" id="22_kwtjr"]
 [ext_resource type="PackedScene" path="res://Scenes/FuseboxClose.tscn" id="23_okwcj"]
-[ext_resource type="Script" uid="uid://d26s1jhjd3mxd" path="res://SpencerStuff/Scripts/gate.gd" id="24_p2u62"]
+[ext_resource type="Script" uid="uid://c4mengisurvep" path="res://ThomasFolder/Scripts/gate_thomas.gd" id="24_kwtjr"]
 [ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="25_cl7g5"]
 [ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="26_nkmm6"]
 [ext_resource type="PackedScene" path="res://Scenes/GateClosed.tscn" id="27_1og02"]
@@ -319,7 +319,7 @@ transform = Transform3D(0.9563048, 0, 0.2923717, 0, 1, 0, -0.2923717, 0, 0.95630
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.634415, 1.0995649, 0)
 
 [node name="Gate" type="Node3D" parent="."]
-script = ExtResource("24_p2u62")
+script = ExtResource("24_kwtjr")
 fusebox_indicator_path = NodePath("../Indicators/FuseboxIndicator")
 
 [node name="Metal" type="Sprite3D" parent="Gate"]
