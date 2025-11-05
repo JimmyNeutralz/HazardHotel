@@ -1,6 +1,14 @@
 extends Control
 
+#Get audio player
+@onready var music_player: AudioStreamPlayer2D = $MenuMusicPlayer
+
 func _ready():
+
+	#Play menu music when menu loads
+	if music_player:
+		music_player.play()
+		
 	#Connect button signals
 	var start_button = $StartButton
 	var settings_button = $SettingsButton
@@ -9,6 +17,10 @@ func _ready():
 	settings_button.pressed.connect(_on_settings_pressed)
 
 func _on_start_pressed():
+	#Stop menu music before scene change
+	if music_player:
+		music_player.stop()
+	
 	#When start is pressed, go to the story intro scene
 	get_tree().change_scene_to_file("res://SpencerStuff/Scenes/StoryIntro.tscn")
 
