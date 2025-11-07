@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://du0ny48wqrhet"]
+[gd_scene load_steps=109 format=3 uid="uid://du0ny48wqrhet"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_kpoq5"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_bqp0e"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b8vx7fxb5dgvh" path="res://Assets/HH_Art_NewGuySprite_V2.png" id="4_ror86"]
 [ext_resource type="Texture2D" uid="uid://dju6sdtrap1fy" path="res://Assets/HH_Art_NewGuyWalkAnimSpriteSheet_V1.png" id="5_ufm3a"]
 [ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="6_a3hh4"]
+[ext_resource type="PackedScene" uid="uid://c1bw2gfgo15hr" path="res://Donovan/node_ui.tscn" id="6_xf18c"]
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="7_vmhtn"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="8_58ixs"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="9_48gnf"]
@@ -26,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://dllmxns1qx246" path="res://Scenes/FuseboxClose.tscn" id="24_5agb8"]
 [ext_resource type="Script" uid="uid://d26s1jhjd3mxd" path="res://SpencerStuff/Scripts/gate.gd" id="25_f5a3x"]
 [ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="26_4f421"]
+[ext_resource type="Texture2D" uid="uid://dfmn8hnqyawbn" path="res://Donovan/DonAssets/HH_Art_NodeYellow5_V1.png" id="26_5t7gy"]
 [ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="27_do077"]
 [ext_resource type="PackedScene" uid="uid://cjpyo5axkiie8" path="res://Scenes/GateClosed.tscn" id="28_q3jj8"]
 [ext_resource type="PackedScene" uid="uid://dls6ajp0nybf4" path="res://Assets/3D Models/HH_Art_PinchModularLeft_V2.fbx" id="29_rbekq"]
@@ -34,13 +36,15 @@
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="32_42h63"]
 [ext_resource type="PackedScene" uid="uid://dx7efffdyfxw0" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Dumbwaiter.tscn" id="33_snkjm"]
 [ext_resource type="PackedScene" uid="uid://bpkhyo66yug4j" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Safe.tscn" id="34_g0cws"]
-[ext_resource type="Script" uid="uid://dwkwhc4qvaojh" path="res://Donovan/Puzzle Concepts In Engine/Scenes/safe.gd" id="35_1gcnj"]
+[ext_resource type="Script" uid="uid://dwkwhc4qvaojh" path="res://Donovan/Puzzle Concepts In Engine/Scripts/safe.gd" id="35_1gcnj"]
 [ext_resource type="PackedScene" uid="uid://iks1jli62ewj" path="res://Donovan/HH_Art_Shelf_V1.fbx" id="35_nw6wn"]
 [ext_resource type="PackedScene" uid="uid://dgkheur1hveqi" path="res://Donovan/DonAssets/HH_Art_Fuse2_V1.fbx" id="36_keeht"]
+[ext_resource type="Texture2D" uid="uid://h63ytlac6hmi" path="res://Donovan/DonAssets/HH_Art_NodePurple5_V1.png" id="36_o4h6p"]
 [ext_resource type="PackedScene" uid="uid://dg853capmy02r" path="res://Donovan/DonAssets/HH_Art_Fuse3_V1.fbx" id="37_44n42"]
 [ext_resource type="PackedScene" uid="uid://cdr7oaos8tipp" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Pulley.tscn" id="38_nw6wn"]
 [ext_resource type="PackedScene" uid="uid://cthtnkvbjx1er" path="res://Donovan/Lever.tscn" id="39_keeht"]
 [ext_resource type="PackedScene" uid="uid://ddhdsq1beups5" path="res://Donovan/DonAssets/HH_Art_Fuse1_V1.fbx" id="40_44n42"]
+[ext_resource type="PackedScene" uid="uid://416n0yob35jg" path="res://Assets/3D Models/HH_Art_Shelf_V1.fbx" id="42_dtc34"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oymrl"]
 atlas = ExtResource("5_ufm3a")
@@ -169,6 +173,105 @@ size = Vector3(2.2730713, 0.62597656, 1.011261)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0kak2"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_svxs6"]
+atlas = ExtResource("26_5t7gy")
+region = Rect2(0, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rebln"]
+atlas = ExtResource("26_5t7gy")
+region = Rect2(323, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnpos"]
+atlas = ExtResource("26_5t7gy")
+region = Rect2(646, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poayu"]
+atlas = ExtResource("26_5t7gy")
+region = Rect2(969, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63m68"]
+atlas = ExtResource("26_5t7gy")
+region = Rect2(1292, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wo6si"]
+atlas = ExtResource("26_5t7gy")
+region = Rect2(1615, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s57e3"]
+atlas = ExtResource("26_5t7gy")
+region = Rect2(1938, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvs2p"]
+atlas = ExtResource("26_5t7gy")
+region = Rect2(2261, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgbko"]
+atlas = ExtResource("26_5t7gy")
+region = Rect2(2584, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8m5md"]
+atlas = ExtResource("26_5t7gy")
+region = Rect2(2907, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwu2m"]
+atlas = ExtResource("26_5t7gy")
+region = Rect2(3230, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o507h"]
+atlas = ExtResource("26_5t7gy")
+region = Rect2(3553, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qeqm8"]
+atlas = ExtResource("26_5t7gy")
+region = Rect2(3876, 0, 323, 350)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rqjfu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_svxs6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rebln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jnpos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poayu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63m68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wo6si")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s57e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mvs2p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hgbko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8m5md")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwu2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o507h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qeqm8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_idyij"]
 size = Vector3(0.16955566, 3.5111084, 2.2953491)
 
@@ -199,6 +302,105 @@ size = Vector3(4.246231, 2.7391052, 2.2364502)
 [sub_resource type="BoxShape3D" id="BoxShape3D_tnwif"]
 size = Vector3(4.272888, 2.7320023, 2.4972534)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_i1scv"]
+atlas = ExtResource("36_o4h6p")
+region = Rect2(0, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dx7fg"]
+atlas = ExtResource("36_o4h6p")
+region = Rect2(323, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0eypt"]
+atlas = ExtResource("36_o4h6p")
+region = Rect2(646, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wdvl"]
+atlas = ExtResource("36_o4h6p")
+region = Rect2(969, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wc2x2"]
+atlas = ExtResource("36_o4h6p")
+region = Rect2(1292, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kffmy"]
+atlas = ExtResource("36_o4h6p")
+region = Rect2(1615, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4s4y"]
+atlas = ExtResource("36_o4h6p")
+region = Rect2(1938, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6cp5"]
+atlas = ExtResource("36_o4h6p")
+region = Rect2(2261, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s6qq"]
+atlas = ExtResource("36_o4h6p")
+region = Rect2(2584, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_th4dy"]
+atlas = ExtResource("36_o4h6p")
+region = Rect2(2907, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sktgt"]
+atlas = ExtResource("36_o4h6p")
+region = Rect2(3230, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wq4hk"]
+atlas = ExtResource("36_o4h6p")
+region = Rect2(3553, 0, 323, 350)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2j6rm"]
+atlas = ExtResource("36_o4h6p")
+region = Rect2(3876, 0, 323, 350)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lb03e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i1scv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dx7fg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0eypt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2wdvl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wc2x2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kffmy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4s4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6cp5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0s6qq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_th4dy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sktgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wq4hk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2j6rm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_kpoq5")
 
@@ -223,6 +425,9 @@ shape = SubResource("BoxShape3D_5fj6f")
 
 [node name="PlayerSpawnPosition" type="Node3D" parent="Player"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 0.62, -0.54)
+
+[node name="NodeUI" parent="Player" instance=ExtResource("6_xf18c")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 6.658223, 0.25545722, 3.013659)
 
 [node name="Cameras" type="Node3D" parent="."]
 
@@ -430,6 +635,10 @@ transform = Transform3D(0.9563048, 0, 0.2923717, 0, 1, 0, -0.2923717, 0, 0.95630
 [node name="FuseboxLoc" type="Marker3D" parent="FuseBox"]
 transform = Transform3D(0.54090106, 0, 0.84108627, 0, 1, 0, -0.84108627, 0, 0.54090106, 0, 0, 0)
 
+[node name="FuseboxNode" type="AnimatedSprite3D" parent="FuseBox"]
+transform = Transform3D(0.083377704, 0, -0.23568656, 0, 0.25, 0, 0.23568656, 0, 0.083377704, -1.1358593, 1.8470309, -0.17180133)
+sprite_frames = SubResource("SpriteFrames_rqjfu")
+
 [node name="Gate" type="Node3D" parent="."]
 script = ExtResource("25_f5a3x")
 fusebox_indicator_path = NodePath("../Indicators/FuseboxIndicator")
@@ -469,7 +678,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, 6.093751, 0.57664955, 
 mesh = SubResource("BoxMesh_ffsuc")
 
 [node name="FuseboxIndicator" type="MeshInstance3D" parent="Indicators"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, -1.4314946, 1.9006244, -0.5473317)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, -3.4558344, 1.9006244, -4.0732203)
 mesh = SubResource("BoxMesh_ffsuc")
 
 [node name="GateIndicator" type="MeshInstance3D" parent="Indicators"]
@@ -565,6 +774,10 @@ text = "Quit"
 [node name="Dumbwaiter" parent="." instance=ExtResource("33_snkjm")]
 transform = Transform3D(0.66, 0, 0, 0, 0.66, 0, 0, 0, 0.66, 1.5806216, 1.1705806, -0.7390728)
 
+[node name="DumbwaiterNode" type="AnimatedSprite3D" parent="Dumbwaiter"]
+transform = Transform3D(0.29967916, 0.013870421, 0, -0.013870421, 0.29967916, 0, 0, 0, 0.29999998, -0.2878511, 0.89127946, 0.1966393)
+sprite_frames = SubResource("SpriteFrames_lb03e")
+
 [node name="Safe" parent="." instance=ExtResource("34_g0cws")]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 7.9763613, 0.44833505, -0.09215927)
 script = ExtResource("35_1gcnj")
@@ -594,6 +807,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.914082, 1.0705409, -0.73556
 
 [node name="HH_Art_Fuse1_V1" parent="." instance=ExtResource("40_44n42")]
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.8279672, 2.7087617, 11.822433)
+
+[node name="HH_Art_Shelf_V2" parent="." instance=ExtResource("42_dtc34")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.114344, 0, 7.466589)
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]

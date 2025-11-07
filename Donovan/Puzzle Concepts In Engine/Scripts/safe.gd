@@ -4,8 +4,8 @@ extends Node3D
 
 @onready var upperSafeLoc = $UpperSafe
 @onready var originSafeLoc = $SafeOrigin
-@onready var fuse = $HH_Art_Fuse3_V1
-@onready var standSpot = $SafeLoc
+@onready var fuse = $HH_Art_Fuse2_V1
+@onready var standSpot = $"../SafeLoc"
 
 var realLoc
 var fuseDropSpot
@@ -25,8 +25,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("lower_safe") and safe_raised:
 		lower_safe()
 	if has_slammed:
-		var tween = create_tween()
-		tween.tween_property(fuse, "global_position", fuseDropSpot, 1.0)
+		pass
 
 func raise_safe():
 	var tween = create_tween()
@@ -45,6 +44,12 @@ func lower_safe():
 	await tween.finished
 	tween.kill()
 	print("Safe Lowered!")
+	
+	var tween2 = create_tween()
+	tween2.tween_property(fuse, "global_position", fuseDropSpot, 1.0)
+	
+	await tween2.finished
+	tween2.kill()
 	safe_raised = false
 	has_slammed = true
 

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cdr7oaos8tipp"]
+[gd_scene load_steps=0 format=3 uid="uid://cdr7oaos8tipp"]
 
 [node name="Pulley" type="Node3D"]
 
