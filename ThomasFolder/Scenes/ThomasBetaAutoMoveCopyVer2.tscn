@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://rj4pwcppmgvb"]
+[gd_scene load_steps=85 format=3 uid="uid://rj4pwcppmgvb"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_03u4j"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_cfou1"]
@@ -32,10 +32,10 @@
 [ext_resource type="Script" uid="uid://cqxfonrb48820" path="res://SpencerStuff/Scripts/puddle.gd" id="30_3hxmw"]
 [ext_resource type="PackedScene" uid="uid://clhua17db53gv" path="res://Assets/3D Models/HH_Art_Puddle_v1.fbx" id="31_r7msr"]
 [ext_resource type="AudioStream" uid="uid://cnudkj83doi6x" path="res://Assets/Audio/Electricution Death.wav" id="32_gc600"]
-[ext_resource type="Script" uid="uid://ct1s4dt2hpjix" path="res://SpencerStuff/Scripts/fusebox.gd" id="33_k1n8e"]
+[ext_resource type="Script" uid="uid://bi8qac8toel0n" path="res://ThomasFolder/Scripts/fusebox_thomas.gd" id="33_461pk"]
 [ext_resource type="PackedScene" path="res://Scenes/FuseboxClose.tscn" id="34_311tm"]
 [ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="35_wvo5k"]
-[ext_resource type="Script" uid="uid://d26s1jhjd3mxd" path="res://SpencerStuff/Scripts/gate.gd" id="36_vypxb"]
+[ext_resource type="Script" uid="uid://c4mengisurvep" path="res://ThomasFolder/Scripts/gate_thomas.gd" id="36_461pk"]
 [ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="37_dngk4"]
 [ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="38_vvg6v"]
 [ext_resource type="PackedScene" path="res://Scenes/GateClosed.tscn" id="39_7f0hc"]
@@ -48,6 +48,7 @@
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="46_hg46x"]
 [ext_resource type="PackedScene" uid="uid://dvl5ijrr8hfd0" path="res://Assets/3D Models/HH_Art_ClothChair_V2.fbx" id="47_3jbtr"]
 [ext_resource type="PackedScene" uid="uid://416n0yob35jg" path="res://Assets/3D Models/HH_Art_Shelf_V1.fbx" id="48_ei4q1"]
+[ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="49_83jxj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oymrl"]
 atlas = ExtResource("5_gki83")
@@ -447,7 +448,7 @@ shape = SubResource("BoxShape3D_0kak2")
 stream = ExtResource("32_gc600")
 
 [node name="FuseBox" type="Node3D" parent="."]
-script = ExtResource("33_k1n8e")
+script = ExtResource("33_461pk")
 puddle_node_path = NodePath("../Puddle")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FuseBox"]
@@ -461,8 +462,11 @@ transform = Transform3D(0.9563048, 0, 0.2923717, 0, 1, 0, -0.2923717, 0, 0.95630
 [node name="FuseboxAudio" type="AudioStreamPlayer3D" parent="FuseBox"]
 stream = ExtResource("35_wvo5k")
 
+[node name="Marker3D" type="Marker3D" parent="FuseBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.447366, 0, 0)
+
 [node name="Gate" type="Node3D" parent="."]
-script = ExtResource("36_vypxb")
+script = ExtResource("36_461pk")
 fusebox_indicator_path = NodePath("../Indicators/FuseboxIndicator")
 
 [node name="Metal" type="Sprite3D" parent="Gate"]
@@ -494,6 +498,9 @@ stream = ExtResource("40_k41sw")
 
 [node name="GateKillAudio" type="AudioStreamPlayer3D" parent="Gate"]
 stream = ExtResource("32_gc600")
+
+[node name="GeneratorMarker" type="Marker3D" parent="Gate"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.6876917, 0, 0)
 
 [node name="Indicators" type="Node3D" parent="."]
 
@@ -611,6 +618,19 @@ transform = Transform3D(0.93178, 0, -0.36302355, 0, 1, 0, 0.36302355, 0, 0.93178
 
 [node name="HH_Art_Shelf_V1" parent="SceneBackgroundObjects" instance=ExtResource("48_ei4q1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.182118, 0, 11.840912)
+
+[node name="TextPopup" type="Node3D" parent="."]
+
+[node name="text" type="RichTextLabel" parent="TextPopup"]
+offset_left = 74.0
+offset_top = 565.0
+offset_right = 1074.0
+offset_bottom = 605.0
+text = "
+"
+tab_size = 24
+horizontal_alignment = 1
+script = ExtResource("49_83jxj")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]

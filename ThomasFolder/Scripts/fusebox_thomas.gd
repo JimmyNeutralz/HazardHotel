@@ -5,6 +5,7 @@ extends Node3D
 
 #Path to player node
 @onready var player = $"../Player"
+@onready var text_popup = $"../TextPopup/text"
 
 @onready var fuse_marker = $"../FuseBox/Marker3D"
 
@@ -17,6 +18,7 @@ var anim_player: AnimationPlayer = null
 
 #Activation state
 var activated = false
+var dialogue_triggered = false
 
 func _ready():
 	#Get puddle node
@@ -48,6 +50,9 @@ func _process(delta):
 			player.move_to_specific_location(fuse_marker.global_position.x)
 		else:
 			print("Cannot activate fusebox yet!")
+	if ((player.global_position.x > (fuse_marker.global_position.x - 0.5)) and (player.global_position.x < (fuse_marker.global_position.x + 0.5)) and !dialogue_triggered):
+		text_popup.fusebox_activated()
+		dialogue_triggered = true
 
 #Check if the fusebox can be activated
 func can_activate() -> bool:

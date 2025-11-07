@@ -11,6 +11,8 @@ extends Node3D
 #Path to player node
 @onready var player = $"../Player"
 
+@onready var text_popup = $"../TextPopup/text"
+
 #Fusebox reference
 @export var fusebox_indicator_path : NodePath  
 var fusebox_indicator : MeshInstance3D = null
@@ -56,11 +58,16 @@ func _process(delta):
 
 	#Handle gate raising input
 	if Input.is_action_just_pressed("raise_gate") and not raised:
+		player.move_to_specific_location(generator_marker.global_position.x)
 		if can_raise():
+			await get_tree().create_timer(0.5).timeout
 			raise_gate()
+			await get_tree().create_timer(1).timeout
 			player.move_to_specific_location(generator_marker.global_position.x)
 		else:
-			print("Cannot raise gate yet — still electrified!")
+			await get_tree().create_timer(3.80).timeout
+			text_popup.gate_death()
+			#print("Cannot raise gate yet — still electrified!")
 
 func update_electric_state():
 	if fusebox_indicator == null:
@@ -84,9 +91,8 @@ func update_electric_state():
 func can_raise() -> bool:
 	return not electrified  #Only raise gate when safe
 
-func raise_gate():
+func raise_gate():	
 	raised = true
-
 	#Play animation if available
 	if anim_player:
 		if anim_player.has_animation("Take 001"):
