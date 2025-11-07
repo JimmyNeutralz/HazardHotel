@@ -64,11 +64,11 @@ func _ready():
 	if has_node(spawn_node_path):
 		var spawn_node = get_node(spawn_node_path)
 		spawn_transform = spawn_node.global_transform
-	else:
-		push_error("PlayerSpawnPosition node not found at: " + str(spawn_node_path))
-		spawn_transform = global_transform #Fallback to current pos
-		
-		
+	#else:
+		#push_error("PlayerSpawnPosition node not found at: " + str(spawn_node_path))
+		#spawn_transform = global_transform #Fallback to current pos
+	
+	
 	#Collect all footstep audio players
 	for child in get_children():
 		if child is AudioStreamPlayer3D and child.name.begins_with("FootstepAudio"):

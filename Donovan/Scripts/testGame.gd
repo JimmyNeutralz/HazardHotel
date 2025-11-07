@@ -50,6 +50,7 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	var tween = create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
+	
 	tween.tween_property(transCam, "global_position", charCam.global_position, transitionTime).set_trans(Tween.TRANS_QUART)
 	tween.parallel().tween_property(transCam, "fov", charCam.fov, transitionTime)
 	
@@ -60,4 +61,3 @@ func _on_area_3d_body_exited(body: Node3D) -> void:
 	
 #func _lerp_to_player(body: Node3D) -> void:
 	#transCam.position = transCam.position.lerp(charCam.position, time)
-	
