@@ -36,7 +36,6 @@
 [ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="24_gpvrk"]
 [ext_resource type="AudioStream" uid="uid://cnudkj83doi6x" path="res://Assets/Audio/Electricution Death.wav" id="25_bpvk3"]
 [ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="25_luouv"]
-[ext_resource type="PackedScene" uid="uid://cjpyo5axkiie8" path="res://Scenes/GateClosed.tscn" id="26_5ono6"]
 [ext_resource type="Script" uid="uid://d3wg6c5iqxhyc" path="res://SpencerStuff/Scripts/Lock.gd" id="26_gpvrk"]
 [ext_resource type="PackedScene" uid="uid://dls6ajp0nybf4" path="res://Assets/3D Models/HH_Art_PinchModularLeft_V2.fbx" id="27_pmcw7"]
 [ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="27_t4vl1"]
@@ -48,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://dvl5ijrr8hfd0" path="res://Assets/3D Models/HH_Art_ClothChair_V2.fbx" id="33_6tdpc"]
 [ext_resource type="AudioStream" uid="uid://cr8mcfem7l0to" path="res://Assets/Audio/Wooden door creak 3.wav" id="34_ml83m"]
 [ext_resource type="PackedScene" uid="uid://416n0yob35jg" path="res://Assets/3D Models/HH_Art_Shelf_V1.fbx" id="34_vp3xm"]
+[ext_resource type="PackedScene" uid="uid://cndbloaafk7o2" path="res://Scenes/GateV3Close.tscn" id="39_4qti0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oymrl"]
 atlas = ExtResource("5_d7lxd")
@@ -470,7 +470,7 @@ visible = false
 texture = ExtResource("24_gpvrk")
 
 [node name="Electric" type="Sprite3D" parent="Gate"]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.2616296, 1.4310222, 0.384692)
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.14488, 1.4310222, 0.384692)
 texture = ExtResource("25_luouv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Gate"]
@@ -485,8 +485,8 @@ shape = SubResource("BoxShape3D_idyij")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.259312, 1.4451294, 0.19985962)
 shape = SubResource("BoxShape3D_vher1")
 
-[node name="HH_Art_GateAni_V2" parent="Gate" instance=ExtResource("26_5ono6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9061117, 0, 0)
+[node name="HH_Art_GateAni_V3" parent="Gate" instance=ExtResource("39_4qti0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91668653, 0, 0)
 
 [node name="GateAudio" type="AudioStreamPlayer3D" parent="Gate"]
 stream = ExtResource("34_ml83m")
