@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1ufi41ucjhe0"
-path.s3tc="res://.godot/imported/authentic-static-tv-screen-black-white-conversion-no-connection-authentic-static-tv-screen-black-white-107963015.webp-84d505435cb2744e5a35fe7c44c588b2.s3tc.ctex"
+uid="uid://npfv4fcwrd6x"
+path.s3tc="res://.godot/imported/HH_Art_NodeBlue1_V1.png-c241c2268712cf4871654aed55df2b04.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Donovan/authentic-static-tv-screen-black-white-conversion-no-connection-authentic-static-tv-screen-black-white-107963015.webp"
-dest_files=["res://.godot/imported/authentic-static-tv-screen-black-white-conversion-no-connection-authentic-static-tv-screen-black-white-107963015.webp-84d505435cb2744e5a35fe7c44c588b2.s3tc.ctex"]
+source_file="res://Donovan/DonAssets/HH_Art_NodeBlue1_V1.png"
+dest_files=["res://.godot/imported/HH_Art_NodeBlue1_V1.png-c241c2268712cf4871654aed55df2b04.s3tc.ctex"]
 
 [params]
 
