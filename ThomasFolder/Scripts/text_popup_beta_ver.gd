@@ -4,6 +4,7 @@ var displayFor = 0
 
 func _ready() -> void:
 	set_text("")
+	set_cell_border_color(Color(0, 0, 0, 1))
 #[todo]: add in a way so that the timer doesn't end and subsequentially make a textbox that just appeared, disapear
 
 func _process(delta: float) -> void:

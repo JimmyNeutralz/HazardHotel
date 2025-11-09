@@ -19,7 +19,7 @@ func _process(_delta):
 	if locked and Input.is_action_just_pressed("unlock_left") and name == "LeftDoor":
 		unlock_door()
 		move_past_left_door()
-	if locked and Input.is_action_just_pressed("unlock_right") and name == "RightDoor":
+	if locked and Input.is_action_just_pressed("unlock_right") and name == "RightDoor" :
 		unlock_door()
 		move_past_left_door()
 
@@ -27,10 +27,12 @@ func move_past_left_door():
 	if (player.global_position.x > -2.366):
 		player.move_to_adjacent_room(-1)
 		await get_tree().create_timer(1.5).timeout
+		blocker.global_position.x = -999
 		player.move_to_adjacent_room(-1)
 	elif (player.global_position.x < -2.366):
 		player.move_to_adjacent_room(2)
 		await get_tree().create_timer(1.5).timeout
+		blocker.global_position.x = -999
 		player.move_to_adjacent_room(2)
 		await get_tree().create_timer(1.5).timeout
 		player.move_to_room_center()
@@ -48,14 +50,17 @@ func unlock_door():
 
 	print(name + " unlocked!")
 	$Door/LeftDoorAudio.play()
-	blocker.global_position.x = -999
+	
 	
 	await get_tree().create_timer(2.0).timeout
 	door_anim.play_backwards("Take 001")
 	await get_tree().create_timer(door_anim.current_animation_length).timeout
 	await lock_script.play_backwards_lock_animation()
 	locked = true
-	blocker.global_position.x = -2.366
+	if (player.global_position.x < -2.366):
+		blocker.global_position.x = -2.366
+	else:
+		blocker.global_position.x = 0
 
 func find_animation_player(node: Node) -> AnimationPlayer:
 	if node is AnimationPlayer:
