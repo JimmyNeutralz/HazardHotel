@@ -4,7 +4,7 @@ extends Node3D
 @onready var indicator = $"../Indicators/GeneratorIndicator"  
 #path to gate node assigned in inspector
 @export var gate_node_path : NodePath 
-@onready var elevator_lock = $"../Elevator/ElevatorLock"                     
+@onready var elevator_lock = $"../ElevatorDoor/ElevatorLock"                     
 
 var gate : Node3D = null
 var activated = false

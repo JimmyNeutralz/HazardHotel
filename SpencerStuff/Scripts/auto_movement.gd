@@ -36,6 +36,7 @@ var footsteps_playing = false
 
 func _ready():
 	
+	spawn_transform = self.transform
 	player_sprite = $PlayerSprite
 	#Sprite starts facing to the left (default state)
 	#player_sprite.scale.x = 0.3 #Add a negative sign in front to flip sprite to face the right

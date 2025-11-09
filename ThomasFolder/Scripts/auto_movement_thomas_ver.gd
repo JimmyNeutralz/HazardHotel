@@ -35,7 +35,7 @@ var current_footstep_index = 0
 var footsteps_playing = false
 
 func _ready():
-	
+	spawn_transform = self.transform
 	player_sprite = $PlayerSprite
 	#Sprite starts facing to the left (default state)
 	#player_sprite.scale.x = 0.3 #Add a negative sign in front to flip sprite to face the right
@@ -203,6 +203,9 @@ func move_to_adjacent_room(direction: int):
 		player_sprite.play("Walk")
 		start_footsteps()
 
+func move_to_object(object):
+	target_position.x = object.global_position.x
+	is_moving = true
 
 #Update sprite facing direction
 func update_sprite_facing(direction):

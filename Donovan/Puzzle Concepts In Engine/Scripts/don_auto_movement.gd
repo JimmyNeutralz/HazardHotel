@@ -33,24 +33,9 @@ func _ready():
 	leftDoorLoc2 = get_node("../LeftDoor/Location2")
 	rightDoorLoc1 = get_node("../RightDoor/Location1")
 	rightDoorLoc2 = get_node("../RightDoor/Location2")
-	player_sprite = $Sprite3D
+	player_sprite = $PlayerSprite
 	
 	player_sprite.scale.x = 0.3
-	
-	
-	
-	
-	#Store references to each room in order (Left, Main, Right)
-	#room_order = [
-		#room_detectors.get_node("LeftRoom"),
-		#room_detectors.get_node("MainRoom"),
-		#room_detectors.get_node("RightRoom")
-	#]
-	#
-	#rooms = room_order
-	#target_position = global_position
-	
-	# Get the hardcoded spawn position node
 	if has_node(spawn_node_path):
 		var spawn_node = get_node(spawn_node_path)
 		spawn_transform = spawn_node.global_transform
