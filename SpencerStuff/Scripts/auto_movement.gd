@@ -21,7 +21,7 @@ var is_moving = false
 var rooms = []
 var room_order = []
 var stuck_timer: float = 0.0
-const STUCK_TIME_THRESHOLD: float = 0.1  #If stuck for this long, stop moving - fine tune 
+const STUCK_TIME_THRESHOLD: float = 0.05  #If stuck for this long, stop moving - fine tune 
 
 #For respawning
 @export var spawn_node_path: NodePath = ^"/root/Player/PlayerSpawnPosition"
