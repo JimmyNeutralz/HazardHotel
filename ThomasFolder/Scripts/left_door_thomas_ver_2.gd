@@ -55,7 +55,7 @@ func unlock_door():
 	
 	await get_tree().create_timer(2.0).timeout
 	if (player.global_position.x < 0):
-		blocker.global_position.x = 1.5
+		blocker.global_position.x = -1.5
 	else:
 		blocker.global_position.x = 0
 	door_anim.play_backwards("Take 001")
