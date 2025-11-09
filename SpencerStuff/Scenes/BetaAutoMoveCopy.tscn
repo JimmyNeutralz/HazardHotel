@@ -252,7 +252,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qwmcr")
 }],
-"loop": true,
+"loop": false,
 "name": &"CrouchInteract",
 "speed": 11.0
 }, {
@@ -269,9 +269,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_42wfj")
 }],
-"loop": true,
+"loop": false,
 "name": &"Electrocute",
-"speed": 4.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -327,7 +327,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l6jhh")
 }],
-"loop": true,
+"loop": false,
 "name": &"StandInteract",
 "speed": 8.0
 }, {
@@ -455,7 +455,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.28559738, 1.050703
 shaded = true
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_ml83m")
-animation = &"Walk"
+animation = &"Electrocute"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.008636475, 0.0017394423, 1.0423431)

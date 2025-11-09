@@ -10,8 +10,7 @@ extends CharacterBody3D
 @onready var generator = $"../Generator"
 
 #Player sprite 
-#@onready var player_sprite = $PlayerSprite
-var player_sprite
+@onready var player_sprite = $PlayerSprite
 
 #Declarations
 var room_detectors: Node
@@ -239,6 +238,19 @@ func kill_player():
 	stop_footsteps()
 	print("Player died!")
 
+	#Stop any current animation
+	if player_sprite:
+		player_sprite.stop()
+
+	#Play electrocute animation if available
+	#Right now, only way to die is by being electrocuted - will have to change later
+	if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Electrocute"):
+		player_sprite.play("Electrocute")
+		await player_sprite.animation_finished
+	else:
+		print("Missing Electrocute animation!")
+		await get_tree().create_timer(1.5).timeout  #Fallback wait
+
 	#Temporarily disable player
 	set_process(false)
 	set_physics_process(false)
@@ -246,12 +258,11 @@ func kill_player():
 	is_moving = false
 	velocity = Vector3.ZERO
 	stuck_timer = 0.0
-	#Stop any animations
-	player_sprite.stop()
 
 	#Wait before respawning
 	await get_tree().create_timer(RESPAWN_DELAY).timeout
 	respawn_player()
+
 
 #Respawn
 func respawn_player():
