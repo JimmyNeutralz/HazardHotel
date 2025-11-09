@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://be7wtebqoq4lk"]
 
 [ext_resource type="Texture2D" uid="uid://bo7s6c50xo650" path="res://Assets/HH_Art_Logo_V2_.png" id="1_k1cdu"]
-[ext_resource type="Script" path="res://SpencerStuff/Scripts/menu_control.gd" id="1_tjmdi"]
+[ext_resource type="Script" uid="uid://cgx56qcx2qoqy" path="res://SpencerStuff/Scripts/menu_control.gd" id="1_tjmdi"]
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="2_g2l0o"]
 [ext_resource type="Texture2D" uid="uid://b8ilvj3lu8127" path="res://Assets/HH_Art_SkeletonSprite_V1.png" id="4_bxg5q"]
 [ext_resource type="Texture2D" uid="uid://bv8hukwp3yja2" path="res://Assets/HH_Art_WerewolfSprite_V1.png" id="5_s17u1"]
 [ext_resource type="Texture2D" uid="uid://cxlvo1vndyp7n" path="res://Assets/HH_Art_Logo_V4_.png" id="6_7y57k"]
-[ext_resource type="AudioStream" uid="uid://qd3nljtlduy4" path="res://Assets/Audio/hh_titleScreenDraft.mp3" id="7_saxe7"]
+[ext_resource type="AudioStream" uid="uid://doi62g2bpy7bj" path="res://Assets/Audio/mx_titleTheme.wav" id="7_a6xwe"]
 [ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="8_a6xwe"]
 
 [node name="MainMenu" type="Control"]
@@ -69,7 +69,7 @@ scale = Vector2(0.23349999, 0.22616667)
 texture = ExtResource("6_7y57k")
 
 [node name="MenuMusicPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_saxe7")
+stream = ExtResource("7_a6xwe")
 
 [node name="ButtonAudioPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_a6xwe")
