@@ -10,8 +10,7 @@ extends CharacterBody3D
 @onready var generator = $"../Generator"
 
 #Player sprite 
-#@onready var player_sprite = $PlayerSprite
-var player_sprite
+@onready var player_sprite = $PlayerSprite
 
 #Declarations
 var room_detectors: Node
@@ -21,7 +20,7 @@ var is_moving = false
 var rooms = []
 var room_order = []
 var stuck_timer: float = 0.0
-const STUCK_TIME_THRESHOLD: float = 0.1  #If stuck for this long, stop moving - fine tune 
+const STUCK_TIME_THRESHOLD: float = 0.05  #If stuck for this long, stop moving - fine tune 
 
 #For respawning
 @export var spawn_node_path: NodePath = ^"/root/Player/PlayerSpawnPosition"
@@ -37,6 +36,7 @@ var footsteps_playing = false
 func _ready():
 	
 	spawn_transform = self.transform
+	
 	player_sprite = $PlayerSprite
 	#Sprite starts facing to the left (default state)
 	#player_sprite.scale.x = 0.3 #Add a negative sign in front to flip sprite to face the right
@@ -82,6 +82,7 @@ func _ready():
 
 func _physics_process(delta):
 	if is_dead:
+		stop_footsteps()
 		return
 		
 	if is_moving:
@@ -234,7 +235,21 @@ func kill_player():
 	if is_dead:
 		return
 	is_dead = true
+	stop_footsteps()
 	print("Player died!")
+
+	#Stop any current animation
+	if player_sprite:
+		player_sprite.stop()
+
+	#Play electrocute animation if available
+	#Right now, only way to die is by being electrocuted - will have to change later
+	if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Electrocute"):
+		player_sprite.play("Electrocute")
+		await player_sprite.animation_finished
+	else:
+		print("Missing Electrocute animation!")
+		await get_tree().create_timer(1.5).timeout  #Fallback wait
 
 	#Temporarily disable player
 	set_process(false)
@@ -243,12 +258,11 @@ func kill_player():
 	is_moving = false
 	velocity = Vector3.ZERO
 	stuck_timer = 0.0
-	#Stop any animations
-	player_sprite.stop()
 
 	#Wait before respawning
 	await get_tree().create_timer(RESPAWN_DELAY).timeout
 	respawn_player()
+
 
 #Respawn
 func respawn_player():
@@ -277,11 +291,14 @@ func respawn_player():
 		
 #Footstep helper functions
 func start_footsteps():
+	if is_dead:
+		return
 	if footsteps_playing or footstep_players.is_empty():
 		return
 	footsteps_playing = true
 	current_footstep_index = 0
 	footstep_players[current_footstep_index].play()
+
 
 func stop_footsteps():
 	footsteps_playing = false

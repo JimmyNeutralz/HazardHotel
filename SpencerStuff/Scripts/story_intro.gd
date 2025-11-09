@@ -3,7 +3,9 @@ extends CanvasLayer
 @export var next_scene_path := "res://SpencerStuff/Scenes/BetaAutoMoveCopy.tscn"
 @onready var label: Label = $IntroLabel
 
+#Audio references
 @onready var button_audio_player: AudioStreamPlayer2D = $ButtonAudioPlayer
+@onready var intro_music_player: AudioStreamPlayer2D = $IntroMusicPlayer
 
 var full_text := """In Hazard Hotel, you solo play as a hired electrician at an infamous
 monster-infested hotel. You've sent in your own new hire to navigate
@@ -15,6 +17,12 @@ the Hazard Hotel!"""
 var skip_pressed = false
 
 func _ready() -> void:
+	#Play music track when scene starts
+	if intro_music_player and intro_music_player.stream:
+		intro_music_player.play()
+	else:
+		print("WARNING: Intro music player missing or no stream assigned!")
+	
 	label.text = full_text
 	label.visible_characters = 0  #Hide all text initially
 
