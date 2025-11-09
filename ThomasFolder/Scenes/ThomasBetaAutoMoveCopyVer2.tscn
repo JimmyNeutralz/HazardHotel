@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://rj4pwcppmgvb"]
+[gd_scene load_steps=87 format=3 uid="uid://rj4pwcppmgvb"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_03u4j"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_cfou1"]
@@ -29,7 +29,7 @@
 [ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="27_1ulvr"]
 [ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="28_m51de"]
 [ext_resource type="AudioStream" uid="uid://bt827ljr2p2uk" path="res://Assets/Audio/Switch.wav" id="29_t12hd"]
-[ext_resource type="Script" uid="uid://cqxfonrb48820" path="res://SpencerStuff/Scripts/puddle.gd" id="30_3hxmw"]
+[ext_resource type="Script" uid="uid://dsu5paxmt4ffg" path="res://ThomasFolder/Scripts/puddle_thomas.gd" id="30_jl74w"]
 [ext_resource type="PackedScene" uid="uid://clhua17db53gv" path="res://Assets/3D Models/HH_Art_Puddle_v1.fbx" id="31_r7msr"]
 [ext_resource type="AudioStream" uid="uid://cnudkj83doi6x" path="res://Assets/Audio/Electricution Death.wav" id="32_gc600"]
 [ext_resource type="Script" uid="uid://bi8qac8toel0n" path="res://ThomasFolder/Scripts/fusebox_thomas.gd" id="33_461pk"]
@@ -49,6 +49,7 @@
 [ext_resource type="PackedScene" uid="uid://dvl5ijrr8hfd0" path="res://Assets/3D Models/HH_Art_ClothChair_V2.fbx" id="47_3jbtr"]
 [ext_resource type="PackedScene" uid="uid://416n0yob35jg" path="res://Assets/3D Models/HH_Art_Shelf_V1.fbx" id="48_ei4q1"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="49_83jxj"]
+[ext_resource type="Script" uid="uid://coms123t1l50s" path="res://ThomasFolder/Scripts/puddle_colider_beta_ver.gd" id="50_jl74w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oymrl"]
 atlas = ExtResource("5_gki83")
@@ -206,6 +207,8 @@ size = Vector3(4.246231, 2.7391052, 2.2364502)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tnwif"]
 size = Vector3(4.272888, 2.7320023, 2.4972534)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_83jxj"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_03u4j")
@@ -432,7 +435,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9
 stream = ExtResource("29_t12hd")
 
 [node name="Puddle" type="Node3D" parent="."]
-script = ExtResource("30_3hxmw")
+script = ExtResource("30_jl74w")
 
 [node name="HH_Art_Puddle_v1" parent="Puddle" instance=ExtResource("31_r7msr")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.328267, 0.091492236, 0.22333205)
@@ -632,6 +635,16 @@ text = "
 tab_size = 24
 horizontal_alignment = 1
 script = ExtResource("49_83jxj")
+
+[node name="PuddleColider" type="Node3D" parent="."]
+transform = Transform3D(1.84, 0, 0, 0, 0.815, 0, 0, 0, 1.465, 8.505346, 0, 0)
+script = ExtResource("50_jl74w")
+
+[node name="StaticBody3D" type="RigidBody3D" parent="PuddleColider"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PuddleColider/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.737, 0.196)
+shape = SubResource("BoxShape3D_83jxj")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
