@@ -5,6 +5,8 @@
 [node name="TestingScene" type="Node3D"]
 
 [node name="SpotLight3D" parent="." instance=ExtResource("1_r4n5b")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 1.0070558, 0.7133207)
+light_energy = 5.0
 metadata/fixed = false
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]

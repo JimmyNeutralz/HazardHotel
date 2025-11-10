@@ -9,9 +9,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 light_energy = 0.5
 shadow_enabled = true
 spot_range = 4.0
-spot_attenuation = 19.76
 spot_angle = 30.0
-spot_angle_attenuation = 1e-05
 script = ExtResource("1_7jbtq")
 
 [node name="Detection Area" type="Area3D" parent="."]
