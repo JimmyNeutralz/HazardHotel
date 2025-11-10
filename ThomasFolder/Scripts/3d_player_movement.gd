@@ -37,6 +37,7 @@ func _process(delta):
 		rightKeyPressed = false
 		#direction = Vector3(-global_position.x, 0, 0)
 		
+		
 		#Sets direction appropreately so that the speed to the center is consistent with left and right travel
 		if (global_position.x >= 0):
 			direction = Vector3(-stopPoint, 0, 0)
@@ -63,11 +64,9 @@ func _process(delta):
 	#elif (Input.is_action_just_pressed("Right 3D Spot") and position != Vector3(1.7,0.35,0)):
 		#move right
 		#location = Vector3(1.7,0.35,0)
-		
 	
 func stop_moving():
 	leftKeyPressed = false
 	rightKeyPressed = false
 	centerKeyPressed = false
 	
-	print("That was a close one!")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cnudkj83doi6x"
+path="res://.godot/imported/Electricution Death.wav-8d00ecd27f49528008936f383892287f.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Electricution Death.wav"
+dest_files=["res://.godot/imported/Electricution Death.wav-8d00ecd27f49528008936f383892287f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
