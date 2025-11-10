@@ -9,6 +9,8 @@ extends CharacterBody3D
 #Generator reference for determining if level is complete
 @onready var generator = $"../Generator"
 
+@onready var text_popup = $"../TextPopup/text"
+
 #Player sprite 
 #@onready var player_sprite = $PlayerSprite
 var player_sprite
@@ -298,5 +300,5 @@ func move_to_specific_location(location: int):
 	is_moving = true
 
 func _on_text_colider_body_entered(body: Node3D) -> void:
-	print("?")
-	is_moving = false
+	if (body == $"../Player"):
+		text_popup.avoided_puddle()

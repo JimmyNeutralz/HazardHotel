@@ -19,3 +19,7 @@ func fusebox_activated():
 func gate_death():
 	set_text("Why'd we greenlight the electric gate again?")
 	displayFor = 1.6
+
+func avoided_puddle():
+	set_text("Don't imagine stepping in that electrified puddle is a good idea.")
+	displayFor = 1.75
