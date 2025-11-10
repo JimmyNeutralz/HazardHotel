@@ -1,4 +1,4 @@
-[gd_scene load_steps=276 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=277 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_12wq7"]
@@ -50,7 +50,7 @@
 [ext_resource type="Texture2D" uid="uid://h63ytlac6hmi" path="res://Donovan/DonAssets/HH_Art_NodePurple5_V1.png" id="29_hay5g"]
 [ext_resource type="PackedScene" uid="uid://yvv4teqlemm5" path="res://SpencerStuff/Scenes/hh_art_elevator_gate_v_1.tscn" id="29_pokab"]
 [ext_resource type="Texture2D" uid="uid://bkl556xt6evy6" path="res://Donovan/DonAssets/HH_Art_NodeOrange1_V1.png" id="29_sgweo"]
-[ext_resource type="Script" path="res://SpencerStuff/Scripts/elevator_door.gd" id="29_u72or"]
+[ext_resource type="Script" uid="uid://7epq051kcf4g" path="res://SpencerStuff/Scripts/elevator_door.gd" id="29_u72or"]
 [ext_resource type="Texture2D" uid="uid://pb8fec5s8lac" path="res://Donovan/DonAssets/HH_Art_NodeCyan5_V1.png" id="29_vs7j4"]
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="30_toapv"]
 [ext_resource type="Texture2D" uid="uid://dfmn8hnqyawbn" path="res://Donovan/DonAssets/HH_Art_NodeYellow5_V1.png" id="30_vs7j4"]
@@ -64,6 +64,7 @@
 [ext_resource type="PackedScene" uid="uid://cndbloaafk7o2" path="res://Scenes/GateV3Close.tscn" id="39_4qti0"]
 [ext_resource type="PackedScene" uid="uid://b5nps7v01rrsb" path="res://Donovan/DonAssets/truePuddle.tscn" id="47_l5ac0"]
 [ext_resource type="AudioStream" uid="uid://c2k5mrmymj5tt" path="res://Assets/Audio/mx_level.wav" id="52_d23ut"]
+[ext_resource type="Texture2D" uid="uid://r115ddhk7il8" path="res://Assets/ElevatorLights1.png" id="58_hb643"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0xvb"]
 atlas = ExtResource("4_5ono6")
@@ -1901,10 +1902,14 @@ shape = SubResource("BoxShape3D_k700v")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05041635)
 
 [node name="ElevatorDoorUI" type="AnimatedSprite3D" parent="ElevatorDoor"]
-transform = Transform3D(0.24923547, 0, 0.01953651, 0, 0.25, 0, -0.01953651, 0, 0.24923547, 0.44620502, 2.3826559, -0.5555507)
+transform = Transform3D(0.24923547, 0, 0.01953651, 0, 0.25, 0, -0.01953651, 0, 0.24923547, 1.161497, 2.3826559, -0.5555507)
 sprite_frames = SubResource("SpriteFrames_lyrbo")
 animation = &"Cyan5"
 autoplay = "Cyan5"
+
+[node name="FloorIndicator" type="Sprite3D" parent="ElevatorDoor"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.12634847, 1.9868755, -0.8119345)
+texture = ExtResource("58_hb643")
 
 [node name="RoomDetectors" type="Node3D" parent="."]
 

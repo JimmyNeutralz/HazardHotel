@@ -1,4 +1,4 @@
-[gd_scene load_steps=300 format=3 uid="uid://bxhis68m30g1y"]
+[gd_scene load_steps=301 format=3 uid="uid://bxhis68m30g1y"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_sdfg4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_fwdfo"]
@@ -29,12 +29,12 @@
 [ext_resource type="AudioStream" uid="uid://bt827ljr2p2uk" path="res://Assets/Audio/Switch.wav" id="29_mq0bt"]
 [ext_resource type="Script" uid="uid://cqxfonrb48820" path="res://SpencerStuff/Scripts/puddle.gd" id="30_1lf7x"]
 [ext_resource type="AudioStream" uid="uid://cnudkj83doi6x" path="res://Assets/Audio/Electricution Death.wav" id="32_c6g38"]
-[ext_resource type="PackedScene" uid="uid://dx7efffdyfxw0" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Dumbwaiter.tscn" id="33_6ggwo"]
+[ext_resource type="PackedScene" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Dumbwaiter.tscn" id="33_6ggwo"]
 [ext_resource type="Script" uid="uid://ct1s4dt2hpjix" path="res://SpencerStuff/Scripts/fusebox.gd" id="33_sj6ti"]
 [ext_resource type="Texture2D" uid="uid://h63ytlac6hmi" path="res://Donovan/DonAssets/HH_Art_NodePurple5_V1.png" id="34_a4kpc"]
 [ext_resource type="PackedScene" uid="uid://dllmxns1qx246" path="res://Scenes/FuseboxClose.tscn" id="34_a31hj"]
 [ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="35_hgxai"]
-[ext_resource type="PackedScene" uid="uid://cdr7oaos8tipp" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Pulley.tscn" id="35_jennx"]
+[ext_resource type="PackedScene" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Pulley.tscn" id="35_jennx"]
 [ext_resource type="Script" uid="uid://dwkwhc4qvaojh" path="res://Donovan/Puzzle Concepts In Engine/Scripts/safe.gd" id="35_oboe2"]
 [ext_resource type="Texture2D" uid="uid://cj7cb7ow72uni" path="res://Donovan/DonAssets/HH_Art_NodePurple6_V1.png" id="36_2j6rm"]
 [ext_resource type="Script" uid="uid://d26s1jhjd3mxd" path="res://SpencerStuff/Scripts/gate.gd" id="36_qa6id"]
@@ -43,7 +43,8 @@
 [ext_resource type="PackedScene" uid="uid://cjpyo5axkiie8" path="res://Scenes/GateClosed.tscn" id="39_2pwfd"]
 [ext_resource type="Texture2D" uid="uid://dfmn8hnqyawbn" path="res://Donovan/DonAssets/HH_Art_NodeYellow5_V1.png" id="39_t6dil"]
 [ext_resource type="AudioStream" uid="uid://cr8mcfem7l0to" path="res://Assets/Audio/Wooden door creak 3.wav" id="40_oreta"]
-[ext_resource type="Script" path="res://SpencerStuff/Scripts/elevator_door.gd" id="41_c0qj2"]
+[ext_resource type="Texture2D" uid="uid://chnq6q62h1mwu" path="res://Assets/ElevatorLights2.png" id="40_svxs6"]
+[ext_resource type="Script" uid="uid://7epq051kcf4g" path="res://SpencerStuff/Scripts/elevator_door.gd" id="41_c0qj2"]
 [ext_resource type="PackedScene" uid="uid://yvv4teqlemm5" path="res://SpencerStuff/Scenes/hh_art_elevator_gate_v_1.tscn" id="42_bbw7d"]
 [ext_resource type="Texture2D" uid="uid://5lvcfq2duxw0" path="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png" id="42_wq4hk"]
 [ext_resource type="Texture2D" uid="uid://pb8fec5s8lac" path="res://Donovan/DonAssets/HH_Art_NodeCyan5_V1.png" id="43_2j6rm"]
@@ -60,13 +61,13 @@
 [ext_resource type="Texture2D" uid="uid://d1ybbwvdlyuvl" path="res://Donovan/DonAssets/HH_Art_NodeYellow6_V1.png" id="49_63m68"]
 [ext_resource type="Texture2D" uid="uid://ck1cd8cmd1k3f" path="res://Assets/HH_Art_NewGuyCrouchInteractSpriteSheet_V1.png" id="50_i1scv"]
 [ext_resource type="PackedScene" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Shelf.tscn" id="50_jennx"]
-[ext_resource type="Script" uid="uid://vihp4thtac55" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="50_yqei1"]
+[ext_resource type="Script" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="50_yqei1"]
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="51_a4kpc"]
 [ext_resource type="Texture2D" uid="uid://dhndjrnissj6d" path="res://Assets/HH_Art_NewGuyElectrocutionAnimSpriteSheet_V1.png" id="51_dx7fg"]
 [ext_resource type="PackedScene" uid="uid://cisk1tyg2skyv" path="res://Assets/3D Models/HH_Art_SafeAnim_V1.fbx" id="51_oboe2"]
 [ext_resource type="Texture2D" uid="uid://1jo86vkwjfqa" path="res://Assets/HH_Art_NewGuyIdle1SpriteSheet_V1.png" id="52_0eypt"]
 [ext_resource type="Texture2D" uid="uid://dej5gblwfl77" path="res://Assets/HH_Art_NewGuyStandInteractAnimSpriteSheet_V1.png" id="53_2wdvl"]
-[ext_resource type="PackedScene" uid="uid://cthtnkvbjx1er" path="res://Donovan/Lever.tscn" id="54_xg816"]
+[ext_resource type="PackedScene" path="res://Donovan/Lever.tscn" id="54_xg816"]
 [ext_resource type="PackedScene" uid="uid://bt8fq5f04d2ui" path="res://Assets/3D Models/HH_Art_Fuse3_V1.fbx" id="56_t6dil"]
 [ext_resource type="Script" uid="uid://v1vrjjfux1ew" path="res://ThomasFolder/Scripts/right_door_Thomas_Ver_2.gd" id="57_t6dil"]
 [ext_resource type="PackedScene" uid="uid://0wvwkjnnxvjg" path="res://Assets/3D Models/HH_Art_DoorAnim_LeftOpen_V1.fbx" id="59_t6dil"]
@@ -2542,6 +2543,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05041635)
 [node name="ElevatorLock" type="Sprite3D" parent="ElevatorDoor"]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.1071434, 3.9507077, -0.23650178)
 texture = ExtResource("60_i1scv")
+
+[node name="FloorIndicator" type="Sprite3D" parent="ElevatorDoor"]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.126, 1.987, -0.812)
+texture = ExtResource("40_svxs6")
 
 [node name="RoomDetectors" type="Node3D" parent="."]
 
