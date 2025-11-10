@@ -6,6 +6,12 @@ extends CharacterBody3D
 @export var speed: float = 3.5
 @export var room_detectors_path: NodePath
 
+#Object references for moving to
+var leftDoorLoc1
+var leftDoorLoc2
+var rightDoorLoc1
+var rightDoorLoc2
+
 #Generator reference for determining if level is complete
 @onready var generator = $"../Generator"
 
@@ -35,6 +41,12 @@ var current_footstep_index = 0
 var footsteps_playing = false
 
 func _ready():
+	#Set location of all objects
+	leftDoorLoc1 = $"../LeftDoor/Location1"
+	leftDoorLoc2 = $"../LeftDoor/Location2"
+	rightDoorLoc1 = $"../RightDoor/Location1"
+	rightDoorLoc2 = $"../RightDoor/Location2"
+	
 	spawn_transform = self.transform
 	player_sprite = $PlayerSprite
 	#Sprite starts facing to the left (default state)
@@ -203,9 +215,6 @@ func move_to_adjacent_room(direction: int):
 		player_sprite.play("Walk")
 		start_footsteps()
 
-func move_to_object(object):
-	target_position.x = object.global_position.x
-	is_moving = true
 
 #Update sprite facing direction
 func update_sprite_facing(direction):
@@ -237,7 +246,20 @@ func kill_player():
 		return
 	is_dead = true
 	print("Player died!")
+	
+	#Stop any current animation
+	if player_sprite:
+		player_sprite.stop()
 
+	#Play electrocute animation if available
+	#Right now, only way to die is by being electrocuted - will have to change later
+	if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Electrocute"):
+		player_sprite.play("Electrocute")
+		await player_sprite.animation_finished
+	else:
+		print("Missing Electrocute animation!")
+		await get_tree().create_timer(1.5).timeout  #Fallback wait
+		
 	#Temporarily disable player
 	set_process(false)
 	set_physics_process(false)
@@ -245,8 +267,6 @@ func kill_player():
 	is_moving = false
 	velocity = Vector3.ZERO
 	stuck_timer = 0.0
-	#Stop any animations
-	player_sprite.stop()
 
 	#Wait before respawning
 	await get_tree().create_timer(RESPAWN_DELAY).timeout
@@ -299,3 +319,31 @@ func _on_footstep_finished():
 func move_to_specific_location(location: int):
 	target_position = Vector3(location, global_position.y, global_position.z)
 	is_moving = true
+	
+func move_to_object(object):
+	target_position.x = object.global_position.x
+	
+	is_moving = true
+
+func move_through_left_door(object, side):
+	
+	if (side == 1):
+		move_to_object(object)
+		await get_tree().create_timer(1.5).timeout
+		move_to_object(leftDoorLoc2)
+		
+	if (side == -1):
+		move_to_object(object)
+		await get_tree().create_timer(1.5).timeout
+		move_to_object(leftDoorLoc1)
+	
+func move_through_right_door(object, side):
+	if (side == 1):
+		move_to_object(object)
+		await get_tree().create_timer(1.5).timeout
+		move_to_object(rightDoorLoc2)
+		
+	if (side == -1):
+		move_to_object(object)
+		await get_tree().create_timer(1.5).timeout
+		move_to_object(rightDoorLoc1)

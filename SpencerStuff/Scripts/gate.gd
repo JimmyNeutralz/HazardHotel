@@ -57,6 +57,12 @@ func _process(delta):
 			raise_gate()
 		else:
 			print("Cannot raise gate yet — still electrified!")
+			
+	elif Input.is_action_just_pressed("raise_gate") and raised:
+		if can_raise():
+			lower_gate()
+		else:
+			print("Cannot raise gate yet — still electrified!")
 
 func update_electric_state():
 	if fusebox_indicator == null:
@@ -97,6 +103,25 @@ func raise_gate():
 	if collision:
 		collision.disabled = true
 	print("Gate raised!")
+	$GateAudio.play()
+	
+func lower_gate():
+	raised = false
+
+	#Play animation if available
+	if anim_player:
+		if anim_player.has_animation("Take 001"):
+			anim_player.play_backwards("Take 001")
+		else:
+			print("No animation 'Take 001' found for gate!")
+	else:
+		#Fallback: just hide the sprite like before
+		if sprite:
+			sprite.visible = true
+
+	if collision:
+		collision.disabled = false
+	print("Gate lowered!")
 	$GateAudio.play()
 
 
