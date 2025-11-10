@@ -7,12 +7,7 @@ extends CanvasLayer
 @onready var button_audio_player: AudioStreamPlayer2D = $ButtonAudioPlayer
 @onready var intro_music_player: AudioStreamPlayer2D = $IntroMusicPlayer
 
-var full_text := """In Hazard Hotel, you solo play as a hired electrician at an infamous
-monster-infested hotel. You've sent in your own new hire to navigate
-through the building, while you stay behind with your trusty node box to
-help him solve puzzles by accessing things through electrical currents.
-To hopefully survive and — even more than that — hopefully repair
-the Hazard Hotel!"""
+var full_text := """In this game, you take the role of an electrician hired to repair the derelict, haunted grounds of the dreaded Hazard Hotel. Fearing the rumors of monsters and safety code violations, you have chosen to hire a new apprentice to be your hands as you facilitate operations using the awesome power of your electrical S.P.A.R.K. switchboard. Divert power to the correct machinery to safely direct your apprentice through the building to make the proper repairs, and ensure that the decaying husk of the Hazard Hotel continues to stand, at least until you are paid."""
 
 var skip_pressed = false
 
