@@ -296,3 +296,7 @@ func _on_footstep_finished():
 func move_to_specific_location(location: int):
 	target_position = Vector3(location, global_position.y, global_position.z)
 	is_moving = true
+
+func _on_text_colider_body_entered(body: Node3D) -> void:
+	print("?")
+	is_moving = false
