@@ -2,7 +2,7 @@ extends Node3D
 
 #Node Paths
 @onready var lock_visual = $LeftLock
-@onready var blocker = $LeftArea
+@onready var blocker = $Door/LeftArea
 
 var locked: bool = true
 var door_anim: AnimationPlayer = null
@@ -10,7 +10,7 @@ var lock_anim: AnimationPlayer = null
 
 func _ready() -> void:
 	lock_visual.visible = locked
-	blocker.visible = locked
+	#blocker.visible = locked
 
 	#Recursively find door AnimationPlayer 
 	door_anim = find_animation_player(self)
