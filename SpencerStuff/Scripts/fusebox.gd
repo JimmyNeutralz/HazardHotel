@@ -43,6 +43,17 @@ func _process(delta):
 		else:
 			print("Cannot activate fusebox yet!")
 
+	elif Input.is_action_just_pressed("activate_fusebox") and activated:
+		if can_activate():
+			deactivate()
+		else:
+			print("Cannot activate fusebox yet!")
+			
+	elif Input.is_action_just_pressed("override_fusebox"):
+		deactivate()
+		
+
+
 #Check if the fusebox can be activated
 func can_activate() -> bool:
 	if puddle == null:
@@ -72,6 +83,25 @@ func activate():
 			anim_name = anim_player.get_animation_list()[0]
 		if anim_player.has_animation(anim_name):
 			anim_player.play(anim_name)
+		else:
+			print("No animations found to play!")
+	else:
+		print("No AnimationPlayer found to play animation!")
+		
+func deactivate():
+	activated = false
+	update_indicator_color()
+	$FuseboxAudio.play()
+	print("Electric gate reactivated through fusebox!")
+
+	#Play animation if available
+	if anim_player:
+		#Try "Take 001" first, otherwise play first animation
+		var anim_name = "Take 001"
+		if not anim_player.has_animation(anim_name) and anim_player.get_animation_list().size() > 0:
+			anim_name = anim_player.get_animation_list()[0]
+		if anim_player.has_animation(anim_name):
+			anim_player.play_backwards(anim_name)
 		else:
 			print("No animations found to play!")
 	else:

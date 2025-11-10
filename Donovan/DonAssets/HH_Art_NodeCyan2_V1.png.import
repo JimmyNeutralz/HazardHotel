@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5lvcfq2duxw0"
-path.s3tc="res://.godot/imported/HH_Art_NodeBlue6_V1.png-1923584320f899375b2a8a31707a8698.s3tc.ctex"
+uid="uid://0q8k8ovc0tm5"
+path.s3tc="res://.godot/imported/HH_Art_NodeCyan2_V1.png-d94d9282fc13720e6d125058709beff7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png"
-dest_files=["res://.godot/imported/HH_Art_NodeBlue6_V1.png-1923584320f899375b2a8a31707a8698.s3tc.ctex"]
+source_file="res://Donovan/DonAssets/HH_Art_NodeCyan2_V1.png"
+dest_files=["res://.godot/imported/HH_Art_NodeCyan2_V1.png-d94d9282fc13720e6d125058709beff7.s3tc.ctex"]
 
 [params]
 

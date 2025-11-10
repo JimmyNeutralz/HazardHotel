@@ -14,19 +14,22 @@ var fuseDropSpot
 #State
 var safe_raised = false
 var has_slammed = false
+var is_safe_open = false
 
 func _ready():
 	realLoc = originSafeLoc.global_position
 	anim_player = find_animation_player(self)
 
 func _process(delta):
-	#Handle safe deactivation input 
+	#Handle safe deactivation input
 	if Input.is_action_just_pressed("raise_safe") and !safe_raised:
 		raise_safe()
-	if Input.is_action_just_pressed("lower_safe") and safe_raised:
+	elif Input.is_action_just_pressed("lower_safe") and safe_raised:
 		lower_safe()
-	if Input.is_action_just_pressed("open_safe"):
-		pass
+	elif Input.is_action_just_pressed("open_safe") and !is_safe_open:
+		open_safe()
+	elif Input.is_action_just_pressed("open_safe") and is_safe_open:
+		close_safe()
 	if has_slammed:
 		pass
 
@@ -85,6 +88,14 @@ func open_safe():
 	if anim_player and anim_player.has_animation("Take 001"):
 		anim_player.play("Take 001")
 		print("Safe open!")
+		is_safe_open = true
+		
+		
+func close_safe():
+	if anim_player and anim_player.has_animation("Take 001"):
+		anim_player.play_backwards("Take 001")
+		print("Safe closed!")
+		is_safe_open = false
 		
 #Recursive search for AnimationPlayer
 func find_animation_player(node: Node) -> AnimationPlayer:
