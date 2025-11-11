@@ -1,7 +1,6 @@
-[gd_scene load_steps=277 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=279 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
-[ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_12wq7"]
 [ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="3_d23ut"]
 [ext_resource type="Texture2D" uid="uid://ck1cd8cmd1k3f" path="res://Assets/HH_Art_NewGuyCrouchInteractSpriteSheet_V1.png" id="4_5ono6"]
 [ext_resource type="Texture2D" uid="uid://dhndjrnissj6d" path="res://Assets/HH_Art_NewGuyElectrocutionAnimSpriteSheet_V1.png" id="4_gpvrk"]
@@ -40,13 +39,10 @@
 [ext_resource type="Texture2D" uid="uid://cfo2bftv6y7qy" path="res://Donovan/DonAssets/HH_Art_NodeBlue2_V1.png" id="26_5o0ex"]
 [ext_resource type="Script" uid="uid://d3wg6c5iqxhyc" path="res://SpencerStuff/Scripts/Lock.gd" id="26_gpvrk"]
 [ext_resource type="Script" uid="uid://v1vrjjfux1ew" path="res://ThomasFolder/Scripts/right_door_Thomas_Ver_2.gd" id="26_tj4bt"]
-[ext_resource type="PackedScene" uid="uid://dls6ajp0nybf4" path="res://Assets/3D Models/HH_Art_PinchModularLeft_V2.fbx" id="27_pmcw7"]
 [ext_resource type="Texture2D" uid="uid://0q8k8ovc0tm5" path="res://Donovan/DonAssets/HH_Art_NodeCyan2_V1.png" id="27_sgweo"]
 [ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="27_t4vl1"]
 [ext_resource type="Texture2D" uid="uid://5lvcfq2duxw0" path="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png" id="27_v32js"]
-[ext_resource type="PackedScene" uid="uid://b8fbh4foswd7e" path="res://Assets/3D Models/HH_Art_PinchModularMiddle_V2.fbx" id="28_toapv"]
 [ext_resource type="Texture2D" uid="uid://mif77mvk3i48" path="res://Donovan/DonAssets/HH_Art_NodeGreen3_V1.png" id="28_v32js"]
-[ext_resource type="PackedScene" uid="uid://bojy7at4teudg" path="res://Assets/3D Models/HH_Art_PinchModularRight_V2.fbx" id="29_d7lxd"]
 [ext_resource type="Texture2D" uid="uid://h63ytlac6hmi" path="res://Donovan/DonAssets/HH_Art_NodePurple5_V1.png" id="29_hay5g"]
 [ext_resource type="PackedScene" uid="uid://yvv4teqlemm5" path="res://SpencerStuff/Scenes/hh_art_elevator_gate_v_1.tscn" id="29_pokab"]
 [ext_resource type="Texture2D" uid="uid://bkl556xt6evy6" path="res://Donovan/DonAssets/HH_Art_NodeOrange1_V1.png" id="29_sgweo"]
@@ -65,6 +61,12 @@
 [ext_resource type="PackedScene" uid="uid://b5nps7v01rrsb" path="res://Donovan/DonAssets/truePuddle.tscn" id="47_l5ac0"]
 [ext_resource type="AudioStream" uid="uid://c2k5mrmymj5tt" path="res://Assets/Audio/mx_level.wav" id="52_d23ut"]
 [ext_resource type="Texture2D" uid="uid://r115ddhk7il8" path="res://Assets/ElevatorLights1.png" id="58_hb643"]
+[ext_resource type="Script" uid="uid://6c438vjhjcdg" path="res://SpencerStuff/Scripts/true_floor_1_left.gd" id="59_hb643"]
+[ext_resource type="PackedScene" uid="uid://c0b6414twj21r" path="res://SpencerStuff/Scenes/TrueFloor1Right.tscn" id="60_hb643"]
+[ext_resource type="PackedScene" uid="uid://bks01evxkkb8r" path="res://SpencerStuff/Scenes/TrueFloor1Left.tscn" id="60_l5ac0"]
+[ext_resource type="Script" uid="uid://dkdpv7iwscrxv" path="res://SpencerStuff/Scripts/true_floor_1_right.gd" id="61_d4b2v"]
+[ext_resource type="PackedScene" uid="uid://qktkjuseo3vd" path="res://SpencerStuff/Scenes/TrueFloor1Middle.tscn" id="61_hb643"]
+[ext_resource type="Script" uid="uid://5fe2miwdr0f" path="res://SpencerStuff/Scripts/true_floor_1_middle.gd" id="63_srmjg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0xvb"]
 atlas = ExtResource("4_5ono6")
@@ -1526,10 +1528,6 @@ size = Vector3(4.272888, 2.7320023, 2.4972534)
 [node name="Node3D3" type="Node3D"]
 script = ExtResource("1_rw4lb")
 
-[node name="HH_Art_Pinch_V2" parent="." instance=ExtResource("2_12wq7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007326126, 0.0070431232, -0.0001385212)
-visible = false
-
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.01, 0.623, -0.544)
 script = ExtResource("3_d23ut")
@@ -1942,14 +1940,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 0.62, 0)
 
 [node name="FloorModules" type="Node3D" parent="."]
 
-[node name="HH_Art_PinchModularLeft_V2" parent="FloorModules" instance=ExtResource("27_pmcw7")]
+[node name="HH_Art_PinchModularLeft_V3" parent="FloorModules" instance=ExtResource("60_l5ac0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 11.8)
+script = ExtResource("59_hb643")
 
-[node name="HH_Art_PinchModularMiddle_V2" parent="FloorModules" instance=ExtResource("28_toapv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.8)
-
-[node name="HH_Art_PinchModularRight_V2" parent="FloorModules" instance=ExtResource("29_d7lxd")]
+[node name="HH_Art_PinchModularRight_V3" parent="FloorModules" instance=ExtResource("60_hb643")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 11.8)
+script = ExtResource("61_d4b2v")
+
+[node name="HH_Art_PinchModularMiddle_V3" parent="FloorModules" instance=ExtResource("61_hb643")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.8)
+script = ExtResource("63_srmjg")
 
 [node name="PauseMenu" type="Node3D" parent="."]
 process_mode = 3

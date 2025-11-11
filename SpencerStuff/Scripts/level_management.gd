@@ -25,8 +25,25 @@ var has_right_key: bool = false
 #Elevator door script reference
 @onready var elevator_door = $ElevatorDoor
 
+#Scene Objects (for color changing)
+@onready var Floor1LeftVisual = $FloorModules/HH_Art_PinchModularLeft_V3
+@onready var Floor1RightVisual = $FloorModules/HH_Art_PinchModularRight_V3
+@onready var Floor1MiddleVisual = $FloorModules/HH_Art_PinchModularMiddle_V3
+
 
 func _ready():
+	
+	#Change color of floor
+	if Floor1LeftVisual:
+		Floor1LeftVisual.coloredFloor1()
+
+	if Floor1RightVisual:
+		Floor1RightVisual.coloredFloor1()
+
+	if Floor1MiddleVisual:
+		Floor1MiddleVisual.coloredFloor1()
+
+	
 	#Start hidden
 	_set_pause_menu_visible(false)
 	if !fade_in_static:
