@@ -1999,7 +1999,7 @@ transform = Transform3D(0.93178, 0, -0.36302355, 0, 1, 0, 0.36302355, 0, 0.93178
 [node name="HH_Art_Shelf_V1" parent="SceneBackgroundObjects" instance=ExtResource("34_vp3xm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.182118, 0, 11.840912)
 
-[node name="LevelMusicPlayer" type="AudioStreamPlayer3D" parent="."]
+[node name="LevelMusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("52_d23ut")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]

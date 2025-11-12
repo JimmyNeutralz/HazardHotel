@@ -2807,7 +2807,7 @@ stream = ExtResource("10_b8gbm")
 [node name="FootstepAudio6" type="AudioStreamPlayer3D" parent="Player"]
 stream = ExtResource("11_db7nr")
 
-[node name="LevelMusicPlayer" type="AudioStreamPlayer3D" parent="."]
+[node name="LevelMusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("63_2wdvl")
 
 [node name="Puddle" type="Node3D" parent="."]
