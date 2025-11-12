@@ -5,7 +5,7 @@ extends Node3D
 
 #Path to player node
 @onready var player = $"../Player"
-@onready var text_popup = $"../TextPopup/text"
+@onready var text_popup = $"../TextPopup"
 
 @onready var fuse_marker = $"../FuseBox/Marker3D"
 
@@ -51,7 +51,8 @@ func _process(delta):
 		else:
 			print("Cannot activate fusebox yet!")
 	if ((player.global_position.x > (fuse_marker.global_position.x - 0.5)) and (player.global_position.x < (fuse_marker.global_position.x + 0.5)) and !dialogue_triggered):
-		text_popup.fusebox_activated()
+		text_popup.change_text_image(1)
+		text_popup.set_text("Heard something deactivate from the left room, what is it now?")
 		dialogue_triggered = true
 
 #Check if the fusebox can be activated

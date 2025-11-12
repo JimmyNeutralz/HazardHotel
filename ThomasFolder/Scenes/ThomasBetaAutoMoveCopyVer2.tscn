@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://rj4pwcppmgvb"]
+[gd_scene load_steps=91 format=3 uid="uid://rj4pwcppmgvb"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_03u4j"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_cfou1"]
@@ -49,7 +49,10 @@
 [ext_resource type="PackedScene" uid="uid://dvl5ijrr8hfd0" path="res://Assets/3D Models/HH_Art_ClothChair_V2.fbx" id="47_3jbtr"]
 [ext_resource type="PackedScene" uid="uid://416n0yob35jg" path="res://Assets/3D Models/HH_Art_Shelf_V1.fbx" id="48_ei4q1"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="49_83jxj"]
+[ext_resource type="Texture2D" uid="uid://fcvedmnrv6c5" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="50_dp2l7"]
 [ext_resource type="Script" uid="uid://coms123t1l50s" path="res://ThomasFolder/Scripts/puddle_colider_beta_ver.gd" id="50_jl74w"]
+[ext_resource type="Script" uid="uid://dcuwijsutwksx" path="res://ThomasFolder/Scenes/swagula.gd" id="52_wx0ur"]
+[ext_resource type="Texture2D" uid="uid://uia0ueigussp" path="res://ThomasFolder/Sprites/HH_Art_SwagulaSprite_V1.png" id="53_jk5ip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oymrl"]
 atlas = ExtResource("5_gki83")
@@ -209,6 +212,8 @@ size = Vector3(4.246231, 2.7391052, 2.2364502)
 size = Vector3(4.272888, 2.7320023, 2.4972534)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_83jxj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jl74w"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_03u4j")
@@ -622,29 +627,51 @@ transform = Transform3D(0.93178, 0, -0.36302355, 0, 1, 0, 0.36302355, 0, 0.93178
 [node name="HH_Art_Shelf_V1" parent="SceneBackgroundObjects" instance=ExtResource("48_ei4q1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.182118, 0, 11.840912)
 
-[node name="TextPopup" type="Node3D" parent="."]
-
-[node name="text" type="RichTextLabel" parent="TextPopup"]
-offset_left = 74.0
-offset_top = 565.0
-offset_right = 1074.0
-offset_bottom = 605.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "
-"
-tab_size = 24
-horizontal_alignment = 1
+[node name="TextPopup" type="Node2D" parent="."]
 script = ExtResource("49_83jxj")
 
-[node name="PuddleColider" type="Node3D" parent="."]
-transform = Transform3D(1.84, 0, 0, 0, 0.815, 0, 0, 0, 1.465, 8.505346, 0, 0)
+[node name="text" type="Label" parent="TextPopup"]
+offset_left = 162.0
+offset_top = -75.0
+offset_right = 1155.0
+offset_bottom = -26.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "hi"
+
+[node name="TextPopupCharacterImage" type="Sprite2D" parent="TextPopup"]
+position = Vector2(99, -52.255)
+scale = Vector2(0.6282051, 0.6282051)
+texture = ExtResource("50_dp2l7")
+
+[node name="PuddleColider" type="Node3D" parent="." node_paths=PackedStringArray("text_colider", "physical_colider")]
+transform = Transform3D(1.855, 0, 0, 0, 0.815, 0, 0, 0, 1.465, 8.505346, 0, 0)
 script = ExtResource("50_jl74w")
+text_colider = NodePath("TextColider")
+physical_colider = NodePath("PhysicalColider")
 
-[node name="StaticBody3D" type="RigidBody3D" parent="PuddleColider"]
+[node name="TextColider" type="Area3D" parent="PuddleColider"]
+transform = Transform3D(1.0000004, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.030599117, 0.4503306, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PuddleColider/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.737, 0.196)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PuddleColider/TextColider"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -0.035607338, 0.737, 0.19599998)
 shape = SubResource("BoxShape3D_83jxj")
+
+[node name="PhysicalColider" type="StaticBody3D" parent="PuddleColider"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PuddleColider/PhysicalColider"]
+shape = SubResource("BoxShape3D_jl74w")
+
+[node name="Swagula" type="Node3D" parent="."]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.4304154, 0, -0.3686844)
+script = ExtResource("52_wx0ur")
+
+[node name="Sprite3D" type="Sprite3D" parent="Swagula"]
+transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, 0, 0.96, 0)
+texture = ExtResource("53_jk5ip")
+
+[node name="swagula_marker" type="Marker3D" parent="Swagula"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.63076806)
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
@@ -655,3 +682,4 @@ shape = SubResource("BoxShape3D_83jxj")
 [connection signal="body_entered" from="ElevatorDoor/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="pressed" from="PauseMenu/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="body_entered" from="PuddleColider/TextColider" to="Player" method="_on_text_colider_body_entered"]
