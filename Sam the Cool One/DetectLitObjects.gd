@@ -54,7 +54,7 @@ func _process(delta: float) -> void:
 			ray.collide_with_bodies = true
 			if(anglefromlight < spot_angle and !ray.is_colliding()):
 				arr[i].set_meta("InLight", true)
-			#else:
+			#else:#
 				#arr[i].set_meta("InLight", false)
 	#print(abs(tan(toRadians(spot_angle/2)))*(position.y - torus.position.y))
 	#Check for all objects in the cone.
