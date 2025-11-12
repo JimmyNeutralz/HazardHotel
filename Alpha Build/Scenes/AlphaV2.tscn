@@ -1,8 +1,8 @@
-[gd_scene load_steps=42 format=3 uid="uid://crwf23b4qh5o0"]
+[gd_scene load_steps=38 format=3 uid="uid://crwf23b4qh5o0"]
 
-[ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_12o2k"]
+[ext_resource type="Script" uid="uid://cho7xqaqgg2ro" path="res://SpencerStuff/Scripts/level_management.gd" id="1_12o2k"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_v6jlp"]
-[ext_resource type="Script" uid="uid://cdcf2xh2ahv2s" path="res://SpencerStuff/Scripts/auto_movement.gd" id="3_k700v"]
+[ext_resource type="Script" uid="uid://cb4xuh6705m0d" path="res://SpencerStuff/Scripts/player_move_pinch.gd" id="3_w84qg"]
 [ext_resource type="Texture2D" uid="uid://dti6vh1iw17rq" path="res://Assets/HH_Art_NewGuySprite_V1_.png" id="4_5a51q"]
 [ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="5_0p2gx"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="6_tmi5m"]
@@ -71,18 +71,6 @@ albedo_color = Color(0.9030753, 0, 0.07757329, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_ffsuc"]
 material = SubResource("StandardMaterial3D_idyij")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_k700v"]
-size = Vector3(1.947876, 2.046997, 1.7373047)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fqss4"]
-size = Vector3(3.1015625, 2.7891846, 2.2185059)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_gpw56"]
-size = Vector3(3.091095, 2.7750854, 2.2364502)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tnwif"]
-size = Vector3(3.1115723, 2.7891998, 2.2052002)
-
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_12o2k")
 
@@ -90,8 +78,7 @@ script = ExtResource("1_12o2k")
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.01, 0.623, -0.544)
-script = ExtResource("3_k700v")
-room_detectors_path = NodePath("../RoomDetectors")
+script = ExtResource("3_w84qg")
 
 [node name="Sprite3D" type="Sprite3D" parent="Player"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.15889424, 1.0507035)
@@ -301,46 +288,8 @@ mesh = SubResource("BoxMesh_ffsuc")
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, 6.5144296, 1.9006244, 0)
 mesh = SubResource("BoxMesh_ffsuc")
 
-[node name="ElevatorDoor" type="Node3D" parent="."]
-
-[node name="Area3D" type="Area3D" parent="ElevatorDoor"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ElevatorDoor/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00030517578, 1.1346064, -0.43408203)
-shape = SubResource("BoxShape3D_k700v")
-
-[node name="RoomDetectors" type="Node3D" parent="."]
-
-[node name="MainRoom" type="Area3D" parent="RoomDetectors"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomDetectors/MainRoom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0068359375, 1.412344, 0.19763184)
-shape = SubResource("BoxShape3D_fqss4")
-
-[node name="MainRoomCenter" type="Node3D" parent="RoomDetectors/MainRoom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.62, 0)
-
-[node name="LeftRoom" type="Area3D" parent="RoomDetectors"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomDetectors/LeftRoom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.925584, 1.4312717, 0.20367432)
-shape = SubResource("BoxShape3D_gpw56")
-
-[node name="LeftRoomCenter" type="Node3D" parent="RoomDetectors/LeftRoom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8, 0.62, 0)
-
-[node name="RightRoom" type="Area3D" parent="RoomDetectors"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RoomDetectors/RightRoom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.902652, 1.4417982, 0.23797607)
-shape = SubResource("BoxShape3D_tnwif")
-
-[node name="RightRoomCenter" type="Node3D" parent="RoomDetectors/RightRoom"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0.62, 0)
-
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/MainRoomTrigger" to="CameraTriggers/MainRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="LeftWall/LeftTrigger" to="." method="_on_left_trigger_body_entered"]
 [connection signal="body_entered" from="RightWall/RightTrigger" to="." method="_on_right_trigger_body_entered"]
-[connection signal="body_entered" from="ElevatorDoor/Area3D" to="." method="_on_area_3d_body_entered"]

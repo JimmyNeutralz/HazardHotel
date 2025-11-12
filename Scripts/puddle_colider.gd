@@ -2,10 +2,7 @@ extends Area3D
 
 #@onready var player = load("res://Scenes/3d_player.tscn")
 @onready var player = $"../3dPlayer"
-@onready var puddle = $"../DeathPuddle3d"
-@onready var shelfFuse = $"../ShelfFuse"
-@onready var safe = $"../Safe"
-@onready var text = $"../Camera3D/RichTextLabel"
+@onready var puddle = load("res://PrototypeScripts/death_puddle_3d.gd")
 
 var electrified = true
 
@@ -16,23 +13,12 @@ func _process(delta):
 	if (Input.is_action_just_pressed("Disable 3D Puddle Electricity")):
 		electrified = false
 		player.stop_moving(electrified)
-		puddle.change_puddle_status(electrified)
-		print(player.destinationBlocked)
-		print(safe.emptied)
-		if(!player.destinationBlocked and !safe.emptied):
-			print("Conditional Met")
-			player.move_to_blocked_location()
-		shelfFuse.pathBlocked = false
 	elif (Input.is_action_just_pressed("Enable 3D Puddle Electricity")):
 		electrified = true
-		puddle.change_puddle_status(electrified)
-		puddle.determine_status()
-		shelfFuse.pathBlocked = true
+		player.stop_moving(electrified)
 		
 
 #Reacts upon the player hitting the separate colider to determine if they can walk past or not
 func _on_body_entered(body: Node3D) -> void:
 	print("Func reached")
-	player.blocked_path(global_position, electrified)
-	if (electrified):
-		text.avoided_puddle()
+	player.stop_moving(electrified)

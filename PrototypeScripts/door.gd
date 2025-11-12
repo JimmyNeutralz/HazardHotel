@@ -3,7 +3,7 @@ extends Area2D
 
 var isLocked = false
 var playerHasKey = false
-#@export var simultaneous_scene = preload("res://Scenes/Floor1_FirstRoom.tscn").instantiate()
+@export var simultaneous_scene = preload("res://Scenes/Floor1_FirstRoom.tscn").instantiate()
 @onready var player = load("res://Scripts/test_player.gd")
 
 func _add_a_scene_manually():
