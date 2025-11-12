@@ -17,3 +17,5 @@ func _on_body_entered(body: Node2D) -> void:
 		#isLocked = false
 	if (isLocked == false):
 		_add_a_scene_manually()
+		
+		#....
