@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cw22ieusv80tf"]
+[gd_scene load_steps=3 format=3 uid="uid://b1ij07vysqwm1"]
 
-[ext_resource type="Script" uid="uid://bwpitfbpiq0lc" path="res://Scripts/puddle_colider.gd" id="1_5o8hb"]
+[ext_resource type="Script" path="res://Scripts/puddle_colider.gd" id="1_5o8hb"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0pe15"]
 
