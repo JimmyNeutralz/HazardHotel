@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://b6u7c1qxavmhf"]
+[gd_scene load_steps=5 format=3 uid="uid://dvpt71r8unhk8"]
 
 [ext_resource type="PackedScene" uid="uid://bh55t3yeka885" path="res://PrototypeScenes/3d_player.tscn" id="1_why2p"]
 [ext_resource type="PackedScene" uid="uid://bby3pv6515v6q" path="res://PrototypeScenes/death_puddle_3D.tscn" id="2_20pj2"]

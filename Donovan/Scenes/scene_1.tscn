@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ptyiapuhuy54" path="res://Donovan/Scripts/Data Transfer Test/scene_1.gd" id="1_dv4bm"]
 [ext_resource type="Script" uid="uid://w6vblhsemah" path="res://Donovan/Scenes/button_2.gd" id="2_3k3pm"]
-[ext_resource type="Texture2D" uid="uid://b7dsgn71wxhjm" path="res://PrototypeAssets/icon.svg" id="3_2fts7"]
+[ext_resource type="Texture2D" uid="uid://w0n754ttlwcf" path="res://PrototypeAssets/icon.svg" id="3_2fts7"]
 [ext_resource type="Script" uid="uid://bsmydu7br8h5c" path="res://Donovan/Scripts/Data Transfer Test/RedLight.gd" id="4_kvb3d"]
 
 [node name="Scene1" type="Control"]
