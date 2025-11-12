@@ -16,7 +16,7 @@ extends Node3D
 @onready var button_audio_player: AudioStreamPlayer2D = $PauseMenu/ButtonAudioPlayer
 
 #Level music player reference
-@onready var level_music: AudioStreamPlayer3D = $LevelMusicPlayer
+@onready var level_music: AudioStreamPlayer2D = $LevelMusicPlayer
 
 #Key states
 var has_left_key: bool = false

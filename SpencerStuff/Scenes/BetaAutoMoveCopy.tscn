@@ -1,7 +1,7 @@
 [gd_scene load_steps=279 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
-[ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="3_d23ut"]
+[ext_resource type="Script" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="3_d23ut"]
 [ext_resource type="Texture2D" uid="uid://ck1cd8cmd1k3f" path="res://Assets/HH_Art_NewGuyCrouchInteractSpriteSheet_V1.png" id="4_5ono6"]
 [ext_resource type="Texture2D" uid="uid://dhndjrnissj6d" path="res://Assets/HH_Art_NewGuyElectrocutionAnimSpriteSheet_V1.png" id="4_gpvrk"]
 [ext_resource type="Texture2D" uid="uid://dju6sdtrap1fy" path="res://Assets/HH_Art_NewGuyWalkAnimSpriteSheet_V1.png" id="5_d7lxd"]
@@ -28,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="18_83nm1"]
 [ext_resource type="AudioStream" uid="uid://c8v5bc6sw71sl" path="res://Assets/Audio/Wooden door creak 2.wav" id="19_t4vl1"]
 [ext_resource type="Script" uid="uid://cqxfonrb48820" path="res://SpencerStuff/Scripts/puddle.gd" id="19_twwqf"]
-[ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="21_d23ut"]
+[ext_resource type="Script" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="21_d23ut"]
 [ext_resource type="Script" uid="uid://ct1s4dt2hpjix" path="res://SpencerStuff/Scripts/fusebox.gd" id="21_iumpq"]
 [ext_resource type="PackedScene" uid="uid://dllmxns1qx246" path="res://Scenes/FuseboxClose.tscn" id="22_0jwwo"]
 [ext_resource type="Script" uid="uid://d26s1jhjd3mxd" path="res://SpencerStuff/Scripts/gate.gd" id="23_4qti0"]
@@ -38,7 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="25_luouv"]
 [ext_resource type="Texture2D" uid="uid://cfo2bftv6y7qy" path="res://Donovan/DonAssets/HH_Art_NodeBlue2_V1.png" id="26_5o0ex"]
 [ext_resource type="Script" uid="uid://d3wg6c5iqxhyc" path="res://SpencerStuff/Scripts/Lock.gd" id="26_gpvrk"]
-[ext_resource type="Script" uid="uid://v1vrjjfux1ew" path="res://ThomasFolder/Scripts/right_door_Thomas_Ver_2.gd" id="26_tj4bt"]
+[ext_resource type="Script" path="res://ThomasFolder/Scripts/right_door_Thomas_Ver_2.gd" id="26_tj4bt"]
 [ext_resource type="Texture2D" uid="uid://0q8k8ovc0tm5" path="res://Donovan/DonAssets/HH_Art_NodeCyan2_V1.png" id="27_sgweo"]
 [ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="27_t4vl1"]
 [ext_resource type="Texture2D" uid="uid://5lvcfq2duxw0" path="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png" id="27_v32js"]
@@ -1999,7 +1999,7 @@ transform = Transform3D(0.93178, 0, -0.36302355, 0, 1, 0, 0.36302355, 0, 0.93178
 [node name="HH_Art_Shelf_V1" parent="SceneBackgroundObjects" instance=ExtResource("34_vp3xm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.182118, 0, 11.840912)
 
-[node name="LevelMusicPlayer" type="AudioStreamPlayer3D" parent="."]
+[node name="LevelMusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("52_d23ut")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
