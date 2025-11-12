@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnjh8y0o0ghic"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6dtad"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lsan5"]
+
+[node name="3dEletricDoor" type="Area3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.09, 0, 0, 0, 2.5, 0, 0, 0, 1.06, 0, 0, 0)
+mesh = SubResource("BoxMesh_6dtad")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.74, 0, 0, 0, 2.5, 0, 0, 0, 1.06, 0, 0, 0)
+shape = SubResource("BoxShape3D_lsan5")

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjpyo5axkiie8"]
+
+[ext_resource type="PackedScene" uid="uid://b6qo5x7x4dpd1" path="res://Assets/3D Models/HH_Art_GateAni_V2.fbx" id="1_3ygco"]
+
+[node name="HH_Art_GateAni_V2" instance=ExtResource("1_3ygco")]
+
+[node name="gate_door" parent="group1/gate" index="1"]
+transform = Transform3D(0.99999994, 0, -3.1402676e-11, 0, 1, 0, 3.1402676e-11, 0, 0.99999994, -5, 1.1387434, 0.7153974)
