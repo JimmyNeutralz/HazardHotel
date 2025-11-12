@@ -15,8 +15,6 @@ var rightDoorLoc2
 #Generator reference for determining if level is complete
 @onready var generator = $"../Generator"
 
-@onready var text_popup = $"../TextPopup/text"
-
 #Player sprite 
 #@onready var player_sprite = $PlayerSprite
 var player_sprite
@@ -349,7 +347,3 @@ func move_through_right_door(object, side):
 		move_to_object(object)
 		await get_tree().create_timer(1.5).timeout
 		move_to_object(rightDoorLoc1)
-
-func _on_text_colider_body_entered(body: Node3D) -> void:
-	if (body == $"../Player"):
-		text_popup.avoided_puddle()
