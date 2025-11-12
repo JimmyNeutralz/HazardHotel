@@ -3,7 +3,8 @@ extends Node3D
 #node path for generator
 @onready var indicator = $"../Indicators/GeneratorIndicator"  
 #path to gate node assigned in inspector
-@export var gate_node_path : NodePath                        
+@export var gate_node_path : NodePath 
+@onready var elevator_lock = $"../ElevatorDoor/ElevatorLock"                     
 
 var gate : Node3D = null
 var activated = false
@@ -34,6 +35,7 @@ func can_activate() -> bool:
 
 func activate_generator():
 	activated = true
+	$GeneratorAudio.play()
 	print("Generator activated!")
 
 	#change color

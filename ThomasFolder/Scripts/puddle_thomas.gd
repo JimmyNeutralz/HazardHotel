@@ -3,7 +3,8 @@ extends Node3D
 #Node paths
 @onready var area = $PuddleTrigger
 @onready var indicator = $"../Indicators/PuddleIndicator"
-@onready var puddleVisual = $HH_Art_Puddle_v1
+
+@onready var puddle_colider = $"../PuddleColider"
 
 #State
 var puddle_active = true
@@ -19,19 +20,12 @@ func _process(delta):
 	#Handle puddle deactivation input
 	if Input.is_action_just_pressed("deactivate_puddle") and puddle_active:
 		deactivate()
-	elif Input.is_action_just_pressed("deactivate_puddle") and !puddle_active:
-		activate()
-		
-		
+		puddle_colider.change_puddle_colider_status(puddle_active)
+
 func deactivate():
 	puddle_active = false
 	update_indicator_color()
 	print("Puddle deactivated!")
-	
-func activate():
-	puddle_active = true
-	update_indicator_color()
-	print("Puddle activated!")
 
 #Trigger logic: kills the player every time if puddle is active
 func _on_body_entered(body):
@@ -67,7 +61,5 @@ func update_indicator_color():
 
 	if puddle_active:
 		mat.albedo_color = Color.GREEN  # Activated / dangerous
-		puddleVisual.yellow_puddle()
 	else:
 		mat.albedo_color = Color.RED    # Deactivated / safe
-		puddleVisual.safe_puddle()
