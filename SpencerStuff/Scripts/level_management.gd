@@ -10,7 +10,7 @@ extends Node3D
 @onready var resume_button = $PauseMenu/ResumeButton
 @onready var quit_button = $PauseMenu/QuitButton
 
-@export var next_scene_path := "res://Donovan/MODIFIEDAlphaV4.tscn"
+@export var next_scene_path := "res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn"
 @export var main_menu_scene = "res://SpencerStuff/Scenes/MainMenu.tscn"
 
 @onready var button_audio_player: AudioStreamPlayer2D = $PauseMenu/ButtonAudioPlayer
@@ -25,8 +25,25 @@ var has_right_key: bool = false
 #Elevator door script reference
 @onready var elevator_door = $ElevatorDoor
 
+#Scene Objects (for color changing)
+@onready var Floor1LeftVisual = $FloorModules/HH_Art_PinchModularLeft_V3
+@onready var Floor1RightVisual = $FloorModules/HH_Art_PinchModularRight_V3
+@onready var Floor1MiddleVisual = $FloorModules/HH_Art_PinchModularMiddle_V3
+
 
 func _ready():
+	
+	#Change color of floor
+	if Floor1LeftVisual:
+		Floor1LeftVisual.coloredFloor1()
+
+	if Floor1RightVisual:
+		Floor1RightVisual.coloredFloor1()
+
+	if Floor1MiddleVisual:
+		Floor1MiddleVisual.coloredFloor1()
+
+	
 	#Start hidden
 	_set_pause_menu_visible(false)
 	if !fade_in_static:
@@ -94,7 +111,10 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		await get_tree().create_timer(4.0).timeout #4 seconds, adjust as desired
 
 		#Now fade and change scene
-		fade_in_static._exit_scene("res://SpencerStuff/Scenes/EndScene.tscn")
+		if get_tree().current_scene.name == "FirstPuzzle":
+			fade_in_static._exit_scene("res://SpencerStuff/Scenes/EndScene.tscn")
+		else:
+			fade_in_static._exit_scene("res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn")
 
 
 #Pause input

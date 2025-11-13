@@ -2,14 +2,14 @@ extends Node3D
 
 #Node paths
 @onready var lock_visual = $RightLock
-@onready var blocker = $RightArea
+@onready var blocker = $Door/RightArea
 
 var locked: bool = true
 var anim_player: AnimationPlayer = null
 
 func _ready() -> void:
 	lock_visual.visible = locked
-	blocker.visible = locked  #For seeing in-editor
+	#blocker.visible = locked  #For seeing in-editor
 
 	#Find AnimationPlayer recursively
 	anim_player = find_animation_player(self)

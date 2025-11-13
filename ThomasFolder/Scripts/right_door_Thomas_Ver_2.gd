@@ -3,6 +3,8 @@ extends Node3D
 @export var lock_node_path: NodePath
 @onready var lock_script = get_node(lock_node_path)
 @onready var player = $"../Player"
+@onready var location1 = $Location1
+@onready var location2 = $Location2
 
 var locked: bool = true
 var door_anim: AnimationPlayer
@@ -27,18 +29,18 @@ func move_past_right_door():
 	#print(blocker.global_position.x)
 	if (player.global_position.x < 1.5):
 		blocker.global_position.x = 0
-		player.move_to_adjacent_room(1)
+		player.move_through_right_door(location1, 1)
 		await get_tree().create_timer(1.5).timeout
 		blocker.global_position.x = 999
-		player.move_to_adjacent_room(1)
+		#player.move_to_adjacent_room(1)
 	elif (player.global_position.x > 1.5):
 		blocker.global_position.x = 1.5
-		player.move_to_adjacent_room(-1)
+		player.move_through_right_door(location1, -1)
 		await get_tree().create_timer(1.5).timeout
 		blocker.global_position.x = 999
-		player.move_to_adjacent_room(-1)
+		#player.move_to_adjacent_room(-1)
 		await get_tree().create_timer(1).timeout
-		player.move_to_room_center()
+		#player.move_to_room_center()
 
 func unlock_door():
 	locked = false
