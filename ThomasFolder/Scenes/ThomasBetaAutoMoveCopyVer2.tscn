@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_03u4j"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_cfou1"]
-[ext_resource type="Script" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="3_461pk"]
+[ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="3_461pk"]
 [ext_resource type="Texture2D" uid="uid://b8vx7fxb5dgvh" path="res://Assets/HH_Art_NewGuySprite_V2.png" id="4_xc1sq"]
 [ext_resource type="Texture2D" uid="uid://dju6sdtrap1fy" path="res://Assets/HH_Art_NewGuyWalkAnimSpriteSheet_V1.png" id="5_gki83"]
 [ext_resource type="AudioStream" uid="uid://m0ec6h28dj7q" path="res://Assets/Audio/Heavy Footsteps 1.wav" id="6_lthak"]
@@ -17,7 +17,7 @@
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="15_qnenn"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="16_wwtcg"]
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="17_4tf41"]
-[ext_resource type="Script" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="18_461pk"]
+[ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="18_461pk"]
 [ext_resource type="PackedScene" uid="uid://07r1c3ba45w3" path="res://Assets/3D Models/HH_Art_DoorOpenLeftAnim_V1.fbx" id="19_ws2np"]
 [ext_resource type="AudioStream" uid="uid://boghesc1nkhot" path="res://Assets/Audio/Wooden door creak 1.wav" id="20_ysn8p"]
 [ext_resource type="PackedScene" uid="uid://dqdrihkiouy1o" path="res://Assets/3D Models/HH_Art_locks_openAnim_V1.fbx" id="22_hl531"]
@@ -32,7 +32,7 @@
 [ext_resource type="Script" uid="uid://dsu5paxmt4ffg" path="res://ThomasFolder/Scripts/puddle_thomas.gd" id="30_jl74w"]
 [ext_resource type="PackedScene" uid="uid://clhua17db53gv" path="res://Assets/3D Models/HH_Art_Puddle_v1.fbx" id="31_r7msr"]
 [ext_resource type="AudioStream" uid="uid://cnudkj83doi6x" path="res://Assets/Audio/Electricution Death.wav" id="32_gc600"]
-[ext_resource type="Script" path="res://ThomasFolder/Scripts/fusebox_thomas.gd" id="33_461pk"]
+[ext_resource type="Script" uid="uid://bi8qac8toel0n" path="res://ThomasFolder/Scripts/fusebox_thomas.gd" id="33_461pk"]
 [ext_resource type="PackedScene" uid="uid://dllmxns1qx246" path="res://Scenes/FuseboxClose.tscn" id="34_311tm"]
 [ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="35_wvo5k"]
 [ext_resource type="Script" uid="uid://c4mengisurvep" path="res://ThomasFolder/Scripts/gate_thomas.gd" id="36_461pk"]
@@ -49,10 +49,10 @@
 [ext_resource type="PackedScene" uid="uid://dvl5ijrr8hfd0" path="res://Assets/3D Models/HH_Art_ClothChair_V2.fbx" id="47_3jbtr"]
 [ext_resource type="PackedScene" uid="uid://416n0yob35jg" path="res://Assets/3D Models/HH_Art_Shelf_V1.fbx" id="48_ei4q1"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="49_83jxj"]
-[ext_resource type="Texture2D" uid="uid://fcvedmnrv6c5" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="50_dp2l7"]
+[ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="50_dp2l7"]
 [ext_resource type="Script" uid="uid://coms123t1l50s" path="res://ThomasFolder/Scripts/puddle_colider_beta_ver.gd" id="50_jl74w"]
-[ext_resource type="Script" path="res://ThomasFolder/Scenes/swagula.gd" id="52_wx0ur"]
-[ext_resource type="Texture2D" uid="uid://uia0ueigussp" path="res://ThomasFolder/Sprites/HH_Art_SwagulaSprite_V1.png" id="53_jk5ip"]
+[ext_resource type="Script" uid="uid://dcuwijsutwksx" path="res://ThomasFolder/swagula.gd" id="52_wx0ur"]
+[ext_resource type="Texture2D" uid="uid://bmkj5h4vj715d" path="res://ThomasFolder/Sprites/HH_Art_SwagulaSprite_V1.png" id="53_jk5ip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oymrl"]
 atlas = ExtResource("5_gki83")
@@ -644,11 +644,9 @@ position = Vector2(99, -52.255)
 scale = Vector2(0.6282051, 0.6282051)
 texture = ExtResource("50_dp2l7")
 
-[node name="PuddleColider" type="Node3D" parent="." node_paths=PackedStringArray("text_colider", "physical_colider")]
+[node name="PuddleColider" type="Node3D" parent="."]
 transform = Transform3D(1.855, 0, 0, 0, 0.815, 0, 0, 0, 1.465, 8.505346, 0, 0)
 script = ExtResource("50_jl74w")
-text_colider = NodePath("TextColider")
-physical_colider = NodePath("PhysicalColider")
 
 [node name="TextColider" type="Area3D" parent="PuddleColider"]
 transform = Transform3D(1.0000004, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 0.030599117, 0.4503306, 0)

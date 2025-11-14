@@ -3,6 +3,9 @@ extends Node3D
 #NodePath
 @onready var indicator = $"../Indicators/FuseboxIndicator"
 
+@onready var text = $"../TextPopup"
+var dialogue_triggered = false
+
 #Path to puddle node
 @export var puddle_node_path : NodePath
 var puddle : Node = null
@@ -74,6 +77,12 @@ func activate():
 	update_indicator_color()
 	$FuseboxAudio.play()
 	print("Electric gate deactivated through fusebox!")
+	
+	#Dialogue functions
+	if !dialogue_triggered:
+		text.change_text_image(1)
+		text.set_text("Heard something deactivate from the left room, wonder what that could be?", 6)
+		dialogue_triggered = true
 
 	#Play animation if available
 	if anim_player:

@@ -16,24 +16,25 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	displayFor -= delta
-	print(text_label.global_position.y)
 	if (displayFor <= 0 and text_displayed and text_label.global_position.y > -74):
 		text_displayed = false
 		hide_textbox()
 
 func change_text_image(character):
+	#Switches the image of the character next to the dialogue box to new guy
 	if (character == 1):
 		character_image.texture = new_guy_text_sprite
+	#Switches the image of the character next to the dialogue box to swagula
 	elif (character == 2):
 		character_image.texture = swagula_text_sprite
 
-func set_text(func_text_input: String):
+func set_text(func_text_input: String, time_up: int):
 	text_label.text = func_text_input
 	text_input = func_text_input
 	#text_label.visible_characters = 0
 	if (!text_displayed):
 		show_textbox()
-	displayFor = 4
+	displayFor = time_up
 	type_text()
 
 func show_textbox():
