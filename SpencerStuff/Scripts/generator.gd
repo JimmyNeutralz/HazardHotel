@@ -21,6 +21,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("activate_generator") and not activated:
 		if can_activate():
 			activate_generator()
+			text.change_text_image(1)
 			text.set_text("Generator up and running for this floor. Better head back to the elevator.", 6)
 		else:
 			print("Cannot activate generator yet!")
