@@ -347,3 +347,23 @@ func move_through_right_door(object, side):
 		move_to_object(object)
 		await get_tree().create_timer(1.5).timeout
 		move_to_object(rightDoorLoc1)
+		
+func move_to_fusebox(object):
+	move_to_object(object)
+	await get_tree().create_timer(1.0).timeout
+	
+func move_to_gate(object1, object2, side):
+	if (side == 1):
+		move_to_object(object1)
+		await get_tree().create_timer(1.5).timeout
+		move_to_object(object2)
+		
+	if (side == -1):
+		move_to_object(object2)
+		await get_tree().create_timer(1.5).timeout
+		move_to_object(object1)
+
+func move_to_safe(safe, result):
+	move_to_object(safe)
+	await get_tree().create_timer(1.5).timeout
+	move_to_object(result)

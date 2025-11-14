@@ -2,6 +2,9 @@ extends Node3D
 
 #NodePath
 @onready var indicator = $"../Indicators/FuseboxIndicator"
+@onready var player = $"../Player"
+@onready var fuseboxStand = $standSpot
+@onready var uiNode = $FuseboxUI
 
 #Path to puddle node
 @export var puddle_node_path : NodePath
@@ -37,17 +40,21 @@ func _ready():
 		push_error("No AnimationPlayer found in fusebox!")
 
 func _process(delta):
-	if Input.is_action_just_pressed("activate_fusebox") and not activated:
-		if can_activate():
+	if Input.is_action_just_pressed("activate_fusebox"):
+		#if can_activate():
+			# Move player to fusebosx
+			player.move_to_fusebox(fuseboxStand)
+			# Play fusebox animation
+			uiNode.visible = false
 			activate()
-		else:
-			print("Cannot activate fusebox yet!")
+		#else:
+			#print("Cannot activate fusebox yet!")
 
 	elif Input.is_action_just_pressed("activate_fusebox") and activated:
-		if can_activate():
+		#if can_activate():
 			deactivate()
-		else:
-			print("Cannot activate fusebox yet!")
+		#else:
+			#print("Cannot activate fusebox yet!")
 			
 	elif Input.is_action_just_pressed("override_fusebox"):
 		deactivate()

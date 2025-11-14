@@ -4,7 +4,8 @@ extends Node3D
 @onready var indicator = $"../Indicators/GeneratorIndicator"  
 #path to gate node assigned in inspector
 @export var gate_node_path : NodePath 
-@onready var elevator_lock = $"../ElevatorDoor/ElevatorLock"                     
+@onready var elevator_lock = $"../ElevatorDoor/ElevatorLock"       
+@onready var uiNode = $"../Gate/GateUI"     
 
 var gate : Node3D = null
 var activated = false
@@ -19,6 +20,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("activate_generator") and not activated:
 		if can_activate():
 			activate_generator()
+			uiNode.visible = false
 		else:
 			print("Cannot activate generator yet!")
 

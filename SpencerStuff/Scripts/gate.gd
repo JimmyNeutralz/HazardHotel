@@ -6,6 +6,10 @@ extends Node3D
 @onready var collision = $StaticBody3D/CollisionShape3D
 @onready var gate_trigger = $GateTrigger
 @onready var indicator = $"../Indicators/GateIndicator"  #Indicator
+@onready var player = $"../Player"
+@onready var standLoc = $standSpot
+@onready var standLoc2 = $standSpot2
+@onready var uiNode = $GateUI
 
 
 #Fusebox reference
@@ -19,6 +23,7 @@ var anim_player: AnimationPlayer = null
 var electrified = true
 var raised = false
 var player_dead = false
+var isOnLeft = false
 
 func _ready():
 	if fusebox_indicator_path != null:
@@ -53,8 +58,21 @@ func _process(delta):
 
 	#Handle gate raising input
 	if Input.is_action_just_pressed("raise_gate") and not raised:
+		var tempSide = 0
 		if can_raise():
+			if (isOnLeft):
+				tempSide = -1
+				isOnLeft = false
+			else:
+				tempSide = 1
+				isOnLeft = true
+				
+			# Make character walk to gate
+			player.move_to_gate(standLoc, standLoc2, tempSide)
 			raise_gate()
+			uiNode.visible = false
+			
+			
 		else:
 			print("Cannot raise gate yet — still electrified!")
 			

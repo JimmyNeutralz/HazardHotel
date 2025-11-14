@@ -5,6 +5,9 @@ extends Node3D
 @onready var originSafeLoc = $SafeOrigin
 @onready var fuse = $fuse
 @onready var standSpot = $"../SafeLoc"
+@onready var player = $"../Player"
+@onready var poweredUINode = $SafePowered
+@onready var openUINode = $SafeOpen
 
 
 var anim_player: AnimationPlayer = null
@@ -27,6 +30,8 @@ func _process(delta):
 	elif Input.is_action_just_pressed("lower_safe") and safe_raised:
 		lower_safe()
 	elif Input.is_action_just_pressed("open_safe") and !is_safe_open:
+		# Move Player to Safe
+		player.move_to_safe(standSpot, )
 		open_safe()
 	elif Input.is_action_just_pressed("open_safe") and is_safe_open:
 		close_safe()
