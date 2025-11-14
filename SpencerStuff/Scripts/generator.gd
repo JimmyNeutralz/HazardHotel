@@ -6,7 +6,8 @@ extends Node3D
 @export var gate_node_path : NodePath 
 @onready var elevator_lock = $"../ElevatorDoor/ElevatorLock"       
 @onready var uiNode = $"../Gate/GateUI"     
-@onready var elevator_lock = $"../ElevatorDoor/ElevatorLock" 
+@onready var uiNode2 = $GeneratorUI
+
 
 @onready var text = $"../TextPopup"                    
 
@@ -24,6 +25,7 @@ func _process(delta):
 		if can_activate():
 			activate_generator()
 			uiNode.visible = false
+			uiNode2.visible = false
 			text.change_text_image(1)
 			text.set_text("Generator up and running for this floor. Better head back to the elevator.", 6)
 		else:

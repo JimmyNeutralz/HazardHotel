@@ -5,9 +5,13 @@ extends Node3D
 @onready var originSafeLoc = $SafeOrigin
 @onready var fuse = $fuse
 @onready var standSpot = $"../SafeLoc"
+@onready var uiNode1 = $SafePowered
+@onready var uiNode2 = $SafeOpen
 @onready var player = $"../Player"
-@onready var poweredUINode = $SafePowered
-@onready var openUINode = $SafeOpen
+@onready var fuseStandSpot = $"../HH_Art_Shelf_V1/FuseStandSpot"
+@onready var fuseBox = $"../FuseBox"
+@onready var dinograbber = $DinoGrabber
+@onready var fuse2 = $"../HH_Art_Fuse3_V1"
 
 
 var anim_player: AnimationPlayer = null
@@ -22,6 +26,9 @@ var is_safe_open = false
 func _ready():
 	realLoc = originSafeLoc.global_position
 	anim_player = find_animation_player(self)
+	uiNode1.visible = false
+	uiNode2.visible = false
+	
 
 func _process(delta):
 	#Handle safe deactivation input
@@ -30,8 +37,6 @@ func _process(delta):
 	elif Input.is_action_just_pressed("lower_safe") and safe_raised:
 		lower_safe()
 	elif Input.is_action_just_pressed("open_safe") and !is_safe_open:
-		# Move Player to Safe
-		player.move_to_safe(standSpot, )
 		open_safe()
 	elif Input.is_action_just_pressed("open_safe") and is_safe_open:
 		close_safe()
@@ -46,16 +51,6 @@ func raise_safe():
 	tween.kill()
 	print("Safe Raised!")
 	safe_raised = true
-
-func lower_safe():
-	
-	
-	var tween = create_tween()
-	tween.tween_property(self, "global_position", realLoc, 0.5)
-	#update_indicator_color()
-	await tween.finished
-	tween.kill()
-	print("Safe Lowered!")
 	
 	var tween2 = create_tween()
 	tween2.tween_property(fuse, "global_position", standSpot.global_position, 0.5)
@@ -63,7 +58,26 @@ func lower_safe():
 	tween2.kill()
 	safe_raised = false
 	has_slammed = true
+	await get_tree().create_timer(1.5).timeout
+	
+	player.move_to_object(standSpot)
+	await get_tree().create_timer(1.5).timeout
+	fuse.visible = false
+	
+	fuseBox.uiNode.visible = true
+	uiNode1.visible = true
+	uiNode2.visible = true
+	
+	
 
+func lower_safe():
+	
+	var tween = create_tween()
+	tween.tween_property(self, "global_position", realLoc, 0.5)
+	#update_indicator_color()
+	await tween.finished
+	tween.kill()
+	print("Safe Lowered!")
 
 ##Indicator Helpers
 #func make_indicator_material_unique():
@@ -94,7 +108,20 @@ func open_safe():
 		anim_player.play("Take 001")
 		print("Safe open!")
 		is_safe_open = true
+		await get_tree().create_timer(1.5).timeout
 		
+		var tween = create_tween()
+		tween.tween_property(dinograbber, "global_position", player.position, 1.0)
+		await get_tree().create_timer(1.0).timeout
+		dinograbber.visible = false
+		
+		player.move_to_object(fuseStandSpot)
+		await get_tree().create_timer(1.0).timeout
+		fuse2.visible = false
+		fuseBox.uiNode.visible = true;
+		
+		
+	
 		
 func close_safe():
 	if anim_player and anim_player.has_animation("Take 001"):
