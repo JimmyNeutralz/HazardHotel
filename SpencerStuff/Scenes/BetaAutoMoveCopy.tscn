@@ -1,4 +1,4 @@
-[gd_scene load_steps=279 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=284 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
 [ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="3_d23ut"]
@@ -58,15 +58,19 @@
 [ext_resource type="PackedScene" uid="uid://416n0yob35jg" path="res://Assets/3D Models/HH_Art_Shelf_V1.fbx" id="34_vp3xm"]
 [ext_resource type="Texture2D" uid="uid://d1ybbwvdlyuvl" path="res://Donovan/DonAssets/HH_Art_NodeYellow6_V1.png" id="37_l5ac0"]
 [ext_resource type="PackedScene" uid="uid://cndbloaafk7o2" path="res://Scenes/GateV3Close.tscn" id="39_4qti0"]
-[ext_resource type="PackedScene" uid="uid://b5nps7v01rrsb" path="res://Donovan/DonAssets/truePuddle.tscn" id="47_l5ac0"]
+[ext_resource type="PackedScene" path="res://Donovan/DonAssets/truePuddle.tscn" id="47_l5ac0"]
 [ext_resource type="AudioStream" uid="uid://c2k5mrmymj5tt" path="res://Assets/Audio/mx_level.wav" id="52_d23ut"]
 [ext_resource type="Texture2D" uid="uid://r115ddhk7il8" path="res://Assets/ElevatorLights1.png" id="58_hb643"]
 [ext_resource type="Script" uid="uid://6c438vjhjcdg" path="res://SpencerStuff/Scripts/true_floor_1_left.gd" id="59_hb643"]
-[ext_resource type="PackedScene" uid="uid://c0b6414twj21r" path="res://SpencerStuff/Scenes/TrueFloor1Right.tscn" id="60_hb643"]
-[ext_resource type="PackedScene" uid="uid://bks01evxkkb8r" path="res://SpencerStuff/Scenes/TrueFloor1Left.tscn" id="60_l5ac0"]
+[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/TrueFloor1Right.tscn" id="60_hb643"]
+[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/TrueFloor1Left.tscn" id="60_l5ac0"]
 [ext_resource type="Script" uid="uid://dkdpv7iwscrxv" path="res://SpencerStuff/Scripts/true_floor_1_right.gd" id="61_d4b2v"]
-[ext_resource type="PackedScene" uid="uid://qktkjuseo3vd" path="res://SpencerStuff/Scenes/TrueFloor1Middle.tscn" id="61_hb643"]
+[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/TrueFloor1Middle.tscn" id="61_hb643"]
 [ext_resource type="Script" uid="uid://5fe2miwdr0f" path="res://SpencerStuff/Scripts/true_floor_1_middle.gd" id="63_srmjg"]
+[ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="67_n0xvb"]
+[ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="68_l5kx3"]
+[ext_resource type="Script" uid="uid://dcuwijsutwksx" path="res://ThomasFolder/swagula.gd" id="69_v45om"]
+[ext_resource type="Texture2D" uid="uid://bmkj5h4vj715d" path="res://ThomasFolder/Sprites/HH_Art_SwagulaSprite_V1.png" id="70_hkw6q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0xvb"]
 atlas = ExtResource("4_5ono6")
@@ -1525,6 +1529,8 @@ size = Vector3(4.246231, 2.7391052, 2.2364502)
 [sub_resource type="BoxShape3D" id="BoxShape3D_tnwif"]
 size = Vector3(4.272888, 2.7320023, 2.4972534)
 
+[sub_resource type="BoxMesh" id="BoxMesh_n0xvb"]
+
 [node name="Node3D3" type="Node3D"]
 script = ExtResource("1_rw4lb")
 
@@ -2009,6 +2015,42 @@ transform = Transform3D(0.93178, 0, -0.36302355, 0, 1, 0, 0.36302355, 0, 0.93178
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.182118, 0, 11.840912)
 
 [node name="LevelMusicPlayer" type="AudioStreamPlayer2D" parent="."]
+[node name="TextPopup" type="Node2D" parent="."]
+script = ExtResource("67_n0xvb")
+
+[node name="text" type="Label" parent="TextPopup"]
+z_index = 1
+offset_left = 162.0
+offset_top = -96.255
+offset_right = 1082.0
+offset_bottom = -8.254997
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "hi"
+autowrap_mode = 3
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="TextPopup"]
+position = Vector2(621.875, -52.255)
+scale = Vector2(932.25, 95.99999)
+mesh = SubResource("BoxMesh_n0xvb")
+
+[node name="TextPopupCharacterImage" type="Sprite2D" parent="TextPopup"]
+position = Vector2(99, -52.255)
+scale = Vector2(0.6282051, 0.6282051)
+texture = ExtResource("68_l5kx3")
+
+[node name="Swagula" type="Node3D" parent="."]
+transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.4304154, 0, -0.3686844)
+script = ExtResource("69_v45om")
+
+[node name="Sprite3D" type="Sprite3D" parent="Swagula"]
+transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, 0, 0.96, 0)
+texture = ExtResource("70_hkw6q")
+
+[node name="swagula_marker" type="Marker3D" parent="Swagula"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.63076806)
+
+[node name="LevelMusicPlayer" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("52_d23ut")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
