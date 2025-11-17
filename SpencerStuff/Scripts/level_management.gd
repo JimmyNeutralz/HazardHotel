@@ -32,6 +32,8 @@ var has_right_key: bool = false
 
 @onready var LeftBulbVisual = $Lights/LeftBulb
 
+@onready var GeneratorVisual = $Generator/GeneratorVisual
+
 
 #test 
 
@@ -50,6 +52,10 @@ func _ready():
 	#Change color of lights
 	if LeftBulbVisual:
 		LeftBulbVisual.coloredLight()
+		
+	#Change color of generator
+	if GeneratorVisual:
+		GeneratorVisual.colored_generator()
 
 	
 	#Start hidden
