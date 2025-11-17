@@ -93,7 +93,9 @@ func _ready():
 
 func _physics_process(delta):
 	if is_dead:
+		stop_footsteps()
 		return
+
 		
 	if is_moving:
 		var direction = target_position - global_position
@@ -245,6 +247,7 @@ func kill_player():
 	if is_dead:
 		return
 	is_dead = true
+	stop_footsteps()
 	print("Player died!")
 	
 	#Stop any current animation
@@ -299,11 +302,14 @@ func respawn_player():
 		
 #Footstep helper functions
 func start_footsteps():
+	if is_dead:
+		return
 	if footsteps_playing or footstep_players.is_empty():
 		return
 	footsteps_playing = true
 	current_footstep_index = 0
 	footstep_players[current_footstep_index].play()
+
 
 func stop_footsteps():
 	footsteps_playing = false
