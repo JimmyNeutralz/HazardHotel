@@ -373,3 +373,14 @@ func move_to_safe(safe, result):
 	move_to_object(safe)
 	await get_tree().create_timer(1.5).timeout
 	move_to_object(result)
+	
+func play_stand_interact() -> void:
+	if not player_sprite:
+		return
+	if not player_sprite.sprite_frames.has_animation("StandInteract"):
+		push_warning("Missing animation: StandInteract")
+		return
+
+	stop_footsteps()
+	player_sprite.play("StandInteract")
+	await player_sprite.animation_finished
