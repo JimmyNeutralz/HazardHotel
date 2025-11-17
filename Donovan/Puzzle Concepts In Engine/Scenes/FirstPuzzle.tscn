@@ -1,4 +1,4 @@
-[gd_scene load_steps=455 format=3 uid="uid://bxhis68m30g1y"]
+[gd_scene load_steps=454 format=3 uid="uid://bxhis68m30g1y"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_sdfg4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_fwdfo"]
@@ -13,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://00yxdkue0xhd" path="res://Assets/Audio/Heavy Footsteps 5.wav" id="10_b8gbm"]
 [ext_resource type="AudioStream" uid="uid://16paor1ni7n6" path="res://Assets/Audio/Heavy Footsteps 6.wav" id="11_db7nr"]
 [ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="12_3ndj3"]
+[ext_resource type="PackedScene" uid="uid://dvfjb874tgo7j" path="res://Assets/3D Models/HH_Art_Elevator_V1.fbx" id="12_8m5md"]
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="13_fwueu"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="14_ql2xa"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="15_b8u1l"]
@@ -67,7 +68,7 @@
 [ext_resource type="PackedScene" uid="uid://r70numkvwsa7" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Shelf.tscn" id="50_jennx"]
 [ext_resource type="Texture2D" uid="uid://72bl5rodk7u4" path="res://Donovan/DonAssets/dinograbber.png" id="50_wo6si"]
 [ext_resource type="Script" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="50_yqei1"]
-[ext_resource type="Script" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="51_a4kpc"]
+[ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="51_a4kpc"]
 [ext_resource type="Texture2D" uid="uid://dhndjrnissj6d" path="res://Assets/HH_Art_NewGuyElectrocutionAnimSpriteSheet_V1.png" id="51_dx7fg"]
 [ext_resource type="Script" path="res://Donovan/lever.gd" id="51_jnpos"]
 [ext_resource type="PackedScene" uid="uid://cisk1tyg2skyv" path="res://Assets/3D Models/HH_Art_SafeAnim_V1.fbx" id="51_oboe2"]
@@ -106,12 +107,6 @@ size = Vector3(1, 3.166504, 2.3077393)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h7tgk"]
 size = Vector3(1, 3.1601563, 2.31604)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vp3xm"]
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_pokab"]
-material = SubResource("StandardMaterial3D_vp3xm")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_f063y"]
 size = Vector3(2.0975342, 0.8051758, 0.8741455)
@@ -3487,9 +3482,8 @@ texture = ExtResource("26_7elhi")
 
 [node name="Elevator" type="Node3D" parent="."]
 
-[node name="BlackBackground" type="MeshInstance3D" parent="Elevator"]
-transform = Transform3D(2.369905, 0, 0, 0, 2.6717234, 0, 0, 0, 0.16142267, 0, 1.3805507, -1.1959493)
-mesh = SubResource("BoxMesh_pokab")
+[node name="HH_Art_Elevator_V1" parent="Elevator" instance=ExtResource("12_8m5md")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 
 [node name="Generator" type="Node3D" parent="."]
 script = ExtResource("27_xsf64")
