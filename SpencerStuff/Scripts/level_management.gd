@@ -30,6 +30,8 @@ var has_right_key: bool = false
 @onready var Floor1RightVisual = $FloorModules/HH_Art_PinchModularRight_V3
 @onready var Floor1MiddleVisual = $FloorModules/HH_Art_PinchModularMiddle_V3
 
+@onready var LeftBulbVisual = $Lights/LeftBulb
+
 
 #test 
 
@@ -44,6 +46,10 @@ func _ready():
 
 	if Floor1MiddleVisual:
 		Floor1MiddleVisual.coloredFloor1()
+		
+	#Change color of lights
+	if LeftBulbVisual:
+		LeftBulbVisual.coloredLight()
 
 	
 	#Start hidden

@@ -1,10 +1,12 @@
-[gd_scene load_steps=453 format=3 uid="uid://bxhis68m30g1y"]
+[gd_scene load_steps=455 format=3 uid="uid://bxhis68m30g1y"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_sdfg4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_fwdfo"]
 [ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="3_a4kpc"]
 [ext_resource type="Texture2D" uid="uid://dju6sdtrap1fy" path="res://Assets/HH_Art_NewGuyWalkAnimSpriteSheet_V1.png" id="5_07n6f"]
 [ext_resource type="AudioStream" uid="uid://m0ec6h28dj7q" path="res://Assets/Audio/Heavy Footsteps 1.wav" id="6_1e2nn"]
+[ext_resource type="PackedScene" uid="uid://hp5fyy2ort5r" path="res://SpencerStuff/Scenes/TrueLeftBulb.tscn" id="6_hgbko"]
+[ext_resource type="Script" uid="uid://cy8mm1h78gy4h" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="7_8m5md"]
 [ext_resource type="AudioStream" uid="uid://dng3gwxycsiaa" path="res://Assets/Audio/Heavy Footsteps 2.wav" id="7_13oib"]
 [ext_resource type="AudioStream" uid="uid://o0muujmnhwuh" path="res://Assets/Audio/Heavy Footsteps 3.wav" id="8_kkify"]
 [ext_resource type="AudioStream" uid="uid://c2aek62urxvgj" path="res://Assets/Audio/Heavy Footsteps 4.wav" id="9_4o3qr"]
@@ -3406,14 +3408,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 1.5, 0.175)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9708586, 2.2142832)
 
-[node name="LeftBulb" parent="Lights" instance=ExtResource("14_ql2xa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 2.38, 0.175)
-
 [node name="MiddleBulb" parent="Lights" instance=ExtResource("14_ql2xa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 2.38, 0.175)
 
 [node name="RightBulb" parent="Lights" instance=ExtResource("14_ql2xa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 2.38, 0.175)
+
+[node name="LeftBulb" parent="Lights" instance=ExtResource("6_hgbko")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 2.38, 0.175)
+script = ExtResource("7_8m5md")
 
 [node name="Borders" type="Node3D" parent="."]
 
