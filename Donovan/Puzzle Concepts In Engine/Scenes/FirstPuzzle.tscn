@@ -1,4 +1,4 @@
-[gd_scene load_steps=454 format=3 uid="uid://bxhis68m30g1y"]
+[gd_scene load_steps=455 format=3 uid="uid://bxhis68m30g1y"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_sdfg4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_fwdfo"]
@@ -13,8 +13,9 @@
 [ext_resource type="AudioStream" uid="uid://00yxdkue0xhd" path="res://Assets/Audio/Heavy Footsteps 5.wav" id="10_b8gbm"]
 [ext_resource type="AudioStream" uid="uid://16paor1ni7n6" path="res://Assets/Audio/Heavy Footsteps 6.wav" id="11_db7nr"]
 [ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="12_3ndj3"]
-[ext_resource type="PackedScene" uid="uid://dvfjb874tgo7j" path="res://Assets/3D Models/HH_Art_Elevator_V1.fbx" id="12_8m5md"]
+[ext_resource type="PackedScene" uid="uid://hcmcgdk5of8u" path="res://SpencerStuff/Scenes/true_elevator.tscn" id="12_8m5md"]
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="13_fwueu"]
+[ext_resource type="Script" uid="uid://ocllpcynxxvx" path="res://SpencerStuff/Scripts/true_elevator.gd" id="13_pwu2m"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="14_ql2xa"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="15_b8u1l"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="16_2xwse"]
@@ -3484,6 +3485,7 @@ texture = ExtResource("26_7elhi")
 
 [node name="HH_Art_Elevator_V1" parent="Elevator" instance=ExtResource("12_8m5md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+script = ExtResource("13_pwu2m")
 
 [node name="Generator" type="Node3D" parent="."]
 script = ExtResource("27_xsf64")
