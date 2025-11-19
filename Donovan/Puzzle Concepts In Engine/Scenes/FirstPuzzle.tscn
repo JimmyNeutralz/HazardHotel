@@ -1,4 +1,4 @@
-[gd_scene load_steps=456 format=3 uid="uid://bxhis68m30g1y"]
+[gd_scene load_steps=457 format=3 uid="uid://bxhis68m30g1y"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_sdfg4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_fwdfo"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="12_3ndj3"]
 [ext_resource type="PackedScene" uid="uid://dvfjb874tgo7j" path="res://Assets/3D Models/HH_Art_Elevator_V1.fbx" id="12_8m5md"]
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="13_fwueu"]
+[ext_resource type="Script" path="res://SpencerStuff/Scripts/true_elevator.gd" id="13_o507h"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="14_ql2xa"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="15_b8u1l"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="16_2xwse"]
@@ -3379,10 +3380,10 @@ shader_parameter/distort_intensity = 0.0090000004275
 shader_parameter/noise_opacity = 0.118000005605
 shader_parameter/noise_speed = 2.0
 shader_parameter/static_noise_intensity = 0.0950000045125
-shader_parameter/aberration = -0.013999953165000023
+shader_parameter/aberration = -0.01399995316500002
 shader_parameter/brightness = 1.4
 shader_parameter/discolor = true
-shader_parameter/warp_amount = 1.2930000614175001
+shader_parameter/warp_amount = 1.2930000614175
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.670000031825
@@ -3509,6 +3510,7 @@ texture = ExtResource("26_7elhi")
 
 [node name="HH_Art_Elevator_V1" parent="Elevator" instance=ExtResource("12_8m5md")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+script = ExtResource("13_o507h")
 
 [node name="Generator" type="Node3D" parent="."]
 script = ExtResource("27_xsf64")
