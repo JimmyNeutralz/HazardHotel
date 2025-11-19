@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7p2cadteahj6"]
+
+[ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="1_owfdw"]
+
+[node name="HH_Art_Generator_V1_" instance=ExtResource("1_owfdw")]

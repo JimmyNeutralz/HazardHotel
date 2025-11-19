@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b8a4vlk13l0t6"]
 
 [ext_resource type="Texture2D" uid="uid://bw2bc6oekwjlp" path="res://Assets/icon.svg" id="1_hinho"]
-[ext_resource type="Script" path="res://Scripts/switch.gd" id="1_swbo4"]
+[ext_resource type="Script" uid="uid://bivrlb0xoig6y" path="res://PrototypeScripts/switch.gd" id="1_swbo4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_swbo4"]
 

@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5nps7v01rrsb"]
+
+[ext_resource type="PackedScene" uid="uid://clhua17db53gv" path="res://Assets/3D Models/HH_Art_Puddle_v1.fbx" id="1_i76w6"]
+[ext_resource type="Script" uid="uid://bh3bxlbf010bg" path="res://Donovan/DonAssets/true_puddle.gd" id="2_k33bg"]
+
+[node name="HH_Art_Puddle_v1" instance=ExtResource("1_i76w6")]
+script = ExtResource("2_k33bg")

@@ -18,4 +18,4 @@ func _on_body_entered(body: Node3D) -> void:
 	print("Func reached")
 	if (electrified):
 		print("If reached")
-		player.stop_moving()
+		player.die()

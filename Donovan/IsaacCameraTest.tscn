@@ -1,17 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2q1ihgpxku1c"]
+[gd_scene load_steps=7 format=3 uid="uid://d2q1ihgpxku1c"]
 
-[ext_resource type="Script" uid="uid://fsxlwmhc0w3f" path="res://Donovan/Scripts/testGame.gd" id="1_1niee"]
+[ext_resource type="Script" uid="uid://fsxlwmhc0w3f" path="res://Donovan/Scripts/testGame.gd" id="1_fi1dk"]
 [ext_resource type="PackedScene" uid="uid://wfw6yjg8j70b" path="res://Assets/3D Models/TESTPinch.fbx" id="1_rones"]
 [ext_resource type="PackedScene" uid="uid://bh6y0bgfi2ogx" path="res://Assets/3D Models/TESTPinch2.fbx" id="2_fian4"]
 [ext_resource type="PackedScene" uid="uid://bxr80dca277iy" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Character.tscn" id="3_qv7yq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_qv7yq"]
-size = Vector3(6.264679, 2.7803955, 2.210022)
+size = Vector3(6.264679, 2.7803955, 2.798111)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fi1dk"]
+size = Vector3(6.1146393, 1.4370117, 2.796173)
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_1niee")
+script = ExtResource("1_fi1dk")
 
 [node name="TransitionCamera" type="Camera3D" parent="."]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -2.5962174, 0.6371207, -0.20087744)
+fov = 54.240505
 
 [node name="TESTPinch" parent="." instance=ExtResource("1_rones")]
 transform = Transform3D(-3.059797e-06, 0, -30, 0, 30, 0, 70, 0, -1.3113416e-06, -0.30727053, -0.003076315, -14.710882)
@@ -39,27 +44,49 @@ transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -0.13789847, 0.08229
 
 [node name="CharacterBody3D" parent="." instance=ExtResource("3_qv7yq")]
 physics_interpolation_mode = 2
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6507735, 0.41822588, -0.22592425)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6507735, 0.41822588, 3.1064355)
 axis_lock_linear_y = true
 axis_lock_angular_y = true
 fall_acceleration = 0
 
-[node name="CharacterCamera" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -2.703309, 0.4710598, 0.014511108)
-fov = 42.499657
+[node name="CameraMark" type="Marker3D" parent="CharacterBody3D"]
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="CharacterCamera" type="Camera3D" parent="CharacterBody3D/CameraMark"]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -1.9542973, 0.19637525, 0.014511108)
+fov = 56.570488
+
+[node name="BigRoomTriggers" type="Node3D" parent="."]
+
+[node name="MiddleRoomTrigger" type="Area3D" parent="BigRoomTriggers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.7462554)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0041804314, 1.5177964, -3.214521)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigRoomTriggers/MiddleRoomTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0041804314, 1.5177964, -3.3167014)
 shape = SubResource("BoxShape3D_qv7yq")
 
-[node name="RoomCamera" type="Camera3D" parent="Area3D"]
-transform = Transform3D(1.192488e-08, 0, -0.99999994, 0, 1, 0, 0.99999994, 0, 1.192488e-08, -3.7594483, 0.9521947, -3.2155137)
-fov = 52.343994
+[node name="LargeRoomCamera" type="Marker3D" parent="BigRoomTriggers/MiddleRoomTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.589, 0.952, -3.2157445)
 
-[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
-[connection signal="area_exited" from="Area3D" to="." method="_on_area_3d_area_exited"]
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[node name="RoomCamera" type="Camera3D" parent="BigRoomTriggers/MiddleRoomTrigger/LargeRoomCamera"]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, -0.00029230118, 0.00019466877, 0.00023078918)
+fov = 60.544018
+
+[node name="RightDoorTrigger" type="Area3D" parent="BigRoomTriggers"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigRoomTriggers/RightDoorTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03376007, 0.8239362, -1.0578898)
+shape = SubResource("BoxShape3D_fi1dk")
+
+[node name="LeftDoorTrigger" type="Area3D" parent="BigRoomTriggers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.523546)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="BigRoomTriggers/LeftDoorTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03376007, 0.8239362, -0.15980339)
+shape = SubResource("BoxShape3D_fi1dk")
+
+[connection signal="area_entered" from="BigRoomTriggers/MiddleRoomTrigger" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="BigRoomTriggers/MiddleRoomTrigger" to="." method="_on_area_3d_area_exited"]
+[connection signal="body_entered" from="BigRoomTriggers/MiddleRoomTrigger" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="BigRoomTriggers/MiddleRoomTrigger" to="CharacterBody3D/CameraMark/CharacterCamera" method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="BigRoomTriggers/MiddleRoomTrigger" to="." method="_on_area_3d_body_exited"]
+[connection signal="body_exited" from="BigRoomTriggers/MiddleRoomTrigger" to="CharacterBody3D/CameraMark/CharacterCamera" method="_on_area_3d_body_exited"]
