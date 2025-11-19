@@ -9,6 +9,8 @@ var displayFor = 0
 var new_guy_text_sprite = load("res://ThomasFolder/Sprites/Budget New Guy.png")
 var swagula_text_sprite = load("res://ThomasFolder/Sprites/Budget Swagula.png")
 var building_owner_text_sprite = load("res://ThomasFolder/Sprites/Budget Building Owner.png")
+var werewolf_text_sprite = load("res://ThomasFolder/Sprites/Budget Werewolf.png")
+
 
 var text_displayed = false
 
@@ -30,6 +32,8 @@ func change_text_image(character):
 		character_image.texture = swagula_text_sprite
 	elif (character == 3):
 		character_image.texture = building_owner_text_sprite
+	elif (character == 4):
+		character_image.texture = werewolf_text_sprite
 
 func set_text(func_text_input: String, time_up: int):
 	text_label.text = func_text_input

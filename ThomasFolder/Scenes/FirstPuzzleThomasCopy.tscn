@@ -1,4 +1,4 @@
-[gd_scene load_steps=456 format=3 uid="uid://dxod6hguur4ti"]
+[gd_scene load_steps=458 format=3 uid="uid://dxod6hguur4ti"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_xoxpi"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_41gdk"]
@@ -81,10 +81,12 @@
 [ext_resource type="AudioStream" uid="uid://c2k5mrmymj5tt" path="res://Assets/Audio/mx_level.wav" id="79_mpf1s"]
 [ext_resource type="Script" uid="uid://cqxfonrb48820" path="res://SpencerStuff/Scripts/puddle.gd" id="80_2ori8"]
 [ext_resource type="PackedScene" path="res://Donovan/DonAssets/truePuddle.tscn" id="81_0fehy"]
-[ext_resource type="Script" uid="uid://coxyqphoapit8" path="res://ThomasFolder/Scenes/talk_to_building_owner.gd" id="82_7spkx"]
+[ext_resource type="Script" uid="uid://coxyqphoapit8" path="res://ThomasFolder/Scripts/talk_to_building_owner.gd" id="82_7spkx"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="82_nsqae"]
 [ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="83_rgf6o"]
 [ext_resource type="Texture2D" uid="uid://duslj11ne4i44" path="res://ThomasFolder/Sprites/HH_Art_BuildingOwnerSprite_V1.png" id="83_vaun8"]
+[ext_resource type="Script" uid="uid://183kiid28qmk" path="res://ThomasFolder/Scenes/werewolf.gd" id="86_vxbyq"]
+[ext_resource type="Texture2D" uid="uid://j5rb1oejj3mb" path="res://ThomasFolder/Sprites/HH_Art_WerewolfSprite_V1.png" id="87_olett"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -3973,6 +3975,17 @@ mesh = SubResource("BoxMesh_63m68")
 position = Vector2(99, -52.255)
 scale = Vector2(0.6282051, 0.6282051)
 texture = ExtResource("83_rgf6o")
+
+[node name="Werewolf" type="Node3D" parent="."]
+transform = Transform3D(-1.0000001, 0, -8.742278e-08, 0, 1, 0, 8.7422784e-08, 0, -1, 1.2525885, -0.12117565, 5.1123614)
+script = ExtResource("86_vxbyq")
+
+[node name="Sprite3D" type="Sprite3D" parent="Werewolf"]
+transform = Transform3D(-0.345, 0, -3.016086e-08, 0, 0.345, 0, 3.016086e-08, 0, -0.345, 2.3841858e-07, 0.9599999, 5.3712015)
+texture = ExtResource("87_olett")
+
+[node name="werewolf_marker" type="Marker3D" parent="Werewolf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020080805, 0, 4.6132965)
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
