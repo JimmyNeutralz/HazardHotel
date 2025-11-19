@@ -64,7 +64,7 @@ scale = Vector2(-0.43788034, 0.43788034)
 texture = ExtResource("5_s17u1")
 
 [node name="HhArtLogoV4" type="Sprite2D" parent="."]
-position = Vector2(591, 165)
+position = Vector2(575, 167)
 scale = Vector2(0.34324765, 0.3324676)
 texture = ExtResource("6_a6xwe")
 

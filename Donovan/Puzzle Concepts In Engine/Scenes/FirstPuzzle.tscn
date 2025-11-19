@@ -1948,7 +1948,7 @@ albedo_color = Color(0.9030753, 0, 0.07757329, 1)
 material = SubResource("StandardMaterial3D_idyij")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k700v"]
-size = Vector3(0.25447464, 2.046997, 1.7373047)
+size = Vector3(0.018940926, 2.046997, 1.7373047)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fqss4"]
 size = Vector3(4.226074, 2.7891846, 2.2185059)
@@ -3622,7 +3622,7 @@ script = ExtResource("41_c0qj2")
 [node name="Area3D" type="Area3D" parent="ElevatorDoor"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ElevatorDoor/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020044327, 1.1346064, -0.43408203)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.023167133, 1.1346064, -0.43408203)
 shape = SubResource("BoxShape3D_k700v")
 
 [node name="HH_Art_ElevatorGate_V1" parent="ElevatorDoor" instance=ExtResource("42_bbw7d")]
