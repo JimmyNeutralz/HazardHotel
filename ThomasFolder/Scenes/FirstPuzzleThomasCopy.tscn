@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="10_cmguo"]
 [ext_resource type="Texture2D" uid="uid://bjgv41ufsr321" path="res://Assets/key.png" id="11_w53ga"]
 [ext_resource type="PackedScene" uid="uid://dvfjb874tgo7j" path="res://Assets/3D Models/HH_Art_Elevator_V1.fbx" id="12_ein0o"]
-[ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="13_078wd"]
+[ext_resource type="Script" uid="uid://ttvabmbdyfb5" path="res://ThomasFolder/Scripts/generatorThomasVer.gd" id="13_vxbyq"]
 [ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="14_rndci"]
 [ext_resource type="AudioStream" uid="uid://bt827ljr2p2uk" path="res://Assets/Audio/Switch.wav" id="15_emn4i"]
 [ext_resource type="Texture2D" uid="uid://cfo2bftv6y7qy" path="res://Donovan/DonAssets/HH_Art_NodeBlue2_V1.png" id="16_r4ti7"]
@@ -3490,7 +3490,7 @@ texture = ExtResource("11_w53ga")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 
 [node name="Generator" type="Node3D" parent="."]
-script = ExtResource("13_078wd")
+script = ExtResource("13_vxbyq")
 gate_node_path = NodePath("../Gate")
 
 [node name="GeneratorModel" parent="Generator" instance=ExtResource("14_rndci")]
