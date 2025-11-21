@@ -10,5 +10,5 @@ func _process(delta: float) -> void:
 	if (!talked_with):
 		if ((player.global_position.x > (werewolf_marker.global_position.x - 0.5)) and (player.global_position.x < (werewolf_marker.global_position.x + 0.5))):
 			text_popup.change_text_image(4)
-			text_popup.set_text("You made it this far, but can you save this hotel? No fr tho, can you please?", 6)
+			text_popup.set_text("I would normally be against sleeping in a place like this, but it beats my old apartment.", 6)
 			talked_with = true

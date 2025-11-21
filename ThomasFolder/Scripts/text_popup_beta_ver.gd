@@ -36,6 +36,8 @@ func change_text_image(character):
 		character_image.texture = werewolf_text_sprite
 
 func set_text(func_text_input: String, time_up: int):
+	text_input = ""
+	show_textbox()
 	text_label.text = func_text_input
 	text_input = func_text_input
 	#text_label.visible_characters = 0

@@ -10,5 +10,5 @@ func _process(delta: float) -> void:
 	if (!talked_with):
 		if ((player.global_position.x > (owner_marker.global_position.x - 0.5)) and (player.global_position.x < (owner_marker.global_position.x + 0.5))):
 			text_popup.change_text_image(3)
-			text_popup.set_text("I miss my wife", 4)
+			text_popup.set_text("Glad you and your electrician friend made it here. If you want to get paid, you’ll need to activate each of the generators on each floor.", 7)
 			talked_with = true
