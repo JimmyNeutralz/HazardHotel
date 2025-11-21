@@ -6,6 +6,6 @@ extends Node3D
 
 
 func _process(delta):
-	if Input.is_action_just_pressed("raise_safe"):
+	if Input.is_action_just_pressed("lower_safe"):
 		uiNode.visible = false
 		

@@ -176,7 +176,14 @@ func move_to_room_center():
 			player_sprite.play("Walk")
 			start_footsteps()
 
-
+#Play the interact animation
+func interact():
+	if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("CrouchInteract"):
+		print("Crouch anim started")
+		player_sprite.play("CrouchInteract")
+		await player_sprite.animation_finished
+		print("Crouch animation played!")
+	
 #For moving between rooms
 func move_to_adjacent_room(direction: int):
 	var current = get_current_room()

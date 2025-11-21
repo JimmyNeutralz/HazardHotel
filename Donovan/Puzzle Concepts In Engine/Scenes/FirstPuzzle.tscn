@@ -24,7 +24,7 @@
 [ext_resource type="PackedScene" uid="uid://lgf83rme0ewf" path="res://Assets/3D Models/HH_Art_DoorOpenRightAnim_v1.fbx" id="24_es108"]
 [ext_resource type="AudioStream" uid="uid://c8v5bc6sw71sl" path="res://Assets/Audio/Wooden door creak 2.wav" id="25_gpfu8"]
 [ext_resource type="Texture2D" uid="uid://bjgv41ufsr321" path="res://Assets/key.png" id="26_7elhi"]
-[ext_resource type="Script" path="res://Donovan/Puzzle Concepts In Engine/Scenes/dumbwaiter.gd" id="26_rebln"]
+[ext_resource type="Script" uid="uid://cer86br3tg2y" path="res://Donovan/Puzzle Concepts In Engine/Scenes/dumbwaiter.gd" id="26_rebln"]
 [ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="27_xsf64"]
 [ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="28_1lnfs"]
 [ext_resource type="AudioStream" uid="uid://bt827ljr2p2uk" path="res://Assets/Audio/Switch.wav" id="29_mq0bt"]
@@ -66,7 +66,7 @@
 [ext_resource type="Script" uid="uid://vihp4thtac55" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="50_yqei1"]
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="51_a4kpc"]
 [ext_resource type="Texture2D" uid="uid://dhndjrnissj6d" path="res://Assets/HH_Art_NewGuyElectrocutionAnimSpriteSheet_V1.png" id="51_dx7fg"]
-[ext_resource type="Script" path="res://Donovan/lever.gd" id="51_jnpos"]
+[ext_resource type="Script" uid="uid://bk7yal7eu1r4r" path="res://Donovan/lever.gd" id="51_jnpos"]
 [ext_resource type="PackedScene" uid="uid://cisk1tyg2skyv" path="res://Assets/3D Models/HH_Art_SafeAnim_V1.fbx" id="51_oboe2"]
 [ext_resource type="Texture2D" uid="uid://1jo86vkwjfqa" path="res://Assets/HH_Art_NewGuyIdle1SpriteSheet_V1.png" id="52_0eypt"]
 [ext_resource type="Texture2D" uid="uid://dej5gblwfl77" path="res://Assets/HH_Art_NewGuyStandInteractAnimSpriteSheet_V1.png" id="53_2wdvl"]
@@ -3370,6 +3370,11 @@ script = ExtResource("1_sdfg4")
 [node name="SafeLoc" type="Marker3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.1276536, 0.114557385, 0.07687223)
 
+[node name="fuse" type="CSGCylinder3D" parent="."]
+transform = Transform3D(-1, 4.371139e-08, 4.3711385e-08, -4.371139e-08, -4.371139e-08, -1, -4.371139e-08, -1, 4.371139e-08, 7.6199594, 2.7247448, 0.133)
+radius = 0.04345703
+height = 0.30163574
+
 [node name="HH_Art_Pinch_V2" parent="." instance=ExtResource("2_fwdfo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007326126, 0.0070431232, -0.0001385212)
 visible = false
@@ -3726,18 +3731,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15805054, 0, 11.9879265)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2088175, 0, -12.0396185)
 
 [node name="Safe" parent="." instance=ExtResource("51_oboe2")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.9842863, 1.3367916, 0.133)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.9842863, 1.3409098, 0.133)
 script = ExtResource("35_oboe2")
 
 [node name="UpperSafe" type="Marker3D" parent="Safe"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2812498, 0)
 
 [node name="SafeOrigin" type="Marker3D" parent="Safe"]
-
-[node name="fuse" type="CSGCylinder3D" parent="Safe"]
-transform = Transform3D(0, -1, 4.3711385e-08, -4.371139e-08, -4.371139e-08, -1, 1, 0, -4.371139e-08, 1.4901161e-08, 1.3879532, 0.36432695)
-radius = 0.04345703
-height = 0.30163574
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Safe"]
 
@@ -3880,7 +3880,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.28559738, 1.050703
 shaded = true
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_wc2x2")
-animation = &"Idle"
+animation = &"CrouchInteract"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.008636475, 0.0017394423, 1.0423431)
@@ -3959,6 +3959,9 @@ mesh = SubResource("BoxMesh_63m68")
 position = Vector2(99, -52.255)
 scale = Vector2(0.6282051, 0.6282051)
 texture = ExtResource("76_poayu")
+
+[node name="FuseSafeLoc" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6298676, 1.214671, 0)
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
