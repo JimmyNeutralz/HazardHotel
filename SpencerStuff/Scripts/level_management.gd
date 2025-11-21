@@ -30,6 +30,14 @@ var has_right_key: bool = false
 @onready var Floor1RightVisual = $FloorModules/HH_Art_PinchModularRight_V3
 @onready var Floor1MiddleVisual = $FloorModules/HH_Art_PinchModularMiddle_V3
 
+@onready var LeftBulbVisual = $Lights/LeftBulb
+
+@onready var GeneratorVisual = $Generator/GeneratorVisual
+
+@onready var ElevatorVisual = $Elevator/HH_Art_Elevator_V1
+
+
+#test 
 
 func _ready():
 	
@@ -42,6 +50,18 @@ func _ready():
 
 	if Floor1MiddleVisual:
 		Floor1MiddleVisual.coloredFloor1()
+		
+	#Change color of lights
+	if LeftBulbVisual:
+		LeftBulbVisual.coloredLight()
+		
+	#Change color of generator
+	if GeneratorVisual:
+		GeneratorVisual.colored_generator()
+		
+	#Change color of elevator
+	if ElevatorVisual:
+		ElevatorVisual.coloredElevator()
 
 	
 	#Start hidden
@@ -111,10 +131,13 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		await get_tree().create_timer(4.0).timeout #4 seconds, adjust as desired
 
 		#Now fade and change scene
-		if get_tree().current_scene.name == "FirstPuzzle":
+		var path := get_tree().current_scene.scene_file_path
+
+		if path == "res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn":
 			fade_in_static._exit_scene("res://SpencerStuff/Scenes/EndScene.tscn")
 		else:
 			fade_in_static._exit_scene("res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn")
+
 
 
 #Pause input

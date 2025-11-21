@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bcperlnt1ab0f" path="res://Assets/HH_Art_HandGuySprite_v1.png" id="10_rtv5k"]
 [ext_resource type="Texture2D" uid="uid://b8vx7fxb5dgvh" path="res://Assets/HH_Art_NewGuySprite_V2.png" id="11_lektt"]
 [ext_resource type="Texture2D" uid="uid://k5km3031kocw" path="res://Assets/HH_Art_HandymanSprite_V1.png" id="11_wa78v"]
-[ext_resource type="Texture2D" uid="uid://cxlvo1vndyp7n" path="res://Assets/HH_Art_Logo_V4_.png" id="12_lektt"]
+[ext_resource type="Texture2D" uid="uid://bauyhs06poct8" path="res://Assets/HH_Art_Logo_V5_.png" id="12_lektt"]
 
 [node name="EndScene" type="CanvasLayer"]
 
@@ -70,8 +70,8 @@ scale = Vector2(0.3599999, 0.3599999)
 texture = ExtResource("9_u1dyk")
 
 [node name="HhArtHandGuySpriteV1" type="Sprite2D" parent="."]
-position = Vector2(584.00006, 302.00003)
-rotation = 2.870925
+position = Vector2(575.99994, 308)
+rotation = 2.9406378
 scale = Vector2(0.29285717, 0.29285717)
 texture = ExtResource("10_rtv5k")
 
@@ -86,6 +86,7 @@ scale = Vector2(0.591, 0.559)
 texture = ExtResource("11_lektt")
 
 [node name="HhArtLogoV4" type="Sprite2D" parent="."]
-position = Vector2(401.00003, 169)
-scale = Vector2(0.2183333, 0.21833332)
+position = Vector2(411, 158.99998)
+rotation = -0.18001494
+scale = Vector2(0.30175924, 0.30175924)
 texture = ExtResource("12_lektt")

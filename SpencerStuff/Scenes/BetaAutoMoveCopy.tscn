@@ -1,4 +1,4 @@
-[gd_scene load_steps=284 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=288 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
 [ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="3_d23ut"]
@@ -25,7 +25,8 @@
 [ext_resource type="Texture2D" uid="uid://bjgv41ufsr321" path="res://Assets/key.png" id="16_4wqvp"]
 [ext_resource type="AudioStream" uid="uid://boghesc1nkhot" path="res://Assets/Audio/Wooden door creak 1.wav" id="16_um0bm"]
 [ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="17_ml83m"]
-[ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="18_83nm1"]
+[ext_resource type="PackedScene" uid="uid://hp5fyy2ort5r" path="res://SpencerStuff/Scenes/TrueLeftBulb.tscn" id="17_v45om"]
+[ext_resource type="Script" uid="uid://cy8mm1h78gy4h" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="18_hkw6q"]
 [ext_resource type="AudioStream" uid="uid://c8v5bc6sw71sl" path="res://Assets/Audio/Wooden door creak 2.wav" id="19_t4vl1"]
 [ext_resource type="Script" uid="uid://cqxfonrb48820" path="res://SpencerStuff/Scripts/puddle.gd" id="19_twwqf"]
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="21_d23ut"]
@@ -38,7 +39,7 @@
 [ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="25_luouv"]
 [ext_resource type="Texture2D" uid="uid://cfo2bftv6y7qy" path="res://Donovan/DonAssets/HH_Art_NodeBlue2_V1.png" id="26_5o0ex"]
 [ext_resource type="Script" uid="uid://d3wg6c5iqxhyc" path="res://SpencerStuff/Scripts/Lock.gd" id="26_gpvrk"]
-[ext_resource type="Script" uid="uid://v1vrjjfux1ew" path="res://ThomasFolder/Scripts/right_door_Thomas_Ver_2.gd" id="26_tj4bt"]
+[ext_resource type="Script" path="res://ThomasFolder/Scripts/right_door_Thomas_Ver_2.gd" id="26_tj4bt"]
 [ext_resource type="Texture2D" uid="uid://0q8k8ovc0tm5" path="res://Donovan/DonAssets/HH_Art_NodeCyan2_V1.png" id="27_sgweo"]
 [ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="27_t4vl1"]
 [ext_resource type="Texture2D" uid="uid://5lvcfq2duxw0" path="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png" id="27_v32js"]
@@ -58,9 +59,14 @@
 [ext_resource type="PackedScene" uid="uid://416n0yob35jg" path="res://Assets/3D Models/HH_Art_Shelf_V1.fbx" id="34_vp3xm"]
 [ext_resource type="Texture2D" uid="uid://d1ybbwvdlyuvl" path="res://Donovan/DonAssets/HH_Art_NodeYellow6_V1.png" id="37_l5ac0"]
 [ext_resource type="PackedScene" uid="uid://cndbloaafk7o2" path="res://Scenes/GateV3Close.tscn" id="39_4qti0"]
+[ext_resource type="PackedScene" uid="uid://hcmcgdk5of8u" path="res://SpencerStuff/Scenes/true_elevator.tscn" id="43_cr5v7"]
+[ext_resource type="Script" uid="uid://ocllpcynxxvx" path="res://SpencerStuff/Scripts/true_elevator.gd" id="44_k6q8h"]
+[ext_resource type="Script" uid="uid://bgwka22ik84yr" path="res://SpencerStuff/Scripts/true_generator.gd" id="46_cr5v7"]
+[ext_resource type="PackedScene" uid="uid://c7p2cadteahj6" path="res://SpencerStuff/Scenes/true_generator.tscn" id="46_en5xs"]
 [ext_resource type="PackedScene" uid="uid://b5nps7v01rrsb" path="res://Donovan/DonAssets/truePuddle.tscn" id="47_l5ac0"]
 [ext_resource type="AudioStream" uid="uid://c2k5mrmymj5tt" path="res://Assets/Audio/mx_level.wav" id="52_d23ut"]
-[ext_resource type="Texture2D" uid="uid://r115ddhk7il8" path="res://Assets/ElevatorLights1.png" id="58_hb643"]
+[ext_resource type="PackedScene" uid="uid://dp2ouqtbbitt6" path="res://Assets/3D Models/HH_Art_ElevatorSign_V1.fbx" id="57_n0xvb"]
+[ext_resource type="Texture2D" uid="uid://dm1l50itnllc5" path="res://Assets/3D Models/HH_Art_ElevatorSign_Floor1_V1.fbx.png" id="58_l5kx3"]
 [ext_resource type="Script" uid="uid://6c438vjhjcdg" path="res://SpencerStuff/Scripts/true_floor_1_left.gd" id="59_hb643"]
 [ext_resource type="PackedScene" uid="uid://c0b6414twj21r" path="res://SpencerStuff/Scenes/TrueFloor1Right.tscn" id="60_hb643"]
 [ext_resource type="PackedScene" uid="uid://bks01evxkkb8r" path="res://SpencerStuff/Scenes/TrueFloor1Left.tscn" id="60_l5ac0"]
@@ -69,7 +75,7 @@
 [ext_resource type="Script" uid="uid://5fe2miwdr0f" path="res://SpencerStuff/Scripts/true_floor_1_middle.gd" id="63_srmjg"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="67_n0xvb"]
 [ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="68_l5kx3"]
-[ext_resource type="Script" uid="uid://dcuwijsutwksx" path="res://ThomasFolder/swagula.gd" id="69_v45om"]
+[ext_resource type="Script" path="res://ThomasFolder/swagula.gd" id="69_v45om"]
 [ext_resource type="Texture2D" uid="uid://bmkj5h4vj715d" path="res://ThomasFolder/Sprites/HH_Art_SwagulaSprite_V1.png" id="70_hkw6q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0xvb"]
@@ -1491,12 +1497,6 @@ size = Vector3(1, 3.166504, 2.3077393)
 [sub_resource type="BoxShape3D" id="BoxShape3D_h7tgk"]
 size = Vector3(1, 3.1601563, 2.31604)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vp3xm"]
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_pokab"]
-material = SubResource("StandardMaterial3D_vp3xm")
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_f063y"]
 size = Vector3(2.0975342, 0.8051758, 0.8741455)
 
@@ -1518,7 +1518,7 @@ albedo_color = Color(0.9030753, 0, 0.07757329, 1)
 material = SubResource("StandardMaterial3D_idyij")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k700v"]
-size = Vector3(0.25447464, 2.046997, 1.7373047)
+size = Vector3(0.035516083, 2.046997, 1.7373047)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fqss4"]
 size = Vector3(4.226074, 2.7891846, 2.2185059)
@@ -1602,14 +1602,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 1.5, 0.175)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9708586, 2.2142832)
 
-[node name="LeftBulb" parent="Lights" instance=ExtResource("6_d7lxd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 2.38, 0.175)
-
 [node name="MiddleBulb" parent="Lights" instance=ExtResource("6_d7lxd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 2.38, 0.175)
 
 [node name="RightBulb" parent="Lights" instance=ExtResource("6_d7lxd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 2.38, 0.175)
+
+[node name="LeftBulb" parent="Lights" instance=ExtResource("17_v45om")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 2.38, 0.175)
+script = ExtResource("18_hkw6q")
 
 [node name="Borders" type="Node3D" parent="."]
 
@@ -1765,22 +1766,13 @@ texture = ExtResource("16_4wqvp")
 
 [node name="Elevator" type="Node3D" parent="."]
 
-[node name="BlackBackground" type="MeshInstance3D" parent="Elevator"]
-transform = Transform3D(2.369905, 0, 0, 0, 2.6717234, 0, 0, 0, 0.16142267, 0, 1.3805507, -1.1959493)
-mesh = SubResource("BoxMesh_pokab")
+[node name="HH_Art_Elevator_V1" parent="Elevator" instance=ExtResource("43_cr5v7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
+script = ExtResource("44_k6q8h")
 
 [node name="Generator" type="Node3D" parent="."]
 script = ExtResource("17_ml83m")
 gate_node_path = NodePath("../Gate")
-
-[node name="GeneratorModel" parent="Generator" instance=ExtResource("18_83nm1")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9929323, 0, -0.16973802)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Generator/GeneratorModel"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Generator/GeneratorModel/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5487671, 0.4333496, 0.0010375977)
-shape = SubResource("BoxShape3D_f063y")
 
 [node name="GeneratorAudio" type="AudioStreamPlayer3D" parent="Generator"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9929323, 0, -0.16973802)
@@ -1791,6 +1783,17 @@ transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 
 sprite_frames = SubResource("SpriteFrames_lyrbo")
 animation = &"Yellow6"
 autoplay = "Yellow6"
+
+[node name="GeneratorVisual" parent="Generator" instance=ExtResource("46_en5xs")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.993, 0, -0.17)
+script = ExtResource("46_cr5v7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Generator/GeneratorVisual"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00026197731, 0, -6.771088e-05)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Generator/GeneratorVisual/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5487671, 0.4333496, 0.0010375977)
+shape = SubResource("BoxShape3D_f063y")
 
 [node name="Puddle" type="Node3D" parent="."]
 script = ExtResource("19_twwqf")
@@ -1908,7 +1911,7 @@ script = ExtResource("29_u72or")
 [node name="Area3D" type="Area3D" parent="ElevatorDoor"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ElevatorDoor/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020044327, 1.1346064, -0.43408203)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05287531, 1.1346064, -0.43408203)
 shape = SubResource("BoxShape3D_k700v")
 
 [node name="HH_Art_ElevatorGate_V1" parent="ElevatorDoor" instance=ExtResource("29_pokab")]
@@ -1920,9 +1923,12 @@ sprite_frames = SubResource("SpriteFrames_lyrbo")
 animation = &"Cyan5"
 autoplay = "Cyan5"
 
-[node name="FloorIndicator" type="Sprite3D" parent="ElevatorDoor"]
-transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.12634847, 1.9868755, -0.8119345)
-texture = ExtResource("58_hb643")
+[node name="HH_Art_ElevatorSign_V1" parent="ElevatorDoor" instance=ExtResource("57_n0xvb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.112, 1.68)
+
+[node name="ElevatorSignFloor1" type="Sprite3D" parent="ElevatorDoor/HH_Art_ElevatorSign_V1"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 2.38, -2.49)
+texture = ExtResource("58_l5kx3")
 
 [node name="RoomDetectors" type="Node3D" parent="."]
 
@@ -2015,6 +2021,7 @@ transform = Transform3D(0.93178, 0, -0.36302355, 0, 1, 0, 0.36302355, 0, 0.93178
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.182118, 0, 11.840912)
 
 [node name="LevelMusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("52_d23ut")
 
 [node name="TextPopup" type="Node2D" parent="."]
 script = ExtResource("67_n0xvb")
@@ -2050,9 +2057,6 @@ texture = ExtResource("70_hkw6q")
 
 [node name="swagula_marker" type="Marker3D" parent="Swagula"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.63076806)
-
-[node name="LevelMusicPlayer2" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("52_d23ut")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
