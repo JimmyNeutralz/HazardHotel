@@ -13,6 +13,7 @@ var werewolf_text_sprite = load("res://ThomasFolder/Sprites/Budget Werewolf.png"
 
 
 var text_displayed = false
+var curent_characters_displayed = 0
 
 func _ready() -> void:
 	character_image.texture = new_guy_text_sprite
@@ -36,8 +37,8 @@ func change_text_image(character):
 		character_image.texture = werewolf_text_sprite
 
 func set_text(func_text_input: String, time_up: int):
-	text_input = ""
-	show_textbox()
+	if text_displayed:
+		curent_characters_displayed = text_input.length()
 	text_label.text = func_text_input
 	text_input = func_text_input
 	#text_label.visible_characters = 0
@@ -61,7 +62,8 @@ func hide_textbox():
 func type_text() -> void:
 	var chars_per_second = 25.0
 	var delay = 1.0 / chars_per_second
+	curent_characters_displayed = 0
 
-	for i in range(text_input.length()):
-		text_label.visible_characters = i + 1
+	for curent_characters_displayed in range(text_input.length()):
+		text_label.visible_characters = curent_characters_displayed + 1
 		await get_tree().create_timer(delay).timeout
