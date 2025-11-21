@@ -1,5 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://hp5fyy2ort5r"]
-
-[ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="1_v54yf"]
-
-[node name="HH_Art_Ligghtbulb_V1_" instance=ExtResource("1_v54yf")]
