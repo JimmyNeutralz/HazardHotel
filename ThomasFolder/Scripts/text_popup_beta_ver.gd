@@ -11,9 +11,12 @@ var swagula_text_sprite = load("res://ThomasFolder/Sprites/Budget Swagula.png")
 var building_owner_text_sprite = load("res://ThomasFolder/Sprites/Budget Building Owner.png")
 var werewolf_text_sprite = load("res://ThomasFolder/Sprites/Budget Werewolf.png")
 
+#var loop_end = false
 
 var text_displayed = false
-var curent_characters_displayed = 0
+
+var type_text_running = false
+var break_for_loop = false
 
 func _ready() -> void:
 	character_image.texture = new_guy_text_sprite
@@ -37,14 +40,16 @@ func change_text_image(character):
 		character_image.texture = werewolf_text_sprite
 
 func set_text(func_text_input: String, time_up: int):
-	if text_displayed:
-		curent_characters_displayed = text_input.length()
+	#if (text_displayed):
+		#loop_end = true
 	text_label.text = func_text_input
 	text_input = func_text_input
 	#text_label.visible_characters = 0
 	if (!text_displayed):
 		show_textbox()
 	displayFor = time_up
+	if(type_text_running):
+		break_for_loop = true
 	type_text()
 
 func show_textbox():
@@ -60,10 +65,22 @@ func hide_textbox():
 
 #Type_text function repurposed from spencer's code from StoryIntro
 func type_text() -> void:
+	type_text_running = true
 	var chars_per_second = 25.0
 	var delay = 1.0 / chars_per_second
-	curent_characters_displayed = 0
 
-	for curent_characters_displayed in range(text_input.length()):
-		text_label.visible_characters = curent_characters_displayed + 1
+	for i in range(text_input.length()):
+		#if (loop_end):
+			#loop_end = false
+			#text_label.visible_characters = 0
+			#i = 0
+			#break
+		print(i)
+		text_label.visible_characters = i + 1
 		await get_tree().create_timer(delay).timeout
+		if break_for_loop:
+			break_for_loop = false
+			break
+	
+	type_text_running = false
+	break_for_loop = false
