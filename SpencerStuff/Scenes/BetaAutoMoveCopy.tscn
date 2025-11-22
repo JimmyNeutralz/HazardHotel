@@ -2091,6 +2091,7 @@ offset_left = -1.0
 offset_top = -2.0
 offset_right = 1155.0
 offset_bottom = 648.0
+mouse_filter = 2
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
