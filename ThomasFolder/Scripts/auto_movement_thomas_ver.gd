@@ -384,3 +384,38 @@ func play_stand_interact() -> void:
 	stop_footsteps()
 	player_sprite.play("StandInteract")
 	await player_sprite.animation_finished
+	
+	
+#Walk into elevator
+func walk_back_into_elevator(target_z: float) -> void:
+	is_moving = false
+	velocity = Vector3.ZERO
+
+	#Store original facing scale
+	var original_scale_x = player_sprite.scale.x
+
+	#Force sprite to face AWAY from elevator (optional)
+	#This makes him appear to be walking backward instead of moonwalking
+	player_sprite.scale.x = 0.3  
+
+	#Animation + footsteps
+	if player_sprite.sprite_frames.has_animation("Walk"):
+		player_sprite.play("Walk")
+	start_footsteps()
+
+	var start_z = global_position.z
+	var duration := 1.2   #Slightly slower for smoother walk
+	var t := 0.0
+
+	while t < duration:
+		t += get_physics_process_delta_time()
+		global_position.z = lerp(start_z, target_z, t / duration)
+		await get_tree().process_frame
+
+	#Stop footsteps / switch to idle
+	stop_footsteps()
+	if player_sprite.sprite_frames.has_animation("Idle"):
+		player_sprite.play("Idle")
+
+	#Restore original facing direction
+	player_sprite.scale.x = original_scale_x
