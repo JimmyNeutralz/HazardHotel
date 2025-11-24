@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=3 uid="uid://bslonsecovevp"]
+[gd_scene load_steps=15 format=3 uid="uid://bslonsecovevp"]
 
+[ext_resource type="Script" uid="uid://dihk636pprey3" path="res://SpencerStuff/Scripts/end_scene.gd" id="1_0f0cy"]
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="1_ynw6k"]
 [ext_resource type="Texture2D" uid="uid://bo7s6c50xo650" path="res://Assets/HH_Art_Logo_V2_.png" id="2_jgqas"]
 [ext_resource type="Texture2D" uid="uid://cpxgfb2rbpwix" path="res://Assets/speech-bubble-png-11.png" id="4_ornqc"]
@@ -12,8 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://b8vx7fxb5dgvh" path="res://Assets/HH_Art_NewGuySprite_V2.png" id="11_lektt"]
 [ext_resource type="Texture2D" uid="uid://k5km3031kocw" path="res://Assets/HH_Art_HandymanSprite_V1.png" id="11_wa78v"]
 [ext_resource type="Texture2D" uid="uid://bauyhs06poct8" path="res://Assets/HH_Art_Logo_V5_.png" id="12_lektt"]
+[ext_resource type="AudioStream" uid="uid://doi62g2bpy7bj" path="res://Assets/Audio/mx_titleTheme.wav" id="13_ls7mm"]
 
 [node name="EndScene" type="CanvasLayer"]
+script = ExtResource("1_0f0cy")
 
 [node name="Brown" type="Sprite2D" parent="."]
 position = Vector2(573.5, 326.49994)
@@ -90,3 +93,6 @@ position = Vector2(411, 158.99998)
 rotation = -0.18001494
 scale = Vector2(0.30175924, 0.30175924)
 texture = ExtResource("12_lektt")
+
+[node name="EndMusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_ls7mm")
