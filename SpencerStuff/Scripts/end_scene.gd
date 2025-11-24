@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+@onready var credits_label: Label = $CreditsLabel
 
 @onready var end_music_player: AudioStreamPlayer2D = $EndMusicPlayer
 
