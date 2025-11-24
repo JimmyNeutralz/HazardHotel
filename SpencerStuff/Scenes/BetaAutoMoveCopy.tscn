@@ -1,4 +1,4 @@
-[gd_scene load_steps=288 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=290 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
 [ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="3_d23ut"]
@@ -75,8 +75,9 @@
 [ext_resource type="Script" uid="uid://5fe2miwdr0f" path="res://SpencerStuff/Scripts/true_floor_1_middle.gd" id="63_srmjg"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="67_n0xvb"]
 [ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="68_l5kx3"]
-[ext_resource type="Script" path="res://ThomasFolder/swagula.gd" id="69_v45om"]
+[ext_resource type="Script" uid="uid://dcuwijsutwksx" path="res://ThomasFolder/swagula.gd" id="69_v45om"]
 [ext_resource type="Texture2D" uid="uid://bmkj5h4vj715d" path="res://ThomasFolder/Sprites/HH_Art_SwagulaSprite_V1.png" id="70_hkw6q"]
+[ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="78_y0u35"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0xvb"]
 atlas = ExtResource("4_5ono6")
@@ -1531,6 +1532,30 @@ size = Vector3(4.272888, 2.7320023, 2.4972534)
 
 [sub_resource type="BoxMesh" id="BoxMesh_n0xvb"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t26xm"]
+shader = ExtResource("78_y0u35")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.0410000019475
+shader_parameter/scanlines_width = 0.4610000218975
+shader_parameter/grille_opacity = 0.2690000127775
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 10.0
+shader_parameter/roll_size = 14.9690007110275
+shader_parameter/roll_variation = 0.29600001080012
+shader_parameter/distort_intensity = 0.0090000004275
+shader_parameter/noise_opacity = 0.118000005605
+shader_parameter/noise_speed = 2.0
+shader_parameter/static_noise_intensity = 0.0950000045125
+shader_parameter/aberration = -0.01399995316500002
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.2930000614175
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.670000031825
+
 [node name="Node3D3" type="Node3D"]
 script = ExtResource("1_rw4lb")
 
@@ -2057,6 +2082,16 @@ texture = ExtResource("70_hkw6q")
 
 [node name="swagula_marker" type="Marker3D" parent="Swagula"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.63076806)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_t26xm")
+offset_left = -1.0
+offset_top = -2.0
+offset_right = 1155.0
+offset_bottom = 648.0
+mouse_filter = 2
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
