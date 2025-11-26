@@ -3,20 +3,19 @@ extends Node3D
 #node path for generator
 @onready var indicator = $"../Indicators/GeneratorIndicator"  
 #path to gate node assigned in inspector
-@export var gate_node_path : NodePath 
-@onready var elevator_lock = $"../ElevatorDoor/ElevatorLock"       
-@onready var uiNode = $"../Gate/GateUI"     
-@onready var uiNode2 = $GeneratorUI
+@export var lamp_node_path : NodePath 
+@onready var elevator_lock = $"../ElevatorDoor/ElevatorLock"          
+@onready var uiNode = $GeneratorUI
 
 
 @onready var text = $"../TextPopup"                    
 
-var gate : Node3D = null
+var lamp: Node3D = null
 var activated = false
 
 func _ready():
-	if gate_node_path != null:
-		gate = get_node(gate_node_path)
+	if lamp_node_path != null:
+		lamp = get_node(lamp_node_path)
 	else:
 		push_error("Gate node path not set for Generator!")
 
@@ -25,22 +24,22 @@ func _process(delta):
 		if can_activate():
 			activate_generator()
 			uiNode.visible = false
-			uiNode2.visible = false
-			text.change_text_image(1)
-			complete_generator_text()
+			text.change_text_image(3)
+			complete_tutorial_generator_text()
+			lamp.generator_on = true
 		else:
 			print("Cannot activate generator yet!")
 
 func can_activate() -> bool:
-	if gate == null:
+	if lamp == null:
 		return false
 
-	#get state of gate (raised or not)
-	var gate_raised = false
-	if "raised" in gate:
-		gate_raised = gate.get("raised")
+	#get state of lamp (on or not)
+	var lamp_raised = false
+	if "lamp_on" in lamp:
+		lamp_raised = lamp.get("lamp_on")
 
-	return gate_raised
+	return lamp_raised
 
 func activate_generator():
 	activated = true
@@ -53,9 +52,9 @@ func activate_generator():
 		if mat:
 			mat.albedo_color = Color.GREEN
 
-func complete_generator_text():
+func complete_tutorial_generator_text():
 	var path := get_tree().current_scene.scene_file_path
-	if path == "res://ThomasFolder/Scenes/FirstPuzzleThomasCopy.tscn":
-		text.set_text("Finally, the last generator is done. Time to get out of here, assuming I can make it out alive.", 7)
+	if lamp.dialogue_finished:
+		text.set_text("That’s all you have to do each floor. Just solve puzzles, activate the generator, and take the elevator until all floors are done", 7)
 	else:
-		text.set_text("Generator up and running for this floor. Better head back to the elevator.", 6)
+		text.set_text("At least you read the job description. Anyways, you’ll just have to activate those generators for each floor.", 6)
