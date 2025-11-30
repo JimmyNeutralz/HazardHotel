@@ -1678,14 +1678,14 @@ shape = SubResource("BoxShape3D_a7eha")
 script = ExtResource("7_mor7b")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraTriggers/LeftRoomTrigger"]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -14.510679, 1.09, 0.157)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 2.996974, 1.09, 0.157)
 shape = SubResource("BoxShape3D_sgubx")
 
 [node name="MainRoomTrigger" type="Area3D" parent="CameraTriggers"]
 script = ExtResource("8_4xsrl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraTriggers/MainRoomTrigger"]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -14.310032, 1.1417187, 0.05721879)
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 3.1976213, 1.1417187, 0.05721879)
 shape = SubResource("BoxShape3D_x1e6v")
 
 [node name="CollisionShape3D22" type="CollisionShape3D" parent="CameraTriggers/MainRoomTrigger"]
@@ -1921,6 +1921,9 @@ autoplay = "Green3"
 [node name="GeneratorAudio" type="AudioStreamPlayer3D" parent="Generator"]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9929323, 0, -0.16973802)
 stream = ExtResource("59_hcdoj")
+
+[node name="Marker3D" type="Marker3D" parent="Generator"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1525216, 0, 0)
 
 [node name="HH_Art_Lobby_Lamp_V1" parent="." instance=ExtResource("59_15qe5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)

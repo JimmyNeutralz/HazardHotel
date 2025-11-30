@@ -7,8 +7,9 @@ extends Node3D
 @onready var elevator_lock = $"../ElevatorDoor/ElevatorLock"          
 @onready var uiNode = $GeneratorUI
 
-
-@onready var text = $"../TextPopup"                    
+@onready var player = $"../Player"
+@onready var text = $"../TextPopup"      
+@onready var generator_marker = $"../Generator/Marker3D"              
 
 var lamp: Node3D = null
 var activated = false
@@ -27,6 +28,7 @@ func _process(delta):
 			text.change_text_image(3)
 			complete_tutorial_generator_text()
 			lamp.generator_on = true
+			player.move_to_specific_location(generator_marker.global_position.x)
 		else:
 			print("Cannot activate generator yet!")
 
