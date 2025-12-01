@@ -8,7 +8,7 @@ var displayFor = 0
 
 var new_guy_text_sprite = load("res://ThomasFolder/Sprites/Budget New Guy.png")
 var swagula_text_sprite = load("res://ThomasFolder/Sprites/Budget Swagula.png")
-var building_owner_text_sprite = load("res://ThomasFolder/Sprites/Budget Building Owner.png")
+var building_owner_text_sprite = load("res://ThomasFolder/Sprites/HH_Art_OwnerPortrait_V1.png")
 var werewolf_text_sprite = load("res://ThomasFolder/Sprites/Budget Werewolf.png")
 
 #var loop_end = false
