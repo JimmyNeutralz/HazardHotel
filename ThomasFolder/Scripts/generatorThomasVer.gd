@@ -4,6 +4,7 @@ extends Node3D
 @onready var indicator = $"../Indicators/GeneratorIndicator"  
 #path to gate node assigned in inspector
 @export var lamp_node_path : NodePath 
+@export var elevator_door: Node3D
 @onready var elevator_lock = $"../ElevatorDoor/ElevatorLock"          
 @onready var uiNode = $GeneratorUI
 
@@ -28,6 +29,7 @@ func _process(delta):
 			text.change_text_image(3)
 			complete_tutorial_generator_text()
 			lamp.generator_on = true
+			elevator_door.powered_on = true
 			player.move_to_specific_location(generator_marker.global_position.x)
 		else:
 			print("Cannot activate generator yet!")

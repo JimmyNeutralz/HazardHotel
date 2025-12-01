@@ -1,6 +1,6 @@
 [gd_scene load_steps=282 format=3 uid="uid://dd4w345ahj7wh"]
 
-[ext_resource type="Script" uid="uid://cgtsuw0sy1ogi" path="res://ThomasFolder/Scripts/level_management_thomas.gd" id="1_ldf2o"]
+[ext_resource type="Script" uid="uid://bpt5xl3np0i1d" path="res://ThomasFolder/Scripts/level_management_thomas_tutorial_ver.gd" id="1_ldf2o"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_0bb3x"]
 [ext_resource type="Script" uid="uid://t5iwr1n67h38" path="res://ThomasFolder/Scripts/camera_move_pinch_tutorial_ver.gd" id="3_hcdoj"]
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="4_ph66n"]
@@ -1610,7 +1610,6 @@ shader_parameter/vignette_opacity = 0.670000031825
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ldf2o")
-next_scene_path = "res://ThomasFolder/Scenes/FirstPuzzleThomasVerRedux.tscnIn Engine/Scenes/FirstPuzzle.tscn"
 
 [node name="SafeLoc" type="Marker3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 26.228168, 0.114557385, 0.07687223)
@@ -1723,6 +1722,7 @@ texture = ExtResource("9_ywvq6")
 [node name="Elevator" type="Node3D" parent="."]
 
 [node name="ElevatorDoor" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.06349951)
 script = ExtResource("10_ldf2o")
 
 [node name="Area3D" type="Area3D" parent="ElevatorDoor"]
@@ -1743,6 +1743,8 @@ transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 
 sprite_frames = SubResource("SpriteFrames_km7aj")
 animation = &"Orange1"
 autoplay = "Orange1"
+
+[node name="ElevatorMarker" type="Marker3D" parent="ElevatorDoor"]
 
 [node name="RoomDetectors" type="Node3D" parent="."]
 
@@ -1909,6 +1911,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
 [node name="HH_Art_Lobby_Doors_V1" parent="." instance=ExtResource("38_c5tkm")]
 
 [node name="HH_Art_Lobby_ElevatorGate_V1" parent="." instance=ExtResource("39_bf0ny")]
+visible = false
 
 [node name="HH_Art_Lobby_ElevatorSign_V1" parent="." instance=ExtResource("40_813hb")]
 
@@ -1919,9 +1922,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
 [node name="HH_Art_Lobby_FrontDesk_V1" parent="." instance=ExtResource("43_d6slq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
 
-[node name="Generator" parent="." instance=ExtResource("44_oq3da")]
+[node name="Generator" parent="." node_paths=PackedStringArray("elevator_door") instance=ExtResource("44_oq3da")]
 script = ExtResource("45_25vsh")
 lamp_node_path = NodePath("../HH_Art_Lobby_Lamp_V1")
+elevator_door = NodePath("../ElevatorDoor")
 
 [node name="GeneratorUI" type="AnimatedSprite3D" parent="Generator"]
 transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, 2.173839, 1.1000555, 0.089426875)

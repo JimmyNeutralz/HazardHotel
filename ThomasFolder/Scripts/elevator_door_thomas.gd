@@ -1,8 +1,12 @@
 extends Node3D
 
+@onready var player = $"../Player"
+@onready var elevator_marker = $"../ElevatorDoor/ElevatorMarker"
 #Get animation stuff
 var anim: AnimationPlayer
 var door_open := false
+
+var powered_on = false
 
 func _ready() -> void:
 	anim = find_animation_player(self)
@@ -16,6 +20,10 @@ func _ready() -> void:
 	anim.play("Take 001")
 	anim.seek(0.0, true)
 	anim.stop()
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Unlock Elevator Door") and powered_on and !door_open:
+		player.move_to_specific_location(elevator_marker.global_position.x)
 
 #Open gate
 func open_gate() -> void:
