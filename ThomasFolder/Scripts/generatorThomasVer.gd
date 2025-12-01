@@ -26,7 +26,7 @@ func _process(delta):
 		if can_activate():
 			activate_generator()
 			uiNode.visible = false
-			text.change_text_image(3)
+			text.change_text_image(1)
 			complete_tutorial_generator_text()
 			lamp.generator_on = true
 			elevator_door.powered_on = true
@@ -58,7 +58,7 @@ func activate_generator():
 
 func complete_tutorial_generator_text():
 	var path := get_tree().current_scene.scene_file_path
-	if lamp.dialogue_finished:
-		text.set_text("That’s all you have to do each floor. Just solve puzzles, activate the generator, and take the elevator until all floors are done", 7)
+	if path == "res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn":
+		text.set_text("That's should be the last generator done. Now just need to get out of here.", 5)
 	else:
-		text.set_text("At least you read the job description. Anyways, you’ll just have to activate those generators for each floor.", 6)
+		text.set_text("That's the generator done for the first floor.", 4)
