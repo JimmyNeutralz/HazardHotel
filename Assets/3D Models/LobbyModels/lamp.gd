@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 		lamp_light.light_energy = 2.
 		middle_light.light_energy = 1.
 		text_popup.change_text_image(3)
-		text_popup.set_text("I was wondering who was ominously standing in the dark. I suppose you’re here to fix the technical issue, right?", 6)
+		text_popup.set_text("I was wondering who was ominously standing in the dark. I suppose you’re here to fix the electrical issue, right?", 6)
 		await get_tree().create_timer(6.0).timeout
 		if !generator_on:
 			text_popup.change_text_image(1)
