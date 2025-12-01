@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bku4xawh7exr4"
+path="res://.godot/imported/Generator Running (Loop).wav-0656420efd8b77bfe8cc16d07a3e21fb.sample"
+
+[deps]
+
+source_file="res://Assets/Audio/Generator Running (Loop).wav"
+dest_files=["res://.godot/imported/Generator Running (Loop).wav-0656420efd8b77bfe8cc16d07a3e21fb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
