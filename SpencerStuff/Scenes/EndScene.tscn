@@ -18,6 +18,35 @@
 [node name="EndScene" type="CanvasLayer"]
 script = ExtResource("1_0f0cy")
 
+[node name="CreditsLabel" type="RichTextLabel" parent="."]
+z_index = 100
+offset_left = 15.0
+offset_top = 669.0
+offset_right = 668.0
+offset_bottom = 1295.0
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 24
+theme_override_font_sizes/bold_font_size = 28
+bbcode_enabled = true
+text = "[b]Artists:[/b]
+Tony Garcia
+Gregg Hammel
+Ben Musser
+
+
+[b]Audio:[/b]
+Giancarlo Garces
+Max Rich
+
+
+[b]Programmers:[/b]
+Spencer Betchey
+Donovan Hecimovich
+Sam Schreiter
+Thomas Stolz
+Zak Suhajda"
+horizontal_alignment = 1
+
 [node name="Brown" type="Sprite2D" parent="."]
 position = Vector2(573.5, 326.49994)
 scale = Vector2(1.5991848, 0.64841485)
@@ -31,67 +60,70 @@ scale = Vector2(0.22353639, 0.2465)
 texture = ExtResource("2_jgqas")
 
 [node name="SpeechBubblePng11" type="Sprite2D" parent="."]
-position = Vector2(826, 279)
-scale = Vector2(0.3204593, 0.16844992)
+position = Vector2(853.00006, 347)
+scale = Vector2(0.26487482, 0.12263375)
 texture = ExtResource("4_ornqc")
 
 [node name="HhArtBuildingOwnerSpriteV1" type="Sprite2D" parent="."]
-position = Vector2(149, 497)
+visible = false
+position = Vector2(1035, 132.99998)
 rotation = -0.2460124
-scale = Vector2(0.5, 0.5)
+scale = Vector2(-0.41636282, 0.41636282)
 texture = ExtResource("5_m3h5d")
 
-[node name="TextLabel" type="Label" parent="."]
-offset_left = 690.0
-offset_top = 236.0
-offset_right = 964.0
-offset_bottom = 278.0
+[node name="DialogueLabel" type="Label" parent="."]
+offset_left = 739.0
+offset_top = 316.0
+offset_right = 1013.0
+offset_bottom = 358.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 24
 text = "Thanks for Playing!"
 
 [node name="HhArtSwagulaSpriteV1" type="Sprite2D" parent="."]
-position = Vector2(410.00003, 494)
+position = Vector2(615, 545)
 rotation = -9.941617e-05
-scale = Vector2(0.64857143, 0.64857143)
+scale = Vector2(0.45800424, 0.45800424)
 texture = ExtResource("6_ornqc")
 
 [node name="HhArtCyclopSpriteV1" type="Sprite2D" parent="."]
-position = Vector2(1018, 118.000015)
+visible = false
+position = Vector2(1374, 326)
 rotation = 0.52896285
 scale = Vector2(0.42500004, 0.42500004)
 texture = ExtResource("7_k4yab")
 
 [node name="HhArtGhostSpriteV1" type="Sprite2D" parent="."]
-position = Vector2(106.000015, 215)
+position = Vector2(91.00001, 550)
 scale = Vector2(0.37642854, 0.37642854)
 texture = ExtResource("8_nqewr")
 
 [node name="HhArtGoblinSpriteV1" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(773, 127.00001)
 scale = Vector2(0.3599999, 0.3599999)
 texture = ExtResource("9_u1dyk")
 
 [node name="HhArtHandGuySpriteV1" type="Sprite2D" parent="."]
-position = Vector2(575.99994, 308)
-rotation = 2.9406378
+position = Vector2(63.000008, 84)
+rotation = 1.5722718
 scale = Vector2(0.29285717, 0.29285717)
 texture = ExtResource("10_rtv5k")
 
 [node name="HhArtHandymanSpriteV1" type="Sprite2D" parent="."]
-position = Vector2(758, 489)
+visible = false
+position = Vector2(799, 490)
 scale = Vector2(0.51071423, 0.51071423)
 texture = ExtResource("11_wa78v")
 
 [node name="HhArtNewGuySpriteV2" type="Sprite2D" parent="."]
-position = Vector2(1007, 464)
-scale = Vector2(0.591, 0.559)
+position = Vector2(997, 504.99997)
+scale = Vector2(0.45632148, 0.43161368)
 texture = ExtResource("11_lektt")
 
 [node name="HhArtLogoV4" type="Sprite2D" parent="."]
-position = Vector2(411, 158.99998)
-rotation = -0.18001494
-scale = Vector2(0.30175924, 0.30175924)
+position = Vector2(900, 136.00002)
+scale = Vector2(0.29006818, 0.29006824)
 texture = ExtResource("12_lektt")
 
 [node name="EndMusicPlayer" type="AudioStreamPlayer2D" parent="."]
