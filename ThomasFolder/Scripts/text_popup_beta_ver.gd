@@ -55,7 +55,7 @@ func set_text(func_text_input: String, time_up: int):
 func show_textbox():
 	text_displayed = true
 	var tween = create_tween()
-	tween.tween_property(self, "global_position", Vector2(0,105.0), .8)
+	tween.tween_property(self, "global_position", Vector2(0,150.0), .8)
 	#await get_tree().create_timer(6).timeout
 	#hide_textbox()
 
