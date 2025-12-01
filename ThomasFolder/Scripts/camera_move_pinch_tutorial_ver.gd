@@ -7,7 +7,7 @@ var target_position: Vector3
 @onready var right_cam_pos = $"../RightCamPos"
 
 func _ready() -> void:
-	global_position = main_cam_pos.global_position
+	global_position = right_cam_pos.global_position
 	target_position = global_position  # Start at current location
 
 func pan_to(new_position: Vector3) -> void:
