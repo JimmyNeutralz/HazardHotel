@@ -45,7 +45,6 @@
 [ext_resource type="PackedScene" uid="uid://dlobr62q8pu2y" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Frame_V1.fbx" id="42_uetlj"]
 [ext_resource type="PackedScene" uid="uid://duhfw3dymue0b" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_FrontDesk_V1.fbx" id="43_d6slq"]
 [ext_resource type="PackedScene" uid="uid://dc1tiw77jedm0" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Generator_V1.fbx" id="44_oq3da"]
-[ext_resource type="Script" uid="uid://ttvabmbdyfb5" path="res://ThomasFolder/Scripts/generatorThomasVer.gd" id="45_25vsh"]
 [ext_resource type="Texture2D" uid="uid://cfo2bftv6y7qy" path="res://Donovan/DonAssets/HH_Art_NodeBlue2_V1.png" id="46_1faqh"]
 [ext_resource type="Texture2D" uid="uid://5lvcfq2duxw0" path="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png" id="47_dlxqn"]
 [ext_resource type="Texture2D" uid="uid://0q8k8ovc0tm5" path="res://Donovan/DonAssets/HH_Art_NodeCyan2_V1.png" id="48_s8xqx"]
@@ -61,6 +60,7 @@
 [ext_resource type="Texture2D" uid="uid://d1ybbwvdlyuvl" path="res://Donovan/DonAssets/HH_Art_NodeYellow6_V1.png" id="58_1qiwk"]
 [ext_resource type="PackedScene" uid="uid://j60l3njdviye" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Lamp_V1.fbx" id="59_15qe5"]
 [ext_resource type="AudioStream" uid="uid://bt827ljr2p2uk" path="res://Assets/Audio/Switch.wav" id="59_hcdoj"]
+[ext_resource type="Script" uid="uid://npu55c7px8ms" path="res://ThomasFolder/Scripts/generatorThomasVerTutorial.gd" id="59_ldf2o"]
 [ext_resource type="Script" uid="uid://gxyte2pwafxu" path="res://Assets/3D Models/LobbyModels/lamp.gd" id="60_25vsh"]
 [ext_resource type="PackedScene" uid="uid://yayf6ie6vren" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Rug_V1.fbx" id="60_mawxb"]
 [ext_resource type="PackedScene" uid="uid://dgfvm6sy14n60" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V1.fbx" id="61_7f5nv"]
@@ -1922,10 +1922,8 @@ visible = false
 [node name="HH_Art_Lobby_FrontDesk_V1" parent="." instance=ExtResource("43_d6slq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
 
-[node name="Generator" parent="." node_paths=PackedStringArray("elevator_door") instance=ExtResource("44_oq3da")]
-script = ExtResource("45_25vsh")
-lamp_node_path = NodePath("../HH_Art_Lobby_Lamp_V1")
-elevator_door = NodePath("../ElevatorDoor")
+[node name="Generator" parent="." instance=ExtResource("44_oq3da")]
+script = ExtResource("59_ldf2o")
 
 [node name="GeneratorUI" type="AnimatedSprite3D" parent="Generator"]
 transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, 2.173839, 1.1000555, 0.089426875)
