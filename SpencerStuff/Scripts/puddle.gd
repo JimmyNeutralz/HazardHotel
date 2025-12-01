@@ -4,6 +4,7 @@ extends Node3D
 @onready var area = $PuddleTrigger
 @onready var indicator = $"../Indicators/PuddleIndicator"
 @onready var puddleVisual = $HH_Art_Puddle_v1
+@onready var uiNode = $PuddleUI
 
 #State
 var puddle_active = true
@@ -17,10 +18,12 @@ func _ready():
 
 func _process(delta):
 	#Handle puddle deactivation input
-	if Input.is_action_just_pressed("deactivate_puddle") and puddle_active:
-		deactivate()
-	elif Input.is_action_just_pressed("deactivate_puddle") and !puddle_active:
+	if Input.is_action_pressed("deactivate_puddle"):
 		activate()
+		uiNode.visible = false
+	elif Input.is_action_just_released("deactivate_puddle"):
+		deactivate()
+		uiNode.visible = true
 		
 		
 func deactivate():
