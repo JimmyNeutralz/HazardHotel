@@ -93,7 +93,9 @@ func _ready():
 
 func _physics_process(delta):
 	if is_dead:
+		stop_footsteps()
 		return
+
 		
 	if is_moving:
 		var direction = target_position - global_position
@@ -176,7 +178,14 @@ func move_to_room_center():
 			player_sprite.play("Walk")
 			start_footsteps()
 
-
+#Play the interact animation
+func interact():
+	if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("CrouchInteract"):
+		print("Crouch anim started")
+		player_sprite.play("CrouchInteract")
+		await player_sprite.animation_finished
+		print("Crouch animation played!")
+	
 #For moving between rooms
 func move_to_adjacent_room(direction: int):
 	var current = get_current_room()
@@ -245,6 +254,7 @@ func kill_player():
 	if is_dead:
 		return
 	is_dead = true
+	stop_footsteps()
 	print("Player died!")
 	
 	#Stop any current animation
@@ -299,11 +309,14 @@ func respawn_player():
 		
 #Footstep helper functions
 func start_footsteps():
+	if is_dead:
+		return
 	if footsteps_playing or footstep_players.is_empty():
 		return
 	footsteps_playing = true
 	current_footstep_index = 0
 	footstep_players[current_footstep_index].play()
+
 
 func stop_footsteps():
 	footsteps_playing = false
@@ -347,3 +360,69 @@ func move_through_right_door(object, side):
 		move_to_object(object)
 		await get_tree().create_timer(1.5).timeout
 		move_to_object(rightDoorLoc1)
+		
+func move_to_fusebox(object):
+	move_to_object(object)
+	await get_tree().create_timer(1.0).timeout
+	
+func move_to_gate(object1, object2, side):
+	if (side == 1):
+		move_to_object(object1)
+		await get_tree().create_timer(1.5).timeout
+		move_to_object(object2)
+		
+	if (side == -1):
+		move_to_object(object2)
+		await get_tree().create_timer(1.5).timeout
+		move_to_object(object1)
+
+func move_to_safe(safe, result):
+	move_to_object(safe)
+	await get_tree().create_timer(1.5).timeout
+	move_to_object(result)
+	
+func play_stand_interact() -> void:
+	if not player_sprite:
+		return
+	if not player_sprite.sprite_frames.has_animation("StandInteract"):
+		push_warning("Missing animation: StandInteract")
+		return
+
+	stop_footsteps()
+	player_sprite.play("StandInteract")
+	await player_sprite.animation_finished
+	
+	
+#Walk into elevator
+func walk_back_into_elevator(target_z: float) -> void:
+	is_moving = false
+	velocity = Vector3.ZERO
+
+	#Store original facing scale
+	var original_scale_x = player_sprite.scale.x
+
+	#Force sprite to face AWAY from elevator (optional)
+	#This makes him appear to be walking backward instead of moonwalking
+	player_sprite.scale.x = 0.3  
+
+	#Animation + footsteps
+	if player_sprite.sprite_frames.has_animation("Walk"):
+		player_sprite.play("Walk")
+	start_footsteps()
+
+	var start_z = global_position.z
+	var duration := 1.2   #Slightly slower for smoother walk
+	var t := 0.0
+
+	while t < duration:
+		t += get_physics_process_delta_time()
+		global_position.z = lerp(start_z, target_z, t / duration)
+		await get_tree().process_frame
+
+	#Stop footsteps / switch to idle
+	stop_footsteps()
+	if player_sprite.sprite_frames.has_animation("Idle"):
+		player_sprite.play("Idle")
+
+	#Restore original facing direction
+	player_sprite.scale.x = original_scale_x

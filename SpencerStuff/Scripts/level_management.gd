@@ -16,7 +16,7 @@ extends Node3D
 @onready var button_audio_player: AudioStreamPlayer2D = $PauseMenu/ButtonAudioPlayer
 
 #Level music player reference
-@onready var level_music: AudioStreamPlayer3D = $LevelMusicPlayer
+@onready var level_music: AudioStreamPlayer2D = $LevelMusicPlayer
 
 #Key states
 var has_left_key: bool = false
@@ -30,6 +30,14 @@ var has_right_key: bool = false
 @onready var Floor1RightVisual = $FloorModules/HH_Art_PinchModularRight_V3
 @onready var Floor1MiddleVisual = $FloorModules/HH_Art_PinchModularMiddle_V3
 
+@onready var LeftBulbVisual = $Lights/LeftBulb
+
+@onready var GeneratorVisual = $Generator/GeneratorVisual
+
+@onready var ElevatorVisual = $Elevator/HH_Art_Elevator_V1
+
+
+#test 
 
 func _ready():
 	
@@ -42,6 +50,18 @@ func _ready():
 
 	if Floor1MiddleVisual:
 		Floor1MiddleVisual.coloredFloor1()
+		
+	#Change color of lights
+	if LeftBulbVisual:
+		LeftBulbVisual.coloredLight()
+		
+	#Change color of generator
+	if GeneratorVisual:
+		GeneratorVisual.colored_generator()
+		
+	#Change color of elevator
+	if ElevatorVisual:
+		ElevatorVisual.coloredElevator()
 
 	
 	#Start hidden
@@ -82,41 +102,81 @@ func _check_keys() -> void:
 		print("Elevator unlocked!")
 
 
-#Player enters elevator trigger area
+#Enter elevator
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if generator.activated and body.name == "Player":
-		
+
 		#Open elevator gate
 		if elevator_door:
 			elevator_door.open_gate()
 		else:
 			print("ERROR: ElevatorDoor script not found!")
 
-		#Freeze JUST player movement (not the world)
+		#Freeze player movement right away
 		var player = $Player
 		if player:
-			#Stop footstep sound from continuing when player stops for elevator to open
-			if player.has_method("stop_footsteps"):
-				player.stop_footsteps()
-			
+
+			#Stop all current movement
 			player.is_moving = false
 			player.velocity = Vector3.ZERO
+
+			#Stop footsteps
+			if player.has_method("stop_footsteps"):
+				player.stop_footsteps()
+
+			#Disable player input 
 			player.set_process(false)
 			player.set_physics_process(false)
 
-			if player.player_sprite and player.player_sprite.sprite_frames and player.player_sprite.sprite_frames.has_animation("Idle"):
+			#Switch to Idle animation
+			if player.player_sprite \
+			and player.player_sprite.sprite_frames \
+			and player.player_sprite.sprite_frames.has_animation("Idle"):
 				player.player_sprite.play("Idle")
 
-		#Delay scene transition while animation plays
-		await get_tree().create_timer(4.0).timeout #4 seconds, adjust as desired
+		#Wait for elevator door to open without movement
+		await get_tree().create_timer(1.25).timeout
 
-		#Now fade and change scene
-		if get_tree().current_scene.name == "FirstPuzzle":
+		#Re-enable physics so scripted movement works
+		player.set_process(true)
+		player.set_physics_process(true)
+
+		#Scripted backward walk into elevator
+		#Move the player 2.5 units backward (negative Z)
+		var target: Vector3 = player.global_position + Vector3(0, 0, -2.5)
+		player.target_position = target
+		player.is_moving = true
+
+
+		#Play walk animation
+		if player.player_sprite \
+		and player.player_sprite.sprite_frames \
+		and player.player_sprite.sprite_frames.has_animation("Walk"):
+			player.player_sprite.play("Walk")
+			player.start_footsteps()
+
+		#Wait until he finishes reaching the spot
+		while player.is_moving:
+			await get_tree().process_frame
+
+		#Freeze again before scene transition
+		player.set_process(false)
+		player.set_physics_process(false)
+		player.velocity = Vector3.ZERO
+
+		#Small delay before fading scene
+		await get_tree().create_timer(1).timeout
+
+		#Fade and change scene 
+		var path := get_tree().current_scene.scene_file_path
+
+		if path == "res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn":
 			fade_in_static._exit_scene("res://SpencerStuff/Scenes/EndScene.tscn")
 		else:
 			fade_in_static._exit_scene("res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn")
 
 
+	
 #Pause input
 func _input(event):
 	if event.is_action_pressed("pause"):
