@@ -1,6 +1,6 @@
 [gd_scene load_steps=65 format=3 uid="uid://crtvvdlonk03r"]
 
-[ext_resource type="Script" uid="uid://cgtsuw0sy1ogi" path="res://ThomasFolder/Scripts/level_management_thomas.gd" id="1_k8f3g"]
+[ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_3tb23"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_d768v"]
 [ext_resource type="Script" uid="uid://cdcf2xh2ahv2s" path="res://SpencerStuff/Scripts/auto_movement.gd" id="3_rlhes"]
 [ext_resource type="Texture2D" uid="uid://b8vx7fxb5dgvh" path="res://Assets/HH_Art_NewGuySprite_V2.png" id="4_5sl1i"]
@@ -184,8 +184,7 @@ size = Vector3(4.246231, 2.7391052, 2.2364502)
 size = Vector3(4.272888, 2.7320023, 2.4972534)
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_k8f3g")
-next_scene_path = "res://ThomasFolder/Scenes/FirstPuzzleThomasVerRedux.tscn"
+script = ExtResource("1_3tb23")
 
 [node name="HH_Art_Pinch_V2" parent="." instance=ExtResource("2_d768v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007326126, 0.0070431232, -0.0001385212)

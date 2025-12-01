@@ -18,11 +18,11 @@ func _ready():
 
 func _process(delta):
 	#Handle puddle deactivation input
-	if Input.is_action_pressed("deactivate_puddle"):
-		activate()
-		uiNode.visible = false
-	elif Input.is_action_just_released("deactivate_puddle"):
+	if Input.is_action_just_pressed("deactivate_puddle") and puddle_active:
 		deactivate()
+		uiNode.visible = false
+	elif Input.is_action_just_pressed("deactivate_puddle") and !puddle_active:
+		activate()
 		uiNode.visible = true
 		
 		

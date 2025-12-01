@@ -85,7 +85,7 @@
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="82_nsqae"]
 [ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="83_rgf6o"]
 [ext_resource type="Texture2D" uid="uid://duslj11ne4i44" path="res://ThomasFolder/Sprites/HH_Art_BuildingOwnerSprite_V1.png" id="83_vaun8"]
-[ext_resource type="Script" uid="uid://183kiid28qmk" path="res://ThomasFolder/Scenes/werewolf.gd" id="86_vxbyq"]
+[ext_resource type="Script" uid="uid://183kiid28qmk" path="res://ThomasFolder/Scripts/werewolf.gd" id="86_vxbyq"]
 [ext_resource type="Texture2D" uid="uid://j5rb1oejj3mb" path="res://ThomasFolder/Sprites/HH_Art_WerewolfSprite_V1.png" id="87_olett"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
@@ -3366,7 +3366,7 @@ animations = [{
 
 [sub_resource type="BoxMesh" id="BoxMesh_63m68"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 script = ExtResource("1_xoxpi")
 
 [node name="SafeLoc" type="Marker3D" parent="."]
@@ -3491,7 +3491,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 
 [node name="Generator" type="Node3D" parent="."]
 script = ExtResource("13_vxbyq")
-gate_node_path = NodePath("../Gate")
 
 [node name="GeneratorModel" parent="Generator" instance=ExtResource("14_rndci")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9929323, 0, -0.16973802)

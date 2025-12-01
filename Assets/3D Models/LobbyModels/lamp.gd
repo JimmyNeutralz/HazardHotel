@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var lamp_light = $"../HH_Art_Lobby_Lamp_V1/OmniLight3D"
+@onready var middle_light = $"../Lights/MiddleRoomLight"
 @onready var text_popup = $"../TextPopup"
 @onready var building_owner_marker = $"../BuildingOwner/Marker3D"
 @onready var player = $"../Player"
@@ -12,6 +13,7 @@ var dialogue_finished = false
 
 func _ready() -> void:
 	lamp_light.light_energy = 0
+	middle_light.light_energy = 0
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("turn_on_lamp") and !lamp_on:
@@ -19,6 +21,7 @@ func _process(delta: float) -> void:
 		lamp_on = true
 		uiNode.visible = false
 		lamp_light.light_energy = 2.
+		middle_light.light_energy = 1.
 		text_popup.change_text_image(3)
 		text_popup.set_text("I was wondering who was ominously standing in the dark. I suppose you’re here to fix the technical issue, right?", 6)
 		await get_tree().create_timer(6.0).timeout

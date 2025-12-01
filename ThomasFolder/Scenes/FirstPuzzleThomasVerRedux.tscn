@@ -1,12 +1,11 @@
-[gd_scene load_steps=459 format=3 uid="uid://d24gtpruklhba"]
+[gd_scene load_steps=458 format=3 uid="uid://d24gtpruklhba"]
 
-[ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_6kssl"]
+[ext_resource type="Script" uid="uid://cgtsuw0sy1ogi" path="res://ThomasFolder/Scripts/level_management_thomas.gd" id="1_mrm8c"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_yistc"]
 [ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="3_mrm8c"]
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="4_eel47"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="5_tv8cd"]
 [ext_resource type="PackedScene" uid="uid://hp5fyy2ort5r" path="res://SpencerStuff/Scenes/TrueLeftBulb.tscn" id="6_omlsn"]
-[ext_resource type="Script" uid="uid://cy8mm1h78gy4h" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="7_l2et0"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="8_e0vqx"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="9_cf5oq"]
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="10_phfak"]
@@ -85,7 +84,7 @@
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="83_0cgo2"]
 [ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="84_ln8jg"]
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="85_sku1k"]
-[ext_resource type="Script" uid="uid://183kiid28qmk" path="res://ThomasFolder/Scenes/werewolf.gd" id="86_mrm8c"]
+[ext_resource type="Script" uid="uid://183kiid28qmk" path="res://ThomasFolder/Scripts/werewolf.gd" id="86_mrm8c"]
 [ext_resource type="Texture2D" uid="uid://j5rb1oejj3mb" path="res://ThomasFolder/Sprites/HH_Art_WerewolfSprite_V1.png" id="87_eel47"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
@@ -3390,8 +3389,8 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.670000031825
 
-[node name="Node3D" type="Node3D"]
-script = ExtResource("1_6kssl")
+[node name="Node3D2" type="Node3D"]
+script = ExtResource("1_mrm8c")
 
 [node name="SafeLoc" type="Marker3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.1276536, 0.114557385, 0.07687223)
@@ -3439,7 +3438,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.5, 2.38, 0.175)
 
 [node name="LeftBulb" parent="Lights" instance=ExtResource("6_omlsn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 2.38, 0.175)
-script = ExtResource("7_l2et0")
 
 [node name="Borders" type="Node3D" parent="."]
 
