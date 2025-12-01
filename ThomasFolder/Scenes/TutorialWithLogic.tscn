@@ -1739,7 +1739,7 @@ texture = ExtResource("11_8e8uc")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05041635)
 
 [node name="ElevatorUI" type="AnimatedSprite3D" parent="ElevatorDoor"]
-transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, 0.2229224, 1.8943498, -0.55867815)
+transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, 0.778997, 2.3518803, -0.55218506)
 sprite_frames = SubResource("SpriteFrames_km7aj")
 animation = &"Orange1"
 autoplay = "Orange1"
