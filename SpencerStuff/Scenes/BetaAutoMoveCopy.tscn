@@ -1,4 +1,4 @@
-[gd_scene load_steps=293 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=296 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
 [ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="3_d23ut"]
@@ -81,6 +81,9 @@
 [ext_resource type="PackedScene" uid="uid://bvtx553hn8ouc" path="res://SpencerStuff/Scenes/true_middle_scenev3.tscn" id="71_am682"]
 [ext_resource type="PackedScene" uid="uid://bglppt0huxa04" path="res://SpencerStuff/Scenes/true_right_scenev3.tscn" id="72_qwmcr"]
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="78_y0u35"]
+[ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="81_j4dhs"]
+[ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="82_dgu40"]
+[ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="83_5dapl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0xvb"]
 atlas = ExtResource("4_5ono6")
@@ -1535,12 +1538,12 @@ size = Vector3(4.272888, 2.7320023, 2.4972534)
 
 [sub_resource type="BoxMesh" id="BoxMesh_n0xvb"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_t26xm"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fii53"]
 shader = ExtResource("78_y0u35")
 shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.0410000019475
-shader_parameter/scanlines_width = 0.4610000218975
-shader_parameter/grille_opacity = 0.2690000127775
+shader_parameter/scanlines_opacity = 0.02000000095
+shader_parameter/scanlines_width = 0.1950000092625
+shader_parameter/grille_opacity = 0.1130000053675
 shader_parameter/resolution = Vector2(640, 480)
 shader_parameter/pixelate = true
 shader_parameter/roll = true
@@ -2098,14 +2101,32 @@ texture = ExtResource("70_hkw6q")
 [node name="swagula_marker" type="Marker3D" parent="Swagula"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.63076806)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HhArtOverlayV3" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(575.00006, 318)
+scale = Vector2(0.6156249, 0.59074074)
+texture = ExtResource("81_j4dhs")
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_t26xm")
-offset_left = -1.0
-offset_top = -2.0
-offset_right = 1155.0
-offset_bottom = 648.0
+[node name="Overlay" type="CanvasLayer" parent="."]
+
+[node name="HhArtOverlayV1" type="Sprite2D" parent="Overlay"]
+z_index = 3
+position = Vector2(576.00006, 325.50006)
+scale = Vector2(0.6020833, 0.60277784)
+texture = ExtResource("82_dgu40")
+
+[node name="HhArtOverlayV2" type="Sprite2D" parent="Overlay"]
+z_index = 3
+position = Vector2(576.00006, 325.50006)
+scale = Vector2(0.6020833, 0.60277784)
+texture = ExtResource("83_5dapl")
+
+[node name="ColorRect" type="ColorRect" parent="Overlay"]
+material = SubResource("ShaderMaterial_fii53")
+offset_left = 11.0
+offset_top = 19.0
+offset_right = 1136.0
+offset_bottom = 614.0
 mouse_filter = 2
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
