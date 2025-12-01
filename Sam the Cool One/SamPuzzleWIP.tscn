@@ -1,7 +1,7 @@
-[gd_scene load_steps=297 format=3 uid="uid://bwsjpacqdhxh0"]
+[gd_scene load_steps=301 format=3 uid="uid://bwsjpacqdhxh0"]
 
-[ext_resource type="Script" uid="uid://cho7xqaqgg2ro" path="res://SpencerStuff/Scripts/level_management.gd" id="1_etl04"]
-[ext_resource type="Script" uid="uid://cf6fnn8npb6n7" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="2_stxpx"]
+[ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_etl04"]
+[ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="2_stxpx"]
 [ext_resource type="Texture2D" uid="uid://ck1cd8cmd1k3f" path="res://Assets/HH_Art_NewGuyCrouchInteractSpriteSheet_V1.png" id="3_2jmb6"]
 [ext_resource type="Texture2D" uid="uid://dhndjrnissj6d" path="res://Assets/HH_Art_NewGuyElectrocutionAnimSpriteSheet_V1.png" id="4_3x4ok"]
 [ext_resource type="Texture2D" uid="uid://1jo86vkwjfqa" path="res://Assets/HH_Art_NewGuyIdle1SpriteSheet_V1.png" id="5_dnsiy"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="15_d64sq"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="16_o5ye0"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="17_40eat"]
+[ext_resource type="Script" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="17_57sfp"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="18_5gr6d"]
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="19_r4rbx"]
 [ext_resource type="Script" uid="uid://bp8hhvpveu2cc" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="20_ak7el"]
@@ -77,6 +78,8 @@
 [ext_resource type="Script" uid="uid://crhb8yg3b1qjd" path="res://Sam the Cool One/safe.gd" id="72_j7f7e"]
 [ext_resource type="Script" uid="uid://b00ss7u2jxh7c" path="res://Sam the Cool One/curtain.gd" id="76_kq5jo"]
 [ext_resource type="Script" uid="uid://o7neq40tuih1" path="res://Sam the Cool One/trap.gd" id="76_vcupa"]
+[ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="79_a1sk3"]
+[ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="80_2bagf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0xvb"]
 atlas = ExtResource("3_2jmb6")
@@ -1562,6 +1565,8 @@ size = Vector3(1.0297852, 1.0224304, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_57sfp"]
 size = Vector3(0.059814453, 1, 2.2089844)
 
+[sub_resource type="BoxMesh" id="BoxMesh_7jm3i"]
+
 [node name="Node3D3" type="Node3D"]
 script = ExtResource("1_etl04")
 
@@ -1635,6 +1640,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9708586, 2.2142832)
 
 [node name="LeftBulb" parent="Lights" instance=ExtResource("16_o5ye0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.5, 2.38, 0.175)
+script = ExtResource("17_57sfp")
 
 [node name="MiddleBulb" parent="Lights" instance=ExtResource("16_o5ye0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 2.38, 0.175)
@@ -2170,9 +2176,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.116603, 2.5496862, -12.3591
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15112305, -0.44195056, -0.024727821)
 shape = SubResource("BoxShape3D_ytcoj")
 
-[node name="LevelMusicPlayer" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("67_fdm6u")
-
 [node name="Safe" type="Node3D" parent="." node_paths=PackedStringArray("Player", "Key", "Cheese")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.268808, 0, 0)
 script = ExtResource("72_j7f7e")
@@ -2284,6 +2287,33 @@ font_size = 100
 transform = Transform3D(7.680376e-08, 0, 0.9928504, 0, 1, 0, -0.4682093, 0, 6.404473e-08, 0.55828214, 0, -0.0009928346)
 text = "Curtain"
 font_size = 100
+
+[node name="LevelMusicPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("67_fdm6u")
+
+[node name="TextPopup" type="Node2D" parent="."]
+script = ExtResource("79_a1sk3")
+
+[node name="text" type="Label" parent="TextPopup"]
+z_index = 1
+offset_left = 162.0
+offset_top = -96.255
+offset_right = 1082.0
+offset_bottom = -8.254997
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "hi"
+autowrap_mode = 3
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="TextPopup"]
+position = Vector2(621.875, -52.255)
+scale = Vector2(932.25, 95.99999)
+mesh = SubResource("BoxMesh_7jm3i")
+
+[node name="TextPopupCharacterImage" type="Sprite2D" parent="TextPopup"]
+position = Vector2(99, -52.255)
+scale = Vector2(0.6282051, 0.6282051)
+texture = ExtResource("80_2bagf")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
