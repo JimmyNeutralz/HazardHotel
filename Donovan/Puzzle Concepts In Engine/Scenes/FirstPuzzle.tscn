@@ -1,4 +1,4 @@
-[gd_scene load_steps=456 format=3 uid="uid://bxhis68m30g1y"]
+[gd_scene load_steps=459 format=3 uid="uid://bxhis68m30g1y"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_sdfg4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_fwdfo"]
@@ -64,10 +64,13 @@
 [ext_resource type="PackedScene" uid="uid://416n0yob35jg" path="res://Assets/3D Models/HH_Art_Shelf_V1.fbx" id="48_4t0uh"]
 [ext_resource type="Texture2D" uid="uid://dnwontfgeesjk" path="res://Donovan/DonAssets/HH_Art_NodePurple2_V1.png" id="48_poayu"]
 [ext_resource type="Texture2D" uid="uid://d1ybbwvdlyuvl" path="res://Donovan/DonAssets/HH_Art_NodeYellow6_V1.png" id="49_63m68"]
+[ext_resource type="PackedScene" uid="uid://bybb2btwgb084" path="res://SpencerStuff/Scenes/true_left_scenev3.tscn" id="49_o507h"]
 [ext_resource type="Texture2D" uid="uid://ck1cd8cmd1k3f" path="res://Assets/HH_Art_NewGuyCrouchInteractSpriteSheet_V1.png" id="50_i1scv"]
 [ext_resource type="PackedScene" uid="uid://r70numkvwsa7" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Shelf.tscn" id="50_jennx"]
+[ext_resource type="PackedScene" uid="uid://bvtx553hn8ouc" path="res://SpencerStuff/Scenes/true_middle_scenev3.tscn" id="50_qeqm8"]
 [ext_resource type="Texture2D" uid="uid://72bl5rodk7u4" path="res://Donovan/DonAssets/dinograbber.png" id="50_wo6si"]
 [ext_resource type="Script" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="50_yqei1"]
+[ext_resource type="PackedScene" uid="uid://bglppt0huxa04" path="res://SpencerStuff/Scenes/true_right_scenev3.tscn" id="51_00t3t"]
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="51_a4kpc"]
 [ext_resource type="Texture2D" uid="uid://dhndjrnissj6d" path="res://Assets/HH_Art_NewGuyElectrocutionAnimSpriteSheet_V1.png" id="51_dx7fg"]
 [ext_resource type="Script" uid="uid://bk7yal7eu1r4r" path="res://Donovan/lever.gd" id="51_jnpos"]
@@ -3703,11 +3706,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 0.62, 0)
 
 [node name="HH_Art_PinchModularLeft_V2" parent="FloorModules" instance=ExtResource("43_5rdc1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 11.8)
+visible = false
 
 [node name="HH_Art_PinchModularMiddle_V2" parent="FloorModules" instance=ExtResource("44_vf2e0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.8)
+visible = false
 
 [node name="HH_Art_PinchModularRight_V2" parent="FloorModules" instance=ExtResource("45_8vtvq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 11.8)
+visible = false
+
+[node name="HH_Art_PinchModularLeft_V4" parent="FloorModules" instance=ExtResource("49_o507h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 11.8)
+
+[node name="HH_Art_PinchModularMiddle_V4" parent="FloorModules" instance=ExtResource("50_qeqm8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.8)
+
+[node name="HH_Art_PinchModularRight_V4" parent="FloorModules" instance=ExtResource("51_00t3t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 11.8)
 
 [node name="PauseMenu" type="Node3D" parent="."]

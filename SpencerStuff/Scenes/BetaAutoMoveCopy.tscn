@@ -1,4 +1,4 @@
-[gd_scene load_steps=290 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=293 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
 [ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="3_d23ut"]
@@ -77,6 +77,9 @@
 [ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="68_l5kx3"]
 [ext_resource type="Script" uid="uid://dcuwijsutwksx" path="res://ThomasFolder/swagula.gd" id="69_v45om"]
 [ext_resource type="Texture2D" uid="uid://bmkj5h4vj715d" path="res://ThomasFolder/Sprites/HH_Art_SwagulaSprite_V1.png" id="70_hkw6q"]
+[ext_resource type="PackedScene" uid="uid://bybb2btwgb084" path="res://SpencerStuff/Scenes/true_left_scenev3.tscn" id="70_t26xm"]
+[ext_resource type="PackedScene" uid="uid://bvtx553hn8ouc" path="res://SpencerStuff/Scenes/true_middle_scenev3.tscn" id="71_am682"]
+[ext_resource type="PackedScene" uid="uid://bglppt0huxa04" path="res://SpencerStuff/Scenes/true_right_scenev3.tscn" id="72_qwmcr"]
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="78_y0u35"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0xvb"]
@@ -1988,15 +1991,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.3, 0.62, 0)
 
 [node name="HH_Art_PinchModularLeft_V3" parent="FloorModules" instance=ExtResource("60_l5ac0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 11.8)
+visible = false
 script = ExtResource("59_hb643")
 
 [node name="HH_Art_PinchModularRight_V3" parent="FloorModules" instance=ExtResource("60_hb643")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 11.8)
+visible = false
 script = ExtResource("61_d4b2v")
 
 [node name="HH_Art_PinchModularMiddle_V3" parent="FloorModules" instance=ExtResource("61_hb643")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.8)
+visible = false
 script = ExtResource("63_srmjg")
+
+[node name="HH_Art_PinchModularLeft_V4" parent="FloorModules" instance=ExtResource("70_t26xm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4, 0, 11.8)
+
+[node name="HH_Art_PinchModularMiddle_V4" parent="FloorModules" instance=ExtResource("71_am682")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.8)
+
+[node name="HH_Art_PinchModularRight_V4" parent="FloorModules" instance=ExtResource("72_qwmcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 11.8)
 
 [node name="PauseMenu" type="Node3D" parent="."]
 process_mode = 3
