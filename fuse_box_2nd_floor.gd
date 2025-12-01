@@ -1,13 +1,12 @@
 extends Node3D
 
 #NodePath
-@onready var indicator = $"../Indicators/FuseboxIndicator"
 @onready var player = $"../Player"
 @onready var fuseboxStand = $standSpot
 @onready var uiNode = $FuseboxUI
 
 @onready var text = $"../TextPopup"
-var dialogue_triggered = false
+var dialogue_step = 0
 
 #Path to puddle node
 @export var puddle_node_path : NodePath
@@ -26,10 +25,6 @@ func _ready():
 	else:
 		push_error("Puddle node path not set for Fusebox!")
 
-	#Make indicator material unique
-	make_indicator_material_unique()
-	update_indicator_color()
-
 	#Find AnimationPlayer anywhere in this node's hierarchy
 	anim_player = find_animation_player(self)
 	if anim_player:
@@ -43,25 +38,17 @@ func _ready():
 		push_error("No AnimationPlayer found in fusebox!")
 
 func _process(delta):
-	if Input.is_action_pressed("activate_fusebox"):
-		#if can_activate():
-			# Move player to fusebosx
-			player.move_to_fusebox(fuseboxStand)
-			# Play fusebox animation
-			uiNode.visible = false
-			activate()
-		#else:
-			#print("Cannot activate fusebox yet!")
+	if Input.is_action_just_pressed("activate_fusebox") and player.get_fuse_state():
+		# Move player to fusebox
+		player.move_to_fusebox(fuseboxStand)
+		
+		# Play fusebox animation
+		uiNode.visible = false
+		activate()
+		player.deposit_fuse()
 
 	elif Input.is_action_just_pressed("activate_fusebox") and activated:
-		#if can_activate():
 			deactivate()
-		#else:
-			#print("Cannot activate fusebox yet!")
-			
-	elif Input.is_action_just_pressed("override_fusebox"):
-		deactivate()
-		
 
 
 #Check if the fusebox can be activated
@@ -80,33 +67,32 @@ func can_activate() -> bool:
 
 #Activate fusebox
 func activate():
-	activated = true
-	update_indicator_color()
-	$FuseboxAudio.play()
-	print("Electric gate deactivated through fusebox!")
+	if (player.get_fuse_state()):
+		activated = true
+		$FuseboxAudio.play()
+		print("Fusebox opened!")
 	
-	#Dialogue functions
-	if !dialogue_triggered:
-		text.change_text_image(1)
-		text.set_text("Heard something deactivate from the left room, wonder what that could be?", 6)
-		dialogue_triggered = true
+		#Dialogue functions
+		if dialogue_step == 0:
+			text.change_text_image(1)
+			text.set_text("Got that fuse in place, sounds like something powered from the right room", 6)
+			dialogue_step = 1
 
-	#Play animation if available
-	if anim_player:
-		#Try "Take 001" first, otherwise play first animation
-		var anim_name = "Take 001"
-		if not anim_player.has_animation(anim_name) and anim_player.get_animation_list().size() > 0:
-			anim_name = anim_player.get_animation_list()[0]
-		if anim_player.has_animation(anim_name):
-			anim_player.play(anim_name)
+		#Play animation if available
+		if anim_player:
+			#Try "Take 001" first, otherwise play first animation
+			var anim_name = "Take 001"
+			if not anim_player.has_animation(anim_name) and anim_player.get_animation_list().size() > 0:
+				anim_name = anim_player.get_animation_list()[0]
+			if anim_player.has_animation(anim_name):
+				anim_player.play(anim_name)
+			else:
+				print("No animations found to play!")
 		else:
-			print("No animations found to play!")
-	else:
-		print("No AnimationPlayer found to play animation!")
+			print("No AnimationPlayer found to play animation!")
 		
 func deactivate():
 	activated = false
-	update_indicator_color()
 	$FuseboxAudio.play()
 	print("Electric gate reactivated through fusebox!")
 
@@ -122,25 +108,6 @@ func deactivate():
 			print("No animations found to play!")
 	else:
 		print("No AnimationPlayer found to play animation!")
-
-#Indicator helpers
-func make_indicator_material_unique():
-	var mat = indicator.get_active_material(0)
-	if mat:
-		var unique_mat = mat.duplicate()
-		indicator.set_surface_override_material(0, unique_mat)
-	else:
-		indicator.set_surface_override_material(0, StandardMaterial3D.new())
-
-func update_indicator_color():
-	var mat = indicator.get_active_material(0)
-	if mat == null:
-		mat = StandardMaterial3D.new()
-		indicator.set_surface_override_material(0, mat)
-	if activated:
-		mat.albedo_color = Color.RED
-	else:
-		mat.albedo_color = Color.GREEN
 
 #Recursive search for AnimationPlayer
 func find_animation_player(node: Node) -> AnimationPlayer:

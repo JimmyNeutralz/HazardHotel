@@ -28,6 +28,7 @@ var rooms = []
 var room_order = []
 var stuck_timer: float = 0.0
 const STUCK_TIME_THRESHOLD: float = 0.1  #If stuck for this long, stop moving - fine tune 
+var hasFuse = false
 
 #For respawning
 @export var spawn_node_path: NodePath = ^"/root/Player/PlayerSpawnPosition"
@@ -317,7 +318,6 @@ func start_footsteps():
 	current_footstep_index = 0
 	footstep_players[current_footstep_index].play()
 
-
 func stop_footsteps():
 	footsteps_playing = false
 	for p in footstep_players:
@@ -392,6 +392,16 @@ func play_stand_interact() -> void:
 	player_sprite.play("StandInteract")
 	await player_sprite.animation_finished
 	
+#Collect fuse for fusebox check
+func collect_fuse():
+	hasFuse = true;
+	
+#Collect fuse for fusebox check
+func deposit_fuse():
+	hasFuse = false;
+	
+func get_fuse_state():
+	return hasFuse;
 	
 #Walk into elevator
 func walk_back_into_elevator(target_z: float) -> void:
