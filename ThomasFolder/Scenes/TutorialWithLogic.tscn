@@ -1859,6 +1859,7 @@ stream = ExtResource("26_puede")
 stream = ExtResource("27_xmwk6")
 
 [node name="TextPopup" type="Node2D" parent="."]
+position = Vector2(0, -10)
 script = ExtResource("28_4vmvk")
 
 [node name="text" type="Label" parent="TextPopup"]
