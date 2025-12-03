@@ -5,17 +5,19 @@ extends Node3D
 @onready var standLoc = $standLoc
 @onready var fuse = $fuse2
 @onready var fuseBoxLoc = $"../FuseBox/standSpot"
+@onready var fuseBox = $"../FuseBox"
 
 # State checking
 var isActivated = false;
 
 func _process(delta):
 	#Handle safe deactivation input
-	if Input.is_action_just_pressed("fix_dumbwaiter") and !isActivated:
+	if Input.is_action_just_pressed("fix_dumbwaiter"):
 		player.move_to_object(standLoc)
 		uiNode.visible = false
 		await get_tree().create_timer(1.0).timeout
 		fuse.visible = false
 		isActivated = true
+		fuseBox.collect_fuse()
 		player.collect_fuse()
 		

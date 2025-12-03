@@ -335,7 +335,6 @@ func move_to_specific_location(location: int):
 	
 func move_to_object(object):
 	target_position.x = object.global_position.x
-	
 	is_moving = true
 
 func move_through_left_door(object, side):

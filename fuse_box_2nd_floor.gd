@@ -7,6 +7,7 @@ extends Node3D
 
 @onready var text = $"../TextPopup"
 var dialogue_step = 0
+var fuses_collected = 0
 
 #Path to puddle node
 @export var puddle_node_path : NodePath
@@ -92,6 +93,8 @@ func activate():
 			print("No AnimationPlayer found to play animation!")
 		
 func deactivate():
+	
+	
 	activated = false
 	$FuseboxAudio.play()
 	print("Electric gate reactivated through fusebox!")
@@ -109,6 +112,11 @@ func deactivate():
 	else:
 		print("No AnimationPlayer found to play animation!")
 
+func collect_fuse():
+	fuses_collected = fuses_collected + 1
+	
+func get_fuse_amount():
+	return fuses_collected
 #Recursive search for AnimationPlayer
 func find_animation_player(node: Node) -> AnimationPlayer:
 	if node is AnimationPlayer:

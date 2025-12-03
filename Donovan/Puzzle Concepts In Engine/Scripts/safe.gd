@@ -36,10 +36,10 @@ func _ready():
 
 func _process(delta):
 	#Handle safe deactivation input
-	if Input.is_action_pressed("raise_safe") and !safe_raised:
+	if Input.is_action_pressed("raise_safe") and !safe_raised and fuseBox.get_fuse_amount() >= 1:
 		if (!process_started):
 			raise_safe()
-	elif Input.is_action_pressed("lower_safe") and safe_raised:
+	elif Input.is_action_pressed("lower_safe") and safe_raised and fuseBox.get_fuse_amount() >= 1:
 		if(!process_started):
 			lower_safe()
 		
@@ -137,8 +137,6 @@ func open_safe():
 		await get_tree().create_timer(1.0).timeout
 		fuse2.visible = false
 		fuseBox.uiNode.visible = true;
-		
-	
 		
 func close_safe():
 	if anim_player and anim_player.has_animation("Take 001"):
