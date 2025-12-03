@@ -7,7 +7,7 @@ var text_input
 var displayFor = 0
 
 var new_guy_text_sprite = load("res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png")
-var swagula_text_sprite = load("res://ThomasFolder/Sprites/Budget Swagula.png")
+var swagula_text_sprite = load("res://ThomasFolder/Sprites/HH_Art_SwagulaPortrait_V1.png")
 var building_owner_text_sprite = load("res://ThomasFolder/Sprites/HH_Art_OwnerPortrait_V1.png")
 var werewolf_text_sprite = load("res://ThomasFolder/Sprites/Budget Werewolf.png")
 
