@@ -1,4 +1,4 @@
-[gd_scene load_steps=306 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=307 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
 [ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="3_d23ut"]
@@ -73,6 +73,7 @@
 [ext_resource type="Script" uid="uid://dkdpv7iwscrxv" path="res://SpencerStuff/Scripts/true_floor_1_right.gd" id="61_d4b2v"]
 [ext_resource type="PackedScene" uid="uid://qktkjuseo3vd" path="res://SpencerStuff/Scenes/TrueFloor1Middle.tscn" id="61_hb643"]
 [ext_resource type="Script" uid="uid://5fe2miwdr0f" path="res://SpencerStuff/Scripts/true_floor_1_middle.gd" id="63_srmjg"]
+[ext_resource type="AudioStream" uid="uid://y8gssppvdj36" path="res://Assets/Audio/elevator door opening.wav" id="64_5dapl"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="67_n0xvb"]
 [ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="68_l5kx3"]
 [ext_resource type="Script" path="res://ThomasFolder/Scripts/swagula.gd" id="69_v45om"]
@@ -2027,6 +2028,9 @@ transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 2.38, -2.49)
 texture = ExtResource("58_l5kx3")
 
 [node name="ElevatorMarker" type="Marker3D" parent="ElevatorDoor"]
+
+[node name="ElevatorOpenSFX" type="AudioStreamPlayer3D" parent="ElevatorDoor"]
+stream = ExtResource("64_5dapl")
 
 [node name="RoomDetectors" type="Node3D" parent="."]
 

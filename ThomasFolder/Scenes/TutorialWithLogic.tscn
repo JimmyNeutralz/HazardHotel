@@ -1,4 +1,4 @@
-[gd_scene load_steps=299 format=3 uid="uid://cqmevv1ngqbua"]
+[gd_scene load_steps=300 format=3 uid="uid://cqmevv1ngqbua"]
 
 [ext_resource type="Script" uid="uid://bpt5xl3np0i1d" path="res://ThomasFolder/Scripts/level_management_thomas_tutorial_ver.gd" id="1_ldf2o"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_0bb3x"]
@@ -26,6 +26,7 @@
 [ext_resource type="AudioStream" uid="uid://o0muujmnhwuh" path="res://Assets/Audio/Heavy Footsteps 3.wav" id="23_ruey4"]
 [ext_resource type="AudioStream" uid="uid://c2aek62urxvgj" path="res://Assets/Audio/Heavy Footsteps 4.wav" id="24_largr"]
 [ext_resource type="AudioStream" uid="uid://00yxdkue0xhd" path="res://Assets/Audio/Heavy Footsteps 5.wav" id="25_l6a8f"]
+[ext_resource type="AudioStream" uid="uid://y8gssppvdj36" path="res://Assets/Audio/elevator door opening.wav" id="26_6j3yk"]
 [ext_resource type="AudioStream" uid="uid://16paor1ni7n6" path="res://Assets/Audio/Heavy Footsteps 6.wav" id="26_puede"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="28_4vmvk"]
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="30_mj5kf"]
@@ -1823,6 +1824,9 @@ animation = &"Orange1"
 autoplay = "Orange1"
 
 [node name="ElevatorMarker" type="Marker3D" parent="ElevatorDoor"]
+
+[node name="ElevatorOpenSFX" type="AudioStreamPlayer3D" parent="ElevatorDoor"]
+stream = ExtResource("26_6j3yk")
 
 [node name="RoomDetectors" type="Node3D" parent="."]
 

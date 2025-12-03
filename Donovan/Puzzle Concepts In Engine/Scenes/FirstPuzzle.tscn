@@ -1,4 +1,4 @@
-[gd_scene load_steps=607 format=3 uid="uid://bxhis68m30g1y"]
+[gd_scene load_steps=608 format=3 uid="uid://bxhis68m30g1y"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_sdfg4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_fwdfo"]
@@ -58,6 +58,7 @@
 [ext_resource type="Texture2D" uid="uid://mif77mvk3i48" path="res://Donovan/DonAssets/HH_Art_NodeGreen3_V1.png" id="44_yqei1"]
 [ext_resource type="PackedScene" uid="uid://bojy7at4teudg" path="res://Assets/3D Models/HH_Art_PinchModularRight_V2.fbx" id="45_8vtvq"]
 [ext_resource type="Texture2D" uid="uid://bkl556xt6evy6" path="res://Donovan/DonAssets/HH_Art_NodeOrange1_V1.png" id="45_svxs6"]
+[ext_resource type="AudioStream" uid="uid://y8gssppvdj36" path="res://Assets/Audio/elevator door opening.wav" id="46_et8ij"]
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="46_kp58o"]
 [ext_resource type="Texture2D" uid="uid://b1wmqw5j1s6xl" path="res://Donovan/DonAssets/HH_Art_NodeOrange4_V1.png" id="46_rebln"]
 [ext_resource type="Texture2D" uid="uid://tutpda8jn0vf" path="res://Donovan/DonAssets/HH_Art_NodePurple1_V1.png" id="47_jnpos"]
@@ -4754,6 +4755,9 @@ transform = Transform3D(0.24923547, 0, 0.01953651, 0, 0.25, 0, -0.01953651, 0, 0
 sprite_frames = SubResource("SpriteFrames_5urh0")
 animation = &"Cyan5"
 autoplay = "Cyan5"
+
+[node name="ElevatorOpenSFX" type="AudioStreamPlayer3D" parent="ElevatorDoor"]
+stream = ExtResource("46_et8ij")
 
 [node name="RoomDetectors" type="Node3D" parent="."]
 
