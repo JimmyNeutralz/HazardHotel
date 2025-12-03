@@ -176,7 +176,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		if path == "res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn":
 			fade_in_static._exit_scene("res://SpencerStuff/Scenes/EndScene.tscn")
 		else:
-			fade_in_static._exit_scene("res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn")
+			fade_in_static._exit_scene("res://SpencerStuff/Scenes/BetaAutoMoveCopy.tscn")
 
 
 	
