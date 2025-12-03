@@ -1,4 +1,4 @@
-[gd_scene load_steps=296 format=3 uid="uid://cqmevv1ngqbua"]
+[gd_scene load_steps=299 format=3 uid="uid://cqmevv1ngqbua"]
 
 [ext_resource type="Script" uid="uid://bpt5xl3np0i1d" path="res://ThomasFolder/Scripts/level_management_thomas_tutorial_ver.gd" id="1_ldf2o"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_0bb3x"]
@@ -71,6 +71,9 @@
 [ext_resource type="PackedScene" uid="uid://crqfjy0grfep2" path="res://SpencerStuff/Scenes/true_lobby.tscn" id="68_xn1yk"]
 [ext_resource type="PackedScene" uid="uid://hcmcgdk5of8u" path="res://SpencerStuff/Scenes/true_elevator.tscn" id="70_1crs8"]
 [ext_resource type="Script" uid="uid://ocllpcynxxvx" path="res://SpencerStuff/Scripts/true_elevator.gd" id="71_v8phs"]
+[ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="71_xv31i"]
+[ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="72_sjot8"]
+[ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="74_sjot8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -1588,30 +1591,6 @@ size = Vector3(1.2994995, 1.2765503, 0.11035156)
 
 [sub_resource type="BoxMesh" id="BoxMesh_63m68"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o507h"]
-shader = ExtResource("30_mj5kf")
-shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.0410000019475
-shader_parameter/scanlines_width = 0.4610000218975
-shader_parameter/grille_opacity = 0.2690000127775
-shader_parameter/resolution = Vector2(640, 480)
-shader_parameter/pixelate = true
-shader_parameter/roll = true
-shader_parameter/roll_speed = 10.0
-shader_parameter/roll_size = 14.9690007110275
-shader_parameter/roll_variation = 0.29600001080012
-shader_parameter/distort_intensity = 0.0090000004275
-shader_parameter/noise_opacity = 0.118000005605
-shader_parameter/noise_speed = 2.0
-shader_parameter/static_noise_intensity = 0.0950000045125
-shader_parameter/aberration = -0.01399995316500002
-shader_parameter/brightness = 1.4
-shader_parameter/discolor = true
-shader_parameter/warp_amount = 1.2930000614175
-shader_parameter/clip_warp = false
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.670000031825
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_j8v0c"]
 atlas = ExtResource("67_xn1yk")
 region = Rect2(0, 0, 700, 700)
@@ -1682,6 +1661,30 @@ animations = [{
 "name": &"Idle",
 "speed": 8.0
 }]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6j3yk"]
+shader = ExtResource("30_mj5kf")
+shader_parameter/overlay = true
+shader_parameter/scanlines_opacity = 0.02000000095
+shader_parameter/scanlines_width = 0.1950000092625
+shader_parameter/grille_opacity = 0.1130000053675
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = true
+shader_parameter/roll = true
+shader_parameter/roll_speed = 10.0
+shader_parameter/roll_size = 14.9690007110275
+shader_parameter/roll_variation = 0.29600001080012
+shader_parameter/distort_intensity = 0.0090000004275
+shader_parameter/noise_opacity = 0.118000005605
+shader_parameter/noise_speed = 2.0
+shader_parameter/static_noise_intensity = 0.0950000045125
+shader_parameter/aberration = -0.01399995316500002
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 1.2930000614175
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.670000031825
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ldf2o")
@@ -1957,15 +1960,6 @@ position = Vector2(99, -52.255)
 scale = Vector2(0.6282051, 0.6282051)
 texture = ExtResource("43_ldf2o")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_o507h")
-offset_left = -1.0
-offset_top = -2.0
-offset_right = 1155.0
-offset_bottom = 648.0
-
 [node name="HH_Art_Lobby_Room_V1" parent="." instance=ExtResource("31_57cga")]
 visible = false
 
@@ -2057,6 +2051,34 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4453683, 0, 0.4864707)
 
 [node name="HH_Art_Elevator_V1" parent="." instance=ExtResource("70_1crs8")]
 script = ExtResource("71_v8phs")
+
+[node name="Overlay" type="CanvasLayer" parent="."]
+
+[node name="HhArtOverlayV1" type="Sprite2D" parent="Overlay"]
+z_index = 3
+position = Vector2(576.00006, 325.50006)
+scale = Vector2(0.6020833, 0.60277784)
+texture = ExtResource("71_xv31i")
+
+[node name="HhArtOverlayV2" type="Sprite2D" parent="Overlay"]
+z_index = 3
+position = Vector2(576.00006, 325.50006)
+scale = Vector2(0.6020833, 0.60277784)
+texture = ExtResource("72_sjot8")
+
+[node name="ColorRect" type="ColorRect" parent="Overlay"]
+material = SubResource("ShaderMaterial_6j3yk")
+offset_left = 11.0
+offset_top = 19.0
+offset_right = 1136.0
+offset_bottom = 614.0
+mouse_filter = 2
+
+[node name="HhArtOverlayV3" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(575.00006, 318)
+scale = Vector2(0.6156249, 0.59074074)
+texture = ExtResource("74_sjot8")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
