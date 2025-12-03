@@ -1564,6 +1564,8 @@ shader_parameter/vignette_opacity = 0.670000031825
 
 [node name="Node3D3" type="Node3D"]
 script = ExtResource("1_rw4lb")
+next_scene_path = null
+main_menu_scene = null
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.01, 0.623, -0.544)
@@ -1960,6 +1962,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.112, 1.68)
 [node name="ElevatorSignFloor1" type="Sprite3D" parent="ElevatorDoor/HH_Art_ElevatorSign_V1"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 2.38, -2.49)
 texture = ExtResource("58_l5kx3")
+
+[node name="ElevatorMarker" type="Marker3D" parent="ElevatorDoor"]
 
 [node name="RoomDetectors" type="Node3D" parent="."]
 
