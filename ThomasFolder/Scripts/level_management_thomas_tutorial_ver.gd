@@ -32,9 +32,9 @@ var has_right_key: bool = false
 
 @onready var LeftBulbVisual = $Lights/LeftBulb
 
-@onready var GeneratorVisual = $Generator/GeneratorVisual
+@onready var GeneratorVisual = $Generator
 
-@onready var ElevatorVisual = $Elevator/HH_Art_Elevator_V1
+@onready var ElevatorVisual = $HH_Art_Elevator_V1
 
 @onready var text_popup = $TextPopup
 

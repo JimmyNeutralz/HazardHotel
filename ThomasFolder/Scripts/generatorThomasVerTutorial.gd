@@ -10,7 +10,13 @@ extends Node3D
 
 @onready var player = $"../Player"
 @onready var text = $"../TextPopup"      
-@onready var generator_marker = $"../Generator/Marker3D"              
+@onready var generator_marker = $"../Generator/Marker3D"     
+
+@onready var mesh_instance = $generator/GeneratorFrame_L1.get_active_material(0)
+
+
+func colored_generator():
+	mesh_instance.albedo_color = Color(0.422, 0.237, 0.017, 1.0)         
 
 var lamp: Node3D = null
 var activated = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=294 format=3 uid="uid://cqmevv1ngqbua"]
+[gd_scene load_steps=296 format=3 uid="uid://cqmevv1ngqbua"]
 
 [ext_resource type="Script" uid="uid://bpt5xl3np0i1d" path="res://ThomasFolder/Scripts/level_management_thomas_tutorial_ver.gd" id="1_ldf2o"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_0bb3x"]
@@ -44,7 +44,6 @@
 [ext_resource type="PackedScene" uid="uid://dlobr62q8pu2y" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Frame_V1.fbx" id="42_uetlj"]
 [ext_resource type="PackedScene" uid="uid://duhfw3dymue0b" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_FrontDesk_V1.fbx" id="43_d6slq"]
 [ext_resource type="Texture2D" uid="uid://b2smx76edwggf" path="res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png" id="43_ldf2o"]
-[ext_resource type="PackedScene" uid="uid://dc1tiw77jedm0" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Generator_V1.fbx" id="44_oq3da"]
 [ext_resource type="Texture2D" uid="uid://cfo2bftv6y7qy" path="res://Donovan/DonAssets/HH_Art_NodeBlue2_V1.png" id="46_1faqh"]
 [ext_resource type="Texture2D" uid="uid://5lvcfq2duxw0" path="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png" id="47_dlxqn"]
 [ext_resource type="Texture2D" uid="uid://0q8k8ovc0tm5" path="res://Donovan/DonAssets/HH_Art_NodeCyan2_V1.png" id="48_s8xqx"]
@@ -58,9 +57,10 @@
 [ext_resource type="Texture2D" uid="uid://cj7cb7ow72uni" path="res://Donovan/DonAssets/HH_Art_NodePurple6_V1.png" id="56_4ur2t"]
 [ext_resource type="Texture2D" uid="uid://dfmn8hnqyawbn" path="res://Donovan/DonAssets/HH_Art_NodeYellow5_V1.png" id="57_ott4e"]
 [ext_resource type="Texture2D" uid="uid://d1ybbwvdlyuvl" path="res://Donovan/DonAssets/HH_Art_NodeYellow6_V1.png" id="58_1qiwk"]
+[ext_resource type="PackedScene" uid="uid://c7p2cadteahj6" path="res://SpencerStuff/Scenes/true_generator.tscn" id="58_lk6fc"]
 [ext_resource type="PackedScene" uid="uid://j60l3njdviye" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Lamp_V1.fbx" id="59_15qe5"]
 [ext_resource type="AudioStream" uid="uid://bt827ljr2p2uk" path="res://Assets/Audio/Switch.wav" id="59_hcdoj"]
-[ext_resource type="Script" path="res://ThomasFolder/Scripts/generatorThomasVerTutorial.gd" id="59_ldf2o"]
+[ext_resource type="Script" uid="uid://npu55c7px8ms" path="res://ThomasFolder/Scripts/generatorThomasVerTutorial.gd" id="59_ldf2o"]
 [ext_resource type="Script" path="res://Assets/3D Models/LobbyModels/lamp.gd" id="60_25vsh"]
 [ext_resource type="PackedScene" uid="uid://yayf6ie6vren" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Rug_V1.fbx" id="60_mawxb"]
 [ext_resource type="PackedScene" uid="uid://dgfvm6sy14n60" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V1.fbx" id="61_7f5nv"]
@@ -69,6 +69,8 @@
 [ext_resource type="Texture2D" uid="uid://uvf0v1svjyqn" path="res://Assets/HH_Art_OwnerIdleSpriteSheet_V1.png" id="67_xn1yk"]
 [ext_resource type="Script" uid="uid://cjfcp3ijd2aj8" path="res://ThomasFolder/Scenes/owner_idle.gd" id="68_j8v0c"]
 [ext_resource type="PackedScene" uid="uid://crqfjy0grfep2" path="res://SpencerStuff/Scenes/true_lobby.tscn" id="68_xn1yk"]
+[ext_resource type="PackedScene" uid="uid://hcmcgdk5of8u" path="res://SpencerStuff/Scenes/true_elevator.tscn" id="70_1crs8"]
+[ext_resource type="Script" uid="uid://ocllpcynxxvx" path="res://SpencerStuff/Scripts/true_elevator.gd" id="71_v8phs"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -1990,29 +1992,31 @@ visible = false
 [node name="HH_Art_Lobby_ElevatorSign_V1" parent="." instance=ExtResource("40_813hb")]
 
 [node name="HH_Art_Lobby_Elevator_V1" parent="." instance=ExtResource("41_oig6y")]
+visible = false
 
 [node name="HH_Art_Lobby_Frame_V1" parent="." instance=ExtResource("42_uetlj")]
 
 [node name="HH_Art_Lobby_FrontDesk_V1" parent="." instance=ExtResource("43_d6slq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
 
-[node name="Generator" parent="." node_paths=PackedStringArray("elevator_door") instance=ExtResource("44_oq3da")]
+[node name="Generator" parent="." node_paths=PackedStringArray("elevator_door") instance=ExtResource("58_lk6fc")]
+transform = Transform3D(0.9772274, 0, -0.21219474, 0, 1, 0, 0.21219474, 0, 0.9772274, 2.0893133, 0.014403522, -0.39942175)
 script = ExtResource("59_ldf2o")
 lamp_node_path = NodePath("../HH_Art_Lobby_Lamp_V1")
 elevator_door = NodePath("../ElevatorDoor")
 
 [node name="GeneratorUI" type="AnimatedSprite3D" parent="Generator"]
-transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, 2.173839, 1.1000555, 0.089426875)
+transform = Transform3D(0.24490955, 0, 0.05019258, 0, 0.25, 0, -0.05019258, 0, 0.24490955, 0.18633199, 1.0856519, 0.45978034)
 sprite_frames = SubResource("SpriteFrames_km7aj")
 animation = &"Green3"
 autoplay = "Green3"
 
 [node name="GeneratorAudio" type="AudioStreamPlayer3D" parent="Generator"]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9929323, 0, -0.16973802)
+transform = Transform3D(0.2121947, 0, -0.9772274, 0, 1, 0, 0.9772274, 0, 0.2121947, -9.803909, -0.014403522, 2.3638525)
 stream = ExtResource("59_hcdoj")
 
 [node name="Marker3D" type="Marker3D" parent="Generator"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1525216, 0, 0)
+transform = Transform3D(0.9772274, 0, 0.21219474, 0, 1, 0, -0.21219474, 0, 0.9772274, 0.14652395, -0.014403522, 0.3769134)
 
 [node name="HH_Art_Lobby_Lamp_V1" parent="." instance=ExtResource("59_15qe5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
@@ -2050,6 +2054,9 @@ script = ExtResource("68_j8v0c")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4453683, 0, 0.4864707)
 
 [node name="HH_Art_Lobby_Room_V2" parent="." instance=ExtResource("68_xn1yk")]
+
+[node name="HH_Art_Elevator_V1" parent="." instance=ExtResource("70_1crs8")]
+script = ExtResource("71_v8phs")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
