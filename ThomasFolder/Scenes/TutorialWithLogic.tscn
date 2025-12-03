@@ -1859,7 +1859,7 @@ stream = ExtResource("26_puede")
 stream = ExtResource("27_xmwk6")
 
 [node name="TextPopup" type="Node2D" parent="."]
-position = Vector2(0, -10)
+position = Vector2(0, -20)
 script = ExtResource("28_4vmvk")
 
 [node name="text" type="Label" parent="TextPopup"]
@@ -1879,7 +1879,7 @@ scale = Vector2(932.25, 95.99999)
 mesh = SubResource("BoxMesh_63m68")
 
 [node name="TextPopupCharacterImage" type="Sprite2D" parent="TextPopup"]
-position = Vector2(99, -52.255)
+position = Vector2(92, -52.255)
 scale = Vector2(0.6282051, 0.6282051)
 texture = ExtResource("43_ldf2o")
 
