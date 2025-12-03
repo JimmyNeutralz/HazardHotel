@@ -1,4 +1,4 @@
-[gd_scene load_steps=282 format=3 uid="uid://cqmevv1ngqbua"]
+[gd_scene load_steps=283 format=3 uid="uid://cqmevv1ngqbua"]
 
 [ext_resource type="Script" uid="uid://bpt5xl3np0i1d" path="res://ThomasFolder/Scripts/level_management_thomas_tutorial_ver.gd" id="1_ldf2o"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_0bb3x"]
@@ -27,7 +27,6 @@
 [ext_resource type="AudioStream" uid="uid://c2aek62urxvgj" path="res://Assets/Audio/Heavy Footsteps 4.wav" id="24_largr"]
 [ext_resource type="AudioStream" uid="uid://00yxdkue0xhd" path="res://Assets/Audio/Heavy Footsteps 5.wav" id="25_l6a8f"]
 [ext_resource type="AudioStream" uid="uid://16paor1ni7n6" path="res://Assets/Audio/Heavy Footsteps 6.wav" id="26_puede"]
-[ext_resource type="AudioStream" uid="uid://c2k5mrmymj5tt" path="res://Assets/Audio/mx_level.wav" id="27_xmwk6"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="28_4vmvk"]
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="30_mj5kf"]
 [ext_resource type="PackedScene" uid="uid://cdpmf8utj0jno" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Room_V1.fbx" id="31_57cga"]
@@ -40,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://c8gu3yh4828p1" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Doors_V1.fbx" id="38_c5tkm"]
 [ext_resource type="PackedScene" uid="uid://dqke751goegmo" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_ElevatorGate_V1.fbx" id="39_bf0ny"]
 [ext_resource type="PackedScene" uid="uid://c6nncrc2ucu0x" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_ElevatorSign_V1.fbx" id="40_813hb"]
+[ext_resource type="AudioStream" uid="uid://nhounakdj05v" path="res://Assets/Audio/mx_tutorial.wav" id="41_ldf2o"]
 [ext_resource type="PackedScene" uid="uid://b5jal522dbcis" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Elevator_V1.fbx" id="41_oig6y"]
 [ext_resource type="PackedScene" uid="uid://dlobr62q8pu2y" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Frame_V1.fbx" id="42_uetlj"]
 [ext_resource type="PackedScene" uid="uid://duhfw3dymue0b" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_FrontDesk_V1.fbx" id="43_d6slq"]
@@ -67,6 +67,7 @@
 [ext_resource type="PackedScene" uid="uid://dd7maffl4gk12" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V2.fbx" id="62_0cfyl"]
 [ext_resource type="PackedScene" uid="uid://dbok1pugswmfy" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Table_V1.fbx" id="63_8xeul"]
 [ext_resource type="Texture2D" uid="uid://cxdu2hcoa4ln8" path="res://Assets/HH_Art_BuildingOwnerSprite_V1.png" id="64_cy28o"]
+[ext_resource type="PackedScene" uid="uid://crqfjy0grfep2" path="res://SpencerStuff/Scenes/true_lobby.tscn" id="68_xn1yk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -1856,7 +1857,7 @@ stream = ExtResource("25_l6a8f")
 stream = ExtResource("26_puede")
 
 [node name="LevelMusicPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("27_xmwk6")
+stream = ExtResource("41_ldf2o")
 
 [node name="TextPopup" type="Node2D" parent="."]
 script = ExtResource("28_4vmvk")
@@ -1892,6 +1893,7 @@ offset_right = 1155.0
 offset_bottom = 648.0
 
 [node name="HH_Art_Lobby_Room_V1" parent="." instance=ExtResource("31_57cga")]
+visible = false
 
 [node name="HH_Art_Lobby_Bell_V1" parent="." instance=ExtResource("32_bsst6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
@@ -1972,6 +1974,8 @@ texture = ExtResource("64_cy28o")
 
 [node name="Marker3D" type="Marker3D" parent="BuildingOwner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4453683, 0, 0.4864707)
+
+[node name="HH_Art_Lobby_Room_V2" parent="." instance=ExtResource("68_xn1yk")]
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
