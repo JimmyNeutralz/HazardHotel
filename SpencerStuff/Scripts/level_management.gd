@@ -76,6 +76,10 @@ func _ready():
 	else:
 		print("WARNING: Level music node missing!")
 
+func _process(delta):
+	if generator.activated and not elevator_door.powered_on:
+		elevator_door.powered_on = true
+		print("Elevator powered on!")
 
 
 #Left key trigger

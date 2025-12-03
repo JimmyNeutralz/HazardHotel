@@ -1,8 +1,8 @@
-[gd_scene load_steps=282 format=3 uid="uid://dd4w345ahj7wh"]
+[gd_scene load_steps=300 format=3 uid="uid://cqmevv1ngqbua"]
 
 [ext_resource type="Script" uid="uid://bpt5xl3np0i1d" path="res://ThomasFolder/Scripts/level_management_thomas_tutorial_ver.gd" id="1_ldf2o"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_0bb3x"]
-[ext_resource type="Script" uid="uid://t5iwr1n67h38" path="res://ThomasFolder/Scripts/camera_move_pinch_tutorial_ver.gd" id="3_hcdoj"]
+[ext_resource type="Script" path="res://ThomasFolder/Scripts/camera_move_pinch_tutorial_ver.gd" id="3_hcdoj"]
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="4_ph66n"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="5_dcdqr"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="6_c7nfw"]
@@ -26,8 +26,8 @@
 [ext_resource type="AudioStream" uid="uid://o0muujmnhwuh" path="res://Assets/Audio/Heavy Footsteps 3.wav" id="23_ruey4"]
 [ext_resource type="AudioStream" uid="uid://c2aek62urxvgj" path="res://Assets/Audio/Heavy Footsteps 4.wav" id="24_largr"]
 [ext_resource type="AudioStream" uid="uid://00yxdkue0xhd" path="res://Assets/Audio/Heavy Footsteps 5.wav" id="25_l6a8f"]
+[ext_resource type="AudioStream" uid="uid://y8gssppvdj36" path="res://Assets/Audio/elevator door opening.wav" id="26_6j3yk"]
 [ext_resource type="AudioStream" uid="uid://16paor1ni7n6" path="res://Assets/Audio/Heavy Footsteps 6.wav" id="26_puede"]
-[ext_resource type="AudioStream" uid="uid://c2k5mrmymj5tt" path="res://Assets/Audio/mx_level.wav" id="27_xmwk6"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="28_4vmvk"]
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="30_mj5kf"]
 [ext_resource type="PackedScene" uid="uid://cdpmf8utj0jno" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Room_V1.fbx" id="31_57cga"]
@@ -40,11 +40,11 @@
 [ext_resource type="PackedScene" uid="uid://c8gu3yh4828p1" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Doors_V1.fbx" id="38_c5tkm"]
 [ext_resource type="PackedScene" uid="uid://dqke751goegmo" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_ElevatorGate_V1.fbx" id="39_bf0ny"]
 [ext_resource type="PackedScene" uid="uid://c6nncrc2ucu0x" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_ElevatorSign_V1.fbx" id="40_813hb"]
+[ext_resource type="AudioStream" uid="uid://nhounakdj05v" path="res://Assets/Audio/mx_tutorial.wav" id="41_ldf2o"]
 [ext_resource type="PackedScene" uid="uid://b5jal522dbcis" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Elevator_V1.fbx" id="41_oig6y"]
 [ext_resource type="PackedScene" uid="uid://dlobr62q8pu2y" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Frame_V1.fbx" id="42_uetlj"]
 [ext_resource type="PackedScene" uid="uid://duhfw3dymue0b" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_FrontDesk_V1.fbx" id="43_d6slq"]
 [ext_resource type="Texture2D" uid="uid://b2smx76edwggf" path="res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png" id="43_ldf2o"]
-[ext_resource type="PackedScene" uid="uid://dc1tiw77jedm0" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Generator_V1.fbx" id="44_oq3da"]
 [ext_resource type="Texture2D" uid="uid://cfo2bftv6y7qy" path="res://Donovan/DonAssets/HH_Art_NodeBlue2_V1.png" id="46_1faqh"]
 [ext_resource type="Texture2D" uid="uid://5lvcfq2duxw0" path="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png" id="47_dlxqn"]
 [ext_resource type="Texture2D" uid="uid://0q8k8ovc0tm5" path="res://Donovan/DonAssets/HH_Art_NodeCyan2_V1.png" id="48_s8xqx"]
@@ -58,15 +58,23 @@
 [ext_resource type="Texture2D" uid="uid://cj7cb7ow72uni" path="res://Donovan/DonAssets/HH_Art_NodePurple6_V1.png" id="56_4ur2t"]
 [ext_resource type="Texture2D" uid="uid://dfmn8hnqyawbn" path="res://Donovan/DonAssets/HH_Art_NodeYellow5_V1.png" id="57_ott4e"]
 [ext_resource type="Texture2D" uid="uid://d1ybbwvdlyuvl" path="res://Donovan/DonAssets/HH_Art_NodeYellow6_V1.png" id="58_1qiwk"]
+[ext_resource type="PackedScene" uid="uid://c7p2cadteahj6" path="res://SpencerStuff/Scenes/true_generator.tscn" id="58_lk6fc"]
 [ext_resource type="PackedScene" uid="uid://j60l3njdviye" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Lamp_V1.fbx" id="59_15qe5"]
-[ext_resource type="AudioStream" uid="uid://bt827ljr2p2uk" path="res://Assets/Audio/Switch.wav" id="59_hcdoj"]
 [ext_resource type="Script" uid="uid://npu55c7px8ms" path="res://ThomasFolder/Scripts/generatorThomasVerTutorial.gd" id="59_ldf2o"]
-[ext_resource type="Script" uid="uid://gxyte2pwafxu" path="res://Assets/3D Models/LobbyModels/lamp.gd" id="60_25vsh"]
+[ext_resource type="AudioStream" uid="uid://u31ntpy5j83k" path="res://Assets/Audio/generator start up.wav" id="60_6j3yk"]
+[ext_resource type="Script" path="res://Assets/3D Models/LobbyModels/lamp.gd" id="60_25vsh"]
 [ext_resource type="PackedScene" uid="uid://yayf6ie6vren" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Rug_V1.fbx" id="60_mawxb"]
 [ext_resource type="PackedScene" uid="uid://dgfvm6sy14n60" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V1.fbx" id="61_7f5nv"]
 [ext_resource type="PackedScene" uid="uid://dd7maffl4gk12" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V2.fbx" id="62_0cfyl"]
 [ext_resource type="PackedScene" uid="uid://dbok1pugswmfy" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Table_V1.fbx" id="63_8xeul"]
-[ext_resource type="Texture2D" uid="uid://cxdu2hcoa4ln8" path="res://Assets/HH_Art_BuildingOwnerSprite_V1.png" id="64_cy28o"]
+[ext_resource type="Texture2D" uid="uid://uvf0v1svjyqn" path="res://Assets/HH_Art_OwnerIdleSpriteSheet_V1.png" id="67_xn1yk"]
+[ext_resource type="Script" uid="uid://cjfcp3ijd2aj8" path="res://ThomasFolder/Scenes/owner_idle.gd" id="68_j8v0c"]
+[ext_resource type="PackedScene" uid="uid://crqfjy0grfep2" path="res://SpencerStuff/Scenes/true_lobby.tscn" id="68_xn1yk"]
+[ext_resource type="PackedScene" uid="uid://hcmcgdk5of8u" path="res://SpencerStuff/Scenes/true_elevator.tscn" id="70_1crs8"]
+[ext_resource type="Script" uid="uid://ocllpcynxxvx" path="res://SpencerStuff/Scripts/true_elevator.gd" id="71_v8phs"]
+[ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="71_xv31i"]
+[ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="72_sjot8"]
+[ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="74_sjot8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -1584,12 +1592,83 @@ size = Vector3(1.2994995, 1.2765503, 0.11035156)
 
 [sub_resource type="BoxMesh" id="BoxMesh_63m68"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o507h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8v0c"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(0, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1crs8"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(700, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8phs"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(1400, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lk6fc"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(2100, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv31i"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(2800, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjot8"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(3500, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j3yk"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(4200, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1lpn"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(4900, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83lf2"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(5600, 0, 700, 700)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_la2bx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8v0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1crs8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8phs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lk6fc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv31i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjot8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6j3yk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1lpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83lf2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6j3yk"]
 shader = ExtResource("30_mj5kf")
 shader_parameter/overlay = true
-shader_parameter/scanlines_opacity = 0.0410000019475
-shader_parameter/scanlines_width = 0.4610000218975
-shader_parameter/grille_opacity = 0.2690000127775
+shader_parameter/scanlines_opacity = 0.02000000095
+shader_parameter/scanlines_width = 0.1950000092625
+shader_parameter/grille_opacity = 0.1130000053675
 shader_parameter/resolution = Vector2(640, 480)
 shader_parameter/pixelate = true
 shader_parameter/roll = true
@@ -1746,6 +1825,9 @@ autoplay = "Orange1"
 
 [node name="ElevatorMarker" type="Marker3D" parent="ElevatorDoor"]
 
+[node name="ElevatorOpenSFX" type="AudioStreamPlayer3D" parent="ElevatorDoor"]
+stream = ExtResource("26_6j3yk")
+
 [node name="RoomDetectors" type="Node3D" parent="."]
 
 [node name="MainRoom" type="Area3D" parent="RoomDetectors"]
@@ -1856,7 +1938,7 @@ stream = ExtResource("25_l6a8f")
 stream = ExtResource("26_puede")
 
 [node name="LevelMusicPlayer" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("27_xmwk6")
+stream = ExtResource("41_ldf2o")
 
 [node name="TextPopup" type="Node2D" parent="."]
 script = ExtResource("28_4vmvk")
@@ -1882,16 +1964,8 @@ position = Vector2(99, -52.255)
 scale = Vector2(0.6282051, 0.6282051)
 texture = ExtResource("43_ldf2o")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
-material = SubResource("ShaderMaterial_o507h")
-offset_left = -1.0
-offset_top = -2.0
-offset_right = 1155.0
-offset_bottom = 648.0
-
 [node name="HH_Art_Lobby_Room_V1" parent="." instance=ExtResource("31_57cga")]
+visible = false
 
 [node name="HH_Art_Lobby_Bell_V1" parent="." instance=ExtResource("32_bsst6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
@@ -1916,29 +1990,31 @@ visible = false
 [node name="HH_Art_Lobby_ElevatorSign_V1" parent="." instance=ExtResource("40_813hb")]
 
 [node name="HH_Art_Lobby_Elevator_V1" parent="." instance=ExtResource("41_oig6y")]
+visible = false
 
 [node name="HH_Art_Lobby_Frame_V1" parent="." instance=ExtResource("42_uetlj")]
 
 [node name="HH_Art_Lobby_FrontDesk_V1" parent="." instance=ExtResource("43_d6slq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
 
-[node name="Generator" parent="." node_paths=PackedStringArray("elevator_door") instance=ExtResource("44_oq3da")]
+[node name="Generator" parent="." node_paths=PackedStringArray("elevator_door") instance=ExtResource("58_lk6fc")]
+transform = Transform3D(0.9772274, 0, -0.21219474, 0, 1, 0, 0.21219474, 0, 0.9772274, 2.0893133, 0.014403522, -0.39942175)
 script = ExtResource("59_ldf2o")
 lamp_node_path = NodePath("../HH_Art_Lobby_Lamp_V1")
 elevator_door = NodePath("../ElevatorDoor")
 
 [node name="GeneratorUI" type="AnimatedSprite3D" parent="Generator"]
-transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, 2.173839, 1.1000555, 0.089426875)
+transform = Transform3D(0.24490955, 0, 0.05019258, 0, 0.25, 0, -0.05019258, 0, 0.24490955, 0.18633199, 1.0856519, 0.45978034)
 sprite_frames = SubResource("SpriteFrames_km7aj")
 animation = &"Green3"
 autoplay = "Green3"
 
 [node name="GeneratorAudio" type="AudioStreamPlayer3D" parent="Generator"]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9929323, 0, -0.16973802)
-stream = ExtResource("59_hcdoj")
+transform = Transform3D(0.2121947, 0, -0.9772274, 0, 1, 0, 0.9772274, 0, 0.2121947, -9.803909, -0.014403522, 2.3638525)
+stream = ExtResource("60_6j3yk")
 
 [node name="Marker3D" type="Marker3D" parent="Generator"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1525216, 0, 0)
+transform = Transform3D(0.9772274, 0, 0.21219474, 0, 1, 0, -0.21219474, 0, 0.9772274, 0.14652395, -0.014403522, 0.3769134)
 
 [node name="HH_Art_Lobby_Lamp_V1" parent="." instance=ExtResource("59_15qe5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
@@ -1965,13 +2041,48 @@ light_energy = 2.205
 [node name="BuildingOwner" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45269394)
 
-[node name="Sprite3D" type="Sprite3D" parent="BuildingOwner"]
+[node name="Sprite3D" type="AnimatedSprite3D" parent="BuildingOwner"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.7325935, 0.9374503, -0.22476053)
 shaded = true
-texture = ExtResource("64_cy28o")
+sprite_frames = SubResource("SpriteFrames_la2bx")
+animation = &"Idle"
+script = ExtResource("68_j8v0c")
 
 [node name="Marker3D" type="Marker3D" parent="BuildingOwner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4453683, 0, 0.4864707)
+
+[node name="HH_Art_Lobby_Room_V2" parent="." instance=ExtResource("68_xn1yk")]
+
+[node name="HH_Art_Elevator_V1" parent="." instance=ExtResource("70_1crs8")]
+script = ExtResource("71_v8phs")
+
+[node name="Overlay" type="CanvasLayer" parent="."]
+
+[node name="HhArtOverlayV1" type="Sprite2D" parent="Overlay"]
+z_index = 3
+position = Vector2(576.00006, 325.50006)
+scale = Vector2(0.6020833, 0.60277784)
+texture = ExtResource("71_xv31i")
+
+[node name="HhArtOverlayV2" type="Sprite2D" parent="Overlay"]
+z_index = 3
+position = Vector2(576.00006, 325.50006)
+scale = Vector2(0.6020833, 0.60277784)
+texture = ExtResource("72_sjot8")
+
+[node name="ColorRect" type="ColorRect" parent="Overlay"]
+material = SubResource("ShaderMaterial_6j3yk")
+offset_left = 11.0
+offset_top = 19.0
+offset_right = 1136.0
+offset_bottom = 614.0
+mouse_filter = 2
+
+[node name="HhArtOverlayV3" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(575.00006, 318)
+scale = Vector2(0.6156249, 0.59074074)
+texture = ExtResource("74_sjot8")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
