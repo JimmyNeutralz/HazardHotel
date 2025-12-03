@@ -43,9 +43,9 @@
 [ext_resource type="Texture2D" uid="uid://cj7cb7ow72uni" path="res://Donovan/DonAssets/HH_Art_NodePurple6_V1.png" id="36_2j6rm"]
 [ext_resource type="Script" uid="uid://d26s1jhjd3mxd" path="res://SpencerStuff/Scripts/gate.gd" id="36_qa6id"]
 [ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="37_75sfh"]
+[ext_resource type="AudioStream" uid="uid://blva2u8dj2k20" path="res://Assets/Audio/metal gate opening.wav" id="37_et8ij"]
 [ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="38_deijv"]
 [ext_resource type="Texture2D" uid="uid://dfmn8hnqyawbn" path="res://Donovan/DonAssets/HH_Art_NodeYellow5_V1.png" id="39_t6dil"]
-[ext_resource type="AudioStream" uid="uid://cr8mcfem7l0to" path="res://Assets/Audio/Wooden door creak 3.wav" id="40_oreta"]
 [ext_resource type="PackedScene" uid="uid://cndbloaafk7o2" path="res://Scenes/GateV3Close.tscn" id="40_pwu2m"]
 [ext_resource type="Script" uid="uid://7epq051kcf4g" path="res://SpencerStuff/Scripts/elevator_door.gd" id="41_c0qj2"]
 [ext_resource type="PackedScene" uid="uid://yvv4teqlemm5" path="res://SpencerStuff/Scenes/hh_art_elevator_gate_v_1.tscn" id="42_bbw7d"]
@@ -4687,7 +4687,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.259312, 1.4451294, 0.19985
 shape = SubResource("BoxShape3D_vher1")
 
 [node name="GateAudio" type="AudioStreamPlayer3D" parent="Gate"]
-stream = ExtResource("40_oreta")
+stream = ExtResource("37_et8ij")
 
 [node name="GateKillAudio" type="AudioStreamPlayer3D" parent="Gate"]
 stream = ExtResource("32_c6g38")
