@@ -31,6 +31,7 @@ func _process(delta: float) -> void:
 func open_gate() -> void:
 	if anim and not door_open:
 		door_open = true
+		$ElevatorOpenSFX.play()
 		anim.play("Take 001")
 
 
