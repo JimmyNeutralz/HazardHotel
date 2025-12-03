@@ -61,7 +61,7 @@ func show_textbox():
 
 func hide_textbox():
 	var tween = create_tween()
-	tween.tween_property(self, "global_position",  Vector2(0,-10.0), .8)
+	tween.tween_property(self, "global_position",  Vector2(0,-20.0), .8)
 
 #Type_text function repurposed from spencer's code from StoryIntro
 func type_text() -> void:
