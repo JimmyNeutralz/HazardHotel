@@ -31,12 +31,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("activate_generator") and not activated:
 		if can_activate():
 			activate_generator()
-			uiNode.visible = false
-			text.change_text_image(3)
-			complete_tutorial_generator_text()
-			lamp.generator_on = true
-			elevator_door.powered_on = true
-			player.move_to_specific_location(generator_marker.global_position.x)
 		else:
 			print("Cannot activate generator yet!")
 
@@ -55,6 +49,13 @@ func activate_generator():
 	activated = true
 	$GeneratorAudio.play()
 	print("Generator activated!")
+	
+	uiNode.visible = false
+	text.change_text_image(3)
+	complete_tutorial_generator_text()
+	lamp.generator_on = true
+	elevator_door.powered_on = true
+	player.move_to_specific_location(generator_marker.global_position.x)
 
 	#change color
 	if indicator:
