@@ -1,4 +1,4 @@
-[gd_scene load_steps=296 format=3 uid="uid://ro7ff88bljth"]
+[gd_scene load_steps=306 format=3 uid="uid://ro7ff88bljth"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_rw4lb"]
 [ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="3_d23ut"]
@@ -76,11 +76,12 @@
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="67_n0xvb"]
 [ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="68_l5kx3"]
 [ext_resource type="Script" path="res://ThomasFolder/Scripts/swagula.gd" id="69_v45om"]
-[ext_resource type="Texture2D" uid="uid://bmkj5h4vj715d" path="res://ThomasFolder/Sprites/HH_Art_SwagulaSprite_V1.png" id="70_hkw6q"]
 [ext_resource type="PackedScene" uid="uid://bybb2btwgb084" path="res://SpencerStuff/Scenes/true_left_scenev3.tscn" id="70_t26xm"]
 [ext_resource type="PackedScene" uid="uid://bvtx553hn8ouc" path="res://SpencerStuff/Scenes/true_middle_scenev3.tscn" id="71_am682"]
 [ext_resource type="PackedScene" uid="uid://bglppt0huxa04" path="res://SpencerStuff/Scenes/true_right_scenev3.tscn" id="72_qwmcr"]
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="78_y0u35"]
+[ext_resource type="Texture2D" uid="uid://caugvsxkexcr4" path="res://Assets/HH_Art_SwagulaIdleSpriteSheet_V1.png" id="80_j4dhs"]
+[ext_resource type="Script" uid="uid://btji0eb8uf47h" path="res://SpencerStuff/Scenes/swagula_idle.gd" id="81_dgu40"]
 [ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="81_j4dhs"]
 [ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="82_dgu40"]
 [ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="83_5dapl"]
@@ -1538,6 +1539,70 @@ size = Vector3(4.272888, 2.7320023, 2.4972534)
 
 [sub_resource type="BoxMesh" id="BoxMesh_n0xvb"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgu40"]
+atlas = ExtResource("80_j4dhs")
+region = Rect2(0, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dapl"]
+atlas = ExtResource("80_j4dhs")
+region = Rect2(700, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fii53"]
+atlas = ExtResource("80_j4dhs")
+region = Rect2(1400, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkom4"]
+atlas = ExtResource("80_j4dhs")
+region = Rect2(2100, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5by3s"]
+atlas = ExtResource("80_j4dhs")
+region = Rect2(2800, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2825g"]
+atlas = ExtResource("80_j4dhs")
+region = Rect2(3500, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7evx0"]
+atlas = ExtResource("80_j4dhs")
+region = Rect2(4200, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0f812"]
+atlas = ExtResource("80_j4dhs")
+region = Rect2(4900, 0, 700, 700)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iv76i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgu40")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dapl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fii53")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkom4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5by3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2825g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7evx0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0f812")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}]
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fii53"]
 shader = ExtResource("78_y0u35")
 shader_parameter/overlay = true
@@ -1564,8 +1629,6 @@ shader_parameter/vignette_opacity = 0.670000031825
 
 [node name="Node3D3" type="Node3D"]
 script = ExtResource("1_rw4lb")
-next_scene_path = null
-main_menu_scene = null
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.01, 0.623, -0.544)
@@ -2098,9 +2161,11 @@ texture = ExtResource("68_l5kx3")
 transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -1.4304154, 0, -0.3686844)
 script = ExtResource("69_v45om")
 
-[node name="Sprite3D" type="Sprite3D" parent="Swagula"]
-transform = Transform3D(0.42, 0, 0, 0, 0.42, 0, 0, 0, 0.42, 0, 0.96, 0)
-texture = ExtResource("70_hkw6q")
+[node name="Sprite3D" type="AnimatedSprite3D" parent="Swagula"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.121269464, 0.96, 0)
+sprite_frames = SubResource("SpriteFrames_iv76i")
+animation = &"Idle"
+script = ExtResource("81_dgu40")
 
 [node name="swagula_marker" type="Marker3D" parent="Swagula"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.63076806)

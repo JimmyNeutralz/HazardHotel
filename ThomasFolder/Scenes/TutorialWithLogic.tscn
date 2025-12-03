@@ -1,4 +1,4 @@
-[gd_scene load_steps=283 format=3 uid="uid://cqmevv1ngqbua"]
+[gd_scene load_steps=294 format=3 uid="uid://cqmevv1ngqbua"]
 
 [ext_resource type="Script" uid="uid://bpt5xl3np0i1d" path="res://ThomasFolder/Scripts/level_management_thomas_tutorial_ver.gd" id="1_ldf2o"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_0bb3x"]
@@ -66,7 +66,8 @@
 [ext_resource type="PackedScene" uid="uid://dgfvm6sy14n60" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V1.fbx" id="61_7f5nv"]
 [ext_resource type="PackedScene" uid="uid://dd7maffl4gk12" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V2.fbx" id="62_0cfyl"]
 [ext_resource type="PackedScene" uid="uid://dbok1pugswmfy" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Table_V1.fbx" id="63_8xeul"]
-[ext_resource type="Texture2D" uid="uid://cxdu2hcoa4ln8" path="res://Assets/HH_Art_BuildingOwnerSprite_V1.png" id="64_cy28o"]
+[ext_resource type="Texture2D" uid="uid://uvf0v1svjyqn" path="res://Assets/HH_Art_OwnerIdleSpriteSheet_V1.png" id="67_xn1yk"]
+[ext_resource type="Script" uid="uid://cjfcp3ijd2aj8" path="res://ThomasFolder/Scenes/owner_idle.gd" id="68_j8v0c"]
 [ext_resource type="PackedScene" uid="uid://crqfjy0grfep2" path="res://SpencerStuff/Scenes/true_lobby.tscn" id="68_xn1yk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
@@ -1609,6 +1610,77 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.670000031825
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8v0c"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(0, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1crs8"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(700, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8phs"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(1400, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lk6fc"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(2100, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xv31i"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(2800, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjot8"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(3500, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6j3yk"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(4200, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1lpn"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(4900, 0, 700, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83lf2"]
+atlas = ExtResource("67_xn1yk")
+region = Rect2(5600, 0, 700, 700)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_la2bx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8v0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1crs8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8phs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lk6fc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xv31i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjot8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6j3yk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1lpn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83lf2")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}]
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ldf2o")
 
@@ -1967,10 +2039,12 @@ light_energy = 2.205
 [node name="BuildingOwner" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45269394)
 
-[node name="Sprite3D" type="Sprite3D" parent="BuildingOwner"]
+[node name="Sprite3D" type="AnimatedSprite3D" parent="BuildingOwner"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 4.7325935, 0.9374503, -0.22476053)
 shaded = true
-texture = ExtResource("64_cy28o")
+sprite_frames = SubResource("SpriteFrames_la2bx")
+animation = &"Idle"
+script = ExtResource("68_j8v0c")
 
 [node name="Marker3D" type="Marker3D" parent="BuildingOwner"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4453683, 0, 0.4864707)
