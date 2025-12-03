@@ -26,6 +26,7 @@ var has_slammed = false
 var is_safe_open = false
 var first_time = true
 var process_started = false
+var has_run = false
 
 func _ready():
 	realLoc = originSafeLoc.global_position
@@ -36,12 +37,18 @@ func _ready():
 
 func _process(delta):
 	#Handle safe deactivation input
-	if Input.is_action_pressed("raise_safe") and !safe_raised and fuseBox.get_fuse_amount() >= 1:
-		if (!process_started):
-			raise_safe()
-	elif Input.is_action_pressed("lower_safe") and safe_raised and fuseBox.get_fuse_amount() >= 1:
-		if(!process_started):
-			lower_safe()
+	if Input.is_action_just_pressed("raise_safe") and !safe_raised and fuseBox.get_fuse_amount() >= 1 and self.global_position.y >= -0.042:
+		raise_safe()
+	elif Input.is_action_just_pressed("lower_safe") and safe_raised and fuseBox.get_fuse_amount() >= 1:
+		lower_safe()
+		
+	if (fuseBox.get_fuse_amount() == 2 and !has_run):
+		uiNode1.visible = true
+		uiNode2.visible = true
+		
+	if Input.is_action_just_pressed("fuse_two_override_collect"):
+		fuse.visible = false
+		player.collect_fuse()
 		
 		
 	elif Input.is_action_just_pressed("open_safe") and !is_safe_open:
@@ -71,11 +78,11 @@ func lower_safe():
 	
 	player.move_to_object(standSpot)
 	await get_tree().create_timer(1.5).timeout
-	if playerSprite and playerSprite.sprite_frames != null and playerSprite.sprite_frames.has_animation("StandInteract"):
-		print("Crouch anim started")
-		playerSprite.play("StandInteract")
-		await playerSprite.animation_finished
-		print("Crouch animation played!")
+	#if playerSprite and playerSprite.sprite_frames != null and playerSprite.sprite_frames.has_animation("StandInteract"):
+		#print("Crouch anim started")
+		#playerSprite.play("StandInteract")
+		#await playerSprite.animation_finished
+		#print("Crouch animation played!")
 	
 	if(player.global_position.x == standSpot.global_position.x - 10 or player.global_position.x == standSpot.global_position.x + 10):
 		fuse.visible = false
@@ -137,6 +144,8 @@ func open_safe():
 		await get_tree().create_timer(1.0).timeout
 		fuse2.visible = false
 		fuseBox.uiNode.visible = true;
+		
+		player.collect_fuse()
 		
 func close_safe():
 	if anim_player and anim_player.has_animation("Take 001"):

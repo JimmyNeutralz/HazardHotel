@@ -18,6 +18,5 @@ func _process(delta):
 		await get_tree().create_timer(1.0).timeout
 		fuse.visible = false
 		isActivated = true
-		fuseBox.collect_fuse()
 		player.collect_fuse()
 		

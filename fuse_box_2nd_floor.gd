@@ -47,6 +47,7 @@ func _process(delta):
 		uiNode.visible = false
 		activate()
 		player.deposit_fuse()
+		fuses_collected = fuses_collected + 1
 
 	elif Input.is_action_just_pressed("activate_fusebox") and activated:
 			deactivate()
@@ -77,7 +78,15 @@ func activate():
 		if dialogue_step == 0:
 			text.change_text_image(1)
 			text.set_text("Got that fuse in place, sounds like something powered from the right room", 6)
-			dialogue_step = 1
+			dialogue_step = dialogue_step + 1
+		elif dialogue_step == 1:
+			text.change_text_image(1)
+			text.set_text("Another fuse in place, sounds like something else has powered on the right", 6)
+			dialogue_step = dialogue_step + 1
+		elif dialogue_step == 2:
+			text.change_text_image(1)
+			text.set_text("Last fuse in, the gate should be powered now", 6)
+			dialogue_step = dialogue_step + 1
 
 		#Play animation if available
 		if anim_player:
