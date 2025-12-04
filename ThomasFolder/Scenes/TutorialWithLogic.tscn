@@ -69,7 +69,7 @@
 [ext_resource type="PackedScene" uid="uid://dbok1pugswmfy" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Table_V1.fbx" id="63_8xeul"]
 [ext_resource type="Texture2D" uid="uid://uvf0v1svjyqn" path="res://Assets/HH_Art_OwnerIdleSpriteSheet_V1.png" id="67_xn1yk"]
 [ext_resource type="Script" path="res://ThomasFolder/Scenes/owner_idle.gd" id="68_j8v0c"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_lobby.tscn" id="68_xn1yk"]
+[ext_resource type="PackedScene" uid="uid://d0vygk4d3mmkq" path="res://SpencerStuff/Scenes/true_lobby.tscn" id="68_xn1yk"]
 [ext_resource type="PackedScene" uid="uid://hcmcgdk5of8u" path="res://SpencerStuff/Scenes/true_elevator.tscn" id="70_1crs8"]
 [ext_resource type="Script" uid="uid://ocllpcynxxvx" path="res://SpencerStuff/Scripts/true_elevator.gd" id="71_v8phs"]
 [ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="71_xv31i"]
