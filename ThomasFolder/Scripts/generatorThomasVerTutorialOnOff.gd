@@ -20,6 +20,7 @@ func colored_generator():
 
 var lamp: Node3D = null
 var activated = false
+var interacted_with = false
 
 func _ready():
 	if lamp_node_path != null:
@@ -33,6 +34,8 @@ func _process(delta):
 			activate_generator()
 		else:
 			print("Cannot activate generator yet!")
+	elif Input.is_action_just_released("activate_generator") and activated:
+		deactivate_generator()
 
 func can_activate() -> bool:
 	if lamp == null:
@@ -62,6 +65,10 @@ func activate_generator():
 		var mat = indicator.get_active_material(0)
 		if mat:
 			mat.albedo_color = Color.GREEN
+
+func deactivate_generator():
+	activaed = false
+	
 
 func complete_tutorial_generator_text():
 	var path := get_tree().current_scene.scene_file_path

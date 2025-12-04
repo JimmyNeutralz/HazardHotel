@@ -3,7 +3,7 @@ extends Node3D
 #node path for generator
 @onready var indicator = $"../Indicators/GeneratorIndicator"  
 #path to gate node assigned in inspector
-@export var lamp_node_path : NodePath 
+@export var gate_node_path : NodePath 
 @export var elevator_door: Node3D
 @onready var elevator_lock = $"../ElevatorDoor/ElevatorLock"          
 @onready var uiNode = $GeneratorUI
@@ -12,12 +12,12 @@ extends Node3D
 @onready var text = $"../TextPopup"      
 @onready var generator_marker = $"../Generator/Marker3D"              
 
-var lamp: Node3D = null
+var gate: Node3D = null
 var activated = false
 
 func _ready():
-	if lamp_node_path != null:
-		lamp = get_node(lamp_node_path)
+	if gate_node_path != null:
+		gate = get_node(gate_node_path)
 	else:
 		push_error("Gate node path not set for Generator!")
 
@@ -25,30 +25,29 @@ func _process(delta):
 	if Input.is_action_just_pressed("activate_generator") and not activated:
 		if can_activate():
 			activate_generator()
-			uiNode.visible = false
-			text.change_text_image(1)
-			complete_tutorial_generator_text()
-			lamp.generator_on = true
-			elevator_door.powered_on = true
-			player.move_to_specific_location(generator_marker.global_position.x)
 		else:
 			print("Cannot activate generator yet!")
 
 func can_activate() -> bool:
-	if lamp == null:
+	if gate == null:
 		return false
 
-	#get state of lamp (on or not)
-	var lamp_raised = false
-	if "lamp_on" in lamp:
-		lamp_raised = lamp.get("lamp_on")
+	#get state of gate (open or not)
+	var gate_raised = false
+	if "raised" in gate:
+		gate_raised = gate.get("raised")
 
-	return lamp_raised
+	return gate_raised
 
 func activate_generator():
 	activated = true
 	$GeneratorAudio.play()
 	print("Generator activated!")
+	uiNode.visible = false
+	text.change_text_image(1)
+	complete_normal_generator_text()
+	elevator_door.powered_on = true
+	player.move_to_specific_location(generator_marker.global_position.x)
 
 	#change color
 	if indicator:
@@ -56,7 +55,7 @@ func activate_generator():
 		if mat:
 			mat.albedo_color = Color.GREEN
 
-func complete_tutorial_generator_text():
+func complete_normal_generator_text():
 	var path := get_tree().current_scene.scene_file_path
 	if path == "res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn":
 		text.set_text("That's should be the last generator done. Now just need to get out of here.", 5)
