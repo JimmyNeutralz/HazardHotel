@@ -29,6 +29,11 @@ var room_order = []
 var stuck_timer: float = 0.0
 const STUCK_TIME_THRESHOLD: float = 0.1  #If stuck for this long, stop moving - fine tune 
 var hasFuse = false
+var fuseAmount = 0
+var interact_playing = false
+var standing_interact_start = false
+var crouching_interact_start = false
+var dino_interact_start = false
 
 #For respawning
 @export var spawn_node_path: NodePath = ^"/root/Player/PlayerSpawnPosition"
@@ -90,14 +95,17 @@ func _ready():
 	#Connect finished signals (to play next footstep)
 	for p in footstep_players:
 		p.finished.connect(_on_footstep_finished)
+		
+	test_interact()
 
 
 func _physics_process(delta):
+	
 	if is_dead:
 		stop_footsteps()
 		return
 
-		
+
 	if is_moving:
 		var direction = target_position - global_position
 		var previous_position = global_position
@@ -108,7 +116,7 @@ func _physics_process(delta):
 			velocity = Vector3.ZERO
 			stuck_timer = 0.0
 			#Switch to idle animation when stopping
-			if player_sprite and player_sprite.sprite_frames and player_sprite.sprite_frames.has_animation("Idle"):
+			if player_sprite and player_sprite.sprite_frames and player_sprite.sprite_frames.has_animation("Idle") and player_sprite.get_animation() != "Idle":
 				player_sprite.play("Idle")
 				stop_footsteps()
 
@@ -145,8 +153,22 @@ func _physics_process(delta):
 	else:
 		velocity = Vector3.ZERO
 		move_and_slide()
+		
+		
 		#Ensure idle animation when not moving
-		if player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
+		if standing_interact_start:
+			player_sprite.play("StandInteract")
+			await player_sprite.animation_finished
+			standing_interact_start = false
+		elif crouching_interact_start:
+			crouching_interact_start = false
+			player_sprite.play("CrouchInteract")
+			await player_sprite.animation_finished
+		elif dino_interact_start:
+			dino_interact_start = false
+			player_sprite.play("DinoInteract")
+			await player_sprite.animation_finished
+		elif player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle") and !interact_playing:
 			if player_sprite.animation != "Idle" and not is_moving:
 				player_sprite.play("Idle")
 				stop_footsteps()
@@ -380,6 +402,15 @@ func move_to_safe(safe, result):
 	await get_tree().create_timer(1.5).timeout
 	move_to_object(result)
 	
+func standing_player_interact():
+	standing_interact_start = true
+	
+func crouching_player_interact():
+	crouching_interact_start = true
+	
+func dino_player_interact():
+	dino_interact_start = true
+	
 func play_stand_interact() -> void:
 	if not player_sprite:
 		return
@@ -394,13 +425,19 @@ func play_stand_interact() -> void:
 #Collect fuse for fusebox check
 func collect_fuse():
 	hasFuse = true;
+	fuseAmount = fuseAmount + 1
 	
 #Collect fuse for fusebox check
 func deposit_fuse():
 	hasFuse = false;
+	fuseAmount = 0
 	
 func get_fuse_state():
 	return hasFuse;
+	
+func test_interact():
+	player_sprite.play("StandInteract")
+	
 	
 #Walk into elevator
 func walk_back_into_elevator(target_z: float) -> void:

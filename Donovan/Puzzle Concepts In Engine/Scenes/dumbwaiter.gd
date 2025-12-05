@@ -12,11 +12,11 @@ var isActivated = false;
 
 func _process(delta):
 	#Handle safe deactivation input
-	if Input.is_action_just_pressed("fix_dumbwaiter"):
+	if Input.is_action_just_pressed("fix_dumbwaiter") and isActivated == false:
 		player.move_to_object(standLoc)
 		uiNode.visible = false
 		await get_tree().create_timer(1.0).timeout
 		fuse.visible = false
 		isActivated = true
 		player.collect_fuse()
-		
+		player.standing_player_interact()

@@ -4,6 +4,7 @@ extends Node3D
 @onready var player = $"../Player"
 @onready var fuseboxStand = $standSpot
 @onready var uiNode = $FuseboxUI
+@onready var player_sprite = $"../Player/PlayerSprite"
 
 @onready var text = $"../TextPopup"
 var dialogue_step = 0
@@ -69,24 +70,10 @@ func can_activate() -> bool:
 
 #Activate fusebox
 func activate():
-	if (player.get_fuse_state()):
-		activated = true
+	if (player.get_fuse_state() and player.fuseAmount > 0):
+		#activated = true
 		$FuseboxAudio.play()
 		print("Fusebox opened!")
-	
-		#Dialogue functions
-		if dialogue_step == 0:
-			text.change_text_image(1)
-			text.set_text("Got that fuse in place, sounds like something powered from the right room", 6)
-			dialogue_step = dialogue_step + 1
-		elif dialogue_step == 1:
-			text.change_text_image(1)
-			text.set_text("Another fuse in place, sounds like something else has powered on the right", 6)
-			dialogue_step = dialogue_step + 1
-		elif dialogue_step == 2:
-			text.change_text_image(1)
-			text.set_text("Last fuse in, the gate should be powered now", 6)
-			dialogue_step = dialogue_step + 1
 
 		#Play animation if available
 		if anim_player:
@@ -100,6 +87,27 @@ func activate():
 				print("No animations found to play!")
 		else:
 			print("No AnimationPlayer found to play animation!")
+			
+		player.standing_player_interact()
+		await player_sprite.animation_finished
+		
+		#Dialogue functions
+		if dialogue_step == 0:
+			text.change_text_image(1)
+			text.set_text("Got that fuse in place, sounds like something powered from the right room", 6)
+			dialogue_step = dialogue_step + 1
+		elif dialogue_step == 1:
+			text.change_text_image(1)
+			text.set_text("Another fuse in place, sounds like something else has powered on the right", 6)
+			dialogue_step = dialogue_step + 1
+		elif dialogue_step == 2:
+			text.change_text_image(1)
+			text.set_text("Last fuse in, the gate should be powered now", 6)
+			dialogue_step = dialogue_step + 1
+			
+	fuses_collected = fuses_collected + player.fuseAmount
+	player.fuseAmount = 0
+	print(fuses_collected)
 		
 func deactivate():
 	
@@ -121,8 +129,8 @@ func deactivate():
 	else:
 		print("No AnimationPlayer found to play animation!")
 
-func collect_fuse():
-	fuses_collected = fuses_collected + 1
+#func collect_fuse():
+	#fuses_collected = fuses_collected + 1
 	
 func get_fuse_amount():
 	return fuses_collected

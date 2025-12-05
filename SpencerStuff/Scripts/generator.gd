@@ -47,8 +47,8 @@ func activate_generator():
 	$GeneratorAudio.play()
 	print("Generator activated!")
 
-	#change color
-	if indicator:
-		var mat = indicator.get_active_material(0)
-		if mat:
-			mat.albedo_color = Color.GREEN
+	##change color
+	#if indicator:
+		#var mat = indicator.get_active_material(0)
+		#if mat:
+			#mat.albedo_color = Color.GREEN

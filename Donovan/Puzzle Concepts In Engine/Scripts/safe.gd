@@ -27,6 +27,7 @@ var is_safe_open = false
 var first_time = true
 var process_started = false
 var has_run = false
+var first_fuse_collected = false
 
 func _ready():
 	realLoc = originSafeLoc.global_position
@@ -37,23 +38,22 @@ func _ready():
 
 func _process(delta):
 	#Handle safe deactivation input
-	if Input.is_action_just_pressed("raise_safe") and !safe_raised and fuseBox.get_fuse_amount() >= 1 and self.global_position.y >= -0.042:
-		raise_safe()
-	elif Input.is_action_just_pressed("lower_safe") and safe_raised and fuseBox.get_fuse_amount() >= 1:
+	if Input.is_action_just_pressed("lower_safe") and fuseBox.get_fuse_amount() >= 1:
 		lower_safe()
+	elif Input.is_action_just_released("lower_safe") and fuseBox.get_fuse_amount() >= 1:
+		raise_safe()
 		
 	if (fuseBox.get_fuse_amount() == 2 and !has_run):
 		uiNode1.visible = true
 		uiNode2.visible = true
 		
-	if Input.is_action_just_pressed("fuse_two_override_collect"):
-		fuse.visible = false
-		player.collect_fuse()
+	#if Input.is_action_just_pressed("fuse_two_override_collect"):
+		#fuse.visible = false
+		#player.collect_fuse()
 		
-		
-	elif Input.is_action_just_pressed("open_safe") and !is_safe_open:
+	if Input.is_action_just_pressed("open_safe") and fuseBox.get_fuse_amount() >= 2 and !safe_raised:
 		open_safe()
-	elif Input.is_action_just_pressed("open_safe") and is_safe_open:
+	elif Input.is_action_just_released("open_safe") and fuseBox.get_fuse_amount() >= 2 and safe_raised:
 		close_safe()
 
 func lower_safe():
@@ -78,19 +78,16 @@ func lower_safe():
 	
 	player.move_to_object(standSpot)
 	await get_tree().create_timer(1.5).timeout
-	#if playerSprite and playerSprite.sprite_frames != null and playerSprite.sprite_frames.has_animation("StandInteract"):
-		#print("Crouch anim started")
-		#playerSprite.play("StandInteract")
-		#await playerSprite.animation_finished
-		#print("Crouch animation played!")
 	
-	if(player.global_position.x == standSpot.global_position.x - 10 or player.global_position.x == standSpot.global_position.x + 10):
+	#if(player.global_position.x == standSpot.global_position.x - 10 or player.global_position.x == standSpot.global_position.x + 10):
+	if (!first_fuse_collected):
 		fuse.visible = false
 		fuseBox.uiNode.visible = true
-		uiNode1.visible = true
-		uiNode2.visible = true
-	process_started = false
-	
+		player.standing_player_interact()
+		player.collect_fuse()
+		process_started = false
+		first_fuse_collected = true
+	first_fuse_collected = true
 
 func raise_safe():
 	process_started = true
@@ -133,19 +130,24 @@ func open_safe():
 		anim_player.play("Take 001")
 		print("Safe open!")
 		is_safe_open = true
-		await get_tree().create_timer(1.5).timeout
 		
-		var tween = create_tween()
-		tween.tween_property(dinograbber, "global_position", player.position, 1.0)
-		await get_tree().create_timer(1.0).timeout
-		dinograbber.visible = false
+		player.move_to_object(fuseSafeSpot)
+		#await playerSprite.animation_finished
+		player.standing_player_interact()
+		await playerSprite.animation_finished
 		
 		player.move_to_object(fuseStandSpot)
+		
 		await get_tree().create_timer(1.0).timeout
 		fuse2.visible = false
 		fuseBox.uiNode.visible = true;
 		
+		player.dino_player_interact()
+		await playerSprite.animation_finished
 		player.collect_fuse()
+		
+		fuse2.visible = false
+		fuseBox.uiNode.visible = true;
 		
 func close_safe():
 	if anim_player and anim_player.has_animation("Take 001"):

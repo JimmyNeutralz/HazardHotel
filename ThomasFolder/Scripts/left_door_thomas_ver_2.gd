@@ -48,12 +48,14 @@ func unlock_door():
 	if lock_script:
 		await lock_script.play_lock_animation()
 
+	player.standing_player_interact()
 	#Then play door
 	if door_anim and door_anim.has_animation("Take 001"):
 		door_anim.play("Take 001")
 
 	print(name + " unlocked!")
 	$Door/LeftDoorAudio.play()
+	
 	
 	await get_tree().create_timer(2.0).timeout
 	if (player.global_position.x < 0):

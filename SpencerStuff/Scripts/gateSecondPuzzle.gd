@@ -58,7 +58,7 @@ func _process(delta):
 	update_electric_state()
 
 	#Handle gate raising input
-	if Input.is_action_just_pressed("raise_gate") and not raised and fuseBox.get_fuse_amount() >= 3:
+	if Input.is_action_just_pressed("raise_gate") and fuseBox.get_fuse_amount() >= 3:
 		var tempSide = 0
 		if can_raise():
 			if (isOnLeft):
@@ -94,8 +94,10 @@ func update_electric_state():
 	#RED = safe (fusebox off), GREEN = powered
 	if mat.albedo_color == Color.GREEN:
 		electrified = true
+		pass
 	else:
 		electrified = false
+		pass
 
 	electric_sprite.visible = electrified
 	#DO NOT change gate_trigger.monitoring dynamically
