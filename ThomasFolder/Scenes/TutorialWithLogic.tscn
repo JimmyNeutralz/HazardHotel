@@ -36,7 +36,6 @@
 [ext_resource type="PackedScene" uid="uid://o8yvmbg220gy" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Book2_V1.fbx" id="34_e1g18"]
 [ext_resource type="PackedScene" uid="uid://c872t3c5isyur" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Chair_V1.fbx" id="35_btl1y"]
 [ext_resource type="PackedScene" uid="uid://j78csii54qhf" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Clipboard_V1.fbx" id="36_gtqyt"]
-[ext_resource type="PackedScene" uid="uid://wrq1tiojnh0h" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Clock_V1.fbx" id="37_bsmgd"]
 [ext_resource type="PackedScene" uid="uid://c8gu3yh4828p1" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Doors_V1.fbx" id="38_c5tkm"]
 [ext_resource type="PackedScene" uid="uid://dqke751goegmo" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_ElevatorGate_V1.fbx" id="39_bf0ny"]
 [ext_resource type="PackedScene" uid="uid://c6nncrc2ucu0x" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_ElevatorSign_V1.fbx" id="40_813hb"]
@@ -75,6 +74,7 @@
 [ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="71_xv31i"]
 [ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="72_sjot8"]
 [ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="74_sjot8"]
+[ext_resource type="PackedScene" uid="uid://bjiwrv1db0dj0" path="res://SpencerStuff/Scenes/true_lobby_clock.tscn" id="75_6j3yk"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -1981,8 +1981,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5528629, 0, 0.3376094)
 [node name="HH_Art_Lobby_Clipboard_V1" parent="." instance=ExtResource("36_gtqyt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
 
-[node name="HH_Art_Lobby_Clock_V1" parent="." instance=ExtResource("37_bsmgd")]
-
 [node name="HH_Art_Lobby_Doors_V1" parent="." instance=ExtResource("38_c5tkm")]
 
 [node name="HH_Art_Lobby_ElevatorGate_V1" parent="." instance=ExtResource("39_bf0ny")]
@@ -2084,6 +2082,8 @@ z_index = 3
 position = Vector2(575.00006, 318)
 scale = Vector2(0.6156249, 0.59074074)
 texture = ExtResource("74_sjot8")
+
+[node name="HH_Art_Lobby_Clock_V2" parent="." instance=ExtResource("75_6j3yk")]
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
