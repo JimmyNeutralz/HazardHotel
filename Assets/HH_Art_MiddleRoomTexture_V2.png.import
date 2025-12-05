@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bba53n1vxdj7b"
-path.s3tc="res://.godot/imported/HH_Art_NewGuyDinoGrabberAnimSpriteSheet_V1.png-8d8de0f2756214bd75ea61982f525611.s3tc.ctex"
+uid="uid://crxskhr406jrj"
+path.s3tc="res://.godot/imported/HH_Art_MiddleRoomTexture_V2.png-b45e100905136c713505a456f3e24516.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Assets/HH_Art_NewGuyDinoGrabberAnimSpriteSheet_V1.png"
-dest_files=["res://.godot/imported/HH_Art_NewGuyDinoGrabberAnimSpriteSheet_V1.png-8d8de0f2756214bd75ea61982f525611.s3tc.ctex"]
+source_file="res://Assets/HH_Art_MiddleRoomTexture_V2.png"
+dest_files=["res://.godot/imported/HH_Art_MiddleRoomTexture_V2.png-b45e100905136c713505a456f3e24516.s3tc.ctex"]
 
 [params]
 
