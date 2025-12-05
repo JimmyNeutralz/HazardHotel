@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://opg8xw70eg5t"
-path="res://.godot/imported/Budget Werewolf.png-2a69503c8afca0db94393b02d1d1ed0e.ctex"
+uid="uid://bvn06ywyc85yl"
+path="res://.godot/imported/HH_Art_SwagulaPortrait_V1.png-d033be0ee0417781b74d4ef5a151a957.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ThomasFolder/Sprites/Budget Werewolf.png"
-dest_files=["res://.godot/imported/Budget Werewolf.png-2a69503c8afca0db94393b02d1d1ed0e.ctex"]
+source_file="res://ThomasFolder/Sprites/HH_Art_SwagulaPortrait_V1.png"
+dest_files=["res://.godot/imported/HH_Art_SwagulaPortrait_V1.png-d033be0ee0417781b74d4ef5a151a957.ctex"]
 
 [params]
 

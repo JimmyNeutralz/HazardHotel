@@ -7,7 +7,7 @@ var text_input
 var displayFor = 0
 
 var new_guy_text_sprite = load("res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png")
-var swagula_text_sprite = load("res://ThomasFolder/Sprites/Budget Swagula.png")
+var swagula_text_sprite = load("res://ThomasFolder/Sprites/HH_Art_SwagulaPortrait_V1.png")
 var building_owner_text_sprite = load("res://ThomasFolder/Sprites/HH_Art_OwnerPortrait_V1.png")
 var werewolf_text_sprite = load("res://ThomasFolder/Sprites/Budget Werewolf.png")
 
@@ -61,7 +61,7 @@ func show_textbox():
 
 func hide_textbox():
 	var tween = create_tween()
-	tween.tween_property(self, "global_position",  Vector2(0,0.0), .8)
+	tween.tween_property(self, "global_position",  Vector2(0,-20.0), .8)
 
 #Type_text function repurposed from spencer's code from StoryIntro
 func type_text() -> void:
