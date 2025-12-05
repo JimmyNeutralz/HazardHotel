@@ -86,11 +86,12 @@
 [ext_resource type="PackedScene" path="res://Donovan/DonAssets/truePuddle.tscn" id="71_wq4hk"]
 [ext_resource type="Texture2D" uid="uid://bba53n1vxdj7b" path="res://Assets/HH_Art_NewGuyDinoGrabberAnimSpriteSheet_V1.png" id="73_xjhiw"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="75_jnpos"]
-[ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="76_poayu"]
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="81_mvs2p"]
 [ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="87_5urh0"]
 [ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="87_lqt4v"]
 [ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="88_jym03"]
+[ext_resource type="Texture2D" uid="uid://b2smx76edwggf" path="res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png" id="91_xjhiw"]
+[ext_resource type="Texture2D" uid="uid://bs6byut2b4npg" path="res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png" id="92_7q655"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -4573,8 +4574,6 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.670000031825
 
-[sub_resource type="BoxMesh" id="BoxMesh_63m68"]
-
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_sdfg4")
 
@@ -5211,24 +5210,24 @@ script = ExtResource("75_jnpos")
 
 [node name="text" type="Label" parent="Overlay/TextPopup"]
 z_index = 1
-offset_left = 162.0
+offset_left = 166.0
 offset_top = -96.255
-offset_right = 1082.0
-offset_bottom = -8.254997
+offset_right = 1091.0
+offset_bottom = -5.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 26
 text = "hi"
 autowrap_mode = 3
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Overlay/TextPopup"]
-position = Vector2(621.875, -52.255)
-scale = Vector2(932.25, 95.99999)
-mesh = SubResource("BoxMesh_63m68")
-
 [node name="TextPopupCharacterImage" type="Sprite2D" parent="Overlay/TextPopup"]
-position = Vector2(92, -52.255)
+position = Vector2(80.545, -52.255)
 scale = Vector2(0.6282051, 0.6282051)
-texture = ExtResource("76_poayu")
+texture = ExtResource("91_xjhiw")
+
+[node name="Textbox" type="Sprite2D" parent="Overlay/TextPopup"]
+position = Vector2(644, 213.99998)
+scale = Vector2(0.7953704, 0.7953704)
+texture = ExtResource("92_7q655")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]

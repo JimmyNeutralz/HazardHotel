@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bpt5xl3np0i1d" path="res://ThomasFolder/Scripts/level_management_thomas_tutorial_ver.gd" id="1_ldf2o"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_0bb3x"]
-[ext_resource type="Script" path="res://ThomasFolder/Scripts/camera_move_pinch_tutorial_ver.gd" id="3_hcdoj"]
+[ext_resource type="Script" uid="uid://t5iwr1n67h38" path="res://ThomasFolder/Scripts/camera_move_pinch_tutorial_ver.gd" id="3_hcdoj"]
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="4_ph66n"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="5_dcdqr"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="6_c7nfw"]
@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://b5jal522dbcis" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Elevator_V1.fbx" id="41_oig6y"]
 [ext_resource type="PackedScene" uid="uid://dlobr62q8pu2y" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Frame_V1.fbx" id="42_uetlj"]
 [ext_resource type="Texture2D" uid="uid://b2smx76edwggf" path="res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png" id="43_ldf2o"]
+[ext_resource type="Texture2D" uid="uid://bs6byut2b4npg" path="res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png" id="45_v1lpn"]
 [ext_resource type="Texture2D" uid="uid://cfo2bftv6y7qy" path="res://Donovan/DonAssets/HH_Art_NodeBlue2_V1.png" id="46_1faqh"]
 [ext_resource type="Texture2D" uid="uid://5lvcfq2duxw0" path="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png" id="47_dlxqn"]
 [ext_resource type="Texture2D" uid="uid://0q8k8ovc0tm5" path="res://Donovan/DonAssets/HH_Art_NodeCyan2_V1.png" id="48_s8xqx"]
@@ -57,14 +58,14 @@
 [ext_resource type="PackedScene" uid="uid://ckfe8r4mhydj5" path="res://SpencerStuff/Scenes/true_lobby_desk.tscn" id="58_v1lpn"]
 [ext_resource type="Script" uid="uid://npu55c7px8ms" path="res://ThomasFolder/Scripts/generatorThomasVerTutorial.gd" id="59_ldf2o"]
 [ext_resource type="AudioStream" uid="uid://u31ntpy5j83k" path="res://Assets/Audio/generator start up.wav" id="60_6j3yk"]
-[ext_resource type="Script" uid="uid://gxyte2pwafxu" path="res://Assets/3D Models/LobbyModels/lamp.gd" id="60_25vsh"]
+[ext_resource type="Script" uid="uid://gxyte2pwafxu" path="res://ThomasFolder/Scripts/lamp.gd" id="60_25vsh"]
 [ext_resource type="PackedScene" uid="uid://o1uif2bxe7cj" path="res://SpencerStuff/Scenes/true_lamp.tscn" id="61_6j3yk"]
 [ext_resource type="PackedScene" uid="uid://dgfvm6sy14n60" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V1.fbx" id="61_7f5nv"]
 [ext_resource type="PackedScene" uid="uid://dd7maffl4gk12" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V2.fbx" id="62_0cfyl"]
 [ext_resource type="PackedScene" uid="uid://dbok1pugswmfy" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Table_V1.fbx" id="63_8xeul"]
 [ext_resource type="Texture2D" uid="uid://uvf0v1svjyqn" path="res://Assets/HH_Art_OwnerIdleSpriteSheet_V1.png" id="67_xn1yk"]
 [ext_resource type="Script" path="res://ThomasFolder/Scenes/owner_idle.gd" id="68_j8v0c"]
-[ext_resource type="PackedScene" uid="uid://d0vygk4d3mmkq" path="res://SpencerStuff/Scenes/true_lobby.tscn" id="68_xn1yk"]
+[ext_resource type="PackedScene" uid="uid://crqfjy0grfep2" path="res://SpencerStuff/Scenes/true_lobby.tscn" id="68_xn1yk"]
 [ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="71_xv31i"]
 [ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="72_sjot8"]
 [ext_resource type="PackedScene" uid="uid://d1twlbms4jalv" path="res://SpencerStuff/Scenes/true_elevatorV2.tscn" id="74_6j3yk"]
@@ -1590,8 +1591,6 @@ animations = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_kffmy"]
 size = Vector3(1.2994995, 1.2765503, 0.11035156)
 
-[sub_resource type="BoxMesh" id="BoxMesh_63m68"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_j8v0c"]
 atlas = ExtResource("67_xn1yk")
 region = Rect2(0, 0, 700, 700)
@@ -1940,31 +1939,6 @@ stream = ExtResource("26_puede")
 [node name="LevelMusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("41_ldf2o")
 
-[node name="TextPopup" type="Node2D" parent="."]
-position = Vector2(0, -20)
-script = ExtResource("28_4vmvk")
-
-[node name="text" type="Label" parent="TextPopup"]
-z_index = 1
-offset_left = 162.0
-offset_top = -96.255
-offset_right = 1082.0
-offset_bottom = -8.254997
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
-text = "hi"
-autowrap_mode = 3
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="TextPopup"]
-position = Vector2(621.875, -52.255)
-scale = Vector2(932.25, 95.99999)
-mesh = SubResource("BoxMesh_63m68")
-
-[node name="TextPopupCharacterImage" type="Sprite2D" parent="TextPopup"]
-position = Vector2(92, -52.255)
-scale = Vector2(0.6282051, 0.6282051)
-texture = ExtResource("43_ldf2o")
-
 [node name="HH_Art_Lobby_Room_V1" parent="." instance=ExtResource("31_57cga")]
 visible = false
 
@@ -2066,6 +2040,32 @@ offset_top = 19.0
 offset_right = 1136.0
 offset_bottom = 614.0
 mouse_filter = 2
+
+[node name="TextPopup" type="Node2D" parent="Overlay"]
+z_index = 4
+position = Vector2(0, -20)
+script = ExtResource("28_4vmvk")
+
+[node name="text" type="Label" parent="Overlay/TextPopup"]
+z_index = 1
+offset_left = 166.0
+offset_top = -96.255
+offset_right = 1091.0
+offset_bottom = -5.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "hi"
+autowrap_mode = 3
+
+[node name="TextPopupCharacterImage" type="Sprite2D" parent="Overlay/TextPopup"]
+position = Vector2(80.545, -52.255)
+scale = Vector2(0.6282051, 0.6282051)
+texture = ExtResource("43_ldf2o")
+
+[node name="Textbox" type="Sprite2D" parent="Overlay/TextPopup"]
+position = Vector2(644, 213.99998)
+scale = Vector2(0.7953704, 0.7953704)
+texture = ExtResource("45_v1lpn")
 
 [node name="HhArtOverlayV3" type="Sprite2D" parent="."]
 z_index = 3
