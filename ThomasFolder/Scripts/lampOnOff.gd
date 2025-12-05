@@ -15,7 +15,7 @@ var dialogue_finished = false
 func _ready() -> void:
 	lamp_light.light_energy = 0
 	middle_light.light_energy = 0
-	directional_light.light_energy = 0.05
+	directional_light.light_energy = 0.15
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("turn_on_lamp") and !lamp_on:

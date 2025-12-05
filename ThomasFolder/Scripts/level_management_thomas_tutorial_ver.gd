@@ -193,12 +193,16 @@ func _input(event):
 func _pause_game():
 	_set_pause_menu_visible(true)
 	get_tree().paused = true
+	
+	text_popup.paused = true
 	print("Game Paused")
-
 
 func _resume_game():
 	_set_pause_menu_visible(false)
 	get_tree().paused = false
+	
+	text_popup.paused = false
+	text_popup.resume_typing_text()
 	print("Game Resumed")
 
 

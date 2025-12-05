@@ -17,6 +17,7 @@ var text_displayed = false
 
 var type_text_running = false
 var break_for_loop = false
+var paused = false
 
 func _ready() -> void:
 	character_image.texture = new_guy_text_sprite
@@ -63,11 +64,18 @@ func hide_textbox():
 	var tween = create_tween()
 	tween.tween_property(self, "global_position",  Vector2(0,-20.0), .8)
 
+#var stored_i = 0
+#var i_on_resume = 0
+
+signal resume
+
+var waiting = false
 #Type_text function repurposed from spencer's code from StoryIntro
 func type_text() -> void:
 	type_text_running = true
 	var chars_per_second = 25.0
 	var delay = 1.0 / chars_per_second
+	text_label.visible_characters = 0
 
 	for i in range(text_input.length()):
 		#if (loop_end):
@@ -75,12 +83,54 @@ func type_text() -> void:
 			#text_label.visible_characters = 0
 			#i = 0
 			#break
+		print(range(text_input.length()))
 		print(i)
+		print(text_label.visible_characters )
+		if paused:
+			#stored_i = i
+			#break
+			waiting = true
+			await resume
+			waiting = false
+			
+		#else:
 		text_label.visible_characters = i + 1
 		await get_tree().create_timer(delay).timeout
+		
 		if break_for_loop:
 			break_for_loop = false
 			break
-	
+		if i >= text_input.length():
+			type_text_running = false
+			break_for_loop = false
+			
 	type_text_running = false
-	break_for_loop = false
+	
+
+func resume_typing_text() -> void:
+	emit_signal("resume")
+
+#func resume_typing_text() -> void:
+	#var chars_per_second = 25.0
+	#var delay = 1.0 / chars_per_second
+	#
+	#print(stored_i)
+	#for stored_i in range(text_input.length() - stored_i):
+		##if (loop_end):
+			##loop_end = false
+			##text_label.visible_characters = 0
+			##i = 0
+			##break
+		#print(stored_i)
+		#if paused:
+			#stored_i = i_on_resume
+			#break
+		#else:
+			#text_label.visible_characters = stored_i + 1
+			#await get_tree().create_timer(delay).timeout
+			#if break_for_loop:
+				#break_for_loop = false
+				#break
+		#if i_on_resume >= text_input.length() + 1:
+			#type_text_running = false
+			#break_for_loop = false

@@ -67,8 +67,8 @@ func activate_generator():
 			mat.albedo_color = Color.GREEN
 
 func deactivate_generator():
-	activaed = false
-	
+	activated = false
+	elevator_door.powered_on = true
 
 func complete_tutorial_generator_text():
 	var path := get_tree().current_scene.scene_file_path
