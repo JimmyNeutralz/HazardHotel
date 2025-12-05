@@ -39,10 +39,10 @@ func activate_lights():
 		text_popup.change_text_image(3)
 		text_popup.set_text("I was wondering who was ominously standing in the dark. I suppose you’re here to fix the electrical issue, right?", 6)
 		await get_tree().create_timer(6.0).timeout
-		
 		if paused:
+			print("func hit")
 			await resume
-			
+		
 		if (text_popup.displayFor > 0):
 			print(abs(text_popup.displayFor))
 			await get_tree().create_timer(abs(text_popup.displayFor)).timeout
