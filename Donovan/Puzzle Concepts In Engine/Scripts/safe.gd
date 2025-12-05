@@ -47,9 +47,11 @@ func _process(delta):
 		uiNode1.visible = true
 		uiNode2.visible = true
 		
-	#if Input.is_action_just_pressed("fuse_two_override_collect"):
-		#fuse.visible = false
-		#player.collect_fuse()
+	if Input.is_action_just_pressed("fuse_two_override_collect"):
+		fuse.visible = false
+		player.standing_interact_start
+		await playerSprite.animation_finished
+		player.collect_fuse()
 		
 	if Input.is_action_just_pressed("open_safe") and fuseBox.get_fuse_amount() >= 2 and !safe_raised:
 		open_safe()
@@ -84,10 +86,12 @@ func lower_safe():
 		fuse.visible = false
 		fuseBox.uiNode.visible = true
 		player.standing_player_interact()
+		await playerSprite.animation_finished
 		player.collect_fuse()
 		process_started = false
 		first_fuse_collected = true
 	first_fuse_collected = true
+	player.move_to_object(fuseStandSpot)
 
 func raise_safe():
 	process_started = true
@@ -132,7 +136,6 @@ func open_safe():
 		is_safe_open = true
 		
 		player.move_to_object(fuseSafeSpot)
-		#await playerSprite.animation_finished
 		player.standing_player_interact()
 		await playerSprite.animation_finished
 		

@@ -1,4 +1,4 @@
-[gd_scene load_steps=476 format=3 uid="uid://cdmm5ernt7lvu"]
+[gd_scene load_steps=460 format=3 uid="uid://cdmm5ernt7lvu"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_vmrx0"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_sv3kr"]
@@ -70,7 +70,6 @@
 [ext_resource type="AudioStream" uid="uid://c8v5bc6sw71sl" path="res://Assets/Audio/Wooden door creak 2.wav" id="68_jrbu7"]
 [ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="69_plj0g"]
 [ext_resource type="Texture2D" uid="uid://ck1cd8cmd1k3f" path="res://Assets/HH_Art_NewGuyCrouchInteractSpriteSheet_V1.png" id="70_avkbd"]
-[ext_resource type="Texture2D" uid="uid://bba53n1vxdj7b" path="res://Assets/HH_Art_NewGuyDinoGrabberAnimSpriteSheet_V1.png" id="71_5ip5y"]
 [ext_resource type="Texture2D" uid="uid://dhndjrnissj6d" path="res://Assets/HH_Art_NewGuyElectrocutionAnimSpriteSheet_V1.png" id="72_ednit"]
 [ext_resource type="Texture2D" uid="uid://1jo86vkwjfqa" path="res://Assets/HH_Art_NewGuyIdle1SpriteSheet_V1.png" id="73_hu1so"]
 [ext_resource type="Texture2D" uid="uid://dej5gblwfl77" path="res://Assets/HH_Art_NewGuyStandInteractAnimSpriteSheet_V1.png" id="74_bdi8n"]
@@ -2018,66 +2017,6 @@ region = Rect2(6300, 0, 700, 700)
 atlas = ExtResource("70_avkbd")
 region = Rect2(7000, 0, 700, 700)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rcfta"]
-atlas = ExtResource("71_5ip5y")
-region = Rect2(0, 0, 700, 1300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dra6w"]
-atlas = ExtResource("71_5ip5y")
-region = Rect2(700, 0, 700, 1300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6lhhq"]
-atlas = ExtResource("71_5ip5y")
-region = Rect2(1400, 0, 700, 1300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_re1bm"]
-atlas = ExtResource("71_5ip5y")
-region = Rect2(2100, 0, 700, 1300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pil4f"]
-atlas = ExtResource("71_5ip5y")
-region = Rect2(2800, 0, 700, 1300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s8doe"]
-atlas = ExtResource("71_5ip5y")
-region = Rect2(3500, 0, 700, 1300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wmtgm"]
-atlas = ExtResource("71_5ip5y")
-region = Rect2(4200, 0, 700, 1300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_enkc0"]
-atlas = ExtResource("71_5ip5y")
-region = Rect2(4900, 0, 700, 1300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xneau"]
-atlas = ExtResource("71_5ip5y")
-region = Rect2(5600, 0, 700, 1300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s0lve"]
-atlas = ExtResource("71_5ip5y")
-region = Rect2(6300, 0, 700, 1300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xq63m"]
-atlas = ExtResource("71_5ip5y")
-region = Rect2(7000, 0, 700, 1300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_i06ef"]
-atlas = ExtResource("71_5ip5y")
-region = Rect2(7700, 0, 700, 1300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_k3wav"]
-atlas = ExtResource("71_5ip5y")
-region = Rect2(8400, 0, 700, 1300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5ycri"]
-atlas = ExtResource("71_5ip5y")
-region = Rect2(9100, 0, 700, 1300)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y05r8"]
-atlas = ExtResource("71_5ip5y")
-region = Rect2(9800, 0, 700, 1300)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ono6"]
 atlas = ExtResource("72_ednit")
 region = Rect2(0, 0, 700, 700)
@@ -2237,56 +2176,6 @@ animations = [{
 "loop": false,
 "name": &"CrouchInteract",
 "speed": 11.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rcfta")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dra6w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6lhhq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_re1bm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pil4f")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s8doe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wmtgm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_enkc0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xneau")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s0lve")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xq63m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_i06ef")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_k3wav")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5ycri")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y05r8")
-}],
-"loop": true,
-"name": &"DinoInteract",
-"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -3696,7 +3585,7 @@ animation = &"Yellow5"
 autoplay = "Yellow5"
 
 [node name="standSpot" type="Marker3D" parent="FuseBox"]
-transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 8.674076, 0.049557865, 0.44918382)
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, 8.580593, 0.049557865, 0.32477045)
 
 [node name="Gate" type="Node3D" parent="."]
 script = ExtResource("34_4oas3")
@@ -4033,7 +3922,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.28559738, 1.050703
 shaded = true
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_wc2x2")
-animation = &"CrouchInteract"
+animation = &"new_animation"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.008636475, 0.0017394423, 1.0423431)
