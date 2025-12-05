@@ -96,7 +96,7 @@ func type_text() -> void:
 			
 		#else:
 		text_label.visible_characters = i + 1
-		await get_tree().create_timer(delay).timeout
+		await get_tree().create_timer(delay, false).timeout
 		
 		if break_for_loop:
 			break_for_loop = false
