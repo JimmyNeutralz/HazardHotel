@@ -3,7 +3,7 @@ extends Node3D
 @onready var lamp_light = $"../HH_Art_Lobby_Lamp_V1/OmniLight3D"
 @onready var middle_light = $"../Lights/MiddleRoomLight"
 @onready var directional_light = $"../Lights/DirectionalLight3D"
-@onready var text_popup = $"../TextPopup"
+@onready var text_popup = $"../Overlay/TextPopup"
 @onready var building_owner_marker = $"../BuildingOwner/Marker3D"
 @onready var player = $"../Player"
 @onready var uiNode = $LampUI
@@ -12,6 +12,8 @@ var lamp_on = false
 var generator_on = false
 var dialogue_finished = false
 var dialogue_started = false
+
+var paused = false
 
 func _ready() -> void:
 	lamp_light.light_energy = 0
@@ -24,6 +26,7 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_released("turn_on_lamp") and lamp_on:
 		deactivate_lights()
 
+signal resume
 func activate_lights():
 	lamp_on = true
 	uiNode.visible = false
@@ -36,10 +39,21 @@ func activate_lights():
 		text_popup.change_text_image(3)
 		text_popup.set_text("I was wondering who was ominously standing in the dark. I suppose you’re here to fix the electrical issue, right?", 6)
 		await get_tree().create_timer(6.0).timeout
+		
+		if paused:
+			await resume
+			
+		if (text_popup.displayFor > 0):
+			print(abs(text_popup.displayFor))
+			await get_tree().create_timer(abs(text_popup.displayFor)).timeout
+			print("Completed!")
+			
 		if !generator_on:
 			text_popup.change_text_image(1)
 			text_popup.set_text("Yep, along with the electrician watching through the cameras.", 5)
 			await get_tree().create_timer(5.0).timeout
+			if paused:
+				await resume
 			if !generator_on:
 				dialogue_finished = true
 				text_popup.change_text_image(3)
@@ -52,3 +66,7 @@ func deactivate_lights():
 	lamp_light.light_energy = 0
 	middle_light.light_energy = 0
 	directional_light.light_energy = 0.15
+
+func wait_after_delay():
+	print(text_popup.displayFor)
+	await get_tree().create_timer(text_popup.displayFor).timeout

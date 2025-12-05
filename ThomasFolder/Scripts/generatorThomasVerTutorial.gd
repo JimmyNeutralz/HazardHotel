@@ -9,7 +9,7 @@ extends Node3D
 @onready var uiNode = $GeneratorUI
 
 @onready var player = $"../Player"
-@onready var text = $"../TextPopup"      
+@onready var text = $"../Overlay/TextPopup"      
 @onready var generator_marker = $"../Generator/Marker3D"     
 
 @onready var mesh_instance = $generator/GeneratorFrame_L1.get_active_material(0)

@@ -1590,8 +1590,6 @@ animations = [{
 [sub_resource type="BoxShape3D" id="BoxShape3D_kffmy"]
 size = Vector3(1.2994995, 1.2765503, 0.11035156)
 
-[sub_resource type="BoxMesh" id="BoxMesh_63m68"]
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_j8v0c"]
 atlas = ExtResource("67_xn1yk")
 region = Rect2(0, 0, 700, 700)
@@ -1686,6 +1684,8 @@ shader_parameter/warp_amount = 1.2930000614175
 shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.670000031825
+
+[sub_resource type="BoxMesh" id="BoxMesh_63m68"]
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ldf2o")
@@ -1940,31 +1940,6 @@ stream = ExtResource("26_puede")
 [node name="LevelMusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("41_ldf2o")
 
-[node name="TextPopup" type="Node2D" parent="."]
-position = Vector2(0, -20)
-script = ExtResource("28_4vmvk")
-
-[node name="text" type="Label" parent="TextPopup"]
-z_index = 1
-offset_left = 162.0
-offset_top = -96.255
-offset_right = 1082.0
-offset_bottom = -8.254997
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 26
-text = "hi"
-autowrap_mode = 3
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="TextPopup"]
-position = Vector2(621.875, -52.255)
-scale = Vector2(932.25, 95.99999)
-mesh = SubResource("BoxMesh_63m68")
-
-[node name="TextPopupCharacterImage" type="Sprite2D" parent="TextPopup"]
-position = Vector2(92, -52.255)
-scale = Vector2(0.6282051, 0.6282051)
-texture = ExtResource("43_ldf2o")
-
 [node name="HH_Art_Lobby_Room_V1" parent="." instance=ExtResource("31_57cga")]
 visible = false
 
@@ -2078,6 +2053,32 @@ offset_top = 19.0
 offset_right = 1136.0
 offset_bottom = 614.0
 mouse_filter = 2
+
+[node name="TextPopup" type="Node2D" parent="Overlay"]
+z_index = 4
+position = Vector2(0, 150)
+script = ExtResource("28_4vmvk")
+
+[node name="text" type="Label" parent="Overlay/TextPopup"]
+z_index = 1
+offset_left = 162.0
+offset_top = -96.255
+offset_right = 1082.0
+offset_bottom = -8.254997
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 26
+text = "hi"
+autowrap_mode = 3
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Overlay/TextPopup"]
+position = Vector2(621.875, -52.255)
+scale = Vector2(932.25, 95.99999)
+mesh = SubResource("BoxMesh_63m68")
+
+[node name="TextPopupCharacterImage" type="Sprite2D" parent="Overlay/TextPopup"]
+position = Vector2(92, -52.255)
+scale = Vector2(0.6282051, 0.6282051)
+texture = ExtResource("43_ldf2o")
 
 [node name="HhArtOverlayV3" type="Sprite2D" parent="."]
 z_index = 3

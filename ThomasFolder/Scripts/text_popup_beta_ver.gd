@@ -23,6 +23,7 @@ func _ready() -> void:
 	character_image.texture = new_guy_text_sprite
 
 func _process(delta: float) -> void:
+	#print(displayFor)
 	displayFor -= delta
 	if (displayFor <= 0 and text_displayed and text_label.global_position.y > -74):
 		text_displayed = false
@@ -83,9 +84,9 @@ func type_text() -> void:
 			#text_label.visible_characters = 0
 			#i = 0
 			#break
-		print(range(text_input.length()))
-		print(i)
-		print(text_label.visible_characters )
+		#print(range(text_input.length()))
+		#print(i)
+		#print(text_label.visible_characters )
 		if paused:
 			#stored_i = i
 			#break
