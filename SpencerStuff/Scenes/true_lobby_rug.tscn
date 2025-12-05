@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4o3oeyyus7f2"]
+
+[ext_resource type="PackedScene" uid="uid://5kgj4c7p55x4" path="res://Assets/3D Models/HH_Art_Lobby_Rug_V2.fbx" id="1_uk5sm"]
+[ext_resource type="Texture2D" uid="uid://bp7wvmjq3ui8u" path="res://Assets/3D Models/HH_Art_Lobby_RugTexture_V1.png" id="2_aw04s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pmikh"]
+albedo_texture = ExtResource("2_aw04s")
+
+[node name="HH_Art_Lobby_Rug_V2" instance=ExtResource("1_uk5sm")]
+
+[node name="pCylinder6" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pmikh")

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://d1twlbms4jalv"]
+
+[ext_resource type="PackedScene" uid="uid://b4nlipbffodx3" path="res://Assets/3D Models/HH_Art_Lobby_Elevator_V2.fbx" id="1_m0axs"]
+[ext_resource type="Texture2D" uid="uid://bqxnb3b3e4ril" path="res://Assets/3D Models/HH_Art_Lobby_ElevatorTexture_V1.png" id="2_wudjg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rhlq4"]
+albedo_texture = ExtResource("2_wudjg")
+
+[node name="HH_Art_Lobby_Elevator_V2" instance=ExtResource("1_m0axs")]
+
+[node name="Elevator" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_rhlq4")

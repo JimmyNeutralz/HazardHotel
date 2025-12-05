@@ -1,4 +1,4 @@
-[gd_scene load_steps=624 format=3 uid="uid://bxhis68m30g1y"]
+[gd_scene load_steps=623 format=3 uid="uid://bxhis68m30g1y"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_sdfg4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_fwdfo"]
@@ -11,9 +11,8 @@
 [ext_resource type="AudioStream" uid="uid://c2aek62urxvgj" path="res://Assets/Audio/Heavy Footsteps 4.wav" id="9_4o3qr"]
 [ext_resource type="AudioStream" uid="uid://00yxdkue0xhd" path="res://Assets/Audio/Heavy Footsteps 5.wav" id="10_b8gbm"]
 [ext_resource type="AudioStream" uid="uid://16paor1ni7n6" path="res://Assets/Audio/Heavy Footsteps 6.wav" id="11_db7nr"]
-[ext_resource type="PackedScene" uid="uid://hcmcgdk5of8u" path="res://SpencerStuff/Scenes/true_elevator.tscn" id="11_pwu2m"]
+[ext_resource type="PackedScene" uid="uid://d1twlbms4jalv" path="res://SpencerStuff/Scenes/true_elevatorV2.tscn" id="11_et8ij"]
 [ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="12_3ndj3"]
-[ext_resource type="Script" uid="uid://ocllpcynxxvx" path="res://SpencerStuff/Scripts/true_elevator.gd" id="12_o507h"]
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="13_fwueu"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="14_ql2xa"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="15_b8u1l"]
@@ -49,12 +48,12 @@
 [ext_resource type="PackedScene" uid="uid://cndbloaafk7o2" path="res://Scenes/GateV3Close.tscn" id="40_pwu2m"]
 [ext_resource type="Script" uid="uid://7epq051kcf4g" path="res://SpencerStuff/Scripts/elevator_door.gd" id="41_c0qj2"]
 [ext_resource type="PackedScene" uid="uid://yvv4teqlemm5" path="res://SpencerStuff/Scenes/hh_art_elevator_gate_v_1.tscn" id="42_bbw7d"]
-[ext_resource type="PackedScene" uid="uid://dp2ouqtbbitt6" path="res://Assets/3D Models/HH_Art_ElevatorSign_V1.fbx" id="42_hgbko"]
 [ext_resource type="Texture2D" uid="uid://5lvcfq2duxw0" path="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png" id="42_wq4hk"]
 [ext_resource type="Texture2D" uid="uid://pb8fec5s8lac" path="res://Donovan/DonAssets/HH_Art_NodeCyan5_V1.png" id="43_2j6rm"]
 [ext_resource type="PackedScene" uid="uid://dls6ajp0nybf4" path="res://Assets/3D Models/HH_Art_PinchModularLeft_V2.fbx" id="43_5rdc1"]
-[ext_resource type="Texture2D" uid="uid://b3gj38kae2c3k" path="res://Assets/3D Models/HH_Art_ElevatorSign_Floor2_V1.fbx.png" id="43_hgbko"]
+[ext_resource type="Texture2D" uid="uid://0o1anfkmyoq0" path="res://Assets/3D Models/HH_Art_ElevatorSign_Floor3_V1.fbx.png" id="44_et8ij"]
 [ext_resource type="PackedScene" uid="uid://b8fbh4foswd7e" path="res://Assets/3D Models/HH_Art_PinchModularMiddle_V2.fbx" id="44_vf2e0"]
+[ext_resource type="PackedScene" uid="uid://c4ti52vw8k1r0" path="res://SpencerStuff/Scenes/true_elevator_sign.tscn" id="44_xjhiw"]
 [ext_resource type="Texture2D" uid="uid://mif77mvk3i48" path="res://Donovan/DonAssets/HH_Art_NodeGreen3_V1.png" id="44_yqei1"]
 [ext_resource type="PackedScene" uid="uid://bojy7at4teudg" path="res://Assets/3D Models/HH_Art_PinchModularRight_V2.fbx" id="45_8vtvq"]
 [ext_resource type="Texture2D" uid="uid://bkl556xt6evy6" path="res://Donovan/DonAssets/HH_Art_NodeOrange1_V1.png" id="45_svxs6"]
@@ -4701,9 +4700,8 @@ texture = ExtResource("26_7elhi")
 
 [node name="Elevator" type="Node3D" parent="."]
 
-[node name="HH_Art_Elevator_V1" parent="Elevator" instance=ExtResource("11_pwu2m")]
+[node name="HH_Art_Lobby_Elevator_V2" parent="Elevator" instance=ExtResource("11_et8ij")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
-script = ExtResource("12_o507h")
 
 [node name="Generator" type="Node3D" parent="."]
 script = ExtResource("27_xsf64")
@@ -4852,13 +4850,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05041635)
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.1071434, 3.9507077, -0.23650178)
 texture = ExtResource("60_i1scv")
 
-[node name="HH_Art_ElevatorSign_V1" parent="ElevatorDoor" instance=ExtResource("42_hgbko")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.112, 1.68)
-
-[node name="ElevatorSignFloor2" type="Sprite3D" parent="ElevatorDoor/HH_Art_ElevatorSign_V1"]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 2.38, -2.49)
-texture = ExtResource("43_hgbko")
-
 [node name="ElevatorMarker" type="Marker3D" parent="ElevatorDoor"]
 
 [node name="ElevatorDoorUI" type="AnimatedSprite3D" parent="ElevatorDoor"]
@@ -4869,6 +4860,13 @@ autoplay = "Cyan5"
 
 [node name="ElevatorOpenSFX" type="AudioStreamPlayer3D" parent="ElevatorDoor"]
 stream = ExtResource("46_et8ij")
+
+[node name="HH_Art_Lobby_ElevatorSign_V1" parent="ElevatorDoor" instance=ExtResource("44_xjhiw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04347527, 0.066823184)
+
+[node name="ElevatorSignFloor3" type="Sprite3D" parent="ElevatorDoor/HH_Art_Lobby_ElevatorSign_V1"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 2.448525, -0.87682325)
+texture = ExtResource("44_et8ij")
 
 [node name="RoomDetectors" type="Node3D" parent="."]
 
