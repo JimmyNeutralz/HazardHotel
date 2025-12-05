@@ -35,7 +35,6 @@
 [ext_resource type="PackedScene" uid="uid://c872t3c5isyur" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Chair_V1.fbx" id="35_btl1y"]
 [ext_resource type="PackedScene" uid="uid://j78csii54qhf" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Clipboard_V1.fbx" id="36_gtqyt"]
 [ext_resource type="PackedScene" uid="uid://dqke751goegmo" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_ElevatorGate_V1.fbx" id="39_bf0ny"]
-[ext_resource type="PackedScene" uid="uid://c6nncrc2ucu0x" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_ElevatorSign_V1.fbx" id="40_813hb"]
 [ext_resource type="AudioStream" uid="uid://nhounakdj05v" path="res://Assets/Audio/mx_tutorial.wav" id="41_ldf2o"]
 [ext_resource type="PackedScene" uid="uid://b5jal522dbcis" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Elevator_V1.fbx" id="41_oig6y"]
 [ext_resource type="PackedScene" uid="uid://dlobr62q8pu2y" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Frame_V1.fbx" id="42_uetlj"]
@@ -74,6 +73,7 @@
 [ext_resource type="PackedScene" uid="uid://lepdv8r431j3" path="res://SpencerStuff/Scenes/true_lobby_doors.tscn" id="75_v1lpn"]
 [ext_resource type="PackedScene" uid="uid://bettkww4wmsuf" path="res://SpencerStuff/Scenes/true_book1.tscn" id="76_83lf2"]
 [ext_resource type="PackedScene" uid="uid://dl8darbn45lj0" path="res://SpencerStuff/Scenes/true_book2.tscn" id="76_la2bx"]
+[ext_resource type="PackedScene" uid="uid://c4ti52vw8k1r0" path="res://SpencerStuff/Scenes/true_elevator_sign.tscn" id="76_uc22e"]
 [ext_resource type="PackedScene" uid="uid://b4o3oeyyus7f2" path="res://SpencerStuff/Scenes/true_lobby_rug.tscn" id="76_v1lpn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
@@ -1979,9 +1979,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
 [node name="HH_Art_Lobby_ElevatorGate_V1" parent="." instance=ExtResource("39_bf0ny")]
 visible = false
 
-[node name="HH_Art_Lobby_ElevatorSign_V1" parent="." instance=ExtResource("40_813hb")]
+[node name="HH_Art_Lobby_ElevatorSign_V2" parent="." instance=ExtResource("76_uc22e")]
 
-[node name="ElevatorSignFloor1" type="Sprite3D" parent="HH_Art_Lobby_ElevatorSign_V1"]
+[node name="ElevatorSignFloor1" type="Sprite3D" parent="HH_Art_Lobby_ElevatorSign_V2"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 2.45, -0.88206077)
 texture = ExtResource("53_6j3yk")
 
