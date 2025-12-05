@@ -61,7 +61,6 @@
 [ext_resource type="Script" uid="uid://npu55c7px8ms" path="res://ThomasFolder/Scripts/generatorThomasVerTutorial.gd" id="59_ldf2o"]
 [ext_resource type="AudioStream" uid="uid://u31ntpy5j83k" path="res://Assets/Audio/generator start up.wav" id="60_6j3yk"]
 [ext_resource type="Script" uid="uid://gxyte2pwafxu" path="res://Assets/3D Models/LobbyModels/lamp.gd" id="60_25vsh"]
-[ext_resource type="PackedScene" uid="uid://yayf6ie6vren" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Rug_V1.fbx" id="60_mawxb"]
 [ext_resource type="PackedScene" uid="uid://o1uif2bxe7cj" path="res://SpencerStuff/Scenes/true_lamp.tscn" id="61_6j3yk"]
 [ext_resource type="PackedScene" uid="uid://dgfvm6sy14n60" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V1.fbx" id="61_7f5nv"]
 [ext_resource type="PackedScene" uid="uid://dd7maffl4gk12" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V2.fbx" id="62_0cfyl"]
@@ -75,6 +74,7 @@
 [ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="72_sjot8"]
 [ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="74_sjot8"]
 [ext_resource type="PackedScene" uid="uid://bjiwrv1db0dj0" path="res://SpencerStuff/Scenes/true_lobby_clock.tscn" id="75_6j3yk"]
+[ext_resource type="PackedScene" uid="uid://b4o3oeyyus7f2" path="res://SpencerStuff/Scenes/true_lobby_rug.tscn" id="76_v1lpn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -2029,8 +2029,6 @@ sprite_frames = SubResource("SpriteFrames_km7aj")
 animation = &"Purple2"
 autoplay = "Purple2"
 
-[node name="HH_Art_Lobby_Rug_V1" parent="." instance=ExtResource("60_mawxb")]
-
 [node name="HH_Art_Lobby_Shelf_V1" parent="." instance=ExtResource("61_7f5nv")]
 
 [node name="HH_Art_Lobby_Shelf_V2" parent="." instance=ExtResource("62_0cfyl")]
@@ -2084,6 +2082,8 @@ scale = Vector2(0.6156249, 0.59074074)
 texture = ExtResource("74_sjot8")
 
 [node name="HH_Art_Lobby_Clock_V2" parent="." instance=ExtResource("75_6j3yk")]
+
+[node name="HH_Art_Lobby_Rug_V2" parent="." instance=ExtResource("76_v1lpn")]
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
