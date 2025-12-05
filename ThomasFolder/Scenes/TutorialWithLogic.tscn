@@ -1,4 +1,4 @@
-[gd_scene load_steps=299 format=3 uid="uid://cqmevv1ngqbua"]
+[gd_scene load_steps=300 format=3 uid="uid://cqmevv1ngqbua"]
 
 [ext_resource type="Script" uid="uid://bpt5xl3np0i1d" path="res://ThomasFolder/Scripts/level_management_thomas_tutorial_ver.gd" id="1_ldf2o"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_0bb3x"]
@@ -49,6 +49,7 @@
 [ext_resource type="Texture2D" uid="uid://mif77mvk3i48" path="res://Donovan/DonAssets/HH_Art_NodeGreen3_V1.png" id="50_av3om"]
 [ext_resource type="Texture2D" uid="uid://bkl556xt6evy6" path="res://Donovan/DonAssets/HH_Art_NodeOrange1_V1.png" id="51_8g6to"]
 [ext_resource type="Texture2D" uid="uid://b1wmqw5j1s6xl" path="res://Donovan/DonAssets/HH_Art_NodeOrange4_V1.png" id="52_b3tl8"]
+[ext_resource type="Texture2D" uid="uid://dm1l50itnllc5" path="res://Assets/3D Models/HH_Art_ElevatorSign_Floor1_V1.fbx.png" id="53_6j3yk"]
 [ext_resource type="Texture2D" uid="uid://tutpda8jn0vf" path="res://Donovan/DonAssets/HH_Art_NodePurple1_V1.png" id="53_pel2r"]
 [ext_resource type="Texture2D" uid="uid://dnwontfgeesjk" path="res://Donovan/DonAssets/HH_Art_NodePurple2_V1.png" id="54_r4gc1"]
 [ext_resource type="Texture2D" uid="uid://h63ytlac6hmi" path="res://Donovan/DonAssets/HH_Art_NodePurple5_V1.png" id="55_103b3"]
@@ -1984,6 +1985,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
 visible = false
 
 [node name="HH_Art_Lobby_ElevatorSign_V1" parent="." instance=ExtResource("40_813hb")]
+
+[node name="ElevatorSignFloor1" type="Sprite3D" parent="HH_Art_Lobby_ElevatorSign_V1"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 2.45, -0.88206077)
+texture = ExtResource("53_6j3yk")
 
 [node name="HH_Art_Lobby_Elevator_V1" parent="." instance=ExtResource("41_oig6y")]
 visible = false

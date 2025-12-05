@@ -52,7 +52,7 @@
 [ext_resource type="Texture2D" uid="uid://5lvcfq2duxw0" path="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png" id="42_wq4hk"]
 [ext_resource type="Texture2D" uid="uid://pb8fec5s8lac" path="res://Donovan/DonAssets/HH_Art_NodeCyan5_V1.png" id="43_2j6rm"]
 [ext_resource type="PackedScene" uid="uid://dls6ajp0nybf4" path="res://Assets/3D Models/HH_Art_PinchModularLeft_V2.fbx" id="43_5rdc1"]
-[ext_resource type="Texture2D" uid="uid://b3gj38kae2c3k" path="res://Assets/3D Models/HH_Art_ElevatorSign_Floor2_V1.fbx.png" id="43_hgbko"]
+[ext_resource type="Texture2D" uid="uid://0o1anfkmyoq0" path="res://Assets/3D Models/HH_Art_ElevatorSign_Floor3_V1.fbx.png" id="44_et8ij"]
 [ext_resource type="PackedScene" uid="uid://b8fbh4foswd7e" path="res://Assets/3D Models/HH_Art_PinchModularMiddle_V2.fbx" id="44_vf2e0"]
 [ext_resource type="Texture2D" uid="uid://mif77mvk3i48" path="res://Donovan/DonAssets/HH_Art_NodeGreen3_V1.png" id="44_yqei1"]
 [ext_resource type="PackedScene" uid="uid://bojy7at4teudg" path="res://Assets/3D Models/HH_Art_PinchModularRight_V2.fbx" id="45_8vtvq"]
@@ -4853,9 +4853,9 @@ texture = ExtResource("60_i1scv")
 [node name="HH_Art_ElevatorSign_V1" parent="ElevatorDoor" instance=ExtResource("42_hgbko")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.112, 1.68)
 
-[node name="ElevatorSignFloor2" type="Sprite3D" parent="ElevatorDoor/HH_Art_ElevatorSign_V1"]
+[node name="ElevatorSignFloor3" type="Sprite3D" parent="ElevatorDoor/HH_Art_ElevatorSign_V1"]
 transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 2.38, -2.49)
-texture = ExtResource("43_hgbko")
+texture = ExtResource("44_et8ij")
 
 [node name="ElevatorMarker" type="Marker3D" parent="ElevatorDoor"]
 
