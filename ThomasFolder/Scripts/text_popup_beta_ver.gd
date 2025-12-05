@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var text_label = $"../TextPopup/text"
 @onready var character_image = $"../TextPopup/TextPopupCharacterImage"
+@onready var textbox_sprite = $"../TextPopup/Textbox"
 
 var text_input
 var displayFor = 0
@@ -10,6 +11,11 @@ var new_guy_text_sprite = load("res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait
 var swagula_text_sprite = load("res://ThomasFolder/Sprites/HH_Art_SwagulaPortrait_V1.png")
 var building_owner_text_sprite = load("res://ThomasFolder/Sprites/HH_Art_OwnerPortrait_V1.png")
 var werewolf_text_sprite = load("res://ThomasFolder/Sprites/Budget Werewolf.png")
+
+var new_guy_textbox = load("res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png")
+var swagula_textbox = load("res://ThomasFolder/Sprites/HH_Art_Textbox_Swagula_V1.png")
+var building_owner_textbox = load("res://ThomasFolder/Sprites/HH_Art_Textbox_Manager_V1.png")
+var werewolf_textbox = load("res://ThomasFolder/Sprites/HH_Art_Textbox_Werewolf_V1.png")
 
 #var loop_end = false
 
@@ -33,13 +39,17 @@ func change_text_image(character):
 	#Switches the image of the character next to the dialogue box to new guy
 	if (character == 1):
 		character_image.texture = new_guy_text_sprite
+		textbox_sprite.texture = new_guy_textbox
 	#Switches the image of the character next to the dialogue box to swagula
 	elif (character == 2):
 		character_image.texture = swagula_text_sprite
+		textbox_sprite.texture = swagula_textbox
 	elif (character == 3):
 		character_image.texture = building_owner_text_sprite
+		textbox_sprite.texture = building_owner_textbox
 	elif (character == 4):
 		character_image.texture = werewolf_text_sprite
+		textbox_sprite.texture = werewolf_textbox
 
 func set_text(func_text_input: String, time_up: int):
 	#if (text_displayed):

@@ -75,6 +75,7 @@
 [ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="71_xv31i"]
 [ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="72_sjot8"]
 [ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="74_sjot8"]
+[ext_resource type="Texture2D" uid="uid://bs6byut2b4npg" path="res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png" id="75_v1lpn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -1685,8 +1686,6 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.670000031825
 
-[sub_resource type="BoxMesh" id="BoxMesh_63m68"]
-
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_ldf2o")
 
@@ -2056,29 +2055,29 @@ mouse_filter = 2
 
 [node name="TextPopup" type="Node2D" parent="Overlay"]
 z_index = 4
-position = Vector2(0, 150)
+position = Vector2(0, -20)
 script = ExtResource("28_4vmvk")
 
 [node name="text" type="Label" parent="Overlay/TextPopup"]
 z_index = 1
-offset_left = 162.0
+offset_left = 167.0
 offset_top = -96.255
-offset_right = 1082.0
+offset_right = 1077.0
 offset_bottom = -8.254997
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 26
 text = "hi"
 autowrap_mode = 3
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Overlay/TextPopup"]
-position = Vector2(621.875, -52.255)
-scale = Vector2(932.25, 95.99999)
-mesh = SubResource("BoxMesh_63m68")
-
 [node name="TextPopupCharacterImage" type="Sprite2D" parent="Overlay/TextPopup"]
 position = Vector2(92, -52.255)
 scale = Vector2(0.6282051, 0.6282051)
 texture = ExtResource("43_ldf2o")
+
+[node name="Textbox" type="Sprite2D" parent="Overlay/TextPopup"]
+position = Vector2(637.00006, 211)
+scale = Vector2(0.78703713, 0.78703713)
+texture = ExtResource("75_v1lpn")
 
 [node name="HhArtOverlayV3" type="Sprite2D" parent="."]
 z_index = 3
