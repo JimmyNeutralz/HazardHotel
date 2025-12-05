@@ -1,0 +1,26 @@
+[gd_scene load_steps=8 format=3 uid="uid://dl8darbn45lj0"]
+
+[ext_resource type="PackedScene" uid="uid://c7jj8huwvg2nl" path="res://Assets/3D Models/HH_Art_Lobby_Book2_V2.fbx" id="1_k5533"]
+[ext_resource type="Texture2D" uid="uid://dwfvvyqr01pa1" path="res://Assets/3D Models/HH_Art_Lobby_Book2Texture_V1.png" id="2_jfwsw"]
+[ext_resource type="Texture2D" uid="uid://b5625r871eoxr" path="res://Assets/3D Models/HH_Art_Lobby_Book3Texture_V1.png" id="3_gx6qf"]
+[ext_resource type="Texture2D" uid="uid://bgxp64t3o7bw6" path="res://Assets/3D Models/HH_Art_Lobby_Book4Texture_V1.png" id="4_scuku"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3qex5"]
+albedo_texture = ExtResource("2_jfwsw")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7qh3a"]
+albedo_texture = ExtResource("3_gx6qf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kgqxf"]
+albedo_texture = ExtResource("4_scuku")
+
+[node name="HH_Art_Lobby_Book2_V2" instance=ExtResource("1_k5533")]
+
+[node name="book" parent="Table_Books" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_3qex5")
+
+[node name="book1" parent="Table_Books" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7qh3a")
+
+[node name="book2" parent="Table_Books" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_kgqxf")

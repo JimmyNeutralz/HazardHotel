@@ -32,8 +32,6 @@
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="30_mj5kf"]
 [ext_resource type="PackedScene" uid="uid://cdpmf8utj0jno" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Room_V1.fbx" id="31_57cga"]
 [ext_resource type="PackedScene" uid="uid://daldipal1s38" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Bell_V1.fbx" id="32_bsst6"]
-[ext_resource type="PackedScene" uid="uid://bf1124xgupqqp" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Book1_V1.fbx" id="33_ywmov"]
-[ext_resource type="PackedScene" uid="uid://o8yvmbg220gy" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Book2_V1.fbx" id="34_e1g18"]
 [ext_resource type="PackedScene" uid="uid://c872t3c5isyur" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Chair_V1.fbx" id="35_btl1y"]
 [ext_resource type="PackedScene" uid="uid://j78csii54qhf" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Clipboard_V1.fbx" id="36_gtqyt"]
 [ext_resource type="PackedScene" uid="uid://dqke751goegmo" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_ElevatorGate_V1.fbx" id="39_bf0ny"]
@@ -74,6 +72,8 @@
 [ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="74_sjot8"]
 [ext_resource type="PackedScene" uid="uid://bjiwrv1db0dj0" path="res://SpencerStuff/Scenes/true_lobby_clock.tscn" id="75_6j3yk"]
 [ext_resource type="PackedScene" uid="uid://lepdv8r431j3" path="res://SpencerStuff/Scenes/true_lobby_doors.tscn" id="75_v1lpn"]
+[ext_resource type="PackedScene" uid="uid://bettkww4wmsuf" path="res://SpencerStuff/Scenes/true_book1.tscn" id="76_83lf2"]
+[ext_resource type="PackedScene" uid="uid://dl8darbn45lj0" path="res://SpencerStuff/Scenes/true_book2.tscn" id="76_la2bx"]
 [ext_resource type="PackedScene" uid="uid://b4o3oeyyus7f2" path="res://SpencerStuff/Scenes/true_lobby_rug.tscn" id="76_v1lpn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
@@ -1971,11 +1971,6 @@ visible = false
 [node name="HH_Art_Lobby_Bell_V1" parent="." instance=ExtResource("32_bsst6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
 
-[node name="HH_Art_Lobby_Book1_V1" parent="." instance=ExtResource("33_ywmov")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5528629, 0, 0.3376094)
-
-[node name="HH_Art_Lobby_Book2_V1" parent="." instance=ExtResource("34_e1g18")]
-
 [node name="HH_Art_Lobby_Chair_V1" parent="." instance=ExtResource("35_btl1y")]
 
 [node name="HH_Art_Lobby_Clipboard_V1" parent="." instance=ExtResource("36_gtqyt")]
@@ -2087,6 +2082,11 @@ texture = ExtResource("74_sjot8")
 [node name="HH_Art_Lobby_Elevator_V2" parent="." instance=ExtResource("74_6j3yk")]
 
 [node name="HH_Art_Lobby_Doors_V2" parent="." instance=ExtResource("75_v1lpn")]
+
+[node name="HH_Art_Lobby_Book1_V2" parent="." instance=ExtResource("76_83lf2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55529284, 0.01834321, 0.3522401)
+
+[node name="HH_Art_Lobby_Book2_V2" parent="." instance=ExtResource("76_la2bx")]
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
