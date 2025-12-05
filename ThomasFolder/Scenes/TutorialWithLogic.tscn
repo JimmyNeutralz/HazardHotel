@@ -36,7 +36,6 @@
 [ext_resource type="PackedScene" uid="uid://o8yvmbg220gy" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Book2_V1.fbx" id="34_e1g18"]
 [ext_resource type="PackedScene" uid="uid://c872t3c5isyur" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Chair_V1.fbx" id="35_btl1y"]
 [ext_resource type="PackedScene" uid="uid://j78csii54qhf" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Clipboard_V1.fbx" id="36_gtqyt"]
-[ext_resource type="PackedScene" uid="uid://c8gu3yh4828p1" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Doors_V1.fbx" id="38_c5tkm"]
 [ext_resource type="PackedScene" uid="uid://dqke751goegmo" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_ElevatorGate_V1.fbx" id="39_bf0ny"]
 [ext_resource type="PackedScene" uid="uid://c6nncrc2ucu0x" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_ElevatorSign_V1.fbx" id="40_813hb"]
 [ext_resource type="AudioStream" uid="uid://nhounakdj05v" path="res://Assets/Audio/mx_tutorial.wav" id="41_ldf2o"]
@@ -73,6 +72,7 @@
 [ext_resource type="PackedScene" uid="uid://d1twlbms4jalv" path="res://SpencerStuff/Scenes/true_elevatorV2.tscn" id="74_6j3yk"]
 [ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="74_sjot8"]
 [ext_resource type="PackedScene" uid="uid://bjiwrv1db0dj0" path="res://SpencerStuff/Scenes/true_lobby_clock.tscn" id="75_6j3yk"]
+[ext_resource type="PackedScene" uid="uid://lepdv8r431j3" path="res://SpencerStuff/Scenes/true_lobby_doors.tscn" id="75_v1lpn"]
 [ext_resource type="PackedScene" uid="uid://b4o3oeyyus7f2" path="res://SpencerStuff/Scenes/true_lobby_rug.tscn" id="76_v1lpn"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
@@ -1735,13 +1735,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01, 7.709382, 0.175)
 [node name="LeftBorder" type="StaticBody3D" parent="Borders"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Borders/LeftBorder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.123993, 1.4651122, 0.29384184)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6345825, 1.4651122, 0.29384184)
 shape = SubResource("BoxShape3D_3nyfu")
 
 [node name="RightBorder" type="StaticBody3D" parent="Borders"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Borders/RightBorder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.157318, 1.4507129, 0.5398276)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.150728, 1.4507129, 0.5398276)
 shape = SubResource("BoxShape3D_t3whr")
 
 [node name="CameraTriggers" type="Node3D" parent="."]
@@ -1980,8 +1980,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5528629, 0, 0.3376094)
 [node name="HH_Art_Lobby_Clipboard_V1" parent="." instance=ExtResource("36_gtqyt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
 
-[node name="HH_Art_Lobby_Doors_V1" parent="." instance=ExtResource("38_c5tkm")]
-
 [node name="HH_Art_Lobby_ElevatorGate_V1" parent="." instance=ExtResource("39_bf0ny")]
 visible = false
 
@@ -2082,6 +2080,8 @@ texture = ExtResource("74_sjot8")
 [node name="HH_Art_Lobby_Shelf_V1" parent="." instance=ExtResource("61_7f5nv")]
 
 [node name="HH_Art_Lobby_Elevator_V2" parent="." instance=ExtResource("74_6j3yk")]
+
+[node name="HH_Art_Lobby_Doors_V2" parent="." instance=ExtResource("75_v1lpn")]
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
