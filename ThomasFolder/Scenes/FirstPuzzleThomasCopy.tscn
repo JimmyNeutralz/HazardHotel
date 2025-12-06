@@ -1,4 +1,4 @@
-[gd_scene load_steps=458 format=3 uid="uid://dxod6hguur4ti"]
+[gd_scene load_steps=465 format=3 uid="uid://dxod6hguur4ti"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_xoxpi"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_41gdk"]
@@ -86,7 +86,7 @@
 [ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="83_rgf6o"]
 [ext_resource type="Texture2D" uid="uid://duslj11ne4i44" path="res://ThomasFolder/Sprites/HH_Art_BuildingOwnerSprite_V1.png" id="83_vaun8"]
 [ext_resource type="Script" uid="uid://183kiid28qmk" path="res://ThomasFolder/Scripts/werewolf.gd" id="86_vxbyq"]
-[ext_resource type="Texture2D" uid="uid://j5rb1oejj3mb" path="res://ThomasFolder/Sprites/HH_Art_WerewolfSprite_V1.png" id="87_olett"]
+[ext_resource type="Texture2D" uid="uid://bus6cbu56g5d4" path="res://ThomasFolder/Sprites/HH_Art_WerewolfIdleSpriteSheet_V2.png" id="87_vxbyq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -3366,6 +3366,56 @@ animations = [{
 
 [sub_resource type="BoxMesh" id="BoxMesh_63m68"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_olett"]
+atlas = ExtResource("87_vxbyq")
+region = Rect2(0, 0, 800, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5r8oh"]
+atlas = ExtResource("87_vxbyq")
+region = Rect2(800, 0, 800, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdoy1"]
+atlas = ExtResource("87_vxbyq")
+region = Rect2(1600, 0, 800, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aruqk"]
+atlas = ExtResource("87_vxbyq")
+region = Rect2(2400, 0, 800, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4xx6"]
+atlas = ExtResource("87_vxbyq")
+region = Rect2(3200, 0, 800, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgp03"]
+atlas = ExtResource("87_vxbyq")
+region = Rect2(4000, 0, 800, 700)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6hjkc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olett")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5r8oh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdoy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aruqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4xx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgp03")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node3D2" type="Node3D"]
 script = ExtResource("1_xoxpi")
 
@@ -3979,9 +4029,9 @@ texture = ExtResource("83_rgf6o")
 transform = Transform3D(-1.0000001, 0, -8.742278e-08, 0, 1, 0, 8.7422784e-08, 0, -1, 1.2525885, -0.12117565, 5.1123614)
 script = ExtResource("86_vxbyq")
 
-[node name="Sprite3D" type="Sprite3D" parent="Werewolf"]
-transform = Transform3D(-0.345, 0, -3.016086e-08, 0, 0.345, 0, 3.016086e-08, 0, -0.345, 2.3841858e-07, 0.9599999, 5.3712015)
-texture = ExtResource("87_olett")
+[node name="Sprite3D" type="AnimatedSprite3D" parent="Werewolf"]
+transform = Transform3D(-0.225, 0, -3.3974054e-08, 0, 0.225, 0, 3.3974054e-08, 0, -0.225, 2.3841858e-07, 0.9599999, 5.3712015)
+sprite_frames = SubResource("SpriteFrames_6hjkc")
 
 [node name="werewolf_marker" type="Marker3D" parent="Werewolf"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020080805, 0, 4.6132965)
