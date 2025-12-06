@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bgqevfaw5u3dq"
-path="res://.godot/imported/HH_Art_Lobby_Chair_V2.fbx-714fabbb3f3381a19e6c821d04628eef.scn"
+uid="uid://cr2u5jpom2xta"
+path="res://.godot/imported/HH_Art_Lobby_Clipboard_V2.fbx-8bb422d7c7cc86a00c67833f6ecf75a5.scn"
 
 [deps]
 
-source_file="res://ThomasFolder/Objects/HH_Art_Lobby_Chair_V2.fbx"
-dest_files=["res://.godot/imported/HH_Art_Lobby_Chair_V2.fbx-714fabbb3f3381a19e6c821d04628eef.scn"]
+source_file="res://ThomasFolder/Objects and Textures/HH_Art_Lobby_Clipboard_V2.fbx"
+dest_files=["res://.godot/imported/HH_Art_Lobby_Clipboard_V2.fbx-8bb422d7c7cc86a00c67833f6ecf75a5.scn"]
 
 [params]
 
