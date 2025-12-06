@@ -49,7 +49,6 @@ func activate_lights():
 				text_popup.set_text("Well, they’ll want to use that S.P.A.R.K board to activate that generator next to me the same way they activated the light.", 7)
 
 func deactivate_lights():
-	player.move_to_specific_location(building_owner_marker.global_position.x)
 	lamp_on = false
 	uiNode.visible = true
 	lamp_light.light_energy = 0
