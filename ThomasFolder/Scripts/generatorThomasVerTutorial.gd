@@ -56,6 +56,10 @@ func activate_generator():
 	lamp.generator_on = true
 	elevator_door.powered_on = true
 	player.move_to_specific_location(generator_marker.global_position.x)
+	
+func deactivate_generator():
+	activated = false
+	uiNode.visible = true
 
 	#change color
 	if indicator:
