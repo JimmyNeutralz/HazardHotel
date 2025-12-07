@@ -33,6 +33,8 @@ func _process(delta):
 			activate_generator()
 		else:
 			print("Cannot activate generator yet!")
+	if Input.is_action_just_released("activate_generator") and activated:
+		deactivate_generator()
 
 func can_activate() -> bool:
 	if lamp == null:
