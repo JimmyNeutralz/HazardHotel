@@ -30,7 +30,7 @@ signal resume
 func activate_lights():
 	lamp_on = true
 	uiNode.visible = false
-	lamp_light.light_energy = 2.
+	lamp_light.light_energy = 0.1
 	middle_light.light_energy = 1.
 	directional_light.light_energy = 1
 	if !dialogue_started:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=303 format=3 uid="uid://dxqylawnucbcu"]
+[gd_scene load_steps=304 format=3 uid="uid://dxqylawnucbcu"]
 
 [ext_resource type="Script" uid="uid://b8rhcy8cul0pp" path="res://ThomasFolder/Scripts/level_management_thomas_tutorial_ver_on_and_off.gd" id="1_3ji2u"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_ejy63"]
@@ -69,6 +69,7 @@
 [ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="67_uihrx"]
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="68_hw3p6"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="69_fu5d5"]
+[ext_resource type="Texture2D" uid="uid://b2vui8awwerj3" path="res://ThomasFolder/Sprites/New Guy Character Image Back.png" id="70_ejy63"]
 [ext_resource type="Texture2D" uid="uid://b2smx76edwggf" path="res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png" id="70_rbtl8"]
 [ext_resource type="Texture2D" uid="uid://bs6byut2b4npg" path="res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png" id="71_1ttjr"]
 [ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="72_kwhrs"]
@@ -2070,8 +2071,13 @@ theme_override_font_sizes/font_size = 26
 text = "hi"
 autowrap_mode = 3
 
+[node name="CharacterImageBack" type="Sprite2D" parent="Overlay/TextPopup"]
+position = Vector2(87.915, -52.255)
+scale = Vector2(0.628, 0.628)
+texture = ExtResource("70_ejy63")
+
 [node name="TextPopupCharacterImage" type="Sprite2D" parent="Overlay/TextPopup"]
-position = Vector2(80.545, -52.255)
+position = Vector2(87.915, -52.255)
 scale = Vector2(0.6282051, 0.6282051)
 texture = ExtResource("70_rbtl8")
 
