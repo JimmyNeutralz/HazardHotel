@@ -152,7 +152,7 @@ func _process(delta: float) -> void:
 		if path == "res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn":
 			fade_in_static._exit_scene("res://SpencerStuff/Scenes/EndScene.tscn")
 		else:
-			fade_in_static._exit_scene("res://SpencerStuff/Scenes/BetaAutoMoveCopy.tscn")
+			fade_in_static._exit_scene("res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn")
 
 #Left key trigger
 func _on_left_trigger_body_entered(body: Node3D) -> void:
