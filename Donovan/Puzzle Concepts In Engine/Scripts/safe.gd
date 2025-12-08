@@ -38,14 +38,22 @@ func _ready():
 
 func _process(delta):
 	#Handle safe deactivation input
+	# if is_powered and and fuseBox.get_fuse_amount() >= 1
+	
 	if Input.is_action_just_pressed("lower_safe") and fuseBox.get_fuse_amount() >= 1:
 		lower_safe()
 	elif Input.is_action_just_released("lower_safe") and fuseBox.get_fuse_amount() >= 1:
 		raise_safe()
 		
-	if (fuseBox.get_fuse_amount() == 2 and !has_run):
-		uiNode1.visible = true
-		uiNode2.visible = true
+	## Test for resource budgeting
+	#if (Global.check_array(1, 0)):
+		#uiNode1.visible = true
+	#else:
+		#uiNode1.visible = false
+		#
+	#if (fuseBox.get_fuse_amount() == 2 and !has_run):
+		#uiNode1.visible = true
+		#uiNode2.visible = true
 		
 	if Input.is_action_just_pressed("fuse_two_override_collect"):
 		fuse.visible = false
@@ -55,7 +63,7 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("open_safe") and fuseBox.get_fuse_amount() >= 2 and !safe_raised:
 		open_safe()
-	elif Input.is_action_just_released("open_safe") and fuseBox.get_fuse_amount() >= 2 and safe_raised:
+	elif Input.is_action_just_released("open_safe") and fuseBox.get_fuse_amount() >= 2:
 		close_safe()
 
 func lower_safe():
@@ -85,7 +93,7 @@ func lower_safe():
 	if (!first_fuse_collected):
 		fuse.visible = false
 		fuseBox.uiNode.visible = true
-		player.standing_player_interact()
+		player.crouching_player_interact()
 		await playerSprite.animation_finished
 		player.collect_fuse()
 		process_started = false
@@ -128,6 +136,19 @@ func raise_safe():
 		#mat.albedo_color = Color.GREEN  # Activated / dangerous
 	#else:
 		#mat.albedo_color = Color.RED    # Deactivated / safe
+		
+
+# Each script has a special is_powered function to find if its
+# associated node is powered.  The function makes a call to a global game
+# script that will constantly get the S.P.A.R.K. box array from Zak's C#
+# script.
+
+func is_powered():
+	#Search array for specific node to be powered 
+	#	(Look at the picture in teams to get the node to look for)
+	# if the specified node is powered: return true
+	#	(Use this function in place of InputMap functions)
+	pass
 
 func open_safe():
 	if anim_player and anim_player.has_animation("Take 001"):
@@ -136,7 +157,7 @@ func open_safe():
 		is_safe_open = true
 		
 		player.move_to_object(fuseSafeSpot)
-		player.standing_player_interact()
+		player.crouching_player_interact()
 		await playerSprite.animation_finished
 		
 		player.move_to_object(fuseStandSpot)

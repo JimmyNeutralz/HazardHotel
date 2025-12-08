@@ -14,5 +14,11 @@ func _process(delta):
 	elif (fuseBox.get_fuse_amount() == 1):
 		uiNode.visible = true
 		
+	## Test for resource budgeting
+	#if (Global.check_array(1, 0)):
+		#uiNode.visible = true
+	#else:
+		#uiNode.visible = false
+		
 	#if Input.is_action_just_pressed("lower_safe") and fuseBox.get_fuse_amount() >= 1:
 		#uiNode.visible = false

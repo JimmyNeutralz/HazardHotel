@@ -24,6 +24,13 @@ func _process(_delta):
 	if locked and Input.is_action_just_pressed("unlock_right") and name == "RightDoor" :
 		unlock_door()
 		move_past_left_door()
+		
+	## Test for resource budgeting
+	#if (Global.check_array(1, 0)):
+		#pass
+	#else:
+		#pass
+
 
 func move_past_left_door():
 	if (player.global_position.x > -1.5):

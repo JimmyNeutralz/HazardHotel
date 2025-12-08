@@ -27,6 +27,12 @@ func _process(_delta):
 		
 	if Input.is_action_just_released("deactivate_puddle"):
 		pass
+	
+	## Test for resource budgeting
+	#if (Global.check_array(1, 0)):
+		#pass
+	#else:
+		#pass
 
 func move_past_right_door():
 	#print(blocker.global_position.x)

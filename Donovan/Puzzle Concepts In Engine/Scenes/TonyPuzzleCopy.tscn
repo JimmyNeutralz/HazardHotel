@@ -86,7 +86,7 @@
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="85_niop8"]
 [ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="86_xdg2y"]
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="87_j1s4m"]
-[ext_resource type="PackedScene" path="res://Donovan/DonAssets/hh_art_fuse_3_v_1.tscn" id="88_rg8sg"]
+[ext_resource type="PackedScene" uid="uid://bfbcjkeoychis" path="res://Donovan/DonAssets/hh_art_fuse_3_v_1.tscn" id="88_rg8sg"]
 [ext_resource type="Script" uid="uid://vihp4thtac55" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="89_h2ile"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
