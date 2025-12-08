@@ -9,7 +9,7 @@ extends Node3D
 @onready var uiNode2 = $GeneratorUI
 
 
-@onready var text = $"../TextPopup"                    
+@onready var text = $"../Overlay/TextPopup"                    
 
 var gate : Node3D = null
 var activated = false

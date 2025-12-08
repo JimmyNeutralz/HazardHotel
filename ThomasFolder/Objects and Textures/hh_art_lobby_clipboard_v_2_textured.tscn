@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://ejawuqce42dv"]
+
+[ext_resource type="PackedScene" uid="uid://cr2u5jpom2xta" path="res://ThomasFolder/Objects and Textures/HH_Art_Lobby_Clipboard_V2.fbx" id="1_qsob0"]
+[ext_resource type="Texture2D" uid="uid://d172i7hint6k7" path="res://ThomasFolder/Objects and Textures/HH_Art_Lobby_ClipboardTexture_V1.png" id="2_asgqj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_se2hp"]
+albedo_texture = ExtResource("2_asgqj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dpmsy"]
+albedo_texture = ExtResource("2_asgqj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j7bui"]
+albedo_texture = ExtResource("2_asgqj")
+
+[node name="HH_Art_Lobby_Clipboard_V2" instance=ExtResource("1_qsob0")]
+
+[node name="pCube31" parent="clipboard" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_se2hp")
+
+[node name="pCube32" parent="clipboard" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_dpmsy")
+
+[node name="pCube33" parent="clipboard" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_j7bui")
