@@ -21,6 +21,8 @@ func colored_generator():
 var lamp: Node3D = null
 var activated = false
 
+var can_interact = false
+
 func _ready():
 	if lamp_node_path != null:
 		lamp = get_node(lamp_node_path)
@@ -33,6 +35,8 @@ func _process(delta):
 			activate_generator()
 		else:
 			print("Cannot activate generator yet!")
+	if Input.is_action_just_released("activate_generator") and activated:
+		deactivate_generator()
 
 func can_activate() -> bool:
 	if lamp == null:
@@ -56,6 +60,10 @@ func activate_generator():
 	lamp.generator_on = true
 	elevator_door.powered_on = true
 	player.move_to_specific_location(generator_marker.global_position.x)
+	
+func deactivate_generator():
+	activated = false
+	uiNode.visible = true
 
 	#change color
 	if indicator:

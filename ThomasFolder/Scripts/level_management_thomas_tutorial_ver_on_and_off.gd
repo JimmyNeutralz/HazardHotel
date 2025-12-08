@@ -39,8 +39,10 @@ var has_right_key: bool = false
 @onready var text_popup = $Overlay/TextPopup
 @onready var lamp = $HH_Art_Lobby_Lamp_V1
 
+@onready var player = $Player
+#test
 
-#test 
+var elevator_door_entered = false 
 
 func _ready():
 	text_popup.change_text_image(1)
@@ -80,37 +82,9 @@ func _ready():
 	else:
 		print("WARNING: Level music node missing!")
 
-#func _process(delta: float) -> void:
-	
-
-#Left key trigger
-func _on_left_trigger_body_entered(body: Node3D) -> void:
-	if body.name == "Player" and not has_left_key:
-		has_left_key = true
-		left_key.visible = false
-		print("Left key obtained")
-		_check_keys()
-
-
-#Right key trigger
-func _on_right_trigger_body_entered(body: Node3D) -> void:
-	if body.name == "Player" and not has_right_key:
-		has_right_key = true
-		right_key.visible = false
-		print("Right key obtained")
-		_check_keys()
-
-
-#Unlock elevator when both keys acquired
-func _check_keys() -> void:
-	if has_left_key and has_right_key:
-		print("Elevator unlocked!")
-
-
-#Enter elevator
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if generator.activated and body.name == "Player":
-
+func _process(delta: float) -> void:
+	if (((player.global_position.x < (elevator_door.global_position.x + 0.25)) and (player.global_position.x >= elevator_door.global_position.x - 0.25))) and elevator_door.unlocked and !elevator_door_entered :
+		elevator_door_entered = true
 		#Open elevator gate
 		if elevator_door:
 			elevator_door.open_gate()
@@ -118,7 +92,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			print("ERROR: ElevatorDoor script not found!")
 
 		#Freeze player movement right away
-		var player = $Player
+		#var player = $Player
 		if player:
 
 			#Stop all current movement
@@ -179,6 +153,103 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			fade_in_static._exit_scene("res://SpencerStuff/Scenes/EndScene.tscn")
 		else:
 			fade_in_static._exit_scene("res://SpencerStuff/Scenes/BetaAutoMoveCopy.tscn")
+
+#Left key trigger
+func _on_left_trigger_body_entered(body: Node3D) -> void:
+	if body.name == "Player" and not has_left_key:
+		has_left_key = true
+		left_key.visible = false
+		print("Left key obtained")
+		_check_keys()
+
+
+#Right key trigger
+func _on_right_trigger_body_entered(body: Node3D) -> void:
+	if body.name == "Player" and not has_right_key:
+		has_right_key = true
+		right_key.visible = false
+		print("Right key obtained")
+		_check_keys()
+
+
+#Unlock elevator when both keys acquired
+func _check_keys() -> void:
+	if has_left_key and has_right_key:
+		print("Elevator unlocked!")
+
+
+#Enter elevator
+#func _on_area_3d_body_entered(body: Node3D) -> void:
+	#if generator.activated and body.name == "Player":
+#
+		##Open elevator gate
+		#if elevator_door:
+			#elevator_door.open_gate()
+		#else:
+			#print("ERROR: ElevatorDoor script not found!")
+#
+		##Freeze player movement right away
+		#var player = $Player
+		#if player:
+#
+			##Stop all current movement
+			#player.is_moving = false
+			#player.velocity = Vector3.ZERO
+#
+			##Stop footsteps
+			#if player.has_method("stop_footsteps"):
+				#player.stop_footsteps()
+#
+			##Disable player input 
+			#player.set_process(false)
+			#player.set_physics_process(false)
+#
+			##Switch to Idle animation
+			#if player.player_sprite \
+			#and player.player_sprite.sprite_frames \
+			#and player.player_sprite.sprite_frames.has_animation("Idle"):
+				#player.player_sprite.play("Idle")
+#
+		##Wait for elevator door to open without movement
+		#await get_tree().create_timer(1.25).timeout
+#
+		##Re-enable physics so scripted movement works
+		#player.set_process(true)
+		#player.set_physics_process(true)
+#
+		##Scripted backward walk into elevator
+		##Move the player 2.5 units backward (negative Z)
+		#var target: Vector3 = player.global_position + Vector3(0, 0, -2.5)
+		#player.target_position = target
+		#player.is_moving = true
+#
+#
+		##Play walk animation
+		#if player.player_sprite \
+		#and player.player_sprite.sprite_frames \
+		#and player.player_sprite.sprite_frames.has_animation("Walk"):
+			#player.player_sprite.play("Walk")
+			#player.start_footsteps()
+#
+		##Wait until he finishes reaching the spot
+		#while player.is_moving:
+			#await get_tree().process_frame
+#
+		##Freeze again before scene transition
+		#player.set_process(false)
+		#player.set_physics_process(false)
+		#player.velocity = Vector3.ZERO
+#
+		##Small delay before fading scene
+		#await get_tree().create_timer(1).timeout
+#
+		##Fade and change scene 
+		#var path := get_tree().current_scene.scene_file_path
+#
+		#if path == "res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn":
+			#fade_in_static._exit_scene("res://SpencerStuff/Scenes/EndScene.tscn")
+		#else:
+			#fade_in_static._exit_scene("res://SpencerStuff/Scenes/BetaAutoMoveCopy.tscn")
 
 
 	
