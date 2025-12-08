@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bpt5xl3np0i1d" path="res://ThomasFolder/Scripts/level_management_thomas_tutorial_ver.gd" id="1_ldf2o"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_0bb3x"]
-[ext_resource type="Script" uid="uid://t5iwr1n67h38" path="res://ThomasFolder/Scripts/camera_move_pinch_tutorial_ver.gd" id="3_hcdoj"]
+[ext_resource type="Script" path="res://ThomasFolder/Scripts/camera_move_pinch_tutorial_ver.gd" id="3_hcdoj"]
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="4_ph66n"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="5_dcdqr"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="6_c7nfw"]
@@ -65,10 +65,10 @@
 [ext_resource type="PackedScene" uid="uid://o1uif2bxe7cj" path="res://SpencerStuff/Scenes/true_lamp.tscn" id="61_6j3yk"]
 [ext_resource type="PackedScene" uid="uid://dgfvm6sy14n60" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V1.fbx" id="61_7f5nv"]
 [ext_resource type="PackedScene" uid="uid://dd7maffl4gk12" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V2.fbx" id="62_0cfyl"]
-[ext_resource type="PackedScene" uid="uid://dbok1pugswmfy" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Table_V1.fbx" id="63_8xeul"]
+[ext_resource type="PackedScene" uid="uid://c2fvfmnc4vjmc" path="res://SpencerStuff/Scenes/true_table.tscn" id="62_uc22e"]
 [ext_resource type="Texture2D" uid="uid://uvf0v1svjyqn" path="res://Assets/HH_Art_OwnerIdleSpriteSheet_V1.png" id="67_xn1yk"]
 [ext_resource type="Script" path="res://ThomasFolder/Scenes/owner_idle.gd" id="68_j8v0c"]
-[ext_resource type="PackedScene" uid="uid://crqfjy0grfep2" path="res://SpencerStuff/Scenes/true_lobby.tscn" id="68_xn1yk"]
+[ext_resource type="PackedScene" uid="uid://d0vygk4d3mmkq" path="res://SpencerStuff/Scenes/true_lobby.tscn" id="68_xn1yk"]
 [ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="71_xv31i"]
 [ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="72_sjot8"]
 [ext_resource type="PackedScene" uid="uid://d1twlbms4jalv" path="res://SpencerStuff/Scenes/true_elevatorV2.tscn" id="74_6j3yk"]
@@ -2015,7 +2015,8 @@ autoplay = "Purple2"
 
 [node name="HH_Art_Lobby_Shelf_V2" parent="." instance=ExtResource("62_0cfyl")]
 
-[node name="HH_Art_Lobby_Table_V1" parent="." instance=ExtResource("63_8xeul")]
+[node name="HH_Art_Table_V3" parent="." instance=ExtResource("62_uc22e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.956471, 0.035687447, -8.766882)
 
 [node name="BuildingOwner" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45269394)
@@ -2100,6 +2101,7 @@ texture = ExtResource("74_sjot8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55529284, 0.01834321, 0.3522401)
 
 [node name="HH_Art_Lobby_Book2_V2" parent="." instance=ExtResource("76_la2bx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12643027, 0)
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]

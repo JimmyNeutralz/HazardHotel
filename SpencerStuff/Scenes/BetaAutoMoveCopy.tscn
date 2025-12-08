@@ -19,9 +19,7 @@
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="9_vp3xm"]
 [ext_resource type="AudioStream" uid="uid://00yxdkue0xhd" path="res://Assets/Audio/Heavy Footsteps 5.wav" id="10_d23ut"]
 [ext_resource type="AudioStream" uid="uid://16paor1ni7n6" path="res://Assets/Audio/Heavy Footsteps 6.wav" id="11_tj4bt"]
-[ext_resource type="PackedScene" uid="uid://07r1c3ba45w3" path="res://Assets/3D Models/HH_Art_DoorOpenLeftAnim_V1.fbx" id="12_khs31"]
 [ext_resource type="PackedScene" uid="uid://dqdrihkiouy1o" path="res://Assets/3D Models/HH_Art_locks_openAnim_V1.fbx" id="13_um0bm"]
-[ext_resource type="PackedScene" uid="uid://lgf83rme0ewf" path="res://Assets/3D Models/HH_Art_DoorOpenRightAnim_v1.fbx" id="15_bpvk3"]
 [ext_resource type="Texture2D" uid="uid://bjgv41ufsr321" path="res://Assets/key.png" id="16_4wqvp"]
 [ext_resource type="AudioStream" uid="uid://boghesc1nkhot" path="res://Assets/Audio/Wooden door creak 1.wav" id="16_um0bm"]
 [ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="17_ml83m"]
@@ -33,6 +31,7 @@
 [ext_resource type="Script" uid="uid://ct1s4dt2hpjix" path="res://SpencerStuff/Scripts/fusebox.gd" id="21_iumpq"]
 [ext_resource type="PackedScene" uid="uid://dllmxns1qx246" path="res://Scenes/FuseboxClose.tscn" id="22_0jwwo"]
 [ext_resource type="Script" uid="uid://d26s1jhjd3mxd" path="res://SpencerStuff/Scripts/gate.gd" id="23_4qti0"]
+[ext_resource type="PackedScene" uid="uid://c481kh6rlqyuh" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="23_fii53"]
 [ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="24_gpvrk"]
 [ext_resource type="AudioStream" uid="uid://cnudkj83doi6x" path="res://Assets/Audio/Electricution Death.wav" id="25_bpvk3"]
 [ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="25_luouv"]
@@ -57,18 +56,19 @@
 [ext_resource type="PackedScene" uid="uid://416n0yob35jg" path="res://Assets/3D Models/HH_Art_Shelf_V1.fbx" id="34_vp3xm"]
 [ext_resource type="Texture2D" uid="uid://d1ybbwvdlyuvl" path="res://Donovan/DonAssets/HH_Art_NodeYellow6_V1.png" id="37_l5ac0"]
 [ext_resource type="PackedScene" uid="uid://cndbloaafk7o2" path="res://Scenes/GateV3Close.tscn" id="39_4qti0"]
+[ext_resource type="PackedScene" uid="uid://dax3x8kiqqa04" path="res://SpencerStuff/Scenes/true_right_doorV2.tscn" id="40_fii53"]
 [ext_resource type="PackedScene" uid="uid://d1twlbms4jalv" path="res://SpencerStuff/Scenes/true_elevatorV2.tscn" id="43_dgu40"]
 [ext_resource type="AudioStream" uid="uid://u31ntpy5j83k" path="res://Assets/Audio/generator start up.wav" id="46_5dapl"]
 [ext_resource type="Script" uid="uid://bgwka22ik84yr" path="res://SpencerStuff/Scripts/true_generator.gd" id="46_cr5v7"]
 [ext_resource type="PackedScene" uid="uid://c7p2cadteahj6" path="res://SpencerStuff/Scenes/true_generator.tscn" id="46_en5xs"]
-[ext_resource type="PackedScene" path="res://Donovan/DonAssets/truePuddle.tscn" id="47_l5ac0"]
+[ext_resource type="PackedScene" uid="uid://b5nps7v01rrsb" path="res://Donovan/DonAssets/truePuddle.tscn" id="47_l5ac0"]
 [ext_resource type="AudioStream" uid="uid://c2k5mrmymj5tt" path="res://Assets/Audio/mx_level.wav" id="52_d23ut"]
 [ext_resource type="AudioStream" uid="uid://blva2u8dj2k20" path="res://Assets/Audio/metal gate opening.wav" id="59_5dapl"]
 [ext_resource type="Script" uid="uid://6c438vjhjcdg" path="res://SpencerStuff/Scripts/true_floor_1_left.gd" id="59_hb643"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/TrueFloor1Right.tscn" id="60_hb643"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/TrueFloor1Left.tscn" id="60_l5ac0"]
+[ext_resource type="PackedScene" uid="uid://c0b6414twj21r" path="res://SpencerStuff/Scenes/TrueFloor1Right.tscn" id="60_hb643"]
+[ext_resource type="PackedScene" uid="uid://bks01evxkkb8r" path="res://SpencerStuff/Scenes/TrueFloor1Left.tscn" id="60_l5ac0"]
 [ext_resource type="Script" uid="uid://dkdpv7iwscrxv" path="res://SpencerStuff/Scripts/true_floor_1_right.gd" id="61_d4b2v"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/TrueFloor1Middle.tscn" id="61_hb643"]
+[ext_resource type="PackedScene" uid="uid://qktkjuseo3vd" path="res://SpencerStuff/Scenes/TrueFloor1Middle.tscn" id="61_hb643"]
 [ext_resource type="Texture2D" uid="uid://b3gj38kae2c3k" path="res://Assets/3D Models/HH_Art_ElevatorSign_Floor2_V1.fbx.png" id="62_dgu40"]
 [ext_resource type="Script" uid="uid://5fe2miwdr0f" path="res://SpencerStuff/Scripts/true_floor_1_middle.gd" id="63_srmjg"]
 [ext_resource type="AudioStream" uid="uid://y8gssppvdj36" path="res://Assets/Audio/elevator door opening.wav" id="64_5dapl"]
@@ -1760,8 +1760,8 @@ lock_node_path = NodePath("Lock")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.365698, 1.01702, 0.09989405)
 shape = SubResource("BoxShape3D_66v05")
 
-[node name="HH_Art_DoorOpenLeftAnim_V1" parent="LeftDoor/Door" instance=ExtResource("12_khs31")]
-transform = Transform3D(0.99939084, 0, -0.034899496, 0, 1, 0, 0.034899496, 0, 0.99939084, -3.14268, 0, 0.10658157)
+[node name="HH_Art_DoorAnim_LeftOpen_V4" parent="LeftDoor/Door" instance=ExtResource("23_fii53")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026139855, 0, 11.828317)
 
 [node name="LeftDoorAudio" type="AudioStreamPlayer3D" parent="LeftDoor/Door"]
 stream = ExtResource("16_um0bm")
@@ -1802,8 +1802,8 @@ lock_node_path = NodePath("Lock")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5437398, 1.1224811, 0.11894977)
 shape = SubResource("BoxShape3D_w5m3f")
 
-[node name="HH_Art_DoorOpenRightAnim_v1" parent="RightDoor/Door" instance=ExtResource("15_bpvk3")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 3.149738, 0, 0.10374862)
+[node name="HH_Art_DoorAnim_RightOpen_V4" parent="RightDoor/Door" instance=ExtResource("40_fii53")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.8)
 
 [node name="RightDoorAudio" type="AudioStreamPlayer3D" parent="RightDoor/Door"]
 stream = ExtResource("19_t4vl1")

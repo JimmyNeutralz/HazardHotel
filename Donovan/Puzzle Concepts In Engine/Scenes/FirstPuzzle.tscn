@@ -25,7 +25,6 @@
 [ext_resource type="Texture2D" uid="uid://cfo2bftv6y7qy" path="res://Donovan/DonAssets/HH_Art_NodeBlue2_V1.png" id="22_0eypt"]
 [ext_resource type="PackedScene" uid="uid://dqdrihkiouy1o" path="res://Assets/3D Models/HH_Art_locks_openAnim_V1.fbx" id="22_ldwrj"]
 [ext_resource type="Texture2D" uid="uid://0q8k8ovc0tm5" path="res://Donovan/DonAssets/HH_Art_NodeCyan2_V1.png" id="23_2wdvl"]
-[ext_resource type="PackedScene" uid="uid://lgf83rme0ewf" path="res://Assets/3D Models/HH_Art_DoorOpenRightAnim_v1.fbx" id="24_es108"]
 [ext_resource type="AudioStream" uid="uid://c8v5bc6sw71sl" path="res://Assets/Audio/Wooden door creak 2.wav" id="25_gpfu8"]
 [ext_resource type="Texture2D" uid="uid://bjgv41ufsr321" path="res://Assets/key.png" id="26_7elhi"]
 [ext_resource type="Script" uid="uid://cer86br3tg2y" path="res://Donovan/Puzzle Concepts In Engine/Scenes/dumbwaiter.gd" id="26_rebln"]
@@ -91,7 +90,7 @@
 [ext_resource type="PackedScene" uid="uid://bvtx553hn8ouc" path="res://SpencerStuff/Scenes/true_middle_scenev3.tscn" id="50_qeqm8"]
 [ext_resource type="Texture2D" uid="uid://bra3n723u6d3n" path="res://Assets/UpdatedNodes/HH_Art_NodeOrange4_V2.png" id="50_rvfsx"]
 [ext_resource type="Texture2D" uid="uid://72bl5rodk7u4" path="res://Donovan/DonAssets/dinograbber.png" id="50_wo6si"]
-[ext_resource type="Script" uid="uid://vihp4thtac55" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="50_yqei1"]
+[ext_resource type="Script" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="50_yqei1"]
 [ext_resource type="PackedScene" uid="uid://bglppt0huxa04" path="res://SpencerStuff/Scenes/true_right_scenev3.tscn" id="51_00t3t"]
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="51_a4kpc"]
 [ext_resource type="Texture2D" uid="uid://dhndjrnissj6d" path="res://Assets/HH_Art_NewGuyElectrocutionAnimSpriteSheet_V1.png" id="51_dx7fg"]
@@ -110,7 +109,6 @@
 [ext_resource type="Script" uid="uid://v1vrjjfux1ew" path="res://ThomasFolder/Scripts/right_door_Thomas_Ver_2.gd" id="57_t6dil"]
 [ext_resource type="Texture2D" uid="uid://eitropqiyx5o" path="res://Assets/UpdatedNodes/HH_Art_NodePurple6_V2.png" id="58_oj5ji"]
 [ext_resource type="Texture2D" uid="uid://bfpos4y5k54ey" path="res://Assets/UpdatedNodes/HH_Art_NodeYellow1_V2.png" id="59_oavfy"]
-[ext_resource type="PackedScene" uid="uid://0wvwkjnnxvjg" path="res://Assets/3D Models/HH_Art_DoorAnim_LeftOpen_V1.fbx" id="59_t6dil"]
 [ext_resource type="Texture2D" uid="uid://bekut30xmeumk" path="res://Assets/Lock.png" id="60_i1scv"]
 [ext_resource type="Texture2D" uid="uid://dlj2eikyq3shx" path="res://Assets/UpdatedNodes/HH_Art_NodeYellow2_V2.png" id="60_x5hgw"]
 [ext_resource type="Texture2D" uid="uid://deole6hfhdo5q" path="res://Assets/UpdatedNodes/HH_Art_NodeYellow3_V2.png" id="61_q71t7"]
@@ -129,6 +127,9 @@
 [ext_resource type="Texture2D" uid="uid://b2vui8awwerj3" path="res://ThomasFolder/Sprites/New Guy Character Image Back.png" id="125_cfexi"]
 [ext_resource type="Texture2D" uid="uid://b2smx76edwggf" path="res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png" id="126_wwhnu"]
 [ext_resource type="Texture2D" uid="uid://bs6byut2b4npg" path="res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png" id="127_ygbmw"]
+[ext_resource type="PackedScene" path="res://Donovan/DonAssets/hh_art_fuse_3_v_1.tscn" id="91_xjhiw"]
+[ext_resource type="PackedScene" uid="uid://c481kh6rlqyuh" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="98_13nw6"]
+[ext_resource type="PackedScene" uid="uid://dax3x8kiqqa04" path="res://SpencerStuff/Scenes/true_right_doorV2.tscn" id="102_1r2ig"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -8099,7 +8100,8 @@ shape = SubResource("BoxShape3D_i1scv")
 [node name="LeftDoorAudio" type="AudioStreamPlayer3D" parent="LeftDoor/Door"]
 stream = ExtResource("20_4v76q")
 
-[node name="HH_Art_DoorAnim_LeftOpen_V1" parent="LeftDoor/Door" instance=ExtResource("59_t6dil")]
+[node name="HH_Art_DoorAnim_LeftOpen_V4" parent="LeftDoor/Door" instance=ExtResource("98_13nw6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1379833, 0, 11.778169)
 
 [node name="LeftDoorUI" type="AnimatedSprite3D" parent="LeftDoor/Door"]
 transform = Transform3D(0.24994512, 0, -0.0052399086, 0, 0.25, 0, 0.0052399086, 0, 0.24994512, 0.74356365, 2.1368105, 0.44276094)
@@ -8141,8 +8143,8 @@ lock_node_path = NodePath("Lock")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5437398, 1.1224811, 0.11894977)
 shape = SubResource("BoxShape3D_t6dil")
 
-[node name="HH_Art_DoorOpenRightAnim_v1" parent="RightDoor/Door" instance=ExtResource("24_es108")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 3.149738, 0, 0.10374862)
+[node name="HH_Art_DoorAnim_RightOpen_V4" parent="RightDoor/Door" instance=ExtResource("102_1r2ig")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019931316, 0, 11.870389)
 
 [node name="RightDoorAudio" type="AudioStreamPlayer3D" parent="RightDoor/Door"]
 stream = ExtResource("25_gpfu8")
