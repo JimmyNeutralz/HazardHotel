@@ -162,13 +162,15 @@ func _physics_process(delta):
 			standing_interact_start = false
 		elif crouching_interact_start:
 			player_sprite.play("CrouchInteract")
+			await player_sprite.animation_finished
 			crouching_interact_start = false
-			await player_sprite.animation_finished
 		elif dino_interact_start:
-			player_sprite.play("DinoInteract")
-			dino_interact_start = false
+			self.global_position.y = 1.288
+			player_sprite.play("DinoGrabInteract")
 			await player_sprite.animation_finished
-		elif player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle") and !interact_playing:
+			self.global_position.y = 0.623
+			dino_interact_start = false
+		elif player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
 			if player_sprite.animation != "Idle" and not is_moving:
 				player_sprite.play("Idle")
 				stop_footsteps()

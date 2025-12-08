@@ -52,6 +52,12 @@ func _process(delta):
 
 	elif Input.is_action_just_pressed("activate_fusebox") and activated:
 			deactivate()
+			
+	# Test for resource budgeting
+	#if (Global.check_array(1, 0)):
+		#uiNode.visible = true
+	#else:
+		#uiNode.visible = false
 
 
 #Check if the fusebox can be activated

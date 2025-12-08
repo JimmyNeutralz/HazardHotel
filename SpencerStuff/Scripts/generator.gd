@@ -30,6 +30,12 @@ func _process(delta):
 			text.set_text("Generator up and running for this floor. Better head back to the elevator.", 6)
 		else:
 			print("Cannot activate generator yet!")
+			
+	## Test for resource budgeting
+	#if (Global.check_array(1, 0)):
+		#uiNode.visible = true
+	#else:
+		#uiNode.visible = false
 
 func can_activate() -> bool:
 	if gate == null:
