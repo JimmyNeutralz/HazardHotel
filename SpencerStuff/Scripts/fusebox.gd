@@ -6,7 +6,7 @@ extends Node3D
 @onready var fuseboxStand = $standSpot
 @onready var uiNode = $FuseboxUI
 
-@onready var text = $"../TextPopup"
+@onready var text = $"../Overlay/TextPopup"
 var dialogue_triggered = false
 
 #Path to puddle node

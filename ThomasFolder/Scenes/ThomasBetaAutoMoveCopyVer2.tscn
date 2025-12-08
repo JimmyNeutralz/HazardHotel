@@ -51,7 +51,7 @@
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="49_83jxj"]
 [ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="50_dp2l7"]
 [ext_resource type="Script" uid="uid://coms123t1l50s" path="res://ThomasFolder/Scripts/puddle_colider_beta_ver.gd" id="50_jl74w"]
-[ext_resource type="Script" uid="uid://dcuwijsutwksx" path="res://ThomasFolder/swagula.gd" id="52_wx0ur"]
+[ext_resource type="Script" uid="uid://dcuwijsutwksx" path="res://ThomasFolder/Scripts/swagula.gd" id="52_wx0ur"]
 [ext_resource type="Texture2D" uid="uid://bmkj5h4vj715d" path="res://ThomasFolder/Sprites/HH_Art_SwagulaSprite_V1.png" id="53_jk5ip"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oymrl"]

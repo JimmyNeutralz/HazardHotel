@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var swagula_marker = $"../Swagula/swagula_marker"
 @onready var player = $"../Player"
-@onready var text_popup = $"../TextPopup"
+@onready var text_popup = $"../Overlay/TextPopup"
 
 var talked_with = false
 
@@ -10,5 +10,5 @@ func _process(delta: float) -> void:
 	if (!talked_with):
 		if ((player.global_position.x > (swagula_marker.global_position.x - 0.5)) and (player.global_position.x < (swagula_marker.global_position.x + 0.5))):
 			text_popup.change_text_image(2)
-			text_popup.set_text("Hey guys its me swagula", 4)
+			text_popup.set_text("I for one am glad about the lack of windows here! Not many hotels are accommodating for swagpires like me.", 6)
 			talked_with = true

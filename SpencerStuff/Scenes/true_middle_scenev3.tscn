@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvtx553hn8ouc"]
 
 [ext_resource type="PackedScene" uid="uid://ef1v2ca4il5c" path="res://Assets/3D Models/HH_Art_PinchModularMiddle_V3.fbx" id="1_yu0hr"]
-[ext_resource type="Texture2D" uid="uid://cunho0xb8dkwy" path="res://Assets/3D Models/HH_Art_MiddleRoomTexture_V1.png" id="2_if3t0"]
+[ext_resource type="Texture2D" uid="uid://crxskhr406jrj" path="res://Assets/HH_Art_MiddleRoomTexture_V2.png" id="2_if3t0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1rmmq"]
 albedo_texture = ExtResource("2_if3t0")
