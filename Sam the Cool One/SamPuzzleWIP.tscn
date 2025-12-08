@@ -1,4 +1,4 @@
-[gd_scene load_steps=297 format=3 uid="uid://bwsjpacqdhxh0"]
+[gd_scene load_steps=311 format=3 uid="uid://bwsjpacqdhxh0"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_etl04"]
 [ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="2_stxpx"]
@@ -48,11 +48,12 @@
 [ext_resource type="Script" uid="uid://btw5rsddy2yd7" path="res://Sam the Cool One/vase.gd" id="44_ytcoj"]
 [ext_resource type="Script" uid="uid://bodbd1rpra4ki" path="res://Sam the Cool One/airvent.gd" id="45_7hn7x"]
 [ext_resource type="AudioStream" uid="uid://cnudkj83doi6x" path="res://Assets/Audio/Electricution Death.wav" id="45_j1xhc"]
-[ext_resource type="Texture2D" uid="uid://ben36vy47r6u" path="res://Sam the Cool One/Mouse.png" id="46_5ui7h"]
 [ext_resource type="Script" uid="uid://dq413xe087tg0" path="res://Sam the Cool One/mouse.gd" id="46_y8lye"]
 [ext_resource type="Script" uid="uid://b783s1374l57w" path="res://Sam the Cool One/key.gd" id="47_dxmn4"]
 [ext_resource type="Script" uid="uid://bbdvhu2tqmp3u" path="res://Sam the Cool One/cheese.gd" id="48_trdal"]
 [ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="49_viyc1"]
+[ext_resource type="Texture2D" uid="uid://dy7ha53nbvp1u" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_RatRunAnimSpriteSheet_V1.png" id="50_xoi0t"]
+[ext_resource type="Texture2D" uid="uid://cn1mu2mum7obv" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_RatIdleSpriteSheet_V1.png" id="51_a1sk3"]
 [ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="51_h04sa"]
 [ext_resource type="Script" uid="uid://vupsb2nbika3" path="res://Sam the Cool One/gateLevel2.gd" id="51_soqoc"]
 [ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="52_ts0yf"]
@@ -73,8 +74,11 @@
 [ext_resource type="PackedScene" uid="uid://dbok1pugswmfy" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Table_V1.fbx" id="71_kq5jo"]
 [ext_resource type="PackedScene" uid="uid://c854krvvqwahx" path="res://Donovan/DonAssets/HH_Art_SafeAnim_V1.fbx" id="71_vcupa"]
 [ext_resource type="Script" uid="uid://crhb8yg3b1qjd" path="res://Sam the Cool One/safe.gd" id="72_j7f7e"]
+[ext_resource type="PackedScene" uid="uid://cyaybvw53kqo4" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_MouseWheel_V2.fbx" id="74_a1sk3"]
+[ext_resource type="PackedScene" uid="uid://nqme2sacpu7p" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_BoxTrap_V2.fbx" id="76_2bagf"]
 [ext_resource type="Script" uid="uid://b00ss7u2jxh7c" path="res://Sam the Cool One/curtain.gd" id="76_kq5jo"]
 [ext_resource type="Script" uid="uid://o7neq40tuih1" path="res://Sam the Cool One/trap.gd" id="76_vcupa"]
+[ext_resource type="PackedScene" uid="uid://cf6e38w8733hb" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_Curtain_V1.fbx" id="76_xoi0t"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="79_a1sk3"]
 [ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="80_2bagf"]
 
@@ -1524,6 +1528,82 @@ size = Vector3(0.48134422, 1, 2.157898)
 [sub_resource type="BoxShape3D" id="BoxShape3D_trdal"]
 size = Vector3(1, 0.46240234, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bagf"]
+atlas = ExtResource("50_xoi0t")
+region = Rect2(0, 0, 250, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jm3i"]
+atlas = ExtResource("50_xoi0t")
+region = Rect2(250, 0, 250, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iypui"]
+atlas = ExtResource("50_xoi0t")
+region = Rect2(500, 0, 250, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w68na"]
+atlas = ExtResource("51_a1sk3")
+region = Rect2(0, 0, 200, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6ger"]
+atlas = ExtResource("51_a1sk3")
+region = Rect2(200, 0, 200, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xk6g"]
+atlas = ExtResource("51_a1sk3")
+region = Rect2(400, 0, 200, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4br7"]
+atlas = ExtResource("51_a1sk3")
+region = Rect2(600, 0, 200, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxxuc"]
+atlas = ExtResource("51_a1sk3")
+region = Rect2(800, 0, 200, 140)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pknbb"]
+atlas = ExtResource("51_a1sk3")
+region = Rect2(1000, 0, 200, 140)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vcupa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2bagf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jm3i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iypui")
+}],
+"loop": true,
+"name": &"RUN",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w68na")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6ger")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xk6g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4br7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxxuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pknbb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_idyij"]
 size = Vector3(0.16955566, 3.5111084, 2.2953491)
 
@@ -1558,7 +1638,7 @@ size = Vector3(1.0297852, 1.0224304, 1)
 size = Vector3(0.059814453, 1, 2.2089844)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_a1sk3"]
-size = Vector3(0.66967773, 1, 1)
+size = Vector3(0.66967773, 1, 1.9072266)
 
 [sub_resource type="BoxMesh" id="BoxMesh_7jm3i"]
 
@@ -1575,7 +1655,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.28559738, 1.050703
 shaded = true
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_ml83m")
-animation = &"StandInteract"
+animation = &"Idle"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.008636475, 0.0017394423, 1.0423431)
@@ -1867,27 +1947,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6368865, 0.9150501)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31401634, 0, 0.20266724)
 shape = SubResource("BoxShape3D_y8lye")
 
-[node name="Mouse" type="Sprite3D" parent="Mouseholes" node_paths=PackedStringArray("Vase", "Player", "RightRoom", "MainRoom", "Hole1", "Hole2", "Trap", "Curtain", "Mousewheel", "WheelArea", "GateIndicator")]
-transform = Transform3D(-1.2227376e-09, 0, -1, 0, 0.06047304, 0, 0.027972974, 0, -4.371139e-08, 0.89986366, 0.15512758, -17.819958)
-texture = ExtResource("46_5ui7h")
-script = ExtResource("46_y8lye")
-Vase = NodePath("../../Vase")
-Player = NodePath("../../Player")
-RightRoom = NodePath("../../RoomDetectors/RightRoom")
-MainRoom = NodePath("../../RoomDetectors/MainRoom")
-Hole1 = NodePath("../Mousehole1")
-Hole2 = NodePath("../Mousehole2")
-Trap = NodePath("../../Trap")
-Curtain = NodePath("../../Curtain")
-Mousewheel = NodePath("../../MouseWheelDesk/CSGCylinder3D")
-WheelArea = NodePath("../../MouseWheelDesk/MousewheelArea")
-GateIndicator = NodePath("../../Indicators/FuseboxIndicator")
-
-[node name="Label3D3" type="Label3D" parent="Mouseholes/Mouse"]
-transform = Transform3D(1.8739395, 0, -7.194001e-08, 0, 4.9301224, 0, -8.873e-08, 0, 3.165135, -0.08292866, 0.14304036, 0.028702736)
-pixel_size = 0.002
-text = "Mouse"
-
 [node name="Mousehole2" type="Sprite3D" parent="Mouseholes"]
 transform = Transform3D(-2.0982517e-08, 0, -1, 0, 0.48002404, 0, 0.48002404, 0, -4.371139e-08, 1.0383419, 0.2966079, -25.865984)
 texture = ExtResource("44_soqoc")
@@ -1919,7 +1978,20 @@ PLACEHOLDER"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92387843, 0.08940461, 0)
 shape = SubResource("BoxShape3D_trdal")
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Mouseholes"]
+[node name="Mouse" type="AnimatedSprite3D" parent="Mouseholes" node_paths=PackedStringArray("Vase", "Player", "RightRoom", "MainRoom", "Hole1", "Hole2", "Curtain", "WheelArea", "FuseIndicator")]
+transform = Transform3D(-7.529986e-09, 0, -1, 0, 0.172266, 0, 0.172266, 0, -4.371139e-08, 0.9005447, 0.1890428, -17.836153)
+sprite_frames = SubResource("SpriteFrames_vcupa")
+animation = &"RUN"
+script = ExtResource("46_y8lye")
+Vase = NodePath("../../Vase")
+Player = NodePath("../../Player")
+RightRoom = NodePath("../../RoomDetectors/RightRoom")
+MainRoom = NodePath("../../RoomDetectors/MainRoom")
+Hole1 = NodePath("../Mousehole1")
+Hole2 = NodePath("../Mousehole2")
+Curtain = NodePath("../../Curtain")
+WheelArea = NodePath("../../MouseWheelDesk/MousewheelArea")
+FuseIndicator = NodePath("../../Indicators/FuseboxIndicator")
 
 [node name="Cheese" type="Node3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.166837, 0.59510523, 0.22333205)
@@ -2151,18 +2223,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1782064, 0, 0)
 [node name="HH_Art_Lobby_Table_V1" parent="MouseWheelDesk" instance=ExtResource("71_kq5jo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.165462, 0, 0.15996552)
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="MouseWheelDesk"]
-transform = Transform3D(1.9106855e-15, 4.371139e-08, 1, 1, -4.371139e-08, 0, 4.371139e-08, 1, -4.371139e-08, 0, 1.2728454, -0.39933643)
-radius = 0.23144531
-height = 0.32922363
-sides = 16
-
-[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="MouseWheelDesk/CSGCylinder3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0027923584, 0)
-operation = 2
-radius = 0.19482422
-height = 0.35379028
-sides = 16
+[node name="Mousewheel" parent="MouseWheelDesk" instance=ExtResource("74_a1sk3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.298, -0.86584866)
 
 [node name="MousewheelArea" type="Area3D" parent="MouseWheelDesk"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3291049, 0.73443305, 0.9150501)
@@ -2179,6 +2241,7 @@ Cheese = NodePath("../Cheese")
 
 [node name="Trap" type="CSGBox3D" parent="Trap"]
 transform = Transform3D(1.7125802, -0.960724, 0, 0.76073545, 2.162798, 0, 0, 0, 1.5193406, 0.1452812, 0.14647803, 1.1920929e-07)
+visible = false
 size = Vector3(0.4, 0.11086426, 0.2)
 
 [node name="Label3D" type="Label3D" parent="Trap/Trap"]
@@ -2189,6 +2252,7 @@ PLACEHOLDER"
 
 [node name="Trap2" type="CSGBox3D" parent="Trap"]
 transform = Transform3D(1.2829176, -0.017927237, 0, 0.00969548, 2.3721497, 0, 0, 0, 0.10911918, 0.47770452, 0.02652578, 1.1920929e-07)
+visible = false
 size = Vector3(0.020471193, 0.11890869, 0.2)
 
 [node name="Area3D" type="Area3D" parent="Trap"]
@@ -2197,7 +2261,11 @@ size = Vector3(0.020471193, 0.11890869, 0.2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11315918, 0, 0.6044922)
 shape = SubResource("BoxShape3D_57sfp")
 
+[node name="TrapModel" parent="Trap" instance=ExtResource("76_2bagf")]
+transform = Transform3D(-0.7, 0, 0, 0, 0.7, -6.119594e-08, 0, 6.119594e-08, 0.7, 0.24688816, -0.17, 8.369632)
+
 [node name="Curtain" type="Node3D" parent="." node_paths=PackedStringArray("Player")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.8778744)
 script = ExtResource("76_kq5jo")
 Player = NodePath("../Player")
 
@@ -2232,8 +2300,11 @@ font_size = 100
 [node name="Area3D" type="Area3D" parent="Curtain"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Curtain/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04650879, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04650879, 0, 3.0343442)
 shape = SubResource("BoxShape3D_a1sk3")
+
+[node name="HH_Art_Curtain_V1" parent="Curtain" instance=ExtResource("76_xoi0t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9431105, 0.09572339, 3.3188426)
 
 [node name="LevelMusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("67_fdm6u")
