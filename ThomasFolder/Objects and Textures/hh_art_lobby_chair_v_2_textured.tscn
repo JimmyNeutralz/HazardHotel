@@ -12,6 +12,7 @@ albedo_texture = ExtResource("2_df8pc")
 [node name="HH_Art_Lobby_Chair_V2" instance=ExtResource("1_di8f5")]
 
 [node name="polySurface1" parent="Chair" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.613, 0.043, -0.361)
 surface_material_override/0 = SubResource("StandardMaterial3D_2ji4d")
 
 [node name="polySurface2" parent="Chair" index="1"]
