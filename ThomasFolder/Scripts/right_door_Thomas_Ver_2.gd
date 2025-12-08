@@ -18,12 +18,21 @@ func _ready():
 		door_anim.seek(0.0, true)
 
 func _process(_delta):
-	if locked and Input.is_action_just_pressed("unlock_left") and name == "LeftDoor":
+	if locked and Input.is_action_just_pressed("deactivate_puddle") and name == "LeftDoor":
 		unlock_door()
 		move_past_right_door()
-	if locked and Input.is_action_just_pressed("unlock_right") and name == "RightDoor":
+	if locked and Input.is_action_just_pressed("deactivate_puddle") and name == "RightDoor":
 		unlock_door()
 		move_past_right_door()
+		
+	if Input.is_action_just_released("deactivate_puddle"):
+		pass
+	
+	## Test for resource budgeting
+	#if (Global.check_array(1, 0)):
+		#pass
+	#else:
+		#pass
 
 func move_past_right_door():
 	#print(blocker.global_position.x)
@@ -49,12 +58,14 @@ func unlock_door():
 	if lock_script:
 		await lock_script.play_lock_animation()
 
+	player.standing_player_interact()
 	#Then play door
 	if door_anim and door_anim.has_animation("Take 001"):
 		door_anim.play("Take 001")
 
 	print(name + " unlocked!")
 	$Door/RightDoorAudio.play()
+
 	
 	
 	await get_tree().create_timer(2.0).timeout

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="3_ir4vw"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="4_tnfik"]
 [ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/TrueLeftBulb.tscn" id="5_3mjxe"]
-[ext_resource type="Script" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="6_td1dn"]
+[ext_resource type="Script" uid="uid://cy8mm1h78gy4h" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="6_td1dn"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="7_rff8n"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="8_ehli4"]
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="9_qs68v"]
@@ -31,7 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://dx7efffdyfxw0" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Dumbwaiter.tscn" id="28_55x5i"]
 [ext_resource type="Script" uid="uid://cer86br3tg2y" path="res://Donovan/Puzzle Concepts In Engine/Scenes/dumbwaiter.gd" id="29_8yk1u"]
 [ext_resource type="PackedScene" uid="uid://cdr7oaos8tipp" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Pulley.tscn" id="30_lfb40"]
-[ext_resource type="Script" uid="uid://ct1s4dt2hpjix" path="res://SpencerStuff/Scripts/fusebox.gd" id="31_wsbty"]
+[ext_resource type="Script" uid="uid://b7icg5wx2tdhu" path="res://fuse_box_2nd_floor.gd" id="32_6gkr7"]
 [ext_resource type="PackedScene" uid="uid://dllmxns1qx246" path="res://Scenes/FuseboxClose.tscn" id="32_g10kh"]
 [ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="33_dafxv"]
 [ext_resource type="Script" uid="uid://d26s1jhjd3mxd" path="res://SpencerStuff/Scripts/gate.gd" id="34_f37lt"]
@@ -57,7 +57,6 @@
 [ext_resource type="Texture2D" uid="uid://72bl5rodk7u4" path="res://Donovan/DonAssets/dinograbber.png" id="54_6tkdg"]
 [ext_resource type="PackedScene" uid="uid://cthtnkvbjx1er" path="res://Donovan/Lever.tscn" id="55_kxy2p"]
 [ext_resource type="Script" uid="uid://bk7yal7eu1r4r" path="res://Donovan/lever.gd" id="56_5rcg2"]
-[ext_resource type="PackedScene" uid="uid://bt8fq5f04d2ui" path="res://Assets/3D Models/HH_Art_Fuse3_V1.fbx" id="57_e53j7"]
 [ext_resource type="Script" uid="uid://vihp4thtac55" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="58_hhwou"]
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="59_2e3sf"]
 [ext_resource type="AudioStream" uid="uid://boghesc1nkhot" path="res://Assets/Audio/Wooden door creak 1.wav" id="60_d7bcs"]
@@ -85,6 +84,7 @@
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="82_o2nhm"]
 [ext_resource type="Texture2D" uid="uid://ulqdrd3m6mko" path="res://ThomasFolder/Sprites/Budget New Guy.png" id="83_h673e"]
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="84_n7mba"]
+[ext_resource type="PackedScene" uid="uid://bfbcjkeoychis" path="res://Donovan/DonAssets/hh_art_fuse_3_v_1.tscn" id="87_3mjxe"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_odnbt"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -3562,7 +3562,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0013804, 0.38578975, -0.519
 
 [node name="FuseBox" type="Node3D" parent="."]
 transform = Transform3D(0.09323944, 0, 0.99564373, 0, 1, 0, -0.99564373, 0, 0.09323944, -2.6962893, 0, 8.004158)
-script = ExtResource("31_wsbty")
+script = ExtResource("32_6gkr7")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="FuseBox"]
 transform = Transform3D(0.07773701, 0, 0.10943962, 0, 1.0340936, 0, -0.022290729, 0, 0.38166133, 6.7573504, 1.1621119, 0.13876653)
@@ -3801,10 +3801,6 @@ autoplay = "Green3"
 
 [node name="standLoc" type="Marker3D" parent="Lever"]
 
-[node name="HH_Art_Fuse3_V1" parent="." instance=ExtResource("57_e53j7")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 6.204208, 3.5533218, 12.346296)
-script = ExtResource("58_hhwou")
-
 [node name="LeftDoor" type="Node3D" parent="."]
 script = ExtResource("59_2e3sf")
 lock_node_path = NodePath("Lock")
@@ -4001,6 +3997,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="FuseSafeLoc" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6298676, 1.214671, 0)
+
+[node name="HH_Art_Fuse3_V2" parent="." instance=ExtResource("87_3mjxe")]
+
+[node name="HH_Art_Fuse3_V1" parent="." instance=ExtResource("87_3mjxe")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 5.0982423, 2.2058878, -0.22276902)
+script = ExtResource("58_hhwou")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]

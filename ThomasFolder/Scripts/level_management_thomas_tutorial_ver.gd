@@ -80,7 +80,8 @@ func _ready():
 	else:
 		print("WARNING: Level music node missing!")
 
-
+#func _process(delta: float) -> void:
+	
 
 #Left key trigger
 func _on_left_trigger_body_entered(body: Node3D) -> void:

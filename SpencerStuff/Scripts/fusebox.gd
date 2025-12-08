@@ -43,7 +43,7 @@ func _ready():
 		push_error("No AnimationPlayer found in fusebox!")
 
 func _process(delta):
-	if Input.is_action_just_pressed("activate_fusebox"):
+	if Input.is_action_pressed("activate_fusebox"):
 		#if can_activate():
 			# Move player to fusebosx
 			player.move_to_fusebox(fuseboxStand)

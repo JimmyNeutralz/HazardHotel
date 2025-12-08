@@ -55,6 +55,12 @@ func _ready():
 func _process(delta):
 	#Continuously check for fusebox state updates - not efficient, probably change in future
 	update_electric_state()
+	
+	## Test for resource budgeting
+	#if (Global.check_array(1, 0)):
+		#uiNode.visible = true
+	#else:
+		#uiNode.visible = false
 
 	#Handle gate raising input
 	if Input.is_action_just_pressed("raise_gate") and not raised:
