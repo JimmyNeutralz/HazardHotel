@@ -4,6 +4,7 @@ extends Node3D
 @export var Player:Node
 @export var Cheese:Node
 var state
+signal PlayerNextToTrap
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	state = "start"
@@ -14,7 +15,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if(Input.is_action_just_pressed("trap") and state == "start"):
 		Player.move_to_object(self)
-		await self._on_area_3d_body_entered(Player)
+		await PlayerNextToTrap
 		if(Cheese.state == "held"):
 			Cheese.use(self)
 			state = "set"
@@ -25,11 +26,11 @@ func _process(delta: float) -> void:
 		Cheese.state = "eaten"
 		if(Input.is_action_just_pressed("trap")):
 			Player.move_to_object(self)
-			await self._on_area_3d_body_entered(Player)
+			await PlayerNextToTrap
 			state = "used"
 		
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	print(body)
-	pass
+	if(body == Player):
+		emit_signal("PlayerNextToTrap")
