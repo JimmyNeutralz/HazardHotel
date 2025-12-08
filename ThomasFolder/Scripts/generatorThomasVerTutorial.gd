@@ -21,6 +21,8 @@ func colored_generator():
 var lamp: Node3D = null
 var activated = false
 
+var can_interact = false
+
 func _ready():
 	if lamp_node_path != null:
 		lamp = get_node(lamp_node_path)
