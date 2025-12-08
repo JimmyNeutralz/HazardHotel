@@ -12,10 +12,10 @@ func _ready():
 		
 	#Connect button signals
 	var start_button = $StartButton
-	var settings_button = $SettingsButton
+	#var settings_button = $SettingsButton
 
 	start_button.pressed.connect(_on_start_pressed)
-	settings_button.pressed.connect(_on_settings_pressed)
+	#settings_button.pressed.connect(_on_settings_pressed)
 
 func _on_start_pressed():
 	#Stop menu music before scene change
