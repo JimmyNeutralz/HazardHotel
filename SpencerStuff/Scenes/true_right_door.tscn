@@ -1,0 +1,42 @@
+[gd_scene load_steps=9 format=3 uid="uid://clr1stwl4f4bj"]
+
+[ext_resource type="PackedScene" uid="uid://lgf83rme0ewf" path="res://Assets/3D Models/HH_Art_DoorOpenRightAnim_v1.fbx" id="1_q6ltn"]
+[ext_resource type="Texture2D" uid="uid://bwydjgqr6jpjn" path="res://Assets/3D Models/HH_Art_Lobby_DoorsTexture_V1.png" id="2_s6nfq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ucpqm"]
+albedo_texture = ExtResource("2_s6nfq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w5ovr"]
+albedo_texture = ExtResource("2_s6nfq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jd20g"]
+albedo_texture = ExtResource("2_s6nfq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6nfq"]
+albedo_texture = ExtResource("2_s6nfq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_co17t"]
+albedo_texture = ExtResource("2_s6nfq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ained"]
+albedo_texture = ExtResource("2_s6nfq")
+
+[node name="HH_Art_DoorOpenRightAnim_v1" instance=ExtResource("1_q6ltn")]
+
+[node name="doorknob" parent="doors/door_2" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ucpqm")
+
+[node name="door" parent="doors/door_2" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_w5ovr")
+
+[node name="doorknob2" parent="doors/door_2" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_jd20g")
+
+[node name="doorknob3" parent="doors/door_1" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_s6nfq")
+
+[node name="door2" parent="doors/door_1" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_co17t")
+
+[node name="doorknob22" parent="doors/door_1" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ained")
