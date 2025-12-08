@@ -18,23 +18,24 @@ func _ready():
 
 func _process(delta):
 	#Handle puddle deactivation input
-	if Input.is_action_just_pressed("deactivate_puddle") and puddle_active:
-		deactivate()
-		uiNode.visible = false
-	elif Input.is_action_just_pressed("deactivate_puddle") and !puddle_active:
+	if Input.is_action_pressed("deactivate_puddle"):
 		activate()
-		uiNode.visible = true
+		#uiNode.visible = false
+	elif Input.is_action_just_released("deactivate_puddle"):
+		deactivate()
+		#uiNode.visible = true
+
 		
 		
 func deactivate():
 	puddle_active = false
 	update_indicator_color()
-	print("Puddle deactivated!")
+	#print("Puddle deactivated!")
 	
 func activate():
 	puddle_active = true
 	update_indicator_color()
-	print("Puddle activated!")
+	#print("Puddle activated!")
 
 #Trigger logic: kills the player every time if puddle is active
 func _on_body_entered(body):

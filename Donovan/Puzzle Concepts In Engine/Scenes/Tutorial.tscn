@@ -1902,10 +1902,10 @@ offset_bottom = 648.0
 
 [node name="HH_Art_Lobby_FrontDesk_V1" parent="." instance=ExtResource("82_t8ggn")]
 
-[node name="HH_Art_Lobby_Generator_V1" parent="." instance=ExtResource("83_1jctu")]
+[node name="Generator" parent="." instance=ExtResource("83_1jctu")]
 script = ExtResource("14_hp2x1")
 
-[node name="LeverUI" type="AnimatedSprite3D" parent="HH_Art_Lobby_Generator_V1"]
+[node name="LeverUI" type="AnimatedSprite3D" parent="Generator"]
 transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, 2.173839, 1.1000555, 0.089426875)
 sprite_frames = SubResource("SpriteFrames_km7aj")
 animation = &"Green3"
