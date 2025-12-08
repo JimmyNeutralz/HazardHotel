@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc8tn80dtxvn0"]
+
+[ext_resource type="PackedScene" uid="uid://da0aq7dgsvkf0" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_PinchModularRight_V3.fbx" id="1_4ot3o"]
+[ext_resource type="Texture2D" uid="uid://5u84hlkjlqh8" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_SideRoomTexture_V2.png" id="2_5tgrb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ar4df"]
+albedo_texture = ExtResource("2_5tgrb")
+
+[node name="HH_Art_PinchModularRight_V3" instance=ExtResource("1_4ot3o")]
+
+[node name="PinchModularRight" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_ar4df")
