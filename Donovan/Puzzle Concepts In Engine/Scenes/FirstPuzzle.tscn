@@ -7810,7 +7810,7 @@ height = 0.5736575
 [node name="DumbwaiterUI" type="AnimatedSprite3D" parent="Dumbwaiter"]
 transform = Transform3D(-0.4879993, -4.3307715e-08, -0.07532869, -2.8441505e-08, 0.33333337, -4.3902966e-09, 0.028392378, 4.409593e-09, 0.26053068, 0.0018289089, 0.74643207, 0.159203)
 sprite_frames = SubResource("SpriteFrames_00t3t")
-animation = &"Blue1"
+animation = &"Purple5"
 autoplay = "Purple5"
 
 [node name="standLoc" type="Marker3D" parent="Dumbwaiter"]
@@ -7836,7 +7836,8 @@ stream = ExtResource("35_hgxai")
 [node name="FuseboxUI" type="AnimatedSprite3D" parent="FuseBox"]
 transform = Transform3D(0.083377704, 0, -0.23568656, 0, 0.25, 0, 0.23568656, 0, 0.083377704, 8.5816555, 1.6197574, 0.33554018)
 sprite_frames = SubResource("SpriteFrames_00t3t")
-animation = &""
+animation = &"Yellow5"
+autoplay = "Yellow5"
 
 [node name="standSpot" type="Marker3D" parent="FuseBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.398657, 0.049557865, 0.59105086)
@@ -7932,8 +7933,9 @@ texture = ExtResource("43_hgbko")
 
 [node name="ElevatorDoorUI" type="AnimatedSprite3D" parent="ElevatorDoor"]
 transform = Transform3D(0.24923547, 0, 0.01953651, 0, 0.25, 0, -0.01953651, 0, 0.24923547, 1.161497, 2.3826559, -0.5555507)
+visible = false
 sprite_frames = SubResource("SpriteFrames_5urh0")
-animation = &"Blue2"
+animation = &"Cyan5"
 autoplay = "Cyan5"
 
 [node name="ElevatorOpenSFX" type="AudioStreamPlayer3D" parent="ElevatorDoor"]
@@ -8102,12 +8104,14 @@ stream = ExtResource("20_4v76q")
 [node name="LeftDoorUI" type="AnimatedSprite3D" parent="LeftDoor/Door"]
 transform = Transform3D(0.24994512, 0, -0.0052399086, 0, 0.25, 0, 0.0052399086, 0, 0.24994512, 0.74356365, 2.1368105, 0.44276094)
 sprite_frames = SubResource("SpriteFrames_00t3t")
-animation = &""
+animation = &"Orange4"
+autoplay = "Orange4"
 
 [node name="LeftDoorUI2" type="AnimatedSprite3D" parent="LeftDoor/Door"]
 transform = Transform3D(0.24994512, 0, -0.0052399086, 0, 0.25, 0, 0.0052399086, 0, 0.24994512, -0.75535274, 2.1368105, 0.44276094)
 sprite_frames = SubResource("SpriteFrames_00t3t")
-animation = &""
+animation = &"Orange4"
+autoplay = "Orange4"
 
 [node name="Lock" type="Node3D" parent="LeftDoor"]
 script = ExtResource("21_vekw4")
@@ -8163,12 +8167,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0379114, 0, 0)
 [node name="RightDoorUI" type="AnimatedSprite3D" parent="RightDoor"]
 transform = Transform3D(0.24194708, 0, -0.06294127, 0, 0.25, 0, 0.06294127, 0, 0.24194708, 2.3626888, 2.1368105, 0.44276094)
 sprite_frames = SubResource("SpriteFrames_00t3t")
-animation = &""
+animation = &"Cyan2"
+autoplay = "Cyan2"
 
 [node name="RightDoorUI2" type="AnimatedSprite3D" parent="RightDoor"]
 transform = Transform3D(0.24994512, 0, -0.0052399086, 0, 0.25, 0, 0.0052399086, 0, 0.24994512, 3.9925213, 2.1368105, 0.44276094)
 sprite_frames = SubResource("SpriteFrames_00t3t")
-animation = &""
+animation = &"Cyan2"
+autoplay = "Cyan2"
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.01, 0.623, -0.544)
