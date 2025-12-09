@@ -49,6 +49,10 @@ func _process(delta):
 		complete_tutorial_generator_text()
 		lamp.generator_on = true
 		elevator_door.powered_on = true
+	elif (((player.global_position.x < (generator_marker.global_position.x + 0.25)) and (player.global_position.x >= (generator_marker.global_position.x - 0.25))) and !can_interact and !activated):
+		lamp.generator_on = true
+		text.change_text_image(3)
+		incomplete_tutorial_generator_text()
 
 		#change color
 		if indicator:
@@ -74,6 +78,9 @@ func activate_generator():
 
 func deactivate_generator():
 	can_interact = false
+
+func incomplete_tutorial_generator_text():
+	text.set_text("You will also need to keep that plugged in until your co worker is done activating the generator.", 5)
 
 func complete_tutorial_generator_text():
 	var path := get_tree().current_scene.scene_file_path

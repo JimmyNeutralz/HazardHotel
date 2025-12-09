@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 			dialogue_started = true
 			player.move_to_specific_location(building_owner_marker.global_position.x)
 			text_popup.change_text_image(3)
-			text_popup.set_text("I was wondering who was ominously standing in the dark. I suppose you’re here to fix the electrical issue, right?", 6)
+			text_popup.set_text("I was wondering who was ominously standing in the dark. I suppose you’re here to fix the electrical issues, right?", 6)
 			await get_tree().create_timer(5.85, false).timeout
 			if !generator_on:
 				text_popup.change_text_image(1)
@@ -42,7 +42,6 @@ func _process(delta: float) -> void:
 					text_popup.change_text_image(3)
 					text_popup.set_text("Well, they’ll want to use that S.P.A.R.K board to activate that generator next to me the same way they activated the light.", 7)
 
-signal resume
 func activate_lights():
 	lamp_on = true
 	uiNode.visible = false
