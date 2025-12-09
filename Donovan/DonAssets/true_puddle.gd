@@ -1,11 +1,12 @@
 extends Node3D
 
-@onready var mesh_instance = $Puddle/pasted__puddle.get_active_material(0)
-@onready var puddle_safe = load("res://ThomasFolder/Objects and Textures/HH_Art_PuddleNormTexture_V1.png")
-@onready var puddle_electrified = load("res://ThomasFolder/Objects and Textures/HH_Art_PuddleElecTexture_V1.png")
+@onready var puddle_material = $Puddle/pasted__puddle
+@onready var puddle_material_2 = $Puddle/pasted__puddle2
 
 func safe_puddle():
-	mesh_instance.set_surface_override_material(0, puddle_safe)
+	puddle_material.visible = true
+	puddle_material_2.visible = false
 
 func yellow_puddle():
-	mesh_instance.set_surface_override_material(0, puddle_electrified)
+	puddle_material.visible = false
+	puddle_material_2.visible = true

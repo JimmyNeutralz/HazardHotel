@@ -68,7 +68,6 @@ func update_indicator_color():
 	if mat == null:
 		mat = StandardMaterial3D.new()
 		indicator.set_surface_override_material(0, mat)
-		#print(puddle_active)
 	if puddle_active:
 		mat.albedo_color = Color.GREEN  # Activated / dangerous
 		puddleVisual.yellow_puddle()
