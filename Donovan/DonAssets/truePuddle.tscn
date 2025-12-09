@@ -1,7 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5nps7v01rrsb"]
+[gd_scene load_steps=5 format=3 uid="uid://d01mblu7ihcei"]
 
 [ext_resource type="PackedScene" uid="uid://clhua17db53gv" path="res://Assets/3D Models/HH_Art_Puddle_v1.fbx" id="1_i76w6"]
 [ext_resource type="Script" uid="uid://bh3bxlbf010bg" path="res://Donovan/DonAssets/true_puddle.gd" id="2_k33bg"]
+[ext_resource type="Texture2D" uid="uid://dwqpixmu2ou4o" path="res://ThomasFolder/Objects and Textures/HH_Art_PuddleNormTexture_V1.png" id="3_s5jh2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7y2wk"]
+albedo_texture = ExtResource("3_s5jh2")
 
 [node name="HH_Art_Puddle_v1" instance=ExtResource("1_i76w6")]
 script = ExtResource("2_k33bg")
+
+[node name="pasted__puddle" parent="Puddle" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7y2wk")
