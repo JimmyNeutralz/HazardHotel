@@ -1,4 +1,4 @@
-[gd_scene load_steps=1094 format=3 uid="uid://bxhis68m30g1y"]
+[gd_scene load_steps=1095 format=3 uid="uid://bxhis68m30g1y"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_sdfg4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_fwdfo"]
@@ -131,6 +131,7 @@
 [ext_resource type="Texture2D" uid="uid://b2vui8awwerj3" path="res://ThomasFolder/Sprites/New Guy Character Image Back.png" id="125_cfexi"]
 [ext_resource type="Texture2D" uid="uid://b2smx76edwggf" path="res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png" id="126_wwhnu"]
 [ext_resource type="Texture2D" uid="uid://bs6byut2b4npg" path="res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png" id="127_ygbmw"]
+[ext_resource type="PackedScene" uid="uid://cfgk5jdncivak" path="res://hh_art_fuse_1_v_1.tscn" id="132_d7ckc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -8319,8 +8320,12 @@ texture = ExtResource("127_ygbmw")
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 5.0599027, 2.1945415, -0.15465361)
 script = ExtResource("50_yqei1")
 
-[node name="fuse" parent="." instance=ExtResource("91_xjhiw")]
+[node name="fuse" parent="." instance=ExtResource("132_d7ckc")]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 7.603, 2.724, 0.177)
+
+[node name="fuse_original" parent="." instance=ExtResource("91_xjhiw")]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 7.603148, 2.7242382, 0.1768114)
+visible = false
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
