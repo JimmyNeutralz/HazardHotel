@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-@export var next_scene_path := "res://ThomasFolder/Scenes/TutorialWithLogic.tscn"
+@export var next_scene_path := "res://ThomasFolder/Scenes/TutorialWithOn&Off.tscn"
 @onready var label: Label = $IntroLabel
 
 #Audio references

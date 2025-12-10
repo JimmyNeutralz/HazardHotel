@@ -38,20 +38,11 @@ texture = ExtResource("2_g2l0o")
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 494.0
-offset_top = 368.0
+offset_top = 400.0
 offset_right = 674.0
-offset_bottom = 437.0
+offset_bottom = 469.0
 theme_override_font_sizes/font_size = 30
-text = "Start"
-
-[node name="SettingsButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 494.0
-offset_top = 463.0
-offset_right = 674.0
-offset_bottom = 532.0
-theme_override_font_sizes/font_size = 30
-text = "Settings"
+text = "Play"
 
 [node name="HhArtSkeletonSpriteV1" type="Sprite2D" parent="."]
 position = Vector2(257, 469.99997)
