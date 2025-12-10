@@ -17,18 +17,20 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("open_safe2"):
-		if(Key.state == "held"):
-			open_safe()
-		else:
-			Player.move_to_object(self)
-			print("No Key")
+	if Input.is_action_pressed("open_safe2") and Key.state != "used":
+		if(Player.velocity.x == 0):
+			if(Key.state == "held"):
+				open_safe()
+			else:
+				Player.move_to_object(self)
+				print("No Key")
 	if(state == "open"):
 		UI.visible = false
 		Player.move_to_object(self)
 		if(detector.overlaps_body(Player)):
 			Cheese.grab(Player)
 			Key.state = "used"
+			
 			state = "item_obtained"
 			Player.move_to_object(Player)
 			await get_tree().create_timer(0.1).timeout

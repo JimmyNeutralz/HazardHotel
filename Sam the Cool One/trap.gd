@@ -4,6 +4,7 @@ extends Node3D
 @export var Player:Node
 @export var Cheese:Node
 @onready var UI = $TrapUI
+@onready var collision = $Area3D/CollisionShape3D
 var state
 signal PlayerNextToTrap
 # Called when the node enters the scene tree for the first time.
@@ -19,7 +20,7 @@ func _process(delta: float) -> void:
 	else:
 		UI.visible = false
 	if(Input.is_action_just_pressed("trap") and state == "start"):
-		Player.move_to_object(self)
+		Player.move_to_object(collision)
 		await PlayerNextToTrap
 		if(Cheese.state == "held"):
 			Cheese.use(self)
@@ -34,7 +35,7 @@ func _process(delta: float) -> void:
 	if(state == "triggered"):
 		Cheese.state = "eaten"
 		if(Input.is_action_just_pressed("trap")):
-			Player.move_to_object(self)
+			Player.move_to_object(collision)
 			await PlayerNextToTrap
 			state = "used"
 		

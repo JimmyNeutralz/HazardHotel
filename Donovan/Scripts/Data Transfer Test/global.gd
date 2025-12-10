@@ -11,7 +11,6 @@ var spark_box_array
 func _ready():
 	var root = get_tree().root
 	current_scene = root.get_child(-1)
-	spark_box_array = [[true, false, false], [false, true, true]]
 
 #General scene switcher
 func goto_scene(path):
@@ -49,5 +48,4 @@ func _process(delta: float) -> void:
 
 # Function to check if a given node is powered in the S.P.A.R.K Box array
 func check_array(row: int, column: int):
-	return Arduino_Master_Script.Powered_Array[row][column]
-	
+	return Arduino_Master_Script.getPower(row, column)
