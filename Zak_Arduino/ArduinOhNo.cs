@@ -3,12 +3,12 @@ using System;
 using System.IO.Ports;
 using System.Collections.Generic;
 
-public partial class ArduinOhNo : Node2D
-{
+public partial class ArduinOhNo : Node2D {
 	SerialPort serialPort;
 	string serialMessage;
 	string text1;
 	string text2;
+	string Powered_String;
 	
 	int[,] btns = new int[16, 12];
 	int[,] plugs = new int[8, 6];
@@ -35,23 +35,30 @@ public partial class ArduinOhNo : Node2D
 		if(!serialPort.IsOpen) {return;}
 		
 		serialMessage = serialPort.ReadLine();
-		text1 = serialMessage;
-		text2 = "";
+		
 		btns = readSerial(serialMessage);
 		plugs = Compress2x2(btns);
 		Powered_Array = GetPoweredSlots(plugs);
+		
+		text2 = "";
+		Powered_String = "";
 		for(int i = 0; i < 8; i++) {
 			for(int j = 0; j < 6; j++) {
 				if (Powered_Array[i, j]) {
-					text2 += '1';	
+					text2 += 'T';	
+					Powered_String += 'T';
 				}
 				else {
-					text2 += '0';
+					text2 += 'F'; 
+					Powered_String += 'F'; 
 				}
 			}
 			text2 += "\n";
 		}
-		
+	}
+	
+	public bool getPower(int row, int col) {
+		return(Powered_Array[row, col]);
 	}
 	
 	public int[,] readSerial(string message) {
@@ -66,7 +73,6 @@ public partial class ArduinOhNo : Node2D
 	}
 	
 	public int[,] Compress2x2(int[,] btns) {
-
 		int[,] result = new int[8, 6]; // 16/2 = 8, 12/2 = 6
 
 		for (int r = 0; r < 8; r++) {
@@ -78,14 +84,14 @@ public partial class ArduinOhNo : Node2D
 			}
 		}
 
-	return result;
+		return result;
 	}
 	
 	public bool[,] GetPoweredSlots(int[,] board) {
 	if (board.GetLength(0) != 8 || board.GetLength(1) != 6)
 		throw new ArgumentException("Input must be 8x6.");
 
-	bool[,] powered = new bool[8,6];
+		bool[,] powered = new bool[8,6];
 
 	// ================================
 	//  SECTION MAPPING
