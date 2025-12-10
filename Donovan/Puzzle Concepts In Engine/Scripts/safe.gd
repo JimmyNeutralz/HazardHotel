@@ -43,19 +43,23 @@ func _process(delta):
 	#Handle safe deactivation input
 	# if is_powered and and fuseBox.get_fuse_amount() >= 1
 	
-	if (Global.check_array(3, 2) or Input.is_action_pressed("left")) and fuseBox.get_fuse_amount() >= 1:
+	#Global.check_array(3, 2) or
+	if ( Input.is_action_pressed("left")) and fuseBox.get_fuse_amount() >= 1:
 		if(first_pass):
 			first_pass = false
 			lower_safe()
-	elif (!Global.check_array(3, 2) or Input.is_action_just_released("left")) and fuseBox.get_fuse_amount() >= 1:
+	#!Global.check_array(3, 2) or #
+	elif (Input.is_action_just_released("left")) and fuseBox.get_fuse_amount() >= 1:
 		raise_safe()
 		first_pass = true
 		
-	if (Global.check_array(6, 3) or Input.is_action_pressed("open_safe")) and fuseBox.get_fuse_amount() >= 2 and !safe_raised:
+	#Global.check_array(6, 3) or 
+	if (Input.is_action_pressed("open_safe")) and fuseBox.get_fuse_amount() >= 2 and !safe_raised:
 		if(first_pass2):
 			first_pass2 = false
 			open_safe()
-	elif (!Global.check_array(6, 3) or Input.is_action_just_released("open_safe")) and fuseBox.get_fuse_amount() >= 2 and is_safe_open:
+	#!Global.check_array(6, 3) or 
+	elif (Input.is_action_just_released("open_safe")) and fuseBox.get_fuse_amount() >= 2 and is_safe_open:
 		close_safe()
 		is_safe_open = false
 		first_pass2 = true
@@ -90,12 +94,12 @@ func lower_safe():
 	
 	print("Safe Lowered!")
 	safe_raised = false
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(0.5).timeout
 	
 	#if(player.global_position.x == standSpot.global_position.x - 10 or player.global_position.x == standSpot.global_position.x + 10):
 	if (!first_fuse_collected):
 		player.move_to_object(standSpot)
-		await get_tree().create_timer(1.5).timeout
+		await get_tree().create_timer(0.5).timeout
 		
 		fuse.visible = false
 		fuseBox.uiNode.visible = true
@@ -104,7 +108,6 @@ func lower_safe():
 		player.collect_fuse()
 		process_started = false
 		first_fuse_collected = true
-	first_fuse_collected = true
 	player.move_to_object(fuseStandSpot)
 
 

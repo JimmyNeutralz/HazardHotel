@@ -18,10 +18,13 @@ func _ready():
 		door_anim.seek(0.0, true)
 
 func _process(_delta):
-	if locked and (Global.check_array(2, 5) or Input.is_action_just_pressed("deactivate_puddle")) and name == "LeftDoor":
+	#Global.check_array(2, 5) or 
+	if locked and (Input.is_action_just_pressed("deactivate_puddle")) and name == "LeftDoor":
 		unlock_door()
 		move_past_right_door()
-	if locked and (Global.check_array(2, 5) or Input.is_action_just_pressed("deactivate_puddle")) and name == "RightDoor":
+		
+		#Global.check_array(2, 5) or 
+	if locked and (Input.is_action_just_pressed("deactivate_puddle")) and name == "RightDoor":
 		unlock_door()
 		move_past_right_door()
 		
