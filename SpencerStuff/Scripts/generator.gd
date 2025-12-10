@@ -24,7 +24,7 @@ func _ready():
 		push_error("Gate node path not set for Generator!")
 		
 func _process(delta):
-	if (Global.check_array(6, 1) or Input.is_action_just_pressed("activate_generator")) and not activated:
+	if (Global.check_array(6, 1)) and not activated:
 		if can_activate():
 			activate_generator()
 			uiNode.visible = false

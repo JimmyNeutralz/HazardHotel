@@ -19,12 +19,12 @@ func _ready():
 
 func _process(_delta):
 	#Global.check_array(2, 5) or 
-	if locked and (Global.check_array(2, 5) or Input.is_action_just_pressed("deactivate_puddle")) and name == "LeftDoor":
+	if locked and (Global.check_array(2, 5)) and name == "LeftDoor":
 		unlock_door()
 		move_past_right_door()
 		
 		#Global.check_array(2, 5) or 
-	if locked and (Global.check_array(2, 5) or Input.is_action_just_pressed("deactivate_puddle")) and name == "RightDoor":
+	if locked and (Global.check_array(2, 5)) and name == "RightDoor":
 		unlock_door()
 		move_past_right_door()
 		

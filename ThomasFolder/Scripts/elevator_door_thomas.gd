@@ -26,14 +26,14 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	#if (Global.check_array(1, 4) or Input.is_action_just_pressed("Unlock Elevator Door")) and powered_on and !door_open:
-	if (Global.check_array(1, 4) or Input.is_action_just_pressed("Unlock Elevator Door")) and powered_on and !door_open:
+	if (Global.check_array(1, 4)) and powered_on and !door_open:
 		uiNode.visible = false
 		unlocked = true
 		
 		player.move_to_specific_location(elevator_marker.global_position.x)
 		
 		#!Global.check_array(1, 4) or
-	if (!Global.check_array(1, 4) or Input.is_action_just_released("Unlock Elevator Door")):
+	if (!Global.check_array(1, 4)):
 		unlocked = false
 
 #Open gate

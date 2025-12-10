@@ -30,7 +30,7 @@ func _process(delta: float) -> void:
 			
 		#if Global.check_array(2, 3) or Input.is_action_pressed("turn_on_lamp") and !lamp_on:
 		
-		if (Global.check_array(2, 3) or Input.is_action_pressed("turn_on_lamp")) and !lamp_on:
+		if (Global.check_array(2, 3)) and !lamp_on:
 			activate_lights()
 		
 		if (((player.global_position.x < (building_owner_marker.global_position.x + 0.5)) and (player.global_position.x >= (building_owner_marker.global_position.x - 0.5))) and lamp_on):
