@@ -1,4 +1,4 @@
-[gd_scene load_steps=479 format=3 uid="uid://bwsjpacqdhxh0"]
+[gd_scene load_steps=488 format=3 uid="uid://bwsjpacqdhxh0"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_etl04"]
 [ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="2_stxpx"]
@@ -17,12 +17,12 @@
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="15_d64sq"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="16_o5ye0"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="17_40eat"]
-[ext_resource type="Script" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="17_57sfp"]
+[ext_resource type="Script" uid="uid://cy8mm1h78gy4h" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="17_57sfp"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="18_5gr6d"]
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="19_r4rbx"]
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="20_ak7el"]
 [ext_resource type="AudioStream" uid="uid://boghesc1nkhot" path="res://Assets/Audio/Wooden door creak 1.wav" id="22_dwer6"]
-[ext_resource type="Script" uid="uid://ekmnn0pn0da0" path="res://SpencerStuff/Scripts/Lock.gd" id="23_2dkt7"]
+[ext_resource type="Script" uid="uid://d3wg6c5iqxhyc" path="res://SpencerStuff/Scripts/Lock.gd" id="23_2dkt7"]
 [ext_resource type="PackedScene" uid="uid://b1ijgkw1i7v5k" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="23_03sa3"]
 [ext_resource type="PackedScene" uid="uid://dqdrihkiouy1o" path="res://Assets/3D Models/HH_Art_locks_openAnim_V1.fbx" id="24_xcgsm"]
 [ext_resource type="Texture2D" uid="uid://cfo2bftv6y7qy" path="res://Donovan/DonAssets/HH_Art_NodeBlue2_V1.png" id="25_8f021"]
@@ -39,10 +39,10 @@
 [ext_resource type="Texture2D" uid="uid://d1ybbwvdlyuvl" path="res://Donovan/DonAssets/HH_Art_NodeYellow6_V1.png" id="36_5fatx"]
 [ext_resource type="Script" uid="uid://v1vrjjfux1ew" path="res://ThomasFolder/Scripts/right_door_Thomas_Ver_2.gd" id="37_ejwtc"]
 [ext_resource type="AudioStream" uid="uid://c8v5bc6sw71sl" path="res://Assets/Audio/Wooden door creak 2.wav" id="39_d16sl"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_right_doorV2.tscn" id="40_03sa3"]
+[ext_resource type="PackedScene" uid="uid://dax3x8kiqqa04" path="res://SpencerStuff/Scenes/true_right_doorV2.tscn" id="40_03sa3"]
 [ext_resource type="Texture2D" uid="uid://bjgv41ufsr321" path="res://Assets/key.png" id="40_fxy10"]
 [ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="41_5qg7y"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_elevatorV2.tscn" id="42_w87lh"]
+[ext_resource type="PackedScene" uid="uid://d1twlbms4jalv" path="res://SpencerStuff/Scenes/true_elevatorV2.tscn" id="42_w87lh"]
 [ext_resource type="AudioStream" uid="uid://bt827ljr2p2uk" path="res://Assets/Audio/Switch.wav" id="43_n0jjb"]
 [ext_resource type="PackedScene" uid="uid://dyua24e70jfwi" path="res://ThomasFolder/Objects and Textures/hh_art_generator_v_2_textured.tscn" id="43_w68na"]
 [ext_resource type="Script" uid="uid://btw5rsddy2yd7" path="res://Sam the Cool One/vase.gd" id="44_ytcoj"]
@@ -71,7 +71,7 @@
 [ext_resource type="PackedScene" uid="uid://bc8tn80dtxvn0" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_pinch_modular_right_applied_texture.tscn" id="63_xoi0t"]
 [ext_resource type="PackedScene" uid="uid://c8kuypq8o4v4f" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_pinch_modular_middle_applied_texture.tscn" id="64_a1sk3"]
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="64_hapq0"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_elevator_gate_lobby.tscn" id="66_03sa3"]
+[ext_resource type="PackedScene" uid="uid://drsx3lpp80je5" path="res://SpencerStuff/Scenes/true_elevator_gate_lobby.tscn" id="66_03sa3"]
 [ext_resource type="Texture2D" uid="uid://bekut30xmeumk" path="res://Assets/Lock.png" id="66_oukx6"]
 [ext_resource type="Texture2D" uid="uid://0o1anfkmyoq0" path="res://Assets/3D Models/HH_Art_ElevatorSign_Floor3_V1.fbx.png" id="67_03sa3"]
 [ext_resource type="Texture2D" uid="uid://cj7cb7ow72uni" path="res://Donovan/DonAssets/HH_Art_NodePurple6_V1.png" id="67_820cl"]
@@ -94,7 +94,9 @@
 [ext_resource type="Texture2D" uid="uid://bs6byut2b4npg" path="res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png" id="83_s4br7"]
 [ext_resource type="Texture2D" uid="uid://b2vui8awwerj3" path="res://ThomasFolder/Sprites/New Guy Character Image Back.png" id="84_pknbb"]
 [ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="84_w68na"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_elevator_sign.tscn" id="94_820cl"]
+[ext_resource type="PackedScene" uid="uid://c4ti52vw8k1r0" path="res://SpencerStuff/Scenes/true_elevator_sign.tscn" id="94_820cl"]
+[ext_resource type="Script" uid="uid://183kiid28qmk" path="res://ThomasFolder/Scripts/werewolf.gd" id="96_lhv18"]
+[ext_resource type="Texture2D" uid="uid://bus6cbu56g5d4" path="res://ThomasFolder/Sprites/HH_Art_WerewolfIdleSpriteSheet_V2.png" id="97_3bk46"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0xvb"]
 atlas = ExtResource("3_2jmb6")
@@ -2827,6 +2829,56 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.670000031825
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_olett"]
+atlas = ExtResource("97_3bk46")
+region = Rect2(0, 0, 800, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5r8oh"]
+atlas = ExtResource("97_3bk46")
+region = Rect2(800, 0, 800, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdoy1"]
+atlas = ExtResource("97_3bk46")
+region = Rect2(1600, 0, 800, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aruqk"]
+atlas = ExtResource("97_3bk46")
+region = Rect2(2400, 0, 800, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4xx6"]
+atlas = ExtResource("97_3bk46")
+region = Rect2(3200, 0, 800, 700)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lgp03"]
+atlas = ExtResource("97_3bk46")
+region = Rect2(4000, 0, 800, 700)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nor3w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olett")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5r8oh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdoy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aruqk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4xx6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lgp03")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Node3D3" type="Node3D"]
 script = ExtResource("1_etl04")
 
@@ -3549,6 +3601,17 @@ texture = ExtResource("67_03sa3")
 
 [node name="HH_Art_Lobby_ElevatorSign_V1" parent="Elevator Sign" instance=ExtResource("94_820cl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06534146, -1.6083934)
+
+[node name="Werewolf" type="Node3D" parent="."]
+transform = Transform3D(-1.0000001, 0, -8.742278e-08, 0, 1, 0, 8.7422784e-08, 0, -1, 4.93929, -0.12117565, 4.964201)
+script = ExtResource("96_lhv18")
+
+[node name="Sprite3D" type="AnimatedSprite3D" parent="Werewolf"]
+transform = Transform3D(-0.225, 0, -3.3974054e-08, 0, 0.225, 0, 3.3974054e-08, 0, -0.225, 2.3841858e-07, 0.9599999, 5.3712015)
+sprite_frames = SubResource("SpriteFrames_nor3w")
+
+[node name="werewolf_marker" type="Marker3D" parent="Werewolf"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020080805, 0, 4.6132965)
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
