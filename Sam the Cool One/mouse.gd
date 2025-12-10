@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	if(Input.is_action_pressed("ui_end")):
 		state = "wheel"
 	if(state == "Hole1"):
-		global_position = Hole1.global_position + Vector3(0,0, 0.1)
+		global_position = Hole1.global_position + Vector3(0,0.1, 0.1)
 		if(Vase.state == "shattered" and RightRoom==Player.get_current_room()):
 			state = "Hole2"
 			Player.move_to_object(Hole1)
