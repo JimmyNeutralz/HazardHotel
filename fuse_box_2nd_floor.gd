@@ -5,7 +5,7 @@ extends Node3D
 @onready var fuseboxStand = $standSpot
 @onready var uiNode = $FuseboxUI
 @onready var player_sprite = $"../Player/PlayerSprite"
-
+@onready var fusebox_indicator = $"../Indicators/FuseboxIndicator"
 @onready var text = $"../Overlay/TextPopup"
 var dialogue_step = 0
 var fuses_collected = 0
@@ -49,6 +49,8 @@ func _process(delta):
 		activate()
 		player.deposit_fuse()
 		fuses_collected = fuses_collected + 1
+		if(fuses_collected ==3):
+			update_indicator_color()
 
 	elif Input.is_action_just_pressed("activate_fusebox") and activated:
 			deactivate()
@@ -149,3 +151,13 @@ func find_animation_player(node: Node) -> AnimationPlayer:
 		if found:
 			return found
 	return null
+
+func update_indicator_color():
+	var mat = fusebox_indicator.get_active_material(0)
+	if mat == null:
+		mat = StandardMaterial3D.new()
+		fusebox_indicator.set_surface_override_material(0, mat)
+	if fuses_collected == 3:
+		mat.albedo_color = Color.GREEN
+	else:
+		mat.albedo_color = Color.RED

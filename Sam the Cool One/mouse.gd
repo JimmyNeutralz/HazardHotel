@@ -59,7 +59,7 @@ func update_indicator_color():
 		mat = StandardMaterial3D.new()
 		FuseIndicator.set_surface_override_material(0, mat)
 	if state == "wheel":
-		mat.albedo_color = Color.RED
-	else:
 		mat.albedo_color = Color.GREEN
+	else:
+		mat.albedo_color = Color.RED
 		
