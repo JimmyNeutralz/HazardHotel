@@ -63,7 +63,7 @@ func _process(delta):
 		#uiNode.visible = false
 
 	#Handle gate raising input
-	if Input.is_action_just_pressed("raise_gate") and not raised:
+	if (Global.check_array(2, 3) or Input.is_action_just_pressed("raise_gate")) and not raised:
 		var tempSide = 0
 		if can_raise():
 			if (isOnLeft):

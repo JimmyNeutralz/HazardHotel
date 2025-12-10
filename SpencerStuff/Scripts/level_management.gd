@@ -36,7 +36,9 @@ var has_right_key: bool = false
 
 @onready var ElevatorVisual = $Elevator/HH_Art_Elevator_V1
 
+@onready var player = $Player
 
+var elevator_door_entered = false
 #test 
 
 func _ready():
@@ -80,6 +82,10 @@ func _process(delta):
 	if generator.activated and not elevator_door.powered_on:
 		elevator_door.powered_on = true
 		print("Elevator powered on!")
+		
+		if (((player.global_position.x < (elevator_door.global_position.x + 0.25)) and (player.global_position.x >= elevator_door.global_position.x - 0.25))) and elevator_door.unlocked and !elevator_door_entered :
+			triggerexit(player)
+			elevator_door_entered = true
 
 
 #Left key trigger
@@ -115,7 +121,7 @@ func triggerexit(body: Node3D) -> void:
 			print("ERROR: ElevatorDoor script not found!")
 
 		#Freeze player movement right away
-		var player = $Player
+		#var player = $Player
 		if player:
 
 			#Stop all current movement
