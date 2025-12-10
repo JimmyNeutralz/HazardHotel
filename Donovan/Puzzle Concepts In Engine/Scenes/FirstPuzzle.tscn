@@ -1,4 +1,4 @@
-[gd_scene load_steps=1094 format=3 uid="uid://bxhis68m30g1y"]
+[gd_scene load_steps=1095 format=3 uid="uid://bxhis68m30g1y"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_sdfg4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_fwdfo"]
@@ -89,7 +89,7 @@
 [ext_resource type="PackedScene" uid="uid://bvtx553hn8ouc" path="res://SpencerStuff/Scenes/true_middle_scenev3.tscn" id="50_qeqm8"]
 [ext_resource type="Texture2D" uid="uid://bra3n723u6d3n" path="res://Assets/UpdatedNodes/HH_Art_NodeOrange4_V2.png" id="50_rvfsx"]
 [ext_resource type="Texture2D" uid="uid://72bl5rodk7u4" path="res://Donovan/DonAssets/dinograbber.png" id="50_wo6si"]
-[ext_resource type="Script" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="50_yqei1"]
+[ext_resource type="Script" uid="uid://vihp4thtac55" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="50_yqei1"]
 [ext_resource type="PackedScene" uid="uid://bglppt0huxa04" path="res://SpencerStuff/Scenes/true_right_scenev3.tscn" id="51_00t3t"]
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="51_a4kpc"]
 [ext_resource type="Texture2D" uid="uid://dhndjrnissj6d" path="res://Assets/HH_Art_NewGuyElectrocutionAnimSpriteSheet_V1.png" id="51_dx7fg"]
@@ -115,22 +115,23 @@
 [ext_resource type="Texture2D" uid="uid://c6uqu5ihd1csc" path="res://Assets/UpdatedNodes/HH_Art_NodeYellow5_V2.png" id="63_1f4ob"]
 [ext_resource type="AudioStream" uid="uid://c2k5mrmymj5tt" path="res://Assets/Audio/mx_level.wav" id="63_2wdvl"]
 [ext_resource type="Texture2D" uid="uid://cqk7op1limxig" path="res://Assets/UpdatedNodes/HH_Art_NodeYellow6_V2.png" id="64_wxcav"]
-[ext_resource type="PackedScene" uid="uid://b5nps7v01rrsb" path="res://Donovan/DonAssets/truePuddle.tscn" id="71_wq4hk"]
 [ext_resource type="Texture2D" uid="uid://bba53n1vxdj7b" path="res://Assets/HH_Art_NewGuyDinoGrabberAnimSpriteSheet_V1.png" id="73_xjhiw"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="75_jnpos"]
+[ext_resource type="PackedScene" uid="uid://drxhjeonjltrw" path="res://ThomasFolder/Objects and Textures/HH_Art_GateAni_V4.fbx" id="76_ctrnc"]
 [ext_resource type="PackedScene" uid="uid://c4ti52vw8k1r0" path="res://SpencerStuff/Scenes/true_elevator_sign.tscn" id="79_ygbmw"]
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="81_mvs2p"]
 [ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="87_5urh0"]
 [ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="87_lqt4v"]
 [ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="88_jym03"]
-[ext_resource type="PackedScene" path="res://Donovan/DonAssets/hh_art_fuse_3_v_1.tscn" id="91_xjhiw"]
-[ext_resource type="PackedScene" path="res://hh_art_shelf_v_1_textured_first_floor.tscn" id="91_ygbmw"]
+[ext_resource type="PackedScene" uid="uid://bfbcjkeoychis" path="res://Donovan/DonAssets/hh_art_fuse_3_v_1.tscn" id="91_xjhiw"]
+[ext_resource type="PackedScene" uid="uid://dwys3y0hehafv" path="res://hh_art_shelf_v_1_textured_first_floor.tscn" id="91_ygbmw"]
 [ext_resource type="PackedScene" uid="uid://c481kh6rlqyuh" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="98_13nw6"]
 [ext_resource type="PackedScene" uid="uid://dax3x8kiqqa04" path="res://SpencerStuff/Scenes/true_right_doorV2.tscn" id="102_1r2ig"]
+[ext_resource type="PackedScene" uid="uid://c7iktl4snp6u3" path="res://ThomasFolder/Objects and Textures/hh_art_puddle_v_2.tscn" id="121_d7ckc"]
 [ext_resource type="Texture2D" uid="uid://b2vui8awwerj3" path="res://ThomasFolder/Sprites/New Guy Character Image Back.png" id="125_cfexi"]
 [ext_resource type="Texture2D" uid="uid://b2smx76edwggf" path="res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png" id="126_wwhnu"]
 [ext_resource type="Texture2D" uid="uid://bs6byut2b4npg" path="res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png" id="127_ygbmw"]
-[ext_resource type="PackedScene" path="res://hh_art_fuse_1_v_1.tscn" id="132_d7ckc"]
+[ext_resource type="PackedScene" uid="uid://cfgk5jdncivak" path="res://hh_art_fuse_1_v_1.tscn" id="132_d7ckc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -7858,6 +7859,7 @@ texture = ExtResource("37_75sfh")
 
 [node name="Electric" type="Sprite3D" parent="Gate"]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.2616296, 1.4310222, 0.384692)
+visible = false
 texture = ExtResource("38_deijv")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Gate"]
@@ -7890,8 +7892,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.012603, 0, 0)
 [node name="standSpot2" type="Marker3D" parent="Gate"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.213914, 0, 0)
 
-[node name="HH_Art_GateAni_V3" parent="Gate" instance=ExtResource("40_pwu2m")]
+[node name="HH_Art_GateAni_V2" parent="Gate" instance=ExtResource("40_pwu2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91668653, 0, 0)
+visible = false
+
+[node name="HH_Art_GateAni_V4" parent="Gate" instance=ExtResource("76_ctrnc")]
 
 [node name="Indicators" type="Node3D" parent="."]
 
@@ -8240,8 +8245,8 @@ shape = SubResource("BoxShape3D_2j6rm")
 [node name="PuddleAudio" type="AudioStreamPlayer3D" parent="Puddle"]
 stream = ExtResource("32_c6g38")
 
-[node name="HH_Art_Puddle_v1" parent="Puddle" instance=ExtResource("71_wq4hk")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.7291765, 0.054615974, 0.28620744)
+[node name="HH_Art_Puddle_V1" parent="Puddle" instance=ExtResource("121_d7ckc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4.729, 0.055, 0.286)
 
 [node name="PuddleUI" type="AnimatedSprite3D" parent="Puddle"]
 transform = Transform3D(0.24923548, 0, 0.01953651, 0, 0.25, 0, -0.01953651, 0, 0.24923547, 3.3009224, -2.3880718, 1.173678)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxjjtmyjws6gt"]
+
+[ext_resource type="PackedScene" uid="uid://civ6hvpjx5a4v" path="res://ThomasFolder/Objects and Textures/HH_Art_Puddle_V2.fbx" id="1_xhyhy"]
+[ext_resource type="Texture2D" uid="uid://21eyswcryk5v" path="res://ThomasFolder/Objects and Textures/HH_Art_PuddleElecTexture_V1.png" id="2_0ueex"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2i51d"]
+albedo_texture = ExtResource("2_0ueex")
+
+[node name="HH_Art_Puddle_V2" instance=ExtResource("1_xhyhy")]
+
+[node name="pasted__puddle" parent="Puddle" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2i51d")
