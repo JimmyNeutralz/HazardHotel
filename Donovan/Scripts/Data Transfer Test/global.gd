@@ -34,6 +34,10 @@ func fade_to_level_2():
 	get_tree().change_scene_to_file("res://Donovan/MODIFIEDAlphaV4.tscn")
 	tween.kill()
 	
+func _process(delta: float) -> void:
+	pass
+	
+	
 # TODO: Create function to constantly get the array that corresponds to the 
 # S.P.A.R.K. box's powered nodes
 #

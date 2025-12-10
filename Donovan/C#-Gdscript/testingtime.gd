@@ -5,4 +5,3 @@ extends Control
 
 func _physics_process(_delta: float) -> void:
 	print(MyCSharpScript.IsPressed)
-	pass
