@@ -17,7 +17,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("open_safe2") and Key.state != "used":
+	if (Input.is_action_pressed("open_safe2") or Global.check_array(1,3)) and Key.state != "used":
 		if(Player.velocity.x == 0):
 			if(Key.state == "held"):
 				open_safe()
@@ -36,6 +36,7 @@ func _process(delta: float) -> void:
 			await get_tree().create_timer(0.1).timeout
 			Player.standing_player_interact()
 			await get_tree().create_timer(1).timeout
+			text.change_text_image(1)
 			text.set_text("There was some cheese in there. That mouse might like it.", 5)
 		
 func open_safe():

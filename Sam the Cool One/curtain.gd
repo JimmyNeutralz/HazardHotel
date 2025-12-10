@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 		playdirection = "backward"
 
 func toggle_curtain():
-	if Input.is_action_pressed("toggle_curtain"):
+	if (Input.is_action_pressed("toggle_curtain") or Global.check_array(0,2)):
 		if state != "closing":
 			Player.move_to_object($Area3D)
 			if(!$Area3D.overlaps_body(Player)):
