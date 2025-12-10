@@ -2,7 +2,7 @@ extends Node3D
 
 #Node paths
 @onready var sprite = $Metal
-@onready var electric_sprite = $Electric
+#@onready var electric_sprite = $Electric
 @onready var collision = $StaticBody3D/CollisionShape3D
 @onready var gate_trigger = $GateTrigger
 @onready var indicator = $"../Indicators/GateIndicator"  #Indicator
@@ -102,7 +102,7 @@ func update_electric_state():
 	else:
 		electrified = false
 
-	electric_sprite.visible = electrified
+	#electric_sprite.visible = electrified
 	#DO NOT change gate_trigger.monitoring dynamically
 	update_indicator_color() 
 
