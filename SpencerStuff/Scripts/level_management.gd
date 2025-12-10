@@ -36,7 +36,9 @@ var has_right_key: bool = false
 
 @onready var ElevatorVisual = $Elevator/HH_Art_Elevator_V1
 
+@onready var player = $Player
 
+var elevator_door_entered = false
 #test 
 
 func _ready():
@@ -80,6 +82,10 @@ func _process(delta):
 	if generator.activated and not elevator_door.powered_on:
 		elevator_door.powered_on = true
 		print("Elevator powered on!")
+		
+		if (((player.global_position.x < (elevator_door.global_position.x + 0.25)) and (player.global_position.x >= elevator_door.global_position.x - 0.25))) and elevator_door.unlocked and !elevator_door_entered :
+			triggerexit(player)
+			elevator_door_entered = true
 
 
 #Left key trigger
@@ -177,11 +183,11 @@ func triggerexit(body: Node3D) -> void:
 		else:
 			fade_in_static._exit_scene("res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn")
 #Enter elevator
-func _on_area_3d_body_entered_level3(body: Node3D) -> void:
-	triggerexit(body)
+#func _on_area_3d_body_entered_level3(body: Node3D) -> void:
+	#triggerexit(body)
 	
-func _on_area_3d_body_entered_level2(body: Node3D) -> void:
-	triggerexit(body)
+#func _on_area_3d_body_entered_level2(body: Node3D) -> void:
+	#triggerexit(body)
 
 	
 #Pause input
