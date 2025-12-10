@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		UI.visible =true
 	else:
 		UI.visible = false
-	if(Input.is_action_just_pressed("trap") and state == "start"):
+	if((Input.is_action_just_pressed("trap") or Global.check_array(3,5)) and state == "start"):
 		Player.move_to_object(collision)
 		await PlayerNextToTrap
 		if(Cheese.state == "held"):
@@ -34,7 +34,7 @@ func _process(delta: float) -> void:
 			pass
 	if(state == "triggered"):
 		Cheese.state = "eaten"
-		if(Input.is_action_just_pressed("trap")):
+		if(Input.is_action_just_pressed("trap") or Global.check_array(3,5)):
 			Player.move_to_object(collision)
 			await PlayerNextToTrap
 			state = "used"

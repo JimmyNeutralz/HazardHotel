@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	_AirflowOn()
 
 func _AirflowOn():
-	if Input.is_action_pressed("activate_vent"):
+	if (Input.is_action_pressed("activate_vent") or Global.check_array(2,5)):
 		UI.visible = false
 		active = true
 	

@@ -5,7 +5,6 @@ extends Node3D
 @onready var player = $"../Player"
 @onready var location1 = $Location1
 @onready var location2 = $Location2
-@onready var location3 = $location3
 
 var locked: bool = true
 var door_anim: AnimationPlayer
@@ -20,12 +19,12 @@ func _ready():
 
 func _process(_delta):
 	#Global.check_array(2, 5) or 
-	if locked and (player.global_position.x>location3.global_position.x and (Input.is_action_just_pressed("deactivate_puddle") or Global.check_array(0,6))) and name == "LeftDoor":
+	if locked and (Input.is_action_just_pressed("deactivate_puddle")) and name == "LeftDoor":
 		unlock_door()
 		move_past_right_door()
 		
 		#Global.check_array(2, 5) or 
-	if locked and (player.global_position.x<location3.global_position.x and (Input.is_action_just_pressed("deactivate_puddle") or Global.check_array(5,4))) and name == "RightDoor":
+	if locked and (Input.is_action_just_pressed("deactivate_puddle")) and name == "RightDoor":
 		unlock_door()
 		move_past_right_door()
 		

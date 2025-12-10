@@ -48,6 +48,7 @@ func _process(delta: float) -> void:
 			Player.crouching_player_interact()
 			await get_tree().create_timer(1).timeout
 			Player.crouching_interact_start =false
+			text.change_text_image(1)
 			text.set_text("Gotcha, you little rodent. You're coming with me.", 6)
 	if(state == "held"):
 		global_position = Player.global_position + Vector3(0,0, -100)
