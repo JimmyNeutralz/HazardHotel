@@ -1,13 +1,18 @@
-[gd_scene load_steps=9 format=3 uid="uid://be7wtebqoq4lk"]
+[gd_scene load_steps=11 format=3 uid="uid://be7wtebqoq4lk"]
 
 [ext_resource type="Texture2D" uid="uid://bo7s6c50xo650" path="res://Assets/HH_Art_Logo_V2_.png" id="1_k1cdu"]
 [ext_resource type="Script" uid="uid://cgx56qcx2qoqy" path="res://SpencerStuff/Scripts/menu_control.gd" id="1_tjmdi"]
-[ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="2_g2l0o"]
+[ext_resource type="Texture2D" uid="uid://0f7wtflwj4kg" path="res://Assets/HH_Art_Menu_V2.png" id="3_a6xwe"]
 [ext_resource type="Texture2D" uid="uid://b8ilvj3lu8127" path="res://Assets/HH_Art_SkeletonSprite_V1.png" id="4_bxg5q"]
 [ext_resource type="Texture2D" uid="uid://bv8hukwp3yja2" path="res://Assets/HH_Art_WerewolfSprite_V1.png" id="5_s17u1"]
 [ext_resource type="Texture2D" uid="uid://bauyhs06poct8" path="res://Assets/HH_Art_Logo_V5_.png" id="6_a6xwe"]
 [ext_resource type="AudioStream" uid="uid://doi62g2bpy7bj" path="res://Assets/Audio/mx_titleTheme.wav" id="7_a6xwe"]
 [ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="8_a6xwe"]
+
+[sub_resource type="FontVariation" id="FontVariation_lhilj"]
+
+[sub_resource type="FontVariation" id="FontVariation_a6xwe"]
+base_font = SubResource("FontVariation_lhilj")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -31,30 +36,35 @@ texture = ExtResource("1_k1cdu")
 
 [node name="Brown" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(580, 325.75)
-scale = Vector2(1.6440217, 0.6863593)
-texture = ExtResource("2_g2l0o")
+position = Vector2(579.5, 326.49997)
+scale = Vector2(0.60364586, 0.61203706)
+texture = ExtResource("3_a6xwe")
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 494.0
-offset_top = 400.0
-offset_right = 674.0
-offset_bottom = 469.0
-theme_override_font_sizes/font_size = 30
+offset_left = 462.0
+offset_top = 464.0
+offset_right = 730.0
+offset_bottom = 568.0
+theme_override_fonts/font = SubResource("FontVariation_a6xwe")
+theme_override_font_sizes/font_size = 45
 text = "Play"
+icon_alignment = 1
 
 [node name="HhArtSkeletonSpriteV1" type="Sprite2D" parent="."]
-position = Vector2(257, 469.99997)
+visible = false
+position = Vector2(324, 266)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_bxg5q")
 
 [node name="HhArtWerewolfSpriteV1" type="Sprite2D" parent="."]
-position = Vector2(901, 467.00003)
+visible = false
+position = Vector2(387.00006, 226.00005)
 scale = Vector2(-0.43788034, 0.43788034)
 texture = ExtResource("5_s17u1")
 
 [node name="HhArtLogoV4" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(575, 167)
 scale = Vector2(0.34324765, 0.3324676)
 texture = ExtResource("6_a6xwe")
