@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://bslonsecovevp"]
 
 [ext_resource type="Script" uid="uid://dihk636pprey3" path="res://SpencerStuff/Scripts/end_scene.gd" id="1_0f0cy"]
-[ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="1_ynw6k"]
+[ext_resource type="Texture2D" uid="uid://0f7wtflwj4kg" path="res://Assets/HH_Art_Menu_V2.png" id="2_0f0cy"]
 [ext_resource type="Texture2D" uid="uid://bo7s6c50xo650" path="res://Assets/HH_Art_Logo_V2_.png" id="2_jgqas"]
 [ext_resource type="Texture2D" uid="uid://cpxgfb2rbpwix" path="res://Assets/speech-bubble-png-11.png" id="4_ornqc"]
 [ext_resource type="Texture2D" uid="uid://cxdu2hcoa4ln8" path="res://Assets/HH_Art_BuildingOwnerSprite_V1.png" id="5_m3h5d"]
@@ -20,10 +20,10 @@ script = ExtResource("1_0f0cy")
 
 [node name="CreditsLabel" type="RichTextLabel" parent="."]
 z_index = 100
-offset_left = 15.0
-offset_top = 669.0
-offset_right = 668.0
-offset_bottom = 1295.0
+offset_left = -13.0
+offset_top = 660.0
+offset_right = 640.0
+offset_bottom = 1286.0
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/normal_font_size = 24
 theme_override_font_sizes/bold_font_size = 28
@@ -48,9 +48,9 @@ Zak Suhajda"
 horizontal_alignment = 1
 
 [node name="Brown" type="Sprite2D" parent="."]
-position = Vector2(573.5, 326.49994)
-scale = Vector2(1.5991848, 0.64841485)
-texture = ExtResource("1_ynw6k")
+position = Vector2(576.99994, 323)
+scale = Vector2(0.60625, 0.6074074)
+texture = ExtResource("2_0f0cy")
 
 [node name="HhArtLogoV2" type="Sprite2D" parent="."]
 visible = false
@@ -60,7 +60,7 @@ scale = Vector2(0.22353639, 0.2465)
 texture = ExtResource("2_jgqas")
 
 [node name="SpeechBubblePng11" type="Sprite2D" parent="."]
-position = Vector2(853.00006, 347)
+position = Vector2(856, 366.00003)
 scale = Vector2(0.26487482, 0.12263375)
 texture = ExtResource("4_ornqc")
 
@@ -72,10 +72,10 @@ scale = Vector2(-0.41636282, 0.41636282)
 texture = ExtResource("5_m3h5d")
 
 [node name="DialogueLabel" type="Label" parent="."]
-offset_left = 739.0
-offset_top = 316.0
-offset_right = 1013.0
-offset_bottom = 358.0
+offset_left = 747.0
+offset_top = 334.0
+offset_right = 1021.0
+offset_bottom = 376.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 24
 text = "Thanks for Playing!"
@@ -122,6 +122,7 @@ scale = Vector2(0.45632148, 0.43161368)
 texture = ExtResource("11_lektt")
 
 [node name="HhArtLogoV4" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(900, 136.00002)
 scale = Vector2(0.29006818, 0.29006824)
 texture = ExtResource("12_lektt")

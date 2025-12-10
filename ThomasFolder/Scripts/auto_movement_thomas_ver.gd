@@ -157,19 +157,19 @@ func _physics_process(delta):
 		
 		#Ensure idle animation when not moving
 		if standing_interact_start:
-			standing_interact_start = false
 			player_sprite.play("StandInteract")
 			await player_sprite.animation_finished
+			standing_interact_start = false
 		elif crouching_interact_start:
-			crouching_interact_start = false
 			player_sprite.play("CrouchInteract")
 			await player_sprite.animation_finished
+			crouching_interact_start = false
 		elif dino_interact_start:
-			dino_interact_start = false
 			self.global_position.y = 1.288
 			player_sprite.play("DinoGrabInteract")
 			await player_sprite.animation_finished
 			self.global_position.y = 0.623
+			dino_interact_start = false
 		elif player_sprite and player_sprite.sprite_frames != null and player_sprite.sprite_frames.has_animation("Idle"):
 			if player_sprite.animation != "Idle" and not is_moving:
 				player_sprite.play("Idle")

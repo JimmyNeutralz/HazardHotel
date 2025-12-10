@@ -1,4 +1,4 @@
-[gd_scene load_steps=1265 format=3 uid="uid://bxhis68m30g1y"]
+[gd_scene load_steps=1253 format=3 uid="uid://bxhis68m30g1y"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_sdfg4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_fwdfo"]
@@ -29,7 +29,7 @@
 [ext_resource type="Script" uid="uid://cer86br3tg2y" path="res://Donovan/Puzzle Concepts In Engine/Scenes/dumbwaiter.gd" id="26_rebln"]
 [ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="27_xsf64"]
 [ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="28_1lnfs"]
-[ext_resource type="PackedScene" uid="uid://bsgmo7qpg8qc0" path="res://Donovan/DonAssets/trueDumbwaiter.tscn" id="28_d7ckc"]
+[ext_resource type="PackedScene" path="res://Donovan/DonAssets/trueDumbwaiter.tscn" id="28_d7ckc"]
 [ext_resource type="PackedScene" uid="uid://dyua24e70jfwi" path="res://ThomasFolder/Objects and Textures/hh_art_generator_v_2_textured.tscn" id="28_wwhnu"]
 [ext_resource type="Script" uid="uid://cqxfonrb48820" path="res://SpencerStuff/Scripts/puddle.gd" id="30_1lf7x"]
 [ext_resource type="Texture2D" uid="uid://bpp55u84q0wax" path="res://Assets/UpdatedNodes/HH_Art_NodeBlue1_V2.png" id="30_7q655"]
@@ -69,7 +69,6 @@
 [ext_resource type="Texture2D" uid="uid://ba0i3nd2aps77" path="res://Assets/UpdatedNodes/HH_Art_NodeGreen5_V2.png" id="45_gtqp3"]
 [ext_resource type="Texture2D" uid="uid://bkl556xt6evy6" path="res://Donovan/DonAssets/HH_Art_NodeOrange1_V1.png" id="45_svxs6"]
 [ext_resource type="AudioStream" uid="uid://y8gssppvdj36" path="res://Assets/Audio/elevator door opening.wav" id="46_et8ij"]
-[ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="46_kp58o"]
 [ext_resource type="Texture2D" uid="uid://b1wmqw5j1s6xl" path="res://Donovan/DonAssets/HH_Art_NodeOrange4_V1.png" id="46_rebln"]
 [ext_resource type="Texture2D" uid="uid://h16eby4ynob5" path="res://Assets/UpdatedNodes/HH_Art_NodeGreen6_V2.png" id="46_tir3a"]
 [ext_resource type="Texture2D" uid="uid://di6c20vegoqi" path="res://Assets/UpdatedNodes/HH_Art_NodeOrange1_V2.png" id="47_fpbva"]
@@ -84,7 +83,7 @@
 [ext_resource type="PackedScene" uid="uid://r70numkvwsa7" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Shelf.tscn" id="50_jennx"]
 [ext_resource type="PackedScene" uid="uid://bvtx553hn8ouc" path="res://SpencerStuff/Scenes/true_middle_scenev3.tscn" id="50_qeqm8"]
 [ext_resource type="Texture2D" uid="uid://bra3n723u6d3n" path="res://Assets/UpdatedNodes/HH_Art_NodeOrange4_V2.png" id="50_rvfsx"]
-[ext_resource type="Script" uid="uid://vihp4thtac55" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="50_yqei1"]
+[ext_resource type="Script" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="50_yqei1"]
 [ext_resource type="PackedScene" uid="uid://bglppt0huxa04" path="res://SpencerStuff/Scenes/true_right_scenev3.tscn" id="51_00t3t"]
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="51_a4kpc"]
 [ext_resource type="Texture2D" uid="uid://dhndjrnissj6d" path="res://Assets/HH_Art_NewGuyElectrocutionAnimSpriteSheet_V1.png" id="51_dx7fg"]
@@ -118,23 +117,21 @@
 [ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="87_5urh0"]
 [ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="87_lqt4v"]
 [ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="88_jym03"]
-[ext_resource type="PackedScene" uid="uid://bfbcjkeoychis" path="res://Donovan/DonAssets/hh_art_fuse_3_v_1.tscn" id="91_xjhiw"]
-[ext_resource type="PackedScene" uid="uid://dwys3y0hehafv" path="res://hh_art_shelf_v_1_textured_first_floor.tscn" id="91_ygbmw"]
-[ext_resource type="PackedScene" uid="uid://ckl1tljyyyr1" path="res://Donovan/DonAssets/updatedSafe.tscn" id="92_d7ckc"]
-[ext_resource type="PackedScene" uid="uid://b1ijgkw1i7v5k" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="98_13nw6"]
+[ext_resource type="Texture2D" uid="uid://b57ybpt6m1ojl" path="res://Assets/pausemenubackground.png" id="88_ygbmw"]
+[ext_resource type="PackedScene" path="res://Donovan/DonAssets/hh_art_fuse_3_v_1.tscn" id="91_xjhiw"]
+[ext_resource type="PackedScene" path="res://hh_art_shelf_v_1_textured_first_floor.tscn" id="91_ygbmw"]
+[ext_resource type="PackedScene" path="res://Donovan/DonAssets/updatedSafe.tscn" id="92_d7ckc"]
+[ext_resource type="PackedScene" uid="uid://c481kh6rlqyuh" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="98_13nw6"]
 [ext_resource type="PackedScene" uid="uid://dax3x8kiqqa04" path="res://SpencerStuff/Scenes/true_right_doorV2.tscn" id="102_1r2ig"]
-[ext_resource type="PackedScene" uid="uid://c7iktl4snp6u3" path="res://ThomasFolder/Objects and Textures/hh_art_puddle_v_2.tscn" id="120_ygbmw"]
+[ext_resource type="PackedScene" path="res://ThomasFolder/Objects and Textures/hh_art_puddle_v_2.tscn" id="120_ygbmw"]
 [ext_resource type="Texture2D" uid="uid://b2vui8awwerj3" path="res://ThomasFolder/Sprites/New Guy Character Image Back.png" id="125_cfexi"]
 [ext_resource type="Texture2D" uid="uid://b2smx76edwggf" path="res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png" id="126_wwhnu"]
 [ext_resource type="Texture2D" uid="uid://bs6byut2b4npg" path="res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png" id="127_ygbmw"]
-[ext_resource type="PackedScene" uid="uid://bm6fml47x7nc3" path="res://Donovan/DonAssets/trueFusebox.tscn" id="130_d7ckc"]
-[ext_resource type="PackedScene" uid="uid://0nkkc7smvq5s" path="res://Donovan/DonAssets/truePulley.tscn" id="131_ygbmw"]
-[ext_resource type="PackedScene" uid="uid://dilbjo5d6cao0" path="res://Donovan/DonAssets/trueLever.tscn" id="132_ctrnc"]
-[ext_resource type="PackedScene" uid="uid://cfgk5jdncivak" path="res://hh_art_fuse_1_v_1.tscn" id="132_d7ckc"]
-[ext_resource type="PackedScene" uid="uid://bkm2ctn1pbla1" path="res://Donovan/DonAssets/hh_art_fuse_2_v_1.tscn" id="133_dduuv"]
-[ext_resource type="Script" uid="uid://dcuwijsutwksx" path="res://ThomasFolder/Scripts/swagula.gd" id="133_ylpd1"]
-[ext_resource type="Texture2D" uid="uid://caugvsxkexcr4" path="res://Assets/HH_Art_SwagulaIdleSpriteSheet_V1.png" id="134_efa7e"]
-[ext_resource type="Script" path="res://SpencerStuff/Scenes/swagula_idle.gd" id="135_qswob"]
+[ext_resource type="PackedScene" path="res://Donovan/DonAssets/trueFusebox.tscn" id="130_d7ckc"]
+[ext_resource type="PackedScene" path="res://Donovan/DonAssets/truePulley.tscn" id="131_ygbmw"]
+[ext_resource type="PackedScene" path="res://Donovan/DonAssets/trueLever.tscn" id="132_ctrnc"]
+[ext_resource type="PackedScene" path="res://hh_art_fuse_1_v_1.tscn" id="132_d7ckc"]
+[ext_resource type="PackedScene" path="res://Donovan/DonAssets/hh_art_fuse_2_v_1.tscn" id="133_dduuv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -8820,70 +8817,6 @@ albedo_color = Color(0.8862745, 0.8352941, 0.654902, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_0kak2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eix5y"]
-atlas = ExtResource("134_efa7e")
-region = Rect2(0, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wtvlt"]
-atlas = ExtResource("134_efa7e")
-region = Rect2(700, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y5yqg"]
-atlas = ExtResource("134_efa7e")
-region = Rect2(1400, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_aop2m"]
-atlas = ExtResource("134_efa7e")
-region = Rect2(2100, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2u80p"]
-atlas = ExtResource("134_efa7e")
-region = Rect2(2800, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_svosg"]
-atlas = ExtResource("134_efa7e")
-region = Rect2(3500, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yk7dk"]
-atlas = ExtResource("134_efa7e")
-region = Rect2(4200, 0, 700, 700)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c7ckq"]
-atlas = ExtResource("134_efa7e")
-region = Rect2(4900, 0, 700, 700)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6hvca"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eix5y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wtvlt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y5yqg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_aop2m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2u80p")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_svosg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yk7dk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c7ckq")
-}],
-"loop": true,
-"name": &"Idle",
-"speed": 8.0
-}]
-
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_sdfg4")
 
@@ -9217,8 +9150,8 @@ process_mode = 3
 [node name="PauseBackground" type="Sprite2D" parent="PauseMenu"]
 process_mode = 3
 position = Vector2(587, 320)
-scale = Vector2(0.35, 0.2708934)
-texture = ExtResource("46_kp58o")
+scale = Vector2(0.9, 0.7)
+texture = ExtResource("88_ygbmw")
 
 [node name="ResumeButton" type="Button" parent="PauseMenu"]
 process_mode = 3
@@ -9589,19 +9522,6 @@ autoplay = "Yellow5"
 
 [node name="standSpot" type="Marker3D" parent="FuseBox"]
 transform = Transform3D(0.09323944, 0, 0.99564373, 0, 1, 0, -0.99564373, 0, 0.09323944, 1.6715798, -0.84038645, 0.44569147)
-
-[node name="Swagula" type="Node3D" parent="."]
-transform = Transform3D(1.0000002, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -5.160612, 0, -0.3686844)
-script = ExtResource("133_ylpd1")
-
-[node name="Sprite3D" type="AnimatedSprite3D" parent="Swagula"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0.121269464, 0.96, 0)
-sprite_frames = SubResource("SpriteFrames_6hvca")
-animation = &"Idle"
-script = ExtResource("135_qswob")
-
-[node name="swagula_marker" type="Marker3D" parent="Swagula"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.63076806)
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
