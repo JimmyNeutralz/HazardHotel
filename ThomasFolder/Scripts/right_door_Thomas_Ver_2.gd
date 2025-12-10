@@ -18,10 +18,13 @@ func _ready():
 		door_anim.seek(0.0, true)
 
 func _process(_delta):
-	if locked and Input.is_action_just_pressed("deactivate_puddle") and name == "LeftDoor":
+	#Global.check_array(2, 5) or 
+	if locked and (Input.is_action_just_pressed("deactivate_puddle")) and name == "LeftDoor":
 		unlock_door()
 		move_past_right_door()
-	if locked and Input.is_action_just_pressed("deactivate_puddle") and name == "RightDoor":
+		
+		#Global.check_array(2, 5) or 
+	if locked and (Input.is_action_just_pressed("deactivate_puddle")) and name == "RightDoor":
 		unlock_door()
 		move_past_right_door()
 		
@@ -74,7 +77,8 @@ func unlock_door():
 	else:
 		blocker.global_position.x = 0
 	door_anim.play_backwards("Take 001")
-	await get_tree().create_timer(door_anim.current_animation_length).timeout
+	
+	await get_tree().create_timer(2.5).timeout
 	await lock_script.play_backwards_lock_animation()
 	locked = true
 

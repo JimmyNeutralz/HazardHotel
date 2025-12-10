@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c481kh6rlqyuh"]
+[gd_scene load_steps=5 format=3 uid="uid://b1ijgkw1i7v5k"]
 
 [ext_resource type="PackedScene" uid="uid://dsdr6fypr3n7y" path="res://Assets/3D Models/HH_Art_DoorAnim_LeftOpen_V4.fbx" id="1_j555g"]
 [ext_resource type="Texture2D" uid="uid://bwydjgqr6jpjn" path="res://Assets/3D Models/HH_Art_Lobby_DoorsTexture_V1.png" id="2_wnwtd"]

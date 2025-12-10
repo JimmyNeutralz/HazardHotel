@@ -11,7 +11,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if(state == "held"):
-		self.global_position = followobj.global_position+ Vector3(0,0,1)
+		self.global_position = followobj.global_position+ Vector3(0,0,-100)
 	if(state == "eaten"):
 		visible =false
 	
@@ -21,4 +21,4 @@ func grab(player:Node3D):
 	
 func use(object:Node3D):
 	state = "trap"
-	self.global_position = object.global_position
+	self.global_position = object.global_position + Vector3(0.2,0,0)

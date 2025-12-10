@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfgk5jdncivak"]
+
+[ext_resource type="PackedScene" uid="uid://olexdqokl4uj" path="res://ThomasFolder/Objects and Textures/HH_Art_Fuse1_V1.fbx" id="1_7eptp"]
+[ext_resource type="Texture2D" uid="uid://bgp46g3dvoer1" path="res://ThomasFolder/Objects and Textures/HH_Art_Fuse1Texture_V1.png" id="2_cxncn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_liphm"]
+albedo_texture = ExtResource("2_cxncn")
+
+[node name="HH_Art_Fuse1_V1" instance=ExtResource("1_7eptp")]
+
+[node name="fusebox" parent="." index="0"]
+transform = Transform3D(0.007236587, 0, 0, 0, 0.007236587, 0, 0, 0, 0.007236587, 0, 0, 0)
+
+[node name="fuse1" parent="fusebox" index="0"]
+transform = Transform3D(0.06504516, 0, 0, 0, 0.14873667, 0, 0, 0, 0.06504516, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_liphm")

@@ -2,7 +2,7 @@ extends Node3D
 
 #Node paths
 @onready var sprite = $Metal
-@onready var electric_sprite = $Electric
+#@onready var electric_sprite = $Electric
 @onready var collision = $StaticBody3D/CollisionShape3D
 @onready var gate_trigger = $GateTrigger
 @onready var indicator = $"../Indicators/GateIndicator"  #Indicator
@@ -63,7 +63,9 @@ func _process(delta):
 		#uiNode.visible = false
 
 	#Handle gate raising input
-	if Input.is_action_just_pressed("raise_gate") and not raised:
+	
+	#Global.check_array(2, 3) or 
+	if (Input.is_action_just_pressed("raise_gate")) and not raised:
 		var tempSide = 0
 		if can_raise():
 			if (isOnLeft):
@@ -98,11 +100,11 @@ func update_electric_state():
 
 	#RED = safe (fusebox off), GREEN = powered
 	if mat.albedo_color == Color.GREEN:
-		electrified = true
-	else:
 		electrified = false
+	else:
+		electrified = true
 
-	electric_sprite.visible = electrified
+	#electric_sprite.visible = electrified
 	#DO NOT change gate_trigger.monitoring dynamically
 	update_indicator_color() 
 

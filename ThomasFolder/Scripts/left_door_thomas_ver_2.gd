@@ -18,10 +18,12 @@ func _ready():
 		door_anim.seek(0.0, true)
 
 func _process(_delta):
-	if locked and Input.is_action_just_pressed("unlock_left") and name == "LeftDoor":
+	#Global.check_array(4, 4) or 
+	if locked and (Input.is_action_just_pressed("unlock_left")) and name == "LeftDoor":
 		unlock_door()
 		move_past_left_door()
-	if locked and Input.is_action_just_pressed("unlock_right") and name == "RightDoor" :
+	#!Global.check_array(4, 4) or 
+	if locked and (Input.is_action_just_pressed("unlock_right")) and name == "RightDoor" :
 		unlock_door()
 		move_past_left_door()
 		
@@ -33,13 +35,13 @@ func _process(_delta):
 
 
 func move_past_left_door():
-	if (player.global_position.x > -1.5):
+	if (player.global_position.x > -1.4):
 		blocker.global_position.x = 0
 		player.move_through_left_door(location1, 1)
 		await get_tree().create_timer(1.5).timeout
 		blocker.global_position.x = -999
 		#player.move_to_adjacent_room(-1)
-	elif (player.global_position.x < -1.5):
+	elif (player.global_position.x < -1.4):
 		blocker.global_position.x = -1.5
 		player.move_through_left_door(location1, -1)
 		await get_tree().create_timer(1.5).timeout
@@ -58,7 +60,7 @@ func unlock_door():
 	player.standing_player_interact()
 	#Then play door
 	if door_anim and door_anim.has_animation("Take 001"):
-		door_anim.play("Take 001")
+		door_anim.play_section("Take 001", 2.5, 5)
 
 	print(name + " unlocked!")
 	$Door/LeftDoorAudio.play()
@@ -69,8 +71,8 @@ func unlock_door():
 		blocker.global_position.x = -1.5
 	else:
 		blocker.global_position.x = 0
-	door_anim.play_backwards("Take 001")
-	await get_tree().create_timer(door_anim.current_animation_length).timeout
+	door_anim.play_section_backwards("Take 001", 2.5, 5)
+	await get_tree().create_timer(2.5).timeout
 	await lock_script.play_backwards_lock_animation()
 	locked = true
 

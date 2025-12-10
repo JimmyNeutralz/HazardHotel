@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsgmo7qpg8qc0"]
+
+[ext_resource type="PackedScene" uid="uid://s6cbb7e4ysd3" path="res://Assets/Final Assets/HH_Art_Dumbwaiter_V2.fbx" id="1_xinwt"]
+[ext_resource type="Texture2D" uid="uid://vglnnn43lqd1" path="res://Assets/Final Assets/HH_Art_DumbwaiterTexture_V1.png" id="2_p23ym"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r72fi"]
+albedo_texture = ExtResource("2_p23ym")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oppap"]
+albedo_texture = ExtResource("2_p23ym")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qldx7"]
+albedo_texture = ExtResource("2_p23ym")
+
+[node name="HH_Art_Dumbwaiter_V2" instance=ExtResource("1_xinwt")]
+
+[node name="pCube1" parent="dumbwaiter" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_r72fi")
+
+[node name="pCube2" parent="dumbwaiter" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_oppap")
+
+[node name="pCube3" parent="dumbwaiter" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qldx7")

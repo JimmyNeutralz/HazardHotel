@@ -1,8 +1,8 @@
-[gd_scene load_steps=304 format=3 uid="uid://dxqylawnucbcu"]
+[gd_scene load_steps=307 format=3 uid="uid://dxboywfkl0ggd"]
 
 [ext_resource type="Script" uid="uid://b8rhcy8cul0pp" path="res://ThomasFolder/Scripts/level_management_thomas_tutorial_ver_on_and_off.gd" id="1_3ji2u"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_ejy63"]
-[ext_resource type="Script" uid="uid://t5iwr1n67h38" path="res://ThomasFolder/Scripts/camera_move_pinch_tutorial_ver.gd" id="3_bnlmt"]
+[ext_resource type="Script" path="res://ThomasFolder/Scripts/camera_move_pinch_tutorial_ver.gd" id="3_bnlmt"]
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="4_wmw1k"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="5_qep0x"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="6_6300f"]
@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://d1ybbwvdlyuvl" path="res://Donovan/DonAssets/HH_Art_NodeYellow6_V1.png" id="24_66oco"]
 [ext_resource type="AudioStream" uid="uid://y8gssppvdj36" path="res://Assets/Audio/elevator door opening.wav" id="25_r1jjj"]
 [ext_resource type="PackedScene" uid="uid://drsx3lpp80je5" path="res://SpencerStuff/Scenes/true_elevator_gate_lobby.tscn" id="26_1ajw3"]
-[ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="27_23ape"]
+[ext_resource type="Texture2D" uid="uid://b57ybpt6m1ojl" path="res://Assets/pausemenubackground.png" id="27_qep0x"]
 [ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="28_wyd7n"]
 [ext_resource type="PackedScene" uid="uid://r70numkvwsa7" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Shelf.tscn" id="29_sv62q"]
 [ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="30_wiy0b"]
@@ -59,12 +59,11 @@
 [ext_resource type="Script" uid="uid://bvgbnq634mn5" path="res://ThomasFolder/Scripts/generatorThomasVerTutorialOnOff.gd" id="57_3ji2u"]
 [ext_resource type="AudioStream" uid="uid://u31ntpy5j83k" path="res://Assets/Audio/generator start up.wav" id="58_1kohj"]
 [ext_resource type="PackedScene" uid="uid://o1uif2bxe7cj" path="res://SpencerStuff/Scenes/true_lamp.tscn" id="59_o71jw"]
-[ext_resource type="Script" uid="uid://gxyte2pwafxu" path="res://ThomasFolder/Scripts/lamp.gd" id="60_08i3x"]
+[ext_resource type="Script" uid="uid://gxyte2pwafxu" path="res://ThomasFolder/Scripts/lamp.gd" id="60_qep0x"]
 [ext_resource type="PackedScene" uid="uid://dd7maffl4gk12" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V2.fbx" id="61_x4cip"]
-[ext_resource type="PackedScene" uid="uid://dbok1pugswmfy" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Table_V1.fbx" id="62_dt3sk"]
 [ext_resource type="Texture2D" uid="uid://uvf0v1svjyqn" path="res://Assets/HH_Art_OwnerIdleSpriteSheet_V1.png" id="63_77ub2"]
 [ext_resource type="Script" path="res://ThomasFolder/Scenes/owner_idle.gd" id="64_3kdjc"]
-[ext_resource type="PackedScene" uid="uid://crqfjy0grfep2" path="res://SpencerStuff/Scenes/true_lobby.tscn" id="65_ws5de"]
+[ext_resource type="PackedScene" uid="uid://d0vygk4d3mmkq" path="res://SpencerStuff/Scenes/true_lobby.tscn" id="65_ws5de"]
 [ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="66_ddv7c"]
 [ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="67_uihrx"]
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="68_hw3p6"]
@@ -77,9 +76,13 @@
 [ext_resource type="PackedScene" uid="uid://b4o3oeyyus7f2" path="res://SpencerStuff/Scenes/true_lobby_rug.tscn" id="74_i073y"]
 [ext_resource type="PackedScene" uid="uid://dgfvm6sy14n60" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V1.fbx" id="75_mvb71"]
 [ext_resource type="PackedScene" uid="uid://d1twlbms4jalv" path="res://SpencerStuff/Scenes/true_elevatorV2.tscn" id="76_dluqx"]
+[ext_resource type="PackedScene" path="res://ThomasFolder/Objects and Textures/hh_art_lobby_shelf_v_1_textured.tscn" id="76_wmw1k"]
 [ext_resource type="PackedScene" uid="uid://lepdv8r431j3" path="res://SpencerStuff/Scenes/true_lobby_doors.tscn" id="77_28pjt"]
+[ext_resource type="PackedScene" path="res://ThomasFolder/Objects and Textures/hh_art_lobby_shelf_v_2_textured.tscn" id="77_qep0x"]
 [ext_resource type="PackedScene" uid="uid://bettkww4wmsuf" path="res://SpencerStuff/Scenes/true_book1.tscn" id="78_63om4"]
 [ext_resource type="PackedScene" uid="uid://dl8darbn45lj0" path="res://SpencerStuff/Scenes/true_book2.tscn" id="79_yafin"]
+[ext_resource type="PackedScene" uid="uid://c2fvfmnc4vjmc" path="res://SpencerStuff/Scenes/true_table.tscn" id="81_6300f"]
+[ext_resource type="PackedScene" path="res://ThomasFolder/Objects and Textures/hh_art_lobby_bell_v_2_textured.tscn" id="83_qep0x"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -1868,8 +1871,8 @@ process_mode = 3
 [node name="PauseBackground" type="Sprite2D" parent="PauseMenu"]
 process_mode = 3
 position = Vector2(587, 320)
-scale = Vector2(0.35, 0.2708934)
-texture = ExtResource("27_23ape")
+scale = Vector2(0.9, 0.7)
+texture = ExtResource("27_qep0x")
 
 [node name="ResumeButton" type="Button" parent="PauseMenu"]
 process_mode = 3
@@ -1948,6 +1951,7 @@ visible = false
 
 [node name="HH_Art_Lobby_Bell_V1" parent="." instance=ExtResource("44_veyqm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.497774)
+visible = false
 
 [node name="HH_Art_Lobby_Chair_V1" parent="." instance=ExtResource("45_q8utf")]
 visible = false
@@ -2002,7 +2006,7 @@ transform = Transform3D(0.9772274, 0, 0.21219474, 0, 1, 0, -0.21219474, 0, 0.977
 
 [node name="HH_Art_Lobby_Lamp_V1" parent="." instance=ExtResource("59_o71jw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.498)
-script = ExtResource("60_08i3x")
+script = ExtResource("60_qep0x")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="HH_Art_Lobby_Lamp_V1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.030561, 1.3666446, 0.2568501)
@@ -2015,8 +2019,7 @@ animation = &"Purple2"
 autoplay = "Purple2"
 
 [node name="HH_Art_Lobby_Shelf_V2" parent="." instance=ExtResource("61_x4cip")]
-
-[node name="HH_Art_Lobby_Table_V1" parent="." instance=ExtResource("62_dt3sk")]
+visible = false
 
 [node name="BuildingOwner" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.45269394)
@@ -2097,6 +2100,11 @@ texture = ExtResource("72_kwhrs")
 [node name="HH_Art_Lobby_Rug_V2" parent="." instance=ExtResource("74_i073y")]
 
 [node name="HH_Art_Lobby_Shelf_V1" parent="." instance=ExtResource("75_mvb71")]
+visible = false
+
+[node name="HH_Art_Lobby_Shelf_V3" parent="." instance=ExtResource("76_wmw1k")]
+
+[node name="HH_Art_Lobby_Shelf_V4" parent="." instance=ExtResource("77_qep0x")]
 
 [node name="HH_Art_Lobby_Elevator_V2" parent="." instance=ExtResource("76_dluqx")]
 
@@ -2105,7 +2113,14 @@ texture = ExtResource("72_kwhrs")
 [node name="HH_Art_Lobby_Book1_V2" parent="." instance=ExtResource("78_63om4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.55529284, 0.01834321, 0.3522401)
 
-[node name="HH_Art_Lobby_Book2_V2" parent="." instance=ExtResource("79_yafin")]
+[node name="HH_Art_Table_V3" parent="." instance=ExtResource("81_6300f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.956471, 0.035687447, -8.766882)
+
+[node name="HH_Art_Lobby_Book2_V3" parent="." instance=ExtResource("79_yafin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.12643027, 0)
+
+[node name="HH_Art_Lobby_Bell_V3" parent="." instance=ExtResource("83_qep0x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.498)
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]

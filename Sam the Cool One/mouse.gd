@@ -11,6 +11,7 @@ extends AnimatedSprite3D
 @export var Curtain:Node
 @onready var Mousewheel = $"../../MouseWheelDesk/Mousewheel/wheel/pCylinder2"
 @onready var WheelAnim = $"../../MouseWheelDesk/Mousewheel/AnimationPlayer"
+@onready var text = $"../../Overlay/TextPopup"
 @export var WheelArea:Node
 @export var FuseIndicator:Node
 var state
@@ -22,13 +23,17 @@ func _process(delta: float) -> void:
 	if(Input.is_action_pressed("ui_end")):
 		state = "wheel"
 	if(state == "Hole1"):
-		global_position = Hole1.global_position + Vector3(0,0, 0.1)
+		global_position = Hole1.global_position + Vector3(0,-0.2, 0.1)
 		if(Vase.state == "shattered" and RightRoom==Player.get_current_room()):
 			state = "Hole2"
 			Player.move_to_object(Hole1)
+			await get_tree().create_timer(0.2).timeout
+			Player.crouching_player_interact()
+			await get_tree().create_timer(1).timeout
+			Player.crouching_interact_start = false
 		play("idle")
 	if(state == "Hole2"):
-		global_position = Hole2.global_position + Vector3(0,0, 0.1)
+		global_position = Hole2.global_position + Vector3(0,-0.2, 0.1)
 		if(MainRoom==Player.get_current_room()):
 			if(Curtain.state == "closing" and Curtain.playdirection == "backward" and !Curtain.animator.is_playing() and Trap.state == "set"):
 				state = "trapped"
@@ -39,8 +44,13 @@ func _process(delta: float) -> void:
 		global_position = Trap.global_position
 		if(Trap.state == "used"):
 			state = "held"
+			await get_tree().create_timer(0.2).timeout
+			Player.crouching_player_interact()
+			await get_tree().create_timer(1).timeout
+			Player.crouching_interact_start =false
+			text.set_text("Gotcha, you little rodent. You're coming with me.", 6)
 	if(state == "held"):
-		global_position = Player.global_position + Vector3(0,0, 1)
+		global_position = Player.global_position + Vector3(0,0, -100)
 		if(Input.is_action_just_pressed("mousewheel")):
 			Player.move_to_object(WheelArea)
 		if(WheelArea.overlaps_body(Player)):
@@ -59,7 +69,7 @@ func update_indicator_color():
 		mat = StandardMaterial3D.new()
 		FuseIndicator.set_surface_override_material(0, mat)
 	if state == "wheel":
-		mat.albedo_color = Color.RED
-	else:
 		mat.albedo_color = Color.GREEN
+	else:
+		mat.albedo_color = Color.RED
 		

@@ -36,7 +36,9 @@ var has_right_key: bool = false
 
 @onready var ElevatorVisual = $Elevator/HH_Art_Elevator_V1
 
+@onready var player = $Player
 
+var elevator_door_entered = false
 #test 
 
 func _ready():
@@ -80,6 +82,10 @@ func _process(delta):
 	if generator.activated and not elevator_door.powered_on:
 		elevator_door.powered_on = true
 		print("Elevator powered on!")
+		
+		if (((player.global_position.x < (elevator_door.global_position.x + 0.25)) and (player.global_position.x >= elevator_door.global_position.x - 0.25))) and elevator_door.unlocked and !elevator_door_entered :
+			triggerexit(player)
+			elevator_door_entered = true
 
 
 #Left key trigger
@@ -105,9 +111,7 @@ func _check_keys() -> void:
 	if has_left_key and has_right_key:
 		print("Elevator unlocked!")
 
-
-#Enter elevator
-func _on_area_3d_body_entered(body: Node3D) -> void:
+func triggerexit(body: Node3D) -> void:
 	if generator.activated and body.name == "Player":
 
 		#Open elevator gate
@@ -117,7 +121,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			print("ERROR: ElevatorDoor script not found!")
 
 		#Freeze player movement right away
-		var player = $Player
+		#var player = $Player
 		if player:
 
 			#Stop all current movement
@@ -175,10 +179,17 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		var path := get_tree().current_scene.scene_file_path
 
 		if path == "res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn":
+			fade_in_static._exit_scene("res://Sam the Cool One/SamPuzzleWIP.tscn")
+		elif path == "res://Sam the Cool One/SamPuzzleWIP.tscn":
 			fade_in_static._exit_scene("res://SpencerStuff/Scenes/EndScene.tscn")
 		else:
 			fade_in_static._exit_scene("res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn")
-
+#Enter elevator
+func _on_area_3d_body_entered_level3(body: Node3D) -> void:
+	triggerexit(body)
+	
+func _on_area_3d_body_entered_level2(body: Node3D) -> void:
+	triggerexit(body)
 
 	
 #Pause input

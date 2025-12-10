@@ -1,10 +1,12 @@
 extends Node3D
 
-@onready var mesh_instance = $Puddle/pasted__puddle.get_active_material(0)
-
+@onready var puddle_material = $Puddle/pasted__puddle
+@onready var puddle_material2 = $Puddle/pasted__puddle__2
 
 func safe_puddle():
-	mesh_instance.albedo_color = Color(1.0, 1.0, 1.0, 1.0)
+	puddle_material.visible = true
+	puddle_material2.visible = false
 
 func yellow_puddle():
-	mesh_instance.albedo_color = Color(0.75, 0.603, 0.141, 1.0)
+	puddle_material.visible = false
+	puddle_material2.visible = true

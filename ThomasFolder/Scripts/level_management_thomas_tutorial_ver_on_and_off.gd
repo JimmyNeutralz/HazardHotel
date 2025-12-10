@@ -152,7 +152,7 @@ func _process(delta: float) -> void:
 		if path == "res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn":
 			fade_in_static._exit_scene("res://SpencerStuff/Scenes/EndScene.tscn")
 		else:
-			fade_in_static._exit_scene("res://SpencerStuff/Scenes/BetaAutoMoveCopy.tscn")
+			fade_in_static._exit_scene("res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn")
 
 #Left key trigger
 func _on_left_trigger_body_entered(body: Node3D) -> void:
@@ -266,18 +266,11 @@ func _input(event):
 func _pause_game():
 	_set_pause_menu_visible(true)
 	get_tree().paused = true
-	
-	text_popup.paused = true
-	lamp.paused = true
 	print("Game Paused")
 
 func _resume_game():
 	_set_pause_menu_visible(false)
 	get_tree().paused = false
-	
-	text_popup.paused = false
-	lamp.paused = false
-	text_popup.resume_typing_text()
 	print("Game Resumed")
 
 
