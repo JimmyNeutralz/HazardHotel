@@ -22,9 +22,9 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if !dialogue_started:
-		if Input.is_action_just_pressed("turn_on_lamp") and !lamp_on:
+		if Global.check_array(3, 2) and !lamp_on:
 			activate_lights()
-		if Input.is_action_just_released("turn_on_lamp") and lamp_on:
+		if !(Global.check_array(3, 2)) and lamp_on:
 			deactivate_lights()
 		
 		if (((player.global_position.x < (building_owner_marker.global_position.x + 0.5)) and (player.global_position.x >= (building_owner_marker.global_position.x - 0.5))) and lamp_on):

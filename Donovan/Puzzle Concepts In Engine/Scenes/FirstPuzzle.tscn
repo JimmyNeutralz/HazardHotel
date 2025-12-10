@@ -125,7 +125,7 @@
 [ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="88_jym03"]
 [ext_resource type="PackedScene" uid="uid://bfbcjkeoychis" path="res://Donovan/DonAssets/hh_art_fuse_3_v_1.tscn" id="91_xjhiw"]
 [ext_resource type="PackedScene" uid="uid://dwys3y0hehafv" path="res://hh_art_shelf_v_1_textured_first_floor.tscn" id="91_ygbmw"]
-[ext_resource type="PackedScene" uid="uid://c481kh6rlqyuh" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="98_13nw6"]
+[ext_resource type="PackedScene" uid="uid://b1ijgkw1i7v5k" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="98_13nw6"]
 [ext_resource type="PackedScene" uid="uid://dax3x8kiqqa04" path="res://SpencerStuff/Scenes/true_right_doorV2.tscn" id="102_1r2ig"]
 [ext_resource type="PackedScene" uid="uid://c7iktl4snp6u3" path="res://ThomasFolder/Objects and Textures/hh_art_puddle_v_2.tscn" id="121_d7ckc"]
 [ext_resource type="Texture2D" uid="uid://b2vui8awwerj3" path="res://ThomasFolder/Sprites/New Guy Character Image Back.png" id="125_cfexi"]
@@ -7894,9 +7894,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.213914, 0, 0)
 
 [node name="HH_Art_GateAni_V2" parent="Gate" instance=ExtResource("40_pwu2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91668653, 0, 0)
-visible = false
 
 [node name="HH_Art_GateAni_V4" parent="Gate" instance=ExtResource("76_ctrnc")]
+visible = false
 
 [node name="Indicators" type="Node3D" parent="."]
 
