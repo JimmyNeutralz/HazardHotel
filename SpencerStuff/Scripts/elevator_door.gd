@@ -34,10 +34,12 @@ func _process(delta: float) -> void:
 func unlock_elevator():
 	uiNode.visible = false
 	player.move_to_specific_location(elevator_marker.global_position.x)
+	print("OPEN THE GATES")
+	open_gate()
 
 #Open gate
 func open_gate() -> void:
-	if anim and not door_open:
+	if anim and !door_open:
 		door_open = true
 		$ElevatorOpenSFX.play()
 		anim.play("Take 001")

@@ -105,9 +105,7 @@ func _check_keys() -> void:
 	if has_left_key and has_right_key:
 		print("Elevator unlocked!")
 
-
-#Enter elevator
-func _on_area_3d_body_entered(body: Node3D) -> void:
+func triggerexit(body: Node3D) -> void:
 	if generator.activated and body.name == "Player":
 
 		#Open elevator gate
@@ -178,7 +176,12 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 			fade_in_static._exit_scene("res://SpencerStuff/Scenes/EndScene.tscn")
 		else:
 			fade_in_static._exit_scene("res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn")
-
+#Enter elevator
+func _on_area_3d_body_entered_level3(body: Node3D) -> void:
+	triggerexit(body)
+	
+func _on_area_3d_body_entered_level2(body: Node3D) -> void:
+	triggerexit(body)
 
 	
 #Pause input
