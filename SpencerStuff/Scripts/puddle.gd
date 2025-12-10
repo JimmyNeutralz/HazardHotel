@@ -3,7 +3,7 @@ extends Node3D
 #Node paths
 @onready var area = $PuddleTrigger
 @onready var indicator = $"../Indicators/PuddleIndicator"
-@onready var puddleVisual = $HH_Art_Puddle_v1
+@onready var puddleVisual = $HH_Art_Puddle_V1
 @onready var uiNode = $PuddleUI
 
 #State
