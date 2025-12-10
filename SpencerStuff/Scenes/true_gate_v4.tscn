@@ -1,0 +1,246 @@
+[gd_scene load_steps=43 format=3 uid="uid://dbqa3slf2duel"]
+
+[ext_resource type="PackedScene" uid="uid://ctffst7m3p2rt" path="res://Assets/3D Models/HH_Art_GateAni_V4.fbx" id="1_6p4sp"]
+[ext_resource type="Texture2D" uid="uid://dmuhwm3aw0o2b" path="res://Assets/3D Models/HH_Art_GateAniElectrifiedTexture_V1.png" id="2_lwbfm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvj3f"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k8kq1"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3cny"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17ca6"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kgk2a"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_duh5h"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dv4e4"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_286yt"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vpv4t"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2run1"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q7v27"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q860t"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6ox24"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oi2j0"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_koqpi"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_my56c"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p84q6"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_db6r0"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dkv3p"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v58cx"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m4jyw"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4hjs"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gul6k"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tt68c"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w88ha"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p02di"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_36ly6"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hje2s"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6y3bf"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_66snv"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dp1q5"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4nwyn"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15fxh"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qoseh"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_au1s5"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwn8l"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_of8ky"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yfe8n"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_81lr8"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lwbfm"]
+albedo_texture = ExtResource("2_lwbfm")
+
+[node name="HH_Art_GateAni_V4" instance=ExtResource("1_6p4sp")]
+
+[node name="polySurface28" parent="gate/gate_frame" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_dvj3f")
+
+[node name="polySurface29" parent="gate/gate_frame" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_k8kq1")
+
+[node name="polySurface30" parent="gate/gate_frame" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_o3cny")
+
+[node name="polySurface34" parent="gate/gate_frame" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_17ca6")
+
+[node name="polySurface35" parent="gate/gate_frame" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_kgk2a")
+
+[node name="polySurface36" parent="gate/gate_frame" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_duh5h")
+
+[node name="polySurface37" parent="gate/gate_frame" index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_dv4e4")
+
+[node name="polySurface38" parent="gate/gate_frame" index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_286yt")
+
+[node name="polySurface39" parent="gate/gate_frame" index="8"]
+surface_material_override/0 = SubResource("StandardMaterial3D_vpv4t")
+
+[node name="polySurface40" parent="gate/gate_frame" index="9"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2run1")
+
+[node name="polySurface41" parent="gate/gate_frame" index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_q7v27")
+
+[node name="polySurface42" parent="gate/gate_frame" index="11"]
+surface_material_override/0 = SubResource("StandardMaterial3D_q860t")
+
+[node name="polySurface33" parent="gate/gate_frame/group5" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6ox24")
+
+[node name="polySurface32" parent="gate/gate_frame/group5" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_oi2j0")
+
+[node name="polySurface31" parent="gate/gate_frame/group5" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_koqpi")
+
+[node name="polySurface22" parent="gate/gate_frame/group6" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_my56c")
+
+[node name="polySurface24" parent="gate/gate_frame/group6" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_p84q6")
+
+[node name="polySurface23" parent="gate/gate_frame/group6" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_db6r0")
+
+[node name="polySurface27" parent="gate/gate_frame/group7" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_dkv3p")
+
+[node name="polySurface26" parent="gate/gate_frame/group7" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_v58cx")
+
+[node name="polySurface25" parent="gate/gate_frame/group7" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_m4jyw")
+
+[node name="polySurface20" parent="gate/gate_frame/group8/group9" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_y4hjs")
+
+[node name="polySurface14" parent="gate/gate_frame/group8/group9" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_gul6k")
+
+[node name="polySurface15" parent="gate/gate_frame/group8/group9" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_tt68c")
+
+[node name="polySurface18" parent="gate/gate_frame/group8/group9" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_w88ha")
+
+[node name="polySurface16" parent="gate/gate_frame/group8/group9" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_p02di")
+
+[node name="polySurface17" parent="gate/gate_frame/group8/group9" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_36ly6")
+
+[node name="polySurface21" parent="gate/gate_frame/group8/group9" index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_hje2s")
+
+[node name="polySurface19" parent="gate/gate_frame/group8/group9" index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6y3bf")
+
+[node name="polySurface13" parent="gate/gate_frame/group8/group9" index="8"]
+surface_material_override/0 = SubResource("StandardMaterial3D_66snv")
+
+[node name="polySurface202" parent="gate/gate_frame/group8/group10" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_dp1q5")
+
+[node name="polySurface142" parent="gate/gate_frame/group8/group10" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4nwyn")
+
+[node name="polySurface152" parent="gate/gate_frame/group8/group10" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_15fxh")
+
+[node name="polySurface182" parent="gate/gate_frame/group8/group10" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qoseh")
+
+[node name="polySurface162" parent="gate/gate_frame/group8/group10" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_au1s5")
+
+[node name="polySurface172" parent="gate/gate_frame/group8/group10" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_cwn8l")
+
+[node name="polySurface212" parent="gate/gate_frame/group8/group10" index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_of8ky")
+
+[node name="polySurface192" parent="gate/gate_frame/group8/group10" index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yfe8n")
+
+[node name="polySurface132" parent="gate/gate_frame/group8/group10" index="8"]
+surface_material_override/0 = SubResource("StandardMaterial3D_81lr8")
+
+[node name="gate_door2" parent="gate/gate_door" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_lwbfm")

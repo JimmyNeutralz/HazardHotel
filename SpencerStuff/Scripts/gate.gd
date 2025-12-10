@@ -11,6 +11,8 @@ extends Node3D
 @onready var standLoc2 = $standSpot2
 @onready var uiNode = $GateUI
 
+@onready var gateVisual = $HH_Art_GateAni_V3
+
 
 #Fusebox reference
 @export var fusebox_indicator_path : NodePath  
@@ -26,6 +28,11 @@ var player_dead = false
 var isOnLeft = false
 
 func _ready():
+	
+	#Attempt to change gate color
+	#if gateVisual:
+		#gateVisual.electrifiedGate()
+	
 	if fusebox_indicator_path != null:
 		fusebox_indicator = get_node(fusebox_indicator_path)
 	else:
