@@ -9,7 +9,14 @@ script = ExtResource("1_besiw")
 offset_right = 526.0
 offset_bottom = 648.0
 theme_override_font_sizes/normal_font_size = 60
-text = "..."
+text = "XXXXXX
+XXXXXX
+XXXXXX
+XXXXXX
+XXXXXX
+XXXXXX
+XXXXXX
+XXXXXX"
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
 offset_left = 545.0

@@ -3,32 +3,23 @@ using System;
 using System.IO.Ports;
 using System.Collections.Generic;
 
-public partial class ArduinOhNo : Node2D {
+public partial class ArduinOhNo : Node2D
+{
 	SerialPort serialPort;
 	string serialMessage;
 	string text1;
 	string text2;
-	string Powered_String;
 	
 	int[,] btns = new int[16, 12];
 	int[,] plugs = new int[8, 6];
-	public bool[,] Powered_Array = new bool[8, 6];
-	
+	bool[,] Powered_Array = new bool[8, 6];
 	
 	public override void _Ready() {
 		
 		serialPort = new SerialPort();
-		serialPort.PortName = "COM6";
-		serialPort.BaudRate = 9600;
+		serialPort.PortName = "COM3";
+		serialPort.BaudRate = 115200;
 		serialPort.Open();
-	}
-	
-	public bool[,] GetArray(){
-		return Powered_Array;
-	}
-	
-	public bool tester(){
-		return true;
 	}
 	
 	public override void _Process(double delta) {
@@ -36,21 +27,19 @@ public partial class ArduinOhNo : Node2D {
 		
 		serialMessage = serialPort.ReadLine();
 		
+		
 		btns = readSerial(serialMessage);
 		plugs = Compress2x2(btns);
 		Powered_Array = GetPoweredSlots(plugs);
 		
 		text2 = "";
-		Powered_String = "";
 		for(int i = 0; i < 8; i++) {
 			for(int j = 0; j < 6; j++) {
 				if (Powered_Array[i, j]) {
-					text2 += 'T';	
-					Powered_String += 'T';
+					text2 += '1';	
 				}
 				else {
-					text2 += 'F'; 
-					Powered_String += 'F'; 
+					text2 += '0';
 				}
 			}
 			text2 += "\n";
@@ -73,6 +62,7 @@ public partial class ArduinOhNo : Node2D {
 	}
 	
 	public int[,] Compress2x2(int[,] btns) {
+
 		int[,] result = new int[8, 6]; // 16/2 = 8, 12/2 = 6
 
 		for (int r = 0; r < 8; r++) {
@@ -83,7 +73,6 @@ public partial class ArduinOhNo : Node2D {
 				result[r, c] = btns[r0, c0] + btns[r0, c0 + 1]*2 + btns[r0 + 1, c0]*4 + btns[r0 + 1, c0 + 1]*8;
 			}
 		}
-
 		return result;
 	}
 	
@@ -91,7 +80,7 @@ public partial class ArduinOhNo : Node2D {
 	if (board.GetLength(0) != 8 || board.GetLength(1) != 6)
 		throw new ArgumentException("Input must be 8x6.");
 
-		bool[,] powered = new bool[8,6];
+	bool[,] powered = new bool[8,6];
 
 	// ================================
 	//  SECTION MAPPING

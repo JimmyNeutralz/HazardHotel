@@ -44,22 +44,22 @@ func _process(delta):
 	# if is_powered and and fuseBox.get_fuse_amount() >= 1
 	
 	#Global.check_array(3, 2) or
-	if ( Input.is_action_pressed("left")) and fuseBox.get_fuse_amount() >= 1:
+	if (Global.check_array(3, 2) or Input.is_action_pressed("left")) and fuseBox.get_fuse_amount() >= 1:
 		if(first_pass):
 			first_pass = false
 			lower_safe()
 	#!Global.check_array(3, 2) or #
-	elif (Input.is_action_just_released("left")) and fuseBox.get_fuse_amount() >= 1:
+	elif (!Global.check_array(3, 2) or Input.is_action_just_released("left")) and fuseBox.get_fuse_amount() >= 1:
 		raise_safe()
 		first_pass = true
 		
 	#Global.check_array(6, 3) or 
-	if (Input.is_action_pressed("open_safe")) and fuseBox.get_fuse_amount() >= 2 and !safe_raised:
+	if (Global.check_array(6, 3) or  Input.is_action_pressed("open_safe")) and fuseBox.get_fuse_amount() >= 2 and !safe_raised:
 		if(first_pass2):
 			first_pass2 = false
 			open_safe()
 	#!Global.check_array(6, 3) or 
-	elif (Input.is_action_just_released("open_safe")) and fuseBox.get_fuse_amount() >= 2 and is_safe_open:
+	elif (!Global.check_array(6, 3) or Input.is_action_just_released("open_safe")) and fuseBox.get_fuse_amount() >= 2 and is_safe_open:
 		close_safe()
 		is_safe_open = false
 		first_pass2 = true
