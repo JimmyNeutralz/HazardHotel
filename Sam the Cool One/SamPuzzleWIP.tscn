@@ -17,13 +17,13 @@
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="15_d64sq"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="16_o5ye0"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="17_40eat"]
-[ext_resource type="Script" uid="uid://cy8mm1h78gy4h" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="17_57sfp"]
+[ext_resource type="Script" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="17_57sfp"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="18_5gr6d"]
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="19_r4rbx"]
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="20_ak7el"]
 [ext_resource type="AudioStream" uid="uid://boghesc1nkhot" path="res://Assets/Audio/Wooden door creak 1.wav" id="22_dwer6"]
-[ext_resource type="Script" uid="uid://d3wg6c5iqxhyc" path="res://SpencerStuff/Scripts/Lock.gd" id="23_2dkt7"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="23_03sa3"]
+[ext_resource type="Script" uid="uid://ekmnn0pn0da0" path="res://SpencerStuff/Scripts/Lock.gd" id="23_2dkt7"]
+[ext_resource type="PackedScene" uid="uid://b1ijgkw1i7v5k" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="23_03sa3"]
 [ext_resource type="PackedScene" uid="uid://dqdrihkiouy1o" path="res://Assets/3D Models/HH_Art_locks_openAnim_V1.fbx" id="24_xcgsm"]
 [ext_resource type="Texture2D" uid="uid://cfo2bftv6y7qy" path="res://Donovan/DonAssets/HH_Art_NodeBlue2_V1.png" id="25_8f021"]
 [ext_resource type="Texture2D" uid="uid://5lvcfq2duxw0" path="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png" id="26_r4tqt"]
@@ -1607,21 +1607,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_idyij"]
-size = Vector3(0.16955566, 3.5111084, 2.2953491)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vher1"]
-size = Vector3(0.16568756, 2.8619385, 2.3187866)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idyij"]
-albedo_color = Color(0.9030753, 0, 0.07757329, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ffsuc"]
-material = SubResource("StandardMaterial3D_idyij")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_k700v"]
-size = Vector3(0.25447464, 2.046997, 2.3432617)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_lhv18"]
 atlas = ExtResource("25_8f021")
 region = Rect2(0, 0, 350, 350)
@@ -2782,6 +2767,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_idyij"]
+size = Vector3(0.16955566, 3.5111084, 2.2953491)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vher1"]
+size = Vector3(0.16568756, 2.8619385, 2.3187866)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idyij"]
+albedo_color = Color(0.9030753, 0, 0.07757329, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ffsuc"]
+material = SubResource("StandardMaterial3D_idyij")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k700v"]
+size = Vector3(0.25447464, 2.046997, 2.3432617)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_fqss4"]
 size = Vector3(4.226074, 2.7891846, 2.2185059)
 
@@ -2840,7 +2840,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.28559738, 1.050703
 shaded = true
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_ml83m")
-animation = &"Idle"
+animation = &"StandInteract"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.008636475, 0.0017394423, 1.0423431)
@@ -3177,7 +3177,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.16
 script = ExtResource("48_trdal")
 
 [node name="Sprite3D" type="Sprite3D" parent="Cheese"]
-transform = Transform3D(-3.3657757e-09, 0, -1, 0, 0.07699997, 0, 0.07699997, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(-5.8292366e-09, 0, -1, 0, 0.13335739, 0, 0.13335739, 0, -4.371139e-08, 0, 0, 0)
 texture = ExtResource("56_03sa3")
 
 [node name="Airvent" type="Node3D" parent="."]
@@ -3187,6 +3187,12 @@ script = ExtResource("45_7hn7x")
 [node name="AirventSprite" type="Sprite3D" parent="Airvent"]
 transform = Transform3D(-0.2029873, 0, -0.23502256, 0, 0.20023495, 0, 0.059449926, 0, -0.8024668, 0.4851848, 2.3883936, -15.586857)
 texture = ExtResource("54_s4br7")
+
+[node name="VentUI" type="AnimatedSprite3D" parent="Airvent"]
+transform = Transform3D(-0.0029189698, 0, -0.24998297, 0, 0.25, 0, 0.24998297, 0, -0.0029189698, -0.14898516, 2.2670145, -15.737586)
+sprite_frames = SubResource("SpriteFrames_o4tei")
+animation = &"Blue2"
+autoplay = "Blue2"
 
 [node name="Gate" type="Node3D" parent="."]
 script = ExtResource("51_soqoc")
@@ -3270,7 +3276,7 @@ texture = ExtResource("66_oukx6")
 [node name="ElevatorDoorUI" type="AnimatedSprite3D" parent="ElevatorDoor"]
 transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, 0.778997, 2.3518803, -0.55218506)
 sprite_frames = SubResource("SpriteFrames_o4tei")
-animation = &"Orange1"
+animation = &"Purple6"
 autoplay = "Orange1"
 
 [node name="ElevatorMarker" type="Marker3D" parent="ElevatorDoor"]
@@ -3392,6 +3398,12 @@ shape = SubResource("BoxShape3D_kq5jo")
 [node name="HH_Art_SafeAnim_V3" parent="Safe" instance=ExtResource("69_w68na")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.19656467, 0, 0.13229293)
 
+[node name="SafeUI" type="AnimatedSprite3D" parent="Safe"]
+transform = Transform3D(0.24998295, 0, -0.0029189584, 0, 0.25, 0, 0.0029189584, 0, 0.24998295, -0.5605364, 1.3371952, 0.8365631)
+sprite_frames = SubResource("SpriteFrames_o4tei")
+animation = &"Blue2"
+autoplay = "Blue2"
+
 [node name="MouseWheelDesk" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1782064, 0, 0)
 
@@ -3439,6 +3451,12 @@ shape = SubResource("BoxShape3D_57sfp")
 [node name="TrapModel" parent="Trap" instance=ExtResource("76_2bagf")]
 transform = Transform3D(-0.7, 0, 0, 0, 0.7, -6.119594e-08, 0, 6.119594e-08, 0.7, 0.24688816, -0.17, 8.369632)
 
+[node name="TrapUI" type="AnimatedSprite3D" parent="Trap"]
+transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, -0.14898586, 0.5977789, 0.24232674)
+sprite_frames = SubResource("SpriteFrames_o4tei")
+animation = &"Blue2"
+autoplay = "Blue2"
+
 [node name="Curtain" type="Node3D" parent="." node_paths=PackedStringArray("Player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.8778744)
 script = ExtResource("76_kq5jo")
@@ -3452,6 +3470,12 @@ shape = SubResource("BoxShape3D_a1sk3")
 
 [node name="HH_Art_Curtain_V2" parent="Curtain" instance=ExtResource("78_7jm3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9431105, 0.09572339, 3.3188426)
+
+[node name="CurtainUI" type="AnimatedSprite3D" parent="Curtain"]
+transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, -0.66333234, 2.458426, 3.1755793)
+sprite_frames = SubResource("SpriteFrames_o4tei")
+animation = &"Blue2"
+autoplay = "Blue2"
 
 [node name="LevelMusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("67_fdm6u")

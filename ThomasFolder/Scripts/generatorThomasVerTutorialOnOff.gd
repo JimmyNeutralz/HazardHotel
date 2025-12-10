@@ -33,7 +33,8 @@ func _ready():
 
 func _process(delta):
 	#print(can_interact)
-	if (Global.check_array(3, 2) or Input.is_action_just_pressed("activate_generator")) and not can_interact and not activated:
+#	if (Global.check_array(3, 2) or Input.is_action_just_pressed("activate_generator")) and not can_interact and not activated:
+	if 	Input.is_action_just_pressed("activate_generator") and not can_interact and not activated:
 		if can_activate():
 			activate_generator()
 		else:
