@@ -29,6 +29,8 @@ var process_started = false
 var has_run = false
 var first_fuse_collected = false
 
+var first_pass = true
+
 func _ready():
 	realLoc = originSafeLoc.global_position
 	anim_player = find_animation_player(self)
@@ -40,10 +42,14 @@ func _process(delta):
 	#Handle safe deactivation input
 	# if is_powered and and fuseBox.get_fuse_amount() >= 1
 	
-	if Input.is_action_just_pressed("lower_safe") and fuseBox.get_fuse_amount() >= 1:
-		lower_safe()
-	elif Input.is_action_just_released("lower_safe") and fuseBox.get_fuse_amount() >= 1:
-		raise_safe()
+	if Input.is_action_pressed("lower_safe") and fuseBox.get_fuse_amount() >= 1:
+		if (first_pass):
+			first_pass = false
+			lower_safe()
+	elif Input.is_action_pressed("raise_safe") and fuseBox.get_fuse_amount() >= 1:
+		if (first_pass):
+			first_pass = false
+			raise_safe()
 		
 	## Test for resource budgeting
 	#if (Global.check_array(1, 0)):
@@ -172,12 +178,14 @@ func open_safe():
 		
 		fuse2.visible = false
 		fuseBox.uiNode.visible = true;
+		first_pass = true
 		
 func close_safe():
 	if anim_player and anim_player.has_animation("Take 001"):
 		anim_player.play_backwards("Take 001")
 		print("Safe closed!")
 		is_safe_open = false
+		first_pass = true
 		
 #Recursive search for AnimationPlayer
 func find_animation_player(node: Node) -> AnimationPlayer:
