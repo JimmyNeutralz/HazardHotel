@@ -7891,7 +7891,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.012603, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.213914, 0, 0)
 
 [node name="HH_Art_GateAni_V3" parent="Gate" instance=ExtResource("40_pwu2m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91668653, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.916, 0, 0)
 
 [node name="Indicators" type="Node3D" parent="."]
 
