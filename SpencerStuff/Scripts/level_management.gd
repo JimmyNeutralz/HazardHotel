@@ -42,26 +42,26 @@ var has_right_key: bool = false
 func _ready():
 	
 	#Change color of floor
-	if Floor1LeftVisual:
-		Floor1LeftVisual.coloredFloor1()
-
-	if Floor1RightVisual:
-		Floor1RightVisual.coloredFloor1()
-
-	if Floor1MiddleVisual:
-		Floor1MiddleVisual.coloredFloor1()
-		
-	#Change color of lights
-	if LeftBulbVisual:
-		LeftBulbVisual.coloredLight()
-		
-	#Change color of generator
-	if GeneratorVisual:
-		GeneratorVisual.colored_generator()
-		
-	#Change color of elevator
-	if ElevatorVisual:
-		ElevatorVisual.coloredElevator()
+	#if Floor1LeftVisual:
+		#Floor1LeftVisual.coloredFloor1()
+#
+	#if Floor1RightVisual:
+		#Floor1RightVisual.coloredFloor1()
+#
+	#if Floor1MiddleVisual:
+		#Floor1MiddleVisual.coloredFloor1()
+		#
+	##Change color of lights
+	#if LeftBulbVisual:
+		#LeftBulbVisual.coloredLight()
+		#
+	##Change color of generator
+	#if GeneratorVisual:
+		#GeneratorVisual.colored_generator()
+		#
+	##Change color of elevator
+	#if ElevatorVisual:
+		#ElevatorVisual.coloredElevator()
 
 	
 	#Start hidden

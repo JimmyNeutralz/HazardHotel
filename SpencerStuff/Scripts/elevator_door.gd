@@ -29,12 +29,12 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Unlock Elevator Door") and powered_on and !door_open:
-		uiNode.visible = false
-		player.move_to_specific_location(elevator_marker.global_position.x)
-	#if (Global.check_array(1, 0)):
-		#uiNode.visible = true
-	#else:
-		#uiNode.visible = false
+		unlock_elevator()
+
+func unlock_elevator():
+	uiNode.visible = false
+	player.move_to_specific_location(elevator_marker.global_position.x)
+
 #Open gate
 func open_gate() -> void:
 	if anim and not door_open:

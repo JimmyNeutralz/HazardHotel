@@ -6,7 +6,7 @@ extends Node3D
 @onready var uiNode = $FuseboxUI
 @onready var player_sprite = $"../Player/PlayerSprite"
 
-@onready var text = $"../TextPopup"
+@onready var text = $"../Overlay/TextPopup"
 var dialogue_step = 0
 var fuses_collected = 0
 

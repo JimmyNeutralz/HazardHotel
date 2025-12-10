@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://das3mbmv8hge3"]
+
+[ext_resource type="PackedScene" uid="uid://co6j3t6g6wdg8" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_Curtain_V2.fbx" id="1_rw3ij"]
+[ext_resource type="Texture2D" uid="uid://dtiiscxl4k40s" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_CurtainTexture_V1.png" id="2_o73nb"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5bjg"]
+albedo_texture = ExtResource("2_o73nb")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bvw64"]
+albedo_texture = ExtResource("2_o73nb")
+
+[node name="HH_Art_Curtain_V2" instance=ExtResource("1_rw3ij")]
+
+[node name="pPlane1" parent="curtain" index="0"]
+material_override = SubResource("StandardMaterial3D_e5bjg")
+
+[node name="pCylinder1" parent="curtain" index="1"]
+material_override = SubResource("StandardMaterial3D_bvw64")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1ijgkw1i7v5k"]
+
+[ext_resource type="PackedScene" uid="uid://dsdr6fypr3n7y" path="res://Assets/3D Models/HH_Art_DoorAnim_LeftOpen_V4.fbx" id="1_j555g"]
+[ext_resource type="Texture2D" uid="uid://bwydjgqr6jpjn" path="res://Assets/3D Models/HH_Art_Lobby_DoorsTexture_V1.png" id="2_wnwtd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iossj"]
+albedo_texture = ExtResource("2_wnwtd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6lupo"]
+albedo_texture = ExtResource("2_wnwtd")
+
+[node name="HH_Art_DoorAnim_LeftOpen_V4" instance=ExtResource("1_j555g")]
+
+[node name="door_2_door" parent="doors1" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 1.17, -8.761)
+surface_material_override/0 = SubResource("StandardMaterial3D_iossj")
+
+[node name="group1_door" parent="doors2" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6lupo")

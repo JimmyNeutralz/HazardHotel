@@ -9,7 +9,7 @@ extends Node3D
 @onready var uiNode = $GeneratorUI
 
 @onready var player = $"../Player"
-@onready var text = $"../TextPopup"      
+@onready var text = $"../Overlay/TextPopup"      
 @onready var generator_marker = $"../Generator/Marker3D"     
 
 @onready var mesh_instance = $generator/GeneratorFrame_L1.get_active_material(0)
@@ -21,6 +21,8 @@ func colored_generator():
 var lamp: Node3D = null
 var activated = false
 
+var can_interact = false
+
 func _ready():
 	if lamp_node_path != null:
 		lamp = get_node(lamp_node_path)
@@ -31,14 +33,10 @@ func _process(delta):
 	if Input.is_action_just_pressed("activate_generator") and not activated:
 		if can_activate():
 			activate_generator()
-			uiNode.visible = false
-			text.change_text_image(3)
-			complete_tutorial_generator_text()
-			lamp.generator_on = true
-			elevator_door.powered_on = true
-			player.move_to_specific_location(generator_marker.global_position.x)
 		else:
 			print("Cannot activate generator yet!")
+	if Input.is_action_just_released("activate_generator") and activated:
+		deactivate_generator()
 
 func can_activate() -> bool:
 	if lamp == null:
@@ -55,6 +53,17 @@ func activate_generator():
 	activated = true
 	$GeneratorAudio.play()
 	print("Generator activated!")
+	
+	uiNode.visible = false
+	text.change_text_image(3)
+	complete_tutorial_generator_text()
+	lamp.generator_on = true
+	elevator_door.powered_on = true
+	player.move_to_specific_location(generator_marker.global_position.x)
+	
+func deactivate_generator():
+	activated = false
+	uiNode.visible = true
 
 	#change color
 	if indicator:

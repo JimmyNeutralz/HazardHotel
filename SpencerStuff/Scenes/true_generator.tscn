@@ -1,5 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://c7p2cadteahj6"]
+[gd_scene load_steps=3 format=3 uid="uid://c7p2cadteahj6"]
 
 [ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="1_owfdw"]
+[ext_resource type="PackedScene" uid="uid://dyua24e70jfwi" path="res://ThomasFolder/Objects and Textures/hh_art_generator_v_2_textured.tscn" id="2_ojj47"]
 
 [node name="HH_Art_Generator_V1_" instance=ExtResource("1_owfdw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.056450963, 0, 3.385544e-05)
+
+[node name="HH_Art_Generator_V2" parent="." index="0" instance=ExtResource("2_ojj47")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.1016674, 0, 0.37534392)
+
+[node name="generator" parent="." index="1"]
+visible = false

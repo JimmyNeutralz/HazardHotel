@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=3 uid="uid://dyua24e70jfwi"]
+
+[ext_resource type="PackedScene" uid="uid://bc4rq3ssvcrg7" path="res://ThomasFolder/Objects and Textures/HH_Art_Generator_V2.fbx" id="1_m8m2o"]
+[ext_resource type="Texture2D" uid="uid://wsvbxacfmbdo" path="res://ThomasFolder/Objects and Textures/HH_Art_GeneratorTexture_V1.png" id="2_qg8qy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fbgqu"]
+albedo_texture = ExtResource("2_qg8qy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sn42k"]
+albedo_texture = ExtResource("2_qg8qy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3h58"]
+albedo_texture = ExtResource("2_qg8qy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g060c"]
+albedo_texture = ExtResource("2_qg8qy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6m2qc"]
+albedo_texture = ExtResource("2_qg8qy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pek05"]
+albedo_texture = ExtResource("2_qg8qy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jaxcp"]
+albedo_texture = ExtResource("2_qg8qy")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3rhqj"]
+albedo_texture = ExtResource("2_qg8qy")
+
+[node name="HH_Art_Generator_V2" instance=ExtResource("1_m8m2o")]
+
+[node name="GeneratorFrame_L1" parent="generator" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fbgqu")
+
+[node name="Gen_Base" parent="generator" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_sn42k")
+
+[node name="electrics" parent="generator" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_q3h58")
+
+[node name="gas_cap" parent="generator" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_g060c")
+
+[node name="panel" parent="generator" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6m2qc")
+
+[node name="button_1" parent="generator" index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pek05")
+
+[node name="button_2" parent="generator" index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_jaxcp")
+
+[node name="switch1" parent="generator" index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_3rhqj")

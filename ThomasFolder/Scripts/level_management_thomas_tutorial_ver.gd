@@ -36,7 +36,8 @@ var has_right_key: bool = false
 
 @onready var ElevatorVisual = $HH_Art_Elevator_V1
 
-@onready var text_popup = $TextPopup
+@onready var text_popup = $Overlay/TextPopup
+@onready var lamp = $HH_Art_Lobby_Lamp_V1
 
 
 #test 
@@ -79,7 +80,8 @@ func _ready():
 	else:
 		print("WARNING: Level music node missing!")
 
-
+#func _process(delta: float) -> void:
+	
 
 #Left key trigger
 func _on_left_trigger_body_entered(body: Node3D) -> void:
@@ -193,12 +195,18 @@ func _input(event):
 func _pause_game():
 	_set_pause_menu_visible(true)
 	get_tree().paused = true
+	
+	text_popup.paused = true
+	lamp.paused = true
 	print("Game Paused")
-
 
 func _resume_game():
 	_set_pause_menu_visible(false)
 	get_tree().paused = false
+	
+	text_popup.paused = false
+	lamp.paused = false
+	text_popup.resume_typing_text()
 	print("Game Resumed")
 
 

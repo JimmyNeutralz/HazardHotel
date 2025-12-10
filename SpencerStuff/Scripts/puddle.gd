@@ -3,7 +3,7 @@ extends Node3D
 #Node paths
 @onready var area = $PuddleTrigger
 @onready var indicator = $"../Indicators/PuddleIndicator"
-@onready var puddleVisual = $HH_Art_Puddle_v1
+@onready var puddleVisual = $HH_Art_Puddle_V1
 @onready var uiNode = $PuddleUI
 
 #State
@@ -68,7 +68,6 @@ func update_indicator_color():
 	if mat == null:
 		mat = StandardMaterial3D.new()
 		indicator.set_surface_override_material(0, mat)
-
 	if puddle_active:
 		mat.albedo_color = Color.GREEN  # Activated / dangerous
 		puddleVisual.yellow_puddle()
