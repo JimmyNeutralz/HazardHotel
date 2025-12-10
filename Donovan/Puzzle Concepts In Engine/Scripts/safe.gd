@@ -29,6 +29,8 @@ var process_started = false
 var has_run = false
 var first_fuse_collected = false
 
+var first_pass = true
+
 func _ready():
 	realLoc = originSafeLoc.global_position
 	anim_player = find_animation_player(self)
@@ -40,20 +42,23 @@ func _process(delta):
 	#Handle safe deactivation input
 	# if is_powered and and fuseBox.get_fuse_amount() >= 1
 	
-	if Input.is_action_just_pressed("lower_safe") and fuseBox.get_fuse_amount() >= 1:
-		lower_safe()
-	elif Input.is_action_just_released("lower_safe") and fuseBox.get_fuse_amount() >= 1:
+	if Input.is_action_pressed("left") and fuseBox.get_fuse_amount() >= 1:
+		if (first_pass):
+			first_pass = false
+			lower_safe()
+	elif Input.is_action_just_released("left") and fuseBox.get_fuse_amount() >= 1:
 		raise_safe()
+		first_pass = true
 		
 	## Test for resource budgeting
 	#if (Global.check_array(1, 0)):
 		#uiNode1.visible = true
 	#else:
 		#uiNode1.visible = false
-		#
-	#if (fuseBox.get_fuse_amount() == 2 and !has_run):
-		#uiNode1.visible = true
-		#uiNode2.visible = true
+		
+	if (fuseBox.get_fuse_amount() == 2 and !has_run):
+		uiNode1.visible = true
+		uiNode2.visible = true
 		
 	if Input.is_action_just_pressed("fuse_two_override_collect"):
 		fuse.visible = false
@@ -63,7 +68,7 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("open_safe") and fuseBox.get_fuse_amount() >= 2 and !safe_raised:
 		open_safe()
-	elif Input.is_action_just_released("open_safe") and fuseBox.get_fuse_amount() >= 2:
+	elif Input.is_action_just_released("open_safe") and fuseBox.get_fuse_amount() >= 2 and safe_raised:
 		close_safe()
 
 func lower_safe():
@@ -101,6 +106,7 @@ func lower_safe():
 	first_fuse_collected = true
 	player.move_to_object(fuseStandSpot)
 
+
 func raise_safe():
 	process_started = true
 	var tween = create_tween()
@@ -111,6 +117,8 @@ func raise_safe():
 	safe_raised = true
 	print("Safe Raised!")
 	process_started = false
+	
+	
 	
 
 ##Indicator Helpers
@@ -172,12 +180,14 @@ func open_safe():
 		
 		fuse2.visible = false
 		fuseBox.uiNode.visible = true;
+	
 		
 func close_safe():
 	if anim_player and anim_player.has_animation("Take 001"):
 		anim_player.play_backwards("Take 001")
 		print("Safe closed!")
 		is_safe_open = false
+
 		
 #Recursive search for AnimationPlayer
 func find_animation_player(node: Node) -> AnimationPlayer:
