@@ -3236,7 +3236,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 8.0
+"speed": 5.0
 }]
 
 [node name="Node3D3" type="Node3D"]
@@ -3969,7 +3969,6 @@ script = ExtResource("96_lhv18")
 [node name="Sprite3D" type="AnimatedSprite3D" parent="Werewolf"]
 transform = Transform3D(-0.225, 0, -3.3974054e-08, 0, 0.225, 0, 3.3974054e-08, 0, -0.225, 2.3841858e-07, 0.9599999, 5.3712015)
 sprite_frames = SubResource("SpriteFrames_nor3w")
-autoplay = "default"
 
 [node name="werewolf_marker" type="Marker3D" parent="Werewolf"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0020080805, 0, 4.6132965)
