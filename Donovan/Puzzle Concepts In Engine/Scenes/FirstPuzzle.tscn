@@ -1,4 +1,4 @@
-[gd_scene load_steps=1251 format=3 uid="uid://bxhis68m30g1y"]
+[gd_scene load_steps=1252 format=3 uid="uid://bxhis68m30g1y"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_sdfg4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_fwdfo"]
@@ -29,6 +29,7 @@
 [ext_resource type="Script" uid="uid://cer86br3tg2y" path="res://Donovan/Puzzle Concepts In Engine/Scenes/dumbwaiter.gd" id="26_rebln"]
 [ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="27_xsf64"]
 [ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="28_1lnfs"]
+[ext_resource type="PackedScene" uid="uid://bsgmo7qpg8qc0" path="res://Donovan/DonAssets/trueDumbwaiter.tscn" id="28_d7ckc"]
 [ext_resource type="PackedScene" uid="uid://dyua24e70jfwi" path="res://ThomasFolder/Objects and Textures/hh_art_generator_v_2_textured.tscn" id="28_wwhnu"]
 [ext_resource type="Script" uid="uid://cqxfonrb48820" path="res://SpencerStuff/Scripts/puddle.gd" id="30_1lf7x"]
 [ext_resource type="Texture2D" uid="uid://bpp55u84q0wax" path="res://Assets/UpdatedNodes/HH_Art_NodeBlue1_V2.png" id="30_7q655"]
@@ -1229,6 +1230,8 @@ animations = [{
 "name": &"Yellow6",
 "speed": 5.0
 }]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0kak2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4gfjd"]
 atlas = ExtResource("30_7q655")
@@ -4436,8 +4439,6 @@ animations = [{
 "name": &"Yellow6",
 "speed": 5.0
 }]
-
-[sub_resource type="BoxMesh" id="BoxMesh_0kak2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_idyij"]
 size = Vector3(0.16955566, 3.5111084, 2.2953491)
@@ -8966,22 +8967,15 @@ autoplay = "Yellow6"
 [node name="HH_Art_Generator_V2" parent="Generator" instance=ExtResource("28_wwhnu")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.671372, 0, 2.0016558)
 
-[node name="Dumbwaiter" parent="." instance=ExtResource("33_6ggwo")]
+[node name="Dumbwaiter2" parent="." instance=ExtResource("33_6ggwo")]
 transform = Transform3D(-0.4999995, -6.556702e-08, 0.0014311388, -4.371139e-08, 0.75, 0, 0.0007155694, 9.383559e-11, 0.999999, 1.7526039, 1.1507851, -0.6689713)
-script = ExtResource("26_rebln")
+visible = false
 
-[node name="fuse2" type="CSGCylinder3D" parent="Dumbwaiter"]
+[node name="fuse2" type="CSGCylinder3D" parent="Dumbwaiter2"]
 transform = Transform3D(-0.0014315988, -0.999999, 1.2148303e-07, -5.8366133e-08, -1.1656367e-07, -1.3333333, -2, 0.0028627366, -9.839511e-09, 0.026943445, -0.31985044, 0.045385838)
+visible = false
 radius = 0.036621094
 height = 0.5736575
-
-[node name="DumbwaiterUI" type="AnimatedSprite3D" parent="Dumbwaiter"]
-transform = Transform3D(-0.4879993, -4.3307715e-08, -0.07532869, -2.8441505e-08, 0.33333337, -4.3902966e-09, 0.028392378, 4.409593e-09, 0.26053068, 0.0018289089, 0.74643207, 0.159203)
-sprite_frames = SubResource("SpriteFrames_00t3t")
-animation = &"Purple5"
-autoplay = "Purple5"
-
-[node name="standLoc" type="Marker3D" parent="Dumbwaiter"]
 
 [node name="Pulley" parent="." instance=ExtResource("35_jennx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0013804, 0.38578975, -0.51943254)
@@ -9495,6 +9489,22 @@ transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4
 [node name="fuse_original" parent="." instance=ExtResource("91_xjhiw")]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 7.603148, 2.7242382, 0.1768114)
 visible = false
+
+[node name="Dumbwaiter" parent="." instance=ExtResource("28_d7ckc")]
+script = ExtResource("26_rebln")
+
+[node name="fuse2" parent="Dumbwaiter" instance=ExtResource("91_xjhiw")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 1.5789193, 0.8873035, -0.82211643)
+script = ExtResource("50_yqei1")
+
+[node name="DumbwaiterUI" type="AnimatedSprite3D" parent="Dumbwaiter"]
+transform = Transform3D(0.24404003, -1.9552958e-10, 0.038037166, -1.7763568e-15, 0.25000003, -8.881784e-16, 0.028043153, 4.4098774e-09, 0.2604765, 1.7518755, 1.8442962, -0.5097672)
+sprite_frames = SubResource("SpriteFrames_00t3t")
+animation = &"Purple5"
+autoplay = "Purple5"
+
+[node name="standLoc" type="Marker3D" parent="Dumbwaiter"]
+transform = Transform3D(-0.4999995, -6.556702e-08, 0.0014311388, -4.371139e-08, 0.75, 0, 0.0007155694, 9.383559e-11, 0.999999, 1.7526039, 1.1507851, -0.6689713)
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]
