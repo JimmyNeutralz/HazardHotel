@@ -10,7 +10,6 @@ extends Node3D
 @onready var player = $"../Player"
 @onready var fuseStandSpot = $"../HH_Art_Shelf_V1/FuseStandSpot"
 @onready var fuseBox = $"../FuseBox"
-@onready var dinograbber = $DinoGrabber
 @onready var fuse2 = $"../HH_Art_Fuse3_V1"
 @onready var playerSprite = $"../Player/PlayerSprite"
 @onready var fuseSafeSpot = $"../FuseSafeLoc"
@@ -60,16 +59,17 @@ func _process(delta):
 		uiNode1.visible = true
 		uiNode2.visible = true
 		
-	if Input.is_action_just_pressed("fuse_two_override_collect"):
-		fuse.visible = false
-		player.standing_interact_start
-		await playerSprite.animation_finished
-		player.collect_fuse()
+	#if Input.is_action_just_pressed("fuse_two_override_collect"):
+		#fuse.visible = false
+		#player.standing_interact_start
+		#await playerSprite.animation_finished
+		#player.collect_fuse()
 		
 	if Input.is_action_just_pressed("open_safe") and fuseBox.get_fuse_amount() >= 2 and !safe_raised:
 		open_safe()
-	elif Input.is_action_just_released("open_safe") and fuseBox.get_fuse_amount() >= 2 and safe_raised:
+	elif Input.is_action_just_released("open_safe") and fuseBox.get_fuse_amount() >= 2 and is_safe_open:
 		close_safe()
+		is_safe_open = false
 
 func lower_safe():
 	process_started = true
@@ -84,9 +84,10 @@ func lower_safe():
 		await tween2.finished
 		tween2.kill()
 		first_time = false
-		
-	await tween.finished
-	tween.kill()
+	else:
+		await tween.finished
+		tween.kill()
+	
 	print("Safe Lowered!")
 	safe_raised = false
 	await get_tree().create_timer(1.5).timeout

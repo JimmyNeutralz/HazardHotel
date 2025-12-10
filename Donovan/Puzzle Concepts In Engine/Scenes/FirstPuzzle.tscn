@@ -86,7 +86,6 @@
 [ext_resource type="PackedScene" uid="uid://r70numkvwsa7" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Shelf.tscn" id="50_jennx"]
 [ext_resource type="PackedScene" uid="uid://bvtx553hn8ouc" path="res://SpencerStuff/Scenes/true_middle_scenev3.tscn" id="50_qeqm8"]
 [ext_resource type="Texture2D" uid="uid://bra3n723u6d3n" path="res://Assets/UpdatedNodes/HH_Art_NodeOrange4_V2.png" id="50_rvfsx"]
-[ext_resource type="Texture2D" uid="uid://72bl5rodk7u4" path="res://Donovan/DonAssets/dinograbber.png" id="50_wo6si"]
 [ext_resource type="Script" uid="uid://vihp4thtac55" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="50_yqei1"]
 [ext_resource type="PackedScene" uid="uid://bglppt0huxa04" path="res://SpencerStuff/Scenes/true_right_scenev3.tscn" id="51_00t3t"]
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="51_a4kpc"]
@@ -124,6 +123,7 @@
 [ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="88_jym03"]
 [ext_resource type="PackedScene" uid="uid://bfbcjkeoychis" path="res://Donovan/DonAssets/hh_art_fuse_3_v_1.tscn" id="91_xjhiw"]
 [ext_resource type="PackedScene" path="res://hh_art_shelf_v_1_textured_first_floor.tscn" id="91_ygbmw"]
+[ext_resource type="PackedScene" uid="uid://ckl1tljyyyr1" path="res://Donovan/DonAssets/updatedSafe.tscn" id="92_d7ckc"]
 [ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="98_13nw6"]
 [ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_right_doorV2.tscn" id="102_1r2ig"]
 [ext_resource type="PackedScene" uid="uid://c7iktl4snp6u3" path="res://ThomasFolder/Objects and Textures/hh_art_puddle_v_2.tscn" id="120_ygbmw"]
@@ -9215,36 +9215,37 @@ visible = false
 [node name="FuseStandSpot" type="Marker3D" parent="HH_Art_Shelf_V1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2088175, 0, -12.0396185)
 
-[node name="Safe" parent="." instance=ExtResource("51_oboe2")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.9842863, 1.3409098, 0.133)
+[node name="Safe" parent="." instance=ExtResource("92_d7ckc")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.984, 1.341, 0.133)
 script = ExtResource("35_oboe2")
 
 [node name="UpperSafe" type="Marker3D" parent="Safe"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2812498, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2813399, -0.0002861023)
 
 [node name="SafeOrigin" type="Marker3D" parent="Safe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.012222e-05, -0.0002861023)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Safe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.012222e-05, -0.0002861023)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Safe/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7454128, 0)
 shape = SubResource("BoxShape3D_wq4hk")
 
 [node name="SafePowered" type="AnimatedSprite3D" parent="Safe"]
-transform = Transform3D(0.0029189477, 0, 0.24998294, 0, 0.25, 0, -0.24998294, 0, 0.0029189477, 0.6704767, 1.305743, -0.29933643)
+transform = Transform3D(0.0029189477, 0, 0.24998294, 0, 0.25, 0, -0.24998294, 0, 0.0029189477, 0.6704767, 1.3056527, -0.29962254)
 sprite_frames = SubResource("SpriteFrames_wo6si")
 animation = &"Orange1"
 autoplay = "Orange1"
 
 [node name="SafeOpen" type="AnimatedSprite3D" parent="Safe"]
-transform = Transform3D(0.0029189477, 0, 0.24998294, 0, 0.25, 0, -0.24998294, 0, 0.0029189477, 0.56469774, 0.7474394, 0.3061018)
+transform = Transform3D(0.0029189477, 0, 0.24998294, 0, 0.25, 0, -0.24998294, 0, 0.0029189477, 0.56469774, 0.7473494, 0.3058157)
 sprite_frames = SubResource("SpriteFrames_wo6si")
 animation = &"Purple6"
 autoplay = "Purple6"
 
-[node name="DinoGrabber" type="Sprite3D" parent="Safe"]
-transform = Transform3D(-6.2435346e-09, -2.002176e-09, 0.15, -0.04580444, 0.14283541, 8.6436245e-17, -0.14283541, -0.04580444, -6.5567085e-09, 0, 0.72858465, -0.007665634)
-texture = ExtResource("50_wo6si")
+[node name="Safe2" parent="." instance=ExtResource("51_oboe2")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11.293846, 1.3409098, 2.2307594)
 
 [node name="Lever" parent="." instance=ExtResource("54_xg816")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.170124, 1.1286857, -0.76279306)
