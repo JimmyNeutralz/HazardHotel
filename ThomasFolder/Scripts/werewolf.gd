@@ -2,7 +2,7 @@ extends Node3D
 
 @onready var werewolf_marker = $"../Werewolf/werewolf_marker"
 @onready var player = $"../Player"
-@onready var text_popup = $"../TextPopup"
+@onready var text_popup = $"../Overlay/TextPopup"
 
 var talked_with = false
 
