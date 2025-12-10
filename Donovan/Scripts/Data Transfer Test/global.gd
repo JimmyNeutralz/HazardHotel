@@ -48,4 +48,5 @@ func _process(delta: float) -> void:
 
 # Function to check if a given node is powered in the S.P.A.R.K Box array
 func check_array(row: int, column: int):
-	return Arduino_Master_Script.tester
+	return Arduino_Master_Script.Powered_Array[row][column]
+	
