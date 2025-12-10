@@ -2315,15 +2315,25 @@ position = Vector2(99, -52.255)
 scale = Vector2(0.6282051, 0.6282051)
 texture = ExtResource("80_2bagf")
 
+[node name="HhArtOverlayV3" type="Sprite2D" parent="."]
+visible = false
+z_index = 3
+position = Vector2(575.00006, 318)
+scale = Vector2(0.6156249, 0.59074074)
+texture = ExtResource("84_w68na")
+
 [node name="Overlay" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="HhArtOverlayV1" type="Sprite2D" parent="Overlay"]
+visible = false
 z_index = 3
 position = Vector2(576.00006, 325.50006)
 scale = Vector2(0.6020833, 0.60277784)
 texture = ExtResource("79_iypui")
 
 [node name="HhArtOverlayV2" type="Sprite2D" parent="Overlay"]
+visible = false
 z_index = 3
 position = Vector2(576.00006, 325.50006)
 scale = Vector2(0.6020833, 0.60277784)
@@ -2362,12 +2372,6 @@ texture = ExtResource("82_1xk6g")
 position = Vector2(644, 213.99998)
 scale = Vector2(0.7953704, 0.7953704)
 texture = ExtResource("83_s4br7")
-
-[node name="HhArtOverlayV3" type="Sprite2D" parent="Overlay"]
-z_index = 3
-position = Vector2(575.00006, 318)
-scale = Vector2(0.6156249, 0.59074074)
-texture = ExtResource("84_w68na")
 
 [node name="Elevator Sign" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.112, 1.68)
