@@ -58,7 +58,7 @@ func unlock_door():
 	player.standing_player_interact()
 	#Then play door
 	if door_anim and door_anim.has_animation("Take 001"):
-		door_anim.play("Take 001")
+		door_anim.play_section("Take 001", 2.5, 5)
 
 	print(name + " unlocked!")
 	$Door/LeftDoorAudio.play()
@@ -69,8 +69,8 @@ func unlock_door():
 		blocker.global_position.x = -1.5
 	else:
 		blocker.global_position.x = 0
-	door_anim.play_backwards("Take 001")
-	await get_tree().create_timer(door_anim.current_animation_length).timeout
+	door_anim.play_section_backwards("Take 001", 2.5, 5)
+	await get_tree().create_timer(2.5).timeout
 	await lock_script.play_backwards_lock_animation()
 	locked = true
 

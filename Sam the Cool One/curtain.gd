@@ -3,8 +3,6 @@ extends Node3D
 var state
 var playdirection = "forward"
 @export var Player:Node
-@onready var Up = $Up
-@onready var Down = $Down
 @onready var curtain = $HH_Art_Curtain_V2
 @onready var animator:AnimationPlayer = $HH_Art_Curtain_V2/AnimationPlayer
 signal gotocurtain

@@ -4,6 +4,7 @@ extends Node3D
 @onready var Vase = $Vase
 @onready var VaseTexture = $Vase/CollisionShape3D/MeshInstance3D
 @onready var ShatterArea = $ShatteringArea
+@onready var Shards = $VaseShards
 var state
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,7 +26,10 @@ func _process(delta: float) -> void:
 		Vase.gravity_scale = 0
 	if(state == "shattered"):
 		Vase.linear_velocity = Vector3.ZERO
-		VaseTexture.mesh.bottom_radius = 0.3
+		Vase.angular_velocity = Vector3.ZERO
+		Shards.global_position = ShatterArea.global_position
+		Vase.visible = false
+		Shards.visible = true
 	
 	
 func _VentOn():

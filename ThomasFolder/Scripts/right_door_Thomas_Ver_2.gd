@@ -74,7 +74,8 @@ func unlock_door():
 	else:
 		blocker.global_position.x = 0
 	door_anim.play_backwards("Take 001")
-	await get_tree().create_timer(door_anim.current_animation_length).timeout
+	
+	await get_tree().create_timer(2.5).timeout
 	await lock_script.play_backwards_lock_animation()
 	locked = true
 
