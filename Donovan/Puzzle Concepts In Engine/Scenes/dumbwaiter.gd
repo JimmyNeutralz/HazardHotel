@@ -18,7 +18,8 @@ func _process(delta):
 	#Handle safe deactivation input
 	#Global.check_array(5, 3) or 
 	
-	if (Global.check_array(5, 3) or Input.is_action_pressed("fix_dumbwaiter")) and isActivated == false:
+#	if (Global.check_array(5, 3) or Input.is_action_pressed("fix_dumbwaiter")) and isActivated == false:
+	if Input.is_action_pressed("fix_dumbwaiter") and isActivated == false:	
 		isActivated = true
 		player.move_to_object(standLoc)
 		uiNode.visible = false
