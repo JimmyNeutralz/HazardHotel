@@ -23,6 +23,8 @@ var activated = false
 
 var can_interact = false
 
+var failed_interact = false
+
 func _ready():
 	if lamp_node_path != null:
 		lamp = get_node(lamp_node_path)
@@ -38,17 +40,21 @@ func _process(delta):
 			print("Cannot activate generator yet!")
 	if Input.is_action_just_released("activate_generator") and can_interact:
 		deactivate_generator()
+	if !activated:
+		if (((player.global_position.x < (generator_marker.global_position.x + 0.25)) and (player.global_position.x >= (generator_marker.global_position.x - 0.25))) and can_interact):
+			print("Generator activated!")
+			$GeneratorAudio.play()
+			activated = true
 		
-	if (((player.global_position.x < (generator_marker.global_position.x + 0.25)) and (player.global_position.x >= (generator_marker.global_position.x - 0.25))) and can_interact and !activated):
-		print("Generator activated!")
-		$GeneratorAudio.play()
-		activated = true
-	
-		uiNode.visible = false
-		text.change_text_image(3)
-		complete_tutorial_generator_text()
-		lamp.generator_on = true
-		elevator_door.powered_on = true
+			uiNode.visible = false
+			text.change_text_image(3)
+			complete_tutorial_generator_text()
+			lamp.generator_on = true
+			elevator_door.powered_on = true
+		elif (((player.global_position.x < (generator_marker.global_position.x + 0.25)) and (player.global_position.x >= (generator_marker.global_position.x - 0.25))) and !can_interact):
+			lamp.generator_on = true
+			text.change_text_image(3)
+			incomplete_tutorial_generator_text()
 
 		#change color
 		if indicator:
@@ -74,6 +80,11 @@ func activate_generator():
 
 func deactivate_generator():
 	can_interact = false
+
+func incomplete_tutorial_generator_text():
+	if !failed_interact:
+		text.set_text("You will also need to keep the connection you used plugged in until your co-worker is done activating the generator.", 6)
+		failed_interact = true
 
 func complete_tutorial_generator_text():
 	var path := get_tree().current_scene.scene_file_path
