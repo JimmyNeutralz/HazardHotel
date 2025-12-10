@@ -47,6 +47,6 @@ func _process(delta: float) -> void:
 #func
 
 # Function to check if a given node is powered in the S.P.A.R.K Box array
-func check_array(row: int, column: int):
-	return spark_box_array[row][column]
+#func check_array(row: int, column: int):
+	#return spark_box_array[row][column]
 	
