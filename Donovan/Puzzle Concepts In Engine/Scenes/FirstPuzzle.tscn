@@ -11,9 +11,9 @@
 [ext_resource type="AudioStream" uid="uid://c2aek62urxvgj" path="res://Assets/Audio/Heavy Footsteps 4.wav" id="9_4o3qr"]
 [ext_resource type="AudioStream" uid="uid://00yxdkue0xhd" path="res://Assets/Audio/Heavy Footsteps 5.wav" id="10_b8gbm"]
 [ext_resource type="AudioStream" uid="uid://16paor1ni7n6" path="res://Assets/Audio/Heavy Footsteps 6.wav" id="11_db7nr"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_elevator.tscn" id="11_pwu2m"]
+[ext_resource type="PackedScene" uid="uid://hcmcgdk5of8u" path="res://SpencerStuff/Scenes/true_elevator.tscn" id="11_pwu2m"]
 [ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="12_3ndj3"]
-[ext_resource type="Script" path="res://SpencerStuff/Scripts/true_elevator.gd" id="12_o507h"]
+[ext_resource type="Script" uid="uid://ocllpcynxxvx" path="res://SpencerStuff/Scripts/true_elevator.gd" id="12_o507h"]
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="13_fwueu"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="14_ql2xa"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="15_b8u1l"]
@@ -7814,6 +7814,7 @@ animation = &"Purple5"
 autoplay = "Purple5"
 
 [node name="standLoc" type="Marker3D" parent="Dumbwaiter"]
+transform = Transform3D(1, -1.4228527e-15, 1.1641532e-09, 2.1308638e-15, 1, -6.938894e-17, -2.910383e-10, -6.938894e-17, 1, 1.5665677, -1.5966012, -0.0011209846)
 
 [node name="Pulley" parent="." instance=ExtResource("35_jennx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0013804, 0.38578975, -0.51943254)
@@ -7840,7 +7841,7 @@ animation = &"Yellow5"
 autoplay = "Yellow5"
 
 [node name="standSpot" type="Marker3D" parent="FuseBox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.398657, 0.049557865, 0.59105086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.498981, 0.049557865, 1.6623361)
 
 [node name="Gate" type="Node3D" parent="."]
 script = ExtResource("36_qa6id")
@@ -7880,10 +7881,10 @@ animation = &"Green3"
 autoplay = "Green3"
 
 [node name="standSpot" type="Marker3D" parent="Gate"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.012603, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.729447, 0, 0)
 
 [node name="standSpot2" type="Marker3D" parent="Gate"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.213914, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0595407, 0, 0)
 
 [node name="HH_Art_GateAni_V3" parent="Gate" instance=ExtResource("40_pwu2m")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91668653, 0, 0)
@@ -8038,7 +8039,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7880096, 2.6062684, 2)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15805054, 0, 11.9879265)
 
 [node name="FuseStandSpot" type="Marker3D" parent="HH_Art_Shelf_V1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2088175, 0, -12.0396185)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.435308, 0, -12.0396185)
 
 [node name="Safe" parent="." instance=ExtResource("51_oboe2")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.9842863, 1.3409098, 0.133)
@@ -8055,14 +8056,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2812498, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7454128, 0)
 shape = SubResource("BoxShape3D_wq4hk")
 
-[node name="SafePowered" type="AnimatedSprite3D" parent="Safe"]
-transform = Transform3D(0.0029189477, 0, 0.24998294, 0, 0.25, 0, -0.24998294, 0, 0.0029189477, 0.6704767, 1.305743, -0.29933643)
+[node name="SafePowered2" type="AnimatedSprite3D" parent="Safe"]
+transform = Transform3D(0.0029189477, 0, 0.24998294, 0, 0.25, 0, -0.24998294, 0, 0.0029189477, 0.6704767, 2.7907286, -0.29933643)
+visible = false
 sprite_frames = SubResource("SpriteFrames_wo6si")
 animation = &"Orange1"
 autoplay = "Orange1"
 
-[node name="SafeOpen" type="AnimatedSprite3D" parent="Safe"]
-transform = Transform3D(0.0029189477, 0, 0.24998294, 0, 0.25, 0, -0.24998294, 0, 0.0029189477, 0.56469774, 0.7474394, 0.3061018)
+[node name="SafeOpen1" type="AnimatedSprite3D" parent="Safe"]
+transform = Transform3D(0.0029189477, 0, 0.24998294, 0, 0.25, 0, -0.24998294, 0, 0.0029189477, 0.56469774, 1.8694445, 0.3061018)
+visible = false
 sprite_frames = SubResource("SpriteFrames_wo6si")
 animation = &"Purple6"
 autoplay = "Purple6"
@@ -8071,17 +8074,29 @@ autoplay = "Purple6"
 transform = Transform3D(-6.2435346e-09, -2.002176e-09, 0.15, -0.04580444, 0.14283541, 8.6436245e-17, -0.14283541, -0.04580444, -6.5567085e-09, 0, 0.72858465, -0.007665634)
 texture = ExtResource("50_wo6si")
 
+[node name="SafeOpen" type="AnimatedSprite3D" parent="Safe"]
+transform = Transform3D(-0.0018239205, 0, 0.24999332, 0, 0.25, 0, -0.24999332, 0, -0.0018239205, 0.71293104, 0.5369724, 0.2823596)
+sprite_frames = SubResource("SpriteFrames_00t3t")
+animation = &"Purple6"
+autoplay = "Purple6"
+
+[node name="SafePowered" type="AnimatedSprite3D" parent="Safe"]
+transform = Transform3D(-0.0018239205, 0, 0.24999332, 0, 0.25, 0, -0.24999332, 0, -0.0018239205, 0.6759087, 1.1385437, -0.32460308)
+sprite_frames = SubResource("SpriteFrames_00t3t")
+animation = &"Orange1"
+autoplay = "Orange1"
+
 [node name="Lever" parent="." instance=ExtResource("54_xg816")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.170124, 1.1286857, -0.76279306)
 script = ExtResource("51_jnpos")
 
+[node name="standLoc" type="Marker3D" parent="Lever"]
+
 [node name="LeverUI" type="AnimatedSprite3D" parent="Lever"]
-transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, 0.31603527, 0.31691408, -0.033757687)
-sprite_frames = SubResource("SpriteFrames_wo6si")
+transform = Transform3D(0.24967293, 0, 0.012783386, 0, 0.25, 0, -0.012783386, 0, 0.24967293, 0.33414316, 0.26172054, 0.18696558)
+sprite_frames = SubResource("SpriteFrames_00t3t")
 animation = &"Green3"
 autoplay = "Green3"
-
-[node name="standLoc" type="Marker3D" parent="Lever"]
 
 [node name="LeftDoor" type="Node3D" parent="."]
 script = ExtResource("51_a4kpc")
@@ -8173,7 +8188,7 @@ autoplay = "Cyan2"
 [node name="RightDoorUI2" type="AnimatedSprite3D" parent="RightDoor"]
 transform = Transform3D(0.24994512, 0, -0.0052399086, 0, 0.25, 0, 0.0052399086, 0, 0.24994512, 3.9925213, 2.1368105, 0.44276094)
 sprite_frames = SubResource("SpriteFrames_00t3t")
-animation = &"Cyan2"
+animation = &"Yellow6"
 autoplay = "Cyan2"
 
 [node name="Player" type="CharacterBody3D" parent="."]
@@ -8240,7 +8255,7 @@ animation = &"Yellow5"
 autoplay = "Yellow5"
 
 [node name="Fuse3Landing" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0208054, 0, -0.34587646)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2967687, 0, -0.34587646)
 
 [node name="TextPopup" type="Node2D" parent="."]
 script = ExtResource("75_jnpos")
@@ -8298,7 +8313,7 @@ offset_bottom = 614.0
 mouse_filter = 2
 
 [node name="HH_Art_Fuse3_V1" parent="." instance=ExtResource("91_xjhiw")]
-transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 5.0599027, 2.1945415, -0.15465361)
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 4.900819, 2.1945415, -0.15465361)
 script = ExtResource("50_yqei1")
 
 [node name="fuse" parent="." instance=ExtResource("91_xjhiw")]

@@ -17,5 +17,6 @@ public partial class testButton : Node
 		if (@event.IsActionPressed("left")){
 			IsPressed = "Not Pressed!";
 		}
+		
 	}
 }

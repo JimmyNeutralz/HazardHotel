@@ -50,10 +50,10 @@ func _process(delta):
 		#uiNode1.visible = true
 	#else:
 		#uiNode1.visible = false
-		#
-	#if (fuseBox.get_fuse_amount() == 2 and !has_run):
-		#uiNode1.visible = true
-		#uiNode2.visible = true
+		
+	if (fuseBox.get_fuse_amount() == 2 and !has_run):
+		uiNode1.visible = true
+		uiNode2.visible = true
 		
 	if Input.is_action_just_pressed("fuse_two_override_collect"):
 		fuse.visible = false
