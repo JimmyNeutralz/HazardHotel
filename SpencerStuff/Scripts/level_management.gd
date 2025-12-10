@@ -36,11 +36,15 @@ var has_right_key: bool = false
 
 @onready var ElevatorVisual = $Elevator/HH_Art_Elevator_V1
 
+@onready var ElevatorGateVisual = $ElevatorDoor/HH_Art_ElevatorGate_V1
+
 
 #test 
 
 func _ready():
 	
+	if ElevatorGateVisual:
+		ElevatorGateVisual.coloredElevatorGate()
 	#Change color of floor
 	#if Floor1LeftVisual:
 		#Floor1LeftVisual.coloredFloor1()
