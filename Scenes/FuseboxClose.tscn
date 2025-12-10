@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dllmxns1qx246"]
+
+[ext_resource type="PackedScene" uid="uid://bh55p0qb7mbwq" path="res://Assets/3D Models/HH_Art_FuseBoxAni_V1.fbx" id="1_jqm7y"]
+
+[node name="HH_Art_FuseBoxAni_V1" instance=ExtResource("1_jqm7y")]
+
+[node name="pCube10" parent="group1/fusebox" index="8"]
+transform = Transform3D(0.015949281, 0, 1.4441626e-11, 0, 0.85623336, 0, -3.8451157e-13, 0, 0.5990289, -0.081998445, 1.0806175, 9.403046)

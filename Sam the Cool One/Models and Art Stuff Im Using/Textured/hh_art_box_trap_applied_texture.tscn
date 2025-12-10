@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://3eq2ds124c7b"]
+
+[ext_resource type="PackedScene" uid="uid://nqme2sacpu7p" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_BoxTrap_V2.fbx" id="1_1tbqe"]
+[ext_resource type="Texture2D" uid="uid://cke2x22jse18h" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_BoxTrapTexture_V1.png" id="2_rbj1m"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_su05o"]
+albedo_texture = ExtResource("2_rbj1m")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eed4d"]
+albedo_texture = ExtResource("2_rbj1m")
+
+[node name="HH_Art_BoxTrap_V2" instance=ExtResource("1_1tbqe")]
+
+[node name="pCylinder3" parent="trap" index="0"]
+material_override = SubResource("StandardMaterial3D_su05o")
+
+[node name="pCube2" parent="trap" index="1"]
+material_override = SubResource("StandardMaterial3D_eed4d")

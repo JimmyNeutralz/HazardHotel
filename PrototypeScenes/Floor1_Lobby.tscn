@@ -16,9 +16,10 @@
 [node name="Floor" parent="." instance=ExtResource("1_ynetk")]
 position = Vector2(579, 634)
 
-[node name="Orange" parent="." instance=ExtResource("2_ynetk")]
+[node name="Orange" parent="." node_paths=PackedStringArray("Player") instance=ExtResource("2_ynetk")]
 z_index = 1
 position = Vector2(1037, 501)
+Player = NodePath("../TestPlayer")
 
 [node name="DeathPuddle" parent="Orange" instance=ExtResource("3_ro3cy")]
 position = Vector2(-4, 119)

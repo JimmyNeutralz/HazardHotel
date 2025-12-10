@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0b6414twj21r"]
+
+[ext_resource type="PackedScene" uid="uid://bojy7at4teudg" path="res://Assets/3D Models/HH_Art_PinchModularRight_V2.fbx" id="1_ge5au"]
+
+[node name="HH_Art_PinchModularRight_V2" instance=ExtResource("1_ge5au")]

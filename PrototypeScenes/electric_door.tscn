@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://kr3hi7mq6sc1"]
+
+[ext_resource type="Script" uid="uid://d3nx30djofp4g" path="res://Scripts/electric_door.gd" id="1_3uywc"]
+[ext_resource type="Texture2D" uid="uid://c1gkj21x0f5ya" path="res://Assets/ElectricDoor.png" id="1_170yp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ma8be"]
+
+[node name="ElectricDoor" type="Area2D"]
+script = ExtResource("1_3uywc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_170yp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.32, 21.37)
+shape = SubResource("RectangleShape2D_ma8be")
