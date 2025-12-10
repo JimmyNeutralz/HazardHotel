@@ -71,7 +71,6 @@
 [ext_resource type="Texture2D" uid="uid://ba0i3nd2aps77" path="res://Assets/UpdatedNodes/HH_Art_NodeGreen5_V2.png" id="45_gtqp3"]
 [ext_resource type="Texture2D" uid="uid://bkl556xt6evy6" path="res://Donovan/DonAssets/HH_Art_NodeOrange1_V1.png" id="45_svxs6"]
 [ext_resource type="AudioStream" uid="uid://y8gssppvdj36" path="res://Assets/Audio/elevator door opening.wav" id="46_et8ij"]
-[ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="46_kp58o"]
 [ext_resource type="Texture2D" uid="uid://b1wmqw5j1s6xl" path="res://Donovan/DonAssets/HH_Art_NodeOrange4_V1.png" id="46_rebln"]
 [ext_resource type="Texture2D" uid="uid://h16eby4ynob5" path="res://Assets/UpdatedNodes/HH_Art_NodeGreen6_V2.png" id="46_tir3a"]
 [ext_resource type="Texture2D" uid="uid://di6c20vegoqi" path="res://Assets/UpdatedNodes/HH_Art_NodeOrange1_V2.png" id="47_fpbva"]
@@ -87,7 +86,7 @@
 [ext_resource type="PackedScene" uid="uid://bvtx553hn8ouc" path="res://SpencerStuff/Scenes/true_middle_scenev3.tscn" id="50_qeqm8"]
 [ext_resource type="Texture2D" uid="uid://bra3n723u6d3n" path="res://Assets/UpdatedNodes/HH_Art_NodeOrange4_V2.png" id="50_rvfsx"]
 [ext_resource type="Texture2D" uid="uid://72bl5rodk7u4" path="res://Donovan/DonAssets/dinograbber.png" id="50_wo6si"]
-[ext_resource type="Script" uid="uid://vihp4thtac55" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="50_yqei1"]
+[ext_resource type="Script" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="50_yqei1"]
 [ext_resource type="PackedScene" uid="uid://bglppt0huxa04" path="res://SpencerStuff/Scenes/true_right_scenev3.tscn" id="51_00t3t"]
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="51_a4kpc"]
 [ext_resource type="Texture2D" uid="uid://dhndjrnissj6d" path="res://Assets/HH_Art_NewGuyElectrocutionAnimSpriteSheet_V1.png" id="51_dx7fg"]
@@ -122,15 +121,16 @@
 [ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="87_5urh0"]
 [ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="87_lqt4v"]
 [ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="88_jym03"]
-[ext_resource type="PackedScene" uid="uid://bfbcjkeoychis" path="res://Donovan/DonAssets/hh_art_fuse_3_v_1.tscn" id="91_xjhiw"]
-[ext_resource type="PackedScene" uid="uid://dwys3y0hehafv" path="res://hh_art_shelf_v_1_textured_first_floor.tscn" id="91_ygbmw"]
-[ext_resource type="PackedScene" uid="uid://b1ijgkw1i7v5k" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="98_13nw6"]
+[ext_resource type="Texture2D" uid="uid://pt2qlry4rtgy" path="res://Assets/pausemenubackground.png" id="88_ygbmw"]
+[ext_resource type="PackedScene" path="res://Donovan/DonAssets/hh_art_fuse_3_v_1.tscn" id="91_xjhiw"]
+[ext_resource type="PackedScene" path="res://hh_art_shelf_v_1_textured_first_floor.tscn" id="91_ygbmw"]
+[ext_resource type="PackedScene" uid="uid://c481kh6rlqyuh" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="98_13nw6"]
 [ext_resource type="PackedScene" uid="uid://dax3x8kiqqa04" path="res://SpencerStuff/Scenes/true_right_doorV2.tscn" id="102_1r2ig"]
-[ext_resource type="PackedScene" uid="uid://c7iktl4snp6u3" path="res://ThomasFolder/Objects and Textures/hh_art_puddle_v_2.tscn" id="120_ygbmw"]
+[ext_resource type="PackedScene" path="res://ThomasFolder/Objects and Textures/hh_art_puddle_v_2.tscn" id="120_ygbmw"]
 [ext_resource type="Texture2D" uid="uid://b2vui8awwerj3" path="res://ThomasFolder/Sprites/New Guy Character Image Back.png" id="125_cfexi"]
 [ext_resource type="Texture2D" uid="uid://b2smx76edwggf" path="res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png" id="126_wwhnu"]
 [ext_resource type="Texture2D" uid="uid://bs6byut2b4npg" path="res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png" id="127_ygbmw"]
-[ext_resource type="PackedScene" uid="uid://cfgk5jdncivak" path="res://hh_art_fuse_1_v_1.tscn" id="132_d7ckc"]
+[ext_resource type="PackedScene" path="res://hh_art_fuse_1_v_1.tscn" id="132_d7ckc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -9172,9 +9172,9 @@ process_mode = 3
 
 [node name="PauseBackground" type="Sprite2D" parent="PauseMenu"]
 process_mode = 3
-position = Vector2(587, 320)
-scale = Vector2(0.35, 0.2708934)
-texture = ExtResource("46_kp58o")
+position = Vector2(588.5, 321.62784)
+scale = Vector2(0.88043463, 0.6814397)
+texture = ExtResource("88_ygbmw")
 
 [node name="ResumeButton" type="Button" parent="PauseMenu"]
 process_mode = 3
