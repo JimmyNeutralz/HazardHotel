@@ -18,7 +18,7 @@ public partial class ArduinOhNo : Node2D
 		
 		serialPort = new SerialPort();
 		serialPort.PortName = "COM3";
-		serialPort.BaudRate = 9600;
+		serialPort.BaudRate = 115200;
 		serialPort.Open();
 	}
 	
@@ -26,11 +26,13 @@ public partial class ArduinOhNo : Node2D
 		if(!serialPort.IsOpen) {return;}
 		
 		serialMessage = serialPort.ReadLine();
-		text1 = serialMessage;
-		text2 = "";
+		
+		
 		btns = readSerial(serialMessage);
 		plugs = Compress2x2(btns);
 		Powered_Array = GetPoweredSlots(plugs);
+		
+		text2 = "";
 		for(int i = 0; i < 8; i++) {
 			for(int j = 0; j < 6; j++) {
 				if (Powered_Array[i, j]) {
@@ -42,7 +44,10 @@ public partial class ArduinOhNo : Node2D
 			}
 			text2 += "\n";
 		}
-		
+	}
+	
+	public bool getPower(int row, int col) {
+		return(Powered_Array[row, col]);
 	}
 	
 	public int[,] readSerial(string message) {
@@ -68,8 +73,7 @@ public partial class ArduinOhNo : Node2D
 				result[r, c] = btns[r0, c0] + btns[r0, c0 + 1]*2 + btns[r0 + 1, c0]*4 + btns[r0 + 1, c0 + 1]*8;
 			}
 		}
-
-	return result;
+		return result;
 	}
 	
 	public bool[,] GetPoweredSlots(int[,] board) {
