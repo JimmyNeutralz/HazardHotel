@@ -10,6 +10,8 @@ extends Node3D
 var dialogue_step = 0
 var fuses_collected = 0
 
+@onready var electricSymbol = $"../Gate/Electric"
+
 #Path to puddle node
 @export var puddle_node_path : NodePath
 var puddle : Node = null
@@ -111,6 +113,7 @@ func activate():
 		elif dialogue_step == 2:
 			text.change_text_image(1)
 			text.set_text("Last fuse in, the gate should be powered now", 6)
+			electricSymbol.visible = false;
 			dialogue_step = dialogue_step + 1
 			
 	fuses_collected = fuses_collected + player.fuseAmount
