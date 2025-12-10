@@ -19,6 +19,7 @@ config/icon="res://PrototypeAssets/icon.svg"
 
 Global="*res://Donovan/Scripts/Data Transfer Test/global.gd"
 MainDataStorageTest="*res://Donovan/Scripts/Data Transfer Test/main_data_storage_test.gd"
+Arduino_Master_Script="*res://Zak_Arduino/ArduinOhNo.cs"
 
 [display]
 

@@ -42,7 +42,8 @@ func fade_to_level_2():
 # powered nodes
 #func
 
+
 # Function to check if a given node is powered in the S.P.A.R.K Box array
 func check_array(row: int, column: int):
-	return spark_box_array[row][column]
+	return Arduino_Master_Script.Powered_Array[row][column]
 	

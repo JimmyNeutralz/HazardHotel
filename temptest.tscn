@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2sg4nyh5mxgu"]
+
+[sub_resource type="CSharpScript" id="CSharpScript_4xtdv"]
+script/source = "using Godot;
+using System;
+using System.IO.Ports;
+using System.Collections.Generic;
+
+public partial class ArduinOhNo : Node2D
+{
+	SerialPort serialPort;
+	RichTextLabel text;
+	RichTextLabel text2;
+	string serialMessage;
+	
+	bool heard = false;
+	
+	public override void _Ready() {
+		text = GetNode<RichTextLabel>(\"RichTextLabel\");
+		text2 = GetNode<RichTextLabel>(\"RichTextLabel2\");
+		
+		serialPort = new SerialPort();
+		serialPort.PortName = \"COM3\";
+		serialPort.BaudRate = 9600;
+		serialPort.Open();
+		
+	}
+	
+	public override void _Process(double delta) {
+		if(!serialPort.IsOpen) {return;}
+		
+		serialMessage = serialPort.ReadLine();
+		//serialMessage = serialPort.ReadExisting();
+		
+		text2.Text = serialMessage;
+		
+	}
+
+}
+"
+
+[node name="Node2D" type="Node2D"]
+script = SubResource("CSharpScript_4xtdv")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_right = 1151.0
+offset_bottom = 275.0
+theme_override_font_sizes/normal_font_size = 60
+text = "..."
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_top = 290.0
+offset_right = 1151.0
+offset_bottom = 535.0
+theme_override_font_sizes/normal_font_size = 60
+text = "..."
