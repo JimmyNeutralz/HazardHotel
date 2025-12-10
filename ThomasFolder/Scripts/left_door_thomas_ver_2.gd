@@ -19,11 +19,11 @@ func _ready():
 
 func _process(_delta):
 	#Global.check_array(4, 4) or 
-	if locked and (Input.is_action_just_pressed("unlock_left")) and name == "LeftDoor":
+	if locked and (Global.check_array(4, 4) or  Input.is_action_just_pressed("unlock_left")) and name == "LeftDoor":
 		unlock_door()
 		move_past_left_door()
 	#!Global.check_array(4, 4) or 
-	if locked and (Input.is_action_just_pressed("unlock_right")) and name == "RightDoor" :
+	if locked and (!Global.check_array(4, 4) or Input.is_action_just_pressed("unlock_right")) and name == "RightDoor" :
 		unlock_door()
 		move_past_left_door()
 		

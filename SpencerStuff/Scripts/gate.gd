@@ -65,7 +65,7 @@ func _process(delta):
 	#Handle gate raising input
 	
 	#Global.check_array(2, 3) or 
-	if (Input.is_action_just_pressed("raise_gate")) and not raised:
+	if (Global.check_array(2, 3) or Input.is_action_just_pressed("raise_gate")) and not raised:
 		var tempSide = 0
 		if can_raise():
 			if (isOnLeft):
@@ -84,7 +84,7 @@ func _process(delta):
 		else:
 			print("Cannot raise gate yet — still electrified!")
 			
-	elif Input.is_action_just_pressed("raise_gate") and raised:
+	elif (Global.check_array(2, 3) or Input.is_action_just_pressed("raise_gate")) and raised:
 		if can_raise():
 			lower_gate()
 		else:
