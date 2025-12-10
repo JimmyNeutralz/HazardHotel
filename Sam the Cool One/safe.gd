@@ -8,7 +8,7 @@ var state
 var anim_player:AnimationPlayer = null
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	anim_player = find_animation_player($HH_Art_SafeAnim_V1)
+	anim_player = find_animation_player($HH_Art_SafeAnim_V3)
 	state = "closed" # Replace with function body.
 
 

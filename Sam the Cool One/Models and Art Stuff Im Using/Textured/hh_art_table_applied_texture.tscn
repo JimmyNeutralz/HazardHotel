@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://ucvd15tb10ly"]
+
+[ext_resource type="PackedScene" uid="uid://b2feuxewvcfhl" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/HH_Art_Table_V3.fbx" id="1_mfd4f"]
+[ext_resource type="Texture2D" uid="uid://cqay15je40ajx" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/HH_Art_TableTexture_V1.png" id="2_8rqwa"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u1swb"]
+albedo_texture = ExtResource("2_8rqwa")
+
+[node name="HH_Art_Table_V3" instance=ExtResource("1_mfd4f")]
+
+[node name="pCube34" parent="." index="0"]
+material_override = SubResource("StandardMaterial3D_u1swb")
