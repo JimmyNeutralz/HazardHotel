@@ -1,0 +1,54 @@
+[gd_scene load_steps=10 format=3 uid="uid://0nkkc7smvq5s"]
+
+[ext_resource type="PackedScene" uid="uid://w0lf7oqyuyou" path="res://Assets/Final Assets/HH_Art_Pulley_V2.fbx" id="1_a5hlf"]
+[ext_resource type="Texture2D" uid="uid://c8gj2tamekko" path="res://Assets/Final Assets/HH_Art_PulleyTexture_V1.png" id="2_cmv2i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fegiu"]
+albedo_texture = ExtResource("2_cmv2i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0r2nd"]
+albedo_texture = ExtResource("2_cmv2i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ng61k"]
+albedo_texture = ExtResource("2_cmv2i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sal8x"]
+albedo_texture = ExtResource("2_cmv2i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5ylk7"]
+albedo_texture = ExtResource("2_cmv2i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0omgv"]
+albedo_texture = ExtResource("2_cmv2i")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ugn3y"]
+albedo_texture = ExtResource("2_cmv2i")
+
+[node name="HH_Art_Pulley_V2" instance=ExtResource("1_a5hlf")]
+
+[node name="Pulley" parent="." index="0"]
+transform = Transform3D(0.9984642, 0, -0.055400454, 0, 1, 0, 0.055400454, 0, 0.9984642, -9.266128, -1.735373, 11.879037)
+
+[node name="pCylinder3" parent="Pulley" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_fegiu")
+
+[node name="pCylinder2" parent="Pulley" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0r2nd")
+
+[node name="pCylinder1" parent="Pulley" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ng61k")
+
+[node name="pCube1" parent="Pulley" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_sal8x")
+
+[node name="sweep1" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.128297, -1.735373, 12.584672)
+
+[node name="polySurface3" parent="sweep1/polySurface1" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_5ylk7")
+
+[node name="polySurface4" parent="sweep1/polySurface1" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_0omgv")
+
+[node name="polySurface2" parent="sweep1" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ugn3y")

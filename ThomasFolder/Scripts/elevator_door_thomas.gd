@@ -31,8 +31,7 @@ func _process(delta: float) -> void:
 		unlocked = true
 		
 		player.move_to_specific_location(elevator_marker.global_position.x)
-	#if (!(Global.check_array(1, 4)) or Input.is_action_just_released("Unlock Elevator Door")):
-	if Input.is_action_just_released("Unlock Elevator Door"):
+	if (!Global.check_array(1, 4) or Input.is_action_just_released("Unlock Elevator Door")):
 		unlocked = false
 
 #Open gate

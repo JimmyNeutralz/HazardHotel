@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://dilbjo5d6cao0"]
+
+[ext_resource type="PackedScene" uid="uid://bvsi0qvd4jcx5" path="res://Assets/Final Assets/HH_Art_Lever_V2.fbx" id="1_ipkt0"]
+[ext_resource type="Texture2D" uid="uid://bhek57vt6t11t" path="res://Assets/Final Assets/HH_Art_LeverTexture_V1.png" id="2_gn0rh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_phqks"]
+albedo_texture = ExtResource("2_gn0rh")
+
+[node name="HH_Art_Lever_V2" instance=ExtResource("1_ipkt0")]
+
+[node name="lever" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43547, -1.7491863, -0.08784366)
+
+[node name="lever2" parent="lever" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_phqks")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=3 uid="uid://ckl1tljyyyr1"]
+
+[ext_resource type="PackedScene" uid="uid://dxfdm7wulpft3" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_SafeAnim_V2.fbx" id="1_1vjaw"]
+[ext_resource type="Texture2D" uid="uid://dvj6iiuj1bx52" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_SafeTexture_V1.png" id="2_3jfxf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2gmaf"]
+albedo_texture = ExtResource("2_3jfxf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wk8ba"]
+albedo_texture = ExtResource("2_3jfxf")
+
+[node name="HH_Art_SafeAnim_V2" instance=ExtResource("1_1vjaw")]
+
+[node name="pCube5" parent="safe" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_2gmaf")
+
+[node name="pCube4" parent="safe" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wk8ba")
