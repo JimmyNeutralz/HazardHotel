@@ -40,6 +40,7 @@ func _process(delta):
 		$GeneratorAudio.play()
 		print("Generator activated!")
 		elevatordoor.powered_on = true
+		complete_normal_generator_text()
 		#change color
 		if indicator:
 			var mat = indicator.get_active_material(0)
