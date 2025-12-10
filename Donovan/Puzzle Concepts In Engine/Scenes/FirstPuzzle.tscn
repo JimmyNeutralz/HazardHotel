@@ -43,7 +43,6 @@
 [ext_resource type="PackedScene" uid="uid://dllmxns1qx246" path="res://Scenes/FuseboxClose.tscn" id="34_a31hj"]
 [ext_resource type="Texture2D" uid="uid://fd2tdcnu45ui" path="res://Assets/UpdatedNodes/HH_Art_NodeBlue5_V2.png" id="34_wwhnu"]
 [ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="35_hgxai"]
-[ext_resource type="PackedScene" uid="uid://cdr7oaos8tipp" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Pulley.tscn" id="35_jennx"]
 [ext_resource type="Script" uid="uid://dwkwhc4qvaojh" path="res://Donovan/Puzzle Concepts In Engine/Scripts/safe.gd" id="35_oboe2"]
 [ext_resource type="Texture2D" uid="uid://cvhlp5ig08kaw" path="res://Assets/UpdatedNodes/HH_Art_NodeBlue6_V2.png" id="35_ygbmw"]
 [ext_resource type="Texture2D" uid="uid://cj7cb7ow72uni" path="res://Donovan/DonAssets/HH_Art_NodePurple6_V1.png" id="36_2j6rm"]
@@ -57,7 +56,6 @@
 [ext_resource type="Texture2D" uid="uid://dfmn8hnqyawbn" path="res://Donovan/DonAssets/HH_Art_NodeYellow5_V1.png" id="39_t6dil"]
 [ext_resource type="PackedScene" uid="uid://cndbloaafk7o2" path="res://Scenes/GateV3Close.tscn" id="40_pwu2m"]
 [ext_resource type="Texture2D" uid="uid://cmhsr1xibswng" path="res://Assets/UpdatedNodes/HH_Art_NodeCyan6_V2.png" id="40_ylpd1"]
-[ext_resource type="Script" uid="uid://7epq051kcf4g" path="res://SpencerStuff/Scripts/elevator_door.gd" id="41_c0qj2"]
 [ext_resource type="Texture2D" uid="uid://c2o5u66t8nd2v" path="res://Assets/UpdatedNodes/HH_Art_NodeGreen1_V2.png" id="41_efa7e"]
 [ext_resource type="Texture2D" uid="uid://drlhxld2173lh" path="res://Assets/UpdatedNodes/HH_Art_NodeGreen2_V2.png" id="42_qswob"]
 [ext_resource type="Texture2D" uid="uid://5lvcfq2duxw0" path="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png" id="42_wq4hk"]
@@ -92,14 +90,12 @@
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="51_a4kpc"]
 [ext_resource type="Texture2D" uid="uid://dhndjrnissj6d" path="res://Assets/HH_Art_NewGuyElectrocutionAnimSpriteSheet_V1.png" id="51_dx7fg"]
 [ext_resource type="Script" uid="uid://bk7yal7eu1r4r" path="res://Donovan/lever.gd" id="51_jnpos"]
-[ext_resource type="PackedScene" uid="uid://cisk1tyg2skyv" path="res://Assets/3D Models/HH_Art_SafeAnim_V1.fbx" id="51_oboe2"]
 [ext_resource type="Texture2D" uid="uid://c64pimujldg5j" path="res://Assets/UpdatedNodes/HH_Art_NodeOrange5_V2.png" id="51_pdlfe"]
 [ext_resource type="Texture2D" uid="uid://1jo86vkwjfqa" path="res://Assets/HH_Art_NewGuyIdle1SpriteSheet_V1.png" id="52_0eypt"]
 [ext_resource type="Texture2D" uid="uid://dmlm2pu5s54ph" path="res://Assets/UpdatedNodes/HH_Art_NodeOrange6_V2.png" id="52_6fdu4"]
 [ext_resource type="Texture2D" uid="uid://dej5gblwfl77" path="res://Assets/HH_Art_NewGuyStandInteractAnimSpriteSheet_V1.png" id="53_2wdvl"]
 [ext_resource type="Texture2D" uid="uid://bndgp2ygc3sh4" path="res://Assets/UpdatedNodes/HH_Art_NodePurple1_V2.png" id="53_kb2jw"]
 [ext_resource type="Texture2D" uid="uid://ssds7dhib62s" path="res://Assets/UpdatedNodes/HH_Art_NodePurple2_V2.png" id="54_k00j6"]
-[ext_resource type="PackedScene" uid="uid://cthtnkvbjx1er" path="res://Donovan/Lever.tscn" id="54_xg816"]
 [ext_resource type="Texture2D" uid="uid://dgquafsnxxw7j" path="res://Assets/UpdatedNodes/HH_Art_NodePurple3_V2.png" id="55_rol8w"]
 [ext_resource type="Texture2D" uid="uid://giyggf0x80ch" path="res://Assets/UpdatedNodes/HH_Art_NodePurple4_V2.png" id="56_n4ju1"]
 [ext_resource type="Texture2D" uid="uid://cqi26wckmfe20" path="res://Assets/UpdatedNodes/HH_Art_NodePurple5_V2.png" id="57_s7cgs"]
@@ -115,6 +111,7 @@
 [ext_resource type="Texture2D" uid="uid://cqk7op1limxig" path="res://Assets/UpdatedNodes/HH_Art_NodeYellow6_V2.png" id="64_wxcav"]
 [ext_resource type="Texture2D" uid="uid://n3twy2n3vd02" path="res://Assets/3D Models/HH_Art_Lightning_V1.png" id="71_ygbmw"]
 [ext_resource type="Texture2D" uid="uid://bba53n1vxdj7b" path="res://Assets/HH_Art_NewGuyDinoGrabberAnimSpriteSheet_V1.png" id="73_xjhiw"]
+[ext_resource type="Script" uid="uid://c6bn8esdo1uhu" path="res://ThomasFolder/Scripts/elevator_door_thomas.gd" id="75_d7ckc"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="75_jnpos"]
 [ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_elevator_sign.tscn" id="79_ygbmw"]
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="81_mvs2p"]
@@ -131,6 +128,8 @@
 [ext_resource type="Texture2D" uid="uid://b2vui8awwerj3" path="res://ThomasFolder/Sprites/New Guy Character Image Back.png" id="125_cfexi"]
 [ext_resource type="Texture2D" uid="uid://b2smx76edwggf" path="res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png" id="126_wwhnu"]
 [ext_resource type="Texture2D" uid="uid://bs6byut2b4npg" path="res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png" id="127_ygbmw"]
+[ext_resource type="PackedScene" uid="uid://0nkkc7smvq5s" path="res://Donovan/DonAssets/truePulley.tscn" id="131_ygbmw"]
+[ext_resource type="PackedScene" uid="uid://dilbjo5d6cao0" path="res://Donovan/DonAssets/trueLever.tscn" id="132_ctrnc"]
 [ext_resource type="PackedScene" path="res://hh_art_fuse_1_v_1.tscn" id="132_d7ckc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
@@ -8814,6 +8813,9 @@ shader_parameter/clip_warp = false
 shader_parameter/vignette_intensity = 0.4
 shader_parameter/vignette_opacity = 0.670000031825
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygbmw"]
+albedo_color = Color(0.8862745, 0.8352941, 0.654902, 1)
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_sdfg4")
 
@@ -8977,9 +8979,6 @@ visible = false
 radius = 0.036621094
 height = 0.5736575
 
-[node name="Pulley" parent="." instance=ExtResource("35_jennx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0013804, 0.38578975, -0.51943254)
-
 [node name="FuseBox" type="Node3D" parent="."]
 transform = Transform3D(0.09323944, 0, 0.99564373, 0, 1, 0, -0.99564373, 0, 0.09323944, -2.6962893, 0, 8.004158)
 script = ExtResource("31_00t3t")
@@ -9002,7 +9001,7 @@ animation = &"Yellow5"
 autoplay = "Yellow5"
 
 [node name="standSpot" type="Marker3D" parent="FuseBox"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.398657, 0.049557865, 0.59105086)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.523156, 0.049557865, 1.9204555)
 
 [node name="Gate" type="Node3D" parent="."]
 script = ExtResource("36_qa6id")
@@ -9038,11 +9037,11 @@ stream = ExtResource("32_c6g38")
 [node name="GateUI" type="AnimatedSprite3D" parent="Gate"]
 transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, -6.0664997, 1.9732468, -0.033757687)
 sprite_frames = SubResource("SpriteFrames_wo6si")
-animation = &"Green3"
-autoplay = "Green3"
+animation = &"Purple2"
+autoplay = "Purple2"
 
 [node name="standSpot" type="Marker3D" parent="Gate"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.012603, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8047595, 0, 0)
 
 [node name="standSpot2" type="Marker3D" parent="Gate"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.213914, 0, 0)
@@ -9069,12 +9068,15 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.01, -5.657252, 1.6853055, 
 mesh = SubResource("BoxMesh_ffsuc")
 
 [node name="ElevatorDoor" type="Node3D" parent="."]
-script = ExtResource("41_c0qj2")
+script = ExtResource("75_d7ckc")
 
 [node name="HH_Art_ElevatorGate_V2" parent="ElevatorDoor" instance=ExtResource("81_ygbmw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05)
 
 [node name="ElevatorMarker" type="Marker3D" parent="ElevatorDoor"]
+
+[node name="ElevatorMarker2" type="Marker3D" parent="ElevatorDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.4303188)
 
 [node name="ElevatorDoorUI" type="AnimatedSprite3D" parent="ElevatorDoor"]
 transform = Transform3D(0.24923547, 0, 0.01953651, 0, 0.25, 0, -0.01953651, 0, 0.24923547, 1.161497, 2.3826559, -0.5555507)
@@ -9210,14 +9212,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15805054, 0, 11.9879265)
 visible = false
 
 [node name="FuseStandSpot" type="Marker3D" parent="HH_Art_Shelf_V1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2088175, 0, -12.0396185)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6488194, 0, -12.0396185)
 
 [node name="Safe" parent="." instance=ExtResource("92_d7ckc")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.984, 1.341, 0.133)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 7.984, 0.7241107, 0.133)
 script = ExtResource("35_oboe2")
 
 [node name="UpperSafe" type="Marker3D" parent="Safe"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2813399, -0.0002861023)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6641374, -0.0002861023)
 
 [node name="SafeOrigin" type="Marker3D" parent="Safe"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.012222e-05, -0.0002861023)
@@ -9240,21 +9242,6 @@ transform = Transform3D(0.0029189477, 0, 0.24998294, 0, 0.25, 0, -0.24998294, 0,
 sprite_frames = SubResource("SpriteFrames_wo6si")
 animation = &"Purple6"
 autoplay = "Purple6"
-
-[node name="Safe2" parent="." instance=ExtResource("51_oboe2")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 11.293846, 1.3409098, 2.2307594)
-
-[node name="Lever" parent="." instance=ExtResource("54_xg816")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.170124, 1.1286857, -0.76279306)
-script = ExtResource("51_jnpos")
-
-[node name="LeverUI" type="AnimatedSprite3D" parent="Lever"]
-transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, 0.31603527, 0.31691408, -0.033757687)
-sprite_frames = SubResource("SpriteFrames_wo6si")
-animation = &"Green3"
-autoplay = "Green3"
-
-[node name="standLoc" type="Marker3D" parent="Lever"]
 
 [node name="LeftDoor" type="Node3D" parent="."]
 script = ExtResource("51_a4kpc")
@@ -9298,7 +9285,7 @@ transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, -2.0211039, 1.53, -4
 texture = ExtResource("60_i1scv")
 
 [node name="Location1" type="Marker3D" parent="LeftDoor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0826058, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0516527, 0, 0)
 
 [node name="Location2" type="Marker3D" parent="LeftDoor"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7391963, 0, 0)
@@ -9333,10 +9320,10 @@ transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 2.219635, 1.53, -4.2
 texture = ExtResource("60_i1scv")
 
 [node name="Location1" type="Marker3D" parent="RightDoor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.515316, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3550949, 0, 0)
 
 [node name="Location2" type="Marker3D" parent="RightDoor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0379114, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.187558, 0, 0)
 
 [node name="RightDoorUI" type="AnimatedSprite3D" parent="RightDoor"]
 transform = Transform3D(0.24194708, 0, -0.06294127, 0, 0.25, 0, 0.06294127, 0, 0.24194708, 2.3626888, 2.1368105, 0.44276094)
@@ -9415,7 +9402,7 @@ animation = &"Yellow5"
 autoplay = "Yellow5"
 
 [node name="Fuse3Landing" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.0208054, 0, -0.34587646)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.456968, 0, -0.34587646)
 
 [node name="FuseSafeLoc" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6298676, 1.214671, 0)
@@ -9484,7 +9471,7 @@ transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 5.05
 script = ExtResource("50_yqei1")
 
 [node name="fuse" parent="." instance=ExtResource("132_d7ckc")]
-transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 7.603, 2.724, 0.177)
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 7.603, 2.13187, 0.177)
 
 [node name="fuse_original" parent="." instance=ExtResource("91_xjhiw")]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 7.603148, 2.7242382, 0.1768114)
@@ -9504,7 +9491,29 @@ animation = &"Purple5"
 autoplay = "Purple5"
 
 [node name="standLoc" type="Marker3D" parent="Dumbwaiter"]
-transform = Transform3D(-0.4999995, -6.556702e-08, 0.0014311388, -4.371139e-08, 0.75, 0, 0.0007155694, 9.383559e-11, 0.999999, 1.7526039, 1.1507851, -0.6689713)
+transform = Transform3D(-0.4999995, -6.556702e-08, 0.0014311388, -4.371139e-08, 0.75, 0, 0.0007155694, 9.383559e-11, 0.999999, 0.5380888, -0.1346724, -0.6689713)
+
+[node name="Lever" parent="." instance=ExtResource("132_ctrnc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1652627, 0.96946573, -0.6331744)
+script = ExtResource("51_jnpos")
+
+[node name="LeverUI" type="AnimatedSprite3D" parent="Lever"]
+transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, 0.32089663, 0.47613406, -0.019397736)
+sprite_frames = SubResource("SpriteFrames_wo6si")
+animation = &"Green3"
+autoplay = "Green3"
+
+[node name="standLoc" type="Marker3D" parent="Lever"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004861355, 0.15921998, -0.12961864)
+
+[node name="HH_Art_Pulley_V2" parent="." instance=ExtResource("131_ygbmw")]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 7.9932146, 2.01938, -0.12049961)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="HH_Art_Pulley_V2"]
+transform = Transform3D(-5.8281852e-08, 0, -1.3333334, 0, 1.3333334, 0, 1.3333334, 0, -5.8281852e-08, 0.18191051, -0.6246636, 0.14341336)
+radius = 0.020019531
+height = 1.0262833
+material = SubResource("StandardMaterial3D_ygbmw")
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]

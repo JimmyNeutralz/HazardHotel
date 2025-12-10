@@ -18,10 +18,10 @@ func _ready():
 		door_anim.seek(0.0, true)
 
 func _process(_delta):
-	if locked and Input.is_action_just_pressed("unlock_left") and name == "LeftDoor":
+	if locked and (Global.check_array(4, 4) or Input.is_action_just_pressed("unlock_left")) and name == "LeftDoor":
 		unlock_door()
 		move_past_left_door()
-	if locked and Input.is_action_just_pressed("unlock_right") and name == "RightDoor" :
+	if locked and (!Global.check_array(4, 4) or Input.is_action_just_pressed("unlock_right")) and name == "RightDoor" :
 		unlock_door()
 		move_past_left_door()
 		
@@ -33,13 +33,13 @@ func _process(_delta):
 
 
 func move_past_left_door():
-	if (player.global_position.x > -1.5):
+	if (player.global_position.x > -1.4):
 		blocker.global_position.x = 0
 		player.move_through_left_door(location1, 1)
 		await get_tree().create_timer(1.5).timeout
 		blocker.global_position.x = -999
 		#player.move_to_adjacent_room(-1)
-	elif (player.global_position.x < -1.5):
+	elif (player.global_position.x < -1.4):
 		blocker.global_position.x = -1.5
 		player.move_through_left_door(location1, -1)
 		await get_tree().create_timer(1.5).timeout

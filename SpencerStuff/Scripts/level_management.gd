@@ -121,7 +121,7 @@ func triggerexit(body: Node3D) -> void:
 			print("ERROR: ElevatorDoor script not found!")
 
 		#Freeze player movement right away
-		var player = $Player
+		#var player = $Player
 		if player:
 
 			#Stop all current movement
@@ -183,11 +183,11 @@ func triggerexit(body: Node3D) -> void:
 		else:
 			fade_in_static._exit_scene("res://Donovan/Puzzle Concepts In Engine/Scenes/FirstPuzzle.tscn")
 #Enter elevator
-#func _on_area_3d_body_entered_level3(body: Node3D) -> void:
-	#triggerexit(body)
+func _on_area_3d_body_entered_level3(body: Node3D) -> void:
+	triggerexit(body)
 	
-#func _on_area_3d_body_entered_level2(body: Node3D) -> void:
-	#triggerexit(body)
+func _on_area_3d_body_entered_level2(body: Node3D) -> void:
+	triggerexit(body)
 
 	
 #Pause input

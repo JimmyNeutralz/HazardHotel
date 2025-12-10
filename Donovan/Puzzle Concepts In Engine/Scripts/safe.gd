@@ -29,6 +29,8 @@ var has_run = false
 var first_fuse_collected = false
 
 var first_pass = true
+var first_pass2 = true
+var first_time2 = true
 
 func _ready():
 	realLoc = originSafeLoc.global_position
@@ -41,35 +43,32 @@ func _process(delta):
 	#Handle safe deactivation input
 	# if is_powered and and fuseBox.get_fuse_amount() >= 1
 	
-	if Input.is_action_pressed("left") and fuseBox.get_fuse_amount() >= 1:
-		if (first_pass):
+	if (Global.check_array(3, 2) or Input.is_action_pressed("left")) and fuseBox.get_fuse_amount() >= 1:
+		if(first_pass):
 			first_pass = false
 			lower_safe()
-	elif Input.is_action_just_released("left") and fuseBox.get_fuse_amount() >= 1:
+	elif (!Global.check_array(3, 2) or Input.is_action_just_released("left")) and fuseBox.get_fuse_amount() >= 1:
 		raise_safe()
 		first_pass = true
+		
+	if (Global.check_array(6, 3) or Input.is_action_pressed("open_safe")) and fuseBox.get_fuse_amount() >= 2 and !safe_raised:
+		if(first_pass2):
+			first_pass2 = false
+			open_safe()
+	elif (!Global.check_array(6, 3) or Input.is_action_just_released("open_safe")) and fuseBox.get_fuse_amount() >= 2 and is_safe_open:
+		close_safe()
+		is_safe_open = false
+		first_pass2 = true
+		
+	if (fuseBox.get_fuse_amount() == 2 and !has_run):
+		uiNode1.visible = true
+		uiNode2.visible = true
 		
 	## Test for resource budgeting
 	#if (Global.check_array(1, 0)):
 		#uiNode1.visible = true
 	#else:
 		#uiNode1.visible = false
-		
-	if (fuseBox.get_fuse_amount() == 2 and !has_run):
-		uiNode1.visible = true
-		uiNode2.visible = true
-		
-	#if Input.is_action_just_pressed("fuse_two_override_collect"):
-		#fuse.visible = false
-		#player.standing_interact_start
-		#await playerSprite.animation_finished
-		#player.collect_fuse()
-		
-	if Input.is_action_just_pressed("open_safe") and fuseBox.get_fuse_amount() >= 2 and !safe_raised:
-		open_safe()
-	elif Input.is_action_just_released("open_safe") and fuseBox.get_fuse_amount() >= 2 and is_safe_open:
-		close_safe()
-		is_safe_open = false
 
 func lower_safe():
 	process_started = true
@@ -77,13 +76,14 @@ func lower_safe():
 	tween.tween_property(self, "global_position", upperSafeLoc.global_position, 0.5)
 	
 	if (first_time):
+		first_time = false
 		tween.parallel().tween_property(fuse, "global_position", fuseSafeSpot.global_position, 0.5)
 		await tween.finished
 		var tween2 = create_tween()
 		tween2.tween_property(fuse, "global_position", standSpot.global_position, 0.5)
 		await tween2.finished
 		tween2.kill()
-		first_time = false
+		tween.kill()
 	else:
 		await tween.finished
 		tween.kill()
@@ -92,11 +92,11 @@ func lower_safe():
 	safe_raised = false
 	await get_tree().create_timer(1.5).timeout
 	
-	player.move_to_object(standSpot)
-	await get_tree().create_timer(1.5).timeout
-	
 	#if(player.global_position.x == standSpot.global_position.x - 10 or player.global_position.x == standSpot.global_position.x + 10):
 	if (!first_fuse_collected):
+		player.move_to_object(standSpot)
+		await get_tree().create_timer(1.5).timeout
+		
 		fuse.visible = false
 		fuseBox.uiNode.visible = true
 		player.crouching_player_interact()
@@ -160,27 +160,36 @@ func is_powered():
 	pass
 
 func open_safe():
-	if anim_player and anim_player.has_animation("Take 001"):
-		anim_player.play("Take 001")
-		print("Safe open!")
-		is_safe_open = true
+	if (first_time2):
+		first_time2 = false
+		if anim_player and anim_player.has_animation("Take 001"):
+			anim_player.play("Take 001")
+			print("Safe open!")
+			is_safe_open = true
 		
-		player.move_to_object(fuseSafeSpot)
-		player.crouching_player_interact()
-		await playerSprite.animation_finished
+				
+			player.move_to_object(fuseSafeSpot)
+			player.crouching_player_interact()
+			await playerSprite.animation_finished
+			if (player.is_dead):
+				first_time2 = true
+				
+			else:
+				player.move_to_object(fuseStandSpot)
+				await get_tree().create_timer(1.0).timeout
+				
+				if (player.is_dead):
+					first_time2 = true
+				else:
+					player.dino_player_interact()
+					fuse2.visible = false
+					await playerSprite.animation_finished
+					fuse2.visible = false
+					fuseBox.uiNode.visible = true;
+					player.collect_fuse()
 		
-		player.move_to_object(fuseStandSpot)
-		
-		await get_tree().create_timer(1.0).timeout
-		fuse2.visible = false
-		fuseBox.uiNode.visible = true;
-		
-		player.dino_player_interact()
-		await playerSprite.animation_finished
-		player.collect_fuse()
-		
-		fuse2.visible = false
-		fuseBox.uiNode.visible = true;
+					fuse2.visible = false
+					fuseBox.uiNode.visible = true;
 	
 		
 func close_safe():

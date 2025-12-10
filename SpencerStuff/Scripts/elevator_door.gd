@@ -7,6 +7,7 @@ var door_open := false
 @onready var player = $"../Player"
 @onready var elevator_marker = $"../ElevatorDoor/ElevatorMarker"
 @onready var uiNode = $"../ElevatorDoor/ElevatorDoorUI"
+@onready var inside_elevator = $ElevatorMarker2
 
 var powered_on = false
 
@@ -49,6 +50,7 @@ func open_gate() -> void:
 		door_open = true
 		$ElevatorOpenSFX.play()
 		anim.play("Take 001")
+		
 
 
 #Recursive Sarch to find animation
