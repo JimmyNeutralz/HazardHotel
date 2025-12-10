@@ -1,4 +1,4 @@
-extends Node2D
+extends RichTextLabel
 
 @onready var MyCSharpScript = $Node
 

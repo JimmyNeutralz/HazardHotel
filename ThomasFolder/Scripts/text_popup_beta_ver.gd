@@ -11,12 +11,12 @@ var displayFor = 0
 var new_guy_text_sprite = load("res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png")
 var swagula_text_sprite = load("res://ThomasFolder/Sprites/HH_Art_SwagulaPortrait_V1.png")
 var building_owner_text_sprite = load("res://ThomasFolder/Sprites/HH_Art_OwnerPortrait_V1.png")
-var werewolf_text_sprite = load("res://ThomasFolder/Sprites/HH_Art_WerewolfPortrait_V1.png")
+var werewolf_text_sprite = load("res://ThomasFolder/Objects and Textures/HH_Art_WerewolfPortrait_V1.png")
 
 var new_guy_textbox = load("res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png")
 var swagula_textbox = load("res://ThomasFolder/Sprites/HH_Art_Textbox_Swagula_V1.png")
 var building_owner_textbox = load("res://ThomasFolder/Sprites/HH_Art_Textbox_Manager_V1.png")
-var werewolf_textbox = load("res://ThomasFolder/Sprites/HH_Art_Textbox_Werewolf_V1.png")
+var werewolf_textbox = load("res://ThomasFolder/Objects and Textures/HH_Art_Textbox_Werewolf_V1.pngppp")
 
 var new_guy_sprite_back = load("res://ThomasFolder/Sprites/New Guy Character Image Back.png")
 var swagula_sprite_back = load("res://ThomasFolder/Sprites/Swagula Character Image Back.png")

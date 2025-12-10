@@ -12,14 +12,23 @@ public partial class ArduinOhNo : Node2D
 	
 	int[,] btns = new int[16, 12];
 	int[,] plugs = new int[8, 6];
-	bool[,] Powered_Array = new bool[8, 6];
+	public bool[,] Powered_Array = new bool[8, 6];
+	
 	
 	public override void _Ready() {
 		
 		serialPort = new SerialPort();
-		serialPort.PortName = "COM3";
+		serialPort.PortName = "COM6";
 		serialPort.BaudRate = 9600;
 		serialPort.Open();
+	}
+	
+	public bool[,] GetArray(){
+		return Powered_Array;
+	}
+	
+	public bool tester(){
+		return true;
 	}
 	
 	public override void _Process(double delta) {
