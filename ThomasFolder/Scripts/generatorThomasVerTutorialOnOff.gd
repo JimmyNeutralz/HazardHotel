@@ -33,12 +33,12 @@ func _ready():
 
 func _process(delta):
 	#print(can_interact)
-	if Input.is_action_just_pressed("activate_generator") and not can_interact and not activated:
+	if (Global.check_array(3, 2) or Input.is_action_just_pressed("activate_generator")) and not can_interact and not activated:
 		if can_activate():
 			activate_generator()
 		else:
 			print("Cannot activate generator yet!")
-	if Input.is_action_just_released("activate_generator") and can_interact:
+	if (!(Global.check_array(3, 2)) or Input.is_action_just_released("activate_generator")) and can_interact:
 		deactivate_generator()
 	if !activated:
 		if (((player.global_position.x < (generator_marker.global_position.x + 0.25)) and (player.global_position.x >= (generator_marker.global_position.x - 0.25))) and can_interact):
