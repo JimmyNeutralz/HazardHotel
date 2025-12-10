@@ -43,6 +43,7 @@ func _process(delta):
 	if !activated:
 		if (((player.global_position.x < (generator_marker.global_position.x + 0.25)) and (player.global_position.x >= (generator_marker.global_position.x - 0.25))) and can_interact):
 			print("Generator activated!")
+			player.standing_player_interact()
 			$GeneratorAudio.play()
 			activated = true
 		
@@ -52,6 +53,7 @@ func _process(delta):
 			lamp.generator_on = true
 			elevator_door.powered_on = true
 		elif (((player.global_position.x < (generator_marker.global_position.x + 0.25)) and (player.global_position.x >= (generator_marker.global_position.x - 0.25))) and !can_interact):
+			player.standing_player_interact()
 			lamp.generator_on = true
 			text.change_text_image(3)
 			incomplete_tutorial_generator_text()
