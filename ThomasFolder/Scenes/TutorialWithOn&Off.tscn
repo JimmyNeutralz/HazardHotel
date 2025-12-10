@@ -59,7 +59,7 @@
 [ext_resource type="Script" path="res://ThomasFolder/Scripts/generatorThomasVerTutorialOnOff.gd" id="57_3ji2u"]
 [ext_resource type="AudioStream" uid="uid://u31ntpy5j83k" path="res://Assets/Audio/generator start up.wav" id="58_1kohj"]
 [ext_resource type="PackedScene" uid="uid://o1uif2bxe7cj" path="res://SpencerStuff/Scenes/true_lamp.tscn" id="59_o71jw"]
-[ext_resource type="Script" path="res://Assets/3D Models/LobbyModels/lamp.gd" id="60_08i3x"]
+[ext_resource type="Script" uid="uid://gxyte2pwafxu" path="res://ThomasFolder/Scripts/lamp.gd" id="60_qep0x"]
 [ext_resource type="PackedScene" uid="uid://dd7maffl4gk12" path="res://Assets/3D Models/LobbyModels/HH_Art_Lobby_Shelf_V2.fbx" id="61_x4cip"]
 [ext_resource type="Texture2D" uid="uid://uvf0v1svjyqn" path="res://Assets/HH_Art_OwnerIdleSpriteSheet_V1.png" id="63_77ub2"]
 [ext_resource type="Script" uid="uid://cjfcp3ijd2aj8" path="res://ThomasFolder/Scenes/owner_idle.gd" id="64_3kdjc"]
@@ -2006,7 +2006,7 @@ transform = Transform3D(0.9772274, 0, 0.21219474, 0, 1, 0, -0.21219474, 0, 0.977
 
 [node name="HH_Art_Lobby_Lamp_V1" parent="." instance=ExtResource("59_o71jw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.498)
-script = ExtResource("60_08i3x")
+script = ExtResource("60_qep0x")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="HH_Art_Lobby_Lamp_V1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.030561, 1.3666446, 0.2568501)
