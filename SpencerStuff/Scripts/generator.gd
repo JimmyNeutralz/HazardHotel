@@ -23,12 +23,12 @@ func _ready():
 		push_error("Gate node path not set for Generator!")
 		
 func _process(delta):
-	if Input.is_action_just_pressed("activate_generator") and not activated:
+	if Input.is_action_just_pressed("activate_generator") and not can_interact and not activated:
 		if can_activate():
 			activate_generator()
 		else:
 			print("Cannot activate generator yet!")
-	if Input.is_action_just_released("activate_generator") and activated:
+	if Input.is_action_just_released("activate_generator") and can_interact and not activated:
 		deactivate_generator()
 
 	if (!(player.is_moving) and (player.global_position.x <= -6.5) and !activated and can_interact):
