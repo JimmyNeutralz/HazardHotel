@@ -17,13 +17,13 @@
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="15_d64sq"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="16_o5ye0"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="17_40eat"]
-[ext_resource type="Script" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="17_57sfp"]
+[ext_resource type="Script" uid="uid://cy8mm1h78gy4h" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="17_57sfp"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="18_5gr6d"]
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="19_r4rbx"]
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="20_ak7el"]
 [ext_resource type="AudioStream" uid="uid://boghesc1nkhot" path="res://Assets/Audio/Wooden door creak 1.wav" id="22_dwer6"]
-[ext_resource type="Script" uid="uid://ekmnn0pn0da0" path="res://SpencerStuff/Scripts/Lock.gd" id="23_2dkt7"]
-[ext_resource type="PackedScene" uid="uid://b1ijgkw1i7v5k" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="23_03sa3"]
+[ext_resource type="Script" uid="uid://d3wg6c5iqxhyc" path="res://SpencerStuff/Scripts/Lock.gd" id="23_2dkt7"]
+[ext_resource type="PackedScene" uid="uid://c481kh6rlqyuh" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="23_03sa3"]
 [ext_resource type="PackedScene" uid="uid://dqdrihkiouy1o" path="res://Assets/3D Models/HH_Art_locks_openAnim_V1.fbx" id="24_xcgsm"]
 [ext_resource type="Texture2D" uid="uid://cfo2bftv6y7qy" path="res://Donovan/DonAssets/HH_Art_NodeBlue2_V1.png" id="25_8f021"]
 [ext_resource type="Texture2D" uid="uid://5lvcfq2duxw0" path="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png" id="26_r4tqt"]
@@ -39,48 +39,49 @@
 [ext_resource type="Texture2D" uid="uid://d1ybbwvdlyuvl" path="res://Donovan/DonAssets/HH_Art_NodeYellow6_V1.png" id="36_5fatx"]
 [ext_resource type="Script" uid="uid://v1vrjjfux1ew" path="res://ThomasFolder/Scripts/right_door_Thomas_Ver_2.gd" id="37_ejwtc"]
 [ext_resource type="AudioStream" uid="uid://c8v5bc6sw71sl" path="res://Assets/Audio/Wooden door creak 2.wav" id="39_d16sl"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_right_doorV2.tscn" id="40_03sa3"]
+[ext_resource type="PackedScene" uid="uid://dax3x8kiqqa04" path="res://SpencerStuff/Scenes/true_right_doorV2.tscn" id="40_03sa3"]
 [ext_resource type="Texture2D" uid="uid://bjgv41ufsr321" path="res://Assets/key.png" id="40_fxy10"]
 [ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="41_5qg7y"]
+[ext_resource type="PackedScene" uid="uid://d1twlbms4jalv" path="res://SpencerStuff/Scenes/true_elevatorV2.tscn" id="42_lpg70"]
 [ext_resource type="AudioStream" uid="uid://bt827ljr2p2uk" path="res://Assets/Audio/Switch.wav" id="43_n0jjb"]
 [ext_resource type="PackedScene" uid="uid://dyua24e70jfwi" path="res://ThomasFolder/Objects and Textures/hh_art_generator_v_2_textured.tscn" id="43_w68na"]
 [ext_resource type="Script" uid="uid://btw5rsddy2yd7" path="res://Sam the Cool One/vase.gd" id="44_ytcoj"]
-[ext_resource type="Script" uid="uid://bodbd1rpra4ki" path="res://Sam the Cool One/airvent.gd" id="45_7hn7x"]
+[ext_resource type="Script" path="res://Sam the Cool One/airvent.gd" id="45_7hn7x"]
 [ext_resource type="AudioStream" uid="uid://cnudkj83doi6x" path="res://Assets/Audio/Electricution Death.wav" id="45_j1xhc"]
 [ext_resource type="Texture2D" uid="uid://bj4wsk1k2qlkg" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_Vase_V1.png" id="46_1xk6g"]
 [ext_resource type="Script" uid="uid://dq413xe087tg0" path="res://Sam the Cool One/mouse.gd" id="46_y8lye"]
-[ext_resource type="Script" uid="uid://b783s1374l57w" path="res://Sam the Cool One/key.gd" id="47_dxmn4"]
+[ext_resource type="Script" path="res://Sam the Cool One/key.gd" id="47_dxmn4"]
 [ext_resource type="Texture2D" uid="uid://cqqk88sfyr8tf" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_VaseShard_V1.png" id="47_wxxuc"]
 [ext_resource type="Texture2D" uid="uid://cjyipya2vweop" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_VaseShard2_V1.png" id="48_pknbb"]
-[ext_resource type="Script" uid="uid://bbdvhu2tqmp3u" path="res://Sam the Cool One/cheese.gd" id="48_trdal"]
+[ext_resource type="Script" path="res://Sam the Cool One/cheese.gd" id="48_trdal"]
 [ext_resource type="Texture2D" uid="uid://cv5ytaw5cq6fm" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_MouseHole_V1.png" id="49_pknbb"]
 [ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="49_viyc1"]
 [ext_resource type="Texture2D" uid="uid://dy7ha53nbvp1u" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_RatRunAnimSpriteSheet_V1.png" id="50_xoi0t"]
 [ext_resource type="Texture2D" uid="uid://d2abl84gi5av8" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_Key_V1.png" id="51_03sa3"]
 [ext_resource type="Texture2D" uid="uid://cn1mu2mum7obv" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_RatIdleSpriteSheet_V1.png" id="51_a1sk3"]
 [ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="51_h04sa"]
-[ext_resource type="Script" uid="uid://vupsb2nbika3" path="res://Sam the Cool One/gateLevel2.gd" id="51_soqoc"]
-[ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="52_ts0yf"]
+[ext_resource type="Script" path="res://Sam the Cool One/gateLevel2.gd" id="51_soqoc"]
 [ext_resource type="PackedScene" uid="uid://cndbloaafk7o2" path="res://Scenes/GateV3Close.tscn" id="53_48m6x"]
 [ext_resource type="AudioStream" uid="uid://cr8mcfem7l0to" path="res://Assets/Audio/Wooden door creak 3.wav" id="54_nls65"]
 [ext_resource type="Texture2D" uid="uid://dgicfxqshqjiu" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_VentSprite_V1.png" id="54_s4br7"]
 [ext_resource type="Script" uid="uid://7epq051kcf4g" path="res://SpencerStuff/Scripts/elevator_door.gd" id="55_cbt7k"]
 [ext_resource type="Texture2D" uid="uid://drrp8opc83lge" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_Cheese_V1.png" id="56_03sa3"]
 [ext_resource type="PackedScene" uid="uid://yvv4teqlemm5" path="res://SpencerStuff/Scenes/hh_art_elevator_gate_v_1.tscn" id="56_qfy0c"]
+[ext_resource type="Texture2D" uid="uid://n3twy2n3vd02" path="res://Assets/3D Models/HH_Art_Lightning_V1.png" id="61_03sa3"]
 [ext_resource type="PackedScene" uid="uid://cfrvvte741m2u" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_pinch_modular_left_applied_texture.tscn" id="62_57sfp"]
 [ext_resource type="PackedScene" uid="uid://bc8tn80dtxvn0" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_pinch_modular_right_applied_texture.tscn" id="63_xoi0t"]
 [ext_resource type="PackedScene" uid="uid://c8kuypq8o4v4f" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_pinch_modular_middle_applied_texture.tscn" id="64_a1sk3"]
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="64_hapq0"]
 [ext_resource type="Texture2D" uid="uid://0o1anfkmyoq0" path="res://Assets/3D Models/HH_Art_ElevatorSign_Floor3_V1.fbx.png" id="67_03sa3"]
 [ext_resource type="AudioStream" uid="uid://c2k5mrmymj5tt" path="res://Assets/Audio/mx_level.wav" id="67_fdm6u"]
-[ext_resource type="PackedScene" uid="uid://cqwe1p3y78k3n" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_shelf_applied_texture.tscn" id="67_w68na"]
-[ext_resource type="PackedScene" uid="uid://btbhxm6xtu07n" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_safe_anim_applied_texture.tscn" id="69_w68na"]
-[ext_resource type="PackedScene" uid="uid://ucvd15tb10ly" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_table_applied_texture.tscn" id="70_w68na"]
+[ext_resource type="PackedScene" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_shelf_applied_texture.tscn" id="67_w68na"]
+[ext_resource type="PackedScene" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_safe_anim_applied_texture.tscn" id="69_w68na"]
+[ext_resource type="PackedScene" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_table_applied_texture.tscn" id="70_w68na"]
 [ext_resource type="Script" uid="uid://crhb8yg3b1qjd" path="res://Sam the Cool One/safe.gd" id="72_j7f7e"]
 [ext_resource type="PackedScene" uid="uid://ldos30jg4ksv" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_mouse_wheel_textures_applied.tscn" id="74_2bagf"]
 [ext_resource type="PackedScene" uid="uid://3eq2ds124c7b" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_box_trap_applied_texture.tscn" id="76_2bagf"]
 [ext_resource type="Script" uid="uid://b00ss7u2jxh7c" path="res://Sam the Cool One/curtain.gd" id="76_kq5jo"]
-[ext_resource type="Script" uid="uid://o7neq40tuih1" path="res://Sam the Cool One/trap.gd" id="76_vcupa"]
+[ext_resource type="Script" path="res://Sam the Cool One/trap.gd" id="76_vcupa"]
 [ext_resource type="PackedScene" uid="uid://das3mbmv8hge3" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_curtain_applied_texture.tscn" id="78_7jm3i"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="79_a1sk3"]
 [ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="79_iypui"]
@@ -90,6 +91,7 @@
 [ext_resource type="Texture2D" uid="uid://b2smx76edwggf" path="res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png" id="82_1xk6g"]
 [ext_resource type="Texture2D" uid="uid://bs6byut2b4npg" path="res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png" id="83_s4br7"]
 [ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="84_w68na"]
+[ext_resource type="PackedScene" uid="uid://c4ti52vw8k1r0" path="res://SpencerStuff/Scenes/true_elevator_sign.tscn" id="91_o0mnt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0xvb"]
 atlas = ExtResource("3_2jmb6")
@@ -1510,12 +1512,6 @@ size = Vector3(1, 3.166504, 2.3077393)
 [sub_resource type="BoxShape3D" id="BoxShape3D_h7tgk"]
 size = Vector3(1, 3.1601563, 2.31604)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vp3xm"]
-albedo_color = Color(0, 0, 0, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_pokab"]
-material = SubResource("StandardMaterial3D_vp3xm")
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_f063y"]
 size = Vector3(2.0975342, 0.8051758, 0.8741455)
 
@@ -1905,9 +1901,8 @@ texture = ExtResource("40_fxy10")
 
 [node name="Elevator" type="Node3D" parent="."]
 
-[node name="BlackBackground" type="MeshInstance3D" parent="Elevator"]
-transform = Transform3D(2.369905, 0, 0, 0, 2.6717234, 0, 0, 0, 0.16142267, 0, 1.3805507, -1.1959493)
-mesh = SubResource("BoxMesh_pokab")
+[node name="HH_Art_Lobby_Elevator_V2" parent="Elevator" instance=ExtResource("42_lpg70")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
 
 [node name="Generator" type="Node3D" parent="."]
 script = ExtResource("41_5qg7y")
@@ -2042,8 +2037,8 @@ visible = false
 texture = ExtResource("51_h04sa")
 
 [node name="Electric" type="Sprite3D" parent="Gate"]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.14488, 1.4310222, 0.384692)
-texture = ExtResource("52_ts0yf")
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.105161, 1.4310222, 0.384692)
+texture = ExtResource("61_03sa3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Gate"]
 
@@ -2377,8 +2372,11 @@ texture = ExtResource("83_s4br7")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.112, 1.68)
 
 [node name="FloorIndicator" type="Sprite3D" parent="Elevator Sign"]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 2.38, -2.49)
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 2.38, -2.473731)
 texture = ExtResource("67_03sa3")
+
+[node name="HH_Art_Lobby_ElevatorSign_V1" parent="Elevator Sign" instance=ExtResource("91_o0mnt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.061312303, -1.5908678)
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]

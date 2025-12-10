@@ -51,7 +51,6 @@
 [ext_resource type="Texture2D" uid="uid://ctdxuq3u8ho6y" path="res://Assets/TH_25094221_25187221_001.jpg" id="37_75sfh"]
 [ext_resource type="Texture2D" uid="uid://c6sd7katycyqq" path="res://Assets/UpdatedNodes/HH_Art_NodeCyan2_V2.png" id="37_ctrnc"]
 [ext_resource type="AudioStream" uid="uid://blva2u8dj2k20" path="res://Assets/Audio/metal gate opening.wav" id="37_et8ij"]
-[ext_resource type="Texture2D" uid="uid://ysnpybetdxwd" path="res://Assets/electricityicon.png" id="38_deijv"]
 [ext_resource type="Texture2D" uid="uid://dvlc3hqry0hrn" path="res://Assets/UpdatedNodes/HH_Art_NodeCyan4_V2.png" id="38_wqh3b"]
 [ext_resource type="Texture2D" uid="uid://j4ea3v6d0fqx" path="res://Assets/UpdatedNodes/HH_Art_NodeCyan5_V2.png" id="39_dduuv"]
 [ext_resource type="Texture2D" uid="uid://dfmn8hnqyawbn" path="res://Donovan/DonAssets/HH_Art_NodeYellow5_V1.png" id="39_t6dil"]
@@ -115,6 +114,8 @@
 [ext_resource type="Texture2D" uid="uid://c6uqu5ihd1csc" path="res://Assets/UpdatedNodes/HH_Art_NodeYellow5_V2.png" id="63_1f4ob"]
 [ext_resource type="AudioStream" uid="uid://c2k5mrmymj5tt" path="res://Assets/Audio/mx_level.wav" id="63_2wdvl"]
 [ext_resource type="Texture2D" uid="uid://cqk7op1limxig" path="res://Assets/UpdatedNodes/HH_Art_NodeYellow6_V2.png" id="64_wxcav"]
+[ext_resource type="PackedScene" uid="uid://d01mblu7ihcei" path="res://Donovan/DonAssets/truePuddle.tscn" id="71_wq4hk"]
+[ext_resource type="Texture2D" uid="uid://n3twy2n3vd02" path="res://Assets/3D Models/HH_Art_Lightning_V1.png" id="71_ygbmw"]
 [ext_resource type="Texture2D" uid="uid://bba53n1vxdj7b" path="res://Assets/HH_Art_NewGuyDinoGrabberAnimSpriteSheet_V1.png" id="73_xjhiw"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="75_jnpos"]
 [ext_resource type="PackedScene" uid="uid://c4ti52vw8k1r0" path="res://SpencerStuff/Scenes/true_elevator_sign.tscn" id="79_ygbmw"]
@@ -7857,8 +7858,8 @@ visible = false
 texture = ExtResource("37_75sfh")
 
 [node name="Electric" type="Sprite3D" parent="Gate"]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.2616296, 1.4310222, 0.384692)
-texture = ExtResource("38_deijv")
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, -6.150798, 1.4310222, 0.384692)
+texture = ExtResource("71_ygbmw")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Gate"]
 
