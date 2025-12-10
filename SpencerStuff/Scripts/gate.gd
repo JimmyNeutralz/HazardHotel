@@ -98,9 +98,9 @@ func update_electric_state():
 
 	#RED = safe (fusebox off), GREEN = powered
 	if mat.albedo_color == Color.GREEN:
-		electrified = true
-	else:
 		electrified = false
+	else:
+		electrified = true
 
 	#electric_sprite.visible = electrified
 	#DO NOT change gate_trigger.monitoring dynamically
