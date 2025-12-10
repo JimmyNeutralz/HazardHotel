@@ -3,7 +3,7 @@ using System;
 using static Godot.GD;
 
 [GlobalClass]
-public partial class bigtest : Node2D
+public partial class Bigtest : Node2D
 {
 	
 	//[Export] public Node plink = new;
