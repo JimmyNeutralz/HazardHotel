@@ -4,7 +4,7 @@ extends Node3D
 @onready var indicator = $"../Indicators/GeneratorIndicator"  
 #path to gate node assigned in inspector
 @export var gate_node_path : NodePath 
-@onready var elevator_lock = $"../ElevatorDoor/ElevatorLock"       
+@onready var elevatordoor = $"../ElevatorDoor"
 @onready var uiNode = $"../Gate/GateUI"     
 @onready var uiNode2 = $GeneratorUI
 
@@ -15,11 +15,12 @@ var gate : Node3D = null
 var activated = false
 
 func _ready():
+	
 	if gate_node_path != null:
 		gate = get_node(gate_node_path)
 	else:
 		push_error("Gate node path not set for Generator!")
-
+		
 func _process(delta):
 	if Input.is_action_just_pressed("activate_generator") and not activated:
 		if can_activate():
@@ -52,7 +53,7 @@ func activate_generator():
 	activated = true
 	$GeneratorAudio.play()
 	print("Generator activated!")
-
+	elevatordoor.powered_on = true
 	##change color
 	#if indicator:
 		#var mat = indicator.get_active_material(0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=480 format=3 uid="uid://bwsjpacqdhxh0"]
+[gd_scene load_steps=479 format=3 uid="uid://bwsjpacqdhxh0"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_etl04"]
 [ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="2_stxpx"]
@@ -1624,10 +1624,7 @@ albedo_color = Color(0.9030753, 0, 0.07757329, 1)
 material = SubResource("StandardMaterial3D_idyij")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_k700v"]
-size = Vector3(0.25447464, 2.046997, 1.7373047)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_g2ycy"]
-size = Vector3(0.25447464, 2.046997, 1.7373047)
+size = Vector3(0.25447464, 2.046997, 2.3432617)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lhv18"]
 atlas = ExtResource("25_8f021")
@@ -3268,20 +3265,14 @@ script = ExtResource("55_cbt7k")
 [node name="Area3D" type="Area3D" parent="ElevatorDoor"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ElevatorDoor/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020044327, 1.1346064, -0.43408203)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020044327, 1.1346064, -0.13110352)
 shape = SubResource("BoxShape3D_k700v")
-
-[node name="Area3D2" type="Area3D" parent="ElevatorDoor"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ElevatorDoor/Area3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020044327, 1.1346064, -0.43408203)
-shape = SubResource("BoxShape3D_g2ycy")
 
 [node name="ElevatorLock" type="Sprite3D" parent="ElevatorDoor"]
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.1071434, 8.220419, -0.23650178)
 texture = ExtResource("66_oukx6")
 
-[node name="ElevatorUI" type="AnimatedSprite3D" parent="ElevatorDoor"]
+[node name="ElevatorDoorUI" type="AnimatedSprite3D" parent="ElevatorDoor"]
 transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, 0.778997, 2.3518803, -0.55218506)
 sprite_frames = SubResource("SpriteFrames_o4tei")
 animation = &"Orange1"
@@ -3544,7 +3535,7 @@ texture = ExtResource("67_03sa3")
 [connection signal="body_entered" from="RightWall/RightTrigger" to="." method="_on_right_trigger_body_entered"]
 [connection signal="body_entered" from="Vase/ShatteringArea" to="Vase" method="_on_shattering_area_body_entered"]
 [connection signal="body_entered" from="Gate/GateTrigger" to="Gate" method="_on_gate_trigger_body_entered"]
-[connection signal="body_entered" from="ElevatorDoor/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="ElevatorDoor/Area3D" to="." method="_on_area_3d_body_entered_level3"]
 [connection signal="pressed" from="PauseMenu/ResumeButton" to="." method="_on_resume_button_pressed"]
 [connection signal="pressed" from="PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]
 [connection signal="body_entered" from="Trap/Area3D" to="Trap" method="_on_area_3d_body_entered"]
