@@ -17,13 +17,13 @@
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="15_d64sq"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="16_o5ye0"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="17_40eat"]
-[ext_resource type="Script" uid="uid://cy8mm1h78gy4h" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="17_57sfp"]
+[ext_resource type="Script" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="17_57sfp"]
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="18_5gr6d"]
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="19_r4rbx"]
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="20_ak7el"]
 [ext_resource type="AudioStream" uid="uid://boghesc1nkhot" path="res://Assets/Audio/Wooden door creak 1.wav" id="22_dwer6"]
-[ext_resource type="Script" uid="uid://d3wg6c5iqxhyc" path="res://SpencerStuff/Scripts/Lock.gd" id="23_2dkt7"]
-[ext_resource type="PackedScene" uid="uid://c481kh6rlqyuh" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="23_03sa3"]
+[ext_resource type="Script" uid="uid://ekmnn0pn0da0" path="res://SpencerStuff/Scripts/Lock.gd" id="23_2dkt7"]
+[ext_resource type="PackedScene" uid="uid://b1ijgkw1i7v5k" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="23_03sa3"]
 [ext_resource type="PackedScene" uid="uid://dqdrihkiouy1o" path="res://Assets/3D Models/HH_Art_locks_openAnim_V1.fbx" id="24_xcgsm"]
 [ext_resource type="Texture2D" uid="uid://cfo2bftv6y7qy" path="res://Donovan/DonAssets/HH_Art_NodeBlue2_V1.png" id="25_8f021"]
 [ext_resource type="Texture2D" uid="uid://5lvcfq2duxw0" path="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png" id="26_r4tqt"]
@@ -39,21 +39,21 @@
 [ext_resource type="Texture2D" uid="uid://d1ybbwvdlyuvl" path="res://Donovan/DonAssets/HH_Art_NodeYellow6_V1.png" id="36_5fatx"]
 [ext_resource type="Script" uid="uid://v1vrjjfux1ew" path="res://ThomasFolder/Scripts/right_door_Thomas_Ver_2.gd" id="37_ejwtc"]
 [ext_resource type="AudioStream" uid="uid://c8v5bc6sw71sl" path="res://Assets/Audio/Wooden door creak 2.wav" id="39_d16sl"]
-[ext_resource type="PackedScene" uid="uid://dax3x8kiqqa04" path="res://SpencerStuff/Scenes/true_right_doorV2.tscn" id="40_03sa3"]
+[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_right_doorV2.tscn" id="40_03sa3"]
 [ext_resource type="Texture2D" uid="uid://bjgv41ufsr321" path="res://Assets/key.png" id="40_fxy10"]
 [ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="41_5qg7y"]
-[ext_resource type="PackedScene" uid="uid://d1twlbms4jalv" path="res://SpencerStuff/Scenes/true_elevatorV2.tscn" id="42_w87lh"]
+[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_elevatorV2.tscn" id="42_w87lh"]
 [ext_resource type="AudioStream" uid="uid://bt827ljr2p2uk" path="res://Assets/Audio/Switch.wav" id="43_n0jjb"]
 [ext_resource type="PackedScene" uid="uid://dyua24e70jfwi" path="res://ThomasFolder/Objects and Textures/hh_art_generator_v_2_textured.tscn" id="43_w68na"]
 [ext_resource type="Script" uid="uid://btw5rsddy2yd7" path="res://Sam the Cool One/vase.gd" id="44_ytcoj"]
-[ext_resource type="Script" path="res://Sam the Cool One/airvent.gd" id="45_7hn7x"]
+[ext_resource type="Script" uid="uid://bodbd1rpra4ki" path="res://Sam the Cool One/airvent.gd" id="45_7hn7x"]
 [ext_resource type="AudioStream" uid="uid://cnudkj83doi6x" path="res://Assets/Audio/Electricution Death.wav" id="45_j1xhc"]
 [ext_resource type="Texture2D" uid="uid://bj4wsk1k2qlkg" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_Vase_V1.png" id="46_1xk6g"]
 [ext_resource type="Script" uid="uid://dq413xe087tg0" path="res://Sam the Cool One/mouse.gd" id="46_y8lye"]
-[ext_resource type="Script" path="res://Sam the Cool One/key.gd" id="47_dxmn4"]
+[ext_resource type="Script" uid="uid://b783s1374l57w" path="res://Sam the Cool One/key.gd" id="47_dxmn4"]
 [ext_resource type="Texture2D" uid="uid://cqqk88sfyr8tf" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_VaseShard_V1.png" id="47_wxxuc"]
 [ext_resource type="Texture2D" uid="uid://cjyipya2vweop" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_VaseShard2_V1.png" id="48_pknbb"]
-[ext_resource type="Script" path="res://Sam the Cool One/cheese.gd" id="48_trdal"]
+[ext_resource type="Script" uid="uid://bbdvhu2tqmp3u" path="res://Sam the Cool One/cheese.gd" id="48_trdal"]
 [ext_resource type="Texture2D" uid="uid://cv5ytaw5cq6fm" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_MouseHole_V1.png" id="49_pknbb"]
 [ext_resource type="AudioStream" uid="uid://42o53wkhh4xb" path="res://Assets/Audio/Button.wav" id="49_viyc1"]
 [ext_resource type="Texture2D" uid="uid://dy7ha53nbvp1u" path="res://Sam the Cool One/Models and Art Stuff Im Using/HH_Art_RatRunAnimSpriteSheet_V1.png" id="50_xoi0t"]
@@ -71,20 +71,20 @@
 [ext_resource type="PackedScene" uid="uid://bc8tn80dtxvn0" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_pinch_modular_right_applied_texture.tscn" id="63_xoi0t"]
 [ext_resource type="PackedScene" uid="uid://c8kuypq8o4v4f" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_pinch_modular_middle_applied_texture.tscn" id="64_a1sk3"]
 [ext_resource type="Texture2D" uid="uid://dtotk3syvd1db" path="res://Assets/brown.jpg" id="64_hapq0"]
-[ext_resource type="PackedScene" uid="uid://drsx3lpp80je5" path="res://SpencerStuff/Scenes/true_elevator_gate_lobby.tscn" id="66_03sa3"]
+[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_elevator_gate_lobby.tscn" id="66_03sa3"]
 [ext_resource type="Texture2D" uid="uid://bekut30xmeumk" path="res://Assets/Lock.png" id="66_oukx6"]
 [ext_resource type="Texture2D" uid="uid://0o1anfkmyoq0" path="res://Assets/3D Models/HH_Art_ElevatorSign_Floor3_V1.fbx.png" id="67_03sa3"]
 [ext_resource type="Texture2D" uid="uid://cj7cb7ow72uni" path="res://Donovan/DonAssets/HH_Art_NodePurple6_V1.png" id="67_820cl"]
 [ext_resource type="AudioStream" uid="uid://c2k5mrmymj5tt" path="res://Assets/Audio/mx_level.wav" id="67_fdm6u"]
-[ext_resource type="PackedScene" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_shelf_applied_texture.tscn" id="67_w68na"]
+[ext_resource type="PackedScene" uid="uid://cqwe1p3y78k3n" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_shelf_applied_texture.tscn" id="67_w68na"]
 [ext_resource type="AudioStream" uid="uid://y8gssppvdj36" path="res://Assets/Audio/elevator door opening.wav" id="68_w87lh"]
-[ext_resource type="PackedScene" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_safe_anim_applied_texture.tscn" id="69_w68na"]
-[ext_resource type="PackedScene" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_table_applied_texture.tscn" id="70_w68na"]
+[ext_resource type="PackedScene" uid="uid://btbhxm6xtu07n" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_safe_anim_applied_texture.tscn" id="69_w68na"]
+[ext_resource type="PackedScene" uid="uid://ucvd15tb10ly" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_table_applied_texture.tscn" id="70_w68na"]
 [ext_resource type="Script" uid="uid://crhb8yg3b1qjd" path="res://Sam the Cool One/safe.gd" id="72_j7f7e"]
 [ext_resource type="PackedScene" uid="uid://ldos30jg4ksv" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_mouse_wheel_textures_applied.tscn" id="74_2bagf"]
 [ext_resource type="PackedScene" uid="uid://3eq2ds124c7b" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_box_trap_applied_texture.tscn" id="76_2bagf"]
 [ext_resource type="Script" uid="uid://b00ss7u2jxh7c" path="res://Sam the Cool One/curtain.gd" id="76_kq5jo"]
-[ext_resource type="Script" path="res://Sam the Cool One/trap.gd" id="76_vcupa"]
+[ext_resource type="Script" uid="uid://o7neq40tuih1" path="res://Sam the Cool One/trap.gd" id="76_vcupa"]
 [ext_resource type="PackedScene" uid="uid://das3mbmv8hge3" path="res://Sam the Cool One/Models and Art Stuff Im Using/Textured/hh_art_curtain_applied_texture.tscn" id="78_7jm3i"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="79_a1sk3"]
 [ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="79_iypui"]
@@ -94,7 +94,7 @@
 [ext_resource type="Texture2D" uid="uid://bs6byut2b4npg" path="res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png" id="83_s4br7"]
 [ext_resource type="Texture2D" uid="uid://b2vui8awwerj3" path="res://ThomasFolder/Sprites/New Guy Character Image Back.png" id="84_pknbb"]
 [ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="84_w68na"]
-[ext_resource type="PackedScene" uid="uid://c4ti52vw8k1r0" path="res://SpencerStuff/Scenes/true_elevator_sign.tscn" id="94_820cl"]
+[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_elevator_sign.tscn" id="94_820cl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n0xvb"]
 atlas = ExtResource("3_2jmb6")
@@ -1607,21 +1607,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_idyij"]
-size = Vector3(0.16955566, 3.5111084, 2.2953491)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_vher1"]
-size = Vector3(0.16568756, 2.8619385, 2.3187866)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idyij"]
-albedo_color = Color(0.9030753, 0, 0.07757329, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ffsuc"]
-material = SubResource("StandardMaterial3D_idyij")
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_k700v"]
-size = Vector3(0.25447464, 2.046997, 2.3432617)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_lhv18"]
 atlas = ExtResource("25_8f021")
 region = Rect2(0, 0, 350, 350)
@@ -2782,6 +2767,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_idyij"]
+size = Vector3(0.16955566, 3.5111084, 2.2953491)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vher1"]
+size = Vector3(0.16568756, 2.8619385, 2.3187866)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_idyij"]
+albedo_color = Color(0.9030753, 0, 0.07757329, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ffsuc"]
+material = SubResource("StandardMaterial3D_idyij")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k700v"]
+size = Vector3(0.25447464, 2.046997, 2.3432617)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_fqss4"]
 size = Vector3(4.226074, 2.7891846, 2.2185059)
 
@@ -2840,7 +2840,7 @@ transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.28559738, 1.050703
 shaded = true
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_ml83m")
-animation = &"Idle"
+animation = &"StandInteract"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0.008636475, 0.0017394423, 1.0423431)
@@ -3177,7 +3177,7 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.16
 script = ExtResource("48_trdal")
 
 [node name="Sprite3D" type="Sprite3D" parent="Cheese"]
-transform = Transform3D(-3.3657757e-09, 0, -1, 0, 0.07699997, 0, 0.07699997, 0, -4.371139e-08, 0, 0, 0)
+transform = Transform3D(-5.8292366e-09, 0, -1, 0, 0.13335739, 0, 0.13335739, 0, -4.371139e-08, 0, 0, 0)
 texture = ExtResource("56_03sa3")
 
 [node name="Airvent" type="Node3D" parent="."]
@@ -3187,6 +3187,12 @@ script = ExtResource("45_7hn7x")
 [node name="AirventSprite" type="Sprite3D" parent="Airvent"]
 transform = Transform3D(-0.2029873, 0, -0.23502256, 0, 0.20023495, 0, 0.059449926, 0, -0.8024668, 0.4851848, 2.3883936, -15.586857)
 texture = ExtResource("54_s4br7")
+
+[node name="VentUI" type="AnimatedSprite3D" parent="Airvent"]
+transform = Transform3D(-0.0029189698, 0, -0.24998297, 0, 0.25, 0, 0.24998297, 0, -0.0029189698, -0.14898516, 2.2670145, -15.737586)
+sprite_frames = SubResource("SpriteFrames_o4tei")
+animation = &"Blue2"
+autoplay = "Blue2"
 
 [node name="Gate" type="Node3D" parent="."]
 script = ExtResource("51_soqoc")
@@ -3270,7 +3276,7 @@ texture = ExtResource("66_oukx6")
 [node name="ElevatorDoorUI" type="AnimatedSprite3D" parent="ElevatorDoor"]
 transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, 0.778997, 2.3518803, -0.55218506)
 sprite_frames = SubResource("SpriteFrames_o4tei")
-animation = &"Orange1"
+animation = &"Purple6"
 autoplay = "Orange1"
 
 [node name="ElevatorMarker" type="Marker3D" parent="ElevatorDoor"]
@@ -3392,6 +3398,12 @@ shape = SubResource("BoxShape3D_kq5jo")
 [node name="HH_Art_SafeAnim_V3" parent="Safe" instance=ExtResource("69_w68na")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.19656467, 0, 0.13229293)
 
+[node name="SafeUI" type="AnimatedSprite3D" parent="Safe"]
+transform = Transform3D(0.24998295, 0, -0.0029189584, 0, 0.25, 0, 0.0029189584, 0, 0.24998295, -0.5605364, 1.3371952, 0.8365631)
+sprite_frames = SubResource("SpriteFrames_o4tei")
+animation = &"Blue2"
+autoplay = "Blue2"
+
 [node name="MouseWheelDesk" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.1782064, 0, 0)
 
@@ -3439,6 +3451,12 @@ shape = SubResource("BoxShape3D_57sfp")
 [node name="TrapModel" parent="Trap" instance=ExtResource("76_2bagf")]
 transform = Transform3D(-0.7, 0, 0, 0, 0.7, -6.119594e-08, 0, 6.119594e-08, 0.7, 0.24688816, -0.17, 8.369632)
 
+[node name="TrapUI" type="AnimatedSprite3D" parent="Trap"]
+transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, -0.14898586, 0.5977789, 0.24232674)
+sprite_frames = SubResource("SpriteFrames_o4tei")
+animation = &"Blue2"
+autoplay = "Blue2"
+
 [node name="Curtain" type="Node3D" parent="." node_paths=PackedStringArray("Player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.8778744)
 script = ExtResource("76_kq5jo")
@@ -3452,6 +3470,12 @@ shape = SubResource("BoxShape3D_a1sk3")
 
 [node name="HH_Art_Curtain_V2" parent="Curtain" instance=ExtResource("78_7jm3i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9431105, 0.09572339, 3.3188426)
+
+[node name="CurtainUI" type="AnimatedSprite3D" parent="Curtain"]
+transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 0, 0.24998294, -0.66333234, 2.458426, 3.1755793)
+sprite_frames = SubResource("SpriteFrames_o4tei")
+animation = &"Blue2"
+autoplay = "Blue2"
 
 [node name="LevelMusicPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("67_fdm6u")

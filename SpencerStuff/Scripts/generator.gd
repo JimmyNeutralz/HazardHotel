@@ -7,6 +7,8 @@ extends Node3D
 @onready var elevatordoor = $"../ElevatorDoor"
 @onready var uiNode = $"../Gate/GateUI"     
 @onready var uiNode2 = $GeneratorUI
+@onready var Player = $"../Player"
+@onready var MoveToObject = $HH_Art_Generator_V2
 
 
 @onready var text = $"../Overlay/TextPopup"                    
@@ -28,6 +30,11 @@ func _process(delta):
 			uiNode.visible = false
 			uiNode2.visible = false
 			text.change_text_image(1)
+			Player.move_to_object(MoveToObject)
+			await get_tree().create_timer(0.2).timeout
+			Player.standing_player_interact()
+			await get_tree().create_timer(1).timeout
+			Player.standing_interact_start = false
 			text.set_text("Generator up and running for this floor. Better head back to the elevator.", 6)
 		else:
 			print("Cannot activate generator yet!")
