@@ -1,19 +1,18 @@
-[gd_scene load_steps=1092 format=3 uid="uid://bxhis68m30g1y"]
+[gd_scene load_steps=1094 format=3 uid="uid://bxhis68m30g1y"]
 
 [ext_resource type="Script" uid="uid://clyc4g3o3ko0w" path="res://SpencerStuff/Scripts/level_management.gd" id="1_sdfg4"]
 [ext_resource type="PackedScene" uid="uid://dacojs786gojr" path="res://Assets/3D Models/HH_Art_Pinch_V2.fbx" id="2_fwdfo"]
 [ext_resource type="Script" uid="uid://blxinjuckon5d" path="res://ThomasFolder/Scripts/auto_movement_thomas_ver.gd" id="3_a4kpc"]
 [ext_resource type="Texture2D" uid="uid://dju6sdtrap1fy" path="res://Assets/HH_Art_NewGuyWalkAnimSpriteSheet_V1.png" id="5_07n6f"]
 [ext_resource type="AudioStream" uid="uid://m0ec6h28dj7q" path="res://Assets/Audio/Heavy Footsteps 1.wav" id="6_1e2nn"]
-[ext_resource type="Script" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="6_s57e3"]
+[ext_resource type="Script" uid="uid://cy8mm1h78gy4h" path="res://SpencerStuff/Scripts/true_left_bulb.gd" id="6_s57e3"]
 [ext_resource type="AudioStream" uid="uid://dng3gwxycsiaa" path="res://Assets/Audio/Heavy Footsteps 2.wav" id="7_13oib"]
 [ext_resource type="AudioStream" uid="uid://o0muujmnhwuh" path="res://Assets/Audio/Heavy Footsteps 3.wav" id="8_kkify"]
 [ext_resource type="AudioStream" uid="uid://c2aek62urxvgj" path="res://Assets/Audio/Heavy Footsteps 4.wav" id="9_4o3qr"]
 [ext_resource type="AudioStream" uid="uid://00yxdkue0xhd" path="res://Assets/Audio/Heavy Footsteps 5.wav" id="10_b8gbm"]
 [ext_resource type="AudioStream" uid="uid://16paor1ni7n6" path="res://Assets/Audio/Heavy Footsteps 6.wav" id="11_db7nr"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_elevator.tscn" id="11_pwu2m"]
+[ext_resource type="PackedScene" uid="uid://d1twlbms4jalv" path="res://SpencerStuff/Scenes/true_elevatorV2.tscn" id="11_ygbmw"]
 [ext_resource type="Script" uid="uid://crics4un5vy5o" path="res://SpencerStuff/Scripts/camera_move_pinch.gd" id="12_3ndj3"]
-[ext_resource type="Script" path="res://SpencerStuff/Scripts/true_elevator.gd" id="12_o507h"]
 [ext_resource type="PackedScene" uid="uid://dl28onnxebvyo" path="res://Donovan/FadeInView.tscn" id="13_fwueu"]
 [ext_resource type="PackedScene" uid="uid://dwi1w1lt0qxci" path="res://Assets/3D Models/HH_Art_Ligghtbulb_V1_.fbx" id="14_ql2xa"]
 [ext_resource type="Script" uid="uid://dyqr6v4qlgjx0" path="res://SpencerStuff/Scripts/right_room_trigger.gd" id="15_b8u1l"]
@@ -21,7 +20,7 @@
 [ext_resource type="Script" uid="uid://ntaiajavyrk2" path="res://SpencerStuff/Scripts/left_room_trigger.gd" id="16_2xwse"]
 [ext_resource type="Script" uid="uid://dlmnsqqh6kt8h" path="res://SpencerStuff/Scripts/main_room_trigger.gd" id="17_cv66x"]
 [ext_resource type="AudioStream" uid="uid://boghesc1nkhot" path="res://Assets/Audio/Wooden door creak 1.wav" id="20_4v76q"]
-[ext_resource type="Script" uid="uid://ekmnn0pn0da0" path="res://SpencerStuff/Scripts/Lock.gd" id="21_vekw4"]
+[ext_resource type="Script" uid="uid://d3wg6c5iqxhyc" path="res://SpencerStuff/Scripts/Lock.gd" id="21_vekw4"]
 [ext_resource type="Texture2D" uid="uid://cfo2bftv6y7qy" path="res://Donovan/DonAssets/HH_Art_NodeBlue2_V1.png" id="22_0eypt"]
 [ext_resource type="PackedScene" uid="uid://dqdrihkiouy1o" path="res://Assets/3D Models/HH_Art_locks_openAnim_V1.fbx" id="22_ldwrj"]
 [ext_resource type="Texture2D" uid="uid://0q8k8ovc0tm5" path="res://Donovan/DonAssets/HH_Art_NodeCyan2_V1.png" id="23_2wdvl"]
@@ -30,6 +29,7 @@
 [ext_resource type="Script" uid="uid://cer86br3tg2y" path="res://Donovan/Puzzle Concepts In Engine/Scenes/dumbwaiter.gd" id="26_rebln"]
 [ext_resource type="Script" uid="uid://bmqvig0exmdt3" path="res://SpencerStuff/Scripts/generator.gd" id="27_xsf64"]
 [ext_resource type="PackedScene" uid="uid://bmh2gyqlmrijl" path="res://Assets/3D Models/HH_Art_Generator_V1_.fbx" id="28_1lnfs"]
+[ext_resource type="PackedScene" uid="uid://dyua24e70jfwi" path="res://ThomasFolder/Objects and Textures/hh_art_generator_v_2_textured.tscn" id="28_wwhnu"]
 [ext_resource type="Script" uid="uid://cqxfonrb48820" path="res://SpencerStuff/Scripts/puddle.gd" id="30_1lf7x"]
 [ext_resource type="Texture2D" uid="uid://bpp55u84q0wax" path="res://Assets/UpdatedNodes/HH_Art_NodeBlue1_V2.png" id="30_7q655"]
 [ext_resource type="Script" uid="uid://b7icg5wx2tdhu" path="res://fuse_box_2nd_floor.gd" id="31_00t3t"]
@@ -60,7 +60,6 @@
 [ext_resource type="Script" uid="uid://7epq051kcf4g" path="res://SpencerStuff/Scripts/elevator_door.gd" id="41_c0qj2"]
 [ext_resource type="Texture2D" uid="uid://c2o5u66t8nd2v" path="res://Assets/UpdatedNodes/HH_Art_NodeGreen1_V2.png" id="41_efa7e"]
 [ext_resource type="PackedScene" uid="uid://yvv4teqlemm5" path="res://SpencerStuff/Scenes/hh_art_elevator_gate_v_1.tscn" id="42_bbw7d"]
-[ext_resource type="PackedScene" uid="uid://dp2ouqtbbitt6" path="res://Assets/3D Models/HH_Art_ElevatorSign_V1.fbx" id="42_hgbko"]
 [ext_resource type="Texture2D" uid="uid://drlhxld2173lh" path="res://Assets/UpdatedNodes/HH_Art_NodeGreen2_V2.png" id="42_qswob"]
 [ext_resource type="Texture2D" uid="uid://5lvcfq2duxw0" path="res://Donovan/DonAssets/HH_Art_NodeBlue6_V1.png" id="42_wq4hk"]
 [ext_resource type="Texture2D" uid="uid://pb8fec5s8lac" path="res://Donovan/DonAssets/HH_Art_NodeCyan5_V1.png" id="43_2j6rm"]
@@ -84,14 +83,14 @@
 [ext_resource type="Texture2D" uid="uid://dnwontfgeesjk" path="res://Donovan/DonAssets/HH_Art_NodePurple2_V1.png" id="48_poayu"]
 [ext_resource type="Texture2D" uid="uid://d1ybbwvdlyuvl" path="res://Donovan/DonAssets/HH_Art_NodeYellow6_V1.png" id="49_63m68"]
 [ext_resource type="Texture2D" uid="uid://b0tvu64uy3iug" path="res://Assets/UpdatedNodes/HH_Art_NodeOrange3_V2.png" id="49_hepfg"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_left_scenev3.tscn" id="49_o507h"]
+[ext_resource type="PackedScene" uid="uid://bybb2btwgb084" path="res://SpencerStuff/Scenes/true_left_scenev3.tscn" id="49_o507h"]
 [ext_resource type="Texture2D" uid="uid://ck1cd8cmd1k3f" path="res://Assets/HH_Art_NewGuyCrouchInteractSpriteSheet_V1.png" id="50_i1scv"]
 [ext_resource type="PackedScene" uid="uid://r70numkvwsa7" path="res://Donovan/Puzzle Concepts In Engine/Scenes/Shelf.tscn" id="50_jennx"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_middle_scenev3.tscn" id="50_qeqm8"]
+[ext_resource type="PackedScene" uid="uid://bvtx553hn8ouc" path="res://SpencerStuff/Scenes/true_middle_scenev3.tscn" id="50_qeqm8"]
 [ext_resource type="Texture2D" uid="uid://bra3n723u6d3n" path="res://Assets/UpdatedNodes/HH_Art_NodeOrange4_V2.png" id="50_rvfsx"]
 [ext_resource type="Texture2D" uid="uid://72bl5rodk7u4" path="res://Donovan/DonAssets/dinograbber.png" id="50_wo6si"]
 [ext_resource type="Script" path="res://Donovan/Scripts/hh_art_fuse_3_v_1.gd" id="50_yqei1"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_right_scenev3.tscn" id="51_00t3t"]
+[ext_resource type="PackedScene" uid="uid://bglppt0huxa04" path="res://SpencerStuff/Scenes/true_right_scenev3.tscn" id="51_00t3t"]
 [ext_resource type="Script" uid="uid://roxfai5jdg52" path="res://ThomasFolder/Scripts/left_door_thomas_ver_2.gd" id="51_a4kpc"]
 [ext_resource type="Texture2D" uid="uid://dhndjrnissj6d" path="res://Assets/HH_Art_NewGuyElectrocutionAnimSpriteSheet_V1.png" id="51_dx7fg"]
 [ext_resource type="Script" uid="uid://bk7yal7eu1r4r" path="res://Donovan/lever.gd" id="51_jnpos"]
@@ -119,16 +118,19 @@
 [ext_resource type="PackedScene" uid="uid://b5nps7v01rrsb" path="res://Donovan/DonAssets/truePuddle.tscn" id="71_wq4hk"]
 [ext_resource type="Texture2D" uid="uid://bba53n1vxdj7b" path="res://Assets/HH_Art_NewGuyDinoGrabberAnimSpriteSheet_V1.png" id="73_xjhiw"]
 [ext_resource type="Script" uid="uid://c56pu608vgg8e" path="res://ThomasFolder/Scripts/text_popup_beta_ver.gd" id="75_jnpos"]
+[ext_resource type="PackedScene" uid="uid://c4ti52vw8k1r0" path="res://SpencerStuff/Scenes/true_elevator_sign.tscn" id="79_ygbmw"]
 [ext_resource type="Shader" uid="uid://b0okp3akwrb2d" path="res://GreggStuff/Shaders/vhs.gdshader" id="81_mvs2p"]
 [ext_resource type="Texture2D" uid="uid://bmsledlk83t1d" path="res://Assets/HH_Art_OverlayUI_V4.png" id="87_5urh0"]
 [ext_resource type="Texture2D" uid="uid://cgag2f6gr7euj" path="res://Assets/HH_Art_Overlay_V3.png" id="87_lqt4v"]
 [ext_resource type="Texture2D" uid="uid://bnnmjms10j8qu" path="res://Assets/HH_Art_Overlay_V4.png" id="88_jym03"]
 [ext_resource type="PackedScene" path="res://Donovan/DonAssets/hh_art_fuse_3_v_1.tscn" id="91_xjhiw"]
-[ext_resource type="PackedScene" uid="uid://b1ijgkw1i7v5k" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="98_13nw6"]
-[ext_resource type="PackedScene" path="res://SpencerStuff/Scenes/true_right_doorV2.tscn" id="102_1r2ig"]
+[ext_resource type="PackedScene" path="res://hh_art_shelf_v_1_textured_first_floor.tscn" id="91_ygbmw"]
+[ext_resource type="PackedScene" uid="uid://c481kh6rlqyuh" path="res://SpencerStuff/Scenes/true_left_doorV2.tscn" id="98_13nw6"]
+[ext_resource type="PackedScene" uid="uid://dax3x8kiqqa04" path="res://SpencerStuff/Scenes/true_right_doorV2.tscn" id="102_1r2ig"]
 [ext_resource type="Texture2D" uid="uid://b2vui8awwerj3" path="res://ThomasFolder/Sprites/New Guy Character Image Back.png" id="125_cfexi"]
 [ext_resource type="Texture2D" uid="uid://b2smx76edwggf" path="res://ThomasFolder/Sprites/HH_Art_NewGuyPortrait_V1.png" id="126_wwhnu"]
 [ext_resource type="Texture2D" uid="uid://bs6byut2b4npg" path="res://ThomasFolder/Sprites/HH_Art_Textbox_NewGuy_V1.png" id="127_ygbmw"]
+[ext_resource type="PackedScene" path="res://hh_art_fuse_1_v_1.tscn" id="132_d7ckc"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3nyfu"]
 size = Vector3(1, 2.736206, 2.517212)
@@ -7771,9 +7773,8 @@ texture = ExtResource("26_7elhi")
 
 [node name="Elevator" type="Node3D" parent="."]
 
-[node name="HH_Art_Elevator_V1" parent="Elevator" instance=ExtResource("11_pwu2m")]
+[node name="HH_Art_Lobby_Elevator_V2" parent="Elevator" instance=ExtResource("11_ygbmw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.1)
-script = ExtResource("12_o507h")
 
 [node name="Generator" type="Node3D" parent="."]
 script = ExtResource("27_xsf64")
@@ -7781,6 +7782,7 @@ gate_node_path = NodePath("../Gate")
 
 [node name="GeneratorModel" parent="Generator" instance=ExtResource("28_1lnfs")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -7.9929323, 0, -0.16973802)
+visible = false
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Generator/GeneratorModel"]
 
@@ -7797,6 +7799,9 @@ transform = Transform3D(0.24998294, 0, -0.0029189587, 0, 0.25, 0, 0.0029189587, 
 sprite_frames = SubResource("SpriteFrames_wq4hk")
 animation = &"Yellow6"
 autoplay = "Yellow6"
+
+[node name="HH_Art_Generator_V2" parent="Generator" instance=ExtResource("28_wwhnu")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -7.671372, 0, 2.0016558)
 
 [node name="Dumbwaiter" parent="." instance=ExtResource("33_6ggwo")]
 transform = Transform3D(-0.4999995, -6.556702e-08, 0.0014311388, -4.371139e-08, 0.75, 0, 0.0007155694, 9.383559e-11, 0.999999, 1.7526039, 1.1507851, -0.6689713)
@@ -7922,11 +7927,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.05041635)
 transform = Transform3D(0.05, 0, 0, 0, 0.05, 0, 0, 0, 0.05, 0.1071434, 3.9507077, -0.23650178)
 texture = ExtResource("60_i1scv")
 
-[node name="HH_Art_ElevatorSign_V1" parent="ElevatorDoor" instance=ExtResource("42_hgbko")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.112, 1.68)
+[node name="HH_Art_Lobby_ElevatorSign_V1" parent="ElevatorDoor" instance=ExtResource("79_ygbmw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.038916603, 0.07821679)
 
-[node name="ElevatorSignFloor2" type="Sprite3D" parent="ElevatorDoor/HH_Art_ElevatorSign_V1"]
-transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 2.38, -2.49)
+[node name="ElevatorSignFloor2" type="Sprite3D" parent="ElevatorDoor/HH_Art_Lobby_ElevatorSign_V1"]
+transform = Transform3D(0.03, 0, 0, 0, 0.03, 0, 0, 0, 0.03, 0, 2.4530835, -0.8796365)
 texture = ExtResource("43_hgbko")
 
 [node name="ElevatorMarker" type="Marker3D" parent="ElevatorDoor"]
@@ -8034,8 +8039,12 @@ stream = ExtResource("35_hgxai")
 [node name="Shelf" parent="." instance=ExtResource("50_jennx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7880096, 2.6062684, 2)
 
+[node name="HH_Art_Shelf_V2" parent="." instance=ExtResource("91_ygbmw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.158, 0, 11.988)
+
 [node name="HH_Art_Shelf_V1" parent="." instance=ExtResource("48_4t0uh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15805054, 0, 11.9879265)
+visible = false
 
 [node name="FuseStandSpot" type="Marker3D" parent="HH_Art_Shelf_V1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.2088175, 0, -12.0396185)
@@ -8309,8 +8318,12 @@ texture = ExtResource("127_ygbmw")
 transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 5.0599027, 2.1945415, -0.15465361)
 script = ExtResource("50_yqei1")
 
-[node name="fuse" parent="." instance=ExtResource("91_xjhiw")]
+[node name="fuse" parent="." instance=ExtResource("132_d7ckc")]
+transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 7.603, 2.724, 0.177)
+
+[node name="fuse_original" parent="." instance=ExtResource("91_xjhiw")]
 transform = Transform3D(1.9106855e-15, 4.371139e-08, -1, 1, -4.371139e-08, 0, -4.371139e-08, -1, -4.371139e-08, 7.603148, 2.7242382, 0.1768114)
+visible = false
 
 [connection signal="body_entered" from="CameraTriggers/RightRoomTrigger" to="CameraTriggers/RightRoomTrigger" method="_on_body_entered"]
 [connection signal="body_entered" from="CameraTriggers/LeftRoomTrigger" to="CameraTriggers/LeftRoomTrigger" method="_on_body_entered"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwys3y0hehafv"]
+
+[ext_resource type="PackedScene" uid="uid://416n0yob35jg" path="res://Assets/3D Models/HH_Art_Shelf_V1.fbx" id="1_b76kq"]
+[ext_resource type="Texture2D" uid="uid://mpar8gnttllj" path="res://ThomasFolder/Objects and Textures/HH_Art_ShelfTexture_V1.png" id="2_5r5dp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5a1gt"]
+albedo_texture = ExtResource("2_5r5dp")
+
+[node name="HH_Art_Shelf_V1" instance=ExtResource("1_b76kq")]
+
+[node name="Shelf" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_5a1gt")

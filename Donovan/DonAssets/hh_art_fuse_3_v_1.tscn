@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bfbcjkeoychis"]
+[gd_scene load_steps=4 format=3 uid="uid://bfbcjkeoychis"]
 
 [ext_resource type="PackedScene" uid="uid://bt8fq5f04d2ui" path="res://Assets/3D Models/HH_Art_Fuse3_V1.fbx" id="1_htldw"]
+[ext_resource type="Texture2D" uid="uid://hrm7eqwmck6w" path="res://ThomasFolder/Objects and Textures/HH_Art_Fuse3Texture_V1.png" id="2_g74to"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x8amu"]
+albedo_texture = ExtResource("2_g74to")
 
 [node name="HH_Art_Fuse3_V1" instance=ExtResource("1_htldw")]
 
@@ -9,3 +13,4 @@ transform = Transform3D(0.007236587, 0, 0, 0, 0.007236587, 0, 0, 0, 0.007236587,
 
 [node name="fuse3" parent="fusebox" index="0"]
 transform = Transform3D(0.06504516, 0, 0, 0, 0.14873667, 0, 0, 0, 0.06504516, 0, 0, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_x8amu")
