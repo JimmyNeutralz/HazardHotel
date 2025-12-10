@@ -51,8 +51,6 @@ func _process(delta: float) -> void:
 			text.set_text("Gotcha, you little rodent. You're coming with me.", 6)
 	if(state == "held"):
 		global_position = Player.global_position + Vector3(0,0, -100)
-		if(Input.is_action_just_pressed("mousewheel")):
-			Player.move_to_object(WheelArea)
 		if(WheelArea.overlaps_body(Player)):
 			state ="wheel"
 				
