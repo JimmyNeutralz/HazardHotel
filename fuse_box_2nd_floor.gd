@@ -104,15 +104,15 @@ func activate():
 		#Dialogue functions
 		if dialogue_step == 0:
 			text.change_text_image(1)
-			text.set_text("Got that fuse in place, sounds like something powered from the right room", 6)
+			text.set_text("Got that fuse in place, sounds like something powered from the right room.", 6)
 			dialogue_step = dialogue_step + 1
 		elif dialogue_step == 1:
 			text.change_text_image(1)
-			text.set_text("Another fuse in place, sounds like something else has powered on the right", 6)
+			text.set_text("Another fuse in place, sounds like something else has powered on the right.", 6)
 			dialogue_step = dialogue_step + 1
 		elif dialogue_step == 2:
 			text.change_text_image(1)
-			text.set_text("Last fuse in, the gate should be powered now", 6)
+			text.set_text("Last fuse in, the gate should be powered now.", 6)
 			electricSymbol.visible = false;
 			dialogue_step = dialogue_step + 1
 			
