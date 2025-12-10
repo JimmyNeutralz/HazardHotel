@@ -63,7 +63,7 @@ func _process(delta):
 		
 	if Input.is_action_just_pressed("open_safe") and fuseBox.get_fuse_amount() >= 2 and !safe_raised:
 		open_safe()
-	elif Input.is_action_just_released("open_safe") and fuseBox.get_fuse_amount() >= 2:
+	elif Input.is_action_just_released("open_safe") and fuseBox.get_fuse_amount() >= 2 and safe_raised:
 		close_safe()
 
 func lower_safe():
